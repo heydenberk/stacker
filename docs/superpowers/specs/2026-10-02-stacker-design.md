@@ -31,7 +31,7 @@ at from the couch.
 | Audio features/analysis unavailable to new apps | Display is driven by cover art, track list and progress only |
 | RYM has no API; scraping is against its terms | Use RYM's CSV export ("Export your data" on profile) |
 | One TV screen can't show Stacker and the Spotify TV app at once | Spotify TV app plays audio in the background; Stacker is the foreground app |
-| Spotify redirect URIs: `localhost` not allowed | Dev redirect uses `http://127.0.0.1:<port>/callback`; prod uses the deployed HTTPS URL |
+| Spotify redirect URIs: `localhost` not allowed | Redirect goes to the app root, not `/callback`, because Pages has no SPA fallback. Dev uses `http://127.0.0.1:5173/…`; prod uses `https://heydenberk.com/stacker/` |
 
 ## Hardware
 
@@ -41,17 +41,17 @@ Stacker is a foreground app that plays no audio, so it never takes audio focus.
 
 ## Architecture
 
-Three parts, one repo (`~/git/stacker`, private GitHub repo):
+Three parts, one repo (`~/git/stacker`, **public** GitHub repo `heydenberk/stacker`; decided 2026-10-03, because GitHub Pages on the free plan needs a public repo, and Eric's RYM ratings are already public):
 
 ```
-RYM export ──► crate builder (Claude Code + scripts) ──► crates/*.json ──git push──► Vercel (static)
+RYM export ──► crate builder (Claude Code + scripts) ──► crates/*.json ──git push──► GitHub Pages (heydenberk.com/stacker/)
                                                                                        │
 Google TV:  [Stacker shell ► web app] ──Spotify Web API──► Spotify TV app (audio, background)
 ```
 
 1. **Crate builder** (laptop, run from Claude Code): turns the RYM export into a
    normalized library, and writes crates that Claude curates from Eric's prompts.
-2. **TV web app** (static site on Vercel Hobby, deployed from the private repo):
+2. **TV web app** (static site on GitHub Pages at `https://heydenberk.com/stacker/`, built and deployed by a GitHub Action on push):
    crate picker, now-playing display, sign-in, and the conductor. Talks to Spotify
    directly from the browser using Authorization Code + PKCE; no backend.
 3. **TV shell** (sideloaded Android TV app): a full-screen WebView that loads the
@@ -100,7 +100,7 @@ Eric's export (2026-10-02): 3,226 rows, 3,020 rated; 1,059 at 4★+; 356 at 4.5�
    the `spotify` block. Unknown `rymId`s are rejected (no invented albums).
 4. The resolver prints medium/low-confidence matches; Claude and Eric fix them via
    `library/overrides.json` and re-run.
-5. Commit + push → Vercel deploys → TV picks it up on next load.
+5. Commit + push → GitHub Pages redeploys → TV picks it up on next load.
 
 ### Matching
 
@@ -186,6 +186,8 @@ match review and re-runs; the app ignores it.
 ## Part 2 — TV web app
 
 ### Conductor
+
+> **As built:** the conductor differs from the description below. The source of truth is `web/src/conductor/types.ts` and `step.ts`; Plan 2026-10-03's as-built notes summarise the differences. Read the rest of this section as the original intent.
 
 Persisted per TV in local storage:
 `{ crateId, order: rymId[], pos, trackIndex, progressMs, deviceId, deviceName, authorizedAt }`.

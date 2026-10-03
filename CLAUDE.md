@@ -36,5 +36,19 @@ Crates are curated by Claude in conversation with Eric, from his Rate Your Music
 ## Conventions
 
 - Pure logic lives in `builder/src/*` with tests in `builder/test/*`. Only `builder/cli/*` and `builder/src/files.ts` touch the filesystem.
-- Crate types are in `shared/crate.ts`; the TV web app will import them.
+- Crate types are in `shared/crate.ts`; the web app imports them.
 - Never commit `.env`.
+
+## Web app (`web/`)
+
+- `npm run dev` serves http://127.0.0.1:5173. Use 127.0.0.1, not `localhost`, because Spotify rejects `localhost` redirects. `.env` needs `SPOTIFY_CLIENT_ID`; `npm run build` fails without it.
+- `npm test` runs both the builder and web tests. `npm run build` / `npm run preview` produce the static site in `dist/`.
+- Map:
+  - `conductor/`: pure state machine (`step(state, event, ctx) → {state, actions}`). Behaviour changes go in `step.ts`, with tests in `step.test.ts`. Shared fixtures are in `web/src/testing/fixtures.ts`.
+  - `runner.ts`: effects, persistence (`stacker.*` localStorage keys) and polling.
+  - `spotify/auth.ts`: PKCE sign-in.
+  - `spotify/player.ts`: `/me/player` client.
+  - `storage.ts`: safe key-value store.
+  - `crates.ts`: crates bundled at build time, so a new crate ships with the next deploy.
+  - `debug/App.tsx`: temporary UI.
+- Deviations from the plans are recorded as "As built" notes in `docs/superpowers/plans/`.

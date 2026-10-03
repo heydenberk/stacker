@@ -19,7 +19,7 @@
 
 **Out of scope (later plans):**
 - **Plan 3:** the Direction A now-playing screen, crate picker, overlays, record-change animation, remote-key handling (including the ▼ double press), the sign-in expiry banner and progress interpolation.
-- **Plan 4:** the TV shell and the Vercel deploy.
+- **Plan 4:** the TV shell and the deploy. That's now GitHub Pages at heydenberk.com/stacker/, not Vercel.
 
 **TV spike result (2026-10-03):** Spotify keeps playing in the background on Google TV, and a remote `play` doesn't steal the screen. So the conductor issues a fresh `play` for each record.
 
@@ -64,6 +64,8 @@ stacker/
 ---
 
 ### Task 1: Web scaffold and bundled crate catalog
+
+> **As built:** `vite.config.ts` throws when building for production without `SPOTIFY_CLIENT_ID`. The catalog test was later loosened, so editing a crate doesn't break it.
 
 **Goal:** Vite + Preact app skeleton, with crates bundled from `crates/*.json` and a placeholder page that builds.
 
@@ -1023,6 +1025,8 @@ git commit -m "feat(web): conductor types and shuffle helpers"
 ---
 
 ### Task 5: Spotify player client
+
+> **As built:** added a `network` error kind, a 404 whose message mentions "device" maps to `noDevice`, empty 2xx bodies are allowed, errors carry a `reason` field, `additional_types=episode` is requested, and requests time out after 10 s (commits 2e826d8, 2d83a06). The source of truth is `web/src/spotify/player.ts`.
 
 **Goal:** `PlayerApi`, a thin client over the Spotify Web API's `/me/player` endpoints. It retries once after refreshing on a 401, and classifies errors so the runner can react.
 

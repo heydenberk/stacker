@@ -19,6 +19,6 @@ describe('buildCatalog', () => {
 describe('catalog', () => {
   it('bundles the committed crates', () => {
     expect(catalog.order).toContain('rainy-sunday');
-    expect(catalog.byId.get('rainy-sunday')?.records).toHaveLength(20);
+    expect(catalog.byId.get('rainy-sunday')?.records.length).toBeGreaterThan(0);
   });
 });
