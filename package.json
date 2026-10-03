@@ -16,7 +16,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "genres:batch": "tsx builder/cli/genres-batch.ts"
+    "genres:batch": "tsx builder/cli/genres-batch.ts",
+    "genres:merge": "tsx builder/cli/genres-merge.ts"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.10.6",
