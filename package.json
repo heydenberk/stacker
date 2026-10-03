@@ -15,7 +15,8 @@
     "editor": "vite --config editor/vite.config.ts",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "genres:batch": "tsx builder/cli/genres-batch.ts"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.10.6",
