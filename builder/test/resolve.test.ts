@@ -230,3 +230,21 @@ describe('buildQueries free text', () => {
     expect(qs[qs.length - 1]).not.toContain(':');
   });
 });
+
+describe('partial progress keeps prior state', () => {
+  it('preserves existing spotify/match on unprocessed and failing records', async () => {
+    const first = await resolveCrate(draft(['100', '200']), library, {}, api());
+    const base = api();
+    const failing = new FakeApi({}, {});
+    failing.searchAlbums = async (q: string) => {
+      if (q === PM_Q) throw new Error('boom');
+      return base.searchAlbums(q);
+    };
+    failing.getAlbum = base.getAlbum.bind(base);
+    const err = await resolveCrate(first.crate, library, {}, failing, { force: true }).catch((e) => e);
+    expect(err).toBeInstanceOf(ResolveAborted);
+    expect(err.rymId).toBe('100');
+    expect(err.partial.records[0]).toMatchObject({ rymId: '100', spotify: { albumId: 'pm' }, match: { confidence: 'high' } });
+    expect(err.partial.records[1]).toMatchObject({ rymId: '200', spotify: { albumId: 'bs' }, match: { confidence: 'medium' } });
+  });
+});

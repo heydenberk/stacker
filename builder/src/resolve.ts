@@ -135,7 +135,7 @@ export async function resolveCrate(
       opts.log?.(`${resolved.match?.override ? 'override' : (resolved.match?.confidence ?? 'none')}\t${entry.artist} — ${entry.title}`);
       records.push(resolved);
     } catch (e) {
-      const rest = draft.records.slice(i).map((d) => ({ ...hydrate(library.get(d.rymId)!), spotify: null }));
+      const rest = draft.records.slice(i).map((d) => ({ ...hydrate(library.get(d.rymId)!), spotify: d.spotify ?? null, match: d.match }));
       throw new ResolveAborted({ ...meta, records: [...records, ...rest] }, r.rymId, `${entry.artist} — ${entry.title}`, e);
     }
   }
