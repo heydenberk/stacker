@@ -1990,6 +1990,15 @@ git commit -m "feat(web): conductor state machine"
 
 ### Task 7: Runner
 
+> **As built:** the review hardened the runner. The source of truth is `web/src/runner.ts` (commits 08e099a, 2d83a06, 1de48f9).
+> - **Shuffle and repeat are best-effort.** Each is tried separately after `play`, and a failure there doesn't count as the play failing.
+> - **Device identity.** `setDevice(name, id?)`; devices resolve by id first, then name. A 4xx on play triggers a device re-check before the record counts as failed.
+> - **Errors are split** into `pollError` and `actionError`, and the view updates after every action.
+> - **Rate limits.** While Spotify's rate limit is in force, no requests are sent and actions are ignored.
+> - **Device missing** always switches to `needsDevice`.
+> - **Requests time out** after 10 s.
+
+
 **Goal:** Connect the conductor to Spotify:
 - execute actions on the chosen device;
 - turn player errors into conductor events;
@@ -2536,7 +2545,7 @@ export function App({ auth, runner, player, catalog }: Props) {
             {devices.map((d) => (
               <li key={d.id}>
                 {d.name} ({d.type}
-                {d.isActive ? ', active' : ''}) <button onClick={() => runner.setDevice(d.name)}>Use</button>
+                {d.isActive ? ', active' : ''}) <button onClick={() => runner.setDevice(d.name, d.id)}>Use</button>
               </li>
             ))}
           </ul>
