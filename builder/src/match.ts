@@ -1,6 +1,6 @@
 import type { Confidence } from '../../shared/crate';
 import type { LibraryEntry } from './library';
-import { normText, stripEdition, titleVariants } from './normalize';
+import { EDITION_RX, normText, stripEdition, titleVariants } from './normalize';
 
 export interface AlbumCandidate {
   id: string;
@@ -18,22 +18,29 @@ export interface MatchResult {
 }
 
 const VARIOUS = 'various artists';
-const EDITION_RX = /\b(remaster(ed)?|deluxe|expanded|anniversary|edition|reissue)\b/i;
+/** Normalized form that still distinguishes symbol-only names like "!!!" and "???". */
+function key(s: string): string {
+  return normText(s) || s.trim().toLowerCase();
+}
+
 const LIVE_RX = /\blive\b/i;
 
 function artistScore(entry: LibraryEntry, c: AlbumCandidate): number {
-  const wanted = [entry.artist, entry.artistLocalized].filter((a): a is string => !!a).map(normText);
-  const have = c.artists.map(normText);
+  const wanted = [entry.artist, entry.artistLocalized].filter((a): a is string => !!a).map(key).filter(Boolean);
+  const have = c.artists.map(key);
 
   if (wanted.includes(VARIOUS)) {
-    return c.albumType === 'compilation' || have.includes(VARIOUS) ? 40 : 20;
+    if (have.includes(VARIOUS)) return 40;
+    return c.albumType === 'compilation' ? 25 : 20;
   }
 
   let best = 0;
   for (const w of wanted) {
-    if (have.includes(w) || have.join(' and ') === w) return 50;
+    if (have[0] === w || have.join(' and ') === w) return 50;
+    if (have.includes(w)) best = Math.max(best, 35);
     const wTokens = w.split(' ');
     for (const h of have) {
+      if (!h) continue;
       const hTokens = h.split(' ');
       // RYM name is a subset of Spotify's ("Mingus" ⊆ "Charles Mingus").
       if (wTokens.every((t) => hTokens.includes(t))) best = Math.max(best, 30);
@@ -46,14 +53,14 @@ function artistScore(entry: LibraryEntry, c: AlbumCandidate): number {
 }
 
 function titleScore(entry: LibraryEntry, c: AlbumCandidate): number {
-  const have = normText(stripEdition(c.name));
+  const have = key(stripEdition(c.name));
   if (!have) return 0;
   let best = 0;
   for (const variant of titleVariants(entry.title)) {
-    const want = normText(stripEdition(variant));
+    const want = key(stripEdition(variant));
     if (!want) continue;
     if (want === have) return 40;
-    if (have.startsWith(want) || want.startsWith(have)) best = Math.max(best, 25);
+    if ((have + ' ').startsWith(want + ' ') || (want + ' ').startsWith(have + ' ')) best = Math.max(best, 25);
     const a = new Set(want.split(' '));
     const b = new Set(have.split(' '));
     const shared = [...a].filter((t) => b.has(t)).length;
@@ -70,6 +77,7 @@ function adjustments(entry: LibraryEntry, c: AlbumCandidate): number {
   if (entry.year !== null && c.releaseYear !== null) {
     if (c.releaseYear === entry.year) s += 10;
     else if (Math.abs(c.releaseYear - entry.year) === 1) s += 5;
+    else if (Math.abs(c.releaseYear - entry.year) >= 3) s -= 10;
   }
   return s;
 }
@@ -77,7 +85,9 @@ function adjustments(entry: LibraryEntry, c: AlbumCandidate): number {
 export function scoreCandidate(entry: LibraryEntry, c: AlbumCandidate): number {
   const a = artistScore(entry, c);
   if (a === 0) return 0;
-  return a + titleScore(entry, c) + adjustments(entry, c);
+  const total = a + titleScore(entry, c) + adjustments(entry, c);
+  // Never "high" without year evidence.
+  return entry.year === null || c.releaseYear === null ? Math.min(total, 89) : total;
 }
 
 export function confidenceFor(score: number): Confidence {
@@ -90,13 +100,22 @@ export function confidenceFor(score: number): Confidence {
 export function pickBest(entry: LibraryEntry, candidates: AlbumCandidate[]): MatchResult {
   let best: AlbumCandidate | null = null;
   let bestScore = 0;
-  for (const c of candidates) {
-    const s = scoreCandidate(entry, c);
+  const scored = candidates.map((c) => ({ c, s: scoreCandidate(entry, c) }));
+  for (const { c, s } of scored) {
     if (s > bestScore) {
       best = c;
       bestScore = s;
     }
   }
-  const confidence = confidenceFor(bestScore);
+  let confidence = confidenceFor(bestScore);
+  // A near-tie with a different-era release is ambiguous: leave it for review.
+  if (best && confidence === 'high') {
+    const b = best;
+    const ambiguous = scored.some(({ c, s }) => {
+      if (c.id === b.id || s < bestScore - 5) return false;
+      return c.releaseYear === null || b.releaseYear === null || Math.abs(c.releaseYear - b.releaseYear) > 1;
+    });
+    if (ambiguous) confidence = 'medium';
+  }
   return { candidate: confidence === 'none' ? null : best, score: bestScore, confidence };
 }

@@ -94,6 +94,74 @@ describe('pickBest', () => {
   });
 });
 
+describe('confident-wrong-match guards', () => {
+  const weezer = { artist: 'Weezer', title: 'Weezer', year: 1994 };
+  it('demotes same artist+title with a distant album year to medium (80)', () => {
+    const e = entry(weezer);
+    const c = cand({ name: 'Weezer', artists: ['Weezer'], releaseYear: 2001 });
+    expect(scoreCandidate(e, c)).toBe(80);
+    expect(pickBest(e, [c]).confidence).toBe('medium');
+  });
+  it('never scores high without year evidence (89)', () => {
+    const e = entry({ year: null });
+    const c = cand({});
+    expect(scoreCandidate(e, c)).toBe(89);
+    expect(pickBest(e, [c]).confidence).toBe('medium');
+  });
+  it('does not treat a single-artist compilation as Various Artists', () => {
+    const e = entry({ artist: 'Various Artists', title: 'Greatest Hits', year: 1990 });
+    const c = cand({ name: 'Greatest Hits', artists: ['Queen'], albumType: 'compilation', releaseYear: 1990 });
+    expect(pickBest(e, [c]).confidence).not.toBe('high');
+  });
+  it('distinguishes symbol-only artist names', () => {
+    const e = entry({ artist: '!!!', title: 'Louden Up Now', year: 2004 });
+    expect(scoreCandidate(e, cand({ name: 'Louden Up Now', artists: ['???'], releaseYear: 2004 }))).toBe(0);
+    const e2 = entry({ artist: '!!!', title: '!!!', year: 2000 });
+    const r = pickBest(e2, [cand({ name: '!!!', artists: ['!!!'], releaseYear: 2000 })]);
+    expect(r.confidence).toBe('high');
+  });
+  it('gives only medium to an exact match on a non-first credit', () => {
+    const e = entry({ artist: 'Miles Davis', title: 'Kind of Blue', year: 1959 });
+    const c = cand({ name: 'Kind of Blue', artists: ['Some Tribute', 'Miles Davis'], releaseYear: 1959 });
+    expect(scoreCandidate(e, c)).toBe(85);
+    expect(pickBest(e, [c]).confidence).toBe('medium');
+  });
+  it('keeps high when the runner-up is clearly worse', () => {
+    const r = pickBest(entry(weezer), [
+      cand({ id: 'a', name: 'Weezer', artists: ['Weezer'], releaseYear: 1994 }),
+      cand({ id: 'b', name: 'Weezer', artists: ['Weezer'], releaseYear: 2001 }),
+    ]);
+    expect(r.candidate?.id).toBe('a');
+    expect(r.confidence).toBe('high');
+  });
+  it('demotes to medium when near-tied candidates are from different eras', () => {
+    const r = pickBest(entry({ ...weezer, year: null }), [
+      cand({ id: 'blue', name: 'Weezer', artists: ['Weezer'], releaseYear: 1994 }),
+      cand({ id: 'green', name: 'Weezer', artists: ['Weezer'], releaseYear: 2001 }),
+    ]);
+    expect(r.candidate?.id).toBe('blue');
+    expect(r.score).toBe(89);
+    expect(r.confidence).toBe('medium');
+  });
+  it('does not demote for same-year editions', () => {
+    const e = entry({ artist: 'The Beatles', title: 'Revolver', year: 1966 });
+    const r = pickBest(e, [
+      cand({ id: 'mono', name: 'Revolver (Mono)', artists: ['The Beatles'], releaseYear: 1966 }),
+      cand({ id: 'orig', name: 'Revolver', artists: ['The Beatles'], releaseYear: 1966 }),
+    ]);
+    expect(r.candidate?.id).toBe('orig');
+    expect(r.confidence).toBe('high');
+  });
+  it('penalizes "(Mono)" as an edition (92)', () => {
+    const e = entry({ artist: 'The Beatles', title: 'Revolver', year: 1966 });
+    expect(scoreCandidate(e, cand({ name: 'Revolver (Mono)', artists: ['The Beatles'], releaseYear: 1966 }))).toBe(92);
+  });
+  it('only prefix-matches titles at a token boundary', () => {
+    const e = entry({ artist: 'Low', title: 'Low', year: 1994 });
+    expect(scoreCandidate(e, cand({ name: 'Lowlife', artists: ['Low'], releaseYear: 1994 }))).toBeLessThan(70);
+  });
+});
+
 describe('confidenceFor', () => {
   it('applies the thresholds', () => {
     expect(confidenceFor(90)).toBe('high');
