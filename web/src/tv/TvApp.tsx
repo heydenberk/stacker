@@ -13,7 +13,7 @@ import { back, initialScreen, installBackHook, type Screen } from './nav';
 import { NowPlaying } from './NowPlaying';
 import { Settings } from './Settings';
 import { SignIn } from './SignIn';
-import { bannerFor, expiryBanner, isBackKey } from './view';
+import { bannerFor, expiryBanner, followNewRecord, isBackKey, mediaKeyEvent } from './view';
 import './tv.css';
 
 interface Props {
@@ -53,10 +53,27 @@ export function TvApp({ auth, runner, player, catalog, signInError }: Props) {
   }, []);
   useEffect(() => installBackHook(handleBack), [handleBack]);
 
+  // When a key was last pressed anywhere, for the picker's idle gate below.
+  const lastKeyAt = useRef(Date.now());
+  useEffect(() => {
+    const onKey = () => {
+      lastKeyAt.current = Date.now();
+    };
+    window.addEventListener('keydown', onKey, true);
+    return () => window.removeEventListener('keydown', onKey, true);
+  }, []);
+
   const stageRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (shown === 'nowPlaying') return; // now-playing handles its own keys
     const onKey = (e: KeyboardEvent) => {
+      // Media keys control playback from any screen.
+      const media = mediaKeyEvent(e.key);
+      if (media) {
+        e.preventDefault();
+        if (!e.repeat) void runner.dispatch(media);
+        return;
+      }
       if (keyToCommand(e) === 'back' && isBackKey(e, document.activeElement)) {
         if (shell) return;
         e.preventDefault();
@@ -71,16 +88,23 @@ export function TvApp({ auth, runner, player, catalog, signInError }: Props) {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [shown, shell, handleBack]);
+  }, [shown, shell, handleBack, runner]);
 
   // With "Take over the TV" on, the shell brings Stacker to the front when a record starts by itself:
-  // show that record rather than the picker it was left on.
+  // show that record rather than the picker it was left on, unless someone is browsing the picker.
   const recordKey = `${view.state.crateId}|${view.state.pos}|${view.state.order[view.state.pos] ?? ''}`;
   const seenRecord = useRef(recordKey);
   useEffect(() => {
     if (seenRecord.current === recordKey) return;
     seenRecord.current = recordKey;
-    if (shell && view.takeover && nav.current.shown === 'picker' && view.state.mode !== 'idle') setScreen('nowPlaying');
+    const follow = followNewRecord({
+      inShell: shell !== null,
+      takeover: view.takeover,
+      screen: nav.current.shown,
+      mode: view.state.mode,
+      idleMs: Date.now() - lastKeyAt.current,
+    });
+    if (follow) setScreen('nowPlaying');
   }, [recordKey]);
 
   const [scale, setScale] = useState(fit);

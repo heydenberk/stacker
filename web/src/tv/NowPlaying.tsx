@@ -1,11 +1,13 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'preact/hooks';
-import type { CrateRecord } from '../../../shared/crate';
-import { currentRecord, estimatePosition, problemsFor } from '../conductor/step';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks';
+import type { CrateRecord, CrateTrack } from '../../../shared/crate';
+import { stripEdition } from '../../../shared/edition';
+import { currentRecord, problemsFor } from '../conductor/step';
+import type { ConductorState } from '../conductor/types';
 import type { CrateCatalog } from '../crates';
 import type { Runner, RunnerView } from '../runner';
 import { createSkipGuard, keyToCommand, SKIP_WINDOW_MS } from './keys';
 import { CrossFade, Cover } from './Cover';
-import { useNow } from './hooks';
+import { usePosition } from './hooks';
 import {
   albumClock,
   albumInitials,
@@ -15,6 +17,7 @@ import {
   recordChangeText,
   recordOfText,
   segments,
+  smallCover,
   stripWindow,
   titleSize,
   trackWindow,
@@ -35,7 +38,6 @@ const ROW_PX = 41;
 const STRIP_MAX = 22;
 const CARD_MS = 3_000;
 const TOAST_MS = 6_000;
-const TICK_MS = 250;
 
 const coverOf = (r: CrateRecord | undefined) => ({
   url: r?.spotify?.coverUrl ?? '',
@@ -48,8 +50,9 @@ export function NowPlaying({ runner, view, catalog, onBack, inShell }: Props) {
   const crate = state.crateId ? catalog.byId.get(state.crateId) : undefined;
   const rec = currentRecord(state, catalog.byId);
   const tracks = rec?.spotify?.tracks ?? [];
-  const playing = state.mode === 'playing';
-  const now = useNow(playing, TICK_MS);
+  // Re-renders at track changes; the clocks and bar below tick each second on their own.
+  const { trackIndex } = usePosition(state, rec, 'track');
+  const byId = useMemo(() => new Map(crate?.records.map((r) => [r.rymId, r])), [crate]);
 
   // Remote keys. Nothing on this screen is focusable; every key goes through keyToCommand.
   const latest = useRef(view);
@@ -85,7 +88,10 @@ export function NowPlaying({ runner, view, catalog, onBack, inShell }: Props) {
           void runner.dispatch({ type: 'nextTrack' });
           return;
         case 'togglePause':
-          if (v.state.mode === 'needsDevice') void runner.pollNow();
+          // Premium: nothing OK can do. Stopped trying: try the record again.
+          if (v.status.kind === 'premium') return;
+          if (v.status.kind === 'stoppedTrying') void runner.dispatch({ type: 'resume' });
+          else if (v.state.mode === 'needsDevice') void runner.pollNow();
           else void runner.dispatch({ type: 'togglePause' });
           return;
         case 'skipRecordPress': {
@@ -128,17 +134,19 @@ export function NowPlaying({ runner, view, catalog, onBack, inShell }: Props) {
   // "Couldn't play <album> — skipped" when a new problem appears for this crate.
   const problems = state.crateId ? problemsFor(state, state.crateId) : [];
   const newest = problems.reduce((m, p) => Math.max(m, p.at), 0);
-  const seenProblem = useRef(newest);
+  const seenProblem = useRef({ crateId: state.crateId, at: newest });
   const [toast, setToast] = useState<string | null>(null);
   useEffect(() => {
-    if (newest <= seenProblem.current) return;
-    seenProblem.current = newest;
+    const seen = seenProblem.current;
+    seenProblem.current = { crateId: state.crateId, at: Math.max(newest, seen.crateId === state.crateId ? seen.at : 0) };
+    // A different crate's old problems aren't news.
+    if (seen.crateId !== state.crateId || newest <= seen.at) return;
     const p = problems.find((q) => q.at === newest);
-    const r = p && crate?.records.find((x) => x.rymId === p.rymId);
+    const r = p && byId.get(p.rymId);
     setToast(`Couldn't play ${r ? r.title : 'a record'} on Spotify — skipped`);
     const timer = setTimeout(() => setToast(null), TOAST_MS);
     return () => clearTimeout(timer);
-  }, [newest]);
+  }, [newest, state.crateId]);
 
   // As many track rows as fit under the title (a long title takes two lines).
   const listRef = useRef<HTMLOListElement>(null);
@@ -166,13 +174,8 @@ export function NowPlaying({ runner, view, catalog, onBack, inShell }: Props) {
     );
   }
 
-  // Between polls, carry on from the last reading (across track boundaries) while playing.
-  const { trackIndex, progressMs } = estimatePosition(state, rec, now);
-  const segs = segments(tracks, trackIndex, progressMs);
-  const album = albumClock(tracks, trackIndex, progressMs);
   const win = trackWindow(tracks.length, trackIndex, rows);
   const strip = stripWindow(state.order.length, state.pos, STRIP_MAX);
-  const byId = new Map(crate.records.map((r) => [r.rymId, r]));
   const next = byId.get(state.order[state.pos + 1] ?? '');
   const cover = coverOf(rec);
   const overlay = overlayFor({
@@ -186,8 +189,9 @@ export function NowPlaying({ runner, view, catalog, onBack, inShell }: Props) {
 
   return (
     <div class="screen now-playing">
+      {/* The 64 px cover is plenty under this much blur, and far cheaper for the TV to draw. */}
       <CrossFade id={rec.rymId} class="np-bg">
-        {cover.url && <img class="np-bg-img" src={cover.url} alt="" />}
+        {cover.url && <img class="np-bg-img" src={smallCover(cover.url)} alt="" />}
       </CrossFade>
       <div class="np-scrim" />
 
@@ -196,22 +200,13 @@ export function NowPlaying({ runner, view, catalog, onBack, inShell }: Props) {
           <CrossFade id={rec.rymId} class="np-cover-wrap">
             <Cover class="np-cover" {...cover} />
           </CrossFade>
-          <div class="np-segments">
-            {segs.map((s, i) => (
-              <div key={i} class="np-seg" style={{ flex: `${s.grow} 1 0` }}>
-                <div class="np-seg-fill" style={{ width: `${s.fill}%` }} />
-              </div>
-            ))}
-          </div>
-          <div class="np-times mono">
-            <span>{clock(album.elapsedMs)}</span>
-            <span>{clock(album.totalMs)}</span>
-          </div>
+          <AlbumProgress state={state} rec={rec} />
         </div>
 
         <div class="np-right">
           <div class="kicker">
             {crate.name} · {recordOfText(state.pos, state.order.length)}
+            {state.mode === 'starting' && <span class="np-starting"> · Starting…</span>}
           </div>
           <h1 class="np-title" style={{ fontSize: `${titleSize(rec.title)}px` }}>
             {rec.title}
@@ -227,10 +222,10 @@ export function NowPlaying({ runner, view, catalog, onBack, inShell }: Props) {
               return (
                 <li key={t.id + i} class={`np-track${current ? ' current' : ''}${i < trackIndex ? ' played' : ''}`}>
                   <span class="np-track-n mono">{String(i + 1).padStart(2, '0')}</span>
-                  <span class="np-track-name">{t.name}</span>
+                  <span class="np-track-name">{stripEdition(t.name)}</span>
                   {current && <span class="np-dot" />}
                   <span class="np-spacer" />
-                  <span class="np-track-dur mono">{current ? `${clock(progressMs)} / ${clock(t.durationMs)}` : clock(t.durationMs)}</span>
+                  <span class="np-track-dur mono">{current ? <TrackTime state={state} rec={rec} track={t} /> : clock(t.durationMs)}</span>
                 </li>
               );
             })}
@@ -277,4 +272,32 @@ export function NowPlaying({ runner, view, catalog, onBack, inShell }: Props) {
       {toast && <div class="toast">{toast}</div>}
     </div>
   );
+}
+
+/** The segmented album bar with elapsed / total; ticks each second on its own. */
+function AlbumProgress({ state, rec }: { state: ConductorState; rec: CrateRecord }) {
+  const tracks = rec.spotify?.tracks ?? [];
+  const { trackIndex, progressMs } = usePosition(state, rec, 'second');
+  const album = albumClock(tracks, trackIndex, progressMs);
+  return (
+    <>
+      <div class="np-segments">
+        {segments(tracks, trackIndex, progressMs).map((s, i) => (
+          <div key={i} class="np-seg" style={{ flex: `${s.grow} 1 0` }}>
+            <div class="np-seg-fill" style={{ width: `${s.fill}%` }} />
+          </div>
+        ))}
+      </div>
+      <div class="np-times mono">
+        <span>{clock(album.elapsedMs)}</span>
+        <span>{clock(album.totalMs)}</span>
+      </div>
+    </>
+  );
+}
+
+/** "elapsed / duration" for the current track row; ticks each second on its own. */
+function TrackTime({ state, rec, track }: { state: ConductorState; rec: CrateRecord; track: CrateTrack }) {
+  const { progressMs } = usePosition(state, rec, 'second');
+  return <>{`${clock(Math.min(progressMs, track.durationMs))} / ${clock(track.durationMs)}`}</>;
 }

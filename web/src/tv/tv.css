@@ -256,6 +256,7 @@
   margin: 32px -96px 0;
   padding: 12px 96px 24px;
   overflow: hidden;
+  scroll-padding-inline: 96px;
 }
 
 .card-column {
@@ -401,6 +402,12 @@
 .np-bg {
   position: absolute;
   inset: 0;
+  /* Its own compositor layer, so the blur isn't redrawn when the rest of the screen changes. */
+  will-change: transform;
+}
+
+.np-starting {
+  color: var(--muted);
 }
 
 .np-bg-img {
@@ -410,7 +417,8 @@
   width: 120%;
   height: 150%;
   object-fit: cover;
-  filter: blur(100px) saturate(1.3);
+  /* The mockup's 100px blur, scaled to the 64 px source image; much cheaper on the TV. */
+  filter: blur(28px) saturate(1.3);
   opacity: 0.34;
 }
 
@@ -705,7 +713,9 @@
   background: rgba(21, 18, 15, 0.92);
   border: 1px solid var(--line);
   font-size: 34px;
-  white-space: nowrap;
+  width: max-content;
+  max-width: 1400px;
+  text-align: center;
 }
 
 .banners {

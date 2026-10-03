@@ -41,6 +41,8 @@ export interface RunnerView {
 interface ErrorNote {
   message: string;
   kind: StatusKind;
+  /** Shown on the debug page only, never as a TV status (e.g. the best-effort shuffle/repeat call). */
+  quiet?: boolean;
 }
 
 export interface RunnerDeps {
@@ -112,7 +114,7 @@ export class Runner {
     if (this.premiumRequired) return { kind: 'premium', message: null };
     // Being offline explains everything else, so it shows over a lingering action error.
     if (this.pollError?.kind === 'offline') return { kind: 'offline', message: this.pollError.message };
-    const note = this.actionError ?? this.pollError;
+    const note = [this.actionError, this.pollError].find((n) => n && !n.quiet);
     return note ? { kind: note.kind, message: note.message } : { kind: 'ok', message: null };
   }
 
@@ -337,7 +339,7 @@ export class Runner {
       await fn();
     } catch (e) {
       const message = this.noteError(e)?.message ?? 'request failed';
-      this.actionError = { message: `${SHUFFLE_PREFIX}${message}`, kind: 'error' };
+      this.actionError = { message: `${SHUFFLE_PREFIX}${message}`, kind: 'error', quiet: true };
     }
   }
 
@@ -423,6 +425,8 @@ export class Runner {
 
   private setState(state: ConductorState): void {
     this.state = state;
+    // Seen playing again (e.g. started from the phone): the earlier give-up no longer applies.
+    if (state.mode === 'playing' && this.actionError?.kind === 'stoppedTrying') this.actionError = null;
     // Without a device the last reading is stale; don't show it (or count it as Spotify playing here).
     if (state.mode === 'needsDevice') this.snapshot = null;
     writeJsonKey(this.deps.store, STATE_KEY, state);

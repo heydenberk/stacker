@@ -1,7 +1,10 @@
 import type { RefObject } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
+import type { CrateRecord } from '../../../shared/crate';
+import { estimatePosition } from '../conductor/step';
+import type { ConductorState } from '../conductor/types';
 import type { Runner, RunnerView } from '../runner';
-import { type Direction, pickNext } from './view';
+import { type Direction, nextTickDelay, pickNext } from './view';
 
 export function useRunnerView(runner: Runner): RunnerView {
   const [view, setView] = useState(runner.view());
@@ -14,16 +17,25 @@ export function useRunnerView(runner: Runner): RunnerView {
   return view;
 }
 
-/** Date.now(), refreshed every `ms` while `active`. */
-export function useNow(active: boolean, ms: number): number {
-  const [now, setNow] = useState(Date.now);
+/**
+ * Where playback should be now (see estimatePosition), re-rendering while playing: on each whole
+ * second of progress (`every: 'second'`), or only when the track changes (`every: 'track'`).
+ */
+export function usePosition(state: ConductorState, rec: CrateRecord | null, every: 'second' | 'track') {
+  const [, rerender] = useState(0);
+  const pos = estimatePosition(state, rec, Date.now());
+  const playing = state.mode === 'playing';
+  const trackMs = rec?.spotify?.tracks[pos.trackIndex]?.durationMs ?? 0;
+  // Nothing changes once the estimate reaches the end of the record (it stops there until the next poll).
+  const atEnd = trackMs > 0 && pos.progressMs >= trackMs;
+  const delay = !playing || atEnd ? null : every === 'second' ? nextTickDelay(pos.progressMs) : trackMs - pos.progressMs;
   useEffect(() => {
-    setNow(Date.now());
-    if (!active) return;
-    const id = setInterval(() => setNow(Date.now()), ms);
-    return () => clearInterval(id);
-  }, [active, ms]);
-  return now;
+    if (delay === null) return;
+    // A few ms late, so the estimate has crossed the boundary.
+    const id = setTimeout(() => rerender((n) => n + 1), delay + 5);
+    return () => clearTimeout(id);
+  });
+  return pos;
 }
 
 const ARROWS: Record<string, Direction> = { ArrowLeft: 'left', ArrowRight: 'right', ArrowUp: 'up', ArrowDown: 'down' };
@@ -64,6 +76,17 @@ export function useAutoFocus(ref: RefObject<HTMLElement>, deps: unknown[] = []):
   useEffect(() => {
     focusPrimary(ref.current);
   }, deps);
+}
+
+/**
+ * After each render, if focus has fallen out of the screen (its button was disabled or removed),
+ * put it back on the primary button.
+ */
+export function useKeepFocus(ref: RefObject<HTMLElement>): void {
+  useEffect(() => {
+    const active = document.activeElement;
+    if (!active || active === document.body) focusPrimary(ref.current);
+  });
 }
 
 /** Focus `root`'s primary button, else its first button. */

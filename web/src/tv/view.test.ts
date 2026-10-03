@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { stripEdition } from '../../../shared/edition';
 import { initialState } from '../conductor/step';
 import type { ConductorState } from '../conductor/types';
 import { makeCrate, record } from '../testing/fixtures';
@@ -8,7 +9,11 @@ import {
   bannerFor,
   clock,
   expiryBanner,
+  followNewRecord,
   isBackKey,
+  mediaKeyEvent,
+  nextTickDelay,
+  smallCover,
   mosaicTiles,
   overlayFor,
   pickNext,
@@ -146,7 +151,7 @@ describe('banners', () => {
     expect(bannerFor({ kind: 'ok', message: null })).toBeNull();
     expect(bannerFor({ kind: 'offline', message: 'x' })).toMatch(/^Offline/);
     expect(bannerFor({ kind: 'rateLimited', message: 'x' })).toMatch(/slow down/);
-    expect(bannerFor({ kind: 'error', message: 'Boom' })).toBe('Boom');
+    expect(bannerFor({ kind: 'error', message: 'Boom: 502 Bad Gateway' })).toBe('Spotify had a problem — retrying');
     expect(bannerFor({ kind: 'premium', message: null })).toBeNull();
     expect(bannerFor({ kind: 'stoppedTrying', message: 'x' })).toBeNull();
     expect(bannerFor({ kind: 'signedOut', message: null })).toBeNull();
@@ -164,7 +169,10 @@ describe('overlayFor', () => {
     });
     expect(overlayFor({ ...base, mode: 'awaitingResume' })?.title).toBe('Resume Rainy Sunday — record 4: Pink Moon?');
     expect(overlayFor({ ...base, mode: 'held' })).toEqual({ title: 'Waiting for the other audio to stop', hint: 'OK to play now' });
-    expect(overlayFor({ ...base, mode: 'needsDevice' })?.title).toBe('Open Spotify on the TV');
+    expect(overlayFor({ ...base, mode: 'needsDevice' })).toEqual({
+      title: 'Open Spotify on the TV',
+      hint: 'Stacker carries on when it appears · Back for settings',
+    });
   });
   it('shows nothing while playing or starting', () => {
     expect(overlayFor({ ...base, mode: 'playing' })).toBeNull();
@@ -172,7 +180,10 @@ describe('overlayFor', () => {
   });
   it('puts premium and stopped-trying above the mode', () => {
     expect(overlayFor({ ...base, mode: 'yielded', status: { kind: 'stoppedTrying', message: 'x' } })?.title).toMatch(/stopped trying/i);
-    expect(overlayFor({ ...base, mode: 'paused', status: { kind: 'premium', message: null } })?.title).toMatch(/Premium/);
+    expect(overlayFor({ ...base, mode: 'paused', status: { kind: 'premium', message: null } })).toEqual({
+      title: 'Spotify Premium is needed to play music',
+      hint: 'Back to choose a crate',
+    });
   });
   it('shows the skip prompt over playback', () => {
     expect(overlayFor({ ...base, mode: 'playing', skipArmed: true })?.title).toBe('Press ▼ again to skip this record');
@@ -215,5 +226,61 @@ describe('pickNext', () => {
     const list = [box(0, 0, 500, 80), box(0, 100, 500, 80), box(0, 200, 500, 80)];
     expect(pickNext(list[0]!, list, 'down')).toBe(1);
     expect(pickNext(list[2]!, list, 'up')).toBe(1);
+  });
+});
+
+describe('smallCover', () => {
+  it("swaps Spotify's 640 px cover for the 64 px one", () => {
+    expect(smallCover('https://i.scdn.co/image/ab67616d0000b2735c8b326548e5a345e0f5fec1')).toBe(
+      'https://i.scdn.co/image/ab67616d000048515c8b326548e5a345e0f5fec1',
+    );
+  });
+  it('leaves other URLs alone', () => {
+    expect(smallCover('https://example.com/x.jpg')).toBe('https://example.com/x.jpg');
+    expect(smallCover('')).toBe('');
+  });
+});
+
+describe('nextTickDelay', () => {
+  it('waits until the shown seconds change', () => {
+    expect(nextTickDelay(12_000)).toBe(1_000);
+    expect(nextTickDelay(12_250)).toBe(750);
+    expect(nextTickDelay(12_999)).toBe(1);
+  });
+});
+
+describe('mediaKeyEvent', () => {
+  it('maps media keys to conductor events', () => {
+    expect(mediaKeyEvent('MediaPlayPause')).toEqual({ type: 'togglePause' });
+    expect(mediaKeyEvent('MediaTrackNext')).toEqual({ type: 'nextTrack' });
+    expect(mediaKeyEvent('MediaTrackPrevious')).toEqual({ type: 'previousTrack' });
+  });
+  it('ignores everything else', () => {
+    expect(mediaKeyEvent('Enter')).toBeNull();
+    expect(mediaKeyEvent('ArrowRight')).toBeNull();
+  });
+});
+
+describe('followNewRecord', () => {
+  const base = { inShell: true, takeover: true, screen: 'picker' as const, mode: 'starting' as const, idleMs: 60_000 };
+  it('shows a record that started by itself once the picker has been left alone', () => {
+    expect(followNewRecord(base)).toBe(true);
+    expect(followNewRecord({ ...base, idleMs: 45_000 })).toBe(true);
+  });
+  it('does not yank someone browsing the picker', () => {
+    expect(followNewRecord({ ...base, idleMs: 44_999 })).toBe(false);
+  });
+  it('needs the shell, takeover, the picker, and something playing', () => {
+    expect(followNewRecord({ ...base, inShell: false })).toBe(false);
+    expect(followNewRecord({ ...base, takeover: false })).toBe(false);
+    expect(followNewRecord({ ...base, screen: 'settings' })).toBe(false);
+    expect(followNewRecord({ ...base, mode: 'idle' })).toBe(false);
+  });
+});
+
+describe('track names', () => {
+  it('drop remaster markers for display', () => {
+    expect(stripEdition('Inheritance - 1997 Remaster')).toBe('Inheritance');
+    expect(stripEdition('Pink Moon')).toBe('Pink Moon');
   });
 });

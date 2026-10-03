@@ -25,16 +25,8 @@ export function normText(s: string): string {
   return t.replace(/^the /, '');
 }
 
-export const EDITION_RX =
-  /\b(re-?master(ed)?|remastering|deluxe|expanded|anniversary|edition|reissue|re-issue|mono|stereo|bonus tracks?|(album|original|expanded|deluxe) version)\b/i;
-
-/** Drop "(Remastered 2014)", "[Deluxe Edition]", " - 2009 Remaster" and similar. */
-export function stripEdition(title: string): string {
-  let t = title.replace(/\s*(\([^()]*\)|\[[^[\]]*\])/g, (group: string) => (EDITION_RX.test(group) ? '' : group));
-  t = t.replace(/\s+[-–—]\s+[^-–—]*$/, (suffix: string) => (EDITION_RX.test(suffix) ? '' : suffix));
-  t = t.trim();
-  return t === '' ? title.trim() : t;
-}
+// Shared with the web app, which strips editions from displayed track names.
+export { EDITION_RX, stripEdition } from '../../shared/edition';
 
 /** RYM writes alternate titles as "Main [Alternate]"; return both. */
 export function titleVariants(title: string): string[] {

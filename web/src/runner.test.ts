@@ -783,10 +783,31 @@ describe('Runner status', () => {
     const { runner, player } = setup();
     player.shuffleError = new PlayerError(500, 'other', 'boom');
     await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
-    expect(runner.view().status.kind).toBe('error');
+    expect(runner.view().error).toMatch(/shuffle/);
     player.stateError = new PlayerError(0, 'network', 'Failed to fetch');
     await runner.start();
     expect(runner.view().status).toEqual({ kind: 'offline', message: 'Failed to fetch' });
+  });
+
+  it('keeps the best-effort shuffle/repeat failure out of the status (debug page only)', async () => {
+    const { runner, player } = setup();
+    player.shuffleError = new PlayerError(500, 'other', 'boom');
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().error).toMatch(/shuffle/);
+    expect(runner.view().status).toEqual({ kind: 'ok', message: null });
+  });
+
+  it('clears stopped-trying once the crate is seen playing again', async () => {
+    const { runner, player } = setup();
+    player.playError = new PlayerError(404, 'other', 'Album not found');
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().status.kind).toBe('stoppedTrying');
+    player.playError = null;
+    const { state } = runner.view();
+    player.state = snapFor(state.order[state.pos], 0);
+    await runner.start();
+    expect(runner.view().state.mode).toBe('playing');
+    expect(runner.view().status).toEqual({ kind: 'ok', message: null });
   });
 
   it('reports other failures as errors', async () => {

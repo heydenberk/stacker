@@ -1,12 +1,14 @@
 import { useRef, useState } from 'preact/hooks';
 import type { SpotifyAuth } from '../spotify/auth';
-import { useAutoFocus } from './hooks';
+import { useAutoFocus, useKeepFocus } from './hooks';
 
 export function SignIn({ auth, error, expired }: { auth: SpotifyAuth; error: string | null; expired: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState(false);
   const [startError, setStartError] = useState<string | null>(null);
   useAutoFocus(ref);
+  // Connect is disabled while opening Spotify; if that fails, focus goes back to it.
+  useKeepFocus(ref);
 
   const connect = async () => {
     setBusy(true);

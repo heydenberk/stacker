@@ -4,7 +4,7 @@ import { playableIds, problemsFor } from '../conductor/step';
 import type { CrateCatalog } from '../crates';
 import type { Runner, RunnerView } from '../runner';
 import { Cover } from './Cover';
-import { useAutoFocus, useRovingFocus } from './hooks';
+import { useAutoFocus, useKeepFocus, useRovingFocus } from './hooks';
 import { mosaicTiles, pickerAction, problemsText } from './view';
 
 interface Props {
@@ -19,6 +19,8 @@ export function CratePicker({ catalog, runner, view, onPlaying, onSettings }: Pr
   const ref = useRef<HTMLDivElement>(null);
   useRovingFocus(ref);
   useAutoFocus(ref);
+  // e.g. Start over disappears when the crate stops being in progress.
+  useKeepFocus(ref);
   const { state } = view;
   const inProgress = state.crateId !== null && state.mode !== 'idle' && catalog.byId.has(state.crateId) ? state.crateId : null;
   const primary = inProgress ?? catalog.order[0] ?? null;

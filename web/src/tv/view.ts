@@ -1,6 +1,7 @@
 import type { Crate, CrateTrack } from '../../../shared/crate';
-import type { ConductorState, Mode } from '../conductor/types';
+import type { ConductorEvent, ConductorState, Mode } from '../conductor/types';
 import type { RunnerStatus } from '../runner';
+import type { Screen } from './nav';
 
 /** Pure view helpers for the TV screens. */
 
@@ -118,7 +119,8 @@ export function bannerFor(status: RunnerStatus): string | null {
     case 'rateLimited':
       return 'Spotify asked us to slow down — trying again shortly';
     case 'error':
-      return status.message;
+      // The raw message is on the debug page; the TV says something short.
+      return 'Spotify had a problem — retrying';
     default:
       return null;
   }
@@ -140,7 +142,7 @@ export function overlayFor(o: {
   recordTitle: string;
   skipArmed: boolean;
 }): Overlay | null {
-  if (o.status.kind === 'premium') return { title: 'Spotify Premium is needed to play music', hint: null };
+  if (o.status.kind === 'premium') return { title: 'Spotify Premium is needed to play music', hint: 'Back to choose a crate' };
   if (o.status.kind === 'stoppedTrying') return { title: "Several records in a row couldn't play, so Stacker stopped trying", hint: 'OK to try again' };
   if (o.skipArmed) return { title: 'Press ▼ again to skip this record', hint: null, light: true };
   switch (o.mode) {
@@ -153,7 +155,7 @@ export function overlayFor(o: {
     case 'held':
       return { title: 'Waiting for the other audio to stop', hint: 'OK to play now' };
     case 'needsDevice':
-      return { title: 'Open Spotify on the TV', hint: 'Stacker carries on when it appears' };
+      return { title: 'Open Spotify on the TV', hint: 'Stacker carries on when it appears · Back for settings' };
     default:
       return null;
   }
@@ -172,6 +174,41 @@ export function isBackKey(e: { key: string }, focused: unknown): boolean {
   if (tag === 'TEXTAREA' || tag === 'SELECT') return false;
   if (tag === 'INPUT') return ['button', 'checkbox', 'radio', 'submit', 'reset', 'range', 'color', 'file', 'image'].includes((el.type ?? 'text').toLowerCase());
   return true;
+}
+
+/** Spotify's 64 px cover in place of the 640 px one (same image id), for the blurred background. */
+export function smallCover(url: string): string {
+  return url.replace('ab67616d0000b273', 'ab67616d00004851');
+}
+
+/** Milliseconds until a progress reading of `progressMs` shows the next whole second. */
+export function nextTickDelay(progressMs: number): number {
+  return 1000 - (Math.max(0, Math.floor(progressMs)) % 1000);
+}
+
+/** Media keys work on every screen. */
+export function mediaKeyEvent(key: string): ConductorEvent | null {
+  switch (key) {
+    case 'MediaPlayPause':
+      return { type: 'togglePause' };
+    case 'MediaTrackNext':
+      return { type: 'nextTrack' };
+    case 'MediaTrackPrevious':
+      return { type: 'previousTrack' };
+    default:
+      return null;
+  }
+}
+
+/** Key-free time on the picker before a record that starts by itself takes over the screen. */
+export const PICKER_IDLE_MS = 45_000;
+
+/**
+ * With "Take over the TV" on, the shell brings Stacker to the front when a record starts by itself;
+ * show that record instead of the picker, unless someone is browsing the picker.
+ */
+export function followNewRecord(o: { inShell: boolean; takeover: boolean; screen: Screen; mode: Mode; idleMs: number }): boolean {
+  return o.inShell && o.takeover && o.screen === 'picker' && o.mode !== 'idle' && o.idleMs >= PICKER_IDLE_MS;
 }
 
 export interface Box {
