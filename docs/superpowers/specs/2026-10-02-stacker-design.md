@@ -276,6 +276,13 @@ Android TV app (Kotlin), sideloaded via `adb`:
 - **Check which Chromium version the TV's WebView runs.** If it's old, set Vite's `build.target` to match.
 - **Test on the TV against a deployed build or a LAN-reachable preview.** The dev server binds to 127.0.0.1 only.
 
+**On-TV results (2026-10-03):** Eric's TV is a "Smart TV Pro" (G08, onn-style Google TV) running Android 14 / SDK 34, with Android System WebView 153.
+- **Install:** sideload via adb on port 5555 worked. Wireless-debugging pairing failed with a protocol fault, but the classic network-debugging port was available.
+- **Sign-in:** email/password in the WebView works.
+- **Playback:** Shuffle & play on the TV's Spotify works.
+- **Background running:** the conductor kept going behind other apps (Home → another app; the next record started on time). `dumpsys` shows KeepAliveService as `isForeground=true` (specialUse), with the process at `fg-service`.
+- **Overlay permission:** granted (`SYSTEM_ALERT_WINDOW` appop = allow). `bringToFront` and `isOtherAudioPlaying` are still to be confirmed.
+
 **Takeover setting (decided 2026-10-03, for Plans 3–4):** one on-screen toggle, "Take over the TV", **on** by default.
 - **On:** starting or advancing a record interrupts whatever else is playing; Android pauses it automatically through audio focus. The shell also brings Stacker's now-playing screen to the front.
 - **Off:** Stacker doesn't start or advance a record while another app is producing sound. It waits until that sound stops. Pressing Shuffle & play yourself always overrides this.
