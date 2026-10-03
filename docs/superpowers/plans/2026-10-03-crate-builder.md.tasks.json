@@ -58,7 +58,7 @@
     {
       "id": 6,
       "subject": "Task 7: CLIs and crate-building workflow doc",
-      "status": "pending",
+      "status": "completed",
       "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 7: CLIs and crate-building workflow doc.\n\n**Verify:** `npm run library -- --min 9 | tail -1`\n\n```json:metadata\n{\"files\": [\"builder/cli/resolve.ts\", \"builder/cli/list-library.ts\", \"CLAUDE.md\"], \"verifyCommand\": \"npm run library -- --min 9 | tail -1\", \"acceptanceCriteria\": [\"library lists 356 records at --min 9\", \"resolve usage/missing-env errors exit 1\", \"resolve writes crate + index + review lines\", \"CLAUDE.md documents workflow\"]}\n```",
       "blockedBy": [
         5
@@ -74,5 +74,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-10-03T13:24:35.928907+00:00"
+  "lastUpdated": "2026-10-03T13:26:22.454494+00:00"
 }
