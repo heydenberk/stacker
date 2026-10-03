@@ -12,6 +12,7 @@
     "resolve": "tsx builder/cli/resolve.ts",
     "genres:mb": "tsx builder/cli/genres-mb.ts",
     "library": "tsx builder/cli/list-library.ts",
+    "editor": "vite --config editor/vite.config.ts",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
