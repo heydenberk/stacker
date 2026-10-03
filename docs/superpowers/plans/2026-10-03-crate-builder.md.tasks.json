@@ -4,13 +4,13 @@
     {
       "id": 0,
       "subject": "Task 1: Project scaffold and shared crate types",
-      "status": "pending",
+      "status": "completed",
       "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 1: Project scaffold and shared crate types.\n\n**Verify:** `npm run typecheck && npx vitest run --passWithNoTests`\n\n```json:metadata\n{\"files\": [\"package.json\", \"tsconfig.json\", \".env.example\", \"shared/crate.ts\", \"library/overrides.json\", \"crates/index.json\", \".gitignore\"], \"verifyCommand\": \"npm run typecheck && npx vitest run --passWithNoTests\", \"acceptanceCriteria\": [\"npm run typecheck exits 0\", \"vitest (no tests) exits 0\", \"package-lock.json committed; node_modules ignored\"]}\n```"
     },
     {
       "id": 1,
       "subject": "Task 2: Text normalization",
-      "status": "pending",
+      "status": "completed",
       "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 2: Text normalization.\n\n**Verify:** `npx vitest run builder/test/normalize.test.ts`\n\n```json:metadata\n{\"files\": [\"builder/src/normalize.ts\", \"builder/test/normalize.test.ts\"], \"verifyCommand\": \"npx vitest run builder/test/normalize.test.ts\", \"acceptanceCriteria\": [\"entities decoded\", \"normText strips accents/punctuation/leading the, & -> and\", \"stripEdition removes edition parentheticals and suffixes only\", \"titleVariants splits Main [Alternate]\"]}\n```",
       "blockedBy": [
         0
@@ -19,7 +19,7 @@
     {
       "id": 2,
       "subject": "Task 3: RYM import",
-      "status": "pending",
+      "status": "completed",
       "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 3: RYM import.\n\n**Verify:** `npx vitest run builder/test/rym.test.ts && npm run import-rym -- library/rym-export.csv`\n\n```json:metadata\n{\"files\": [\"builder/src/library.ts\", \"builder/src/rym.ts\", \"builder/src/files.ts\", \"builder/cli/import-rym.ts\", \"builder/test/fixtures/rym-sample.csv\", \"builder/test/rym.test.ts\", \"library/rym-export.csv\", \"library/library.json\"], \"verifyCommand\": \"npx vitest run builder/test/rym.test.ts && npm run import-rym -- library/rym-export.csv\", \"acceptanceCriteria\": [\"header spaces handled\", \"artist join + localized name\", \"entities decoded\", \"year/rating/ownership parsed\", \"real export: 3226 entries, 3020 rated\"]}\n```",
       "blockedBy": [
         1
@@ -74,5 +74,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-10-03T13:05:57.933028+00:00"
+  "lastUpdated": "2026-10-03T13:13:04.235656+00:00"
 }
