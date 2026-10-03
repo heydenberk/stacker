@@ -55,10 +55,24 @@
   inset: 0;
 }
 
-/* ---------- Buttons and focus ---------- */
+/* ---------- Buttons and focus ----------
+ * Navigation is a D-pad, so :focus is the only "you are here" signal and it has to read from the
+ * sofa. The focused item gets several cues at once: an accent fill with dark text, a 6 px accent
+ * ring set off from the content by a dark gap (so it shows over cover art), a soft glow, and a
+ * small scale-up. Every other button on the screen dims a little. Scale is a transform and the
+ * ring a box-shadow, so nothing around it moves.
+ */
+
+.tv-viewport {
+  --focus-ring: 0 0 0 4px var(--ground), 0 0 0 10px var(--accent), 0 0 36px 4px rgba(246, 199, 122, 0.5);
+  --focus-ring-card: 0 0 0 4px var(--ground), 0 0 0 10px var(--accent), 0 0 56px 8px rgba(246, 199, 122, 0.45);
+  --focus-ms: 120ms;
+  --dim: 0.6;
+}
 
 .tv-viewport .btn {
   appearance: none;
+  position: relative;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: rgba(239, 230, 216, 0.06);
@@ -70,12 +84,27 @@
   text-align: left;
   cursor: pointer;
   outline: none;
-  transition: background 120ms ease, box-shadow 120ms ease;
+  transition:
+    transform var(--focus-ms) ease-out,
+    box-shadow var(--focus-ms) ease-out,
+    background-color var(--focus-ms) ease-out,
+    border-color var(--focus-ms) ease-out,
+    color var(--focus-ms) ease-out,
+    opacity var(--focus-ms) ease-out;
 }
 
 .tv-viewport .btn:focus {
-  background: rgba(239, 230, 216, 0.14);
-  box-shadow: 0 0 0 4px var(--accent);
+  z-index: 1;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--ground);
+  box-shadow: var(--focus-ring);
+  transform: scale(1.04);
+}
+
+/* Everything else on the screen steps back while one item has focus. */
+.tv-viewport .screen:has(.btn:focus) .btn:not(:focus) {
+  opacity: var(--dim);
 }
 
 .tv-viewport .btn:disabled {
@@ -90,8 +119,8 @@
 }
 
 .tv-viewport .btn-primary:focus {
-  background: var(--accent);
-  box-shadow: 0 0 0 4px var(--ground), 0 0 0 8px var(--accent);
+  background: #ffd994;
+  border-color: #ffd994;
 }
 
 .tv-viewport .btn-large {
@@ -205,21 +234,63 @@
   white-space: nowrap;
 }
 
+.tv-viewport .btn:focus .list-item-meta {
+  color: var(--ground);
+  opacity: 0.8;
+}
+
+/* A pill switch: the knob's side, the fill and the ON/OFF word all say the state, so it never rests
+   on colour alone. On a focused (accent) row it inverts to stay legible. */
 .toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  align-self: center;
+  min-width: 156px;
+  height: 52px;
+  padding: 0 18px 0 8px;
+  border-radius: 999px;
+  border: 3px solid var(--muted);
+  background: transparent;
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 24px;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 6px 18px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  color: var(--muted);
+  transition:
+    background-color var(--focus-ms) ease-out,
+    border-color var(--focus-ms) ease-out,
+    color var(--focus-ms) ease-out;
+}
+
+.toggle::before {
+  content: '';
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: currentColor;
 }
 
 .toggle-on {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 0 8px 0 22px;
   background: var(--accent);
   border-color: var(--accent);
   color: var(--ground);
+}
+
+.tv-viewport .btn:focus .toggle {
+  border-color: var(--ground);
+  color: var(--ground);
+}
+
+.tv-viewport .btn:focus .toggle-on {
+  background: var(--ground);
+  color: var(--accent);
 }
 
 .setting-note {
@@ -250,11 +321,13 @@
   padding-bottom: 12px;
 }
 
+/* Room inside the clipping row for a focused card's scale, ring and glow; the negative top margin
+   keeps the cards where they were. */
 .card-row {
   display: flex;
   gap: 48px;
-  margin: 32px -96px 0;
-  padding: 12px 96px 24px;
+  margin: -64px -96px 0;
+  padding: 108px 96px 96px;
   overflow: hidden;
   scroll-padding-inline: 96px;
 }
@@ -263,7 +336,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  /* Clear of a focused card's scale and ring above, and Start over's below. */
+  gap: 44px;
   flex-shrink: 0;
   width: 420px;
 }
@@ -277,6 +351,11 @@
   overflow: hidden;
   border-radius: 4px;
   background: rgba(239, 230, 216, 0.04);
+}
+
+.tv-viewport .card:focus {
+  box-shadow: var(--focus-ring-card);
+  transform: scale(1.06);
 }
 
 .card-art {
@@ -342,6 +421,23 @@
 
 .card-meta.warn {
   color: var(--warn);
+}
+
+.tv-viewport .card:focus :is(.card-mood, .card-meta) {
+  color: var(--ground);
+}
+
+.tv-viewport .card:focus .card-meta {
+  font-weight: 600;
+}
+
+.tv-viewport .card:focus .card-mood {
+  opacity: 0.8;
+}
+
+.tv-viewport .card:focus .settings-art {
+  color: var(--ground);
+  background: linear-gradient(135deg, #ffd994, var(--accent-deep));
 }
 
 /* ---------- Covers ---------- */
@@ -742,4 +838,18 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .tv-viewport .btn,
+  .tv-viewport .toggle {
+    transition: none;
+  }
+
+  .tv-viewport .btn:focus,
+  .tv-viewport .card:focus {
+    transform: none;
+  }
 }
