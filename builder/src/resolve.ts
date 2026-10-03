@@ -14,6 +14,30 @@ const UNAVAILABLE = 'unavailable';
 const CRATE_ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 const clean = (s: string) => s.replace(/"/g, '');
+const cleanFree = (s: string) => s.replace(/["':]/g, ' ').replace(/\s+/g, ' ').trim();
+
+/** Accepts a bare album id, a spotify:album: URI or an open.spotify.com album URL; "unavailable" passes through. */
+export function parseAlbumId(value: string): string {
+  const v = value.trim();
+  if (v === UNAVAILABLE) return v;
+  const uri = /^spotify:album:([A-Za-z0-9]+)$/.exec(v);
+  if (uri) return uri[1];
+  const url = /^https?:\/\/open\.spotify\.com\/(?:intl-[a-z]+\/)?album\/([A-Za-z0-9]+)/.exec(v);
+  if (url) return url[1];
+  return v;
+}
+
+export class ResolveAborted extends Error {
+  constructor(
+    readonly partial: Crate,
+    readonly rymId: string,
+    label: string,
+    cause: unknown,
+  ) {
+    super(`Resolving rymId ${rymId} (${label}) failed: ${cause instanceof Error ? cause.message : String(cause)}`, { cause });
+    this.name = 'ResolveAborted';
+  }
+}
 
 /** Search queries for one record, most specific first. */
 export function buildQueries(entry: LibraryEntry): string[] {
@@ -28,7 +52,7 @@ export function buildQueries(entry: LibraryEntry): string[] {
     for (const artist of [entry.artist, entry.artistLocalized]) {
       if (artist) queries.push(`artist:"${clean(artist)}" album:"${title}"`);
     }
-    queries.push(clean(`${entry.artistLocalized ?? entry.artist} ${title}`));
+    queries.push(cleanFree(`${entry.artistLocalized ?? entry.artist} ${title}`));
   }
   return [...new Set(queries)];
 }
@@ -44,8 +68,9 @@ function matchInfo(d: AlbumDetails, confidence: MatchInfo['confidence'], overrid
 
 const toRef = (d: AlbumDetails) => ({ albumId: d.id, coverUrl: d.coverUrl, tracks: d.tracks });
 
-export async function resolveRecord(entry: LibraryEntry, api: SpotifyApi, override: string | undefined): Promise<CrateRecord> {
+export async function resolveRecord(entry: LibraryEntry, api: SpotifyApi, rawOverride: string | undefined): Promise<CrateRecord> {
   const base = hydrate(entry);
+  const override = rawOverride === undefined ? undefined : parseAlbumId(rawOverride);
   if (override === UNAVAILABLE) {
     return { ...base, spotify: null, match: { confidence: 'none', spotifyName: '', spotifyArtists: '', spotifyYear: null, override: true } };
   }
@@ -67,8 +92,9 @@ export async function resolveRecord(entry: LibraryEntry, api: SpotifyApi, overri
   return { ...base, spotify: toRef(d), match: matchInfo(d, best.confidence) };
 }
 
-function isSettled(record: CrateDraft['records'][number], override: string | undefined): boolean {
+function isSettled(record: CrateDraft['records'][number], rawOverride: string | undefined): boolean {
   if (!record.match) return false;
+  const override = rawOverride === undefined ? undefined : parseAlbumId(rawOverride);
   if (override === UNAVAILABLE) return record.spotify === null && record.match.override === true;
   if (override) return record.spotify?.albumId === override;
   return record.match.confidence === 'high' && !record.match.override && !!record.spotify;
@@ -92,19 +118,29 @@ export async function resolveCrate(
   }
 
   const records: CrateRecord[] = [];
-  for (const r of draft.records) {
+  const meta = { id: draft.id, name: draft.name, mood: draft.mood, createdAt: draft.createdAt };
+  for (const [i, r] of draft.records.entries()) {
     const entry = library.get(r.rymId)!;
-    const override = overrides[r.rymId];
-    if (!opts.force && isSettled(r, override)) {
-      records.push({ ...hydrate(entry), spotify: r.spotify ?? null, match: r.match });
-      continue;
+    const rawOverride = overrides[r.rymId];
+    const override = rawOverride === undefined ? undefined : parseAlbumId(rawOverride);
+    try {
+      if (!opts.force && isSettled(r, override)) {
+        const match = override
+          ? { ...r.match!, confidence: override === UNAVAILABLE ? ('none' as const) : ('high' as const), override: true }
+          : r.match;
+        records.push({ ...hydrate(entry), spotify: r.spotify ?? null, match });
+        continue;
+      }
+      const resolved = await resolveRecord(entry, api, override);
+      opts.log?.(`${resolved.match?.override ? 'override' : (resolved.match?.confidence ?? 'none')}\t${entry.artist} — ${entry.title}`);
+      records.push(resolved);
+    } catch (e) {
+      const rest = draft.records.slice(i).map((d) => ({ ...hydrate(library.get(d.rymId)!), spotify: null }));
+      throw new ResolveAborted({ ...meta, records: [...records, ...rest] }, r.rymId, `${entry.artist} — ${entry.title}`, e);
     }
-    const resolved = await resolveRecord(entry, api, override);
-    opts.log?.(`${resolved.match?.confidence ?? 'none'}\t${entry.artist} — ${entry.title}`);
-    records.push(resolved);
   }
 
-  const crate: Crate = { id: draft.id, name: draft.name, mood: draft.mood, createdAt: draft.createdAt, records };
+  const crate: Crate = { ...meta, records };
   return { crate, review: records.filter(needsReview) };
 }
 

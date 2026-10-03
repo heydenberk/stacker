@@ -3,7 +3,7 @@ import type { CrateDraft } from '../../shared/crate';
 import type { LibraryEntry } from '../src/library';
 import { indexById } from '../src/library';
 import type { AlbumCandidate } from '../src/match';
-import { addCrateId, buildQueries, formatReviewLine, resolveCrate, resolveRecord } from '../src/resolve';
+import { ResolveAborted, addCrateId, buildQueries, formatReviewLine, parseAlbumId, resolveCrate, resolveRecord } from '../src/resolve';
 import type { AlbumDetails, SpotifyApi } from '../src/spotify';
 
 class FakeApi implements SpotifyApi {
@@ -178,5 +178,55 @@ describe('addCrateId', () => {
   it('appends new ids and ignores existing ones', () => {
     expect(addCrateId({ crates: ['a'] }, 'b')).toEqual({ crates: ['a', 'b'] });
     expect(addCrateId({ crates: ['a', 'b'] }, 'a')).toEqual({ crates: ['a', 'b'] });
+  });
+});
+
+describe('override acceptance', () => {
+  it('clears a medium match from review when the same album is put in overrides', async () => {
+    const first = await resolveCrate(draft(['200']), library, {}, api());
+    expect(first.review.map((r) => r.rymId)).toEqual(['200']);
+    const again = api();
+    const { crate, review } = await resolveCrate(first.crate, library, { '200': 'bs' }, again);
+    expect(review).toEqual([]);
+    expect(again.searches).toEqual([]);
+    expect(again.albumsFetched).toEqual([]);
+    expect(crate.records[0].match).toMatchObject({ confidence: 'high', override: true });
+  });
+});
+
+describe('partial progress', () => {
+  it('throws ResolveAborted carrying the records resolved so far', async () => {
+    const base = api();
+    const failing = new FakeApi({}, {});
+    failing.searchAlbums = base.searchAlbums.bind(base);
+    failing.getAlbum = async (id: string) => {
+      if (id === 'bs') throw new Error('boom');
+      return base.getAlbum(id);
+    };
+    const err = await resolveCrate(draft(['100', '200']), library, {}, failing).catch((e) => e);
+    expect(err).toBeInstanceOf(ResolveAborted);
+    expect(err.rymId).toBe('200');
+    expect(err.message).toMatch(/boom/);
+    expect(err.partial.records[0].spotify.albumId).toBe('pm');
+    expect(err.partial.records[1]).toMatchObject({ rymId: '200', spotify: null });
+    expect(err.partial.records[1].match).toBeUndefined();
+  });
+});
+
+describe('parseAlbumId', () => {
+  it('accepts ids, URIs and URLs', () => {
+    expect(parseAlbumId('abc')).toBe('abc');
+    expect(parseAlbumId('spotify:album:abc')).toBe('abc');
+    expect(parseAlbumId('https://open.spotify.com/album/abc?si=x')).toBe('abc');
+    expect(parseAlbumId('https://open.spotify.com/intl-de/album/abc')).toBe('abc');
+    expect(parseAlbumId('  abc  ')).toBe('abc');
+    expect(parseAlbumId('unavailable')).toBe('unavailable');
+  });
+});
+
+describe('buildQueries free text', () => {
+  it('strips colons', () => {
+    const qs = buildQueries({ ...pinkMoon, artist: 'Foo', title: 'Album: The Sequel' });
+    expect(qs[qs.length - 1]).not.toContain(':');
   });
 });
