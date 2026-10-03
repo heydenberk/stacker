@@ -73,7 +73,7 @@ export class SpotifyAuth {
     return `${AUTHORIZE_URL}?${params}`;
   }
 
-  /** Handles the redirect back from Spotify (the full callback URL). */
+  /** Handles the redirect back from Spotify to the app root (the full URL, including `?code=…&state=…`). */
   async completeSignIn(callbackUrl: string): Promise<void> {
     const url = new URL(callbackUrl);
     const error = url.searchParams.get('error');
@@ -82,7 +82,8 @@ export class SpotifyAuth {
       throw new Error(`Spotify sign-in was not completed: ${error}`);
     }
     const pending = readJsonKey<Pending>(this.opts.store, PENDING_KEY);
-    // A reload of /callback after a successful sign-in: nothing left to do.
+    // A reload of the redirect URL (the app root with ?code=…, e.g. https://heydenberk.com/stacker/)
+    // after a successful sign-in: nothing left to do.
     if (!pending && this.isSignedIn()) return;
     const code = url.searchParams.get('code');
     if (!pending || !code || url.searchParams.get('state') !== pending.state) {

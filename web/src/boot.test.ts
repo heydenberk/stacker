@@ -13,11 +13,20 @@ describe('appRootUrl', () => {
 });
 
 describe('authCallbackParams', () => {
-  it('code only', () => {
-    expect(authCallbackParams('?code=abc')).toEqual({ code: 'abc', error: null });
+  it('code with state', () => {
+    expect(authCallbackParams('?code=abc&state=xyz')).toEqual({ code: 'abc', error: null });
   });
-  it('error only', () => {
-    expect(authCallbackParams('?error=access_denied')).toEqual({ code: null, error: 'access_denied' });
+  it('error with state', () => {
+    expect(authCallbackParams('?error=access_denied&state=xyz')).toEqual({ code: null, error: 'access_denied' });
+  });
+  it('code without state is not a Spotify redirect', () => {
+    expect(authCallbackParams('?code=abc')).toBeNull();
+  });
+  it('error without state is not a Spotify redirect', () => {
+    expect(authCallbackParams('?error=access_denied')).toBeNull();
+  });
+  it('state alone is not a Spotify redirect', () => {
+    expect(authCallbackParams('?state=xyz')).toBeNull();
   });
   it('neither', () => {
     expect(authCallbackParams('')).toBeNull();

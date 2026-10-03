@@ -43,8 +43,9 @@ class ShellBridge(private val activity: Activity) {
      * Brings the Stacker activity back in front of whatever app is showing.
      *
      * Starting an activity from the background is only allowed because the user granted
-     * "display over other apps" (SYSTEM_ALERT_WINDOW, via `adb shell appops`). If the start throws,
-     * fall back to `moveTaskToFront`, which uses the REORDER_TASKS permission.
+     * "display over other apps" (SYSTEM_ALERT_WINDOW, via `adb shell appops`). A blocked start
+     * usually fails silently rather than throwing, so this always follows up with
+     * `moveTaskToFront`, which uses the REORDER_TASKS permission. Each attempt is independent.
      */
     @JavascriptInterface
     fun bringToFront() {
@@ -57,14 +58,14 @@ class ShellBridge(private val activity: Activity) {
                 )
                 activity.startActivity(intent)
             } catch (e: Exception) {
-                Log.w(TAG, "startActivity failed; falling back to moveTaskToFront", e)
-                try {
-                    val activityManager =
-                        appContext.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-                    activityManager.moveTaskToFront(activity.taskId, 0)
-                } catch (e2: Exception) {
-                    Log.w(TAG, "moveTaskToFront failed", e2)
-                }
+                Log.w(TAG, "startActivity failed", e)
+            }
+            try {
+                val activityManager =
+                    appContext.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+                activityManager.moveTaskToFront(activity.taskId, 0)
+            } catch (e: Exception) {
+                Log.w(TAG, "moveTaskToFront failed", e)
             }
         }
     }
