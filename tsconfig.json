@@ -12,5 +12,5 @@
     "skipLibCheck": true,
     "types": ["node", "vite/client"]
   },
-  "include": ["builder", "shared", "web", "vite.config.ts", "vitest.config.ts"]
+  "include": ["builder", "shared", "web", "editor", "vite.config.ts", "vitest.config.ts"]
 }
