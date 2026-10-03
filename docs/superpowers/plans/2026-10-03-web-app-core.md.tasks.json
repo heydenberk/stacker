@@ -46,7 +46,7 @@
     {
       "id": 5,
       "subject": "Task 6: The conductor",
-      "status": "pending",
+      "status": "completed",
       "description": "See docs/superpowers/plans/2026-10-03-web-app-core.md \u2014 Task 6: The conductor.\n\n**Verify:** `npx vitest run web/src/conductor/step.test.ts`\n\n```json:metadata\n{\"files\": [\"web/src/conductor/step.ts\", \"web/src/testing/fixtures.ts\", \"web/src/conductor/step.test.ts\"], \"verifyCommand\": \"npx vitest run web/src/conductor/step.test.ts\", \"acceptanceCriteria\": [\"choose/start/attach\", \"record-finished rules\", \"yield/resume\", \"lap reshuffle\", \"controls\", \"restore\", \"failures/device\", \"crate edits\", \"nextPollDelay\"]}\n```",
       "blockedBy": [
         3
@@ -73,5 +73,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-10-03T17:40:09.690972+00:00"
+  "lastUpdated": "2026-10-03T17:58:08.149873+00:00"
 }
