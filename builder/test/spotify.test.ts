@@ -5,14 +5,16 @@ type Route = { match: (url: string) => boolean; respond: () => Response };
 
 function fakeFetch(routes: Route[]) {
   const calls: string[] = [];
-  const fn = (async (input: RequestInfo | URL) => {
+  const inits: Array<RequestInit | undefined> = [];
+  const fn = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = String(input);
     calls.push(url);
+    inits.push(init);
     const route = routes.find((r) => r.match(url));
     if (!route) throw new Error(`unexpected fetch ${url}`);
     return route.respond();
   }) as typeof fetch;
-  return { fn, calls };
+  return { fn, calls, inits };
 }
 
 const json = (body: unknown, init: ResponseInit = {}) =>
@@ -110,5 +112,65 @@ describe('SpotifyClient.getAlbum', () => {
         { id: 't2', name: 'Place to Be', durationMs: 161000 },
       ],
     });
+  });
+});
+
+describe('SpotifyClient hardening', () => {
+  const searchRoute = (respond: () => Response): Route => ({ match: (u) => u.includes('/v1/search'), respond });
+  const tooMany = (retryAfter?: string) =>
+    new Response('slow', { status: 429, headers: retryAfter === undefined ? {} : { 'Retry-After': retryAfter } });
+
+  it('defaults to 5s when Retry-After is missing', async () => {
+    let n = 0;
+    const { fn } = fakeFetch([tokenRoute, searchRoute(() => (n++ === 0 ? tooMany() : json(searchBody)))]);
+    const sleep = vi.fn(async (_ms: number) => {});
+    const results = await new SpotifyClient('id', 'secret', fn, sleep).searchAlbums('q');
+    expect(sleep).toHaveBeenCalledWith(5000);
+    expect(results).toHaveLength(1);
+  });
+
+  it('defaults to 5s when Retry-After is garbage', async () => {
+    let n = 0;
+    const { fn } = fakeFetch([tokenRoute, searchRoute(() => (n++ === 0 ? tooMany('abc') : json(searchBody)))]);
+    const sleep = vi.fn(async (_ms: number) => {});
+    await new SpotifyClient('id', 'secret', fn, sleep).searchAlbums('q');
+    expect(sleep).toHaveBeenCalledWith(5000);
+  });
+
+  it('throws instead of sleeping when Retry-After is huge', async () => {
+    const { fn } = fakeFetch([tokenRoute, searchRoute(() => tooMany('3600'))]);
+    const sleep = vi.fn(async (_ms: number) => {});
+    await expect(new SpotifyClient('id', 'secret', fn, sleep).searchAlbums('q')).rejects.toThrow(/quota likely exhausted/);
+    expect(sleep).not.toHaveBeenCalled();
+  });
+
+  it('gives up after 5 attempts without sleeping after the last', async () => {
+    const { fn } = fakeFetch([tokenRoute, searchRoute(() => tooMany('1'))]);
+    const sleep = vi.fn(async (_ms: number) => {});
+    await expect(new SpotifyClient('id', 'secret', fn, sleep).searchAlbums('q')).rejects.toThrow(/still rate-limited after 5 attempts/);
+    expect(sleep).toHaveBeenCalledTimes(4);
+  });
+
+  it('refreshes the token once on 401 and retries', async () => {
+    let n = 0;
+    const { fn, calls } = fakeFetch([
+      tokenRoute,
+      searchRoute(() => (n++ === 0 ? new Response('expired', { status: 401 }) : json(searchBody))),
+    ]);
+    const results = await new SpotifyClient('id', 'secret', fn).searchAlbums('q');
+    expect(results).toHaveLength(1);
+    expect(calls.filter((c) => c.includes('/api/token'))).toHaveLength(2);
+  });
+
+  it('throws when 401 happens twice', async () => {
+    const { fn } = fakeFetch([tokenRoute, searchRoute(() => new Response('bad', { status: 401 }))]);
+    await expect(new SpotifyClient('id', 'secret', fn).searchAlbums('q')).rejects.toThrow(/401/);
+  });
+
+  it('sends the bearer token on API requests', async () => {
+    const { fn, calls, inits } = fakeFetch([tokenRoute, searchRoute(() => json(searchBody))]);
+    await new SpotifyClient('id', 'secret', fn).searchAlbums('q');
+    const i = calls.findIndex((c) => c.includes('/v1/search'));
+    expect((inits[i]?.headers as Record<string, string>).Authorization).toBe('Bearer tok');
   });
 });

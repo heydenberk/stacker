@@ -20,7 +20,7 @@ interface ApiAlbum { id: string; name: string; album_type: string; release_date:
 interface ApiTrack { id: string; name: string; duration_ms: number }
 interface Paging<T> { items: T[]; next: string | null }
 interface ApiAlbumFull extends Omit<ApiAlbum, 'album_type'> {
-  images: Array<{ url: string }>;
+  images?: Array<{ url: string }>;
   tracks: Paging<ApiTrack>;
 }
 
@@ -73,7 +73,7 @@ export class SpotifyClient implements SpotifyApi {
       name: album.name,
       artists: album.artists.map((a) => a.name),
       releaseYear: yearOf(album.release_date),
-      coverUrl: album.images[0]?.url ?? '',
+      coverUrl: album.images?.[0]?.url ?? '',
       tracks,
     };
   }
@@ -96,11 +96,22 @@ export class SpotifyClient implements SpotifyApi {
   }
 
   private async get<T>(url: string): Promise<T> {
+    let refreshedToken = false;
     for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
       const res = await this.fetchFn(url, { headers: { Authorization: `Bearer ${await this.getToken()}` } });
+      if (res.status === 401 && !refreshedToken) {
+        refreshedToken = true;
+        this.token = null;
+        attempt--; // a token refresh does not consume the rate-limit budget
+        continue;
+      }
       if (res.status === 429) {
-        const seconds = Number(res.headers.get('Retry-After') ?? '5');
-        await this.sleep(seconds * 1000);
+        const s = Number(res.headers.get('Retry-After'));
+        const seconds = Number.isFinite(s) && s > 0 ? s : 5;
+        if (seconds > 60) {
+          throw new Error(`Spotify rate limit: asked to wait ${seconds}s (quota likely exhausted) — try again later`);
+        }
+        if (attempt < MAX_ATTEMPTS) await this.sleep(seconds * 1000);
         continue;
       }
       if (!res.ok) throw new Error(`Spotify GET ${url} failed: ${res.status} ${await res.text()}`);
