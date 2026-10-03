@@ -1,0 +1,78 @@
+{
+  "planPath": "docs/superpowers/plans/2026-10-03-crate-builder.md",
+  "tasks": [
+    {
+      "id": 0,
+      "subject": "Task 1: Project scaffold and shared crate types",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 1: Project scaffold and shared crate types.\n\n**Verify:** `npm run typecheck && npx vitest run --passWithNoTests`\n\n```json:metadata\n{\"files\": [\"package.json\", \"tsconfig.json\", \".env.example\", \"shared/crate.ts\", \"library/overrides.json\", \"crates/index.json\", \".gitignore\"], \"verifyCommand\": \"npm run typecheck && npx vitest run --passWithNoTests\", \"acceptanceCriteria\": [\"npm run typecheck exits 0\", \"vitest (no tests) exits 0\", \"package-lock.json committed; node_modules ignored\"]}\n```"
+    },
+    {
+      "id": 1,
+      "subject": "Task 2: Text normalization",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 2: Text normalization.\n\n**Verify:** `npx vitest run builder/test/normalize.test.ts`\n\n```json:metadata\n{\"files\": [\"builder/src/normalize.ts\", \"builder/test/normalize.test.ts\"], \"verifyCommand\": \"npx vitest run builder/test/normalize.test.ts\", \"acceptanceCriteria\": [\"entities decoded\", \"normText strips accents/punctuation/leading the, & -> and\", \"stripEdition removes edition parentheticals and suffixes only\", \"titleVariants splits Main [Alternate]\"]}\n```",
+      "blockedBy": [
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "subject": "Task 3: RYM import",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 3: RYM import.\n\n**Verify:** `npx vitest run builder/test/rym.test.ts && npm run import-rym -- library/rym-export.csv`\n\n```json:metadata\n{\"files\": [\"builder/src/library.ts\", \"builder/src/rym.ts\", \"builder/src/files.ts\", \"builder/cli/import-rym.ts\", \"builder/test/fixtures/rym-sample.csv\", \"builder/test/rym.test.ts\", \"library/rym-export.csv\", \"library/library.json\"], \"verifyCommand\": \"npx vitest run builder/test/rym.test.ts && npm run import-rym -- library/rym-export.csv\", \"acceptanceCriteria\": [\"header spaces handled\", \"artist join + localized name\", \"entities decoded\", \"year/rating/ownership parsed\", \"real export: 3226 entries, 3020 rated\"]}\n```",
+      "blockedBy": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "subject": "Task 4: Match scoring",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 4: Match scoring.\n\n**Verify:** `npx vitest run builder/test/match.test.ts`\n\n```json:metadata\n{\"files\": [\"builder/src/match.ts\", \"builder/test/match.test.ts\"], \"verifyCommand\": \"npx vitest run builder/test/match.test.ts\", \"acceptanceCriteria\": [\"Nick Drake never matches Drake\", \"original beats remaster; album beats single\", \"Various Artists match compilations\", \"Main [Alternate] titles\", \"partial/multi-artist credits\", \"romanized names\", \"confidence thresholds 90/70/45\"]}\n```",
+      "blockedBy": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "subject": "Task 5: Spotify client",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 5: Spotify client.\n\n**Verify:** `npx vitest run builder/test/spotify.test.ts`\n\n```json:metadata\n{\"files\": [\"builder/src/spotify.ts\", \"builder/test/spotify.test.ts\"], \"verifyCommand\": \"npx vitest run builder/test/spotify.test.ts\", \"acceptanceCriteria\": [\"token cached\", \"search limit=10, nulls skipped\", \"getAlbum paginates tracks\", \"429 Retry-After retry; other errors throw\"]}\n```",
+      "blockedBy": [
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "subject": "Task 6: Crate resolver",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 6: Crate resolver.\n\n**Verify:** `npx vitest run builder/test/resolve.test.ts`\n\n```json:metadata\n{\"files\": [\"builder/src/resolve.ts\", \"builder/test/resolve.test.ts\"], \"verifyCommand\": \"npx vitest run builder/test/resolve.test.ts\", \"acceptanceCriteria\": [\"validation before API calls\", \"hydration from library\", \"stop at first high match\", \"overrides (album id / unavailable)\", \"settled records kept unless force\", \"review list\", \"formatReviewLine, addCrateId\"]}\n```",
+      "blockedBy": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 6,
+      "subject": "Task 7: CLIs and crate-building workflow doc",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 7: CLIs and crate-building workflow doc.\n\n**Verify:** `npm run library -- --min 9 | tail -1`\n\n```json:metadata\n{\"files\": [\"builder/cli/resolve.ts\", \"builder/cli/list-library.ts\", \"CLAUDE.md\"], \"verifyCommand\": \"npm run library -- --min 9 | tail -1\", \"acceptanceCriteria\": [\"library lists 356 records at --min 9\", \"resolve usage/missing-env errors exit 1\", \"resolve writes crate + index + review lines\", \"CLAUDE.md documents workflow\"]}\n```",
+      "blockedBy": [
+        5
+      ]
+    },
+    {
+      "id": 7,
+      "subject": "Task 8: Spotify developer app and first real crate (with Eric)",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 8: Spotify developer app and first real crate (with Eric).\n\n**Verify:** `npm run resolve -- crates/rainy-sunday.json`\n\n```json:metadata\n{\"files\": [\".env\", \"crates/rainy-sunday.json\", \"crates/index.json\", \"library/overrides.json\"], \"verifyCommand\": \"npm run resolve -- crates/rainy-sunday.json\", \"acceptanceCriteria\": [\"Stacker Spotify app exists\", \"20 records playable or explicitly unavailable\", \"0 to review\", \"index lists rainy-sunday\"]}\n```",
+      "blockedBy": [
+        6
+      ]
+    }
+  ],
+  "lastUpdated": "2026-10-03T13:05:57.933028+00:00"
+}

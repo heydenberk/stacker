@@ -148,6 +148,10 @@ Known trap (test fixture): naive search for "Nick Drake Pink Moon" returns Drake
 Records with `"spotify": null` (unavailable) are kept in the file for reference and
 skipped by the app.
 
+The resolver also writes an optional `match` object on each record:
+`{ confidence, spotifyName, spotifyArtists, spotifyYear, override? }`. It is used for
+match review and re-runs; the app ignores it.
+
 ## Part 2 — TV web app
 
 ### Conductor
