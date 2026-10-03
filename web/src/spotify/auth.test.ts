@@ -9,19 +9,20 @@ const tokenJson = (body: object, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } });
 
 function setup() {
-  const responses: Response[] = [];
+  const responses: Array<Response | Promise<Response>> = [];
   const requests: Array<{ url: string; body: URLSearchParams }> = [];
   const fetchFn = (async (input: RequestInfo | URL, init?: RequestInit) => {
     requests.push({ url: String(input), body: new URLSearchParams(String(init?.body ?? '')) });
     const next = responses.shift();
     if (!next) throw new Error('unexpected fetch');
-    return next;
+    return await next;
   }) as typeof fetch;
   let now = 1_000_000;
   const store = memoryStore();
   const auth = new SpotifyAuth({ clientId: 'client123', redirectUri: REDIRECT, store, fetchFn, now: () => now });
   return {
     auth,
+    store,
     responses,
     requests,
     advance: (ms: number) => {
@@ -131,5 +132,70 @@ describe('SpotifyAuth refresh', () => {
     const [a, b] = await Promise.all([s.auth.refresh(), s.auth.refresh()]);
     expect([a, b]).toEqual(['at2', 'at2']);
     expect(s.requests).toHaveLength(2);
+  });
+
+  it('makes a new request for a refresh after the previous one settled', async () => {
+    const s = setup();
+    await signIn(s);
+    s.responses.push(tokenJson({ access_token: 'at2', expires_in: 3600 }));
+    await s.auth.refresh();
+    s.responses.push(tokenJson({ access_token: 'at3', expires_in: 3600 }));
+    expect(await s.auth.refresh()).toBe('at3');
+    expect(s.requests).toHaveLength(3);
+  });
+
+  it('discards a refresh that finishes after sign-out', async () => {
+    const s = setup();
+    await signIn(s);
+    let resolve!: (r: Response) => void;
+    s.responses.push(new Promise<Response>((r) => (resolve = r)));
+    const pending = s.auth.refresh();
+    s.auth.signOut();
+    resolve(tokenJson({ access_token: 'at2', expires_in: 3600 }));
+    expect(await pending).toBeNull();
+    expect(s.auth.isSignedIn()).toBe(false);
+  });
+
+  it('throws on invalid_client but stays signed in', async () => {
+    const s = setup();
+    await signIn(s);
+    s.responses.push(tokenJson({ error: 'invalid_client' }, 400));
+    await expect(s.auth.refresh()).rejects.toThrow(/invalid_client/);
+    expect(s.auth.isSignedIn()).toBe(true);
+  });
+
+  it('throws on 401 but stays signed in', async () => {
+    const s = setup();
+    await signIn(s);
+    s.responses.push(new Response('nope', { status: 401 }));
+    await expect(s.auth.refresh()).rejects.toThrow(/401/);
+    expect(s.auth.isSignedIn()).toBe(true);
+  });
+});
+
+describe('SpotifyAuth callback hardening', () => {
+  it('ignores a reloaded callback after a successful sign-in', async () => {
+    const s = setup();
+    const state = new URL(await s.auth.beginSignIn()).searchParams.get('state');
+    s.responses.push(tokenJson({ access_token: 'at1', refresh_token: 'rt1', expires_in: 3600 }));
+    const cb = `${REDIRECT}?code=abc&state=${state}`;
+    await s.auth.completeSignIn(cb);
+    await s.auth.completeSignIn(cb);
+    expect(s.requests).toHaveLength(1);
+    expect(s.auth.isSignedIn()).toBe(true);
+  });
+
+  it('clears the pending entry on a state mismatch', async () => {
+    const s = setup();
+    const state = new URL(await s.auth.beginSignIn()).searchParams.get('state');
+    await expect(s.auth.completeSignIn(`${REDIRECT}?code=abc&state=wrong`)).rejects.toThrow(/did not match/);
+    await expect(s.auth.completeSignIn(`${REDIRECT}?code=abc&state=${state}`)).rejects.toThrow(/did not match/);
+  });
+
+  it('rejects a token response without expires_in', async () => {
+    const s = setup();
+    const state = new URL(await s.auth.beginSignIn()).searchParams.get('state');
+    s.responses.push(tokenJson({ access_token: 'at1', refresh_token: 'rt1' }));
+    await expect(s.auth.completeSignIn(`${REDIRECT}?code=abc&state=${state}`)).rejects.toThrow(/invalid token response/);
   });
 });

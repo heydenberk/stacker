@@ -36,6 +36,7 @@ export interface AuthOptions {
   now?: () => number;
 }
 
+// The modulo bias (~6 bits/char over 64 chars) is irrelevant for PKCE verifiers and state.
 export function randomString(length: number): string {
   const bytes = crypto.getRandomValues(new Uint8Array(length));
   return Array.from(bytes, (b) => PKCE_ALPHABET[b % PKCE_ALPHABET.length]).join('');
@@ -76,12 +77,20 @@ export class SpotifyAuth {
   async completeSignIn(callbackUrl: string): Promise<void> {
     const url = new URL(callbackUrl);
     const error = url.searchParams.get('error');
-    if (error) throw new Error(`Spotify sign-in was not completed: ${error}`);
+    if (error) {
+      this.opts.store.remove(PENDING_KEY);
+      throw new Error(`Spotify sign-in was not completed: ${error}`);
+    }
     const pending = readJsonKey<Pending>(this.opts.store, PENDING_KEY);
+    // A reload of /callback after a successful sign-in: nothing left to do.
+    if (!pending && this.isSignedIn()) return;
     const code = url.searchParams.get('code');
     if (!pending || !code || url.searchParams.get('state') !== pending.state) {
+      this.opts.store.remove(PENDING_KEY);
       throw new Error('Spotify sign-in response did not match this browser; please try again');
     }
+    // The authorization code is single-use, so the pending entry is too.
+    this.opts.store.remove(PENDING_KEY);
     const res = await this.postToken(
       new URLSearchParams({
         grant_type: 'authorization_code',
@@ -95,7 +104,6 @@ export class SpotifyAuth {
     if (!res.refresh_token) throw new Error('Spotify did not return a refresh token');
     const now = this.now();
     this.save({ accessToken: res.access_token, refreshToken: res.refresh_token, expiresAt: now + res.expires_in * 1000, authorizedAt: now });
-    this.opts.store.remove(PENDING_KEY);
   }
 
   isSignedIn(): boolean {
@@ -136,6 +144,9 @@ export class SpotifyAuth {
     const res = await this.postToken(
       new URLSearchParams({ grant_type: 'refresh_token', refresh_token: t.refreshToken, client_id: this.opts.clientId }),
     );
+    // Signed out (or in again) while the request was in flight: discard the result.
+    const current = this.tokens();
+    if (!current || current.refreshToken !== t.refreshToken) return current?.accessToken ?? null;
     if (!res) {
       this.signOut();
       return null;
@@ -149,16 +160,28 @@ export class SpotifyAuth {
     return res.access_token;
   }
 
-  /** null when Spotify rejects the grant (400/401); other failures throw. */
+  /** null only when Spotify says the grant is dead (400 invalid_grant); other failures throw. */
   private async postToken(body: URLSearchParams): Promise<TokenResponse | null> {
     const res = await this.fetchFn(TOKEN_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body,
     });
-    if (res.status === 400 || res.status === 401) return null;
-    if (!res.ok) throw new Error(`Spotify token request failed: ${res.status}`);
-    return (await res.json()) as TokenResponse;
+    let json: Record<string, unknown> | null = null;
+    try {
+      json = (await res.json()) as Record<string, unknown>;
+    } catch {
+      json = null;
+    }
+    if (!res.ok) {
+      const error = typeof json?.error === 'string' ? json.error : '';
+      if (res.status === 400 && error === 'invalid_grant') return null;
+      throw new Error(`Spotify token request failed: ${res.status}${error ? ` (${error})` : ''}`);
+    }
+    if (typeof json?.access_token !== 'string' || !Number.isFinite(json.expires_in)) {
+      throw new Error('Spotify returned an invalid token response');
+    }
+    return json as unknown as TokenResponse;
   }
 
   private tokens(): Tokens | null {
