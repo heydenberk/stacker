@@ -330,7 +330,7 @@ export function decodeEntities(s: string): string {
 export function normText(s: string): string {
   const t = s
     .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .replace(/&/g, ' and ')
     .replace(/[^\p{L}\p{N}\s]/gu, ' ')
