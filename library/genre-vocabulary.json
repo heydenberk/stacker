@@ -1,0 +1,314 @@
+{
+  "parents": [
+    {
+      "name": "Rock",
+      "genres": [
+        "Rock & Roll",
+        "Rockabilly",
+        "Surf Rock",
+        "Beat Music",
+        "British Rhythm & Blues",
+        "Freakbeat",
+        "Garage Rock",
+        "Blues Rock",
+        "Hard Rock",
+        "Heavy Metal",
+        "Stoner Rock",
+        "Glam Rock",
+        "Art Rock",
+        "Pop Rock",
+        "Soft Rock",
+        "Heartland Rock",
+        "Roots Rock",
+        "Southern Rock",
+        "Power Pop",
+        "Folk Rock"
+      ]
+    },
+    {
+      "name": "Psychedelic & Prog",
+      "genres": [
+        "Psychedelic Rock",
+        "Neo-Psychedelia",
+        "Psychedelic Pop",
+        "Heavy Psych",
+        "Space Rock",
+        "Krautrock",
+        "Progressive Rock",
+        "Canterbury Scene",
+        "Anatolian Rock"
+      ]
+    },
+    {
+      "name": "Indie & Alternative",
+      "genres": [
+        "Indie Rock",
+        "Alternative Rock",
+        "Lo-Fi Indie",
+        "Slacker Rock",
+        "Noise Rock",
+        "Post-Rock",
+        "Slowcore",
+        "Sadcore",
+        "Math Rock",
+        "Emo",
+        "Grunge",
+        "Britpop",
+        "Garage Rock Revival"
+      ]
+    },
+    {
+      "name": "Shoegaze & Dream Pop",
+      "genres": [
+        "Shoegaze",
+        "Dream Pop",
+        "Ethereal Wave",
+        "Noise Pop",
+        "Space Rock Revival",
+        "Ambient Pop",
+        "Hypnagogic Pop"
+      ]
+    },
+    {
+      "name": "Indie Pop & Twee",
+      "genres": [
+        "Indie Pop",
+        "Twee Pop",
+        "Jangle Pop",
+        "C86",
+        "Chamber Pop",
+        "Shibuya-kei",
+        "Bedroom Pop"
+      ]
+    },
+    {
+      "name": "Punk & Post-Punk",
+      "genres": [
+        "Proto-Punk",
+        "Punk Rock",
+        "Art Punk",
+        "Hardcore Punk",
+        "Post-Hardcore",
+        "Pop Punk",
+        "Garage Punk",
+        "Punk Blues",
+        "Post-Punk",
+        "Gothic Rock",
+        "Darkwave",
+        "Coldwave",
+        "No Wave",
+        "New Wave",
+        "Dance-Punk",
+        "Post-Punk Revival"
+      ]
+    },
+    {
+      "name": "Pop",
+      "genres": [
+        "Synthpop",
+        "Electropop",
+        "Dance-Pop",
+        "Art Pop",
+        "Sophisti-Pop",
+        "Baroque Pop",
+        "Sunshine Pop",
+        "Traditional Pop",
+        "Girl Group",
+        "Yé-yé",
+        "Chanson",
+        "Mandopop",
+        "Easy Listening",
+        "Lounge"
+      ]
+    },
+    {
+      "name": "Folk, Country & Blues",
+      "genres": [
+        "Folk Rock",
+        "Contemporary Folk",
+        "American Folk Music",
+        "Indie Folk",
+        "Singer-Songwriter",
+        "Folk Pop",
+        "Chamber Folk",
+        "Psychedelic Folk",
+        "British Folk Rock",
+        "American Primitivism",
+        "Freak Folk",
+        "Country Rock",
+        "Alt-Country",
+        "Americana",
+        "Outlaw Country",
+        "Traditional Country",
+        "Countrypolitan",
+        "Bluegrass",
+        "Gothic Country",
+        "Country Blues",
+        "Chicago Blues",
+        "Electric Blues"
+      ]
+    },
+    {
+      "name": "Soul, R&B & Funk",
+      "genres": [
+        "Rhythm & Blues",
+        "Soul",
+        "Southern Soul",
+        "Deep Soul",
+        "Chicago Soul",
+        "Pop Soul",
+        "Smooth Soul",
+        "Psychedelic Soul",
+        "Blue-Eyed Soul",
+        "Neo-Soul",
+        "Contemporary R&B",
+        "Alternative R&B",
+        "Funk",
+        "P-Funk",
+        "Synth Funk",
+        "Disco",
+        "Gospel"
+      ]
+    },
+    {
+      "name": "Hip Hop",
+      "genres": [
+        "East Coast Hip Hop",
+        "West Coast Hip Hop",
+        "Southern Hip Hop",
+        "Boom Bap",
+        "Jazz Rap",
+        "Conscious Hip Hop",
+        "Abstract Hip Hop",
+        "Experimental Hip Hop",
+        "Hardcore Hip Hop",
+        "Gangsta Rap",
+        "Pop Rap",
+        "Instrumental Hip Hop",
+        "Trap"
+      ]
+    },
+    {
+      "name": "Electronic",
+      "genres": [
+        "House",
+        "Deep House",
+        "Microhouse",
+        "Techno",
+        "Ambient Techno",
+        "IDM",
+        "Glitch",
+        "Electro",
+        "Alternative Dance",
+        "Big Beat",
+        "Drum and Bass",
+        "UK Bass",
+        "Downtempo",
+        "Trip Hop",
+        "Chillwave",
+        "Indietronica",
+        "Folktronica",
+        "Progressive Electronic"
+      ]
+    },
+    {
+      "name": "Jazz",
+      "genres": [
+        "Bebop",
+        "Hard Bop",
+        "Cool Jazz",
+        "Modal Jazz",
+        "Post-Bop",
+        "Soul Jazz",
+        "Spiritual Jazz",
+        "Free Jazz",
+        "Avant-Garde Jazz",
+        "Third Stream",
+        "Jazz Fusion",
+        "Jazz-Funk",
+        "Vocal Jazz",
+        "Big Band",
+        "ECM Style Jazz",
+        "Latin Jazz",
+        "Samba-Jazz"
+      ]
+    },
+    {
+      "name": "Brazilian",
+      "genres": [
+        "Bossa Nova",
+        "Samba",
+        "MPB",
+        "Tropicália",
+        "Samba-Jazz",
+        "Samba Soul",
+        "Samba-Rock",
+        "Jovem Guarda",
+        "Psicodelia Brasileira"
+      ]
+    },
+    {
+      "name": "Latin & Caribbean",
+      "genres": [
+        "Cumbia",
+        "Bolero",
+        "Salsa",
+        "Latin Pop",
+        "Latin Rock",
+        "Latin Jazz",
+        "Roots Reggae",
+        "Dub",
+        "Ska"
+      ]
+    },
+    {
+      "name": "African",
+      "genres": [
+        "Afrobeat",
+        "Afro-Funk",
+        "Highlife",
+        "Congolese Rumba",
+        "Ethio-Jazz",
+        "Desert Blues"
+      ]
+    },
+    {
+      "name": "Experimental & Ambient",
+      "genres": [
+        "Experimental Rock",
+        "Ambient",
+        "Dark Ambient",
+        "Drone",
+        "Fourth World",
+        "Noise",
+        "Industrial",
+        "Musique Concrète",
+        "Tape Music",
+        "Plunderphonics",
+        "Sound Collage",
+        "Free Improvisation"
+      ]
+    },
+    {
+      "name": "Classical & Soundtrack",
+      "genres": [
+        "Western Classical",
+        "Modern Classical",
+        "Minimalism",
+        "Post-Minimalism",
+        "Holy Minimalism",
+        "Film Score"
+      ]
+    },
+    {
+      "name": "Spoken Word & Comedy",
+      "genres": [
+        "Stand-Up Comedy",
+        "Comedy Rock",
+        "Spoken Word",
+        "Jazz Poetry",
+        "Dub Poetry"
+      ]
+    }
+  ]
+}
