@@ -25,6 +25,8 @@ export const SKIP_WINDOW_MS = 3000;
 export interface SkipGuard {
   press(): 'armed' | 'confirmed';
   isArmed(): boolean;
+  /** Disarm, e.g. when another key is pressed or the screen changes. */
+  reset(): void;
 }
 
 /**
@@ -45,5 +47,8 @@ export function createSkipGuard(now: () => number): SkipGuard {
       return 'armed';
     },
     isArmed: armed,
+    reset() {
+      armedAt = null;
+    },
   };
 }

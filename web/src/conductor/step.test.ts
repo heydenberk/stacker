@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Crate } from '../../../shared/crate';
 import { TRACK_MS, albumOf, makeCrate, otherSnap, record, snapFor } from '../testing/fixtures';
-import { initialState, nextPollDelay, problemsFor, restore, step } from './step';
+import { STALE_GAP_MS, estimatePosition, initialState, nextPollDelay, problemsFor, restore, step } from './step';
 import type { ConductorEvent, ConductorState, PlayOrigin, StepContext } from './types';
 
 const T0 = 1_000_000;
@@ -79,7 +79,7 @@ describe('starting', () => {
     }
     const retry = go(s, empty, { now: T0 + 20_000 });
     expect(retry.state).toMatchObject({ mode: 'starting', startAttempts: 2, startedAt: T0 + 20_000 });
-    expect(retry.actions).toEqual([autoPlay(s.order[0])]);
+    expect(retry.actions).toEqual([userPlay(s.order[0])]);
     expect(go(retry.state, empty, { now: T0 + 30_000 }).state.mode).toBe('starting');
     const gaveUp = go(retry.state, empty, { now: T0 + 40_000 });
     expect(gaveUp.state.mode).toBe('yielded');
@@ -400,7 +400,7 @@ describe('failures', () => {
     const r = go(s, { type: 'playFailed', reason: 'Not found' });
     expect(r.state.problems).toEqual([{ crateId: 'c', rymId: s.order[0], reason: 'Not found', at: T0 }]);
     expect(r.state.pos).toBe(1);
-    expect(r.actions).toEqual([autoPlay(s.order[1])]);
+    expect(r.actions).toEqual([userPlay(s.order[1])]);
   });
 
   it('waits for the device and retries at the same spot', () => {
@@ -408,7 +408,7 @@ describe('failures', () => {
     const missing = go(s, { type: 'deviceMissing' }).state;
     expect(missing.mode).toBe('needsDevice');
     expect(go(missing, { type: 'snapshot', snapshot: otherSnap() }).state.mode).toBe('needsDevice');
-    expect(go(missing, { type: 'deviceReady' }).actions).toEqual([autoPlay(s.order[0], 1, 30_000)]);
+    expect(go(missing, { type: 'deviceReady' }).actions).toEqual([userPlay(s.order[0], 1, 30_000)]);
   });
 });
 
@@ -459,6 +459,8 @@ describe('nextPollDelay', () => {
 
 describe('play origin', () => {
   const origins = (r: { actions: Array<{ type: string; origin?: string }> }) => r.actions.filter((a) => a.type === 'play').map((a) => a.origin);
+  /** The next record started automatically after the first finished. */
+  const autoStarted = () => go(playing(2, TRACK_MS - 3_000), { type: 'snapshot', snapshot: null }, { now: T0 + 3_000 }).state;
 
   it('marks plays caused by the user as user', () => {
     const yielded = yieldFrom(playing(1, 30_000)).state;
@@ -471,29 +473,47 @@ describe('play origin', () => {
     expect(origins(go(playing(2, 30_000), { type: 'nextTrack' }))).toEqual(['user']);
   });
 
-  it('marks plays the conductor starts on its own as auto', () => {
+  it('marks advances on finish and crate edits as auto', () => {
     expect(origins(go(playing(2, TRACK_MS - 3_000), { type: 'snapshot', snapshot: null }, { now: T0 + 3_000 }))).toEqual(['auto']);
-    expect(origins(go(chosen(), { type: 'snapshot', snapshot: null }, { now: T0 + 20_000 }))).toEqual(['auto']);
-    expect(origins(go(chosen(), { type: 'playFailed', reason: 'nope' }))).toEqual(['auto']);
+    expect(autoStarted().startOrigin).toBe('auto');
     const s = playing(0);
     const base = makeCrate();
     const smaller = new Map<string, Crate>([['c', { ...base, records: base.records.filter((r) => r.rymId !== s.order[0]) }]]);
     expect(origins(go(s, { type: 'crateUpdated' }, { crates: smaller }))).toEqual(['auto']);
   });
 
-  it('retries a play on deviceReady with the origin of the play that found no device', () => {
-    const s = playing(1, 30_000);
-    const afterUser = go(s, { type: 'deviceMissing', origin: 'user' }).state;
-    expect(afterUser).toMatchObject({ mode: 'needsDevice', pendingOrigin: 'user' });
-    expect(go(afterUser, { type: 'deviceReady' }).actions).toEqual([userPlay(s.order[0], 1, 30_000)]);
-    const afterAuto = go(s, { type: 'deviceMissing', origin: 'auto' }).state;
-    expect(go(afterAuto, { type: 'deviceReady' }).actions).toEqual([autoPlay(s.order[0], 1, 30_000)]);
+  it('retries a silent start and skips a failed record with the origin of the start', () => {
+    expect(origins(go(chosen(), { type: 'snapshot', snapshot: null }, { now: T0 + 20_000 }))).toEqual(['user']);
+    expect(origins(go(chosen(), { type: 'playFailed', reason: 'nope' }))).toEqual(['user']);
+    expect(origins(go(autoStarted(), { type: 'snapshot', snapshot: null }, { now: T0 + 30_000 }))).toEqual(['auto']);
+    expect(origins(go(autoStarted(), { type: 'playFailed', reason: 'nope' }))).toEqual(['auto']);
   });
 
-  it('treats a deviceReady retry as auto when the origin is unknown', () => {
-    const missing = go(playing(1, 30_000), { type: 'deviceMissing' }).state;
-    expect(missing.pendingOrigin).toBe('auto');
-    expect(origins(go(missing, { type: 'deviceReady' }))).toEqual(['auto']);
+  it('retries a play that found no device with the origin of the start', () => {
+    const fromUser = go(chosen(), { type: 'deviceMissing' }).state;
+    expect(origins(go(fromUser, { type: 'deviceReady' }))).toEqual(['user']);
+    const fromAuto = go(autoStarted(), { type: 'deviceMissing', forPlay: true }).state;
+    expect(origins(go(fromAuto, { type: 'deviceReady' }))).toEqual(['auto']);
+  });
+
+  it('treats the retry as user when the user picked the device', () => {
+    const fromAuto = go(autoStarted(), { type: 'deviceMissing', forPlay: true }).state;
+    expect(origins(go(fromAuto, { type: 'deviceReady', origin: 'user' }))).toEqual(['user']);
+  });
+
+  it('does not replay when a pause found no device; the device returning leaves it paused', () => {
+    const paused = go(playing(1, 30_000), { type: 'togglePause' }).state;
+    const missing = go(paused, { type: 'deviceMissing', forPlay: false }).state;
+    expect(missing.mode).toBe('needsDevice');
+    const back = go(missing, { type: 'deviceReady' });
+    expect(back.state).toMatchObject({ mode: 'paused', trackIndex: 1, progressMs: 30_000 });
+    expect(back.actions).toEqual([]);
+    expect(go(missing, { type: 'deviceReady', origin: 'user' }).actions).toEqual([]);
+  });
+
+  it('returns to playing without a play when a track skip found no device', () => {
+    const missing = go(playing(0), { type: 'deviceMissing', forPlay: false }).state;
+    expect(go(missing, { type: 'deviceReady' })).toMatchObject({ state: { mode: 'playing' }, actions: [] });
   });
 });
 
@@ -501,27 +521,33 @@ describe('takeover gate', () => {
   const hold = { holdAutoStarts: true };
   const finish = (s: ConductorState, over: Partial<StepContext> = {}) =>
     go(s, { type: 'snapshot', snapshot: null }, { now: T0 + 3_000, ...over });
+  const heldState = () => finish(playing(2, TRACK_MS - 3_000), hold).state;
 
   it('holds instead of advancing when a record finishes while auto starts are held', () => {
-    const s = playing(2, TRACK_MS - 3_000);
-    const r = finish(s, hold);
-    expect(r.state).toMatchObject({ mode: 'held', pos: 1, trackIndex: 0, progressMs: 0 });
+    const r = finish(playing(2, TRACK_MS - 3_000), hold);
+    expect(r.state).toMatchObject({ mode: 'held', pos: 1, trackIndex: 0, progressMs: 0, heldAt: T0 + 3_000 });
     expect(r.actions).toEqual([]);
   });
 
   it('starts the held record on release', () => {
     const s = playing(2, TRACK_MS - 3_000);
     const held = finish(s, hold).state;
-    const r = go(held, { type: 'release' });
-    expect(r.state).toMatchObject({ mode: 'starting', pos: 1 });
+    const r = go(held, { type: 'release' }, { now: T0 + 60_000 });
+    expect(r.state).toMatchObject({ mode: 'starting', pos: 1, heldAt: null });
     expect(r.actions).toEqual([autoPlay(s.order[1])]);
   });
 
-  it('stays held on release while auto starts are still held', () => {
-    const held = finish(playing(2, TRACK_MS - 3_000), hold).state;
-    const r = go(held, { type: 'release' }, hold);
-    expect(r.state.mode).toBe('held');
+  it('stays held on release while auto starts are still held, keeping when the hold began', () => {
+    const r = go(heldState(), { type: 'release' }, { now: T0 + 60_000, ...hold });
+    expect(r.state).toMatchObject({ mode: 'held', heldAt: T0 + 3_000 });
     expect(r.actions).toEqual([]);
+  });
+
+  it('offers a resume instead of starting after a long hold', () => {
+    const r = go(heldState(), { type: 'release' }, { now: T0 + 3_000 + 6 * 3_600_000 });
+    expect(r.state).toMatchObject({ mode: 'awaitingResume', pos: 1 });
+    expect(r.actions).toEqual([]);
+    expect(STALE_GAP_MS).toBeLessThan(6 * 3_600_000);
   });
 
   it('ignores release outside held', () => {
@@ -536,34 +562,68 @@ describe('takeover gate', () => {
     expect(go(held, { type: 'togglePause' }, hold).actions).toEqual([userPlay(s.order[1])]);
   });
 
-  it('never holds a user play', () => {
+  it('never holds a user play, or a retry of one', () => {
     const r = go(initialState(), { type: 'chooseCrate', crateId: 'c' }, hold);
     expect(r.state.mode).toBe('starting');
     expect(r.actions).toEqual([userPlay(r.state.order[0])]);
     expect(go(playing(0), { type: 'skipRecord' }, hold).state.mode).toBe('starting');
+    const failed = go(r.state, { type: 'playFailed', reason: 'Not found' }, hold);
+    expect(failed.state).toMatchObject({ mode: 'starting', pos: 1 });
+    expect(failed.actions).toEqual([userPlay(r.state.order[1])]);
   });
 
   it('holds the other auto starts too', () => {
-    expect(go(chosen(), { type: 'snapshot', snapshot: null }, { now: T0 + 20_000, ...hold }).state.mode).toBe('held');
-    expect(go(chosen(), { type: 'playFailed', reason: 'nope' }, hold)).toMatchObject({ state: { mode: 'held', pos: 1 }, actions: [] });
-    const missing = go(playing(1, 30_000), { type: 'deviceMissing', origin: 'auto' }).state;
-    expect(go(missing, { type: 'deviceReady' }, hold)).toMatchObject({ state: { mode: 'held', trackIndex: 1, progressMs: 30_000 }, actions: [] });
+    const autoStarted = finish(playing(2, TRACK_MS - 3_000)).state;
+    expect(go(autoStarted, { type: 'snapshot', snapshot: null }, { now: T0 + 30_000, ...hold }).state.mode).toBe('held');
+    expect(go(autoStarted, { type: 'playFailed', reason: 'nope' }, hold)).toMatchObject({ state: { mode: 'held', pos: 2 }, actions: [] });
+    const missing = go(autoStarted, { type: 'deviceMissing', forPlay: true }).state;
+    expect(go(missing, { type: 'deviceReady' }, hold)).toMatchObject({ state: { mode: 'held', pos: 1 }, actions: [] });
   });
 
   it('attaches when the user plays the held record themselves', () => {
     const s = playing(2, TRACK_MS - 3_000);
     const held = finish(s, hold).state;
-    expect(go(held, { type: 'snapshot', snapshot: otherSnap() }).state.mode).toBe('held');
     expect(go(held, { type: 'snapshot', snapshot: snapFor(s.order[1], 0) }).state.mode).toBe('playing');
   });
 
+  it('yields when the user plays something else while held', () => {
+    const r = go(heldState(), { type: 'snapshot', snapshot: otherSnap() });
+    expect(r.state.mode).toBe('yielded');
+    expect(r.actions).toEqual([]);
+    expect(go(heldState(), { type: 'snapshot', snapshot: otherSnap({ isPlaying: false }) }).state.mode).toBe('held');
+    expect(go(heldState(), { type: 'snapshot', snapshot: null }).state.mode).toBe('held');
+  });
+
   it('restores a saved held state as restored', () => {
-    const held = finish(playing(2, TRACK_MS - 3_000), hold).state;
-    expect(restore(held).mode).toBe('restored');
+    expect(restore(heldState())).toMatchObject({ mode: 'restored', heldAt: null });
   });
 
   it('polls every 5 s while held', () => {
-    expect(nextPollDelay(finish(playing(2, TRACK_MS - 3_000), hold).state, crates)).toBe(5_000);
+    expect(nextPollDelay(heldState(), crates)).toBe(5_000);
+  });
+});
+
+describe('estimatePosition', () => {
+  const rec = makeCrate().records[0];
+
+  it('adds the time since the last reading while playing', () => {
+    expect(estimatePosition(playing(0, 1_000), rec, T0 + 4_900)).toEqual({ trackIndex: 0, progressMs: 5_900 });
+  });
+
+  it('carries across track boundaries using the crate durations', () => {
+    expect(estimatePosition(playing(0, TRACK_MS - 2_000), rec, T0 + 3_000)).toEqual({ trackIndex: 1, progressMs: 1_000 });
+    expect(estimatePosition(playing(0, 0), rec, T0 + 2 * TRACK_MS + 500)).toEqual({ trackIndex: 2, progressMs: 500 });
+  });
+
+  it('stops at the end of the record', () => {
+    expect(estimatePosition(playing(2, TRACK_MS - 2_000), rec, T0 + 60_000)).toEqual({ trackIndex: 2, progressMs: TRACK_MS });
+  });
+
+  it('uses the stored position when not playing or never seen', () => {
+    const paused = go(playing(1, 30_000), { type: 'togglePause' }).state;
+    expect(estimatePosition(paused, rec, T0 + 60_000)).toEqual({ trackIndex: 1, progressMs: 30_000 });
+    expect(estimatePosition({ ...playing(1, 30_000), lastSeenAt: null }, rec, T0 + 60_000)).toEqual({ trackIndex: 1, progressMs: 30_000 });
+    expect(estimatePosition(playing(1, 30_000), null, T0 + 60_000)).toEqual({ trackIndex: 1, progressMs: 30_000 });
   });
 });
 
@@ -571,16 +631,45 @@ describe('previous track', () => {
   it('restarts the track when more than 3 s in', () => {
     const r = go(playing(1, 3_001), { type: 'previousTrack' });
     expect(r.actions).toEqual([{ type: 'seek', positionMs: 0 }]);
-    expect(r.state.progressMs).toBe(0);
+    expect(r.state).toMatchObject({ trackIndex: 1, progressMs: 0, lastSeenAt: T0 });
   });
 
   it('goes to the previous track within the first 3 s', () => {
-    expect(go(playing(1, 3_000), { type: 'previousTrack' }).actions).toEqual([{ type: 'previous' }]);
+    const r = go(playing(1, 3_000), { type: 'previousTrack' });
+    expect(r.actions).toEqual([{ type: 'previous' }]);
+    expect(r.state).toMatchObject({ trackIndex: 0, progressMs: 0 });
   });
 
   it('a second press right after a restart goes to the previous track', () => {
     const restarted = go(playing(1, 60_000), { type: 'previousTrack' }).state;
     expect(go(restarted, { type: 'previousTrack' }).actions).toEqual([{ type: 'previous' }]);
+  });
+
+  it('counts the time played since the last poll (P4a)', () => {
+    expect(go(playing(1, 1_000), { type: 'previousTrack' }, { now: T0 + 4_900 }).actions).toEqual([{ type: 'seek', positionMs: 0 }]);
+  });
+
+  it('notices a new track started since the last poll (P4b)', () => {
+    const r = go(playing(0, TRACK_MS - 2_000), { type: 'previousTrack' }, { now: T0 + 3_000 });
+    expect(r.actions).toEqual([{ type: 'previous' }]);
+    expect(r.state.trackIndex).toBe(0);
+  });
+
+  it('goes back a track when pressed just after next (P5)', () => {
+    const afterNext = go(playing(0, 100_000), { type: 'nextTrack' }, { now: T0 + 1_000 });
+    expect(afterNext.actions).toEqual([{ type: 'next' }]);
+    expect(afterNext.state).toMatchObject({ trackIndex: 1, progressMs: 0, lastSeenAt: T0 + 1_000 });
+    expect(go(afterNext.state, { type: 'previousTrack' }, { now: T0 + 2_000 }).actions).toEqual([{ type: 'previous' }]);
+  });
+
+  it('freezes the estimated position when pausing', () => {
+    const paused = go(playing(0, TRACK_MS - 2_000), { type: 'togglePause' }, { now: T0 + 3_000 }).state;
+    expect(paused).toMatchObject({ mode: 'paused', trackIndex: 1, progressMs: 1_000 });
+  });
+
+  it('moves to the next record when next is pressed on the estimated last track', () => {
+    const r = go(playing(1, TRACK_MS - 1_000), { type: 'nextTrack' }, { now: T0 + 2_000 });
+    expect(r.state).toMatchObject({ pos: 1, mode: 'starting' });
   });
 });
 
@@ -604,7 +693,7 @@ describe('problems per crate', () => {
     expect(problemsFor(again, 'c')).toEqual([{ crateId: 'c', rymId: s.order[0], reason: 'second', at: T0 + 1 }]);
   });
 
-  it('choosing a crate clears its own problems and keeps other crates\'', () => {
+  it("choosing a crate clears its own problems and keeps other crates'", () => {
     const inC = go(chosen(), { type: 'playFailed', reason: 'c fail' }).state;
     const chooseD = go(inC, { type: 'chooseCrate', crateId: 'd' }, { crates: twoCrates }).state;
     const inD = go(chooseD, { type: 'playFailed', reason: 'd fail' }, { crates: twoCrates }).state;
@@ -613,6 +702,15 @@ describe('problems per crate', () => {
     const backToC = go(inD, { type: 'chooseCrate', crateId: 'c' }, { crates: twoCrates }).state;
     expect(problemsFor(backToC, 'c')).toEqual([]);
     expect(problemsFor(backToC, 'd')).toHaveLength(1);
+  });
+
+  it("caps the problems kept per crate without dropping other crates'", () => {
+    const inD = go(go(initialState(), { type: 'chooseCrate', crateId: 'd' }, { crates: twoCrates }).state, { type: 'playFailed', reason: 'd fail' }, { crates: twoCrates }).state;
+    let s = go(inD, { type: 'chooseCrate', crateId: 'c' }, { crates: twoCrates }).state;
+    for (let i = 0; i < 25; i++) s = go(s, { type: 'playFailed', reason: `c${i}` }, { crates: twoCrates, now: T0 + i }).state;
+    expect(s.problems.filter((p) => p.crateId === 'c')).toHaveLength(20);
+    expect(s.problems.filter((p) => p.crateId === 'c').at(-1)?.reason).toBe('c24');
+    expect(s.problems.filter((p) => p.crateId === 'd')).toHaveLength(1);
   });
 
   it('drops saved problems that predate crate ids', () => {

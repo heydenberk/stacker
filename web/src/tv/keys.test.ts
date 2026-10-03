@@ -65,4 +65,14 @@ describe('createSkipGuard', () => {
     t = 3500;
     expect(g.press()).toBe('confirmed');
   });
+
+  it('reset disarms, so the next press arms again', () => {
+    let t = 0;
+    const g = createSkipGuard(() => t);
+    g.press();
+    g.reset();
+    expect(g.isArmed()).toBe(false);
+    t = 500;
+    expect(g.press()).toBe('armed');
+  });
 });

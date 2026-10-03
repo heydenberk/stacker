@@ -56,8 +56,12 @@ export interface ConductorState {
   offRecord: number;
   /** Play requests made for the current start; a silent start is retried once before yielding. */
   startAttempts: number;
-  /** Origin of the play that found no device; `deviceReady` retries it with the same origin. */
-  pendingOrigin: PlayOrigin;
+  /** Origin of the latest start; retries of it (silent start, failed record, missing device) inherit it. */
+  startOrigin: PlayOrigin;
+  /** In needsDevice: the mode to return to when a non-play action found no device; null means replay the start. */
+  modeBeforeDevice: Mode | null;
+  /** When the current hold began (mode 'held'); a hold older than STALE_GAP_MS offers a resume instead of starting. */
+  heldAt: number | null;
   /** Records that couldn't play, tagged by crate; read them with `problemsFor`. */
   problems: Problem[];
 }
@@ -72,9 +76,10 @@ export type ConductorEvent =
   | { type: 'skipRecord' }
   | { type: 'resume' }
   | { type: 'playFailed'; reason: string }
-  /** `origin` is that of the play that found no device; omitted (e.g. for a pause) it counts as auto. */
-  | { type: 'deviceMissing'; origin?: PlayOrigin }
-  | { type: 'deviceReady' }
+  /** `forPlay`: the action that found no device was a play (default), so it is replayed once the device is back. */
+  | { type: 'deviceMissing'; forPlay?: boolean }
+  /** `origin` overrides the replayed start's origin, e.g. 'user' when the user picked the device. */
+  | { type: 'deviceReady'; origin?: PlayOrigin }
   /** The hold on automatic starts has cleared: start the held record. */
   | { type: 'release' };
 

@@ -37,7 +37,9 @@ export function initialState(): ConductorState {
     startedAt: null,
     offRecord: 0,
     startAttempts: 0,
-    pendingOrigin: 'auto',
+    startOrigin: 'auto',
+    modeBeforeDevice: null,
+    heldAt: null,
     problems: [],
   };
 }
@@ -79,7 +81,9 @@ export function restore(saved: ConductorState | null): ConductorState {
     startedAt: null,
     offRecord: 0,
     startAttempts: 0,
-    pendingOrigin: 'auto',
+    startOrigin: 'auto',
+    modeBeforeDevice: null,
+    heldAt: null,
   };
 }
 
@@ -120,6 +124,10 @@ function startRecord(
       startedAt: null,
       offRecord: 0,
       startAttempts: 0,
+      startOrigin: origin,
+      modeBeforeDevice: null,
+      // A hold that is re-entered (released while still held) keeps when it began.
+      heldAt: state.mode === 'held' && state.heldAt !== null ? state.heldAt : ctx.now,
     });
   }
   return {
@@ -133,6 +141,9 @@ function startRecord(
       startedAt: ctx.now,
       offRecord: 0,
       startAttempts,
+      startOrigin: origin,
+      modeBeforeDevice: null,
+      heldAt: null,
     },
     actions: [{ type: 'play', albumId: rec.spotify.albumId, offsetIndex: trackIndex, positionMs, origin }],
   };
@@ -184,6 +195,25 @@ function lastIndexOf(rec: CrateRecord): number {
   return (rec.spotify?.tracks.length ?? 0) - 1;
 }
 
+/**
+ * Where playback should be now: while playing, the last reading plus the time since, carried across
+ * track boundaries using the crate's durations and capped at the end of the record. Otherwise the
+ * stored position.
+ */
+export function estimatePosition(state: ConductorState, rec: CrateRecord | null, now: number): { trackIndex: number; progressMs: number } {
+  const stored = { trackIndex: state.trackIndex, progressMs: state.progressMs };
+  const tracks = rec?.spotify?.tracks;
+  if (state.mode !== 'playing' || state.lastSeenAt === null || !tracks || state.trackIndex >= tracks.length) return stored;
+  let trackIndex = state.trackIndex;
+  let progressMs = state.progressMs + Math.max(0, now - state.lastSeenAt);
+  while (trackIndex < tracks.length - 1 && tracks[trackIndex].durationMs > 0 && progressMs >= tracks[trackIndex].durationMs) {
+    progressMs -= tracks[trackIndex].durationMs;
+    trackIndex++;
+  }
+  if (trackIndex === tracks.length - 1) progressMs = Math.min(progressMs, tracks[trackIndex].durationMs);
+  return { trackIndex, progressMs };
+}
+
 /** Playing time left in the record from the last reading: the rest of the current track plus every later track. */
 export function recordRemainingMs(state: ConductorState, rec: CrateRecord): number {
   const tracks = rec.spotify?.tracks ?? [];
@@ -233,14 +263,17 @@ function onSnapshot(state: ConductorState, snap: PlayerSnapshot | null, ctx: Ste
       return ours ? attach(state, rec, snap, ctx.now) : none({ ...state, mode: 'awaitingResume' });
     case 'awaitingResume':
     case 'yielded':
-    case 'held':
       return ours && snap.isPlaying ? attach(state, rec, snap, ctx.now) : none(state);
+    case 'held':
+      if (ours && snap.isPlaying) return attach(state, rec, snap, ctx.now);
+      // The user started something else on Spotify: they have taken over, so don't release onto it.
+      return snap?.isPlaying ? none({ ...state, mode: 'yielded', heldAt: null }) : none(state);
     case 'starting': {
       if (ours) return attach(state, rec, snap, ctx.now);
       if (ctx.now - (state.startedAt ?? ctx.now) < START_TIMEOUT_MS) return none(state);
       const silent = snap === null || !snap.isPlaying;
       if (silent && state.startAttempts < MAX_START_ATTEMPTS) {
-        return startRecord(state, ctx, state.trackIndex, state.progressMs, 'auto', state.startAttempts + 1);
+        return startRecord(state, ctx, state.trackIndex, state.progressMs, state.startOrigin, state.startAttempts + 1);
       }
       return none({ ...state, mode: 'yielded' });
     }
@@ -290,7 +323,10 @@ export function step(state: ConductorState, event: ConductorEvent, ctx: StepCont
     case 'snapshot':
       return onSnapshot(state, event.snapshot, ctx);
     case 'togglePause':
-      if (state.mode === 'playing') return { state: { ...state, mode: 'paused', offRecord: 0 }, actions: [{ type: 'pause' }] };
+      if (state.mode === 'playing') {
+        const at = estimatePosition(state, currentRecord(state, ctx.crates), ctx.now);
+        return { state: { ...state, ...at, mode: 'paused', offRecord: 0 }, actions: [{ type: 'pause' }] };
+      }
       if (state.mode === 'paused') {
         // Something else may have started on the device since the pause; a plain resume would resume that.
         if (state.offRecord > 0) return startRecord(state, ctx, state.trackIndex, state.progressMs, 'user');
@@ -304,14 +340,19 @@ export function step(state: ConductorState, event: ConductorEvent, ctx: StepCont
     case 'nextTrack': {
       if (state.mode !== 'playing' && state.mode !== 'paused') return none(state);
       const rec = currentRecord(state, ctx.crates);
-      if (rec && state.trackIndex >= lastIndexOf(rec)) return advance(state, ctx, 'user');
-      return { state, actions: [{ type: 'next' }] };
+      const at = estimatePosition(state, rec, ctx.now);
+      if (rec && at.trackIndex >= lastIndexOf(rec)) return advance(state, ctx, 'user');
+      return { state: { ...state, trackIndex: at.trackIndex + 1, progressMs: 0, lastSeenAt: ctx.now }, actions: [{ type: 'next' }] };
     }
-    case 'previousTrack':
+    case 'previousTrack': {
       if (state.mode !== 'playing' && state.mode !== 'paused') return none(state);
+      const at = estimatePosition(state, currentRecord(state, ctx.crates), ctx.now);
       // Like a CD player: restart the track, unless it has only just begun.
-      if (state.progressMs > RESTART_THRESHOLD_MS) return { state: { ...state, progressMs: 0 }, actions: [{ type: 'seek', positionMs: 0 }] };
-      return { state, actions: [{ type: 'previous' }] };
+      if (at.progressMs > RESTART_THRESHOLD_MS) {
+        return { state: { ...state, trackIndex: at.trackIndex, progressMs: 0, lastSeenAt: ctx.now }, actions: [{ type: 'seek', positionMs: 0 }] };
+      }
+      return { state: { ...state, trackIndex: Math.max(0, at.trackIndex - 1), progressMs: 0, lastSeenAt: ctx.now }, actions: [{ type: 'previous' }] };
+    }
     case 'skipRecord':
       return state.crateId && state.mode !== 'idle' ? advance(state, ctx, 'user') : none(state);
     case 'resume':
@@ -320,15 +361,26 @@ export function step(state: ConductorState, event: ConductorEvent, ctx: StepCont
       const crateId = state.crateId;
       const rymId = state.order[state.pos];
       if (!crateId || rymId === undefined) return none(state);
-      const problems = [...state.problems, { crateId, rymId, reason: event.reason, at: ctx.now }].slice(-MAX_PROBLEMS);
-      return advance({ ...state, problems }, ctx, 'auto');
+      // Capped per crate, so one crate's failures never push out another's.
+      const mine = [...state.problems.filter((p) => p.crateId === crateId), { crateId, rymId, reason: event.reason, at: ctx.now }];
+      const problems = [...state.problems.filter((p) => p.crateId !== crateId), ...mine.slice(-MAX_PROBLEMS)];
+      // Skipping past a failed record continues the start it replaced, so it keeps that start's origin.
+      return advance({ ...state, problems }, ctx, state.startOrigin);
     }
     case 'deviceMissing':
-      return state.crateId ? none({ ...state, mode: 'needsDevice', pendingOrigin: event.origin ?? 'auto' }) : none(state);
+      if (!state.crateId) return none(state);
+      if (state.mode === 'needsDevice') return none(state);
+      // Only a play is replayed when the device is back; after a pause, skip or seek just return to the mode.
+      return none({ ...state, mode: 'needsDevice', modeBeforeDevice: event.forPlay === false ? state.mode : null });
     case 'deviceReady':
-      return state.mode === 'needsDevice' ? startRecord(state, ctx, state.trackIndex, state.progressMs, state.pendingOrigin) : none(state);
+      if (state.mode !== 'needsDevice') return none(state);
+      if (state.modeBeforeDevice !== null) return none({ ...state, mode: state.modeBeforeDevice, modeBeforeDevice: null });
+      return startRecord(state, ctx, state.trackIndex, state.progressMs, event.origin ?? state.startOrigin);
     case 'release':
-      return state.mode === 'held' ? startRecord(state, ctx, state.trackIndex, state.progressMs, 'auto') : none(state);
+      if (state.mode !== 'held') return none(state);
+      // Too long since the hold began: the moment has passed, so offer a resume rather than start music unprompted.
+      if (state.heldAt !== null && ctx.now - state.heldAt > STALE_GAP_MS) return none({ ...state, mode: 'awaitingResume', heldAt: null });
+      return startRecord(state, ctx, state.trackIndex, state.progressMs, 'auto');
   }
 }
 

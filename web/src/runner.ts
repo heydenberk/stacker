@@ -1,6 +1,6 @@
 import type { Crate } from '../../shared/crate';
 import { nextPollDelay, restore, step } from './conductor/step';
-import type { Action, ConductorEvent, ConductorState, PlayOrigin, PlayerSnapshot, StepContext } from './conductor/types';
+import type { Action, ConductorEvent, ConductorState, PlayerSnapshot, StepContext } from './conductor/types';
 import type { StackerShell } from './shell';
 import { PlayerError, type PlayerApi } from './spotify/player';
 import { type KeyValueStore, readJsonKey, writeJsonKey } from './storage';
@@ -110,6 +110,8 @@ export class Runner {
   private status(): RunnerStatus {
     if (this.signedOut) return { kind: 'signedOut', message: null };
     if (this.premiumRequired) return { kind: 'premium', message: null };
+    // Being offline explains everything else, so it shows over a lingering action error.
+    if (this.pollError?.kind === 'offline') return { kind: 'offline', message: this.pollError.message };
     const note = this.actionError ?? this.pollError;
     return note ? { kind: note.kind, message: note.message } : { kind: 'ok', message: null };
   }
@@ -157,7 +159,8 @@ export class Runner {
       this.deps.store.set(DEVICE_KEY, name);
       if (id) this.deps.store.set(DEVICE_ID_KEY, id);
       else this.deps.store.remove(DEVICE_ID_KEY);
-      if (this.state.mode === 'needsDevice') await this.apply({ type: 'deviceReady' });
+      // The user picked the device, so a pending play is theirs.
+      if (this.state.mode === 'needsDevice') await this.apply({ type: 'deviceReady', origin: 'user' });
       this.emit();
       this.rescheduleAfterChange();
     });
@@ -191,7 +194,8 @@ export class Runner {
 
   /**
    * Takeover is off and another app is making sound. The shell reports any audio, Spotify's
-   * included, so sound while Spotify says it is playing doesn't count.
+   * included, so sound doesn't count while Spotify is playing on Stacker's own device. Spotify
+   * playing on a phone doesn't explain sound from the TV.
    */
   private holdAutoStarts(): boolean {
     if (this.takeover || !this.shell) return false;
@@ -202,7 +206,9 @@ export class Runner {
       console.warn('StackerShell.isOtherAudioPlaying failed', e);
       return false;
     }
-    return audio && !this.snapshot?.isPlaying;
+    const ownDevice = this.deviceId ?? this.savedDeviceId;
+    const spotifyHere = this.snapshot?.isPlaying === true && ownDevice !== null && this.snapshot.deviceId === ownDevice;
+    return audio && !spotifyHere;
   }
 
   /** A held record starts once the hold has cleared. */
@@ -243,9 +249,8 @@ export class Runner {
       this.setSlowDown(waitMs);
       return null;
     }
-    // A play that finds no device is retried with the same origin once the device is back.
-    const origin: PlayOrigin | undefined = action.type === 'play' ? action.origin : undefined;
-    const deviceMissing: ConductorEvent = { type: 'deviceMissing', origin };
+    // Only a play is replayed once the device is back; other actions just return to their mode.
+    const deviceMissing: ConductorEvent = { type: 'deviceMissing', forPlay: action.type === 'play' };
     let deviceId: string | null;
     try {
       deviceId = await this.resolveDevice();
@@ -418,6 +423,8 @@ export class Runner {
 
   private setState(state: ConductorState): void {
     this.state = state;
+    // Without a device the last reading is stale; don't show it (or count it as Spotify playing here).
+    if (state.mode === 'needsDevice') this.snapshot = null;
     writeJsonKey(this.deps.store, STATE_KEY, state);
     this.emit();
   }

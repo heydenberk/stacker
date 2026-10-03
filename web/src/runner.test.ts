@@ -15,6 +15,7 @@ class FakePlayer implements PlayerApi {
   playError: PlayerError | null = null;
   playErrors: PlayerError[] = [];
   nextError: PlayerError | null = null;
+  pauseError: PlayerError | null = null;
   stateError: PlayerError | null = null;
   shuffleError: Error | null = null;
   devicesAfterPlayError: Device[] | null = null;
@@ -44,6 +45,7 @@ class FakePlayer implements PlayerApi {
   }
   async pause(d: string) {
     this.calls.push(`pause ${d}`);
+    if (this.pauseError) throw this.pauseError;
   }
   async next(d: string) {
     this.calls.push(`next ${d}`);
@@ -570,7 +572,19 @@ describe('Runner takeover setting', () => {
     expect(plays(player)).toHaveLength(1);
   });
 
-  it("does not count Spotify's own playback as other audio", async () => {
+  it("does not count Spotify's own playback on the TV as other audio", async () => {
+    const shell = new FakeShell();
+    const ctx = setup({ shell, takeover: false });
+    await nearEnd(ctx);
+    shell.otherAudio = true;
+    ctx.clock.t += 5_000;
+    ctx.player.state = otherSnap({ deviceId: 'tv1' });
+    await ctx.runner.pollNow();
+    expect(ctx.runner.view().state.mode).toBe('starting');
+    expect(plays(ctx.player)).toHaveLength(2);
+  });
+
+  it('counts sound on the TV as other audio while Spotify plays on another device', async () => {
     const shell = new FakeShell();
     const ctx = setup({ shell, takeover: false });
     await nearEnd(ctx);
@@ -578,8 +592,60 @@ describe('Runner takeover setting', () => {
     ctx.clock.t += 5_000;
     ctx.player.state = otherSnap();
     await ctx.runner.pollNow();
+    expect(ctx.runner.view().state.mode).toBe('held');
+    expect(plays(ctx.player)).toHaveLength(1);
+  });
+
+  it('yields instead of releasing when the user plays a playlist on their phone while held', async () => {
+    const shell = new FakeShell();
+    const ctx = setup({ shell, takeover: false });
+    await nearEnd(ctx);
+    shell.otherAudio = true;
+    await finishRecord(ctx);
+    expect(ctx.runner.view().state.mode).toBe('held');
+    shell.otherAudio = false;
+    ctx.player.state = otherSnap();
+    await ctx.runner.pollNow();
+    expect(ctx.runner.view().state.mode).toBe('yielded');
+    expect(plays(ctx.player)).toHaveLength(1);
+  });
+
+  it('plays the next record when a chosen crate starts with an unplayable record, even with other audio', async () => {
+    const shell = new FakeShell();
+    shell.otherAudio = true;
+    const { runner, player } = setup({ shell, takeover: false });
+    player.playErrors = [new PlayerError(404, 'other', 'Album not found')];
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state).toMatchObject({ mode: 'starting', pos: 1 });
+    expect(plays(player)).toHaveLength(2);
+  });
+
+  it('stays paused, without a play, when a pause found no device and the device returns', async () => {
+    const shell = new FakeShell();
+    const { runner, player } = setup({ shell });
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    player.state = snapFor(runner.view().state.order[0], 1, { progressMs: 30_000 });
+    await runner.start();
+    player.pauseError = new PlayerError(404, 'noDevice', 'No active device');
+    await runner.dispatch({ type: 'togglePause' });
+    expect(runner.view().state.mode).toBe('needsDevice');
+    expect(runner.view().snapshot).toBeNull();
+    await runner.pollNow();
+    expect(runner.view().state.mode).toBe('paused');
+    expect(plays(player)).toHaveLength(1);
+    expect(shell.fronts).toBe(0);
+  });
+
+  it('treats the retry as a user play when the user picks the device', async () => {
+    const shell = new FakeShell();
+    const ctx = setup({ shell });
+    await nearEnd(ctx);
+    ctx.player.playErrors = [new PlayerError(404, 'noDevice', 'No active device')];
+    await finishRecord(ctx);
+    expect(ctx.runner.view().state.mode).toBe('needsDevice');
+    await ctx.runner.setDevice('Living Room TV', 'tv1');
     expect(ctx.runner.view().state.mode).toBe('starting');
-    expect(plays(ctx.player)).toHaveLength(2);
+    expect(shell.fronts).toBe(0);
   });
 
   it('brings Stacker to the front after an automatic play with takeover on', async () => {
@@ -617,7 +683,7 @@ describe('Runner takeover setting', () => {
     await nearEnd(ctx);
     ctx.player.playErrors = [new PlayerError(404, 'noDevice', 'No active device')];
     await finishRecord(ctx);
-    expect(ctx.runner.view().state).toMatchObject({ mode: 'needsDevice', pendingOrigin: 'auto' });
+    expect(ctx.runner.view().state).toMatchObject({ mode: 'needsDevice', startOrigin: 'auto' });
     expect(shell.fronts).toBe(0);
     await ctx.runner.pollNow();
     expect(ctx.runner.view().state.mode).toBe('starting');
@@ -628,7 +694,7 @@ describe('Runner takeover setting', () => {
     const shell = new FakeShell();
     const { runner } = setup({ shell, device: null });
     await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
-    expect(runner.view().state).toMatchObject({ mode: 'needsDevice', pendingOrigin: 'user' });
+    expect(runner.view().state).toMatchObject({ mode: 'needsDevice', startOrigin: 'user' });
     await runner.setDevice('Living Room TV');
     expect(runner.view().state.mode).toBe('starting');
     expect(shell.fronts).toBe(0);
@@ -711,6 +777,16 @@ describe('Runner status', () => {
     await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
     expect(runner.view().status.kind).toBe('stoppedTrying');
     expect(runner.view().status.message).toMatch(/could not be played/);
+  });
+
+  it('shows offline over a lingering action error', async () => {
+    const { runner, player } = setup();
+    player.shuffleError = new PlayerError(500, 'other', 'boom');
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().status.kind).toBe('error');
+    player.stateError = new PlayerError(0, 'network', 'Failed to fetch');
+    await runner.start();
+    expect(runner.view().status).toEqual({ kind: 'offline', message: 'Failed to fetch' });
   });
 
   it('reports other failures as errors', async () => {
