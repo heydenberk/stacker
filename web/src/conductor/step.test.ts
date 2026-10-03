@@ -180,6 +180,44 @@ describe('a record finishing', () => {
     expect(r.actions).toEqual([]);
   });
 
+  it('offers a resume instead of auto-starting after a long gap without readings', () => {
+    const s = playing(0, 1_000);
+    const r = go(s, { type: 'snapshot', snapshot: null }, { now: T0 + 10 * 3_600_000 });
+    expect(r.state).toMatchObject({ pos: 1, mode: 'awaitingResume' });
+    expect(r.actions).toEqual([]);
+    expect(go(r.state, { type: 'resume' }, { now: T0 + 10 * 3_600_000 + 1_000 }).actions).toEqual([playAction(s.order[1])]);
+  });
+
+  it('still auto-advances when the gap is within the stale window', () => {
+    const s = playing(0, 1_000);
+    const r = go(s, { type: 'snapshot', snapshot: null }, { now: T0 + 590_000 + 5 * 60_000 });
+    expect(r.state).toMatchObject({ pos: 1, mode: 'starting' });
+    expect(r.actions).toEqual([playAction(s.order[1])]);
+  });
+
+  it('advances when a remote next on the last track leaves the album paused at its start', () => {
+    const s = playing(2, 30_000);
+    const atStart = snapFor(s.order[0], 0, { isPlaying: false, progressMs: 0 });
+    const r = go(s, { type: 'snapshot', snapshot: atStart }, { now: T0 + 6_000 });
+    expect(r.state).toMatchObject({ pos: 1, mode: 'starting' });
+    expect(r.actions).toEqual([playAction(s.order[1])]);
+  });
+
+  it('offers a resume when the album is found paused at its start after a long gap', () => {
+    const s = playing(2, 30_000);
+    const atStart = snapFor(s.order[0], 0, { isPlaying: false, progressMs: 0 });
+    const r = go(s, { type: 'snapshot', snapshot: atStart }, { now: T0 + 10 * 3_600_000 });
+    expect(r.state).toMatchObject({ pos: 1, mode: 'awaitingResume' });
+    expect(r.actions).toEqual([]);
+  });
+
+  it('attaches as paused when the last track is paused mid-song', () => {
+    const s = playing(2, 30_000);
+    const r = go(s, { type: 'snapshot', snapshot: snapFor(s.order[0], 2, { isPlaying: false, progressMs: 31_000 }) }, { now: T0 + 6_000 });
+    expect(r.state).toMatchObject({ pos: 0, mode: 'paused', trackIndex: 2 });
+    expect(r.actions).toEqual([]);
+  });
+
   it('starts a fresh lap after the last record, never repeating it first', () => {
     let s: ConductorState = { ...chosen(), pos: 2 };
     s = go(s, { type: 'snapshot', snapshot: snapFor(s.order[2], 2, { progressMs: TRACK_MS - 3_000 }) }).state;

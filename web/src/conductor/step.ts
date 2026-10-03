@@ -6,6 +6,11 @@ import type { Action, ConductorEvent, ConductorState, PlayerSnapshot, StepContex
 export const START_TIMEOUT_MS = 20_000;
 /** A record can count as finished this long before its expected end, to absorb polling and clock jitter. */
 export const FINISH_SLACK_MS = 3_000;
+/**
+ * A finish noticed this long after the record should have ended (laptop asleep, page hidden, TV off)
+ * moves to the next record but waits for the user instead of starting music on its own.
+ */
+export const STALE_GAP_MS = 10 * 60_000;
 /** Play requests per start before the conductor gives up and yields. */
 const MAX_START_ATTEMPTS = 2;
 /** Consecutive off-record snapshots in playing/paused before the conductor yields to the user. */
@@ -163,6 +168,21 @@ function looksFinished(state: ConductorState, snap: PlayerSnapshot | null, ours:
   return (idx >= 0 && idx < state.trackIndex) || snap.progressMs < 1_000 || snap.progressMs >= snap.durationMs - 2_000;
 }
 
+/** A remote "next" on the last track: Spotify leaves the album paused at the start of its first track. */
+function remoteNextOnLastTrack(state: ConductorState, snap: PlayerSnapshot | null, ours: boolean, rec: CrateRecord): boolean {
+  if (snap === null || !ours || snap.isPlaying) return false;
+  const last = lastIndexOf(rec);
+  return last > 0 && state.trackIndex === last && trackIndexOf(state, rec, snap) === 0 && snap.progressMs < 1_000;
+}
+
+/** Move on from a finished record; after a long gap without readings, wait for the user rather than auto-start. */
+function finishRecord(state: ConductorState, rec: CrateRecord, ctx: StepContext): StepResult {
+  const stale = state.lastSeenAt !== null && ctx.now - state.lastSeenAt > recordRemainingMs(state, rec) + STALE_GAP_MS;
+  const next = advance(state, ctx);
+  if (!stale || next.state.mode === 'idle') return next;
+  return { state: { ...next.state, mode: 'awaitingResume' }, actions: [] };
+}
+
 function onSnapshot(state: ConductorState, snap: PlayerSnapshot | null, ctx: StepContext): StepResult {
   const rec = currentRecord(state, ctx.crates);
   if (!rec?.spotify) return none(state);
@@ -185,8 +205,11 @@ function onSnapshot(state: ConductorState, snap: PlayerSnapshot | null, ctx: Ste
     }
     case 'playing':
     case 'paused':
-      if (state.mode === 'playing' && finishedByTime(state, rec, ctx.now) && looksFinished(state, snap, ours, rec)) {
-        return advance(state, ctx);
+      if (
+        state.mode === 'playing' &&
+        ((finishedByTime(state, rec, ctx.now) && looksFinished(state, snap, ours, rec)) || remoteNextOnLastTrack(state, snap, ours, rec))
+      ) {
+        return finishRecord(state, rec, ctx);
       }
       if (ours) return attach(state, rec, snap, ctx.now);
       if (state.offRecord + 1 >= YIELD_AFTER_SNAPSHOTS) return none({ ...state, mode: 'yielded', offRecord: 0 });
