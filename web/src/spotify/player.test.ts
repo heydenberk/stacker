@@ -67,7 +67,7 @@ describe('SpotifyPlayer requests', () => {
   it('returns null when nothing is playing', async () => {
     const { player, requests } = setup([empty()]);
     expect(await player.getState()).toBeNull();
-    expect(requests[0]).toMatchObject({ method: 'GET', url: API, auth: 'Bearer tok' });
+    expect(requests[0]).toMatchObject({ method: 'GET', url: `${API}?additional_types=episode`, auth: 'Bearer tok' });
   });
 
   it('returns a snapshot when something is playing', async () => {
@@ -150,5 +150,72 @@ describe('SpotifyPlayer auth and errors', () => {
       expect(err).toBeInstanceOf(PlayerError);
       expect(err).toMatchObject(expected);
     }
+  });
+});
+
+describe('SpotifyPlayer robustness', () => {
+  it('classifies a stale device 404 as noDevice', async () => {
+    const { player } = setup([json({ error: { status: 404, message: 'Device not found' } }, 404)]);
+    await expect(player.play('d', 'alb', 0, 0)).rejects.toMatchObject({ kind: 'noDevice', status: 404 });
+  });
+
+  it('carries the Spotify reason on the error', async () => {
+    const { player } = setup([json({ error: { status: 404, message: 'No active device', reason: 'NO_ACTIVE_DEVICE' } }, 404)]);
+    await expect(player.pause('d')).rejects.toMatchObject({ kind: 'noDevice', reason: 'NO_ACTIVE_DEVICE' });
+  });
+
+  it('wraps a rejected fetch as a network error', async () => {
+    const fetchFn = (async () => {
+      throw new TypeError('Failed to fetch');
+    }) as typeof fetch;
+    const player = new SpotifyPlayer({ getAccessToken: async () => 'tok', refresh: async () => 'tok2' }, fetchFn);
+    const err = await player.pause('d').catch((e: unknown) => e);
+    expect(err).toBeInstanceOf(PlayerError);
+    expect(err).toMatchObject({ kind: 'network', status: 0, message: 'Failed to fetch' });
+  });
+
+  it('wraps a rejected refresh as a network error', async () => {
+    const fetchFn = (async () => json({ error: { status: 401, message: 'expired' } }, 401)) as typeof fetch;
+    const player = new SpotifyPlayer(
+      {
+        getAccessToken: async () => 'tok',
+        refresh: async () => {
+          throw new Error('offline');
+        },
+      },
+      fetchFn,
+    );
+    await expect(player.pause('d')).rejects.toMatchObject({ kind: 'network', status: 0 });
+  });
+
+  it('wraps a rejected getAccessToken as a network error', async () => {
+    const player = new SpotifyPlayer(
+      {
+        getAccessToken: async () => {
+          throw new Error('offline');
+        },
+        refresh: async () => null,
+      },
+      (async () => empty()) as typeof fetch,
+    );
+    await expect(player.getState()).rejects.toMatchObject({ kind: 'network' });
+  });
+
+  it('returns null for 202 and for empty 200 bodies', async () => {
+    expect(await setup([new Response('', { status: 202 })]).player.getState()).toBeNull();
+    expect(await setup([new Response('', { status: 200 })]).player.getState()).toBeNull();
+  });
+
+  it('returns no devices for an empty body', async () => {
+    expect(await setup([new Response('', { status: 200 })]).player.getDevices()).toEqual([]);
+  });
+
+  it('refreshes only once when the retry is also 401', async () => {
+    const { player, auth } = setup([
+      json({ error: { status: 401, message: 'expired' } }, 401),
+      json({ error: { status: 401, message: 'expired' } }, 401),
+    ]);
+    await expect(player.pause('d')).rejects.toMatchObject({ kind: 'unauthorized' });
+    expect(auth.refresh).toHaveBeenCalledTimes(1);
   });
 });

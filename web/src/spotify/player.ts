@@ -1,6 +1,6 @@
 import type { PlayerSnapshot } from '../conductor/types';
 
-export type PlayerErrorKind = 'noDevice' | 'premium' | 'unauthorized' | 'rateLimited' | 'other';
+export type PlayerErrorKind = 'noDevice' | 'premium' | 'unauthorized' | 'rateLimited' | 'network' | 'other';
 
 export class PlayerError extends Error {
   constructor(
@@ -8,6 +8,7 @@ export class PlayerError extends Error {
     readonly kind: PlayerErrorKind,
     message: string,
     readonly retryAfterMs?: number,
+    readonly reason: string = '',
   ) {
     super(message);
     this.name = 'PlayerError';
@@ -86,15 +87,26 @@ async function toPlayerError(res: Response): Promise<PlayerError> {
   } catch {
     // non-JSON error body
   }
-  if (res.status === 401) return new PlayerError(401, 'unauthorized', message);
+  if (res.status === 401) return new PlayerError(401, 'unauthorized', message, undefined, reason);
   if (res.status === 429) {
     const seconds = Number(res.headers.get('Retry-After'));
     const retryAfterMs = (Number.isFinite(seconds) && seconds > 0 ? seconds : 5) * 1000;
-    return new PlayerError(429, 'rateLimited', `Spotify rate limit — retrying in ${retryAfterMs / 1000}s`, retryAfterMs);
+    return new PlayerError(429, 'rateLimited', `Spotify rate limit — retrying in ${retryAfterMs / 1000}s`, retryAfterMs, reason);
   }
-  if (reason === 'PREMIUM_REQUIRED') return new PlayerError(res.status, 'premium', message);
-  if (reason === 'NO_ACTIVE_DEVICE') return new PlayerError(res.status, 'noDevice', message);
-  return new PlayerError(res.status, 'other', message);
+  if (reason === 'PREMIUM_REQUIRED') return new PlayerError(res.status, 'premium', message, undefined, reason);
+  if (reason === 'NO_ACTIVE_DEVICE' || (res.status === 404 && /device/i.test(message))) {
+    return new PlayerError(res.status, 'noDevice', message, undefined, reason);
+  }
+  return new PlayerError(res.status, 'other', message, undefined, reason);
+}
+
+async function wrapNetwork<T>(fn: () => Promise<T>): Promise<T> {
+  try {
+    return await fn();
+  } catch (e) {
+    if (e instanceof PlayerError) throw e;
+    throw new PlayerError(0, 'network', e instanceof Error ? e.message : String(e));
+  }
 }
 
 export class SpotifyPlayer implements PlayerApi {
@@ -104,14 +116,17 @@ export class SpotifyPlayer implements PlayerApi {
   ) {}
 
   async getState(): Promise<PlayerSnapshot | null> {
-    const res = await this.request('GET', '');
-    if (res.status === 204) return null;
-    return toSnapshot((await res.json()) as ApiPlayerState);
+    const res = await this.request('GET', '?additional_types=episode');
+    const text = await res.text();
+    if (res.status === 204 || text.trim() === '') return null;
+    return toSnapshot(JSON.parse(text) as ApiPlayerState);
   }
 
   async getDevices(): Promise<Device[]> {
     const res = await this.request('GET', '/devices');
-    const body = (await res.json()) as { devices: ApiDevice[] };
+    const text = await res.text();
+    if (text.trim() === '') return [];
+    const body = JSON.parse(text) as { devices: ApiDevice[] };
     return body.devices
       .filter((d): d is ApiDevice & { id: string } => d.id !== null)
       .map((d) => ({ id: d.id, name: d.name, type: d.type, isActive: d.is_active }));
@@ -152,16 +167,18 @@ export class SpotifyPlayer implements PlayerApi {
   private async request(method: string, path: string, body?: unknown): Promise<Response> {
     let refreshed = false;
     for (;;) {
-      const token = await this.auth.getAccessToken();
+      const token = await wrapNetwork(() => this.auth.getAccessToken());
       if (!token) throw new PlayerError(401, 'unauthorized', 'Not signed in to Spotify');
-      const res = await this.fetchFn(`${API}${path}`, {
-        method,
-        headers: body === undefined ? { Authorization: `Bearer ${token}` } : { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-        body: body === undefined ? undefined : JSON.stringify(body),
-      });
+      const res = await wrapNetwork(() =>
+        this.fetchFn(`${API}${path}`, {
+          method,
+          headers: body === undefined ? { Authorization: `Bearer ${token}` } : { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+          body: body === undefined ? undefined : JSON.stringify(body),
+        }),
+      );
       if (res.status === 401 && !refreshed) {
         refreshed = true;
-        if (await this.auth.refresh()) continue;
+        if (await wrapNetwork(() => this.auth.refresh())) continue;
       }
       if (res.ok) return res;
       throw await toPlayerError(res);
