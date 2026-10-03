@@ -15,10 +15,12 @@
   "devDependencies": {
     "@types/he": "^1.2.3",
     "@types/node": "^20.19.43",
-    "csv-parse": "^6.2.1",
-    "he": "^1.2.0",
     "tsx": "^4.23.15",
     "typescript": "~5.9.3",
     "vitest": "^4.1.11"
+  },
+  "dependencies": {
+    "csv-parse": "^7.0.3",
+    "he": "^1.2.0"
   }
 }
