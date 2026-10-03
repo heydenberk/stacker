@@ -12,6 +12,7 @@ interface Props {
   filters: Filters;
   onFilters: (f: Filters) => void;
   crateRymIds: Set<string>;
+  activeCrateId: string | null;
   activeCrateName: string | null;
   onAdd: (rymId: string) => void;
   onEditGenres: (entry: LibraryRow) => void;
@@ -21,7 +22,7 @@ const toggle = <T,>(list: T[], item: T): T[] => (list.includes(item) ? list.filt
 
 const RATING_OPTIONS = Array.from({ length: 10 }, (_, i) => i + 1);
 
-export function LibraryPanel({ entries, vocab, filters, onFilters, crateRymIds, activeCrateName, onAdd, onEditGenres }: Props) {
+export function LibraryPanel({ entries, vocab, filters, onFilters, crateRymIds, activeCrateId, activeCrateName, onAdd, onEditGenres }: Props) {
   const set = (patch: Partial<Filters>) => onFilters({ ...filters, ...patch });
   const tagged = vocab.parents.length > 0;
 
@@ -117,7 +118,7 @@ export function LibraryPanel({ entries, vocab, filters, onFilters, crateRymIds, 
 
       <div class="result-count muted">
         {results.length > MAX_ROWS ? `showing ${MAX_ROWS} of ${results.length}` : `${results.length} records`}
-        {activeCrateName ? ` · drag or + to add to ${activeCrateName}` : ' · create a crate to start adding'}
+        {activeCrateId ? ` · drag or + to add to ${activeCrateName || activeCrateId}` : ' · create a crate to start adding'}
       </div>
 
       <ul class="results">
@@ -135,8 +136,8 @@ export function LibraryPanel({ entries, vocab, filters, onFilters, crateRymIds, 
             >
               <button
                 class="add"
-                disabled={!activeCrateName || inCrate}
-                title={inCrate ? 'Already in the crate' : activeCrateName ? `Add to ${activeCrateName}` : 'No crate selected'}
+                disabled={!activeCrateId || inCrate}
+                title={inCrate ? 'Already in the crate' : activeCrateId ? `Add to ${activeCrateName || activeCrateId}` : 'No crate selected'}
                 onClick={() => onAdd(e.rymId)}
               >
                 {inCrate ? '✓' : '+'}

@@ -20,8 +20,14 @@ export interface PublishPreview {
   changes: Change[];
   blockers: string[];
   hasRemote: boolean;
-  /** Commits on HEAD not yet on its upstream (e.g. after a failed push); 0 without a remote or upstream. */
+  /**
+   * Commits on HEAD not yet pushed (e.g. after a failed push); 0 without a remote. With an upstream:
+   * commits ahead of it. Without one: commits on no ref of the push remote (all of history when the
+   * remote has no refs yet).
+   */
   unpushed: number;
+  /** Whether the current branch tracks an upstream; when false, a push runs `git push -u <remote> HEAD`. */
+  hasUpstream: boolean;
   suggestedMessage: string;
 }
 
@@ -103,8 +109,8 @@ function pushTarget(deps: EditorDeps): PushTarget {
   const remote = remotes.includes('origin') ? 'origin' : remotes[0];
   // Fails (non-zero) when the current branch has no upstream configured.
   const hasUpstream = deps.git(['rev-parse', '--abbrev-ref', '--symbolic-full-name', '@{u}']).code === 0;
-  if (!hasUpstream) return { hasRemote: true, remote, hasUpstream, unpushed: 0 };
-  const count = Number.parseInt(run(deps, ['rev-list', '--count', '@{u}..HEAD']).stdout.trim(), 10);
+  const range = hasUpstream ? ['@{u}..HEAD'] : ['HEAD', '--not', `--remotes=${remote}`];
+  const count = Number.parseInt(run(deps, ['rev-list', '--count', ...range]).stdout.trim(), 10);
   return { hasRemote: true, remote, hasUpstream, unpushed: Number.isFinite(count) ? count : 0 };
 }
 
@@ -156,6 +162,7 @@ function analyse(deps: EditorDeps): Analysis {
     blockers,
     hasRemote: push.hasRemote,
     unpushed: push.unpushed,
+    hasUpstream: push.hasUpstream,
     suggestedMessage: suggestMessage(crateLabels, inside),
     pathsToAdd: PUBLISH_PATHS.filter((p) => inside.some((e) => e.path === p || e.path.startsWith(`${p}/`))),
     push,
@@ -177,8 +184,8 @@ function suggestMessage(crateLabels: string[], inside: StatusEntry[]): string {
 
 /** What Publish would do: changed paths, anything blocking it, and a suggested commit message. */
 export function previewPublish(deps: EditorDeps): PublishPreview {
-  const { changes, blockers, hasRemote, unpushed, suggestedMessage } = analyse(deps);
-  return { changes, blockers, hasRemote, unpushed, suggestedMessage };
+  const { changes, blockers, hasRemote, unpushed, hasUpstream, suggestedMessage } = analyse(deps);
+  return { changes, blockers, hasRemote, unpushed, hasUpstream, suggestedMessage };
 }
 
 /**

@@ -54,13 +54,16 @@ export function App() {
   const [saveStates, setSaveStates] = useState<Record<string, SaveState>>({});
   const [matching, setMatching] = useState<Record<string, boolean>>({});
   const [notes, setNotes] = useState<Record<string, CrateNote>>({});
-  const [review, setReview] = useState<{ crateId: string; rymIds: string[] } | null>(null);
+  // Per crate: the records shown in its review panel (absent = panel closed).
+  const [reviews, setReviews] = useState<Record<string, string[]>>({});
   const [genreTarget, setGenreTarget] = useState<LibraryRow | null>(null);
   const [publishOpen, setPublishOpen] = useState(false);
   const [dupNote, setDupNote] = useState<string | null>(null);
 
   // The latest crates, readable synchronously by save requests and async handlers.
   const cratesRef = useRef<Crate[]>([]);
+  const saveStatesRef = useRef<Record<string, SaveState>>({});
+  const matchingRef = useRef(new Set<string>());
   const queues = useRef(new Map<string, SaveQueue>());
   const dupTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -83,13 +86,30 @@ export function App() {
     });
   }, []);
 
-  /** Applies the server's records (Spotify data, matches) to the local crate, keeping local order and membership. */
+  const setReview = useCallback((crateId: string, rymIds: string[] | null) => {
+    setReviews((prev) => {
+      const next = { ...prev };
+      if (rymIds) next[crateId] = rymIds;
+      else delete next[crateId];
+      return next;
+    });
+  }, []);
+
+  /**
+   * Applies the server's records to the local crate, keeping local order and membership. With
+   * `matchFields: false` the local spotify/match are kept (a save answered mid-match is stale for them).
+   */
   const mergeRecords = useCallback(
-    (crateId: string, records: CrateRecord[]) => {
+    (crateId: string, records: CrateRecord[], matchFields = true) => {
       const byId = new Map(records.map((r) => [r.rymId, r]));
-      updateCrates((cs) =>
-        cs.map((c) => (c.id !== crateId ? c : { ...c, records: c.records.map((r) => byId.get(r.rymId) ?? r) })),
-      );
+      const pick = (local: CrateRecord): CrateRecord => {
+        const server = byId.get(local.rymId);
+        if (!server) return local;
+        if (matchFields) return server;
+        const { spotify: _s, match: _m, ...rymFields } = server;
+        return { ...local, ...rymFields };
+      };
+      updateCrates((cs) => cs.map((c) => (c.id !== crateId ? c : { ...c, records: c.records.map(pick) })));
     },
     [updateCrates],
   );
@@ -108,10 +128,13 @@ export function App() {
               mood: c.mood,
               rymIds: c.records.map((r) => r.rymId),
             });
-            mergeRecords(id, saved.records);
+            mergeRecords(id, saved.records, !matchingRef.current.has(id));
             if (!name) throw new Error('Name must not be blank (records and mood were saved)');
           },
-          (s) => setSaveStates((prev) => ({ ...prev, [id]: s })),
+          (s) => {
+            saveStatesRef.current = { ...saveStatesRef.current, [id]: s };
+            setSaveStates(saveStatesRef.current);
+          },
         );
         queues.current.set(id, q);
       }
@@ -151,7 +174,9 @@ export function App() {
   // Warn before closing the tab with unsaved changes.
   useEffect(() => {
     const onBeforeUnload = (e: BeforeUnloadEvent) => {
-      if ([...queues.current.values()].some((q) => q.busy)) e.preventDefault();
+      const unsaved = [...queues.current.values()].some((q) => q.busy);
+      const failed = Object.values(saveStatesRef.current).some((s) => s.kind === 'error');
+      if (unsaved || failed) e.preventDefault();
     };
     window.addEventListener('beforeunload', onBeforeUnload);
     return () => window.removeEventListener('beforeunload', onBeforeUnload);
@@ -224,11 +249,14 @@ export function App() {
         }
       }
       queues.current.delete(id);
+      const { [id]: _gone, ...rest } = saveStatesRef.current;
+      saveStatesRef.current = rest;
+      setSaveStates(rest);
       updateCrates((cs) => cs.filter((c) => c.id !== id));
-      if (review?.crateId === id) setReview(null);
+      setReview(id, null);
       if (activeId === id) setActiveId(cratesRef.current[0]?.id ?? null);
     },
-    [activeId, review, updateCrates, setActiveId, setNote],
+    [activeId, updateCrates, setActiveId, setNote, setReview],
   );
 
   // ---- matching ----
@@ -239,11 +267,17 @@ export function App() {
       setNote(id, null);
       try {
         await queueFor(id).flush(); // so the matcher sees every record added so far
+        const saveState = saveStatesRef.current[id];
+        if (saveState?.kind === 'error') {
+          setNote(id, { kind: 'error', text: `Match not started: the crate isn't saved (${saveState.message}). Fix that first.` });
+          return;
+        }
+        matchingRef.current.add(id);
         const { crate, review: flagged } = await api.resolveCrate(id);
         mergeRecords(id, crate.records);
         const n = crate.records.length;
         if (flagged.length > 0) {
-          setReview({ crateId: id, rymIds: flagged.map((r) => r.rymId) });
+          setReview(id, flagged.map((r) => r.rymId));
           setNote(id, { kind: 'info', text: `Matched ${n} records; ${flagged.length} need review.` });
         } else {
           setNote(id, { kind: 'info', text: `Matched ${n} records; nothing needs review.` });
@@ -254,16 +288,17 @@ export function App() {
         const saved = e instanceof HttpError && e.status === 502 ? ' Records matched before the failure were saved.' : '';
         setNote(id, { kind: 'error', text: `Match failed: ${errorMessage(e)}.${saved}` });
       } finally {
+        matchingRef.current.delete(id);
         setMatching((m) => ({ ...m, [id]: false }));
       }
     },
-    [queueFor, mergeRecords, setNote],
+    [queueFor, mergeRecords, setNote, setReview],
   );
 
   const openReview = useCallback(() => {
     if (!active) return;
-    setReview({ crateId: active.id, rymIds: active.records.filter(needsReview).map((r) => r.rymId) });
-  }, [active]);
+    setReview(active.id, active.records.filter(needsReview).map((r) => r.rymId));
+  }, [active, setReview]);
 
   /** Sets the override, then re-matches that record. Throws (with the server's message) on failure. */
   const settleRecord = useCallback(
@@ -301,7 +336,7 @@ export function App() {
   }
   if (!entries) return <div class="loading">Loading library…</div>;
 
-  const reviewCrate = review ? crates.find((c) => c.id === review.crateId) ?? null : null;
+  const reviewIds = active ? reviews[active.id] : undefined;
 
   return (
     <div class="app">
@@ -318,6 +353,7 @@ export function App() {
           filters={filters}
           onFilters={setFilters}
           crateRymIds={crateRymIds}
+          activeCrateId={active?.id ?? null}
           activeCrateName={active?.name ?? null}
           onAdd={addRecord}
           onEditGenres={setGenreTarget}
@@ -341,12 +377,13 @@ export function App() {
             onMatch={matchCrate}
             onReview={openReview}
           >
-            {review && reviewCrate && (
+            {active && reviewIds && (
               <ReviewPanel
-                crate={reviewCrate}
-                rymIds={review.rymIds}
-                onSettle={(rymId, value) => settleRecord(reviewCrate.id, rymId, value)}
-                onClose={() => setReview(null)}
+                key={active.id}
+                crate={active}
+                rymIds={reviewIds}
+                onSettle={(rymId, value) => settleRecord(active.id, rymId, value)}
+                onClose={() => setReview(active.id, null)}
               />
             )}
           </CratePanel>

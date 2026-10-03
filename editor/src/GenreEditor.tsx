@@ -87,10 +87,12 @@ export function GenreEditor({ entry, vocab, onSave, onClose }: Props) {
         </div>
         {error && <div class="error">{error}</div>}
         <div class="dialog-foot">
-          <span class="muted">Saved as a manual edit; re-tagging never overwrites it.</span>
+          <span class={selected.length === 0 ? 'warn' : 'muted'}>
+            {selected.length === 0 ? 'Pick 1–3 genres' : 'Saved as a manual edit; re-tagging never overwrites it.'}
+          </span>
           <span class="spacer" />
           <button onClick={onClose}>Cancel</button>
-          <button class="primary" disabled={saving} onClick={save}>
+          <button class="primary" disabled={saving || selected.length === 0} onClick={save}>
             {saving ? 'Saving…' : 'Save'}
           </button>
         </div>

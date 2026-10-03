@@ -17,7 +17,7 @@ const crate = (id: string, name: string, records: CrateRecord[]): Crate => ({ id
 const z = (...lines: string[]) => (lines.length ? lines.join('\0') + '\0' : '');
 const ok = (stdout = ''): GitResult => ({ code: 0, stdout, stderr: '' });
 
-function scriptedGit(opts: { status?: string[]; remote?: string; fail?: string; sha?: string; upstream?: string; unpushed?: number }) {
+function scriptedGit(opts: { status?: string[]; remote?: string; fail?: string; sha?: string; upstream?: string; unpushed?: number; notOnRemote?: number }) {
   return (args: string[]): GitResult => {
     if (opts.fail && args[0] === opts.fail) return { code: 1, stdout: '', stderr: `fatal: ${opts.fail} broke` };
     switch (args[0]) {
@@ -30,7 +30,7 @@ function scriptedGit(opts: { status?: string[]; remote?: string; fail?: string; 
             : { code: 128, stdout: '', stderr: "fatal: no upstream configured for branch 'main'\n" };
         }
         return ok(`${opts.sha ?? 'abc1234'}\n`);
-      case 'rev-list': return ok(`${opts.unpushed ?? 0}\n`);
+      case 'rev-list': return ok(`${args.includes('--not') ? (opts.notOnRemote ?? 0) : (opts.unpushed ?? 0)}\n`);
       case 'commit': return ok('[feat 1234567] message\n 1 file changed\n');
       case 'push': return ok('');
       default: return ok();
@@ -152,20 +152,37 @@ describe('previewPublish', () => {
 
   it('reports no unpushed commits without a remote, and does not ask about an upstream', () => {
     const deps = setup({ status: [' M crates/rainy-sunday.json'], upstream: 'origin/main', unpushed: 3 });
-    expect(previewPublish(deps).unpushed).toBe(0);
+    expect(previewPublish(deps)).toMatchObject({ unpushed: 0, hasUpstream: false });
     expect(deps.gitCalls.some((c) => c[0] === 'rev-list' || c.includes('@{u}'))).toBe(false);
   });
 
-  it('reports no unpushed commits when the branch has no upstream', () => {
-    const deps = setup({ status: [' M crates/rainy-sunday.json'], remote: 'origin\n' });
-    expect(previewPublish(deps).unpushed).toBe(0);
+  it('without an upstream, counts commits not on the remote (all of history when it has no refs yet)', () => {
+    const deps = setup({ status: [], remote: 'origin\n', notOnRemote: 12 });
+    const preview = previewPublish(deps);
+    expect(preview).toMatchObject({ unpushed: 12, hasUpstream: false, blockers: [] });
     expect(deps.gitCalls).toContainEqual(['rev-parse', '--abbrev-ref', '--symbolic-full-name', '@{u}']);
-    expect(deps.gitCalls.some((c) => c[0] === 'rev-list')).toBe(false);
+    expect(deps.gitCalls).toContainEqual(['rev-list', '--count', 'HEAD', '--not', '--remotes=origin']);
+  });
+
+  it('without an upstream, counts only commits missing from existing remote refs', () => {
+    const deps = setup({ status: [], remote: 'origin\n', notOnRemote: 1 });
+    expect(previewPublish(deps)).toMatchObject({ unpushed: 1, hasUpstream: false, blockers: [] });
+  });
+
+  it('without an upstream or unpushed commits, there is nothing to publish', () => {
+    const deps = setup({ status: [], remote: 'origin\n', notOnRemote: 0 });
+    expect(previewPublish(deps)).toMatchObject({ unpushed: 0, hasUpstream: false, blockers: ['Nothing to publish'] });
+  });
+
+  it('checks the only remote when there is no origin', () => {
+    const deps = setup({ status: [], remote: 'github\n', notOnRemote: 2 });
+    previewPublish(deps);
+    expect(deps.gitCalls).toContainEqual(['rev-list', '--count', 'HEAD', '--not', '--remotes=github']);
   });
 
   it('counts commits ahead of the upstream', () => {
     const deps = setup({ status: [' M crates/rainy-sunday.json'], remote: 'origin\n', upstream: 'origin/main', unpushed: 2 });
-    expect(previewPublish(deps).unpushed).toBe(2);
+    expect(previewPublish(deps)).toMatchObject({ unpushed: 2, hasUpstream: true });
     expect(deps.gitCalls).toContainEqual(['rev-list', '--count', '@{u}..HEAD']);
   });
 
@@ -283,6 +300,13 @@ describe('publish', () => {
     expect(result).toMatchObject({ committed: 'beef', pushed: true });
     const changing = deps.gitCalls.map((c) => c[0]).filter((c) => ['add', 'commit', 'push'].includes(c));
     expect(changing).toEqual(['push']);
+  });
+
+  it('retries a push that never set an upstream with git push -u', () => {
+    const deps = setup({ status: [], remote: 'origin\n', notOnRemote: 3, sha: 'beef' });
+    expect(publish(deps, '')).toMatchObject({ committed: 'beef', pushed: true });
+    const changing = deps.gitCalls.filter((c) => ['add', 'commit', 'push'].includes(c[0]));
+    expect(changing).toEqual([['push', '-u', 'origin', 'HEAD']]);
   });
 
   it('reports a failed retry push with the existing commit', () => {

@@ -29,7 +29,7 @@ export function PublishDialog({ beforeOpen, onClose }: Props) {
       await beforeOpen();
       const p = await api.previewPublish();
       setPreview(p);
-      setMessage(p.suggestedMessage);
+      setMessage((m) => (m.trim() ? m : p.suggestedMessage)); // keep an edited message across reloads
     } catch (e) {
       setLoadError(errorMessage(e));
     }
@@ -60,6 +60,8 @@ export function PublishDialog({ beforeOpen, onClose }: Props) {
         const blockers = Array.isArray(body.blockers) ? (body.blockers as string[]) : [];
         setOutcome({ kind: 'error', error: errorMessage(e), blockers });
       }
+      // Re-read the state (the commit may now be unpushed), so a retry is always on offer when possible.
+      await load();
     } finally {
       setBusy(false);
     }
@@ -69,8 +71,16 @@ export function PublishDialog({ beforeOpen, onClose }: Props) {
   const unpushed = preview?.unpushed ?? 0;
   const blocked = (preview?.blockers.length ?? 0) > 0;
   const finished = outcome?.kind === 'done';
-  const label = hasChanges ? (preview?.hasRemote ? 'Commit and push' : 'Commit') : `Push ${plural(unpushed, 'commit')}`;
+  const setsUpstream = !!preview?.hasRemote && !preview.hasUpstream;
+  const label = hasChanges
+    ? preview?.hasRemote
+      ? `Commit and push${setsUpstream ? ' (sets upstream)' : ''}`
+      : 'Commit'
+    : setsUpstream
+      ? 'Push (sets upstream)'
+      : `Push ${plural(unpushed, 'commit')}`;
   const canPublish = !!preview && !blocked && !busy && !finished && (!hasChanges || message.trim() !== '');
+  const canRetry = !!preview && !blocked && !busy && !hasChanges && unpushed > 0;
 
   return (
     <div class="overlay" onClick={(e) => e.target === e.currentTarget && !busy && onClose()}>
@@ -108,7 +118,12 @@ export function PublishDialog({ beforeOpen, onClose }: Props) {
             ) : (
               <div class="muted">No uncommitted changes in crates/ or the library files.</div>
             )}
-            {unpushed > 0 && <div class="warn">{plural(unpushed, 'commit')} not pushed to GitHub yet.</div>}
+            {unpushed > 0 && (
+              <div class="warn">
+                {plural(unpushed, 'commit')} not pushed to GitHub yet
+                {setsUpstream ? ' (this branch has no upstream; the push will set it)' : ''}.
+              </div>
+            )}
             {!preview.hasRemote && <div class="muted">No GitHub remote yet: publishing commits locally only.</div>}
 
             {hasChanges && (
@@ -136,9 +151,10 @@ export function PublishDialog({ beforeOpen, onClose }: Props) {
               the local commit; nothing is lost. Fix the problem below, then retry the push.
             </p>
             <pre>{outcome.error}</pre>
-            <button disabled={busy} onClick={() => void run('')}>
-              {busy ? 'Pushing…' : 'Retry push'}
+            <button disabled={!canRetry} onClick={() => void run('')}>
+              {busy ? 'Pushing…' : setsUpstream ? 'Retry push (sets upstream)' : 'Retry push'}
             </button>
+            {preview && !canRetry && !busy && <span class="muted"> Resolve the blockers above, then Refresh.</span>}
           </div>
         )}
         {outcome?.kind === 'error' && (
