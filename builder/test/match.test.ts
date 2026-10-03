@@ -126,6 +126,18 @@ describe('confident-wrong-match guards', () => {
     expect(scoreCandidate(e, c)).toBe(85);
     expect(pickBest(e, [c]).confidence).toBe('medium');
   });
+  it('requires an exact year for high: lone candidate 2 years off is medium (80)', () => {
+    const e = entry({ artist: 'The Clash', title: 'The Clash', year: 1977 });
+    const c = cand({ name: 'The Clash', artists: ['The Clash'], releaseYear: 1979 });
+    expect(scoreCandidate(e, c)).toBe(80);
+    expect(pickBest(e, [c]).confidence).toBe('medium');
+  });
+  it('requires an exact year for high: lone candidate 1 year off is capped at 89', () => {
+    const e = entry({ artist: 'The Clash', title: 'The Clash', year: 1977 });
+    const c = cand({ name: 'The Clash', artists: ['The Clash'], releaseYear: 1978 });
+    expect(scoreCandidate(e, c)).toBe(89);
+    expect(pickBest(e, [c]).confidence).toBe('medium');
+  });
   it('keeps high when the runner-up is clearly worse', () => {
     const r = pickBest(entry(weezer), [
       cand({ id: 'a', name: 'Weezer', artists: ['Weezer'], releaseYear: 1994 }),

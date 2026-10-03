@@ -76,8 +76,7 @@ function adjustments(entry: LibraryEntry, c: AlbumCandidate): number {
   if (c.albumType === 'single') s -= 20;
   if (entry.year !== null && c.releaseYear !== null) {
     if (c.releaseYear === entry.year) s += 10;
-    else if (Math.abs(c.releaseYear - entry.year) === 1) s += 5;
-    else if (Math.abs(c.releaseYear - entry.year) >= 3) s -= 10;
+    else if (Math.abs(c.releaseYear - entry.year) >= 2) s -= 10;
   }
   return s;
 }
@@ -86,8 +85,9 @@ export function scoreCandidate(entry: LibraryEntry, c: AlbumCandidate): number {
   const a = artistScore(entry, c);
   if (a === 0) return 0;
   const total = a + titleScore(entry, c) + adjustments(entry, c);
-  // Never "high" without year evidence.
-  return entry.year === null || c.releaseYear === null ? Math.min(total, 89) : total;
+  // High requires an exact release-year match: no year evidence, or any gap, caps below high.
+  const exactYear = entry.year !== null && c.releaseYear !== null && entry.year === c.releaseYear;
+  return exactYear ? total : Math.min(total, 89);
 }
 
 export function confidenceFor(score: number): Confidence {
