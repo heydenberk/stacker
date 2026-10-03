@@ -120,7 +120,7 @@ export function bannerFor(status: RunnerStatus): string | null {
       return 'Spotify asked us to slow down — trying again shortly';
     case 'error':
       // The raw message is on the debug page; the TV says something short.
-      return 'Spotify had a problem — retrying';
+      return 'Spotify had a problem';
     default:
       return null;
   }

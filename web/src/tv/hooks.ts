@@ -28,7 +28,8 @@ export function usePosition(state: ConductorState, rec: CrateRecord | null, ever
   const trackMs = rec?.spotify?.tracks[pos.trackIndex]?.durationMs ?? 0;
   // Nothing changes once the estimate reaches the end of the record (it stops there until the next poll).
   const atEnd = trackMs > 0 && pos.progressMs >= trackMs;
-  const delay = !playing || atEnd ? null : every === 'second' ? nextTickDelay(pos.progressMs) : trackMs - pos.progressMs;
+  // Guard trackMs <= 0 (e.g. a stale trackIndex past a shorter re-resolved album) so 'track' mode can't spin.
+  const delay = !playing || atEnd || trackMs <= 0 ? null : every === 'second' ? nextTickDelay(pos.progressMs) : Math.max(250, trackMs - pos.progressMs);
   useEffect(() => {
     if (delay === null) return;
     // A few ms late, so the estimate has crossed the boundary.

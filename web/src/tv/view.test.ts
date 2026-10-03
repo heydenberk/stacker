@@ -151,7 +151,7 @@ describe('banners', () => {
     expect(bannerFor({ kind: 'ok', message: null })).toBeNull();
     expect(bannerFor({ kind: 'offline', message: 'x' })).toMatch(/^Offline/);
     expect(bannerFor({ kind: 'rateLimited', message: 'x' })).toMatch(/slow down/);
-    expect(bannerFor({ kind: 'error', message: 'Boom: 502 Bad Gateway' })).toBe('Spotify had a problem — retrying');
+    expect(bannerFor({ kind: 'error', message: 'Boom: 502 Bad Gateway' })).toBe('Spotify had a problem');
     expect(bannerFor({ kind: 'premium', message: null })).toBeNull();
     expect(bannerFor({ kind: 'stoppedTrying', message: 'x' })).toBeNull();
     expect(bannerFor({ kind: 'signedOut', message: null })).toBeNull();
