@@ -53,6 +53,29 @@ describe('starting', () => {
     expect(r.state).toMatchObject({ mode: 'playing', trackIndex: 1, progressMs: 42_000, lastSeen: { rymId: s.order[0], trackIndex: 1 } });
   });
 
+  it('attaches by context when Spotify reports a relinked album id', () => {
+    const s = chosen();
+    const relinked = snapFor(s.order[0], 1, { albumId: 'relinked-album' });
+    expect(go(s, { type: 'snapshot', snapshot: relinked }).state).toMatchObject({ mode: 'playing', trackIndex: 1 });
+  });
+
+  it('retries the play once if nothing is playing after the timeout, then yields', () => {
+    let s = chosen();
+    const empty: ConductorEvent = { type: 'snapshot', snapshot: null };
+    for (const t of [5_000, 10_000, 15_000]) {
+      const r = go(s, empty, { now: T0 + t });
+      expect(r.actions).toEqual([]);
+      s = r.state;
+    }
+    const retry = go(s, empty, { now: T0 + 20_000 });
+    expect(retry.state).toMatchObject({ mode: 'starting', startAttempts: 2, startedAt: T0 + 20_000 });
+    expect(retry.actions).toEqual([playAction(s.order[0])]);
+    expect(go(retry.state, empty, { now: T0 + 30_000 }).state.mode).toBe('starting');
+    const gaveUp = go(retry.state, empty, { now: T0 + 40_000 });
+    expect(gaveUp.state.mode).toBe('yielded');
+    expect(gaveUp.actions).toEqual([]);
+  });
+
   it('attaches as paused when Spotify is paused', () => {
     const s = chosen();
     expect(go(s, { type: 'snapshot', snapshot: snapFor(s.order[0], 0, { isPlaying: false }) }).state.mode).toBe('paused');
@@ -70,23 +93,46 @@ describe('following tracks', () => {
   });
 });
 
+describe('duplicate track names', () => {
+  const dupCrates = new Map<string, Crate>([
+    [
+      'c',
+      {
+        ...makeCrate(),
+        records: makeCrate().records.map((r) =>
+          r.spotify ? { ...r, spotify: { ...r.spotify, tracks: r.spotify.tracks.map((t, i) => ({ ...t, name: i < 2 ? 'Same' : 'Last' })) } } : r,
+        ),
+      },
+    ],
+  ]);
+
+  it('chooses the match at or after the current track, otherwise the first', () => {
+    const s = chosen();
+    const byName = (id: string) => snapFor(id, 0, { trackId: 'zzz', trackName: 'Same' });
+    const atOne = go(s, { type: 'snapshot', snapshot: snapFor(s.order[0], 1) }, { crates: dupCrates }).state;
+    expect(go(atOne, { type: 'snapshot', snapshot: byName(s.order[0]) }, { crates: dupCrates }).state.trackIndex).toBe(1);
+    const atTwo = go(s, { type: 'snapshot', snapshot: snapFor(s.order[0], 2) }, { crates: dupCrates }).state;
+    expect(go(atTwo, { type: 'snapshot', snapshot: byName(s.order[0]) }, { crates: dupCrates }).state.trackIndex).toBe(0);
+  });
+});
+
 describe('a record finishing', () => {
   it('advances when other content follows the end of the last track (autoplay)', () => {
     const s = playing(2, TRACK_MS - 5_000);
-    const r = go(s, { type: 'snapshot', snapshot: otherSnap() });
+    const r = go(s, { type: 'snapshot', snapshot: otherSnap() }, { now: T0 + 5_000 });
     expect(r.state).toMatchObject({ pos: 1, mode: 'starting', trackIndex: 0 });
     expect(r.actions).toEqual([playAction(s.order[1])]);
   });
 
   it('advances when playback stops after the last track', () => {
     const s = playing(2, TRACK_MS - 3_000);
-    expect(go(s, { type: 'snapshot', snapshot: null }).state.pos).toBe(1);
+    expect(go(s, { type: 'snapshot', snapshot: null }, { now: T0 + 3_000 }).state.pos).toBe(1);
   });
 
   it('advances when the album stops in place', () => {
     const s = playing(2, TRACK_MS - 3_000);
     const stopped = snapFor(s.order[0], 0, { isPlaying: false, progressMs: 0 });
-    expect(go(s, { type: 'snapshot', snapshot: stopped }).state.pos).toBe(1);
+    expect(go(s, { type: 'snapshot', snapshot: stopped }, { now: T0 + 3_000 }).state.pos).toBe(1);
   });
 
   it('does not treat a pause in the last track as finishing', () => {
@@ -96,11 +142,49 @@ describe('a record finishing', () => {
     expect(r.actions).toEqual([]);
   });
 
+  it('advances after a missed last-track reading once the record must have ended', () => {
+    const s = playing(1, 190_000);
+    const r = go(s, { type: 'snapshot', snapshot: null }, { now: T0 + 10_000 + 400_000 });
+    expect(r.state).toMatchObject({ pos: 1, mode: 'starting' });
+    expect(r.actions).toEqual([playAction(s.order[1])]);
+  });
+
+  it('counts an early empty snapshot toward the debounce instead of finishing', () => {
+    const r = go(playing(1, 190_000), { type: 'snapshot', snapshot: null }, { now: T0 + 60_000 });
+    expect(r.state).toMatchObject({ pos: 0, mode: 'playing', offRecord: 1 });
+    expect(r.actions).toEqual([]);
+  });
+
+  it('advances when the album sits paused on an earlier track after it must have ended', () => {
+    const s = playing(1, 190_000);
+    const stopped = snapFor(s.order[0], 0, { isPlaying: false, progressMs: 0 });
+    expect(go(s, { type: 'snapshot', snapshot: stopped }, { now: T0 + 420_000 }).state).toMatchObject({ pos: 1, mode: 'starting' });
+  });
+
+  it('does not advance when the user starts other content with time left on the last track', () => {
+    const s = playing(2, TRACK_MS - 10_000);
+    const r = go(s, other, { now: T0 + 1_000 });
+    expect(r.state).toMatchObject({ pos: 0, mode: 'playing', offRecord: 1 });
+    expect(r.actions).toEqual([]);
+    const r2 = go(r.state, other, { now: T0 + 2_000 });
+    expect(r2.state).toMatchObject({ pos: 0, mode: 'yielded' });
+    expect(r2.actions).toEqual([]);
+  });
+
+  it('never finishes while paused, even at the very end', () => {
+    const paused = go(playing(2, TRACK_MS - 1_500), { type: 'togglePause' }).state;
+    expect(paused.mode).toBe('paused');
+    const snap = snapFor(paused.order[0], 2, { isPlaying: false, progressMs: TRACK_MS - 1_500 });
+    const r = go(paused, { type: 'snapshot', snapshot: snap }, { now: T0 + 60_000 });
+    expect(r.state).toMatchObject({ mode: 'paused', pos: 0 });
+    expect(r.actions).toEqual([]);
+  });
+
   it('starts a fresh lap after the last record, never repeating it first', () => {
     let s: ConductorState = { ...chosen(), pos: 2 };
     s = go(s, { type: 'snapshot', snapshot: snapFor(s.order[2], 2, { progressMs: TRACK_MS - 3_000 }) }).state;
     const finished = s.order[2];
-    const r = go(s, { type: 'snapshot', snapshot: null });
+    const r = go(s, { type: 'snapshot', snapshot: null }, { now: T0 + 3_000 });
     expect(r.state.pos).toBe(0);
     expect([...r.state.order].sort()).toEqual(['r1', 'r2', 'r3']);
     expect(r.state.order[0]).not.toBe(finished);
@@ -154,6 +238,13 @@ describe('the user taking over', () => {
     expect(go(go(playing(0), empty).state, empty).state.mode).toBe('yielded');
   });
 
+  it('stays yielded when a playlist plays a track from the record', () => {
+    const s = playing(1, 30_000);
+    const yielded = yieldFrom(s).state;
+    const playlist = snapFor(s.order[0], 1, { contextUri: 'spotify:playlist:mix' });
+    expect(go(yielded, { type: 'snapshot', snapshot: playlist }).state.mode).toBe('yielded');
+  });
+
   it('re-attaches when the user plays the record again', () => {
     const s = playing(1, 30_000);
     const yielded = yieldFrom(s).state;
@@ -182,6 +273,29 @@ describe('controls', () => {
     const s = playing(1, 30_000);
     const yielded = yieldFrom(s).state;
     expect(go(yielded, { type: 'togglePause' }).actions).toEqual([playAction(s.order[0], 1, 30_000)]);
+  });
+
+  it('moves to the next record on next-track from the last track', () => {
+    const s = playing(2, 30_000);
+    const r = go(s, { type: 'nextTrack' });
+    expect(r.state).toMatchObject({ pos: 1, mode: 'starting' });
+    expect(r.actions).toEqual([playAction(s.order[1])]);
+  });
+
+  it('replays the record on play when something else showed up while paused', () => {
+    const paused = go(playing(1, 30_000), { type: 'togglePause' }).state;
+    expect(paused.offRecord).toBe(0);
+    const doubtful = go(paused, other).state;
+    expect(doubtful).toMatchObject({ mode: 'paused', offRecord: 1 });
+    const r = go(doubtful, { type: 'togglePause' });
+    expect(r.state).toMatchObject({ mode: 'starting', offRecord: 0 });
+    expect(r.actions).toEqual([playAction(paused.order[0], 1, 30_000)]);
+  });
+
+  it('resets the off-record count when pausing', () => {
+    const doubtful = go(playing(1, 30_000), other).state;
+    expect(doubtful.offRecord).toBe(1);
+    expect(go(doubtful, { type: 'togglePause' }).state).toMatchObject({ mode: 'paused', offRecord: 0 });
   });
 
   it('passes track skips through only while a record is active', () => {
@@ -215,6 +329,11 @@ describe('sanitizing restored state', () => {
 
   it('clamps a negative pos to 0', () => {
     expect(restore({ ...playing(0), pos: -3 }).pos).toBe(0);
+  });
+
+  it('resets a fractional track index and drops non-string order entries', () => {
+    const saved = { ...playing(0), trackIndex: 1.5, order: ['r1', 7, null, 'r2'] } as unknown as ConductorState;
+    expect(restore(saved)).toMatchObject({ trackIndex: 0, order: ['r1', 'r2'], lastSeenAt: null, startAttempts: 0 });
   });
 });
 
@@ -261,7 +380,13 @@ describe('crate edits', () => {
 describe('nextPollDelay', () => {
   it('polls just after the expected end of the last track', () => {
     expect(nextPollDelay(playing(2, TRACK_MS - 3_000), crates)).toBe(3_300);
-    expect(nextPollDelay(playing(2, TRACK_MS - 100), crates)).toBe(500);
+    expect(nextPollDelay(playing(2, TRACK_MS - 100), crates)).toBe(1_000);
+  });
+
+  it('polls at the remaining record time while playing, between 1 s and 5 s', () => {
+    expect(nextPollDelay(playing(2, TRACK_MS - 3_000), crates)).toBe(3_300);
+    expect(nextPollDelay(playing(1, 10_000), crates)).toBe(5_000);
+    expect(nextPollDelay(playing(2, TRACK_MS - 500), crates)).toBe(1_000);
   });
 
   it('uses the mode cadence otherwise', () => {

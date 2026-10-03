@@ -40,6 +40,8 @@ export interface ConductorState {
   mode: Mode;
   /** The last track of the current record seen playing; used to detect the record finishing. */
   lastSeen: { rymId: string; trackIndex: number } | null;
+  /** When the current record was last seen (`now` at the last attach); used to tell when it must have ended. */
+  lastSeenAt: number | null;
   /** When play was last requested. */
   startedAt: number | null;
   /**
@@ -47,6 +49,8 @@ export interface ConductorState {
    * finishing). One odd reading between tracks shouldn't make the conductor give up the record.
    */
   offRecord: number;
+  /** Play requests made for the current start; a silent start is retried once before yielding. */
+  startAttempts: number;
   problems: Problem[];
 }
 
