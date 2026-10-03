@@ -292,6 +292,15 @@ describe('controls', () => {
     expect(r.actions).toEqual([playAction(paused.order[0], 1, 30_000)]);
   });
 
+  it('measures the record from the moment play resumes, not from before the pause', () => {
+    const paused = go(playing(1, 10_000), { type: 'togglePause' }).state;
+    const resumed = go(paused, { type: 'togglePause' }, { now: T0 + 600_000 });
+    expect(resumed.state).toMatchObject({ mode: 'playing', lastSeenAt: T0 + 600_000 });
+    const r = go(resumed.state, { type: 'snapshot', snapshot: null }, { now: T0 + 602_000 });
+    expect(r.state).toMatchObject({ mode: 'playing', pos: 0, offRecord: 1 });
+    expect(r.actions).toEqual([]);
+  });
+
   it('resets the off-record count when pausing', () => {
     const doubtful = go(playing(1, 30_000), other).state;
     expect(doubtful.offRecord).toBe(1);

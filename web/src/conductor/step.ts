@@ -228,7 +228,8 @@ export function step(state: ConductorState, event: ConductorEvent, ctx: StepCont
       if (state.mode === 'paused') {
         // Something else may have started on the device since the pause; a plain resume would resume that.
         if (state.offRecord > 0) return startRecord(state, ctx, state.trackIndex, state.progressMs);
-        return { state: { ...state, mode: 'playing', offRecord: 0 }, actions: [{ type: 'resume' }] };
+        // Progress was frozen while paused, so the record's remaining time counts from now.
+        return { state: { ...state, mode: 'playing', offRecord: 0, lastSeenAt: ctx.now }, actions: [{ type: 'resume' }] };
       }
       if (state.mode === 'yielded' || state.mode === 'awaitingResume' || state.mode === 'restored') {
         return startRecord(state, ctx, state.trackIndex, state.progressMs);
