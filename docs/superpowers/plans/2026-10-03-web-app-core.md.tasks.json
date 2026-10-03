@@ -1,0 +1,77 @@
+{
+  "planPath": "docs/superpowers/plans/2026-10-03-web-app-core.md",
+  "tasks": [
+    {
+      "id": 0,
+      "subject": "Task 1: Web scaffold and bundled crate catalog",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-web-app-core.md \u2014 Task 1: Web scaffold and bundled crate catalog.\n\n**Verify:** `npm test && npm run typecheck && npm run build`\n\n```json:metadata\n{\"files\": [\"package.json\", \"tsconfig.json\", \"vite.config.ts\", \"vitest.config.ts\", \"web/index.html\", \"web/src/env.d.ts\", \"web/src/main.tsx\", \"web/src/crates.ts\", \"web/src/crates.test.ts\"], \"verifyCommand\": \"npm test && npm run typecheck && npm run build\", \"acceptanceCriteria\": [\"builder+web tests run\", \"typecheck incl. web\", \"build writes dist/index.html\", \"client secret not in dist\"]}\n```"
+    },
+    {
+      "id": 1,
+      "subject": "Task 2: Safe key-value storage",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-web-app-core.md \u2014 Task 2: Safe key-value storage.\n\n**Verify:** `npx vitest run web/src/storage.test.ts`\n\n```json:metadata\n{\"files\": [\"web/src/storage.ts\", \"web/src/storage.test.ts\"], \"verifyCommand\": \"npx vitest run web/src/storage.test.ts\", \"acceptanceCriteria\": [\"memoryStore\", \"browserStore writes through\", \"falls back when localStorage throws/missing\", \"readJsonKey null on missing/corrupt\"]}\n```",
+      "blockedBy": [
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "subject": "Task 3: Spotify sign-in (PKCE) and token refresh",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-web-app-core.md \u2014 Task 3: Spotify sign-in (PKCE) and token refresh.\n\n**Verify:** `npx vitest run web/src/spotify/auth.test.ts`\n\n```json:metadata\n{\"files\": [\"web/src/spotify/auth.ts\", \"web/src/spotify/auth.test.ts\"], \"verifyCommand\": \"npx vitest run web/src/spotify/auth.test.ts\", \"acceptanceCriteria\": [\"RFC 7636 vector\", \"authorize URL params\", \"code exchange + state check\", \"refresh within 60s\", \"rotated refresh token\", \"400 signs out, 5xx throws\", \"shared concurrent refresh\", \"signInExpiresAt +182d\"]}\n```",
+      "blockedBy": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "subject": "Task 4: Conductor types and shuffling",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-web-app-core.md \u2014 Task 4: Conductor types and shuffling.\n\n**Verify:** `npx vitest run web/src/conductor/shuffle.test.ts`\n\n```json:metadata\n{\"files\": [\"web/src/conductor/types.ts\", \"web/src/conductor/shuffle.ts\", \"web/src/conductor/shuffle.test.ts\"], \"verifyCommand\": \"npx vitest run web/src/conductor/shuffle.test.ts\", \"acceptanceCriteria\": [\"shuffle permutation\", \"newLap avoids last record\", \"reconcileOrder\"]}\n```",
+      "blockedBy": [
+        0
+      ]
+    },
+    {
+      "id": 4,
+      "subject": "Task 5: Spotify player client",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-web-app-core.md \u2014 Task 5: Spotify player client.\n\n**Verify:** `npx vitest run web/src/spotify/player.test.ts`\n\n```json:metadata\n{\"files\": [\"web/src/spotify/player.ts\", \"web/src/spotify/player.test.ts\"], \"verifyCommand\": \"npx vitest run web/src/spotify/player.test.ts\", \"acceptanceCriteria\": [\"getState 204/snapshot\", \"play body\", \"command paths\", \"devices filter\", \"401 refresh once\", \"error classification\"]}\n```",
+      "blockedBy": [
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "subject": "Task 6: The conductor",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-web-app-core.md \u2014 Task 6: The conductor.\n\n**Verify:** `npx vitest run web/src/conductor/step.test.ts`\n\n```json:metadata\n{\"files\": [\"web/src/conductor/step.ts\", \"web/src/testing/fixtures.ts\", \"web/src/conductor/step.test.ts\"], \"verifyCommand\": \"npx vitest run web/src/conductor/step.test.ts\", \"acceptanceCriteria\": [\"choose/start/attach\", \"record-finished rules\", \"yield/resume\", \"lap reshuffle\", \"controls\", \"restore\", \"failures/device\", \"crate edits\", \"nextPollDelay\"]}\n```",
+      "blockedBy": [
+        3
+      ]
+    },
+    {
+      "id": 6,
+      "subject": "Task 7: Runner",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-web-app-core.md \u2014 Task 7: Runner.\n\n**Verify:** `npx vitest run web/src/runner.test.ts`\n\n```json:metadata\n{\"files\": [\"web/src/runner.ts\", \"web/src/runner.test.ts\"], \"verifyCommand\": \"npx vitest run web/src/runner.test.ts\", \"acceptanceCriteria\": [\"device resolution + play/shuffle/repeat\", \"persistence\", \"needsDevice/setDevice\", \"follow-up limit\", \"polling schedule\", \"restored\\u2192awaitingResume\", \"signed out stops polling\", \"rate limit backoff\"]}\n```",
+      "blockedBy": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 7,
+      "subject": "Task 8: Debug page, wiring, and a real run (with Eric)",
+      "status": "pending",
+      "description": "See docs/superpowers/plans/2026-10-03-web-app-core.md \u2014 Task 8: Debug page, wiring, and a real run (with Eric).\n\n**Verify:** `npm test && npm run typecheck && npm run build`\n\n```json:metadata\n{\"files\": [\"web/src/debug/App.tsx\", \"web/src/main.tsx\"], \"verifyCommand\": \"npm test && npm run typecheck && npm run build\", \"acceptanceCriteria\": [\"sign-in round trip\", \"device choose\", \"shuffle & play\", \"controls\", \"record handoff ~2s\", \"yield + resume\", \"reload attaches\"]}\n```",
+      "blockedBy": [
+        6
+      ]
+    }
+  ],
+  "lastUpdated": "2026-10-03T17:29:26.600443+00:00"
+}
