@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit",
     "import-rym": "tsx builder/cli/import-rym.ts",
     "resolve": "tsx builder/cli/resolve.ts",
+    "genres:mb": "tsx builder/cli/genres-mb.ts",
     "library": "tsx builder/cli/list-library.ts",
     "dev": "vite",
     "build": "vite build",
