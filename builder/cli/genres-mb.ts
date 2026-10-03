@@ -18,7 +18,11 @@ const sortByRymId = (m: MbGenreMap): MbGenreMap =>
 const existing = existsSync(OUT) ? readJson<MbGenreMap>(OUT) : {};
 const all = loadLibrary();
 // --limit caps how many *new* entries are fetched this run.
-const pending = all.filter((e) => !(String(e.rymId) in existing)).slice(0, limit);
+// Highest-rated first, so the records most likely to land in crates get genres soonest.
+const pending = all
+  .filter((e) => !(String(e.rymId) in existing))
+  .sort((a, b) => b.rating - a.rating)
+  .slice(0, limit);
 console.log(`${all.length} entries, ${Object.keys(existing).length} already fetched, fetching ${pending.length}`);
 
 const started = Date.now();
