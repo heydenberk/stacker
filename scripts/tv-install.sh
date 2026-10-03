@@ -4,12 +4,15 @@
 #   usage: scripts/tv-install.sh <tv-ip:port> [apk]
 #
 # Without an apk path, downloads the debug APK from the latest successful
-# android.yml run on main (needs `gh` signed in).
+# android.yml run on $BRANCH (default main; needs `gh` signed in).
+#
+#   BRANCH=feat/tv-shell scripts/tv-install.sh 192.168.1.20:37123
 set -euo pipefail
 
 PKG=com.heydenberk.stacker
 REPO=heydenberk/stacker
 ARTIFACT=stacker-tv-debug
+BRANCH=${BRANCH:-main}
 
 usage() {
   echo "usage: $0 <tv-ip:port> [apk]" >&2
@@ -54,10 +57,10 @@ trap cleanup EXIT
 
 if [[ -z $apk ]]; then
   command -v gh >/dev/null || fail "gh not found; pass an apk path or install the GitHub CLI"
-  step "Finding the latest successful android.yml run on main"
-  run_id=$(gh run list --repo "$REPO" --workflow android.yml --branch main --status success \
+  step "Finding the latest successful android.yml run on $BRANCH"
+  run_id=$(gh run list --repo "$REPO" --workflow android.yml --branch "$BRANCH" --status success \
     --limit 1 --json databaseId --jq '.[0].databaseId // empty')
-  [[ -n $run_id ]] || fail "no successful android.yml run on main in $REPO"
+  [[ -n $run_id ]] || fail "no successful android.yml run on $BRANCH in $REPO"
   echo "run $run_id"
 
   step "Downloading $ARTIFACT from run $run_id"
@@ -69,15 +72,27 @@ fi
 [[ -f $apk ]] || fail "apk not found: $apk"
 
 step "Installing $apk"
-"${ADB[@]}" install -r "$apk" || { hint; fail "adb install failed"; }
+# -r keeps app data (and so the Spotify sign-in); -d allows installing an older build.
+install_status=0
+install_out=$("${ADB[@]}" install -r -d "$apk" 2>&1) || install_status=$?
+echo "$install_out"
+if grep -q INSTALL_FAILED_UPDATE_INCOMPATIBLE <<<"$install_out"; then
+  echo "Signature mismatch with the installed app — uninstall it first (this signs you out of Spotify):" >&2
+  echo "  adb -s $target uninstall $PKG" >&2
+  fail "adb install failed"
+fi
+# Older adb versions exit 0 even when the install fails, so check the output as well.
+if [[ $install_status -ne 0 ]] || ! grep -q '^Success' <<<"$install_out"; then
+  fail "adb install failed"
+fi
 
 step "Allowing display over other apps (needed for bringToFront)"
-"${ADB[@]}" shell appops set "$PKG" SYSTEM_ALERT_WINDOW allow || { hint; fail "appops set failed"; }
+"${ADB[@]}" shell appops set "$PKG" SYSTEM_ALERT_WINDOW allow || fail "appops set failed"
 
 step "Granting POST_NOTIFICATIONS (for the keep-alive notification)"
 "${ADB[@]}" shell pm grant "$PKG" android.permission.POST_NOTIFICATIONS || echo "(not granted; continuing)"
 
 step "Launching Stacker"
-"${ADB[@]}" shell am start -n "$PKG/.MainActivity" || { hint; fail "am start failed"; }
+"${ADB[@]}" shell am start -n "$PKG/.MainActivity" || fail "am start failed"
 
 step "Done"

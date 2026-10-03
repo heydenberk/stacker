@@ -36,7 +36,8 @@ class KeepAliveService : Service() {
             // Before API 34 the type comes from the manifest.
             startForeground(NOTIFICATION_ID, notification)
         }
-        return START_STICKY
+        // If the process dies, the WebView dies with it; a restarted service alone keeps nothing alive.
+        return START_NOT_STICKY
     }
 
     override fun onBind(intent: Intent): IBinder? = null

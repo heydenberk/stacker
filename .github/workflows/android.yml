@@ -31,6 +31,13 @@ jobs:
         with:
           gradle-version: '8.13'
 
+      - name: Restore signing key
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_DEBUG_KEYSTORE_B64 }}
+        run: |
+          if [ -z "$KEYSTORE_B64" ]; then echo "::error::ANDROID_DEBUG_KEYSTORE_B64 secret is missing"; exit 1; fi
+          echo "$KEYSTORE_B64" | base64 -d > android/app/debug.keystore
+
       - name: Build debug APK
         run: gradle -p android assembleDebug --stacktrace
 

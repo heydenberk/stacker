@@ -22,6 +22,26 @@ android {
         buildConfigField("String", "STACKER_URL", "\"https://heydenberk.com/stacker/\"")
     }
 
+    // A fixed debug key keeps the signature identical across CI runs, so `adb install -r` upgrades
+    // in place without wiping the WebView's Spotify sign-in. The keystore is NOT in git: CI decodes it
+    // from the ANDROID_DEBUG_KEYSTORE_B64 Actions secret (see .github/workflows/android.yml); the
+    // original lives at android/app/debug.keystore on Eric's Mac (gitignored).
+    signingConfigs {
+        getByName("debug") {
+            storeFile = file("debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+            storeType = "pkcs12"
+        }
+    }
+
+    buildTypes {
+        getByName("debug") {
+            signingConfig = signingConfigs.getByName("debug")
+        }
+    }
+
     buildFeatures {
         buildConfig = true
     }

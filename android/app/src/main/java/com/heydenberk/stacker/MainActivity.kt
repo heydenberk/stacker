@@ -3,7 +3,9 @@ package com.heydenberk.stacker
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.WindowManager
 import android.webkit.CookieManager
@@ -28,7 +30,12 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
-        startForegroundService(Intent(this, KeepAliveService::class.java))
+        try {
+            startForegroundService(Intent(this, KeepAliveService::class.java))
+        } catch (e: Exception) {
+            // Without the service the page still runs; it is just more likely to be reclaimed.
+            Log.w(TAG, "could not start KeepAliveService", e)
+        }
 
         // Lets chrome://inspect attach over adb.
         WebView.setWebContentsDebuggingEnabled(true)
@@ -49,14 +56,14 @@ class MainActivity : Activity() {
 
         webView = view
         setContentView(view)
-        view.loadUrl(intent.getStringExtra(EXTRA_URL) ?: BuildConfig.STACKER_URL)
+        view.loadUrl(allowedUrlExtra(intent) ?: BuildConfig.STACKER_URL)
         view.requestFocus()
     }
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)
-        val url = intent.getStringExtra(EXTRA_URL)
+        val url = allowedUrlExtra(intent)
         if (url != null) {
             webView.loadUrl(url)
         }
@@ -90,10 +97,24 @@ class MainActivity : Activity() {
     }
 
     override fun onDestroy() {
-        webView.removeJavascriptInterface(BRIDGE_NAME)
-        webView.destroy()
+        if (::webView.isInitialized) {
+            webView.removeJavascriptInterface(BRIDGE_NAME)
+            webView.destroy()
+        }
         stopService(Intent(this, KeepAliveService::class.java))
         super.onDestroy()
+    }
+
+    /**
+     * The `url` extra, if it points somewhere the shell may load: heydenberk.com, this machine, or a
+     * private LAN address (a dev server). Anything else is ignored, since the page gets the
+     * StackerShell bridge.
+     */
+    private fun allowedUrlExtra(intent: Intent?): String? {
+        val url = intent?.getStringExtra(EXTRA_URL) ?: return null
+        if (isAllowedUrl(url)) return url
+        Log.w(TAG, "ignoring url extra outside the allowed hosts: $url")
+        return null
     }
 
     /** Keeps every http(s) navigation (including the Spotify sign-in redirect) inside the WebView. */
@@ -107,9 +128,25 @@ class MainActivity : Activity() {
 
     companion object {
         const val EXTRA_URL = "url"
+        private const val TAG = "StackerShell"
         private const val BRIDGE_NAME = "StackerShell"
         private const val BACK_SCRIPT =
             "(function(){try{return window.stackerBack?String(window.stackerBack()):'false'}" +
                 "catch(e){return 'false'}})()"
+
+        private val PRIVATE_LAN_HOST = Regex(
+            """^(10\.\d{1,3}|192\.168|172\.(1[6-9]|2\d|3[01]))\.\d{1,3}\.\d{1,3}$""",
+        )
+
+        private fun isAllowedUrl(url: String): Boolean {
+            val uri = Uri.parse(url)
+            val scheme = uri.scheme?.lowercase() ?: return false
+            if (scheme != "http" && scheme != "https") return false
+            val host = uri.host?.lowercase() ?: return false
+            return host == "heydenberk.com" ||
+                host == "localhost" ||
+                host == "127.0.0.1" ||
+                PRIVATE_LAN_HOST.matches(host)
+        }
     }
 }
