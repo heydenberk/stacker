@@ -85,7 +85,15 @@ export class MusicBrainzClient implements MbApi {
   private async get<T>(url: string): Promise<T> {
     for (let retry = 0; ; retry++) {
       await this.throttle();
-      const res = await this.fetchFn(url, { headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' } });
+      let res: Response;
+      try {
+        res = await this.fetchFn(url, { headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' } });
+      } catch (e) {
+        // Network-level failure (timeout, reset): treat like a 503.
+        if (retry >= BACKOFF_MS.length) throw e;
+        await this.sleep(BACKOFF_MS[retry]!);
+        continue;
+      }
       if (res.status === 503 || res.status === 429) {
         if (retry >= BACKOFF_MS.length) throw new Error(`MusicBrainz GET ${url} still failing with ${res.status} after ${retry} retries`);
         await this.sleep(BACKOFF_MS[retry]!);

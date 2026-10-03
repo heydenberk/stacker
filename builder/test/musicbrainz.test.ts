@@ -118,6 +118,18 @@ describe('rate limiting', () => {
     expect(calls).toHaveLength(4);
   });
 
+  it('retries network errors with backoff', async () => {
+    let n = 0;
+    const { client, calls } = setup([
+      () => { n++; throw new TypeError('fetch failed'); },
+      () => json({ genres: [], tags: [] }),
+    ]);
+    expect(await client.getGenres('a')).toEqual({ genres: [], tags: [] });
+    expect(n).toBe(1);
+    expect(calls).toHaveLength(2);
+    expect(calls[1]!.at - calls[0]!.at).toBeGreaterThanOrEqual(2000);
+  });
+
   it('throws on other errors without retrying', async () => {
     const { client, calls } = setup([() => new Response('nope', { status: 404 })]);
     await expect(client.getGenres('a')).rejects.toThrow(/404/);
