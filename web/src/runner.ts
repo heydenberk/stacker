@@ -9,6 +9,8 @@ export const DEVICE_KEY = 'stacker.device';
 export const DEVICE_ID_KEY = 'stacker.deviceId';
 /** Follow-up events (e.g. playFailed → next record) allowed in a row before giving up. */
 const MAX_FOLLOW_UPS = 3;
+const SLOW_DOWN_PREFIX = 'Spotify asked us to slow down';
+const SHUFFLE_PREFIX = "Couldn't turn off shuffle/repeat: ";
 const STOPPED_TRYING = 'Several records in a row could not be played; stopped trying.';
 
 export interface RunnerView {
@@ -102,6 +104,7 @@ export class Runner {
 
   dispatch(event: ConductorEvent): Promise<void> {
     return this.enqueue(async () => {
+      if (this.blockedByRateLimit()) return;
       await this.apply(event);
       this.emit();
       this.rescheduleAfterChange();
@@ -111,6 +114,7 @@ export class Runner {
   /** Remember the Spotify Connect device to play on (by name, since ids can change). */
   setDevice(name: string, id?: string): Promise<void> {
     return this.enqueue(async () => {
+      if (this.blockedByRateLimit()) return;
       this.deviceName = name;
       this.deviceId = null;
       this.savedDeviceId = id ?? null;
@@ -154,7 +158,7 @@ export class Runner {
   private async execute(action: Action): Promise<ConductorEvent | null> {
     const waitMs = this.rateLimitedUntil - this.now();
     if (waitMs > 0) {
-      this.actionError = `Spotify asked us to slow down — try again in ${Math.ceil(waitMs / 1000)}s`;
+      this.setSlowDown(waitMs);
       return null;
     }
     let deviceId: string | null;
@@ -210,6 +214,19 @@ export class Runner {
     }
   }
 
+  private setSlowDown(waitMs: number): void {
+    this.actionError = `${SLOW_DOWN_PREFIX} — try again in ${Math.ceil(waitMs / 1000)}s`;
+  }
+
+  /** While rate limited, user actions are dropped without touching the conductor. */
+  private blockedByRateLimit(): boolean {
+    const waitMs = this.rateLimitedUntil - this.now();
+    if (waitMs <= 0) return false;
+    this.setSlowDown(waitMs);
+    this.emit();
+    return true;
+  }
+
   private failAction(e: unknown): ConductorEvent | null {
     if (e instanceof PlayerError && e.kind === 'noDevice') {
       this.deviceId = null;
@@ -224,7 +241,7 @@ export class Runner {
       await fn();
     } catch (e) {
       const message = this.noteError(e) ?? 'request failed';
-      this.actionError = `Couldn't turn off shuffle/repeat: ${message}`;
+      this.actionError = `${SHUFFLE_PREFIX}${message}`;
     }
   }
 
@@ -250,14 +267,17 @@ export class Runner {
       this.schedule(waitMs);
       return;
     }
+    if (this.actionError?.startsWith(SLOW_DOWN_PREFIX)) this.actionError = null;
     let delay: number;
     try {
       if (this.state.mode === 'needsDevice') {
         this.deviceId = null;
         if (await this.resolveDevice()) await this.apply({ type: 'deviceReady' });
+        this.pollError = null;
       } else {
         this.snapshot = await this.deps.player.getState();
         this.pollError = null;
+        if (this.actionError && !this.actionError.startsWith(SHUFFLE_PREFIX) && this.actionError !== STOPPED_TRYING) this.actionError = null;
         await this.apply({ type: 'snapshot', snapshot: this.snapshot });
       }
       delay = nextPollDelay(this.state, this.deps.crates);

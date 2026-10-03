@@ -69,18 +69,19 @@ function setup(opts: { device?: string | null; deviceId?: string; saved?: Conduc
   if (opts.saved) store.set(STATE_KEY, JSON.stringify(opts.saved));
   const player = new FakePlayer();
   const delays: number[] = [];
+  const clock = { t: 1_000_000 };
   const runner = new Runner({
     player,
     store,
     crates,
-    now: () => 1_000_000,
+    now: () => clock.t,
     random: () => 0,
     setTimer: (_fn, ms) => {
       delays.push(ms);
       return () => {};
     },
   });
-  return { runner, player, store, delays };
+  return { runner, player, store, delays, clock };
 }
 
 const plays = (p: FakePlayer) => p.calls.filter((c) => c.startsWith('play '));
@@ -405,5 +406,70 @@ describe('Runner review fixes', () => {
     expect(seen).toContain('starting');
     expect(spy).toHaveBeenCalled();
     spy.mockRestore();
+  });
+});
+
+describe('Runner rate-limit follow-ups', () => {
+  async function playingThenLimited() {
+    const ctx = setup();
+    await ctx.runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    ctx.player.state = snapFor(ctx.runner.view().state.order[0], 0);
+    await ctx.runner.start();
+    expect(ctx.runner.view().state.mode).toBe('playing');
+    ctx.player.stateError = new PlayerError(429, 'rateLimited', 'Spotify rate limit', 60_000);
+    await ctx.runner.pollNow();
+    return ctx;
+  }
+
+  it('ignores a dispatch during the window without changing conductor state', async () => {
+    const { runner, player } = await playingThenLimited();
+    const before = runner.view().state;
+    const calls = player.calls.length;
+    await runner.dispatch({ type: 'skipRecord' });
+    expect(runner.view().state).toEqual(before);
+    expect(player.calls.length).toBe(calls);
+    expect(runner.view().error).toMatch(/slow down/);
+  });
+
+  it('ignores setDevice-triggered retries during the window', async () => {
+    const { runner, player } = await playingThenLimited();
+    const calls = player.calls.length;
+    await runner.setDevice('Living Room TV');
+    expect(player.calls.length).toBe(calls);
+  });
+
+  it('clears the slow-down message once the window has passed', async () => {
+    const { runner, player, clock } = await playingThenLimited();
+    await runner.dispatch({ type: 'skipRecord' });
+    expect(runner.view().error).toMatch(/slow down/);
+    clock.t += 61_000;
+    player.stateError = new PlayerError(0, 'network', 'Failed to fetch');
+    await runner.pollNow();
+    expect(runner.view().error).toBe('Failed to fetch');
+  });
+
+  it('a successful needsDevice poll clears the poll error', async () => {
+    const { runner, player } = setup();
+    player.devices = [];
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state.mode).toBe('needsDevice');
+    player.devicesError = new PlayerError(0, 'network', 'Failed to fetch');
+    await runner.start();
+    expect(runner.view().error).toBe('Failed to fetch');
+    player.devicesError = null;
+    await runner.pollNow();
+    expect(runner.view().error).toBeNull();
+  });
+
+  it('a successful snapshot poll clears a stale action error', async () => {
+    const { runner, player } = setup();
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    player.state = snapFor(runner.view().state.order[0], 0);
+    await runner.start();
+    player.nextError = new PlayerError(500, 'other', 'boom');
+    await runner.dispatch({ type: 'nextTrack' });
+    expect(runner.view().error).toBe('boom');
+    await runner.pollNow();
+    expect(runner.view().error).toBeNull();
   });
 });
