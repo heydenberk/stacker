@@ -1,0 +1,170 @@
+import type { PlayerSnapshot } from '../conductor/types';
+
+export type PlayerErrorKind = 'noDevice' | 'premium' | 'unauthorized' | 'rateLimited' | 'other';
+
+export class PlayerError extends Error {
+  constructor(
+    readonly status: number,
+    readonly kind: PlayerErrorKind,
+    message: string,
+    readonly retryAfterMs?: number,
+  ) {
+    super(message);
+    this.name = 'PlayerError';
+  }
+}
+
+export interface Device {
+  id: string;
+  name: string;
+  type: string;
+  isActive: boolean;
+}
+
+export interface PlayerApi {
+  getState(): Promise<PlayerSnapshot | null>;
+  getDevices(): Promise<Device[]>;
+  play(deviceId: string, albumId: string, offsetIndex: number, positionMs: number): Promise<void>;
+  resume(deviceId: string): Promise<void>;
+  pause(deviceId: string): Promise<void>;
+  next(deviceId: string): Promise<void>;
+  previous(deviceId: string): Promise<void>;
+  setShuffle(deviceId: string, on: boolean): Promise<void>;
+  setRepeat(deviceId: string, mode: 'off' | 'context' | 'track'): Promise<void>;
+}
+
+export interface TokenSource {
+  getAccessToken(): Promise<string | null>;
+  refresh(): Promise<string | null>;
+}
+
+export interface ApiPlayerState {
+  device?: { id: string | null } | null;
+  context: { uri: string } | null;
+  progress_ms: number | null;
+  is_playing: boolean;
+  item: {
+    id: string;
+    name: string;
+    duration_ms: number;
+    album?: { id: string };
+    linked_from?: { id: string } | null;
+  } | null;
+}
+
+interface ApiDevice {
+  id: string | null;
+  name: string;
+  type: string;
+  is_active: boolean;
+}
+
+const API = 'https://api.spotify.com/v1/me/player';
+const query = (params: Record<string, string>) => `?${new URLSearchParams(params)}`;
+
+export function toSnapshot(s: ApiPlayerState): PlayerSnapshot {
+  return {
+    isPlaying: s.is_playing,
+    deviceId: s.device?.id ?? null,
+    contextUri: s.context?.uri ?? null,
+    albumId: s.item?.album?.id ?? null,
+    trackId: s.item?.id ?? null,
+    linkedFromId: s.item?.linked_from?.id ?? null,
+    trackName: s.item?.name ?? null,
+    progressMs: s.progress_ms ?? 0,
+    durationMs: s.item?.duration_ms ?? 0,
+  };
+}
+
+async function toPlayerError(res: Response): Promise<PlayerError> {
+  let message = `Spotify player request failed: ${res.status}`;
+  let reason = '';
+  try {
+    const body = (await res.json()) as { error?: { message?: string; reason?: string } };
+    if (body.error?.message) message = body.error.message;
+    reason = body.error?.reason ?? '';
+  } catch {
+    // non-JSON error body
+  }
+  if (res.status === 401) return new PlayerError(401, 'unauthorized', message);
+  if (res.status === 429) {
+    const seconds = Number(res.headers.get('Retry-After'));
+    const retryAfterMs = (Number.isFinite(seconds) && seconds > 0 ? seconds : 5) * 1000;
+    return new PlayerError(429, 'rateLimited', `Spotify rate limit — retrying in ${retryAfterMs / 1000}s`, retryAfterMs);
+  }
+  if (reason === 'PREMIUM_REQUIRED') return new PlayerError(res.status, 'premium', message);
+  if (reason === 'NO_ACTIVE_DEVICE') return new PlayerError(res.status, 'noDevice', message);
+  return new PlayerError(res.status, 'other', message);
+}
+
+export class SpotifyPlayer implements PlayerApi {
+  constructor(
+    private readonly auth: TokenSource,
+    private readonly fetchFn: typeof fetch = fetch.bind(globalThis),
+  ) {}
+
+  async getState(): Promise<PlayerSnapshot | null> {
+    const res = await this.request('GET', '');
+    if (res.status === 204) return null;
+    return toSnapshot((await res.json()) as ApiPlayerState);
+  }
+
+  async getDevices(): Promise<Device[]> {
+    const res = await this.request('GET', '/devices');
+    const body = (await res.json()) as { devices: ApiDevice[] };
+    return body.devices
+      .filter((d): d is ApiDevice & { id: string } => d.id !== null)
+      .map((d) => ({ id: d.id, name: d.name, type: d.type, isActive: d.is_active }));
+  }
+
+  async play(deviceId: string, albumId: string, offsetIndex: number, positionMs: number): Promise<void> {
+    await this.request('PUT', `/play${query({ device_id: deviceId })}`, {
+      context_uri: `spotify:album:${albumId}`,
+      offset: { position: offsetIndex },
+      position_ms: positionMs,
+    });
+  }
+
+  async resume(deviceId: string): Promise<void> {
+    await this.request('PUT', `/play${query({ device_id: deviceId })}`);
+  }
+
+  async pause(deviceId: string): Promise<void> {
+    await this.request('PUT', `/pause${query({ device_id: deviceId })}`);
+  }
+
+  async next(deviceId: string): Promise<void> {
+    await this.request('POST', `/next${query({ device_id: deviceId })}`);
+  }
+
+  async previous(deviceId: string): Promise<void> {
+    await this.request('POST', `/previous${query({ device_id: deviceId })}`);
+  }
+
+  async setShuffle(deviceId: string, on: boolean): Promise<void> {
+    await this.request('PUT', `/shuffle${query({ state: String(on), device_id: deviceId })}`);
+  }
+
+  async setRepeat(deviceId: string, mode: 'off' | 'context' | 'track'): Promise<void> {
+    await this.request('PUT', `/repeat${query({ state: mode, device_id: deviceId })}`);
+  }
+
+  private async request(method: string, path: string, body?: unknown): Promise<Response> {
+    let refreshed = false;
+    for (;;) {
+      const token = await this.auth.getAccessToken();
+      if (!token) throw new PlayerError(401, 'unauthorized', 'Not signed in to Spotify');
+      const res = await this.fetchFn(`${API}${path}`, {
+        method,
+        headers: body === undefined ? { Authorization: `Bearer ${token}` } : { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: body === undefined ? undefined : JSON.stringify(body),
+      });
+      if (res.status === 401 && !refreshed) {
+        refreshed = true;
+        if (await this.auth.refresh()) continue;
+      }
+      if (res.ok) return res;
+      throw await toPlayerError(res);
+    }
+  }
+}
