@@ -7,6 +7,7 @@ import { getShell } from './shell';
 import { SpotifyAuth } from './spotify/auth';
 import { SpotifyPlayer } from './spotify/player';
 import { browserStore } from './storage';
+import { TvApp } from './tv/TvApp';
 
 const root = document.getElementById('app')!;
 
@@ -18,17 +19,15 @@ async function boot(): Promise<void> {
   const store = browserStore();
   const auth = new SpotifyAuth({ clientId: __SPOTIFY_CLIENT_ID__, redirectUri: appRootUrl(location.origin, import.meta.env.BASE_URL), store });
 
+  // The TV screens by default; the debug page at ?debug.
+  const debug = new URLSearchParams(location.search).has('debug');
+  let signInError: string | null = null;
   if (authCallbackParams(location.search)) {
     try {
       await auth.completeSignIn(location.href);
     } catch (e) {
-      history.replaceState(null, '', import.meta.env.BASE_URL);
-      const message = e instanceof Error ? e.message : String(e);
-      const link = document.createElement('a');
-      link.href = import.meta.env.BASE_URL;
-      link.textContent = 'Back to Stacker';
-      root.replaceChildren(message, document.createElement('br'), link);
-      return;
+      // The TV shows the error on its sign-in screen, with Connect Spotify to try again.
+      signInError = e instanceof Error ? e.message : String(e);
     }
     history.replaceState(null, '', import.meta.env.BASE_URL);
   }
@@ -44,7 +43,14 @@ async function boot(): Promise<void> {
     else if (auth.isSignedIn()) void runner.start();
   });
 
-  render(<App auth={auth} runner={runner} player={player} catalog={catalog} />, root);
+  render(
+    debug ? (
+      <App auth={auth} runner={runner} player={player} catalog={catalog} />
+    ) : (
+      <TvApp auth={auth} runner={runner} player={player} catalog={catalog} signInError={signInError} />
+    ),
+    root,
+  );
 }
 
 void boot();
