@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A record on a rounded square. Also used as the notification's small icon. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="#FF14161A"
+        android:pathData="M8,4h32a4,4 0,0 1,4 4v32a4,4 0,0 1,-4 4h-32a4,4 0,0 1,-4 -4v-32a4,4 0,0 1,4 -4z" />
+    <path
+        android:fillColor="#FFE8B04B"
+        android:pathData="M24,10a14,14 0,1 1,0 28a14,14 0,1 1,0 -28z" />
+    <path
+        android:fillColor="#FF14161A"
+        android:pathData="M24,20a4,4 0,1 1,0 8a4,4 0,1 1,0 -8z" />
+</vector>

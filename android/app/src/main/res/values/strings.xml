@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stacker</string>
+    <string name="keepalive_channel_name">Keep running</string>
+    <string name="keepalive_notification_title">Stacker is running</string>
+</resources>
