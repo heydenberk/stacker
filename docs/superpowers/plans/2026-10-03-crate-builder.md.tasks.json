@@ -67,12 +67,12 @@
     {
       "id": 7,
       "subject": "Task 8: Spotify developer app and first real crate (with Eric)",
-      "status": "pending",
+      "status": "completed",
       "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 8: Spotify developer app and first real crate (with Eric).\n\n**Verify:** `npm run resolve -- crates/rainy-sunday.json`\n\n```json:metadata\n{\"files\": [\".env\", \"crates/rainy-sunday.json\", \"crates/index.json\", \"library/overrides.json\"], \"verifyCommand\": \"npm run resolve -- crates/rainy-sunday.json\", \"acceptanceCriteria\": [\"Stacker Spotify app exists\", \"20 records playable or explicitly unavailable\", \"0 to review\", \"index lists rainy-sunday\"]}\n```",
       "blockedBy": [
         6
       ]
     }
   ],
-  "lastUpdated": "2026-10-03T13:26:22.454494+00:00"
+  "lastUpdated": "2026-10-03T17:14:20.433579+00:00"
 }

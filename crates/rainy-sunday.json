@@ -1,0 +1,1503 @@
+{
+  "id": "rainy-sunday",
+  "name": "Rainy Sunday",
+  "mood": "hushed, mostly acoustic, for a grey afternoon",
+  "createdAt": "2026-10-03",
+  "records": [
+    {
+      "rymId": "2596",
+      "artist": "Galaxie 500",
+      "title": "Today",
+      "year": 1988,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5vNKHuz5SeL0bOLtha1xQJ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735c8b326548e5a345e0f5fec1",
+        "tracks": [
+          {
+            "id": "1tDI5qw1b8hOLVOazlECo2",
+            "name": "Flowers",
+            "durationMs": 269946
+          },
+          {
+            "id": "0gDZ6QNeLbDQk8DMi6DdQa",
+            "name": "Pictures",
+            "durationMs": 207480
+          },
+          {
+            "id": "6PHChUg7ttFeRvmCyWQpYQ",
+            "name": "Parking Lot",
+            "durationMs": 175680
+          },
+          {
+            "id": "38z7jRsNAJ2qq8yfCIEPfn",
+            "name": "Don't Let Our Youth Go To Waste",
+            "durationMs": 411520
+          },
+          {
+            "id": "0Eew6NEBU9bybyKsVTnwqu",
+            "name": "Temperature's Rising",
+            "durationMs": 308680
+          },
+          {
+            "id": "3LZmwQkCtGAmUDlqRv4Yo8",
+            "name": "Oblivious",
+            "durationMs": 200653
+          },
+          {
+            "id": "60paIwN1EXegT9s9XgSfLA",
+            "name": "It's Getting Late",
+            "durationMs": 212800
+          },
+          {
+            "id": "5O2yYF1AxFqEFC5kwcuxeB",
+            "name": "Instrumental",
+            "durationMs": 188053
+          },
+          {
+            "id": "2wSmwBjoS5skbNYAMBi5qG",
+            "name": "Tugboat",
+            "durationMs": 236933
+          },
+          {
+            "id": "3jSyZedpCbkyBdep68bInz",
+            "name": "King of Spain",
+            "durationMs": 273746
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Today",
+        "spotifyArtists": "Galaxie 500",
+        "spotifyYear": 1988
+      }
+    },
+    {
+      "rymId": "1242",
+      "artist": "Mazzy Star",
+      "title": "So Tonight That I Might See",
+      "year": 1993,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5K18gTgac0q6Jma5HkV1vA",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27389a392107ebd79818022b3ea",
+        "tracks": [
+          {
+            "id": "1LzNfuep1bnAUR9skqdHCK",
+            "name": "Fade Into You",
+            "durationMs": 295600
+          },
+          {
+            "id": "5AabqkMATMr8zsfPS5yJnr",
+            "name": "Bells Ring",
+            "durationMs": 272066
+          },
+          {
+            "id": "6nQVB7McD3XdFEZ0x8H9i0",
+            "name": "Mary Of Silence",
+            "durationMs": 362066
+          },
+          {
+            "id": "7pfqtkZsNheOoDziqquDT3",
+            "name": "Five String Serenade",
+            "durationMs": 264466
+          },
+          {
+            "id": "3BdHMOIA9B0bN53jbE5nWe",
+            "name": "Blue Light",
+            "durationMs": 310733
+          },
+          {
+            "id": "7jLyxBaU1KJvkTXGq7kpha",
+            "name": "She's My Baby",
+            "durationMs": 265000
+          },
+          {
+            "id": "2Wy57u9egS9hpXtDGnzi8A",
+            "name": "Unreflected",
+            "durationMs": 222133
+          },
+          {
+            "id": "6mfeMz98JP6CUuCi4FvWg6",
+            "name": "Wasted",
+            "durationMs": 331600
+          },
+          {
+            "id": "7l5nkTZpoD93OkynN0gcon",
+            "name": "Into Dust",
+            "durationMs": 336760
+          },
+          {
+            "id": "6LYrGx5a39RNfXbNsaDcHq",
+            "name": "So Tonight That I Might See",
+            "durationMs": 439306
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "So Tonight That I Might See",
+        "spotifyArtists": "Mazzy Star",
+        "spotifyYear": 1993
+      }
+    },
+    {
+      "rymId": "2679",
+      "artist": "Talk Talk",
+      "title": "Spirit of Eden",
+      "year": 1988,
+      "rating": 10,
+      "spotify": {
+        "albumId": "4YXo7p7aubyVIbNLoVlBp9",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2736a3ec25c01f5b9c9022a3473",
+        "tracks": [
+          {
+            "id": "4k2CdsRopiwCKqO6rOSiVY",
+            "name": "The Rainbow - 1997 Remaster",
+            "durationMs": 549080
+          },
+          {
+            "id": "5kSAwHSqqr05MqWJ1o1KaG",
+            "name": "Eden - 1997 Remaster",
+            "durationMs": 394733
+          },
+          {
+            "id": "0VCBoaKWRtAUAOHdBdqEQX",
+            "name": "Desire - 1997 Remaster",
+            "durationMs": 417066
+          },
+          {
+            "id": "24yHHIYVMYwN4oqfpiIh6I",
+            "name": "Inheritance - 1997 Remaster",
+            "durationMs": 323640
+          },
+          {
+            "id": "3SzoVeS9Eaxt6dmfXF0fPo",
+            "name": "I Believe in You - 1997 Remaster",
+            "durationMs": 370386
+          },
+          {
+            "id": "3zxgN1ON3BkHSK8OIoTxr2",
+            "name": "Wealth - 1997 Remaster",
+            "durationMs": 403826
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Spirit of Eden",
+        "spotifyArtists": "Talk Talk",
+        "spotifyYear": 1988
+      }
+    },
+    {
+      "rymId": "90",
+      "artist": "Nick Drake",
+      "title": "Pink Moon",
+      "year": 1972,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5mwOo1zikswhmfHvtqVSXg",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e369195caf5d169bf5e9eafc",
+        "tracks": [
+          {
+            "id": "4KROoGIaPaR1pBHPnR3bwC",
+            "name": "Pink Moon",
+            "durationMs": 124000
+          },
+          {
+            "id": "5QUeSXjTMHbq1fW5da2waF",
+            "name": "Place To Be",
+            "durationMs": 160925
+          },
+          {
+            "id": "5ir0VEsMI7cLhN6SEiaKol",
+            "name": "Road",
+            "durationMs": 119450
+          },
+          {
+            "id": "4Cg0paoTgxlo2LC85HKaab",
+            "name": "Which Will",
+            "durationMs": 176950
+          },
+          {
+            "id": "4A1t2K9lsLZWb5oHAtT9xs",
+            "name": "Horn",
+            "durationMs": 81850
+          },
+          {
+            "id": "2s89qv9maW8RMCoaxtvNtn",
+            "name": "Things Behind The Sun",
+            "durationMs": 234475
+          },
+          {
+            "id": "0SRtzKvwd4Z7SBTonUbw6d",
+            "name": "Know",
+            "durationMs": 144600
+          },
+          {
+            "id": "2tlhnUxHtYDqu0i9KIraUu",
+            "name": "Parasite",
+            "durationMs": 214025
+          },
+          {
+            "id": "2ZwgXfgkcnO9I2UQI6wQFh",
+            "name": "Free Ride",
+            "durationMs": 182575
+          },
+          {
+            "id": "47s4suMScnmNQ2Vu4e0blc",
+            "name": "Harvest Breed",
+            "durationMs": 95700
+          },
+          {
+            "id": "6meH4I9A4WZtD3z8hnQKqr",
+            "name": "From The Morning",
+            "durationMs": 150850
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Pink Moon",
+        "spotifyArtists": "Nick Drake",
+        "spotifyYear": 1972
+      }
+    },
+    {
+      "rymId": "2711",
+      "artist": "Slowdive",
+      "title": "Souvlaki",
+      "year": 1993,
+      "rating": 10,
+      "spotify": {
+        "albumId": "53eHm1f3sFiSzWMaKOl98Z",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f6e31941d10e4819d290af41",
+        "tracks": [
+          {
+            "id": "33HRECrmuelZxOpid6XTNX",
+            "name": "Alison",
+            "durationMs": 230986
+          },
+          {
+            "id": "1wXJjKJy5Pt38Bu3tUzTUL",
+            "name": "Machine Gun",
+            "durationMs": 266706
+          },
+          {
+            "id": "4qyJE4D584f7qJCRSy7HOE",
+            "name": "40 Days",
+            "durationMs": 194120
+          },
+          {
+            "id": "1dmph9kxaIm9btfmCT9r2c",
+            "name": "Sing",
+            "durationMs": 288493
+          },
+          {
+            "id": "5FuYgi1xinZAQyD5CYLpUJ",
+            "name": "Here She Comes",
+            "durationMs": 137853
+          },
+          {
+            "id": "76JhicgPtW4zbN72tpnMyA",
+            "name": "Souvlaki Space Station",
+            "durationMs": 357373
+          },
+          {
+            "id": "0oxYB9GoOIDrdzniNdKC44",
+            "name": "When the Sun Hits",
+            "durationMs": 285906
+          },
+          {
+            "id": "1I3f8tsoYbIPEgQ1TPvJPb",
+            "name": "Altogether",
+            "durationMs": 221133
+          },
+          {
+            "id": "1G6E8yhilqdeZuduRrob1S",
+            "name": "Melon Yellow",
+            "durationMs": 232946
+          },
+          {
+            "id": "3MmRfG64qt04Efx9gK9Ec8",
+            "name": "Dagger",
+            "durationMs": 218253
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Souvlaki",
+        "spotifyArtists": "Slowdive",
+        "spotifyYear": 1993
+      }
+    },
+    {
+      "rymId": "18447",
+      "artist": "Low",
+      "title": "I Could Live in Hope",
+      "year": 1994,
+      "rating": 9,
+      "spotify": {
+        "albumId": "61dByu8oBt4qdym9Rkz39w",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2738b7a5660aeb00a285ca66ffe",
+        "tracks": [
+          {
+            "id": "01OXa5tVuCssU6j8TY7kxr",
+            "name": "Words",
+            "durationMs": 348800
+          },
+          {
+            "id": "0h4FnxJdO3Pn2sk5TRawS7",
+            "name": "Fear",
+            "durationMs": 135133
+          },
+          {
+            "id": "6LOC8quwmpMsD6gz8xPYL2",
+            "name": "Cut",
+            "durationMs": 346466
+          },
+          {
+            "id": "009fTJuFlQ5Rx37dtQBYij",
+            "name": "Slide",
+            "durationMs": 229840
+          },
+          {
+            "id": "45m3MvYjwf47Q2ZxABk7Mq",
+            "name": "Lazy",
+            "durationMs": 338293
+          },
+          {
+            "id": "1De66xUavye2fNqhCwtgyo",
+            "name": "Lullaby",
+            "durationMs": 589106
+          },
+          {
+            "id": "4Gcb68DWviw8kpuypBu2l1",
+            "name": "Sea",
+            "durationMs": 108866
+          },
+          {
+            "id": "57mgyqUPrQWmdnqS4xC4Oz",
+            "name": "Down",
+            "durationMs": 447760
+          },
+          {
+            "id": "2sbKlF95QiDw8lxRhLXbOQ",
+            "name": "Drag",
+            "durationMs": 315040
+          },
+          {
+            "id": "2bKgfHLKSdSIGsweqKt6Sl",
+            "name": "Rope",
+            "durationMs": 375333
+          },
+          {
+            "id": "5j6nQdG0nzJTpu60BKmqw3",
+            "name": "Sunshine",
+            "durationMs": 179333
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "I Could Live In Hope",
+        "spotifyArtists": "Low",
+        "spotifyYear": 1994
+      }
+    },
+    {
+      "rymId": "1179",
+      "artist": "Cocteau Twins",
+      "title": "Heaven or Las Vegas",
+      "year": 1990,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5lEphbceIgaK1XxWeSrC9E",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273fe6211303e796f3d5b7a0e02",
+        "tracks": [
+          {
+            "id": "37pKTyMwalomKCZjxTc2QZ",
+            "name": "Cherry-coloured Funk",
+            "durationMs": 192466
+          },
+          {
+            "id": "1DXD0wVXXHwUYo9AXbcMMI",
+            "name": "Pitch the Baby",
+            "durationMs": 194080
+          },
+          {
+            "id": "0Coai3QxvjCXWMhVN1hpgE",
+            "name": "Iceblink Luck",
+            "durationMs": 198666
+          },
+          {
+            "id": "2vDC9iyQpY3EsioJD8pRiW",
+            "name": "Fifty-fifty Clown",
+            "durationMs": 190213
+          },
+          {
+            "id": "0AxZUYeQ9bZwSdt1LmZuok",
+            "name": "Heaven or Las Vegas",
+            "durationMs": 298400
+          },
+          {
+            "id": "20nCwr4GiOZ02PVePsuLEd",
+            "name": "I Wear Your Ring",
+            "durationMs": 209346
+          },
+          {
+            "id": "5SuIuaAjFbaxJq9W1qKGw2",
+            "name": "Fotzepolitic",
+            "durationMs": 210933
+          },
+          {
+            "id": "5Cg9aQIEM2exLNBPupf6V4",
+            "name": "Wolf in the Breast",
+            "durationMs": 211200
+          },
+          {
+            "id": "6MJ8YgmhMphGcCX5OVS28W",
+            "name": "Road, River and Rail",
+            "durationMs": 201146
+          },
+          {
+            "id": "6i18oi8cbvlv9Y2QVBSzkB",
+            "name": "Frou-frou Foxes in Midsummer Fires",
+            "durationMs": 338053
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Heaven or Las Vegas",
+        "spotifyArtists": "Cocteau Twins",
+        "spotifyYear": 1990
+      }
+    },
+    {
+      "rymId": "1311",
+      "artist": "Elliott Smith",
+      "title": "Either / Or",
+      "year": 1997,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5bmpvyP7UGqB4VuXmrJUMy",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732f3552dc6f9e4e2748c5b8ba",
+        "tracks": [
+          {
+            "id": "05lmqBrKGLHAmqsADEuU9a",
+            "name": "Speed Trials",
+            "durationMs": 181293
+          },
+          {
+            "id": "7hg9DGPDztq8fjIr2YweZb",
+            "name": "Alameda",
+            "durationMs": 223400
+          },
+          {
+            "id": "6L9uay2MM8qACwI1yQHnw2",
+            "name": "Ballad of Big Nothing",
+            "durationMs": 168333
+          },
+          {
+            "id": "1JbUMtVkQuaAPdHOvncVTm",
+            "name": "Between the Bars",
+            "durationMs": 141200
+          },
+          {
+            "id": "3SCgkLOzAf13rgHoempJs1",
+            "name": "Pictures of Me",
+            "durationMs": 226973
+          },
+          {
+            "id": "1pDIEcL6F2iZfgFbwmktw9",
+            "name": "No Name No. 5",
+            "durationMs": 223493
+          },
+          {
+            "id": "7krF2T7qvOTLjpGKx5zuR5",
+            "name": "Rose Parade",
+            "durationMs": 208466
+          },
+          {
+            "id": "7rQJa4XaTfHuA4TVwU8m3Z",
+            "name": "Punch and Judy",
+            "durationMs": 145706
+          },
+          {
+            "id": "1aMafyDbpEw3a8FrVhwRlg",
+            "name": "Angeles",
+            "durationMs": 176826
+          },
+          {
+            "id": "02dNJoluauc40mVrZaQCs4",
+            "name": "Cupid's Trick",
+            "durationMs": 184933
+          },
+          {
+            "id": "1mNOLSQw42abtI2VM7wVRI",
+            "name": "2:45 AM",
+            "durationMs": 198973
+          },
+          {
+            "id": "4IKMZtDIqyQDA6a4YvsgpK",
+            "name": "Say Yes",
+            "durationMs": 139000
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Either/Or",
+        "spotifyArtists": "Elliott Smith",
+        "spotifyYear": 1997
+      }
+    },
+    {
+      "rymId": "300",
+      "artist": "Yo La Tengo",
+      "title": "I Can Hear the Heart Beating as One",
+      "year": 1997,
+      "rating": 10,
+      "spotify": {
+        "albumId": "3V18DIKvRuwdxc2LE4wuac",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2731f00d48ee488c62bc46d2418",
+        "tracks": [
+          {
+            "id": "488ciQxLvwIrBZbRXFud0A",
+            "name": "Return to Hot Chicken",
+            "durationMs": 99733
+          },
+          {
+            "id": "00839RHIOqd7KUunk009jh",
+            "name": "Moby Octopad",
+            "durationMs": 348693
+          },
+          {
+            "id": "2nqaQ4WJ5tGTvGfQCvpBWT",
+            "name": "Sugarcube",
+            "durationMs": 201000
+          },
+          {
+            "id": "1VqZIPXYUxeW92lsWuJWB1",
+            "name": "Damage",
+            "durationMs": 279200
+          },
+          {
+            "id": "07Be2TgmYSlJzI4aIA3m3n",
+            "name": "Deeper into Movies",
+            "durationMs": 323133
+          },
+          {
+            "id": "6pKuJwQJH7ZoYIqBFIOUGD",
+            "name": "Shadows",
+            "durationMs": 147040
+          },
+          {
+            "id": "2VcCu6ZIMVDYjINcygEuW2",
+            "name": "Stockholm Syndrome",
+            "durationMs": 171093
+          },
+          {
+            "id": "19Qi2Cymjh7HDQESDrDBzs",
+            "name": "Autumn Sweater",
+            "durationMs": 318373
+          },
+          {
+            "id": "35ZwXMhD8EIjko7CQAvDTy",
+            "name": "Little Honda",
+            "durationMs": 187093
+          },
+          {
+            "id": "6o65Xn8X3IXf7zmxVjXDWJ",
+            "name": "Green Arrow",
+            "durationMs": 343800
+          },
+          {
+            "id": "1L1hoK7nZXYUJzRA7yq8cz",
+            "name": "One PM Again",
+            "durationMs": 145666
+          },
+          {
+            "id": "5akjusKRK2fyA1iY6DTNQH",
+            "name": "The Lie and How We Told It",
+            "durationMs": 199266
+          },
+          {
+            "id": "6bBobm1wePzB1WG7FD68zd",
+            "name": "Center of Gravity",
+            "durationMs": 162306
+          },
+          {
+            "id": "3KOHHNFGzkRWdKFSHVFjHv",
+            "name": "Spec Bebop",
+            "durationMs": 640560
+          },
+          {
+            "id": "2RCaDbgmfL6xge4jEZYwV6",
+            "name": "We're an American Band",
+            "durationMs": 385466
+          },
+          {
+            "id": "2bY66Hf5NbHJ8Ai8eNmJHG",
+            "name": "My Little Corner of the World",
+            "durationMs": 145573
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "I Can Hear The Heart Beating As One",
+        "spotifyArtists": "Yo La Tengo",
+        "spotifyYear": 1997
+      }
+    },
+    {
+      "rymId": "341973",
+      "artist": "Broadcast",
+      "title": "Tender Buttons",
+      "year": 2005,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6xBYjKF7uvteMN51uxVNJv",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273efeb5afb5e7bcb9c6660fe39",
+        "tracks": [
+          {
+            "id": "3qr2hBL12NbRmFWKlzI3Zs",
+            "name": "I Found The F",
+            "durationMs": 141840
+          },
+          {
+            "id": "2Lbm0ObmRqhWhPmvixtI3H",
+            "name": "Black Cat",
+            "durationMs": 238440
+          },
+          {
+            "id": "5nCScIjCua6SYp4VKNjugD",
+            "name": "Tender Buttons",
+            "durationMs": 172000
+          },
+          {
+            "id": "31cQKr1hxHfIWVfcnuNzrQ",
+            "name": "America's Boy",
+            "durationMs": 214586
+          },
+          {
+            "id": "2ckhAiLT5eV5blWvyDs8Lh",
+            "name": "Tears In The Typing Pool",
+            "durationMs": 132160
+          },
+          {
+            "id": "5GDgMlMvHDVvsywryu3Fs2",
+            "name": "Corporeal",
+            "durationMs": 235013
+          },
+          {
+            "id": "0Wf3pvQ78u3Ivhr9ZBzVTA",
+            "name": "Bit 35",
+            "durationMs": 109853
+          },
+          {
+            "id": "3bEL0LHSMUsdMxbB7Hv2pM",
+            "name": "Arc Of A Journey",
+            "durationMs": 317386
+          },
+          {
+            "id": "0jelXL9WiSdB4abBRHbw2z",
+            "name": "Michael A Grammar",
+            "durationMs": 237013
+          },
+          {
+            "id": "6OS05hpsNSW2yTowPuX4vw",
+            "name": "Subject To the Ladder",
+            "durationMs": 194026
+          },
+          {
+            "id": "7pEhzQFogXSz6vq738N79d",
+            "name": "Minus 3",
+            "durationMs": 47640
+          },
+          {
+            "id": "4FDu6n1fAwcrteMEs69MeB",
+            "name": "Goodbye Girls",
+            "durationMs": 188973
+          },
+          {
+            "id": "31RfSbxhdSn0INnoxAmMQ2",
+            "name": "You And Me In Time",
+            "durationMs": 84280
+          },
+          {
+            "id": "1jQFq4gbWxsU8JOZuxqwlP",
+            "name": "I Found The End",
+            "durationMs": 125466
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Tender Buttons",
+        "spotifyArtists": "Broadcast",
+        "spotifyYear": 2005
+      }
+    },
+    {
+      "rymId": "13507",
+      "artist": "João Gilberto",
+      "title": "João Gilberto",
+      "year": 1973,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5rFhRJLR6CDPSxwSPTONA4",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732c91900f002c52ed72960fee",
+        "tracks": [
+          {
+            "id": "7Jj66NaXj1Nn6xrkB7vlSf",
+            "name": "Águas de Março",
+            "durationMs": 323657
+          },
+          {
+            "id": "5DPhD44bQHEOBPGRzc3Ebl",
+            "name": "Undiú",
+            "durationMs": 397453
+          },
+          {
+            "id": "3UYvX9Hs1kVJIhbuGSRgLl",
+            "name": "Na Baixa do Sapateiro",
+            "durationMs": 283585
+          },
+          {
+            "id": "2jlHfEYaKWrHzL7YKHHJq3",
+            "name": "Avarandado",
+            "durationMs": 269766
+          },
+          {
+            "id": "7nis0pALSkz4Tai1hJilet",
+            "name": "Falsa Baiana",
+            "durationMs": 225071
+          },
+          {
+            "id": "6RODRlHqwSxfI6WmKjqPCL",
+            "name": "Eu Quero um Samba",
+            "durationMs": 286302
+          },
+          {
+            "id": "4sUUUvNseGlHTjy0Fuus4W",
+            "name": "Eu Vim da Bahia",
+            "durationMs": 352078
+          },
+          {
+            "id": "23Z0eWEi3SbJ1Fx0Ta3A26",
+            "name": "Valsa (Como São Lindos os Youguis)",
+            "durationMs": 199392
+          },
+          {
+            "id": "2O6G533UXYJmbkrhzmt7OC",
+            "name": "É preciso Perdoar",
+            "durationMs": 308166
+          },
+          {
+            "id": "4im3cvYs2A3dIjBDlXJU3C",
+            "name": "Izaura",
+            "durationMs": 328097
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "João Gilberto",
+        "spotifyArtists": "João Gilberto",
+        "spotifyYear": 1973
+      }
+    },
+    {
+      "rymId": "28848",
+      "artist": "Mark Hollis",
+      "title": "Mark Hollis",
+      "year": 1998,
+      "rating": 9,
+      "spotify": {
+        "albumId": "1r8M1X0QFZw0bMMnBvwOXA",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730a55711006e7b6a91c39b887",
+        "tracks": [
+          {
+            "id": "7kYsV81UkV4z7UuF94u8T6",
+            "name": "The Colour Of Spring",
+            "durationMs": 232800
+          },
+          {
+            "id": "4Tw7Hxz9eSTrzcN98ijXni",
+            "name": "The Watershed",
+            "durationMs": 345026
+          },
+          {
+            "id": "47WhS6SrW8kFeJC4XEDEV6",
+            "name": "Inside Looking Out",
+            "durationMs": 381440
+          },
+          {
+            "id": "7nviB40euH8GciNuOn7uci",
+            "name": "The Gift",
+            "durationMs": 262666
+          },
+          {
+            "id": "7dXjq4Wp7eEPsGVsOhRQDQ",
+            "name": "A Life (1895 - 1915)",
+            "durationMs": 490133
+          },
+          {
+            "id": "15BsNMDMeokJLkWF5OSuqj",
+            "name": "Westward Bound",
+            "durationMs": 258293
+          },
+          {
+            "id": "0ecuzB0dhfFVg8Ex3tHU0c",
+            "name": "The Daily Planet",
+            "durationMs": 439800
+          },
+          {
+            "id": "66cmD4jKKbSHgKJEOiuPiu",
+            "name": "A New Jerusalem",
+            "durationMs": 409773
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Mark Hollis",
+        "spotifyArtists": "Mark Hollis",
+        "spotifyYear": 1998
+      }
+    },
+    {
+      "rymId": "10243487",
+      "artist": "Bill Callahan",
+      "title": "Shepherd in a Sheepskin Vest",
+      "year": 2019,
+      "rating": 9,
+      "spotify": {
+        "albumId": "59hAqiqCmbfLBDtMzGCNpp",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273def94bb3aed5b395f53d491d",
+        "tracks": [
+          {
+            "id": "5imF1gGEUJ4Ub8FrDKDW3Y",
+            "name": "Shepherd’s Welcome",
+            "durationMs": 142080
+          },
+          {
+            "id": "6UOaThrcCkUk5WF6OAJMBf",
+            "name": "Black Dog on the Beach",
+            "durationMs": 150666
+          },
+          {
+            "id": "3HvYwCmXw2ggMNt7o3e9oy",
+            "name": "Angela",
+            "durationMs": 167346
+          },
+          {
+            "id": "5vc2hxK6C28pMhA9MseVRX",
+            "name": "The Ballad of the Hulk",
+            "durationMs": 244546
+          },
+          {
+            "id": "6Bh0i8updnT6EKpqd5bG5m",
+            "name": "Writing",
+            "durationMs": 186653
+          },
+          {
+            "id": "7hFxEn86wLqe4ncwOmPjcn",
+            "name": "Morning is My Godmother",
+            "durationMs": 130520
+          },
+          {
+            "id": "3Z50m8nGRisSWiLTEn83u2",
+            "name": "747",
+            "durationMs": 206853
+          },
+          {
+            "id": "2mYg3AC8FRjveHdu9iWV5W",
+            "name": "Watch Me Get Married",
+            "durationMs": 190720
+          },
+          {
+            "id": "76DtXKw2bLxgxiTyFku00u",
+            "name": "Young Icarus",
+            "durationMs": 168533
+          },
+          {
+            "id": "5hLhoj9jdTUNgyLZZKN25m",
+            "name": "Released",
+            "durationMs": 142306
+          },
+          {
+            "id": "3sSfpC7N0UC5GeaqwquTMq",
+            "name": "What Comes After Certainty",
+            "durationMs": 222453
+          },
+          {
+            "id": "6ncw0RQa5p0KFeD3okhb6R",
+            "name": "Confederate Jasmine",
+            "durationMs": 220920
+          },
+          {
+            "id": "42Wm2GgeHNmUZ7opcbhG8Z",
+            "name": "Call Me Anything",
+            "durationMs": 146666
+          },
+          {
+            "id": "0LiC1BmFM3qRQCzBFvUSDZ",
+            "name": "Son of the Sea",
+            "durationMs": 253906
+          },
+          {
+            "id": "5LWZdwfnYfTOUggGm9dUe9",
+            "name": "Camels",
+            "durationMs": 179546
+          },
+          {
+            "id": "7pooQgueEWlLtmdKmnTmSk",
+            "name": "Circles",
+            "durationMs": 148360
+          },
+          {
+            "id": "7FcnsL9yTp39aqM2ve0l18",
+            "name": "When We Let Go",
+            "durationMs": 137413
+          },
+          {
+            "id": "5IyQbHhj8TOcPKYDmvAoV9",
+            "name": "Lonesome Valley",
+            "durationMs": 256346
+          },
+          {
+            "id": "5YxvvAMYXsFfw35G5aTJ1s",
+            "name": "Tugboats and Tumbleweeds",
+            "durationMs": 252560
+          },
+          {
+            "id": "5Dc5TXWZvEg0VXVJP9iJ5B",
+            "name": "The Beast",
+            "durationMs": 277586
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Shepherd in a Sheepskin Vest",
+        "spotifyArtists": "Bill Callahan",
+        "spotifyYear": 2019
+      }
+    },
+    {
+      "rymId": "11967755",
+      "artist": "Adrianne Lenker",
+      "title": "Songs",
+      "year": 2020,
+      "rating": 9,
+      "spotify": {
+        "albumId": "2Qt8Z1LB3Fsrf6nhBNsvUJ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2738ebe185fc4824bc6e568b511",
+        "tracks": [
+          {
+            "id": "4GHHloVSspowQJMBsJ6r37",
+            "name": "two reverse",
+            "durationMs": 213322
+          },
+          {
+            "id": "5CpH0bwau1sW8vtTBQ8Erc",
+            "name": "ingydar",
+            "durationMs": 248386
+          },
+          {
+            "id": "4PwWESSlTwzvw9B7bmtTLS",
+            "name": "anything",
+            "durationMs": 202047
+          },
+          {
+            "id": "6PBanBy8L1K2Ry4UN186XH",
+            "name": "forwards beckon rebound",
+            "durationMs": 189464
+          },
+          {
+            "id": "3hHxcz8pGLihxsoAGlBo3v",
+            "name": "heavy focus",
+            "durationMs": 154748
+          },
+          {
+            "id": "1i8dJGpKO0xQiKGCVslJqB",
+            "name": "half return",
+            "durationMs": 128700
+          },
+          {
+            "id": "6MX8v7cRooNQb5fW5Uo6Sm",
+            "name": "come",
+            "durationMs": 317455
+          },
+          {
+            "id": "3v2OxIsGWJXWfLuRkB59Q6",
+            "name": "zombie girl",
+            "durationMs": 164224
+          },
+          {
+            "id": "11hEwcy9LMEvzAlOYAFhkK",
+            "name": "not a lot, just forever",
+            "durationMs": 250198
+          },
+          {
+            "id": "2u0vK4Gf1IaEdcI7MtRWP5",
+            "name": "dragon eyes",
+            "durationMs": 206433
+          },
+          {
+            "id": "0jpEKGcoyt7oNpgI9S9cbA",
+            "name": "my angel",
+            "durationMs": 304871
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "songs",
+        "spotifyArtists": "Adrianne Lenker",
+        "spotifyYear": 2020
+      }
+    },
+    {
+      "rymId": "2673",
+      "artist": "Silver Jews",
+      "title": "American Water",
+      "year": 1998,
+      "rating": 10,
+      "spotify": {
+        "albumId": "2GbNeQEg5fLtuxjr5nlIpc",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27325191c5b6270c93029d1c896",
+        "tracks": [
+          {
+            "id": "6lquLzGE5CRoq2htyr2QGS",
+            "name": "Random Rules",
+            "durationMs": 238333
+          },
+          {
+            "id": "4DYR2Y7YkUyQSKzn9GUppR",
+            "name": "Smith & Jones Forever",
+            "durationMs": 198466
+          },
+          {
+            "id": "5PhkyQqXlkLMXiDniiouT1",
+            "name": "Night Society",
+            "durationMs": 137093
+          },
+          {
+            "id": "5E4AIOCPNZ8EGg6ebjFCPs",
+            "name": "Federal Dust",
+            "durationMs": 241440
+          },
+          {
+            "id": "13PfXqO69Am4goxVchrzej",
+            "name": "People",
+            "durationMs": 283386
+          },
+          {
+            "id": "4wna38YBeXbZbBO5KKsDsX",
+            "name": "Blue Arrangements",
+            "durationMs": 278306
+          },
+          {
+            "id": "13vl6Wz98GBPcsBe4CcLGF",
+            "name": "We Are Real",
+            "durationMs": 262466
+          },
+          {
+            "id": "2wl1zPMT7O4dvsoIl9cMO7",
+            "name": "Send in the Clouds",
+            "durationMs": 324333
+          },
+          {
+            "id": "6bw9zwgWQ4y0rnXRTpR5zN",
+            "name": "Like like the the the Death",
+            "durationMs": 238866
+          },
+          {
+            "id": "0OLbuqLCkkpv55M4mPo5lN",
+            "name": "Buckingham Rabbit",
+            "durationMs": 296573
+          },
+          {
+            "id": "2vOBdu0OUmaIPAHhgAaLYM",
+            "name": "Honk If You're Lonely",
+            "durationMs": 167400
+          },
+          {
+            "id": "5MQTgrkH8luhQt5Uncvhhz",
+            "name": "The Wild Kindness",
+            "durationMs": 234360
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "American Water",
+        "spotifyArtists": "Silver Jews",
+        "spotifyYear": 1998
+      }
+    },
+    {
+      "rymId": "1072581",
+      "artist": "Beach House",
+      "title": "Devotion",
+      "year": 2008,
+      "rating": 9,
+      "spotify": {
+        "albumId": "6Unw8A3kdy8ZPj6MmlbA7E",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273cad79d4a8ac2e2acc58dbfef",
+        "tracks": [
+          {
+            "id": "36zLN7ZLhQWJUkzPss2KAo",
+            "name": "Wedding Bell",
+            "durationMs": 234733
+          },
+          {
+            "id": "6PB7R41AktgVRoJHE3XlWr",
+            "name": "You Came To Me",
+            "durationMs": 245333
+          },
+          {
+            "id": "2r3XoShDJnYhatcpfobVmC",
+            "name": "Gila",
+            "durationMs": 286240
+          },
+          {
+            "id": "1Qy1eRka08FJ0Bhz7ZenYS",
+            "name": "Turtle Island",
+            "durationMs": 239733
+          },
+          {
+            "id": "4amD9JhozTIpdnq73TRN1G",
+            "name": "Holy Dances",
+            "durationMs": 258959
+          },
+          {
+            "id": "5gsMl6zvPWbtBNGjuR0FWJ",
+            "name": "All The Years",
+            "durationMs": 216253
+          },
+          {
+            "id": "2ldmzcLJvYv4WHPrzGbBgq",
+            "name": "Heart of Chambers",
+            "durationMs": 265173
+          },
+          {
+            "id": "1G6FgJHNiPQoup4wFUTHGg",
+            "name": "Some Things Last a Long Time",
+            "durationMs": 151626
+          },
+          {
+            "id": "7imyu7tXXhz2XtGKLZIUhw",
+            "name": "Astronaut",
+            "durationMs": 304560
+          },
+          {
+            "id": "58MB60rzfDkXJtalRUaLys",
+            "name": "D.A.R.L.I.N.G.",
+            "durationMs": 198133
+          },
+          {
+            "id": "4UEJ9jO9Q1Iainvq1Rp9t7",
+            "name": "Home Again",
+            "durationMs": 248866
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Devotion",
+        "spotifyArtists": "Beach House",
+        "spotifyYear": 2008
+      }
+    },
+    {
+      "rymId": "9999224",
+      "artist": "Weyes Blood",
+      "title": "Titanic Rising",
+      "year": 2019,
+      "rating": 10,
+      "spotify": {
+        "albumId": "0Cuqhgy8vm96JEkBY3polk",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730c64e752dec4c08362cc4a88",
+        "tracks": [
+          {
+            "id": "5qspeKX1xBacLJMm2t3Yc0",
+            "name": "A Lot's Gonna Change",
+            "durationMs": 261946
+          },
+          {
+            "id": "51EMSRpNm9Rg5rGViVCczv",
+            "name": "Andromeda",
+            "durationMs": 280186
+          },
+          {
+            "id": "2VYqgye3Wf9ySE4qYM3iJn",
+            "name": "Everyday",
+            "durationMs": 307013
+          },
+          {
+            "id": "30TCAxiC8zVb5NVdUoUuCS",
+            "name": "Something to Believe",
+            "durationMs": 285560
+          },
+          {
+            "id": "1ki6pB2iYh9nSmlG4WPdqf",
+            "name": "Titanic Rising",
+            "durationMs": 96211
+          },
+          {
+            "id": "6f4itfvWzS59Qu7JWorhxn",
+            "name": "Movies",
+            "durationMs": 353732
+          },
+          {
+            "id": "2ujzo6cl7jAcLCnyKyYWwM",
+            "name": "Mirror Forever",
+            "durationMs": 305815
+          },
+          {
+            "id": "5V25JNAs17PQ3dJfmMIqSG",
+            "name": "Wild Time",
+            "durationMs": 369265
+          },
+          {
+            "id": "6Jy6p1xGv0n4c5hH0CH3VP",
+            "name": "Picture Me Better",
+            "durationMs": 221880
+          },
+          {
+            "id": "7s9I4aCM8cfe2cSgPaPezg",
+            "name": "Nearer to Thee",
+            "durationMs": 65866
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Titanic Rising",
+        "spotifyArtists": "Weyes Blood",
+        "spotifyYear": 2019
+      }
+    },
+    {
+      "rymId": "52",
+      "artist": "Nick Drake",
+      "title": "Five Leaves Left",
+      "year": 1969,
+      "rating": 9,
+      "spotify": {
+        "albumId": "7IpcJbVxLLEfW0KXB7ndE2",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273bd158c797b1026005c2917bc",
+        "tracks": [
+          {
+            "id": "20FLGZPgMHXlU0VpQ0HpxN",
+            "name": "Time Has Told Me",
+            "durationMs": 264613
+          },
+          {
+            "id": "3Uh7rAb7F0XGVpEEDwfH1k",
+            "name": "River Man",
+            "durationMs": 258680
+          },
+          {
+            "id": "3Mc00D5lLah9WAn62rDKrH",
+            "name": "Three Hours",
+            "durationMs": 372626
+          },
+          {
+            "id": "3GYcEm6ZGkn42RdMQemEo1",
+            "name": "Way To Blue",
+            "durationMs": 188493
+          },
+          {
+            "id": "66790TBuwlIrGxWWTVc6yl",
+            "name": "Day Is Done",
+            "durationMs": 146026
+          },
+          {
+            "id": "42yexCY4dCftowtAZXuAIj",
+            "name": "' Cello Song",
+            "durationMs": 284986
+          },
+          {
+            "id": "3k5C3vlDqE5rOqiikOjJ10",
+            "name": "The Thoughts Of Mary Jane",
+            "durationMs": 198813
+          },
+          {
+            "id": "7rDJymAeuDbAKmRO07dGHS",
+            "name": "Man In A Shed",
+            "durationMs": 231906
+          },
+          {
+            "id": "6x3HF1SdlVeZqOb7soisuh",
+            "name": "Fruit Tree",
+            "durationMs": 286280
+          },
+          {
+            "id": "1drLQNS9D5z9lBP4DbtO2R",
+            "name": "Saturday Sun",
+            "durationMs": 245013
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Five Leaves Left",
+        "spotifyArtists": "Nick Drake",
+        "spotifyYear": 1969
+      }
+    },
+    {
+      "rymId": "2543",
+      "artist": "Mojave 3",
+      "title": "Ask Me Tomorrow",
+      "year": 1995,
+      "rating": 9,
+      "spotify": {
+        "albumId": "3fjeFLyo8FY1Appkw4Mrvy",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27331a6ae11374a335350825aad",
+        "tracks": [
+          {
+            "id": "3FzK2g50oLcx8vqETwOn07",
+            "name": "Love Songs on the Radio",
+            "durationMs": 348400
+          },
+          {
+            "id": "55QRjEvjWZf2w7LplPhIIN",
+            "name": "Sarah",
+            "durationMs": 224200
+          },
+          {
+            "id": "3EeYt0HXPrbUKCWFd7YPz0",
+            "name": "Tomorrow's Taken",
+            "durationMs": 337373
+          },
+          {
+            "id": "4ZKfoc9tHgzRey7s5SQtZd",
+            "name": "Candle Song 3",
+            "durationMs": 326933
+          },
+          {
+            "id": "47wMQFZcbyB1h8kJ4YTL0d",
+            "name": "You're Beautiful",
+            "durationMs": 186866
+          },
+          {
+            "id": "1kwgefox2MXHcQ8yUJf9BP",
+            "name": "Where Is the Love",
+            "durationMs": 278026
+          },
+          {
+            "id": "2BnQORUefePHZ447lvYEli",
+            "name": "After All",
+            "durationMs": 213840
+          },
+          {
+            "id": "4sq8ktNLlLdZyBNRw1k8Qd",
+            "name": "Pictures",
+            "durationMs": 261933
+          },
+          {
+            "id": "2papBQ7qsbU9wtlipPmqFx",
+            "name": "Mercy",
+            "durationMs": 296026
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Ask Me Tomorrow",
+        "spotifyArtists": "Mojave 3",
+        "spotifyYear": 1995
+      }
+    },
+    {
+      "rymId": "9535",
+      "artist": "Low",
+      "title": "Long Division",
+      "year": 1995,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5nuBlL5YUcZtVR0JnmsYVv",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730514d03657ddc7f4353a8cf4",
+        "tracks": [
+          {
+            "id": "7EJ70jXSrpkjcVRdz8dL9x",
+            "name": "Violence",
+            "durationMs": 353440
+          },
+          {
+            "id": "3bjOIdrOZaBWwez9u3fgVI",
+            "name": "Below & Above",
+            "durationMs": 152000
+          },
+          {
+            "id": "7DyPMt0LXmGgZpmbFpW3bg",
+            "name": "Shame",
+            "durationMs": 236840
+          },
+          {
+            "id": "1OsZ27tSWrnoTlneAZdRX8",
+            "name": "Throw Out The Line",
+            "durationMs": 243893
+          },
+          {
+            "id": "1NwVOX9Iyx575OsTzUlzg9",
+            "name": "Swingin'",
+            "durationMs": 250000
+          },
+          {
+            "id": "3D5n0gsjcNhv2Gq7NQgFYD",
+            "name": "See-Through",
+            "durationMs": 265733
+          },
+          {
+            "id": "34kXyJCygFVzVjBDPh0FR9",
+            "name": "Turn",
+            "durationMs": 307866
+          },
+          {
+            "id": "0IkO9jVt72LnFqLsEaQ7H1",
+            "name": "Caroline",
+            "durationMs": 287866
+          },
+          {
+            "id": "2yANVBsLFz2FksHayHLi2t",
+            "name": "Alone",
+            "durationMs": 239133
+          },
+          {
+            "id": "0t3ebqaaW1YGXJKmzCgN9N",
+            "name": "Streetlight",
+            "durationMs": 33666
+          },
+          {
+            "id": "7zPAWF6sLj2XqsUvTzaEuH",
+            "name": "Stay",
+            "durationMs": 414800
+          },
+          {
+            "id": "4owNzyf97lSUMS71ROmuvS",
+            "name": "Take",
+            "durationMs": 152040
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Long Division",
+        "spotifyArtists": "Low",
+        "spotifyYear": 1995
+      }
+    }
+  ]
+}

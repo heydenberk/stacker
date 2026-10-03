@@ -1,1 +1,5 @@
-{ "crates": [] }
+{
+  "crates": [
+    "rainy-sunday"
+  ]
+}
