@@ -30,6 +30,8 @@ export interface PlayerApi {
   pause(deviceId: string): Promise<void>;
   next(deviceId: string): Promise<void>;
   previous(deviceId: string): Promise<void>;
+  /** Moves within the current track (milliseconds from its start). */
+  seek(deviceId: string, positionMs: number): Promise<void>;
   setShuffle(deviceId: string, on: boolean): Promise<void>;
   setRepeat(deviceId: string, mode: 'off' | 'context' | 'track'): Promise<void>;
 }
@@ -155,6 +157,10 @@ export class SpotifyPlayer implements PlayerApi {
 
   async previous(deviceId: string): Promise<void> {
     await this.request('POST', `/previous${query({ device_id: deviceId })}`);
+  }
+
+  async seek(deviceId: string, positionMs: number): Promise<void> {
+    await this.request('PUT', `/seek${query({ position_ms: String(Math.max(0, Math.round(positionMs))), device_id: deviceId })}`);
   }
 
   async setShuffle(deviceId: string, on: boolean): Promise<void> {

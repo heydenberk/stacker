@@ -2,10 +2,11 @@ import { describe, expect, it, vi } from 'vitest';
 import type { Crate } from '../../shared/crate';
 import { initialState, step } from './conductor/step';
 import type { ConductorState, PlayerSnapshot, StepContext } from './conductor/types';
-import { DEVICE_ID_KEY, DEVICE_KEY, Runner, STATE_KEY } from './runner';
+import { DEVICE_ID_KEY, DEVICE_KEY, Runner, STATE_KEY, TAKEOVER_KEY } from './runner';
+import type { StackerShell } from './shell';
 import { type Device, PlayerError, type PlayerApi } from './spotify/player';
 import { memoryStore, readJsonKey } from './storage';
-import { albumOf, makeCrate, otherSnap, snapFor } from './testing/fixtures';
+import { TRACK_MS, albumOf, makeCrate, otherSnap, snapFor } from './testing/fixtures';
 
 class FakePlayer implements PlayerApi {
   calls: string[] = [];
@@ -51,6 +52,9 @@ class FakePlayer implements PlayerApi {
   async previous(d: string) {
     this.calls.push(`previous ${d}`);
   }
+  async seek(d: string, positionMs: number) {
+    this.calls.push(`seek ${d} ${positionMs}`);
+  }
   async setShuffle(d: string, on: boolean) {
     this.calls.push(`shuffle ${d} ${on}`);
     if (this.shuffleError) throw this.shuffleError;
@@ -60,13 +64,30 @@ class FakePlayer implements PlayerApi {
   }
 }
 
+class FakeShell implements StackerShell {
+  otherAudio = false;
+  fronts = 0;
+  isOtherAudioPlaying() {
+    return this.otherAudio;
+  }
+  bringToFront() {
+    this.fronts++;
+  }
+  info() {
+    return '{}';
+  }
+}
+
 const crates = new Map<string, Crate>([['c', makeCrate()]]);
 
-function setup(opts: { device?: string | null; deviceId?: string; saved?: ConductorState } = {}) {
+function setup(
+  opts: { device?: string | null; deviceId?: string; saved?: ConductorState; shell?: StackerShell | null; takeover?: boolean } = {},
+) {
   const store = memoryStore();
   if (opts.device !== null) store.set(DEVICE_KEY, opts.device ?? 'Living Room TV');
   if (opts.deviceId) store.set(DEVICE_ID_KEY, opts.deviceId);
   if (opts.saved) store.set(STATE_KEY, JSON.stringify(opts.saved));
+  if (opts.takeover !== undefined) store.set(TAKEOVER_KEY, String(opts.takeover));
   const player = new FakePlayer();
   const delays: number[] = [];
   const clock = { t: 1_000_000 };
@@ -76,6 +97,7 @@ function setup(opts: { device?: string | null; deviceId?: string; saved?: Conduc
     crates,
     now: () => clock.t,
     random: () => 0,
+    shell: opts.shell,
     setTimer: (_fn, ms) => {
       delays.push(ms);
       return () => {};
@@ -471,5 +493,233 @@ describe('Runner rate-limit follow-ups', () => {
     expect(runner.view().error).toBe('boom');
     await runner.pollNow();
     expect(runner.view().error).toBeNull();
+  });
+});
+
+/** A crate chosen and its first record attached near the end of its last track. */
+async function nearEnd(ctx: ReturnType<typeof setup>) {
+  await ctx.runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+  const order = ctx.runner.view().state.order;
+  ctx.player.state = snapFor(order[0], 2, { progressMs: TRACK_MS - 3_000 });
+  await ctx.runner.start();
+  expect(ctx.runner.view().state.mode).toBe('playing');
+  return order;
+}
+
+/** Spotify stops after the last track; the next poll sees the record finished. */
+async function finishRecord(ctx: ReturnType<typeof setup>) {
+  ctx.clock.t += 3_000;
+  ctx.player.state = null;
+  await ctx.runner.pollNow();
+}
+
+describe('Runner takeover setting', () => {
+  it('defaults to on and persists changes', async () => {
+    const { runner, store } = setup();
+    expect(runner.view().takeover).toBe(true);
+    await runner.setTakeover(false);
+    expect(runner.view().takeover).toBe(false);
+    expect(store.get(TAKEOVER_KEY)).toBe('false');
+    expect(setup({ takeover: false }).runner.view().takeover).toBe(false);
+  });
+
+  it('holds an automatic start while other audio plays with takeover off', async () => {
+    const shell = new FakeShell();
+    const ctx = setup({ shell, takeover: false });
+    await nearEnd(ctx);
+    shell.otherAudio = true;
+    await finishRecord(ctx);
+    expect(ctx.runner.view().state).toMatchObject({ mode: 'held', pos: 1 });
+    expect(plays(ctx.player)).toHaveLength(1);
+    expect(ctx.delays.at(-1)).toBe(5_000);
+  });
+
+  it('plays the held record once the other audio stops', async () => {
+    const shell = new FakeShell();
+    const ctx = setup({ shell, takeover: false });
+    const order = await nearEnd(ctx);
+    shell.otherAudio = true;
+    await finishRecord(ctx);
+    await ctx.runner.pollNow();
+    expect(ctx.runner.view().state.mode).toBe('held');
+    shell.otherAudio = false;
+    await ctx.runner.pollNow();
+    expect(ctx.runner.view().state.mode).toBe('starting');
+    expect(plays(ctx.player).at(-1)).toBe(`play tv1 ${albumOf(order[1])} 0 0`);
+    expect(shell.fronts).toBe(0);
+  });
+
+  it('releases a held record when takeover is turned back on', async () => {
+    const shell = new FakeShell();
+    const ctx = setup({ shell, takeover: false });
+    await nearEnd(ctx);
+    shell.otherAudio = true;
+    await finishRecord(ctx);
+    await ctx.runner.setTakeover(true);
+    expect(ctx.runner.view().state.mode).toBe('starting');
+    expect(plays(ctx.player)).toHaveLength(2);
+    expect(shell.fronts).toBe(1);
+  });
+
+  it('lets a user play through while other audio plays', async () => {
+    const shell = new FakeShell();
+    shell.otherAudio = true;
+    const { runner, player } = setup({ shell, takeover: false });
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state.mode).toBe('starting');
+    expect(plays(player)).toHaveLength(1);
+  });
+
+  it("does not count Spotify's own playback as other audio", async () => {
+    const shell = new FakeShell();
+    const ctx = setup({ shell, takeover: false });
+    await nearEnd(ctx);
+    shell.otherAudio = true;
+    ctx.clock.t += 5_000;
+    ctx.player.state = otherSnap();
+    await ctx.runner.pollNow();
+    expect(ctx.runner.view().state.mode).toBe('starting');
+    expect(plays(ctx.player)).toHaveLength(2);
+  });
+
+  it('brings Stacker to the front after an automatic play with takeover on', async () => {
+    const shell = new FakeShell();
+    shell.otherAudio = true;
+    const ctx = setup({ shell });
+    await nearEnd(ctx);
+    expect(shell.fronts).toBe(0);
+    await finishRecord(ctx);
+    expect(plays(ctx.player)).toHaveLength(2);
+    expect(shell.fronts).toBe(1);
+  });
+
+  it('does not bring Stacker to the front for user plays', async () => {
+    const shell = new FakeShell();
+    const { runner } = setup({ shell });
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    await runner.dispatch({ type: 'skipRecord' });
+    await runner.dispatch({ type: 'resume' });
+    expect(shell.fronts).toBe(0);
+  });
+
+  it('does not bring Stacker to the front when the automatic play fails', async () => {
+    const shell = new FakeShell();
+    const ctx = setup({ shell });
+    await nearEnd(ctx);
+    ctx.player.playError = new PlayerError(500, 'other', 'boom');
+    await finishRecord(ctx);
+    expect(shell.fronts).toBe(0);
+  });
+
+  it('retries an automatic play as automatic once the device returns', async () => {
+    const shell = new FakeShell();
+    const ctx = setup({ shell });
+    await nearEnd(ctx);
+    ctx.player.playErrors = [new PlayerError(404, 'noDevice', 'No active device')];
+    await finishRecord(ctx);
+    expect(ctx.runner.view().state).toMatchObject({ mode: 'needsDevice', pendingOrigin: 'auto' });
+    expect(shell.fronts).toBe(0);
+    await ctx.runner.pollNow();
+    expect(ctx.runner.view().state.mode).toBe('starting');
+    expect(shell.fronts).toBe(1);
+  });
+
+  it('retries a user play as a user play once a device is chosen', async () => {
+    const shell = new FakeShell();
+    const { runner } = setup({ shell, device: null });
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state).toMatchObject({ mode: 'needsDevice', pendingOrigin: 'user' });
+    await runner.setDevice('Living Room TV');
+    expect(runner.view().state.mode).toBe('starting');
+    expect(shell.fronts).toBe(0);
+  });
+
+  it('keeps playing when bringing Stacker to the front fails', async () => {
+    const shell = new FakeShell();
+    shell.bringToFront = () => {
+      throw new Error('bridge gone');
+    };
+    const spy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const ctx = setup({ shell });
+    await nearEnd(ctx);
+    await finishRecord(ctx);
+    expect(ctx.runner.view().state.mode).toBe('starting');
+    expect(ctx.runner.view().error).toBeNull();
+    spy.mockRestore();
+  });
+
+  it('plays automatically without a shell, whatever the setting', async () => {
+    const ctx = setup({ takeover: false });
+    await nearEnd(ctx);
+    await finishRecord(ctx);
+    expect(ctx.runner.view().state.mode).toBe('starting');
+    expect(plays(ctx.player)).toHaveLength(2);
+  });
+});
+
+describe('Runner previous track', () => {
+  it('restarts the track with a seek when well into it', async () => {
+    const { runner, player } = setup();
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    player.state = snapFor(runner.view().state.order[0], 1, { progressMs: 60_000 });
+    await runner.start();
+    await runner.dispatch({ type: 'previousTrack' });
+    expect(player.calls.at(-1)).toBe('seek tv1 0');
+  });
+});
+
+describe('Runner status', () => {
+  it('is ok with no problems', () => {
+    expect(setup().runner.view().status).toEqual({ kind: 'ok', message: null });
+  });
+
+  it('reports a network failure as offline', async () => {
+    const { runner, player } = setup();
+    player.stateError = new PlayerError(0, 'network', 'Failed to fetch');
+    await runner.start();
+    expect(runner.view().status).toEqual({ kind: 'offline', message: 'Failed to fetch' });
+    expect(runner.view().error).toBe('Failed to fetch');
+  });
+
+  it('reports a rate limit', async () => {
+    const { runner, player } = setup();
+    player.stateError = new PlayerError(429, 'rateLimited', 'Spotify rate limit — retrying in 30s', 30_000);
+    await runner.start();
+    expect(runner.view().status).toEqual({ kind: 'rateLimited', message: 'Spotify rate limit — retrying in 30s' });
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().status.kind).toBe('rateLimited');
+    expect(runner.view().status.message).toMatch(/slow down/);
+  });
+
+  it('reports signed out', async () => {
+    const { runner, player } = setup();
+    player.stateError = new PlayerError(401, 'unauthorized', 'Not signed in to Spotify');
+    await runner.start();
+    expect(runner.view().status).toEqual({ kind: 'signedOut', message: null });
+  });
+
+  it('reports a Premium requirement', async () => {
+    const { runner, player } = setup();
+    player.playError = new PlayerError(403, 'premium', 'Premium required');
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().status).toEqual({ kind: 'premium', message: null });
+  });
+
+  it('reports giving up on unplayable records', async () => {
+    const { runner, player } = setup();
+    player.playError = new PlayerError(404, 'other', 'Album not found');
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().status.kind).toBe('stoppedTrying');
+    expect(runner.view().status.message).toMatch(/could not be played/);
+  });
+
+  it('reports other failures as errors', async () => {
+    const { runner, player } = setup();
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    player.state = snapFor(runner.view().state.order[0], 0);
+    await runner.start();
+    player.nextError = new PlayerError(500, 'other', 'boom');
+    await runner.dispatch({ type: 'nextTrack' });
+    expect(runner.view().status).toEqual({ kind: 'error', message: 'boom' });
   });
 });

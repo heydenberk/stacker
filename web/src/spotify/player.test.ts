@@ -104,6 +104,12 @@ describe('SpotifyPlayer requests', () => {
     ]);
   });
 
+  it('seeks within the current track on a device', async () => {
+    const { player, requests } = setup([empty()]);
+    await player.seek('d', 0);
+    expect(requests[0]).toMatchObject({ method: 'PUT', url: `${API}/seek?position_ms=0&device_id=d`, body: null });
+  });
+
   it('lists devices that have an id', async () => {
     const { player } = setup([
       json({

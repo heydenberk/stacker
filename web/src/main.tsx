@@ -34,7 +34,7 @@ async function boot(): Promise<void> {
   }
 
   const player = new SpotifyPlayer(auth);
-  const runner = new Runner({ player, store, crates: catalog.byId });
+  const runner = new Runner({ player, store, crates: catalog.byId, shell: getShell() });
   if (auth.isSignedIn()) void runner.start();
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') {

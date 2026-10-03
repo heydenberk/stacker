@@ -22,9 +22,14 @@ export type Mode =
   | 'playing'
   | 'paused'
   | 'yielded' // the user is playing something else; stay out of the way
+  | 'held' // an automatic start is waiting for other audio on the TV to stop (takeover off)
   | 'needsDevice'; // the TV's Spotify app isn't visible; retry when it appears
 
+/** What caused a play: a user action, or the conductor moving on by itself. */
+export type PlayOrigin = 'user' | 'auto';
+
 export interface Problem {
+  crateId: string;
   rymId: string;
   reason: string;
   at: number;
@@ -51,6 +56,9 @@ export interface ConductorState {
   offRecord: number;
   /** Play requests made for the current start; a silent start is retried once before yielding. */
   startAttempts: number;
+  /** Origin of the play that found no device; `deviceReady` retries it with the same origin. */
+  pendingOrigin: PlayOrigin;
+  /** Records that couldn't play, tagged by crate; read them with `problemsFor`. */
   problems: Problem[];
 }
 
@@ -64,11 +72,15 @@ export type ConductorEvent =
   | { type: 'skipRecord' }
   | { type: 'resume' }
   | { type: 'playFailed'; reason: string }
-  | { type: 'deviceMissing' }
-  | { type: 'deviceReady' };
+  /** `origin` is that of the play that found no device; omitted (e.g. for a pause) it counts as auto. */
+  | { type: 'deviceMissing'; origin?: PlayOrigin }
+  | { type: 'deviceReady' }
+  /** The hold on automatic starts has cleared: start the held record. */
+  | { type: 'release' };
 
 export type Action =
-  | { type: 'play'; albumId: string; offsetIndex: number; positionMs: number }
+  | { type: 'play'; albumId: string; offsetIndex: number; positionMs: number; origin: PlayOrigin }
+  | { type: 'seek'; positionMs: number }
   | { type: 'pause' }
   | { type: 'resume' }
   | { type: 'next' }
@@ -79,4 +91,9 @@ export interface StepContext {
   now: number;
   /** Returns [0, 1), like Math.random; injected so tests are deterministic. */
   random: () => number;
+  /**
+   * Takeover is off and other audio is playing on the TV: an automatic play is not emitted and the
+   * conductor waits in 'held' instead. User plays always go through. Omitted means false.
+   */
+  holdAutoStarts?: boolean;
 }

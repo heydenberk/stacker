@@ -1,25 +1,46 @@
 import type { Crate } from '../../shared/crate';
 import { nextPollDelay, restore, step } from './conductor/step';
-import type { Action, ConductorEvent, ConductorState, PlayerSnapshot } from './conductor/types';
+import type { Action, ConductorEvent, ConductorState, PlayOrigin, PlayerSnapshot, StepContext } from './conductor/types';
+import type { StackerShell } from './shell';
 import { PlayerError, type PlayerApi } from './spotify/player';
 import { type KeyValueStore, readJsonKey, writeJsonKey } from './storage';
 
 export const STATE_KEY = 'stacker.conductor';
 export const DEVICE_KEY = 'stacker.device';
 export const DEVICE_ID_KEY = 'stacker.deviceId';
+/** "Take over the TV": 'false' when off; anything else (including missing) means on. */
+export const TAKEOVER_KEY = 'stacker.takeover';
 /** Follow-up events (e.g. playFailed → next record) allowed in a row before giving up. */
 const MAX_FOLLOW_UPS = 3;
 const SLOW_DOWN_PREFIX = 'Spotify asked us to slow down';
 const SHUFFLE_PREFIX = "Couldn't turn off shuffle/repeat: ";
 const STOPPED_TRYING = 'Several records in a row could not be played; stopped trying.';
 
+export type StatusKind = 'ok' | 'offline' | 'rateLimited' | 'signedOut' | 'premium' | 'stoppedTrying' | 'error';
+
+/** What, if anything, is wrong, for the TV screens to show. `message` is null for 'ok', 'signedOut' and 'premium'. */
+export interface RunnerStatus {
+  kind: StatusKind;
+  message: string | null;
+}
+
 export interface RunnerView {
   state: ConductorState;
   snapshot: PlayerSnapshot | null;
   deviceName: string | null;
+  /** The raw error message, for the debug page; the TV screens use `status`. */
   error: string | null;
+  status: RunnerStatus;
   signedOut: boolean;
   premiumRequired: boolean;
+  /** "Take over the TV": automatic starts interrupt other audio and bring Stacker to the front. */
+  takeover: boolean;
+}
+
+/** An error message and the status kind it shows as. */
+interface ErrorNote {
+  message: string;
+  kind: StatusKind;
 }
 
 export interface RunnerDeps {
@@ -30,6 +51,8 @@ export interface RunnerDeps {
   random?: () => number;
   /** Schedules fn after ms; returns a cancel function. */
   setTimer?: (fn: () => void, ms: number) => () => void;
+  /** The Android TV shell's bridge; null (the default) in a plain browser. */
+  shell?: StackerShell | null;
 }
 
 const defaultTimer = (fn: () => void, ms: number) => {
@@ -44,9 +67,10 @@ export class Runner {
   private deviceName: string | null;
   private savedDeviceId: string | null;
   /** Set by a failed poll, cleared by a successful one. */
-  private pollError: string | null = null;
+  private pollError: ErrorNote | null = null;
   /** Set by failed actions; cleared when a later action (a play only if fully successful) succeeds. */
-  private actionError: string | null = null;
+  private actionError: ErrorNote | null = null;
+  private takeover: boolean;
   private rateLimitedUntil = 0;
   private signedOut = false;
   private premiumRequired = false;
@@ -57,11 +81,14 @@ export class Runner {
   private readonly now: () => number;
   private readonly random: () => number;
   private readonly setTimer: (fn: () => void, ms: number) => () => void;
+  private readonly shell: StackerShell | null;
 
   constructor(private readonly deps: RunnerDeps) {
     this.now = deps.now ?? Date.now;
     this.random = deps.random ?? Math.random;
     this.setTimer = deps.setTimer ?? defaultTimer;
+    this.shell = deps.shell ?? null;
+    this.takeover = deps.store.get(TAKEOVER_KEY) !== 'false';
     this.state = restore(readJsonKey<ConductorState>(deps.store, STATE_KEY));
     this.deviceName = deps.store.get(DEVICE_KEY);
     this.savedDeviceId = deps.store.get(DEVICE_ID_KEY);
@@ -72,10 +99,19 @@ export class Runner {
       state: this.state,
       snapshot: this.snapshot,
       deviceName: this.deviceName,
-      error: this.actionError ?? this.pollError,
+      error: (this.actionError ?? this.pollError)?.message ?? null,
+      status: this.status(),
       signedOut: this.signedOut,
       premiumRequired: this.premiumRequired,
+      takeover: this.takeover,
     };
+  }
+
+  private status(): RunnerStatus {
+    if (this.signedOut) return { kind: 'signedOut', message: null };
+    if (this.premiumRequired) return { kind: 'premium', message: null };
+    const note = this.actionError ?? this.pollError;
+    return note ? { kind: note.kind, message: note.message } : { kind: 'ok', message: null };
   }
 
   subscribe(listener: (view: RunnerView) => void): () => void {
@@ -127,6 +163,18 @@ export class Runner {
     });
   }
 
+  /** Turn "Take over the TV" on or off (saved). Turning it on starts a held record straight away. */
+  setTakeover(on: boolean): Promise<void> {
+    return this.enqueue(async () => {
+      this.takeover = on;
+      this.deps.store.set(TAKEOVER_KEY, String(on));
+      // During a rate-limit window the next poll after it releases instead.
+      if (this.rateLimitedUntil <= this.now()) await this.releaseIfClear();
+      this.emit();
+      this.rescheduleAfterChange();
+    });
+  }
+
   pollNow(): Promise<void> {
     return this.enqueue(() => this.poll());
   }
@@ -137,17 +185,51 @@ export class Runner {
     return run;
   }
 
+  private stepContext(): StepContext {
+    return { crates: this.deps.crates, now: this.now(), random: this.random, holdAutoStarts: this.holdAutoStarts() };
+  }
+
+  /**
+   * Takeover is off and another app is making sound. The shell reports any audio, Spotify's
+   * included, so sound while Spotify says it is playing doesn't count.
+   */
+  private holdAutoStarts(): boolean {
+    if (this.takeover || !this.shell) return false;
+    let audio: boolean;
+    try {
+      audio = this.shell.isOtherAudioPlaying() === true;
+    } catch (e) {
+      console.warn('StackerShell.isOtherAudioPlaying failed', e);
+      return false;
+    }
+    return audio && !this.snapshot?.isPlaying;
+  }
+
+  /** A held record starts once the hold has cleared. */
+  private async releaseIfClear(): Promise<void> {
+    if (this.state.mode === 'held' && !this.holdAutoStarts()) await this.apply({ type: 'release' });
+  }
+
+  private bringToFront(): void {
+    if (!this.takeover || !this.shell) return;
+    try {
+      this.shell.bringToFront();
+    } catch (e) {
+      console.warn('StackerShell.bringToFront failed', e);
+    }
+  }
+
   private async apply(event: ConductorEvent, depth = 0): Promise<void> {
-    const { state, actions } = step(this.state, event, { crates: this.deps.crates, now: this.now(), random: this.random });
+    const { state, actions } = step(this.state, event, this.stepContext());
     this.setState(state);
     for (const action of actions) {
       const followUp = await this.execute(action);
       if (!followUp) continue;
       if (followUp.type !== 'deviceMissing' && depth >= MAX_FOLLOW_UPS) {
         // Record the last failure (without executing what it would trigger), then stop.
-        const last = step(this.state, followUp, { crates: this.deps.crates, now: this.now(), random: this.random });
+        const last = step(this.state, followUp, this.stepContext());
         this.setState({ ...last.state, mode: 'yielded' });
-        this.actionError = STOPPED_TRYING;
+        this.actionError = { message: STOPPED_TRYING, kind: 'stoppedTrying' };
         return;
       }
       await this.apply(followUp, followUp.type === 'deviceMissing' ? depth : depth + 1);
@@ -161,19 +243,25 @@ export class Runner {
       this.setSlowDown(waitMs);
       return null;
     }
+    // A play that finds no device is retried with the same origin once the device is back.
+    const origin: PlayOrigin | undefined = action.type === 'play' ? action.origin : undefined;
+    const deviceMissing: ConductorEvent = { type: 'deviceMissing', origin };
     let deviceId: string | null;
     try {
       deviceId = await this.resolveDevice();
     } catch (e) {
-      return this.failAction(e);
+      return this.failAction(e, deviceMissing);
     }
-    if (!deviceId) return { type: 'deviceMissing' };
+    if (!deviceId) return deviceMissing;
     const p = this.deps.player;
     try {
       switch (action.type) {
         case 'play':
           await p.play(deviceId, action.albumId, action.offsetIndex, action.positionMs);
           this.actionError = null;
+          // Starting music on its own: show what is playing. A no-op when Stacker is already in front.
+          // Not gated on document.visibilityState: the shell never pauses the WebView, so it always reads 'visible'.
+          if (action.origin === 'auto') this.bringToFront();
           // Album order, no repeat: after the last track Spotify stops (or autoplays) and the conductor moves on.
           // Best effort: a failure here must never fail (or skip) a play that already succeeded.
           await this.bestEffort(() => p.setShuffle(deviceId, false));
@@ -191,6 +279,9 @@ export class Runner {
         case 'previous':
           await p.previous(deviceId);
           break;
+        case 'seek':
+          await p.seek(deviceId, action.positionMs);
+          break;
       }
       this.actionError = null;
       return null;
@@ -203,19 +294,19 @@ export class Runner {
           const present = knownId ? devices.some((d) => d.id === knownId) : devices.some((d) => d.name === this.deviceName);
           if (!present) {
             this.deviceId = null;
-            return { type: 'deviceMissing' };
+            return deviceMissing;
           }
         } catch (checkError) {
-          return this.failAction(checkError);
+          return this.failAction(checkError, deviceMissing);
         }
         return { type: 'playFailed', reason: e.message };
       }
-      return this.failAction(e);
+      return this.failAction(e, deviceMissing);
     }
   }
 
   private setSlowDown(waitMs: number): void {
-    this.actionError = `${SLOW_DOWN_PREFIX} — try again in ${Math.ceil(waitMs / 1000)}s`;
+    this.actionError = { message: `${SLOW_DOWN_PREFIX} — try again in ${Math.ceil(waitMs / 1000)}s`, kind: 'rateLimited' };
   }
 
   /** While rate limited, user actions are dropped without touching the conductor. */
@@ -227,10 +318,10 @@ export class Runner {
     return true;
   }
 
-  private failAction(e: unknown): ConductorEvent | null {
+  private failAction(e: unknown, deviceMissing: ConductorEvent): ConductorEvent | null {
     if (e instanceof PlayerError && e.kind === 'noDevice') {
       this.deviceId = null;
-      return { type: 'deviceMissing' };
+      return deviceMissing;
     }
     this.actionError = this.noteError(e) ?? this.actionError;
     return null;
@@ -240,8 +331,8 @@ export class Runner {
     try {
       await fn();
     } catch (e) {
-      const message = this.noteError(e) ?? 'request failed';
-      this.actionError = `${SHUFFLE_PREFIX}${message}`;
+      const message = this.noteError(e)?.message ?? 'request failed';
+      this.actionError = { message: `${SHUFFLE_PREFIX}${message}`, kind: 'error' };
     }
   }
 
@@ -267,7 +358,7 @@ export class Runner {
       this.schedule(waitMs);
       return;
     }
-    if (this.actionError?.startsWith(SLOW_DOWN_PREFIX)) this.actionError = null;
+    if (this.actionError?.message.startsWith(SLOW_DOWN_PREFIX)) this.actionError = null;
     let delay: number;
     try {
       if (this.state.mode === 'needsDevice') {
@@ -277,9 +368,11 @@ export class Runner {
       } else {
         this.snapshot = await this.deps.player.getState();
         this.pollError = null;
-        if (this.actionError && !this.actionError.startsWith(SHUFFLE_PREFIX) && this.actionError !== STOPPED_TRYING) this.actionError = null;
+        const sticky = this.actionError?.message.startsWith(SHUFFLE_PREFIX) || this.actionError?.kind === 'stoppedTrying';
+        if (this.actionError && !sticky) this.actionError = null;
         await this.apply({ type: 'snapshot', snapshot: this.snapshot });
       }
+      await this.releaseIfClear();
       delay = nextPollDelay(this.state, this.deps.crates);
     } catch (e) {
       this.pollError = this.noteError(e) ?? this.pollError;
@@ -305,7 +398,7 @@ export class Runner {
   }
 
   /** Records auth/premium/rate-limit side effects; returns a message for the caller to show, or null if none applies. */
-  private noteError(e: unknown): string | null {
+  private noteError(e: unknown): ErrorNote | null {
     if (e instanceof PlayerError && e.kind === 'unauthorized') {
       this.signedOut = true;
       return null;
@@ -317,7 +410,10 @@ export class Runner {
     if (e instanceof PlayerError && e.kind === 'rateLimited') {
       this.rateLimitedUntil = Math.max(this.rateLimitedUntil, this.now() + (e.retryAfterMs ?? 5_000));
     }
-    return e instanceof Error ? e.message : String(e);
+    const message = e instanceof Error ? e.message : String(e);
+    if (e instanceof PlayerError && e.kind === 'rateLimited') return { message, kind: 'rateLimited' };
+    if (e instanceof PlayerError && e.kind === 'network') return { message, kind: 'offline' };
+    return { message, kind: 'error' };
   }
 
   private setState(state: ConductorState): void {
