@@ -1,8 +1,8 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import type { Crate } from '../../shared/crate';
 import { initialState, step } from './conductor/step';
 import type { ConductorState, PlayerSnapshot, StepContext } from './conductor/types';
-import { DEVICE_KEY, Runner, STATE_KEY } from './runner';
+import { DEVICE_ID_KEY, DEVICE_KEY, Runner, STATE_KEY } from './runner';
 import { type Device, PlayerError, type PlayerApi } from './spotify/player';
 import { memoryStore, readJsonKey } from './storage';
 import { albumOf, makeCrate, otherSnap, snapFor } from './testing/fixtures';
@@ -12,6 +12,8 @@ class FakePlayer implements PlayerApi {
   devices: Device[] = [{ id: 'tv1', name: 'Living Room TV', type: 'TV', isActive: false }];
   state: PlayerSnapshot | null = null;
   playError: PlayerError | null = null;
+  playErrors: PlayerError[] = [];
+  nextError: PlayerError | null = null;
   stateError: PlayerError | null = null;
   shuffleError: Error | null = null;
   devicesAfterPlayError: Device[] | null = null;
@@ -29,6 +31,8 @@ class FakePlayer implements PlayerApi {
   }
   async play(d: string, albumId: string, offset: number, position: number) {
     this.calls.push(`play ${d} ${albumId} ${offset} ${position}`);
+    const queued = this.playErrors.shift();
+    if (queued) throw queued;
     if (this.playError) {
       if (this.devicesAfterPlayError) this.devices = this.devicesAfterPlayError;
       throw this.playError;
@@ -42,6 +46,7 @@ class FakePlayer implements PlayerApi {
   }
   async next(d: string) {
     this.calls.push(`next ${d}`);
+    if (this.nextError) throw this.nextError;
   }
   async previous(d: string) {
     this.calls.push(`previous ${d}`);
@@ -57,9 +62,10 @@ class FakePlayer implements PlayerApi {
 
 const crates = new Map<string, Crate>([['c', makeCrate()]]);
 
-function setup(opts: { device?: string | null; saved?: ConductorState } = {}) {
+function setup(opts: { device?: string | null; deviceId?: string; saved?: ConductorState } = {}) {
   const store = memoryStore();
   if (opts.device !== null) store.set(DEVICE_KEY, opts.device ?? 'Living Room TV');
+  if (opts.deviceId) store.set(DEVICE_ID_KEY, opts.deviceId);
   if (opts.saved) store.set(STATE_KEY, JSON.stringify(opts.saved));
   const player = new FakePlayer();
   const delays: number[] = [];
@@ -112,7 +118,7 @@ describe('Runner actions', () => {
     player.playError = new PlayerError(404, 'other', 'Album not found');
     await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
     expect(plays(player)).toHaveLength(4);
-    expect(runner.view().state.problems).toHaveLength(3);
+    expect(runner.view().state.problems).toHaveLength(4);
     expect(runner.view().state.mode).toBe('yielded');
     expect(runner.view().error).toMatch(/could not be played/);
   });
@@ -246,5 +252,158 @@ describe('Runner hardening', () => {
     const before = delays.length;
     await runner.setDevice('Living Room TV');
     expect(delays.length).toBeGreaterThan(before);
+  });
+});
+
+describe('Runner review fixes', () => {
+  it('emits the shuffle error to subscribers and keeps it across a successful poll', async () => {
+    const { runner, player } = setup();
+    player.shuffleError = new PlayerError(500, 'other', 'boom');
+    const errors: Array<string | null> = [];
+    runner.subscribe((v) => errors.push(v.error));
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(errors.at(-1)).toMatch(/shuffle/);
+    player.state = snapFor(runner.view().state.order[0], 0);
+    await runner.start();
+    expect(runner.view().state.mode).toBe('playing');
+    expect(runner.view().error).toMatch(/shuffle/);
+  });
+
+  it('clears an action error when a later play fully succeeds', async () => {
+    const { runner, player } = setup();
+    player.shuffleError = new PlayerError(500, 'other', 'boom');
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    player.shuffleError = null;
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().error).toBeNull();
+  });
+
+  it('emits signedOut when an action gets a 401', async () => {
+    const { runner, player } = setup();
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    player.state = snapFor(runner.view().state.order[0], 0);
+    await runner.start();
+    player.nextError = new PlayerError(401, 'unauthorized', 'Not signed in');
+    const views: boolean[] = [];
+    runner.subscribe((v) => views.push(v.signedOut));
+    await runner.dispatch({ type: 'nextTrack' });
+    expect(views.at(-1)).toBe(true);
+  });
+
+  it('respects a rate-limit window for actions after a 429 poll', async () => {
+    const { runner, player, delays } = setup();
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    player.stateError = new PlayerError(429, 'rateLimited', 'Spotify rate limit', 60_000);
+    await runner.start();
+    const before = player.calls.length;
+    await runner.dispatch({ type: 'skipRecord' });
+    expect(player.calls.length).toBe(before);
+    expect(delays.at(-1)).toBeGreaterThanOrEqual(60_000);
+    expect(runner.view().error).toMatch(/slow down/);
+  });
+
+  it('does not poll during the rate-limit window', async () => {
+    const { runner, player, delays } = setup();
+    player.stateError = new PlayerError(429, 'rateLimited', 'Spotify rate limit', 60_000);
+    await runner.start();
+    const before = player.calls.length;
+    await runner.pollNow();
+    expect(player.calls.length).toBe(before);
+    expect(delays.at(-1)).toBeGreaterThanOrEqual(60_000);
+  });
+
+  it('a 429 on play opens the window for later actions', async () => {
+    const { runner, player } = setup();
+    player.playError = new PlayerError(429, 'rateLimited', 'Spotify rate limit', 30_000);
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    player.playError = null;
+    const before = player.calls.length;
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(player.calls.length).toBe(before);
+  });
+
+  it('still applies a device-missing follow-up after the follow-up limit', async () => {
+    const { runner, player } = setup();
+    player.playErrors = [
+      new PlayerError(404, 'other', 'nope'),
+      new PlayerError(404, 'other', 'nope'),
+      new PlayerError(404, 'other', 'nope'),
+      new PlayerError(404, 'noDevice', 'No active device'),
+    ];
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state.mode).toBe('needsDevice');
+  });
+
+  it('records the last failed record when giving up, and keeps the error across a poll', async () => {
+    const { runner, player } = setup();
+    player.playError = new PlayerError(404, 'other', 'Album not found');
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state.problems).toHaveLength(4);
+    expect(runner.view().state.mode).toBe('yielded');
+    player.state = otherSnap();
+    await runner.start();
+    expect(runner.view().error).toMatch(/could not be played/);
+  });
+
+  it('plays on the saved device id when names are duplicated', async () => {
+    const { runner, player, store } = setup({ device: 'TV', deviceId: 'tv1' });
+    player.devices = [
+      { id: 'old', name: 'TV', type: 'TV', isActive: false },
+      { id: 'tv1', name: 'TV', type: 'TV', isActive: true },
+    ];
+    player.devices[1].isActive = false;
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(plays(player)[0]).toMatch(/^play tv1 /);
+    expect(store.get(DEVICE_ID_KEY)).toBe('tv1');
+  });
+
+  it('prefers the active device with the saved name when no id is saved', async () => {
+    const { runner, player, store } = setup({ device: 'TV' });
+    player.devices = [
+      { id: 'old', name: 'TV', type: 'TV', isActive: false },
+      { id: 'tv1', name: 'TV', type: 'TV', isActive: true },
+    ];
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(plays(player)[0]).toMatch(/^play tv1 /);
+    expect(store.get(DEVICE_ID_KEY)).toBe('tv1');
+  });
+
+  it('setDevice saves the id too', async () => {
+    const { runner, store } = setup({ device: null });
+    await runner.setDevice('TV', 'abc');
+    expect(store.get(DEVICE_KEY)).toBe('TV');
+    expect(store.get(DEVICE_ID_KEY)).toBe('abc');
+  });
+
+  it('treats a play 4xx as device missing when the saved id is gone, even if another device shares the name', async () => {
+    const { runner, player } = setup({ device: 'TV', deviceId: 'tv1' });
+    player.devices = [{ id: 'tv1', name: 'TV', type: 'TV', isActive: false }];
+    player.playError = new PlayerError(404, 'other', 'Not found');
+    player.devicesAfterPlayError = [{ id: 'new', name: 'TV', type: 'TV', isActive: false }];
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state.mode).toBe('needsDevice');
+    expect(runner.view().state.problems).toHaveLength(0);
+  });
+
+  it('does not turn a getDevices failure into a skipped record', async () => {
+    const { runner, player } = setup();
+    player.devicesError = new PlayerError(404, 'other', 'devices gone');
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state.problems).toHaveLength(0);
+    expect(runner.view().error).toBe('devices gone');
+  });
+
+  it('keeps notifying other listeners when one throws', async () => {
+    const { runner } = setup();
+    const seen: string[] = [];
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    runner.subscribe(() => {
+      throw new Error('bad listener');
+    });
+    runner.subscribe((v) => seen.push(v.state.mode));
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(seen).toContain('starting');
+    expect(spy).toHaveBeenCalled();
+    spy.mockRestore();
   });
 });

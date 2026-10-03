@@ -218,4 +218,15 @@ describe('SpotifyPlayer robustness', () => {
     await expect(player.pause('d')).rejects.toMatchObject({ kind: 'unauthorized' });
     expect(auth.refresh).toHaveBeenCalledTimes(1);
   });
+
+  it('times out a hanging request as a network error', async () => {
+    const fetchFn = ((_input: RequestInfo | URL, init?: RequestInit) =>
+      new Promise<Response>((_resolve, reject) => {
+        init?.signal?.addEventListener('abort', () => reject(new DOMException('aborted', 'AbortError')));
+      })) as typeof fetch;
+    const player = new SpotifyPlayer({ getAccessToken: async () => 'tok', refresh: async () => 'tok2' }, fetchFn, { timeoutMs: 20 });
+    const err = await player.getState().catch((e) => e);
+    expect(err).toBeInstanceOf(PlayerError);
+    expect(err).toMatchObject({ kind: 'network', status: 0, message: 'Spotify request timed out' });
+  });
 });

@@ -113,6 +113,7 @@ export class SpotifyPlayer implements PlayerApi {
   constructor(
     private readonly auth: TokenSource,
     private readonly fetchFn: typeof fetch = fetch.bind(globalThis),
+    private readonly options: { timeoutMs?: number } = {},
   ) {}
 
   async getState(): Promise<PlayerSnapshot | null> {
@@ -169,13 +170,24 @@ export class SpotifyPlayer implements PlayerApi {
     for (;;) {
       const token = await wrapNetwork(() => this.auth.getAccessToken());
       if (!token) throw new PlayerError(401, 'unauthorized', 'Not signed in to Spotify');
-      const res = await wrapNetwork(() =>
-        this.fetchFn(`${API}${path}`, {
-          method,
-          headers: body === undefined ? { Authorization: `Bearer ${token}` } : { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-          body: body === undefined ? undefined : JSON.stringify(body),
-        }),
-      );
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), this.options.timeoutMs ?? 10_000);
+      let res: Response;
+      try {
+        res = await wrapNetwork(() =>
+          this.fetchFn(`${API}${path}`, {
+            method,
+            headers: body === undefined ? { Authorization: `Bearer ${token}` } : { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+            body: body === undefined ? undefined : JSON.stringify(body),
+            signal: controller.signal,
+          }),
+        );
+      } catch (e) {
+        if (controller.signal.aborted) throw new PlayerError(0, 'network', 'Spotify request timed out');
+        throw e;
+      } finally {
+        clearTimeout(timer);
+      }
       if (res.status === 401 && !refreshed) {
         refreshed = true;
         if (await wrapNetwork(() => this.auth.refresh())) continue;

@@ -6,9 +6,10 @@ import { type KeyValueStore, readJsonKey, writeJsonKey } from './storage';
 
 export const STATE_KEY = 'stacker.conductor';
 export const DEVICE_KEY = 'stacker.device';
+export const DEVICE_ID_KEY = 'stacker.deviceId';
 /** Follow-up events (e.g. playFailed → next record) allowed in a row before giving up. */
 const MAX_FOLLOW_UPS = 3;
-const MODE_ERROR_PREFIX = "Couldn't turn off shuffle/repeat: ";
+const STOPPED_TRYING = 'Several records in a row could not be played; stopped trying.';
 
 export interface RunnerView {
   state: ConductorState;
@@ -39,7 +40,12 @@ export class Runner {
   private snapshot: PlayerSnapshot | null = null;
   private deviceId: string | null = null;
   private deviceName: string | null;
-  private error: string | null = null;
+  private savedDeviceId: string | null;
+  /** Set by a failed poll, cleared by a successful one. */
+  private pollError: string | null = null;
+  /** Set by failed actions; cleared when a later action (a play only if fully successful) succeeds. */
+  private actionError: string | null = null;
+  private rateLimitedUntil = 0;
   private signedOut = false;
   private premiumRequired = false;
   private running = false;
@@ -56,6 +62,7 @@ export class Runner {
     this.setTimer = deps.setTimer ?? defaultTimer;
     this.state = restore(readJsonKey<ConductorState>(deps.store, STATE_KEY));
     this.deviceName = deps.store.get(DEVICE_KEY);
+    this.savedDeviceId = deps.store.get(DEVICE_ID_KEY);
   }
 
   view(): RunnerView {
@@ -63,7 +70,7 @@ export class Runner {
       state: this.state,
       snapshot: this.snapshot,
       deviceName: this.deviceName,
-      error: this.error,
+      error: this.actionError ?? this.pollError,
       signedOut: this.signedOut,
       premiumRequired: this.premiumRequired,
     };
@@ -96,16 +103,20 @@ export class Runner {
   dispatch(event: ConductorEvent): Promise<void> {
     return this.enqueue(async () => {
       await this.apply(event);
+      this.emit();
       this.rescheduleAfterChange();
     });
   }
 
   /** Remember the Spotify Connect device to play on (by name, since ids can change). */
-  setDevice(name: string): Promise<void> {
+  setDevice(name: string, id?: string): Promise<void> {
     return this.enqueue(async () => {
       this.deviceName = name;
       this.deviceId = null;
+      this.savedDeviceId = id ?? null;
       this.deps.store.set(DEVICE_KEY, name);
+      if (id) this.deps.store.set(DEVICE_ID_KEY, id);
+      else this.deps.store.remove(DEVICE_ID_KEY);
       if (this.state.mode === 'needsDevice') await this.apply({ type: 'deviceReady' });
       this.emit();
       this.rescheduleAfterChange();
@@ -128,29 +139,42 @@ export class Runner {
     for (const action of actions) {
       const followUp = await this.execute(action);
       if (!followUp) continue;
-      if (depth >= MAX_FOLLOW_UPS) {
-        this.error = 'Several records in a row could not be played; stopped trying.';
-        this.setState({ ...this.state, mode: 'yielded' });
+      if (followUp.type !== 'deviceMissing' && depth >= MAX_FOLLOW_UPS) {
+        // Record the last failure (without executing what it would trigger), then stop.
+        const last = step(this.state, followUp, { crates: this.deps.crates, now: this.now(), random: this.random });
+        this.setState({ ...last.state, mode: 'yielded' });
+        this.actionError = STOPPED_TRYING;
         return;
       }
-      await this.apply(followUp, depth + 1);
+      await this.apply(followUp, followUp.type === 'deviceMissing' ? depth : depth + 1);
       return;
     }
   }
 
   private async execute(action: Action): Promise<ConductorEvent | null> {
+    const waitMs = this.rateLimitedUntil - this.now();
+    if (waitMs > 0) {
+      this.actionError = `Spotify asked us to slow down — try again in ${Math.ceil(waitMs / 1000)}s`;
+      return null;
+    }
+    let deviceId: string | null;
     try {
-      const deviceId = await this.resolveDevice();
-      if (!deviceId) return { type: 'deviceMissing' };
-      const p = this.deps.player;
+      deviceId = await this.resolveDevice();
+    } catch (e) {
+      return this.failAction(e);
+    }
+    if (!deviceId) return { type: 'deviceMissing' };
+    const p = this.deps.player;
+    try {
       switch (action.type) {
         case 'play':
           await p.play(deviceId, action.albumId, action.offsetIndex, action.positionMs);
+          this.actionError = null;
           // Album order, no repeat: after the last track Spotify stops (or autoplays) and the conductor moves on.
           // Best effort: a failure here must never fail (or skip) a play that already succeeded.
           await this.bestEffort(() => p.setShuffle(deviceId, false));
           await this.bestEffort(() => p.setRepeat(deviceId, 'off'));
-          break;
+          return null;
         case 'pause':
           await p.pause(deviceId);
           break;
@@ -164,37 +188,43 @@ export class Runner {
           await p.previous(deviceId);
           break;
       }
-      this.error = this.error?.startsWith(MODE_ERROR_PREFIX) ? this.error : null;
+      this.actionError = null;
       return null;
     } catch (e) {
-      if (e instanceof PlayerError && e.kind === 'noDevice') {
-        this.deviceId = null;
-        return { type: 'deviceMissing' };
-      }
-      if (e instanceof PlayerError && e.kind === 'other' && action.type === 'play' && e.status >= 400 && e.status < 500) {
+      if (action.type === 'play' && e instanceof PlayerError && e.kind === 'other' && e.status >= 400 && e.status < 500) {
         // A 4xx can mean a stale device rather than a bad album: re-check before skipping the record.
         try {
-          const devices = await this.deps.player.getDevices();
-          if (!devices.some((d) => d.name === this.deviceName)) {
+          const devices = await p.getDevices();
+          const knownId = this.deviceId ?? this.savedDeviceId;
+          const present = knownId ? devices.some((d) => d.id === knownId) : devices.some((d) => d.name === this.deviceName);
+          if (!present) {
             this.deviceId = null;
             return { type: 'deviceMissing' };
           }
         } catch (checkError) {
-          this.noteError(checkError);
-          return null;
+          return this.failAction(checkError);
         }
         return { type: 'playFailed', reason: e.message };
       }
-      this.noteError(e);
-      return null;
+      return this.failAction(e);
     }
+  }
+
+  private failAction(e: unknown): ConductorEvent | null {
+    if (e instanceof PlayerError && e.kind === 'noDevice') {
+      this.deviceId = null;
+      return { type: 'deviceMissing' };
+    }
+    this.actionError = this.noteError(e) ?? this.actionError;
+    return null;
   }
 
   private async bestEffort(fn: () => Promise<void>): Promise<void> {
     try {
       await fn();
     } catch (e) {
-      this.error = `${MODE_ERROR_PREFIX}${e instanceof Error ? e.message : String(e)}`;
+      const message = this.noteError(e) ?? 'request failed';
+      this.actionError = `Couldn't turn off shuffle/repeat: ${message}`;
     }
   }
 
@@ -202,12 +232,24 @@ export class Runner {
     if (this.deviceId) return this.deviceId;
     if (!this.deviceName) return null;
     const devices = await this.deps.player.getDevices();
-    this.deviceId = devices.find((d) => d.name === this.deviceName)?.id ?? null;
+    const named = devices.filter((d) => d.name === this.deviceName);
+    const found =
+      (this.savedDeviceId ? devices.find((d) => d.id === this.savedDeviceId) : undefined) ?? named.find((d) => d.isActive) ?? named[0];
+    this.deviceId = found?.id ?? null;
+    if (found && found.id !== this.savedDeviceId) {
+      this.savedDeviceId = found.id;
+      this.deps.store.set(DEVICE_ID_KEY, found.id);
+    }
     return this.deviceId;
   }
 
   private async poll(): Promise<void> {
     if (!this.running) return;
+    const waitMs = this.rateLimitedUntil - this.now();
+    if (waitMs > 0) {
+      this.schedule(waitMs);
+      return;
+    }
     let delay: number;
     try {
       if (this.state.mode === 'needsDevice') {
@@ -215,12 +257,12 @@ export class Runner {
         if (await this.resolveDevice()) await this.apply({ type: 'deviceReady' });
       } else {
         this.snapshot = await this.deps.player.getState();
-        this.error = null;
+        this.pollError = null;
         await this.apply({ type: 'snapshot', snapshot: this.snapshot });
       }
       delay = nextPollDelay(this.state, this.deps.crates);
     } catch (e) {
-      this.noteError(e);
+      this.pollError = this.noteError(e) ?? this.pollError;
       delay = e instanceof PlayerError && e.retryAfterMs ? Math.max(e.retryAfterMs, 5_000) : 15_000;
     }
     this.emit();
@@ -236,15 +278,26 @@ export class Runner {
     this.cancelTimer?.();
     this.cancelTimer = null;
     if (!this.running || this.signedOut) return;
+    const wait = Math.max(ms, this.rateLimitedUntil - this.now());
     this.cancelTimer = this.setTimer(() => {
       void this.pollNow();
-    }, ms);
+    }, wait);
   }
 
-  private noteError(e: unknown): void {
-    if (e instanceof PlayerError && e.kind === 'unauthorized') this.signedOut = true;
-    else if (e instanceof PlayerError && e.kind === 'premium') this.premiumRequired = true;
-    else this.error = e instanceof Error ? e.message : String(e);
+  /** Records auth/premium/rate-limit side effects; returns a message for the caller to show, or null if none applies. */
+  private noteError(e: unknown): string | null {
+    if (e instanceof PlayerError && e.kind === 'unauthorized') {
+      this.signedOut = true;
+      return null;
+    }
+    if (e instanceof PlayerError && e.kind === 'premium') {
+      this.premiumRequired = true;
+      return null;
+    }
+    if (e instanceof PlayerError && e.kind === 'rateLimited') {
+      this.rateLimitedUntil = Math.max(this.rateLimitedUntil, this.now() + (e.retryAfterMs ?? 5_000));
+    }
+    return e instanceof Error ? e.message : String(e);
   }
 
   private setState(state: ConductorState): void {
@@ -255,6 +308,12 @@ export class Runner {
 
   private emit(): void {
     const view = this.view();
-    for (const listener of this.listeners) listener(view);
+    for (const listener of this.listeners) {
+      try {
+        listener(view);
+      } catch (e) {
+        console.error('Runner listener failed', e);
+      }
+    }
   }
 }
