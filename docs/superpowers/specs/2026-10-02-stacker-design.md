@@ -274,6 +274,12 @@ Android TV app (Kotlin), sideloaded via `adb`:
 - **Check which Chromium version the TV's WebView runs.** If it's old, set Vite's `build.target` to match.
 - **Test on the TV against a deployed build or a LAN-reachable preview.** The dev server binds to 127.0.0.1 only.
 
+**Takeover setting (decided 2026-10-03, for Plans 3–4):** one on-screen toggle, "Take over the TV", **on** by default.
+- **On:** starting or advancing a record interrupts whatever else is playing; Android pauses it automatically through audio focus. The shell also brings Stacker's now-playing screen to the front.
+- **Off:** Stacker doesn't start or advance a record while another app is producing sound. It waits until that sound stops. Pressing Shuffle & play yourself always overrides this.
+
+The web app can only see Spotify, so the shell provides both "is other audio playing?" (`AudioManager.isMusicActive()`) and "bring to front" through a small JS bridge.
+
 ## Error handling
 
 | Situation | Behavior |
