@@ -19,6 +19,10 @@ function playing(trackIndex = 0, progressMs = 10_000): ConductorState {
 
 const playAction = (rymId: string, offsetIndex = 0, positionMs = 0) => ({ type: 'play', albumId: albumOf(rymId), offsetIndex, positionMs });
 
+const other: ConductorEvent = { type: 'snapshot', snapshot: otherSnap() };
+/** Two consecutive off-record snapshots: enough for the conductor to yield. */
+const yieldFrom = (s: ConductorState) => go(go(s, other).state, other);
+
 describe('choosing a crate', () => {
   it('shuffles playable records and starts the first', () => {
     const r = go(initialState(), { type: 'chooseCrate', crateId: 'c' });
@@ -106,33 +110,53 @@ describe('a record finishing', () => {
 
 describe('the user taking over', () => {
   it('yields when other content plays mid-record', () => {
-    const r = go(playing(0), { type: 'snapshot', snapshot: otherSnap() });
+    const r = yieldFrom(playing(0));
     expect(r.state.mode).toBe('yielded');
     expect(r.actions).toEqual([]);
   });
 
   it('yields when other content plays early in the last track', () => {
-    expect(go(playing(2, 60_000), { type: 'snapshot', snapshot: otherSnap() }).state.mode).toBe('yielded');
+    expect(yieldFrom(playing(2, 60_000)).state.mode).toBe('yielded');
   });
 
   it('yields when other content follows a pause near the end', () => {
     const s = playing(2, TRACK_MS - 3_000);
     const paused = go(s, { type: 'snapshot', snapshot: snapFor(s.order[0], 2, { isPlaying: false, progressMs: TRACK_MS - 3_000 }) }).state;
     expect(paused.mode).toBe('paused');
-    expect(go(paused, { type: 'snapshot', snapshot: otherSnap() }).state.mode).toBe('yielded');
+    expect(yieldFrom(paused).state.mode).toBe('yielded');
   });
 
   it('resumes the crate where it left off', () => {
     const s = playing(1, 30_000);
-    const yielded = go(s, { type: 'snapshot', snapshot: otherSnap() }).state;
+    const yielded = yieldFrom(s).state;
     const r = go(yielded, { type: 'resume' });
     expect(r.state.mode).toBe('starting');
     expect(r.actions).toEqual([playAction(s.order[0], 1, 30_000)]);
   });
 
+  it('waits out a single off-record snapshot mid-record', () => {
+    const s = playing(0);
+    const r = go(s, other);
+    expect(r.state).toMatchObject({ mode: 'playing', offRecord: 1 });
+    expect(r.actions).toEqual([]);
+    const back = go(r.state, { type: 'snapshot', snapshot: snapFor(s.order[0], 0) });
+    expect(back.state).toMatchObject({ mode: 'playing', offRecord: 0 });
+  });
+
+  it('does not yield on a single empty snapshot mid-record', () => {
+    const r = go(playing(0), { type: 'snapshot', snapshot: null });
+    expect(r.state.mode).toBe('playing');
+    expect(r.actions).toEqual([]);
+  });
+
+  it('yields on two consecutive empty snapshots mid-record', () => {
+    const empty: ConductorEvent = { type: 'snapshot', snapshot: null };
+    expect(go(go(playing(0), empty).state, empty).state.mode).toBe('yielded');
+  });
+
   it('re-attaches when the user plays the record again', () => {
     const s = playing(1, 30_000);
-    const yielded = go(s, { type: 'snapshot', snapshot: otherSnap() }).state;
+    const yielded = yieldFrom(s).state;
     expect(go(yielded, { type: 'snapshot', snapshot: snapFor(s.order[0], 1) }).state.mode).toBe('playing');
   });
 });
@@ -156,7 +180,7 @@ describe('controls', () => {
 
   it('treats play/pause on a yielded crate as resume', () => {
     const s = playing(1, 30_000);
-    const yielded = go(s, { type: 'snapshot', snapshot: otherSnap() }).state;
+    const yielded = yieldFrom(s).state;
     expect(go(yielded, { type: 'togglePause' }).actions).toEqual([playAction(s.order[0], 1, 30_000)]);
   });
 
@@ -180,6 +204,17 @@ describe('restoring saved state', () => {
     const offer = go(restored, { type: 'snapshot', snapshot: otherSnap() }).state;
     expect(offer.mode).toBe('awaitingResume');
     expect(go(offer, { type: 'resume' }).actions).toEqual([playAction(saved.order[0], 1, 30_000)]);
+  });
+});
+
+describe('sanitizing restored state', () => {
+  it('deduplicates the order and clamps pos', () => {
+    const restored = restore({ ...playing(0), order: ['r1', 'r1', 'r2'], pos: 5 });
+    expect(restored).toMatchObject({ order: ['r1', 'r2'], pos: 1, mode: 'restored' });
+  });
+
+  it('clamps a negative pos to 0', () => {
+    expect(restore({ ...playing(0), pos: -3 }).pos).toBe(0);
   });
 });
 

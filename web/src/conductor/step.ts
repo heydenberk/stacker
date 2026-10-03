@@ -6,6 +6,8 @@ import type { Action, ConductorEvent, ConductorState, PlayerSnapshot, StepContex
 export const START_TIMEOUT_MS = 20_000;
 /** A record only counts as finished if its last track was last seen this close to its end. */
 export const END_WINDOW_MS = 15_000;
+/** Consecutive off-record snapshots in playing/paused before the conductor yields to the user. */
+export const YIELD_AFTER_SNAPSHOTS = 2;
 const MAX_PROBLEMS = 20;
 
 export interface StepResult {
@@ -14,13 +16,43 @@ export interface StepResult {
 }
 
 export function initialState(): ConductorState {
-  return { crateId: null, order: [], pos: 0, trackIndex: 0, progressMs: 0, mode: 'idle', lastSeen: null, startedAt: null, problems: [] };
+  return {
+    crateId: null,
+    order: [],
+    pos: 0,
+    trackIndex: 0,
+    progressMs: 0,
+    mode: 'idle',
+    lastSeen: null,
+    startedAt: null,
+    offRecord: 0,
+    problems: [],
+  };
 }
 
-/** Saved state comes back as 'restored'; the first snapshot decides whether to attach or offer a resume. */
+const nonNegative = (n: unknown): number => (typeof n === 'number' && Number.isFinite(n) && n >= 0 ? n : 0);
+
+/**
+ * Saved state comes back as 'restored'; the first snapshot decides whether to attach or offer a resume.
+ * Storage can hold anything, so the order is deduplicated and the positions are clamped.
+ */
 export function restore(saved: ConductorState | null): ConductorState {
-  if (!saved || !saved.crateId || saved.order.length === 0) return { ...initialState(), problems: saved?.problems ?? [] };
-  return { ...saved, mode: 'restored', lastSeen: null, startedAt: null };
+  const problems = Array.isArray(saved?.problems) ? saved.problems : [];
+  const order = Array.isArray(saved?.order) ? [...new Set(saved.order)] : [];
+  if (!saved || !saved.crateId || order.length === 0) return { ...initialState(), problems };
+  const pos = Number.isFinite(saved.pos) ? Math.min(Math.max(Math.trunc(saved.pos), 0), order.length - 1) : 0;
+  return {
+    ...saved,
+    order,
+    pos,
+    trackIndex: nonNegative(saved.trackIndex),
+    progressMs: nonNegative(saved.progressMs),
+    problems,
+    mode: 'restored',
+    lastSeen: null,
+    startedAt: null,
+    offRecord: 0,
+  };
 }
 
 export function playableIds(crate: Crate): string[] {
@@ -39,7 +71,7 @@ function startRecord(state: ConductorState, ctx: StepContext, trackIndex: number
   const rec = currentRecord(state, ctx.crates);
   if (!rec?.spotify) return none({ ...state, mode: 'idle' });
   return {
-    state: { ...state, trackIndex, progressMs: positionMs, mode: 'starting', lastSeen: null, startedAt: ctx.now },
+    state: { ...state, trackIndex, progressMs: positionMs, mode: 'starting', lastSeen: null, startedAt: ctx.now, offRecord: 0 },
     actions: [{ type: 'play', albumId: rec.spotify.albumId, offsetIndex: trackIndex, positionMs }],
   };
 }
@@ -73,6 +105,7 @@ function attach(state: ConductorState, rec: CrateRecord, snap: PlayerSnapshot): 
     progressMs: snap.progressMs,
     mode: snap.isPlaying ? 'playing' : 'paused',
     lastSeen: { rymId: rec.rymId, trackIndex },
+    offRecord: 0,
   });
 }
 
@@ -115,7 +148,8 @@ function onSnapshot(state: ConductorState, snap: PlayerSnapshot | null, ctx: Ste
     case 'paused':
       if (ours) return stoppedInPlace(state, rec, snap) ? advance(state, ctx) : attach(state, rec, snap);
       if (state.mode === 'playing' && wasNearEnd(state, rec)) return advance(state, ctx);
-      return none({ ...state, mode: 'yielded' });
+      if (state.offRecord + 1 >= YIELD_AFTER_SNAPSHOTS) return none({ ...state, mode: 'yielded', offRecord: 0 });
+      return none({ ...state, offRecord: state.offRecord + 1 });
     default:
       return none(state);
   }

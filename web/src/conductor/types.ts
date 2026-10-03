@@ -42,6 +42,11 @@ export interface ConductorState {
   lastSeen: { rymId: string; trackIndex: number } | null;
   /** When play was last requested. */
   startedAt: number | null;
+  /**
+   * Consecutive snapshots in playing/paused that weren't the current record (and weren't it
+   * finishing). One odd reading between tracks shouldn't make the conductor give up the record.
+   */
+  offRecord: number;
   problems: Problem[];
 }
 
