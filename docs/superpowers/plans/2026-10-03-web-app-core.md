@@ -272,6 +272,9 @@ git commit -m "feat(web): scaffold Vite + Preact app with bundled crate catalog"
 
 ### Task 2: Safe key-value storage
 
+> **As built:** review hardening made writes from the current session take precedence over `localStorage`; the source of truth is `web/src/storage.ts` (commit 7f71ef2).
+
+
 **Goal:** A tiny storage interface the app and tests share. `localStorage` is used when available, and the app never crashes when it isn't.
 
 **Files:**
@@ -450,6 +453,9 @@ git commit -m "feat(web): safe key-value storage"
 ---
 
 ### Task 3: Spotify sign-in (PKCE) and token refresh
+
+> **As built:** review hardening covers three things. A refresh that finishes after a sign-out is discarded. The callback is single-use and safe to reload. The app signs out only on `invalid_grant`. The source of truth is `web/src/spotify/auth.ts` (commit 53216cd).
+
 
 **Goal:** Sign in with Spotify from the browser with no backend, keep access tokens fresh, and know when the 6-month sign-in expires.
 
