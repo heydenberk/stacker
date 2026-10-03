@@ -17,9 +17,13 @@ export function memoryStore(initial: Record<string, string> = {}): KeyValueStore
   };
 }
 
-/** localStorage that never throws (private mode, blocked storage): values are mirrored in memory. */
+/**
+ * localStorage that never throws (private mode, blocked storage). This session's writes are authoritative:
+ * a key written or removed here is answered from memory (null = removed) even if localStorage rejected the
+ * write, so a stale persisted value can never override it. Other keys fall through to localStorage.
+ */
 export function browserStore(): KeyValueStore {
-  const memory = memoryStore();
+  const session = new Map<string, string | null>();
   const local = (): Storage | null => {
     try {
       return globalThis.localStorage ?? null;
@@ -29,14 +33,15 @@ export function browserStore(): KeyValueStore {
   };
   return {
     get(key) {
+      if (session.has(key)) return session.get(key) ?? null;
       try {
-        return local()?.getItem(key) ?? memory.get(key);
+        return local()?.getItem(key) ?? null;
       } catch {
-        return memory.get(key);
+        return null;
       }
     },
     set(key, value) {
-      memory.set(key, value);
+      session.set(key, value);
       try {
         local()?.setItem(key, value);
       } catch {
@@ -44,7 +49,7 @@ export function browserStore(): KeyValueStore {
       }
     },
     remove(key) {
-      memory.remove(key);
+      session.set(key, null);
       try {
         local()?.removeItem(key);
       } catch {

@@ -60,4 +60,39 @@ describe('browserStore', () => {
     s.set('a', '1');
     expect(s.get('a')).toBe('1');
   });
+
+  it('treats this session\'s set as authoritative when setItem throws', () => {
+    vi.stubGlobal('localStorage', {
+      getItem: () => 'old',
+      setItem: () => {
+        throw new Error('quota');
+      },
+      removeItem: () => undefined,
+    });
+    const s = browserStore();
+    s.set('k', 'new');
+    expect(s.get('k')).toBe('new');
+  });
+
+  it('treats this session\'s remove as authoritative when removeItem throws', () => {
+    vi.stubGlobal('localStorage', {
+      getItem: () => 'old',
+      setItem: () => undefined,
+      removeItem: () => {
+        throw new Error('blocked');
+      },
+    });
+    const s = browserStore();
+    s.remove('k');
+    expect(s.get('k')).toBeNull();
+  });
+
+  it('still reads values persisted by an earlier page load', () => {
+    vi.stubGlobal('localStorage', {
+      getItem: (k: string) => (k === 'k' ? 'persisted' : null),
+      setItem: () => undefined,
+      removeItem: () => undefined,
+    });
+    expect(browserStore().get('k')).toBe('persisted');
+  });
 });

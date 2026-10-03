@@ -7,6 +7,9 @@ const repoRoot = fileURLToPath(new URL('.', import.meta.url));
 export default defineConfig(({ mode }) => {
   // Load .env from the repo root. Only SPOTIFY_CLIENT_ID (public) reaches the bundle; the secret never does.
   const env = loadEnv(mode, repoRoot, '');
+  if (mode === 'production' && !env.SPOTIFY_CLIENT_ID) {
+    throw new Error('SPOTIFY_CLIENT_ID must be set to build Stacker for production');
+  }
   return {
     root: 'web',
     plugins: [preact()],
