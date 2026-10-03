@@ -8,6 +8,7 @@ export const STATE_KEY = 'stacker.conductor';
 export const DEVICE_KEY = 'stacker.device';
 /** Follow-up events (e.g. playFailed → next record) allowed in a row before giving up. */
 const MAX_FOLLOW_UPS = 3;
+const MODE_ERROR_PREFIX = "Couldn't turn off shuffle/repeat: ";
 
 export interface RunnerView {
   state: ConductorState;
@@ -93,7 +94,10 @@ export class Runner {
   }
 
   dispatch(event: ConductorEvent): Promise<void> {
-    return this.enqueue(() => this.apply(event));
+    return this.enqueue(async () => {
+      await this.apply(event);
+      this.rescheduleAfterChange();
+    });
   }
 
   /** Remember the Spotify Connect device to play on (by name, since ids can change). */
@@ -104,6 +108,7 @@ export class Runner {
       this.deps.store.set(DEVICE_KEY, name);
       if (this.state.mode === 'needsDevice') await this.apply({ type: 'deviceReady' });
       this.emit();
+      this.rescheduleAfterChange();
     });
   }
 
@@ -142,8 +147,9 @@ export class Runner {
         case 'play':
           await p.play(deviceId, action.albumId, action.offsetIndex, action.positionMs);
           // Album order, no repeat: after the last track Spotify stops (or autoplays) and the conductor moves on.
-          await p.setShuffle(deviceId, false);
-          await p.setRepeat(deviceId, 'off');
+          // Best effort: a failure here must never fail (or skip) a play that already succeeded.
+          await this.bestEffort(() => p.setShuffle(deviceId, false));
+          await this.bestEffort(() => p.setRepeat(deviceId, 'off'));
           break;
         case 'pause':
           await p.pause(deviceId);
@@ -158,7 +164,7 @@ export class Runner {
           await p.previous(deviceId);
           break;
       }
-      this.error = null;
+      this.error = this.error?.startsWith(MODE_ERROR_PREFIX) ? this.error : null;
       return null;
     } catch (e) {
       if (e instanceof PlayerError && e.kind === 'noDevice') {
@@ -166,10 +172,29 @@ export class Runner {
         return { type: 'deviceMissing' };
       }
       if (e instanceof PlayerError && e.kind === 'other' && action.type === 'play' && e.status >= 400 && e.status < 500) {
+        // A 4xx can mean a stale device rather than a bad album: re-check before skipping the record.
+        try {
+          const devices = await this.deps.player.getDevices();
+          if (!devices.some((d) => d.name === this.deviceName)) {
+            this.deviceId = null;
+            return { type: 'deviceMissing' };
+          }
+        } catch (checkError) {
+          this.noteError(checkError);
+          return null;
+        }
         return { type: 'playFailed', reason: e.message };
       }
       this.noteError(e);
       return null;
+    }
+  }
+
+  private async bestEffort(fn: () => Promise<void>): Promise<void> {
+    try {
+      await fn();
+    } catch (e) {
+      this.error = `${MODE_ERROR_PREFIX}${e instanceof Error ? e.message : String(e)}`;
     }
   }
 
@@ -200,6 +225,11 @@ export class Runner {
     }
     this.emit();
     this.schedule(delay);
+  }
+
+  /** After a user-driven change, poll at the conductor's pace for the new state, replacing any pending timer. */
+  private rescheduleAfterChange(): void {
+    if (this.running) this.schedule(nextPollDelay(this.state, this.deps.crates));
   }
 
   private schedule(ms: number): void {

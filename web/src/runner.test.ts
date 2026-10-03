@@ -13,6 +13,9 @@ class FakePlayer implements PlayerApi {
   state: PlayerSnapshot | null = null;
   playError: PlayerError | null = null;
   stateError: PlayerError | null = null;
+  shuffleError: Error | null = null;
+  devicesAfterPlayError: Device[] | null = null;
+  devicesError: Error | null = null;
 
   async getState() {
     this.calls.push('getState');
@@ -21,11 +24,15 @@ class FakePlayer implements PlayerApi {
   }
   async getDevices() {
     this.calls.push('getDevices');
+    if (this.devicesError) throw this.devicesError;
     return this.devices;
   }
   async play(d: string, albumId: string, offset: number, position: number) {
     this.calls.push(`play ${d} ${albumId} ${offset} ${position}`);
-    if (this.playError) throw this.playError;
+    if (this.playError) {
+      if (this.devicesAfterPlayError) this.devices = this.devicesAfterPlayError;
+      throw this.playError;
+    }
   }
   async resume(d: string) {
     this.calls.push(`resume ${d}`);
@@ -41,6 +48,7 @@ class FakePlayer implements PlayerApi {
   }
   async setShuffle(d: string, on: boolean) {
     this.calls.push(`shuffle ${d} ${on}`);
+    if (this.shuffleError) throw this.shuffleError;
   }
   async setRepeat(d: string, mode: string) {
     this.calls.push(`repeat ${d} ${mode}`);
@@ -161,5 +169,82 @@ describe('Runner polling', () => {
     player.playError = new PlayerError(403, 'premium', 'Premium required');
     await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
     expect(runner.view().premiumRequired).toBe(true);
+  });
+});
+
+describe('Runner hardening', () => {
+  it('does not fail a play when shuffle cannot be turned off', async () => {
+    const { runner, player } = setup();
+    player.shuffleError = new PlayerError(500, 'other', 'boom');
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state.problems).toHaveLength(0);
+    expect(runner.view().state.mode).toBe('starting');
+    expect(player.calls).toContain('repeat tv1 off');
+    expect(plays(player)).toHaveLength(1);
+    expect(runner.view().error).toMatch(/shuffle/);
+  });
+
+  it('treats a 4xx play failure as a missing device when the device is gone', async () => {
+    const { runner, player } = setup();
+    player.playError = new PlayerError(404, 'other', 'Not found');
+    player.devicesAfterPlayError = [];
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state.mode).toBe('needsDevice');
+    expect(runner.view().state.problems).toHaveLength(0);
+  });
+
+  it('skips the record when a 4xx play failure happens with the device still present', async () => {
+    const { runner, player } = setup();
+    player.playError = new PlayerError(404, 'other', 'Album not found');
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state.problems.length).toBeGreaterThan(0);
+  });
+
+  it('does not skip when the device re-check itself fails', async () => {
+    const { runner, player } = setup();
+    player.playError = new PlayerError(404, 'other', 'Not found');
+    let n = 0;
+    const orig = player.getDevices.bind(player);
+    player.getDevices = async () => {
+      if (++n > 1) throw new PlayerError(0, 'network', 'Failed to fetch');
+      return orig();
+    };
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state.problems).toHaveLength(0);
+    expect(runner.view().error).toMatch(/Failed to fetch/);
+  });
+
+  it('never skips a record on a transient network error', async () => {
+    const { runner, player } = setup();
+    player.playError = new PlayerError(0, 'network', 'Failed to fetch');
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state.problems).toHaveLength(0);
+    expect(runner.view().error).toBe('Failed to fetch');
+    expect(runner.view().state.mode).toBe('starting');
+  });
+
+  it('never skips a record on an unknown error', async () => {
+    const { runner, player } = setup();
+    player.playError = new SyntaxError('Unexpected token') as unknown as PlayerError;
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(runner.view().state.problems).toHaveLength(0);
+    expect(runner.view().error).toMatch(/Unexpected token/);
+  });
+
+  it('re-schedules polling soon after a dispatch', async () => {
+    const { runner, delays } = setup();
+    await runner.start();
+    expect(delays.at(-1)).toBe(30_000);
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    expect(delays.at(-1)).toBe(1_000);
+  });
+
+  it('re-schedules polling after setDevice', async () => {
+    const { runner, delays } = setup({ device: null });
+    await runner.start();
+    await runner.dispatch({ type: 'chooseCrate', crateId: 'c' });
+    const before = delays.length;
+    await runner.setDevice('Living Room TV');
+    expect(delays.length).toBeGreaterThan(before);
   });
 });
