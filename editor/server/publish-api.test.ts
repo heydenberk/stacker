@@ -17,13 +17,20 @@ const crate = (id: string, name: string, records: CrateRecord[]): Crate => ({ id
 const z = (...lines: string[]) => (lines.length ? lines.join('\0') + '\0' : '');
 const ok = (stdout = ''): GitResult => ({ code: 0, stdout, stderr: '' });
 
-function scriptedGit(opts: { status?: string[]; remote?: string; fail?: string; sha?: string }) {
+function scriptedGit(opts: { status?: string[]; remote?: string; fail?: string; sha?: string; upstream?: string; unpushed?: number }) {
   return (args: string[]): GitResult => {
     if (opts.fail && args[0] === opts.fail) return { code: 1, stdout: '', stderr: `fatal: ${opts.fail} broke` };
     switch (args[0]) {
       case 'status': return ok(z(...(opts.status ?? [])));
       case 'remote': return ok(opts.remote ?? '');
-      case 'rev-parse': return ok(`${opts.sha ?? 'abc1234'}\n`);
+      case 'rev-parse':
+        if (args.includes('@{u}')) {
+          return opts.upstream
+            ? ok(`${opts.upstream}\n`)
+            : { code: 128, stdout: '', stderr: "fatal: no upstream configured for branch 'main'\n" };
+        }
+        return ok(`${opts.sha ?? 'abc1234'}\n`);
+      case 'rev-list': return ok(`${opts.unpushed ?? 0}\n`);
       case 'commit': return ok('[feat 1234567] message\n 1 file changed\n');
       case 'push': return ok('');
       default: return ok();
@@ -143,6 +150,43 @@ describe('previewPublish', () => {
       .toBe('Update genres and overrides');
   });
 
+  it('reports no unpushed commits without a remote, and does not ask about an upstream', () => {
+    const deps = setup({ status: [' M crates/rainy-sunday.json'], upstream: 'origin/main', unpushed: 3 });
+    expect(previewPublish(deps).unpushed).toBe(0);
+    expect(deps.gitCalls.some((c) => c[0] === 'rev-list' || c.includes('@{u}'))).toBe(false);
+  });
+
+  it('reports no unpushed commits when the branch has no upstream', () => {
+    const deps = setup({ status: [' M crates/rainy-sunday.json'], remote: 'origin\n' });
+    expect(previewPublish(deps).unpushed).toBe(0);
+    expect(deps.gitCalls).toContainEqual(['rev-parse', '--abbrev-ref', '--symbolic-full-name', '@{u}']);
+    expect(deps.gitCalls.some((c) => c[0] === 'rev-list')).toBe(false);
+  });
+
+  it('counts commits ahead of the upstream', () => {
+    const deps = setup({ status: [' M crates/rainy-sunday.json'], remote: 'origin\n', upstream: 'origin/main', unpushed: 2 });
+    expect(previewPublish(deps).unpushed).toBe(2);
+    expect(deps.gitCalls).toContainEqual(['rev-list', '--count', '@{u}..HEAD']);
+  });
+
+  it('does not block on "Nothing to publish" when commits are waiting to be pushed', () => {
+    const deps = setup({ status: [], remote: 'origin\n', upstream: 'origin/main', unpushed: 1 });
+    const preview = previewPublish(deps);
+    expect(preview.changes).toEqual([]);
+    expect(preview.unpushed).toBe(1);
+    expect(preview.blockers).toEqual([]);
+  });
+
+  it('still blocks unpushed commits on changes outside the publish paths', () => {
+    const deps = setup({ status: [' M package.json'], remote: 'origin\n', upstream: 'origin/main', unpushed: 1 });
+    expect(previewPublish(deps).blockers).toEqual(['Uncommitted changes outside crates — commit or stash them first: package.json']);
+  });
+
+  it('fails with 500 when counting unpushed commits fails', () => {
+    const deps = setup({ status: [], remote: 'origin\n', upstream: 'origin/main', fail: 'rev-list' });
+    expect(() => previewPublish(deps)).toThrow(expect.objectContaining({ status: 500, message: expect.stringContaining('fatal: rev-list broke') }));
+  });
+
   it('asks git for porcelain status with every untracked file', () => {
     const deps = setup({ status: [] });
     previewPublish(deps);
@@ -213,6 +257,50 @@ describe('publish', () => {
   it('returns 500 with stderr when git commit fails', () => {
     const deps = setup({ status: [' M crates/rainy-sunday.json'], fail: 'commit' });
     expect(() => publish(deps, 'msg')).toThrow(expect.objectContaining({ status: 500, message: expect.stringContaining('fatal: commit broke') }));
+  });
+
+  it('pushes to the upstream with plain git push when one exists', () => {
+    const deps = setup({ status: [' M crates/rainy-sunday.json'], remote: 'origin\n', upstream: 'origin/main' });
+    expect(publish(deps, 'msg').pushed).toBe(true);
+    expect(deps.gitCalls.filter((c) => c[0] === 'push')).toEqual([['push']]);
+  });
+
+  it('sets the upstream with git push -u origin HEAD when the branch has none', () => {
+    const deps = setup({ status: [' M crates/rainy-sunday.json'], remote: 'origin\n' });
+    expect(publish(deps, 'msg').pushed).toBe(true);
+    expect(deps.gitCalls.filter((c) => c[0] === 'push')).toEqual([['push', '-u', 'origin', 'HEAD']]);
+  });
+
+  it('uses the only remote when there is no origin', () => {
+    const deps = setup({ status: [' M crates/rainy-sunday.json'], remote: 'github\n' });
+    publish(deps, 'msg');
+    expect(deps.gitCalls.filter((c) => c[0] === 'push')).toEqual([['push', '-u', 'github', 'HEAD']]);
+  });
+
+  it('retries the push without committing when there are no changes but unpushed commits', () => {
+    const deps = setup({ status: [], remote: 'origin\n', upstream: 'origin/main', unpushed: 2, sha: 'beef' });
+    const result = publish(deps, '');
+    expect(result).toMatchObject({ committed: 'beef', pushed: true });
+    const changing = deps.gitCalls.map((c) => c[0]).filter((c) => ['add', 'commit', 'push'].includes(c));
+    expect(changing).toEqual(['push']);
+  });
+
+  it('reports a failed retry push with the existing commit', () => {
+    const deps = setup({ status: [], remote: 'origin\n', upstream: 'origin/main', unpushed: 1, sha: 'beef', fail: 'push' });
+    let err: unknown;
+    try {
+      publish(deps, '');
+    } catch (e) {
+      err = e;
+    }
+    expect((err as ApiError).status).toBe(500);
+    expect((err as ApiError).body).toMatchObject({ committed: 'beef', pushed: false, error: expect.stringContaining('fatal: push broke') });
+  });
+
+  it('returns 409 when there are no changes and nothing to push', () => {
+    const deps = setup({ status: [], remote: 'origin\n', upstream: 'origin/main', unpushed: 0 });
+    expect(() => publish(deps, 'msg')).toThrow(expect.objectContaining({ status: 409 }));
+    expect(deps.gitCalls.some((c) => c[0] === 'push')).toBe(false);
   });
 
   it('reports the commit when the push fails', () => {

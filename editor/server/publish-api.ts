@@ -20,6 +20,8 @@ export interface PublishPreview {
   changes: Change[];
   blockers: string[];
   hasRemote: boolean;
+  /** Commits on HEAD not yet on its upstream (e.g. after a failed push); 0 without a remote or upstream. */
+  unpushed: number;
   suggestedMessage: string;
 }
 
@@ -87,11 +89,31 @@ function listPaths(paths: string[]): string {
   return paths.length > MAX_LISTED ? `${shown} and ${paths.length - MAX_LISTED} more` : shown;
 }
 
+interface PushTarget {
+  hasRemote: boolean;
+  /** The remote to push to (`origin` when it exists, else the first one); null without a remote. */
+  remote: string | null;
+  hasUpstream: boolean;
+  unpushed: number;
+}
+
+function pushTarget(deps: EditorDeps): PushTarget {
+  const remotes = run(deps, ['remote']).stdout.split('\n').map((r) => r.trim()).filter(Boolean);
+  if (remotes.length === 0) return { hasRemote: false, remote: null, hasUpstream: false, unpushed: 0 };
+  const remote = remotes.includes('origin') ? 'origin' : remotes[0];
+  // Fails (non-zero) when the current branch has no upstream configured.
+  const hasUpstream = deps.git(['rev-parse', '--abbrev-ref', '--symbolic-full-name', '@{u}']).code === 0;
+  if (!hasUpstream) return { hasRemote: true, remote, hasUpstream, unpushed: 0 };
+  const count = Number.parseInt(run(deps, ['rev-list', '--count', '@{u}..HEAD']).stdout.trim(), 10);
+  return { hasRemote: true, remote, hasUpstream, unpushed: Number.isFinite(count) ? count : 0 };
+}
+
 // ---- handlers ----
 
 interface Analysis extends PublishPreview {
   /** PUBLISH_PATHS entries that have changes, i.e. what `git add` gets. */
   pathsToAdd: string[];
+  push: PushTarget;
 }
 
 function analyse(deps: EditorDeps): Analysis {
@@ -126,14 +148,17 @@ function analyse(deps: EditorDeps): Analysis {
   if (outside.length > 0) {
     blockers.push(`Uncommitted changes outside crates — commit or stash them first: ${listPaths(outside.map((e) => e.path))}`);
   }
-  if (inside.length === 0) blockers.push('Nothing to publish');
+  const push = pushTarget(deps);
+  if (inside.length === 0 && push.unpushed === 0) blockers.push('Nothing to publish');
 
   return {
     changes: inside.map(({ status, path }) => ({ status, path })),
     blockers,
-    hasRemote: run(deps, ['remote']).stdout.trim() !== '',
+    hasRemote: push.hasRemote,
+    unpushed: push.unpushed,
     suggestedMessage: suggestMessage(crateLabels, inside),
     pathsToAdd: PUBLISH_PATHS.filter((p) => inside.some((e) => e.path === p || e.path.startsWith(`${p}/`))),
+    push,
   };
 }
 
@@ -152,33 +177,43 @@ function suggestMessage(crateLabels: string[], inside: StatusEntry[]): string {
 
 /** What Publish would do: changed paths, anything blocking it, and a suggested commit message. */
 export function previewPublish(deps: EditorDeps): PublishPreview {
-  const { changes, blockers, hasRemote, suggestedMessage } = analyse(deps);
-  return { changes, blockers, hasRemote, suggestedMessage };
+  const { changes, blockers, hasRemote, unpushed, suggestedMessage } = analyse(deps);
+  return { changes, blockers, hasRemote, unpushed, suggestedMessage };
 }
 
 /**
  * Commits the publish paths with `message` (no trailers; these are the user's own commits) and
- * pushes when a remote exists. Throws ApiError 409 (body `{ error, blockers }`) while blocked.
+ * pushes when a remote exists (`git push -u <remote> HEAD` when the branch has no upstream yet).
+ * With no changes but unpushed commits (a push that failed earlier), it only pushes, and
+ * `message` may be empty. Throws ApiError 409 (body `{ error, blockers }`) while blocked.
  */
 export function publish(deps: EditorDeps, message: string): PublishResult {
-  if (typeof message !== 'string' || message.trim() === '') throw new ApiError(400, 'A commit message is required');
+  const hasMessage = typeof message === 'string' && message.trim() !== '';
   const a = analyse(deps);
+  const commitNeeded = a.pathsToAdd.length > 0;
+  if (commitNeeded && !hasMessage) throw new ApiError(400, 'A commit message is required');
   if (a.blockers.length > 0) {
     throw new ApiError(409, 'Publish is blocked', { error: 'Publish is blocked', blockers: a.blockers });
   }
 
-  run(deps, ['add', '-A', '--', ...a.pathsToAdd]);
-  // Pathspec on commit, so nothing else that happens to be staged sneaks in.
-  const commit = run(deps, ['commit', '-m', message.trim(), '--', ...a.pathsToAdd]);
+  let output = '';
+  if (commitNeeded) {
+    run(deps, ['add', '-A', '--', ...a.pathsToAdd]);
+    // Pathspec on commit, so nothing else that happens to be staged sneaks in.
+    const commit = run(deps, ['commit', '-m', message.trim(), '--', ...a.pathsToAdd]);
+    output = [commit.stdout, commit.stderr].filter(Boolean).join('');
+  }
   const committed = run(deps, ['rev-parse', 'HEAD']).stdout.trim();
-  const output = [commit.stdout, commit.stderr].filter(Boolean).join('');
 
-  if (!a.hasRemote) return { committed, pushed: false, output };
+  if (!a.push.remote) return { committed, pushed: false, output };
 
-  const push = deps.git(['push']);
+  const push = deps.git(a.push.hasUpstream ? ['push'] : ['push', '-u', a.push.remote, 'HEAD']);
   const pushOutput = [push.stdout, push.stderr].filter(Boolean).join('');
   if (push.code !== 0) {
-    const error = `Committed ${committed}, but git push failed: ${(push.stderr || push.stdout).trim()}`;
+    const detail = (push.stderr || push.stdout).trim();
+    const error = commitNeeded
+      ? `Committed ${committed}, but git push failed: ${detail}`
+      : `git push failed; ${committed} is still only committed locally: ${detail}`;
     throw new ApiError(500, error, { error, committed, pushed: false, output: output + pushOutput });
   }
   return { committed, pushed: true, output: output + pushOutput };
