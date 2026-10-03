@@ -9,6 +9,7 @@ export interface CrateTrack {
 
 export interface SpotifyAlbumRef {
   albumId: string;
+  /** '' when Spotify has no image for the album; the app should show a placeholder. */
   coverUrl: string;
   tracks: CrateTrack[];
 }

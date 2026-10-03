@@ -43,10 +43,11 @@ export class SpotifyClient implements SpotifyApi {
     private readonly clientSecret: string,
     private readonly fetchFn: typeof fetch = fetch,
     private readonly sleep: (ms: number) => Promise<void> = (ms) => new Promise((r) => setTimeout(r, ms)),
+    private readonly market: string = 'US',
   ) {}
 
   async searchAlbums(query: string): Promise<AlbumCandidate[]> {
-    const params = new URLSearchParams({ q: query, type: 'album', limit: '10' });
+    const params = new URLSearchParams({ q: query, type: 'album', limit: '10', market: this.market });
     const res = await this.get<{ albums: Paging<ApiAlbum | null> }>(`${API}/search?${params}`);
     return res.albums.items
       .filter((a): a is ApiAlbum => a !== null)
@@ -60,7 +61,7 @@ export class SpotifyClient implements SpotifyApi {
   }
 
   async getAlbum(id: string): Promise<AlbumDetails> {
-    const album = await this.get<ApiAlbumFull>(`${API}/albums/${id}`);
+    const album = await this.get<ApiAlbumFull>(`${API}/albums/${id}?${new URLSearchParams({ market: this.market })}`);
     const tracks = album.tracks.items.map(toTrack);
     let next = album.tracks.next;
     while (next) {

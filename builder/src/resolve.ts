@@ -92,12 +92,19 @@ export async function resolveRecord(entry: LibraryEntry, api: SpotifyApi, rawOve
   return { ...base, spotify: toRef(d), match: matchInfo(d, best.confidence) };
 }
 
-function isSettled(record: CrateDraft['records'][number], rawOverride: string | undefined): boolean {
+/** `override` is the already-parsed override album id (see parseAlbumId), or undefined. */
+function isSettled(record: CrateDraft['records'][number], override: string | undefined): boolean {
   if (!record.match) return false;
-  const override = rawOverride === undefined ? undefined : parseAlbumId(rawOverride);
   if (override === UNAVAILABLE) return record.spotify === null && record.match.override === true;
   if (override) return record.spotify?.albumId === override;
   return record.match.confidence === 'high' && !record.match.override && !!record.spotify;
+}
+
+function logLine(entry: LibraryEntry, r: CrateRecord): string {
+  const rym = `${entry.artist} — ${entry.title}`;
+  if (!r.match?.override) return `${r.match?.confidence ?? 'none'}\t${rym}`;
+  const target = r.spotify ? `${r.match.spotifyName} — ${r.match.spotifyArtists}` : 'unavailable';
+  return `override\t${rym}  →  ${target}`;
 }
 
 const needsReview = (r: CrateRecord) => r.match?.confidence !== 'high' && !r.match?.override;
@@ -132,7 +139,7 @@ export async function resolveCrate(
         continue;
       }
       const resolved = await resolveRecord(entry, api, override);
-      opts.log?.(`${resolved.match?.override ? 'override' : (resolved.match?.confidence ?? 'none')}\t${entry.artist} — ${entry.title}`);
+      opts.log?.(logLine(entry, resolved));
       records.push(resolved);
     } catch (e) {
       const rest = draft.records.slice(i).map((d) => ({ ...hydrate(library.get(d.rymId)!), spotify: d.spotify ?? null, match: d.match }));

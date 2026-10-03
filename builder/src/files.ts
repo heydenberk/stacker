@@ -6,7 +6,12 @@ export const OVERRIDES_PATH = 'library/overrides.json';
 export const INDEX_PATH = 'crates/index.json';
 
 export function readJson<T>(path: string): T {
-  return JSON.parse(readFileSync(path, 'utf8')) as T;
+  try {
+    return JSON.parse(readFileSync(path, 'utf8')) as T;
+  } catch (e) {
+    if (e instanceof SyntaxError) throw new Error(`Could not parse ${path}: ${e.message}`, { cause: e });
+    throw e;
+  }
 }
 
 export function writeJson(path: string, value: unknown): void {

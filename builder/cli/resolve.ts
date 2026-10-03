@@ -1,4 +1,5 @@
 import { existsSync, readFileSync } from 'node:fs';
+import { basename } from 'node:path';
 import type { CrateDraft, CrateIndex } from '../../shared/crate';
 import { INDEX_PATH, loadLibrary, loadOverrides, readJson, writeJson } from '../src/files';
 import { indexById } from '../src/library';
@@ -21,19 +22,22 @@ if (!clientId || !clientSecret) {
 }
 
 const draft = JSON.parse(readFileSync(cratePath, 'utf8')) as CrateDraft;
+if (basename(cratePath) !== `${draft.id}.json`) {
+  console.error(`Crate file name must be ${draft.id}.json (got ${basename(cratePath)})`);
+  process.exit(1);
+}
 let result: Awaited<ReturnType<typeof resolveCrate>>;
 try {
   result = await resolveCrate(
     draft,
     indexById(loadLibrary()),
     loadOverrides(),
-    new SpotifyClient(clientId, clientSecret),
+    new SpotifyClient(clientId, clientSecret, undefined, undefined, process.env.SPOTIFY_MARKET || 'US'),
     { force: args.includes('--force'), log: (line) => console.log(line) },
   );
 } catch (err) {
   if (err instanceof ResolveAborted) {
     writeJson(cratePath, err.partial);
-    writeJson(INDEX_PATH, addCrateId(readJson<CrateIndex>(INDEX_PATH), err.partial.id));
     console.error(err.message);
     console.error(`Saved partial progress to ${cratePath}; re-run to continue.`);
     process.exit(1);

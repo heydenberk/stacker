@@ -248,3 +248,17 @@ describe('partial progress keeps prior state', () => {
     expect(err.partial.records[1]).toMatchObject({ rymId: '200', spotify: { albumId: 'bs' }, match: { confidence: 'medium' } });
   });
 });
+
+describe('override log line', () => {
+  it('shows the album and what it resolved to', async () => {
+    const lines: string[] = [];
+    await resolveCrate(draft(['100']), library, { '100': 'pm' }, api(), { log: (l) => lines.push(l) });
+    expect(lines).toEqual(['override\tNick Drake — Pink Moon  →  Pink Moon — Nick Drake']);
+  });
+
+  it('shows unavailable overrides', async () => {
+    const lines: string[] = [];
+    await resolveCrate(draft(['100']), library, { '100': 'unavailable' }, api(), { log: (l) => lines.push(l) });
+    expect(lines).toEqual(['override\tNick Drake — Pink Moon  →  unavailable']);
+  });
+});

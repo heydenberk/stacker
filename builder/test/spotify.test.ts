@@ -83,7 +83,7 @@ describe('SpotifyClient.getAlbum', () => {
     const { fn } = fakeFetch([
       tokenRoute,
       {
-        match: (u) => u === 'https://api.spotify.com/v1/albums/a1',
+        match: (u) => u === 'https://api.spotify.com/v1/albums/a1?market=US',
         respond: () =>
           json({
             id: 'a1',
@@ -112,6 +112,30 @@ describe('SpotifyClient.getAlbum', () => {
         { id: 't2', name: 'Place to Be', durationMs: 161000 },
       ],
     });
+  });
+});
+
+describe('SpotifyClient market', () => {
+  const searchRoute: Route = { match: (u) => u.includes('/v1/search'), respond: () => json(searchBody) };
+  const albumBody = { id: 'a1', name: 'X', release_date: '1972', artists: [], tracks: { items: [], next: null } };
+  const albumRoute: Route = { match: (u) => u.includes('/v1/albums/a1'), respond: () => json(albumBody) };
+
+  it('searches with market=US by default', async () => {
+    const { fn, calls } = fakeFetch([tokenRoute, searchRoute]);
+    await new SpotifyClient('id', 'secret', fn).searchAlbums('q');
+    expect(new URL(calls.find((c) => c.includes('/v1/search'))!).searchParams.get('market')).toBe('US');
+  });
+
+  it('searches with the configured market', async () => {
+    const { fn, calls } = fakeFetch([tokenRoute, searchRoute]);
+    await new SpotifyClient('id', 'secret', fn, undefined, 'GB').searchAlbums('q');
+    expect(new URL(calls.find((c) => c.includes('/v1/search'))!).searchParams.get('market')).toBe('GB');
+  });
+
+  it('adds market to the album request', async () => {
+    const { fn, calls } = fakeFetch([tokenRoute, albumRoute]);
+    await new SpotifyClient('id', 'secret', fn, undefined, 'GB').getAlbum('a1');
+    expect(new URL(calls.find((c) => c.includes('/v1/albums/'))!).searchParams.get('market')).toBe('GB');
   });
 });
 
