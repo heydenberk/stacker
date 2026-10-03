@@ -1401,6 +1401,17 @@ git commit -m "feat(web): Spotify player client"
 
 ### Task 6: The conductor
 
+> **As built:** the review changed the conductor in several places. The source of truth is `web/src/conductor/step.ts` and its tests.
+> - **Record finish is time-based.** It uses `lastSeenAt` + `recordRemainingMs` with a 3 s slack, and replaces `END_WINDOW_MS`. A finish is only recognized in `playing` mode.
+> - **Long gaps don't autoplay.** After a gap of more than the record's remaining time + 10 min, the conductor moves to the next record but waits for you (`awaitingResume`).
+> - **Yielding needs two readings in a row** that aren't this record.
+> - **"Ours" is matched by context URI.**
+> - **Next on the last track moves to the next record**, whether pressed in the app or on the remote.
+> - **Starting a record retries once.**
+> - **Polling waits at least 1 s.**
+> - **`restore()` cleans up its input.**
+
+
 **Goal:** The pure state machine that album-shuffles a crate. It detects when a record finishes, yields to the user, resumes, reshuffles at the end of a lap, and handles skips, failures, a missing device and edited crates.
 
 **Files:**
