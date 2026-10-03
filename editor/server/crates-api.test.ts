@@ -20,6 +20,8 @@ import { fakeDeps } from './fake-deps';
 class FakeApi implements SpotifyApi {
   searches: string[] = [];
   albumsFetched: string[] = [];
+  /** Runs once, on the first search: simulates an edit made while the resolver is waiting on Spotify. */
+  onFirstSearch: (() => void) | null = null;
   constructor(
     private readonly results: Record<string, AlbumCandidate[]>,
     private readonly albums: Record<string, AlbumDetails>,
@@ -27,6 +29,9 @@ class FakeApi implements SpotifyApi {
   ) {}
   async searchAlbums(q: string) {
     this.searches.push(q);
+    const hook = this.onFirstSearch;
+    this.onFirstSearch = null;
+    hook?.();
     if (this.failOn.has(q)) throw new Error('429 Too Many Requests');
     return this.results[q] ?? [];
   }
@@ -36,6 +41,17 @@ class FakeApi implements SpotifyApi {
     if (!a) throw new Error(`no album ${id}`);
     return a;
   }
+}
+
+/** The ApiError a promise rejects with; fails the test if it resolves. */
+async function failure(p: Promise<unknown>): Promise<ApiError> {
+  return p.then(
+    () => { throw new Error('expected the call to fail'); },
+    (e: unknown) => {
+      expect(e).toBeInstanceOf(ApiError);
+      return e as ApiError;
+    },
+  );
 }
 
 const pinkMoon: LibraryEntry = { rymId: '100', artist: 'Nick Drake', artistLocalized: null, title: 'Pink Moon', year: 1972, rating: 10, ownership: 'o' };
@@ -126,6 +142,17 @@ describe('listCrates', () => {
   it('skips index entries whose file is missing', () => {
     const deps = setup({ 'crates/index.json': { crates: ['gone', 'rainy-sunday'] } });
     expect(listCrates(deps).crates.map((c) => c.id)).toEqual(['rainy-sunday']);
+  });
+
+  it('skips unparseable or malformed crate files and reports them in problems', () => {
+    const deps = setup({ 'crates/bad.json': '{ not json', 'crates/odd.json': { id: 'odd' } });
+    const res = listCrates(deps);
+    expect(res.crates.map((c) => c.id)).toEqual(['rainy-sunday']);
+    expect(res.problems).toEqual(['crates/bad.json: invalid JSON', 'crates/odd.json: not a crate (no records array)']);
+  });
+
+  it('reports no problems for a clean crates directory', () => {
+    expect(listCrates(setup()).problems).toEqual([]);
   });
 
   it('hydrates draft records that only have a rymId', () => {
@@ -285,11 +312,7 @@ describe('resolveCrateById', () => {
   it('on ResolveAborted, writes the partial crate and fails with 502 and the partial body', async () => {
     const deps = setup({}, api([BS_Q]));
     saveCrate(deps, 'rainy-sunday', { rymIds: ['300', '200', '100'] });
-    const err = await resolveCrateById(deps, 'rainy-sunday').then(
-      () => { throw new Error('expected failure'); },
-      (e: unknown) => e as ApiError,
-    );
-    expect(err).toBeInstanceOf(ApiError);
+    const err = await failure(resolveCrateById(deps, 'rainy-sunday'));
     expect(err.status).toBe(502);
     const body = err.body as { crate: Crate; review: CrateRecord[]; error: string };
     expect(body.review).toEqual([]);
@@ -297,6 +320,70 @@ describe('resolveCrateById', () => {
     expect(body.crate.records[0].spotify?.albumId).toBe('lv');
     expect(body.crate.records[1]).toMatchObject({ rymId: '200', spotify: null });
     expect(body.crate.records[2]).toEqual(resolvedPinkMoon);
+    expect(deps.json<Crate>('crates/rainy-sunday.json')).toEqual(body.crate);
+  });
+
+  it('does not need Spotify credentials when every record is settled', async () => {
+    const deps = setup(); // fake spotify() throws: no API configured
+    const { crate: resolved, review } = await resolveCrateById(deps, 'rainy-sunday');
+    expect(resolved.records).toEqual([resolvedPinkMoon]);
+    expect(review).toEqual([]);
+    expect(deps.spotifyCalls).toBe(0);
+  });
+
+  it('maps resolver validation errors (duplicate or unknown rymId in the file) to 409', async () => {
+    const dup = setup({ 'crates/rainy-sunday.json': { ...crate('rainy-sunday', 'Rainy Sunday'), records: [{ rymId: '100' }, { rymId: '100' }] } }, api());
+    await expect(resolveCrateById(dup, 'rainy-sunday')).rejects.toMatchObject({ status: 409, message: expect.stringMatching(/Duplicate rymId 100/) });
+    const unknown = setup({ 'crates/rainy-sunday.json': { ...crate('rainy-sunday', 'Rainy Sunday'), records: [{ rymId: '999' }] } }, api());
+    await expect(resolveCrateById(unknown, 'rainy-sunday')).rejects.toMatchObject({ status: 409 });
+  });
+
+  it('merges into a crate edited mid-resolve: added records stay unresolved, removed ones stay removed', async () => {
+    const fake = api();
+    const deps = setup({}, fake);
+    saveCrate(deps, 'rainy-sunday', { rymIds: ['100', '300', '400'] });
+    fake.onFirstSearch = () => saveCrate(deps, 'rainy-sunday', { rymIds: ['100', '300', '200'] });
+    const { crate: resolved, review } = await resolveCrateById(deps, 'rainy-sunday');
+    expect(resolved.records.map((r) => r.rymId)).toEqual(['100', '300', '200']);
+    expect(resolved.records[0]).toEqual(resolvedPinkMoon);
+    expect(resolved.records[1]).toMatchObject({ spotify: { albumId: 'lv' }, match: { confidence: 'high' } });
+    expect(resolved.records[2]).toEqual({ rymId: '200', artist: 'Mingus', title: 'The Black Saint and the Sinner Lady', year: 1963, rating: 9, spotify: null });
+    expect(review).toEqual([]);
+    expect(deps.json<Crate>('crates/rainy-sunday.json')).toEqual(resolved);
+  });
+
+  it('keeps a rename made mid-resolve', async () => {
+    const fake = api();
+    const deps = setup({}, fake);
+    saveCrate(deps, 'rainy-sunday', { rymIds: ['100', '300'] });
+    fake.onFirstSearch = () => renameCrate(deps, 'rainy-sunday', { name: 'Drizzle', mood: 'damp' });
+    const { crate: resolved } = await resolveCrateById(deps, 'rainy-sunday');
+    expect(resolved).toMatchObject({ id: 'rainy-sunday', name: 'Drizzle', mood: 'damp' });
+    expect(resolved.records[1].spotify?.albumId).toBe('lv');
+    expect(deps.json<Crate>('crates/rainy-sunday.json')).toEqual(resolved);
+  });
+
+  it('fails with 409 and writes nothing when the crate is deleted mid-resolve', async () => {
+    const fake = api();
+    const deps = setup({}, fake);
+    saveCrate(deps, 'rainy-sunday', { rymIds: ['100', '300'] });
+    fake.onFirstSearch = () => deleteCrate(deps, 'rainy-sunday');
+    const err = await failure(resolveCrateById(deps, 'rainy-sunday'));
+    expect(err).toMatchObject({ status: 409, message: 'crate was deleted while matching' });
+    expect((err.body as { crate: Crate }).crate.records[1].spotify?.albumId).toBe('lv');
+    expect(deps.files.has('crates/rainy-sunday.json')).toBe(false);
+    expect(deps.json<CrateIndex>('crates/index.json').crates).not.toContain('rainy-sunday');
+  });
+
+  it('merges the partial crate into a crate edited mid-resolve on ResolveAborted', async () => {
+    const fake = api([BS_Q]);
+    const deps = setup({}, fake);
+    saveCrate(deps, 'rainy-sunday', { rymIds: ['300', '200'] });
+    fake.onFirstSearch = () => saveCrate(deps, 'rainy-sunday', { rymIds: ['300', '200', '400'] });
+    const err = await failure(resolveCrateById(deps, 'rainy-sunday'));
+    expect(err.status).toBe(502);
+    const body = err.body as { crate: Crate; review: CrateRecord[]; error: string };
+    expect(body.crate.records.map((r) => [r.rymId, r.spotify?.albumId ?? null])).toEqual([['300', 'lv'], ['200', null], ['400', null]]);
     expect(deps.json<Crate>('crates/rainy-sunday.json')).toEqual(body.crate);
   });
 
@@ -343,11 +430,54 @@ describe('resolveOne', () => {
     await expect(resolveOne(setup({}, api()), 'rainy-sunday', '200')).rejects.toMatchObject({ status: 404 });
   });
 
-  it('fails with 502 and leaves the crate unchanged when Spotify fails', async () => {
+  it('fails with 502, the current record and the error, and leaves the crate unchanged when Spotify fails', async () => {
     const deps = setup({}, api([PM_Q]));
     const before = deps.files.get('crates/rainy-sunday.json');
-    await expect(resolveOne(deps, 'rainy-sunday', '100')).rejects.toMatchObject({ status: 502 });
+    const err = await failure(resolveOne(deps, 'rainy-sunday', '100'));
+    expect(err.status).toBe(502);
+    expect(err.body).toEqual({ record: resolvedPinkMoon, error: expect.stringMatching(/429/) });
     expect(deps.files.get('crates/rainy-sunday.json')).toBe(before);
+  });
+
+  it('places the record by rymId in a crate edited mid-resolve', async () => {
+    const fake = api();
+    const deps = setup({}, fake);
+    saveCrate(deps, 'rainy-sunday', { rymIds: ['100', '300'] });
+    fake.onFirstSearch = () => {
+      saveCrate(deps, 'rainy-sunday', { rymIds: ['300', '200', '100'] });
+      renameCrate(deps, 'rainy-sunday', { name: 'Drizzle' });
+    };
+    const record = await resolveOne(deps, 'rainy-sunday', '100');
+    const written = deps.json<Crate>('crates/rainy-sunday.json');
+    expect(written.name).toBe('Drizzle');
+    expect(written.records.map((r) => r.rymId)).toEqual(['300', '200', '100']);
+    expect(written.records[2]).toEqual(record);
+    expect(written.records[1]).toMatchObject({ rymId: '200', spotify: null });
+  });
+
+  it('fails with 409 and writes nothing when the crate is deleted mid-resolve', async () => {
+    const fake = api();
+    const deps = setup({}, fake);
+    fake.onFirstSearch = () => deleteCrate(deps, 'rainy-sunday');
+    await expect(resolveOne(deps, 'rainy-sunday', '100')).rejects.toMatchObject({ status: 409, message: 'crate was deleted while matching' });
+    expect(deps.files.has('crates/rainy-sunday.json')).toBe(false);
+    expect(deps.json<CrateIndex>('crates/index.json').crates).not.toContain('rainy-sunday');
+  });
+
+  it('fails with 409 and writes nothing when the record is removed mid-resolve', async () => {
+    const fake = api();
+    const deps = setup({}, fake);
+    saveCrate(deps, 'rainy-sunday', { rymIds: ['100', '300'] });
+    fake.onFirstSearch = () => saveCrate(deps, 'rainy-sunday', { rymIds: ['300'] });
+    await expect(resolveOne(deps, 'rainy-sunday', '100')).rejects.toMatchObject({ status: 409 });
+    expect(deps.json<Crate>('crates/rainy-sunday.json').records.map((r) => r.rymId)).toEqual(['300']);
+  });
+
+  it('does not need Spotify credentials for an "unavailable" override', async () => {
+    const deps = setup({ 'library/overrides.json': { '100': 'unavailable' } });
+    const record = await resolveOne(deps, 'rainy-sunday', '100');
+    expect(record).toMatchObject({ spotify: null, match: { override: true } });
+    expect(deps.spotifyCalls).toBe(0);
   });
 });
 

@@ -68,6 +68,7 @@ export function isoDate(ms: number): string {
 export function createRealDeps(root: string = process.cwd()): EditorDeps {
   const abs = (p: string) => resolve(root, p);
   let spotify: SpotifyApi | null = null;
+  let tmpCounter = 0;
 
   return {
     readText(path) {
@@ -81,9 +82,14 @@ export function createRealDeps(root: string = process.cwd()): EditorDeps {
     writeText(path, text) {
       const target = abs(path);
       mkdirSync(dirname(target), { recursive: true });
-      const tmp = `${target}.tmp`;
-      writeFileSync(tmp, text);
-      renameSync(tmp, target);
+      const tmp = `${target}.${process.pid}.${++tmpCounter}.tmp`;
+      try {
+        writeFileSync(tmp, text);
+        renameSync(tmp, target);
+      } catch (e) {
+        rmSync(tmp, { force: true });
+        throw e;
+      }
     },
     removeFile(path) {
       rmSync(abs(path), { force: true });
