@@ -47,7 +47,7 @@
     {
       "id": 5,
       "subject": "Task 6: Crate resolver",
-      "status": "pending",
+      "status": "completed",
       "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 6: Crate resolver.\n\n**Verify:** `npx vitest run builder/test/resolve.test.ts`\n\n```json:metadata\n{\"files\": [\"builder/src/resolve.ts\", \"builder/test/resolve.test.ts\"], \"verifyCommand\": \"npx vitest run builder/test/resolve.test.ts\", \"acceptanceCriteria\": [\"validation before API calls\", \"hydration from library\", \"stop at first high match\", \"overrides (album id / unavailable)\", \"settled records kept unless force\", \"review list\", \"formatReviewLine, addCrateId\"]}\n```",
       "blockedBy": [
         2,
@@ -74,5 +74,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-10-03T13:20:27.068687+00:00"
+  "lastUpdated": "2026-10-03T13:24:35.928907+00:00"
 }
