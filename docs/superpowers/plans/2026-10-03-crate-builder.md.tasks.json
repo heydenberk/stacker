@@ -28,7 +28,7 @@
     {
       "id": 3,
       "subject": "Task 4: Match scoring",
-      "status": "pending",
+      "status": "completed",
       "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 4: Match scoring.\n\n**Verify:** `npx vitest run builder/test/match.test.ts`\n\n```json:metadata\n{\"files\": [\"builder/src/match.ts\", \"builder/test/match.test.ts\"], \"verifyCommand\": \"npx vitest run builder/test/match.test.ts\", \"acceptanceCriteria\": [\"Nick Drake never matches Drake\", \"original beats remaster; album beats single\", \"Various Artists match compilations\", \"Main [Alternate] titles\", \"partial/multi-artist credits\", \"romanized names\", \"confidence thresholds 90/70/45\"]}\n```",
       "blockedBy": [
         1,
@@ -74,5 +74,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-10-03T13:13:04.235656+00:00"
+  "lastUpdated": "2026-10-03T13:18:09.868455+00:00"
 }

@@ -112,7 +112,16 @@ then title-only for Various Artists (prefer `album_type: compilation`). Score ca
 - Penalties: "Remaster", "Deluxe", "Live", "Anniversary", "– Single", "EP".
 - Bonus: `album_type: album`; release year equals RYM year.
 
-Confidence `high | medium | low | none`. Overrides file:
+Confidence `high | medium | low | none`. Rules added after review, because a wrong
+"high" plays the wrong album without anyone checking it:
+- **High needs an exact release-year match.** Missing years, or years that differ,
+  cap the score at medium.
+- **"Various Artists" needs the candidate to list Various Artists.** Spotify also
+  marks single-artist best-ofs as compilations, so that label alone isn't enough.
+- **Being one of several credited artists counts for less** than being the first
+  credit.
+- **Close calls between different-year candidates are demoted to medium.**
+- **Symbol-only names compare by their raw text** ("!!!" ≠ "???"). Overrides file:
 `{ "<rymId>": "<spotifyAlbumId>" | "unavailable" }`.
 
 Known trap (test fixture): naive search for "Nick Drake Pink Moon" returns Drake's
