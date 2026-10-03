@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'preact/hooks';
 import { currentRecord } from '../conductor/step';
 import type { CrateCatalog } from '../crates';
+import { getShell, type StackerShell } from '../shell';
 import type { Runner, RunnerView } from '../runner';
 import type { SpotifyAuth } from '../spotify/auth';
 import type { Device, PlayerApi } from '../spotify/player';
@@ -16,6 +17,32 @@ function useRunnerView(runner: Runner): RunnerView {
   const [view, setView] = useState(runner.view());
   useEffect(() => runner.subscribe(setView), [runner]);
   return view;
+}
+
+function ShellSection({ shell }: { shell: StackerShell }) {
+  const [otherAudio, setOtherAudio] = useState(() => shell.isOtherAudioPlaying());
+  const [scheduled, setScheduled] = useState(false);
+  useEffect(() => {
+    const id = setInterval(() => setOtherAudio(shell.isOtherAudioPlaying()), 2000);
+    return () => clearInterval(id);
+  }, [shell]);
+  const bringLater = () => {
+    setScheduled(true);
+    setTimeout(() => {
+      shell.bringToFront();
+      setScheduled(false);
+    }, 20_000);
+  };
+  return (
+    <section>
+      <h2>TV shell</h2>
+      <pre>{shell.info()}</pre>
+      <p>Other audio playing: {String(otherAudio)}</p>
+      <button disabled={scheduled} onClick={bringLater}>
+        Bring to front in 20 s
+      </button>
+    </section>
+  );
 }
 
 const clock = (ms: number) => `${Math.floor(ms / 60_000)}:${String(Math.floor((ms % 60_000) / 1000)).padStart(2, '0')}`;
@@ -34,6 +61,7 @@ export function App({ auth, runner, player, catalog }: Props) {
     );
   }
 
+  const shell = getShell();
   const { state } = view;
   const crate = state.crateId ? catalog.byId.get(state.crateId) : undefined;
   const rec = currentRecord(state, catalog.byId);
@@ -59,6 +87,8 @@ export function App({ auth, runner, player, catalog }: Props) {
       {expires !== null && <p>Spotify sign-in expires {new Date(expires).toLocaleDateString()}</p>}
       {view.premiumRequired && <p role="alert">Spotify Premium is required for playback control.</p>}
       {view.error && <p role="alert">Error: {view.error}</p>}
+
+      {shell && <ShellSection shell={shell} />}
 
       <section>
         <h2>Device</h2>

@@ -1,7 +1,9 @@
 import { render } from 'preact';
+import { appRootUrl, authCallbackParams } from './boot';
 import { catalog } from './crates';
 import { App } from './debug/App';
 import { Runner } from './runner';
+import { getShell } from './shell';
 import { SpotifyAuth } from './spotify/auth';
 import { SpotifyPlayer } from './spotify/player';
 import { browserStore } from './storage';
@@ -14,23 +16,31 @@ async function boot(): Promise<void> {
     return;
   }
   const store = browserStore();
-  const auth = new SpotifyAuth({ clientId: __SPOTIFY_CLIENT_ID__, redirectUri: `${location.origin}/callback`, store });
+  const auth = new SpotifyAuth({ clientId: __SPOTIFY_CLIENT_ID__, redirectUri: appRootUrl(location.origin, import.meta.env.BASE_URL), store });
 
-  if (location.pathname === '/callback') {
+  if (authCallbackParams(location.search)) {
     try {
       await auth.completeSignIn(location.href);
     } catch (e) {
-      root.textContent = e instanceof Error ? e.message : String(e);
+      history.replaceState(null, '', import.meta.env.BASE_URL);
+      const message = e instanceof Error ? e.message : String(e);
+      const link = document.createElement('a');
+      link.href = import.meta.env.BASE_URL;
+      link.textContent = 'Back to Stacker';
+      root.replaceChildren(message, document.createElement('br'), link);
       return;
     }
-    history.replaceState(null, '', '/');
+    history.replaceState(null, '', import.meta.env.BASE_URL);
   }
 
   const player = new SpotifyPlayer(auth);
   const runner = new Runner({ player, store, crates: catalog.byId });
   if (auth.isSignedIn()) void runner.start();
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') runner.stop();
+    if (document.visibilityState === 'hidden') {
+      // Inside the TV shell the page stays alive behind other apps; keep running.
+      if (getShell() === null) runner.stop();
+    }
     else if (auth.isSignedIn()) void runner.start();
   });
 

@@ -12,6 +12,7 @@ export default defineConfig(({ mode }) => {
   }
   return {
     root: 'web',
+    base: '/stacker/',
     plugins: [preact()],
     define: { __SPOTIFY_CLIENT_ID__: JSON.stringify(env.SPOTIFY_CLIENT_ID ?? '') },
     // Spotify only accepts loopback redirect URIs on 127.0.0.1, not "localhost".
