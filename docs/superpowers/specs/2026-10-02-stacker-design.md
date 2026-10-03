@@ -269,6 +269,11 @@ Android TV app (Kotlin), sideloaded via `adb`:
 - D-pad keys forwarded to the page as arrow keys / Enter; Back forwarded to the page,
   and exits the app only from the crate picker.
 
+**Shell notes from the web-app review (for Plan 4):**
+- **Enable DOM storage in the WebView.** Without it, the sign-in data and tokens live only in memory and are lost when the page reloads during sign-in.
+- **Check which Chromium version the TV's WebView runs.** If it's old, set Vite's `build.target` to match.
+- **Test on the TV against a deployed build or a LAN-reachable preview.** The dev server binds to 127.0.0.1 only.
+
 ## Error handling
 
 | Situation | Behavior |
