@@ -38,7 +38,7 @@
     {
       "id": 4,
       "subject": "Task 5: Spotify client",
-      "status": "pending",
+      "status": "completed",
       "description": "See docs/superpowers/plans/2026-10-03-crate-builder.md \u2014 Task 5: Spotify client.\n\n**Verify:** `npx vitest run builder/test/spotify.test.ts`\n\n```json:metadata\n{\"files\": [\"builder/src/spotify.ts\", \"builder/test/spotify.test.ts\"], \"verifyCommand\": \"npx vitest run builder/test/spotify.test.ts\", \"acceptanceCriteria\": [\"token cached\", \"search limit=10, nulls skipped\", \"getAlbum paginates tracks\", \"429 Retry-After retry; other errors throw\"]}\n```",
       "blockedBy": [
         3
@@ -74,5 +74,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-10-03T13:18:09.868455+00:00"
+  "lastUpdated": "2026-10-03T13:20:27.068687+00:00"
 }
