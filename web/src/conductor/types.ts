@@ -60,7 +60,7 @@ export interface ConductorState {
   startOrigin: PlayOrigin;
   /** In needsDevice: the mode to return to when a non-play action found no device; null means replay the start. */
   modeBeforeDevice: Mode | null;
-  /** When the current hold began (mode 'held'); a hold older than STALE_GAP_MS offers a resume instead of starting. */
+  /** When the current hold began (mode 'held'); a hold older than HOLD_STALE_MS offers a resume instead of starting. */
   heldAt: number | null;
   /** Records that couldn't play, tagged by crate; read them with `problemsFor`. */
   problems: Problem[];

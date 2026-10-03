@@ -11,6 +11,11 @@ export const FINISH_SLACK_MS = 3_000;
  * moves to the next record but waits for the user instead of starting music on its own.
  */
 export const STALE_GAP_MS = 10 * 60_000;
+/**
+ * A takeover hold (other audio on the TV) older than this offers a resume instead of starting on release.
+ * Much longer than STALE_GAP_MS: a film or long video should still be followed by the next record.
+ */
+export const HOLD_STALE_MS = 3 * 60 * 60_000;
 /** Play requests per start before the conductor gives up and yields. */
 const MAX_START_ATTEMPTS = 2;
 /** Consecutive off-record snapshots in playing/paused before the conductor yields to the user. */
@@ -379,7 +384,7 @@ export function step(state: ConductorState, event: ConductorEvent, ctx: StepCont
     case 'release':
       if (state.mode !== 'held') return none(state);
       // Too long since the hold began: the moment has passed, so offer a resume rather than start music unprompted.
-      if (state.heldAt !== null && ctx.now - state.heldAt > STALE_GAP_MS) return none({ ...state, mode: 'awaitingResume', heldAt: null });
+      if (state.heldAt !== null && ctx.now - state.heldAt > HOLD_STALE_MS) return none({ ...state, mode: 'awaitingResume', heldAt: null });
       return startRecord(state, ctx, state.trackIndex, state.progressMs, 'auto');
   }
 }

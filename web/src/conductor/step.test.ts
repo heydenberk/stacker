@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Crate } from '../../../shared/crate';
 import { TRACK_MS, albumOf, makeCrate, otherSnap, record, snapFor } from '../testing/fixtures';
-import { STALE_GAP_MS, estimatePosition, initialState, nextPollDelay, problemsFor, restore, step } from './step';
+import { HOLD_STALE_MS, STALE_GAP_MS, estimatePosition, initialState, nextPollDelay, problemsFor, restore, step } from './step';
 import type { ConductorEvent, ConductorState, PlayOrigin, StepContext } from './types';
 
 const T0 = 1_000_000;
@@ -544,10 +544,22 @@ describe('takeover gate', () => {
   });
 
   it('offers a resume instead of starting after a long hold', () => {
-    const r = go(heldState(), { type: 'release' }, { now: T0 + 3_000 + 6 * 3_600_000 });
+    const r = go(heldState(), { type: 'release' }, { now: T0 + 3_000 + 4 * 3_600_000 });
     expect(r.state).toMatchObject({ mode: 'awaitingResume', pos: 1 });
     expect(r.actions).toEqual([]);
-    expect(STALE_GAP_MS).toBeLessThan(6 * 3_600_000);
+  });
+
+  it('still starts the held record after a long video (20 min hold)', () => {
+    const s = playing(2, TRACK_MS - 3_000);
+    const held = finish(s, hold).state;
+    const r = go(held, { type: 'release' }, { now: T0 + 3_000 + 20 * 60_000 });
+    expect(r.state).toMatchObject({ mode: 'starting', pos: 1 });
+    expect(r.actions).toEqual([autoPlay(s.order[1])]);
+  });
+
+  it('uses its own 3 h cap for holds, not the polling-gap one', () => {
+    expect(HOLD_STALE_MS).toBe(3 * 60 * 60_000);
+    expect(HOLD_STALE_MS).toBeGreaterThan(STALE_GAP_MS);
   });
 
   it('ignores release outside held', () => {
