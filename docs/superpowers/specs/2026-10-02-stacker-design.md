@@ -104,25 +104,47 @@ Eric's export (2026-10-02): 3,226 rows, 3,020 rated; 1,059 at 4★+; 356 at 4.5�
 
 ### Matching
 
-Search `artist:"<artist>" album:"<title>"` (limit 10); fall back to localized artist,
-then title-only for Various Artists (prefer `album_type: compilation`). Score candidates:
+`builder/src/match.ts` is the source of truth; this is a summary.
 
-- Normalized artist must match (case, accents, punctuation, leading "The").
-- Title similarity after stripping parentheticals/suffixes.
-- Penalties: "Remaster", "Deluxe", "Live", "Anniversary", "– Single", "EP".
-- Bonus: `album_type: album`; release year equals RYM year.
+Searches use the `market` from `SPOTIFY_MARKET` in `.env` (default `US`) and
+`limit` 10. They are tried in order, stopping at the first high-confidence match:
+1. `artist:"<artist>" album:"<title>"`
+2. The same with the romanized artist name.
+3. A free-text `<artist> <title>` query.
 
-Confidence `high | medium | low | none`. Rules added after review, because a wrong
-"high" plays the wrong album without anyone checking it:
+Each part of a `Main [Alternate]` title is tried. Various Artists records use a
+title-only `album:"<title>"` search.
+
+Scoring:
+- **Artist:**
+  - 50 for an exact normalized match on the first credit.
+  - 35 for an exact match on a later credit.
+  - 30 when one name contains the other, e.g. RYM "Mingus" vs Spotify "Charles
+    Mingus". The reverse direction counts only if the Spotify name has 2+ words.
+  - 0 otherwise, which rejects the candidate.
+  - Various Artists records: 40 if the candidate lists Various Artists, 25 for any
+    other compilation, otherwise 20.
+- **Title:** 40 for exact after stripping edition text, 25 for a whole-word
+  prefix, otherwise up to 20 by word overlap.
+- **Adjustments:**
+  - Edition wording such as remaster, deluxe or mono: −8.
+  - "Live" when the RYM title isn't live: −15.
+  - Spotify `album_type` single: −20.
+  - Release year: same year +10, one year off 0, two or more off −10.
+
+Confidence is high at 90+, medium at 70+, low at 45+, otherwise none. Rules added
+after review, because a wrong "high" plays the wrong album without anyone checking
+it:
 - **High needs an exact release-year match.** Missing years, or years that differ,
-  cap the score at medium.
-- **"Various Artists" needs the candidate to list Various Artists.** Spotify also
-  marks single-artist best-ofs as compilations, so that label alone isn't enough.
-- **Being one of several credited artists counts for less** than being the first
-  credit.
-- **Close calls between different-year candidates are demoted to medium.**
-- **Symbol-only names compare by their raw text** ("!!!" ≠ "???"). Overrides file:
-`{ "<rymId>": "<spotifyAlbumId>" | "unavailable" }`.
+  cap the score at 89.
+- **Close calls between candidates from different years are demoted to medium.**
+- **Symbol-only names compare by their raw text** ("!!!" ≠ "???").
+
+Overrides file, `library/overrides.json`: `{ "<rymId>": "<album>" | "unavailable" }`.
+- `<album>` can be a bare Spotify album id, `spotify:album:<id>`, or an
+  `open.spotify.com/album/<id>` link.
+- To accept a resolved match, pin it to its own album id. It then leaves the review
+  list.
 
 Known trap (test fixture): naive search for "Nick Drake Pink Moon" returns Drake's
 *Views*.
