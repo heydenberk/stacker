@@ -302,7 +302,10 @@ Android TV app (Kotlin), sideloaded via `adb`:
 
 ## Build order
 
-0. **TV spike (before code), all manual:**
+0. **TV spike: done 2026-10-03, all passed.** Audio continues in the background,
+   remote album changes don't bring Spotify to the foreground, and Eric logs in with
+   email/password, so login works in the WebView. Conductor uses a fresh `play` per
+   record (no queue fallback needed). Original checklist:
    1. Start an album in Spotify on the TV, press Home, open a non-media app. Does
       audio continue?
    2. While in that app, start a different album on the TV from the phone. Does audio
