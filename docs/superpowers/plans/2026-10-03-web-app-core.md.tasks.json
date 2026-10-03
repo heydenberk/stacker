@@ -66,12 +66,12 @@
     {
       "id": 7,
       "subject": "Task 8: Debug page, wiring, and a real run (with Eric)",
-      "status": "pending",
+      "status": "completed",
       "description": "See docs/superpowers/plans/2026-10-03-web-app-core.md \u2014 Task 8: Debug page, wiring, and a real run (with Eric).\n\n**Verify:** `npm test && npm run typecheck && npm run build`\n\n```json:metadata\n{\"files\": [\"web/src/debug/App.tsx\", \"web/src/main.tsx\"], \"verifyCommand\": \"npm test && npm run typecheck && npm run build\", \"acceptanceCriteria\": [\"sign-in round trip\", \"device choose\", \"shuffle & play\", \"controls\", \"record handoff ~2s\", \"yield + resume\", \"reload attaches\"]}\n```",
       "blockedBy": [
         6
       ]
     }
   ],
-  "lastUpdated": "2026-10-03T18:08:45.114986+00:00"
+  "lastUpdated": "2026-10-03T18:16:54.377443+00:00"
 }

@@ -2449,6 +2449,9 @@ git commit -m "feat(web): runner connecting the conductor to Spotify"
 
 ### Task 8: Debug page, wiring, and a real run (with Eric)
 
+> **Result (2026-10-03):** the real run passed. Eric tested sign-in, choosing a device, Shuffle & play, the controls, the hand-off between records, taking over and resuming, and reloading mid-record.
+
+
 **Goal:** A working debug page: sign in, pick a device, shuffle-play Rainy Sunday, and watch the conductor work against real Spotify.
 
 **Files:**
