@@ -1,0 +1,1615 @@
+{
+  "id": "singer-songwriter",
+  "name": "Singer/Songwriter",
+  "mood": "wordy storytellers — Dylan, Prine, Cohen, Berman and friends",
+  "createdAt": "2026-10-04",
+  "records": [
+    {
+      "rymId": "51",
+      "artist": "Bob Dylan",
+      "title": "Highway 61 Revisited",
+      "year": 1965,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6YabPKtZAjxwyWbuO9p4ZD",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730cb0884829c5503b2e242541",
+        "tracks": [
+          {
+            "id": "3AhXZa8sUQht0UEdBJgpGc",
+            "name": "Like a Rolling Stone",
+            "durationMs": 371713
+          },
+          {
+            "id": "5JqsRFZYDtIK5Rgeuzd2Jv",
+            "name": "Tombstone Blues",
+            "durationMs": 360723
+          },
+          {
+            "id": "2yaf46YMxA5y6bzmWUKgXC",
+            "name": "It Takes a Lot to Laugh, It Takes a Train to Cry",
+            "durationMs": 249116
+          },
+          {
+            "id": "6txGFpco4cfgG1sA1MxLCp",
+            "name": "From a Buick 6",
+            "durationMs": 199093
+          },
+          {
+            "id": "0f5N14nB8xi0p3o4BlVvbx",
+            "name": "Ballad of a Thin Man",
+            "durationMs": 357546
+          },
+          {
+            "id": "0c2DAekH6ZEnHhf8dM1leK",
+            "name": "Queen Jane Approximately",
+            "durationMs": 331426
+          },
+          {
+            "id": "6os5B6xjuke9YfBKH3tu1e",
+            "name": "Highway 61 Revisited",
+            "durationMs": 210188
+          },
+          {
+            "id": "0V1771LhL3tG36pb55EZAH",
+            "name": "Just Like Tom Thumb's Blues",
+            "durationMs": 331825
+          },
+          {
+            "id": "4n1ZGm3TxYmoYe1YR8cMus",
+            "name": "Desolation Row",
+            "durationMs": 679838
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Highway 61 Revisited",
+        "spotifyArtists": "Bob Dylan",
+        "spotifyYear": 1965
+      }
+    },
+    {
+      "rymId": "94",
+      "artist": "Bob Dylan",
+      "title": "Blonde on Blonde",
+      "year": 1966,
+      "rating": 10,
+      "spotify": {
+        "albumId": "4NP1rhnsPdYpnyJP0p0k0L",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2738ca88d5178d1ac6f679f144f",
+        "tracks": [
+          {
+            "id": "7BkAlVpGwXXl3sYNn5OoJ7",
+            "name": "Rainy Day Women #12 & 35",
+            "durationMs": 277383
+          },
+          {
+            "id": "2qTvEdNY21mL9whUJot9Oc",
+            "name": "Pledging My Time",
+            "durationMs": 230267
+          },
+          {
+            "id": "2rslQV48gNv3r9pPrQFPW1",
+            "name": "Visions of Johanna",
+            "durationMs": 454005
+          },
+          {
+            "id": "40GFPBolcy0yucApV9uxq2",
+            "name": "One of Us Must Know (Sooner or Later)",
+            "durationMs": 295106
+          },
+          {
+            "id": "7tJQ4Ekp2vN3NlI3vJJW3v",
+            "name": "I Want You",
+            "durationMs": 188602
+          },
+          {
+            "id": "1NYTj6JEw3IOh4ggiBh82h",
+            "name": "Stuck Inside of Mobile with the Memphis Blues Again",
+            "durationMs": 426505
+          },
+          {
+            "id": "6aeOSY6fPsvGTzyXi65pNY",
+            "name": "Leopard-Skin Pill-Box Hat",
+            "durationMs": 238504
+          },
+          {
+            "id": "37Dl7jQMmt0gUnzTKqnjkN",
+            "name": "Just Like a Woman",
+            "durationMs": 293828
+          },
+          {
+            "id": "2SbnSPLltgmScvZVI0OcRF",
+            "name": "Most Likely You Go Your Way (And I'll Go Mine)",
+            "durationMs": 209825
+          },
+          {
+            "id": "1HgFg4pCJO1tX1uh5NMALx",
+            "name": "Temporary Like Achilles",
+            "durationMs": 303003
+          },
+          {
+            "id": "08TyPDbQ14NOoOWh13WJ2Z",
+            "name": "Absolutely Sweet Marie",
+            "durationMs": 297405
+          },
+          {
+            "id": "4i4oDSWluhViEzuYIZYtmJ",
+            "name": "Fourth Time Around",
+            "durationMs": 275355
+          },
+          {
+            "id": "74z9AsqO74WCnX3BlvbGAL",
+            "name": "Obviously Five Believers",
+            "durationMs": 215508
+          },
+          {
+            "id": "4jdtLLyEL7wY0TlCdMKhxq",
+            "name": "Sad-Eyed Lady of the Lowlands",
+            "durationMs": 676914
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Blonde On Blonde",
+        "spotifyArtists": "Bob Dylan",
+        "spotifyYear": 1966
+      }
+    },
+    {
+      "rymId": "93",
+      "artist": "Bob Dylan",
+      "title": "Bringing It All Back Home",
+      "year": 1965,
+      "rating": 10,
+      "spotify": {
+        "albumId": "1lPoRKSgZHQAYXxzBsOQ7v",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273017ebe3583ccc27baf4b9eeb",
+        "tracks": [
+          {
+            "id": "6k9DUKMJpWvu6eFG3O64Lg",
+            "name": "Subterranean Homesick Blues",
+            "durationMs": 139536
+          },
+          {
+            "id": "2itBkHBUxGl4VfDj4HNyoD",
+            "name": "She Belongs to Me",
+            "durationMs": 169122
+          },
+          {
+            "id": "5rGD8FFgHw74cp3RPhucyg",
+            "name": "Maggie's Farm",
+            "durationMs": 239669
+          },
+          {
+            "id": "2FDTgrYDUdQKyGmtynEk90",
+            "name": "Love Minus Zero",
+            "durationMs": 170980
+          },
+          {
+            "id": "0QWvnpH7daskoXwKa59xGT",
+            "name": "Outlaw Blues",
+            "durationMs": 183556
+          },
+          {
+            "id": "1kvqv4axiWkxOdRz017sQZ",
+            "name": "On the Road Again",
+            "durationMs": 154956
+          },
+          {
+            "id": "5ka7NFOlZUpVLJmA2tO0o4",
+            "name": "Bob Dylan's 115th Dream",
+            "durationMs": 391790
+          },
+          {
+            "id": "3RkQ3UwOyPqpIiIvGVewuU",
+            "name": "Mr. Tambourine Man",
+            "durationMs": 326706
+          },
+          {
+            "id": "3K10pmwoFZt5N6ESWvDQkv",
+            "name": "Gates of Eden",
+            "durationMs": 342498
+          },
+          {
+            "id": "5Oer8yskMaCGXwGSfM7xr9",
+            "name": "It's Alright, Ma (I'm Only Bleeding)",
+            "durationMs": 451908
+          },
+          {
+            "id": "4EgKcG7aswxVfQEqa3dl8S",
+            "name": "It's All Over Now, Baby Blue",
+            "durationMs": 253331
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Bringing It All Back Home",
+        "spotifyArtists": "Bob Dylan",
+        "spotifyYear": 1965
+      }
+    },
+    {
+      "rymId": "13569",
+      "artist": "Destroyer",
+      "title": "Streethawk: A Seduction",
+      "year": 2001,
+      "rating": 10,
+      "spotify": {
+        "albumId": "2lhmNG6U6X5ndAktLzcBdM",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b4cc8fe365cd62c70500b437",
+        "tracks": [
+          {
+            "id": "60EXgrKi4MLoagkzReVwxY",
+            "name": "Streethawk I",
+            "durationMs": 146320
+          },
+          {
+            "id": "5v3oMLjKDI96o91pssGE5R",
+            "name": "The Bad Arts",
+            "durationMs": 421533
+          },
+          {
+            "id": "4aCzSZBZ4lKXMTUCyM6NP5",
+            "name": "Beggars Might Ride",
+            "durationMs": 165786
+          },
+          {
+            "id": "6rwL1Dv7wMB1lMAUvaOV9P",
+            "name": "The Sublimation Hour",
+            "durationMs": 252226
+          },
+          {
+            "id": "0dMO5mq7RZ4YYs67tz4hc0",
+            "name": "English Music",
+            "durationMs": 215373
+          },
+          {
+            "id": "5C9HVMpB3NJXw5a1zZ5V4M",
+            "name": "Virgin with a Memory",
+            "durationMs": 160226
+          },
+          {
+            "id": "16l3MleqwSUuNgkCx65a8A",
+            "name": "The Very Modern Dance",
+            "durationMs": 193986
+          },
+          {
+            "id": "7q3N0ifh0cBGSMm8VlYaDA",
+            "name": "The Crossover",
+            "durationMs": 303480
+          },
+          {
+            "id": "56mBV4mZNyIALJOjufVpjM",
+            "name": "Helena",
+            "durationMs": 225840
+          },
+          {
+            "id": "2Ve2iYB2zH6W0NJrjWIIK9",
+            "name": "Farrar, Straus & Giroux (Sea of Tears)",
+            "durationMs": 227240
+          },
+          {
+            "id": "1jQuPC6be3sNPUWB6pB8RV",
+            "name": "Strike",
+            "durationMs": 179026
+          },
+          {
+            "id": "3QFelnd9fUji1iQraO8bJU",
+            "name": "Streethawk II",
+            "durationMs": 147160
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Streethawk: A Seduction",
+        "spotifyArtists": "Destroyer",
+        "spotifyYear": 2001
+      }
+    },
+    {
+      "rymId": "50452",
+      "artist": "Lee Hazlewood",
+      "title": "Requiem for an Almost Lady",
+      "year": 1971,
+      "rating": 10,
+      "spotify": {
+        "albumId": "26mWfuNZsAXtUxjuYGvRth",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273eeb32e65ebc2054518cee1f7",
+        "tracks": [
+          {
+            "id": "2O4MiE1J8XulzX3yW89fAe",
+            "name": "I'm Glad I Never...",
+            "durationMs": 65333
+          },
+          {
+            "id": "1HqbCYNzDggiKdRyn4Vl31",
+            "name": "If It's Monday Morning",
+            "durationMs": 238546
+          },
+          {
+            "id": "08huTDfgXZoYWoucBcDLFZ",
+            "name": "L.A. Lady",
+            "durationMs": 141520
+          },
+          {
+            "id": "1dPfRhooPcswZy2fMfAMWk",
+            "name": "Won't You Tell Your Dreams",
+            "durationMs": 234600
+          },
+          {
+            "id": "7gIqoSUqCVNvQ9Cljv4tDV",
+            "name": "I'll Live Yesterdays",
+            "durationMs": 174226
+          },
+          {
+            "id": "5zdq9KsvdzHKhYoyPxHv41",
+            "name": "Little Miss Sunshine (Little Miss Rain)",
+            "durationMs": 155000
+          },
+          {
+            "id": "58ZbZRJpJK2e9t84bWTuDF",
+            "name": "Stoned Lost Child",
+            "durationMs": 124266
+          },
+          {
+            "id": "0QBoodBUjxJJ6qtjgqxlkU",
+            "name": "Come on Home to Me",
+            "durationMs": 179960
+          },
+          {
+            "id": "5SCmHdAC03BbkgeqTbgLoe",
+            "name": "Must Have Been Something I Loved",
+            "durationMs": 101453
+          },
+          {
+            "id": "3qPfyezPewt66PPgbTclms",
+            "name": "I'd Rather Be Your Enemy",
+            "durationMs": 136853
+          },
+          {
+            "id": "6PnqpMVdq6khJVQAiF44aq",
+            "name": "I Just Learned to Run",
+            "durationMs": 184653
+          },
+          {
+            "id": "6zFotWASurScNnXlFEQjum",
+            "name": "Little Bird (Demo)",
+            "durationMs": 162960
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Requiem for an Almost Lady",
+        "spotifyArtists": "Lee Hazlewood",
+        "spotifyYear": 2017,
+        "override": true
+      }
+    },
+    {
+      "rymId": "22733",
+      "artist": "John Prine",
+      "title": "John Prine",
+      "year": 1971,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5t4FHrIAHI8nolSAOBRgPp",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b190c3479aedf6a29340847d",
+        "tracks": [
+          {
+            "id": "1h0R5cstHZ070tevUAfEo7",
+            "name": "Illegal Smile",
+            "durationMs": 193266
+          },
+          {
+            "id": "7zrxGPR1UVK2iSK793vLPl",
+            "name": "Spanish Pipedream",
+            "durationMs": 161173
+          },
+          {
+            "id": "7IijX5DkLaf3G4qF6xDLYa",
+            "name": "Hello in There",
+            "durationMs": 272026
+          },
+          {
+            "id": "4BIej0swGWja46j5B7l4s1",
+            "name": "Sam Stone",
+            "durationMs": 256906
+          },
+          {
+            "id": "47QsP5uPZp3he5UrVsK8bs",
+            "name": "Paradise",
+            "durationMs": 195600
+          },
+          {
+            "id": "3w5YryukHLwgjlYMP3M2le",
+            "name": "Pretty Good",
+            "durationMs": 216866
+          },
+          {
+            "id": "5xIVA72uBH9dsTNC7L37LV",
+            "name": "Your Flag Decal Won't Get You into Heaven Anymore",
+            "durationMs": 172600
+          },
+          {
+            "id": "7nzQdJorKDWFsmvIN28mMM",
+            "name": "Far from Me",
+            "durationMs": 221333
+          },
+          {
+            "id": "2qWKpYIleSvBT6aUMXoia5",
+            "name": "Angel from Montgomery",
+            "durationMs": 224186
+          },
+          {
+            "id": "7LjxyD6xueeuwW9qyH4pbJ",
+            "name": "Quiet Man",
+            "durationMs": 172200
+          },
+          {
+            "id": "3Y5s93gngKBog4qJBMbIoq",
+            "name": "Donald and Lydia",
+            "durationMs": 270733
+          },
+          {
+            "id": "0FAFmU0CdwFScNZcg7HjNO",
+            "name": "Six O'Clock News",
+            "durationMs": 171066
+          },
+          {
+            "id": "3dYldIZxXGmRlhpIlmH3rf",
+            "name": "Flashback Blues",
+            "durationMs": 152120
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "John Prine",
+        "spotifyArtists": "John Prine",
+        "spotifyYear": 1971
+      }
+    },
+    {
+      "rymId": "16241",
+      "artist": "Gram Parsons",
+      "title": "GP",
+      "year": 1973,
+      "rating": 10,
+      "spotify": {
+        "albumId": "1PtpuplCBaViRQsJFAdWRf",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735bd94a7c1d651fe144dc2872",
+        "tracks": [
+          {
+            "id": "6p7g9kd8ZgDyk05xJgxB8C",
+            "name": "Still Feeling Blue - 2002 Remaster",
+            "durationMs": 163440
+          },
+          {
+            "id": "3JsEYcCdBXiDUsuDqcZpaa",
+            "name": "We'll Sweep out the Ashes in the Morning - 2007 Remaster",
+            "durationMs": 194933
+          },
+          {
+            "id": "044sG5pgwwUSXBekDecuZH",
+            "name": "A Song for You - 2002 Remaster",
+            "durationMs": 300026
+          },
+          {
+            "id": "2PFNJwPprlAGmYyuJeoX0x",
+            "name": "Streets of Baltimore - 2007 Remaster",
+            "durationMs": 175640
+          },
+          {
+            "id": "7DK9shWJm361lm1ks32axt",
+            "name": "She - 2002 Remaster",
+            "durationMs": 301266
+          },
+          {
+            "id": "5Cowo0HkGFfoeCRrc09jc0",
+            "name": "That's All It Took - 2002 Remaster",
+            "durationMs": 181373
+          },
+          {
+            "id": "6MINGkNkD2J4si1J09DJ6j",
+            "name": "The New Soft Shoe - 2006 Remaster",
+            "durationMs": 235866
+          },
+          {
+            "id": "3TIMSziHVPWUoRhSutgRnV",
+            "name": "Kiss the Children - 2002 Remaster",
+            "durationMs": 180453
+          },
+          {
+            "id": "1aACqF2tnGA9PTQysMSqRT",
+            "name": "Cry One More Time - 2002 Remaster",
+            "durationMs": 221266
+          },
+          {
+            "id": "5dKAAtvcfle4gHqDvvJWkW",
+            "name": "How Much I've Lied - 2002 Remaster",
+            "durationMs": 149760
+          },
+          {
+            "id": "1pO336x9dmdiVMhsFDhWIh",
+            "name": "Big Mouth Blues - Remastered Version",
+            "durationMs": 238120
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "GP",
+        "spotifyArtists": "Gram Parsons",
+        "spotifyYear": 1973
+      }
+    },
+    {
+      "rymId": "12116",
+      "artist": "Gene Clark",
+      "title": "White Light",
+      "year": 1971,
+      "rating": 8,
+      "spotify": {
+        "albumId": "00QhioPN9frbBoaG7m2mut",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732a60292d92759ae7548a6297",
+        "tracks": [
+          {
+            "id": "10Gmuwp0Hok22HYgn4YLAC",
+            "name": "The Virgin",
+            "durationMs": 217200
+          },
+          {
+            "id": "2aqJD8HkfHyLloEKRVDFHi",
+            "name": "With Tomorrow",
+            "durationMs": 145600
+          },
+          {
+            "id": "2RHeXAFYmMPQ7dcY1T2fmu",
+            "name": "White Light",
+            "durationMs": 217933
+          },
+          {
+            "id": "6TGDXO0MdkE1gYxKfUX9V2",
+            "name": "Because Of You",
+            "durationMs": 242933
+          },
+          {
+            "id": "7e7GMaamV9hcejIZ3yyVzA",
+            "name": "One In A Hundred",
+            "durationMs": 213280
+          },
+          {
+            "id": "6W0UUyajTqT4iRS26NQemb",
+            "name": "For A Spanish Guitar",
+            "durationMs": 298786
+          },
+          {
+            "id": "0HBcF5uNVNVETiBXUipSu4",
+            "name": "Where My Love Lies Asleep",
+            "durationMs": 260519
+          },
+          {
+            "id": "1oCCAJmxjgC1pJ2Hahc1j5",
+            "name": "Tears Of Rage",
+            "durationMs": 252880
+          },
+          {
+            "id": "7F6q8UaGV7lxnhw7GJ9UDq",
+            "name": "1975",
+            "durationMs": 227613
+          },
+          {
+            "id": "0mEKVUzbtOJJekYFrTpYrg",
+            "name": "Because Of You - Alternate Mix",
+            "durationMs": 244813
+          },
+          {
+            "id": "58avjFvb2C6rnFsRDtpiil",
+            "name": "Stand By Me",
+            "durationMs": 163946
+          },
+          {
+            "id": "1X6dSgdxLAjUjdMxGXBS3E",
+            "name": "Ship Of The Lord",
+            "durationMs": 152293
+          },
+          {
+            "id": "4q3nWVjkNLaZxgIT5AWOy0",
+            "name": "Opening Day",
+            "durationMs": 240333
+          },
+          {
+            "id": "68xUoPCDMzeyAILeelxzud",
+            "name": "Winter In",
+            "durationMs": 201560
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "White Light",
+        "spotifyArtists": "Gene Clark",
+        "spotifyYear": 1971
+      }
+    },
+    {
+      "rymId": "3122",
+      "artist": "Leonard Cohen",
+      "title": "Songs of Love and Hate",
+      "year": 1971,
+      "rating": 8,
+      "spotify": {
+        "albumId": "5WGGkUyTDomzIAdj9Vz6v9",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d77fa0f05687647ed7c68078",
+        "tracks": [
+          {
+            "id": "3t4qyMVnN9o0ZJhsUaa465",
+            "name": "Avalanche",
+            "durationMs": 307101
+          },
+          {
+            "id": "3otjHsXON10fchKRxaIQBC",
+            "name": "Last Year's Man",
+            "durationMs": 362831
+          },
+          {
+            "id": "6hiVIQohcBkQi29Ssj4GJ3",
+            "name": "Dress Rehearsal Rag",
+            "durationMs": 372681
+          },
+          {
+            "id": "1uvvk12Zv9EWF5bgyRrPLf",
+            "name": "Diamonds in the Mine",
+            "durationMs": 232330
+          },
+          {
+            "id": "1qRL3Gwo9PWuIbHo5o5ZwB",
+            "name": "Love Calls You By Your Name",
+            "durationMs": 344734
+          },
+          {
+            "id": "0Oi6TiuKVXRBS0191bEqnu",
+            "name": "Famous Blue Raincoat",
+            "durationMs": 315678
+          },
+          {
+            "id": "5MQgHVKkMUauC6wnXelYIo",
+            "name": "Sing Another Song, Boys",
+            "durationMs": 377607
+          },
+          {
+            "id": "5XTSluxbGNFuuu9t49iE1u",
+            "name": "Joan of Arc",
+            "durationMs": 389235
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Songs of Love and Hate",
+        "spotifyArtists": "Leonard Cohen",
+        "spotifyYear": 1971
+      }
+    },
+    {
+      "rymId": "296",
+      "artist": "Tom Waits",
+      "title": "Small Change",
+      "year": 1976,
+      "rating": 8,
+      "spotify": {
+        "albumId": "6GjMcck9c4i6cQo194xKl6",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a943ff962bc2b7f355e104be",
+        "tracks": [
+          {
+            "id": "71vyz1pfzmj1MQvJYOsPlb",
+            "name": "Tom Traubert's Blues (Four Sheets To The Wind In Copenhagen)",
+            "durationMs": 398693
+          },
+          {
+            "id": "2w78IVFn0nad1tcG5RHyTx",
+            "name": "Step Right Up",
+            "durationMs": 343066
+          },
+          {
+            "id": "1yXoIyMg0figR9VfMGFlrG",
+            "name": "Jitterbug Boy (Sharing A Curbstone With Chuck E. Weiss, Robert Marchese, Paul Body and The Mug and Artie)",
+            "durationMs": 223920
+          },
+          {
+            "id": "5tvH52xn3i7gQQQRfBbD0T",
+            "name": "I Wish I Was In New Orleans (In The Ninth Ward)",
+            "durationMs": 293226
+          },
+          {
+            "id": "2Byq9AiqDPnTGaEgnGt6Q4",
+            "name": "The Piano Has Been Drinking (Not Me) (An Evening With Pete King)",
+            "durationMs": 220053
+          },
+          {
+            "id": "0y6h8XEByp5KcMIrgA8WUD",
+            "name": "Invitation To The Blues",
+            "durationMs": 324520
+          },
+          {
+            "id": "2xgu5ghpA9FYyl2uZIp3oJ",
+            "name": "Pasties And A G-String (At The Two O'Clock Club)",
+            "durationMs": 152093
+          },
+          {
+            "id": "7uOwJoButelmoPVfRcHr8H",
+            "name": "Bad Liver And A Broken Heart (In Lowell)",
+            "durationMs": 289880
+          },
+          {
+            "id": "4isuUQhckX6ophYvVEEbYr",
+            "name": "The One That Got Away",
+            "durationMs": 247573
+          },
+          {
+            "id": "1G864z3ZxSKYUD3fBKHcMN",
+            "name": "Small Change (Got Rained On With His Own .38)",
+            "durationMs": 307120
+          },
+          {
+            "id": "0jvFqRqgbo1v7ETPW5X52M",
+            "name": "I Can't Wait To Get Off Work (And See My Baby On Montgomery Avenue)",
+            "durationMs": 197720
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Small Change (Remastered)",
+        "spotifyArtists": "Tom Waits",
+        "spotifyYear": 1976
+      }
+    },
+    {
+      "rymId": "33890",
+      "artist": "The Mountain Goats",
+      "title": "All Hail West Texas",
+      "year": 2002,
+      "rating": 9,
+      "spotify": {
+        "albumId": "0xxHfGQtC485rStXundfMi",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e0b0a101a5934388b4377749",
+        "tracks": [
+          {
+            "id": "5mHxmOZXyYoq8gwjCz3Vcp",
+            "name": "The Best Ever Death Metal Band in Denton",
+            "durationMs": 156960
+          },
+          {
+            "id": "0tYfm51nPCyzl7RV0nYxnE",
+            "name": "Fall of the Star High School Running Back",
+            "durationMs": 109266
+          },
+          {
+            "id": "1YtPxpDMjHEPXwEnhqs4yx",
+            "name": "Color in Your Cheeks",
+            "durationMs": 160200
+          },
+          {
+            "id": "0onLhUDZZQFWlKPkQDMPr8",
+            "name": "Jenny",
+            "durationMs": 171333
+          },
+          {
+            "id": "34Ny1nwUOyvG9QeLQsJxw5",
+            "name": "Fault Lines",
+            "durationMs": 158173
+          },
+          {
+            "id": "6NqQqdvnwGbQfZ3ms9O6a7",
+            "name": "Balance",
+            "durationMs": 122906
+          },
+          {
+            "id": "1TsDv0fZmU0j6doca5tLxo",
+            "name": "Pink and Blue",
+            "durationMs": 149880
+          },
+          {
+            "id": "5nO5OmWwlMe4n7KKnpQnOG",
+            "name": "Riches and Wonders",
+            "durationMs": 238013
+          },
+          {
+            "id": "4Zw7LSexTsIFDQ7NzKjF6N",
+            "name": "The Mess Inside",
+            "durationMs": 215586
+          },
+          {
+            "id": "6JYvF1mOmPC0MXhiYwsVcG",
+            "name": "Jeff Davis County Blues",
+            "durationMs": 194533
+          },
+          {
+            "id": "6a7mw7O1naaefvxaSdC55W",
+            "name": "Distant Stations",
+            "durationMs": 184626
+          },
+          {
+            "id": "4JcGym6Ez5Jp7EfJYpHJKG",
+            "name": "Blues in Dallas",
+            "durationMs": 255586
+          },
+          {
+            "id": "0ZlnaBV1QDfwEROODRoA66",
+            "name": "Source Decay",
+            "durationMs": 227413
+          },
+          {
+            "id": "6wtBgNKC0DpU3GTupbAN0A",
+            "name": "Absolute Lithops Effect",
+            "durationMs": 248360
+          },
+          {
+            "id": "6P5WYaxAVj4L3JmQYGbeRi",
+            "name": "Hardpan Song* - Bonus Track",
+            "durationMs": 120400
+          },
+          {
+            "id": "64XuB9Gfwex7xKKED8HnRs",
+            "name": "Answering the Phone* - Bonus Track",
+            "durationMs": 148733
+          },
+          {
+            "id": "37SUdy9iYD1TpKKVaZ7AMb",
+            "name": "Indonesia* - Bonus Track",
+            "durationMs": 136586
+          },
+          {
+            "id": "68P2dcveimner1kljxj0Ho",
+            "name": "Midland* - Bonus Track",
+            "durationMs": 195733
+          },
+          {
+            "id": "0fwkQXA0H8httywO3svYJF",
+            "name": "Jenny (alt. take)* - Bonus Track",
+            "durationMs": 172106
+          },
+          {
+            "id": "4C2qQO4W6OI2WI4mk32Skr",
+            "name": "Tape Travel Is Lonely* - Bonus Track",
+            "durationMs": 155880
+          },
+          {
+            "id": "5V4p5ueOMHsXrCSzMgYvwI",
+            "name": "Waco* - Bonus Track",
+            "durationMs": 187066
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "All Hail West Texas (Remastered)",
+        "spotifyArtists": "The Mountain Goats",
+        "spotifyYear": 2002
+      }
+    },
+    {
+      "rymId": "10290521",
+      "artist": "Purple Mountains",
+      "title": "Purple Mountains",
+      "year": 2019,
+      "rating": 9,
+      "spotify": {
+        "albumId": "6YM4MpYgz6BhIeqQkxp3u4",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27388cea355ba046594ed548eff",
+        "tracks": [
+          {
+            "id": "5mgCP62kIGit9ICUdaqIgq",
+            "name": "That’s Just the Way That I Feel",
+            "durationMs": 203693
+          },
+          {
+            "id": "0oCpNIVoV1iJK51xmh59Yh",
+            "name": "All My Happiness is Gone",
+            "durationMs": 260013
+          },
+          {
+            "id": "2Ets3Fh1aOQAC3uFtFbahb",
+            "name": "Darkness and Cold",
+            "durationMs": 238266
+          },
+          {
+            "id": "5M9urPA8G6ogiqaEwGSqua",
+            "name": "Snow is Falling in Manhattan",
+            "durationMs": 363640
+          },
+          {
+            "id": "6EJ24umBSZ6sxmWm8AjHNe",
+            "name": "Margaritas at the Mall",
+            "durationMs": 234133
+          },
+          {
+            "id": "0Ko31n2a4UjBz8X08kZtDr",
+            "name": "She’s Making Friends, I’m Turning Stranger",
+            "durationMs": 251240
+          },
+          {
+            "id": "3Z0YyppuLxnIOzd6liKM8O",
+            "name": "I Loved Being My Mother’s Son",
+            "durationMs": 260959
+          },
+          {
+            "id": "4djPwQlldGMPqhKAonFMeO",
+            "name": "Nights That Won’t Happen",
+            "durationMs": 368653
+          },
+          {
+            "id": "44rEdgOpJRUcnPxlnheSyB",
+            "name": "Storyline Fever",
+            "durationMs": 286346
+          },
+          {
+            "id": "07RmC7emPN2YqmMkZhu2cF",
+            "name": "Maybe I’m the Only One For Me",
+            "durationMs": 198336
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Purple Mountains",
+        "spotifyArtists": "Purple Mountains",
+        "spotifyYear": 2019
+      }
+    },
+    {
+      "rymId": "2985",
+      "artist": "Smog",
+      "title": "Knock Knock",
+      "year": 1999,
+      "rating": 9,
+      "spotify": {
+        "albumId": "3XzbVl7oibSdnmpCGzCK6A",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ebce314abaac49d9acd15745",
+        "tracks": [
+          {
+            "id": "3S9tVm9EGET8wSVLyOWgq7",
+            "name": "Let's Move To The Country",
+            "durationMs": 185800
+          },
+          {
+            "id": "0fV6fXxMkr27BfHxR77qIt",
+            "name": "Held",
+            "durationMs": 242000
+          },
+          {
+            "id": "7CHHKAp6Hi02E3bEoNjvrp",
+            "name": "River Guard",
+            "durationMs": 382266
+          },
+          {
+            "id": "6h7oopLWZNgFYRKKgFejk8",
+            "name": "No Dancing",
+            "durationMs": 180493
+          },
+          {
+            "id": "4uE5lqV5vyJ88UIVqbEFhW",
+            "name": "Teenage Spaceship",
+            "durationMs": 238706
+          },
+          {
+            "id": "5PvqFnDaO9L2BTOY8HLVk8",
+            "name": "Cold Blooded Old Times",
+            "durationMs": 254160
+          },
+          {
+            "id": "0T9MZ9y6BezEXadjDg85FJ",
+            "name": "Sweet Treat",
+            "durationMs": 179506
+          },
+          {
+            "id": "03xxxRzdC0EAnsxuKCLYoS",
+            "name": "Hit The Ground Running",
+            "durationMs": 416600
+          },
+          {
+            "id": "23zzd2syfF0Z63fJc7tGfr",
+            "name": "I Could Drive Forever",
+            "durationMs": 315733
+          },
+          {
+            "id": "3sMMEbYnSqWPRb8lgFVUen",
+            "name": "Left Only With Love",
+            "durationMs": 172000
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Knock Knock",
+        "spotifyArtists": "Smog",
+        "spotifyYear": 1999
+      }
+    },
+    {
+      "rymId": "10501",
+      "artist": "Van Morrison",
+      "title": "Saint Dominic's Preview",
+      "year": 1972,
+      "rating": 9,
+      "spotify": {
+        "albumId": "7nUbUs23QHTMN3GQq3E6gs",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f83f2d3a3e3a31a49d1eada0",
+        "tracks": [
+          {
+            "id": "3ASxXDeMs84gmAnuXeCjAJ",
+            "name": "Jackie Wilson Said (I'm in Heaven When You Smile)",
+            "durationMs": 180259
+          },
+          {
+            "id": "1a2A5zdfxLwnOM984ksWcF",
+            "name": "Gypsy",
+            "durationMs": 278930
+          },
+          {
+            "id": "59aUfeBc4bJJoiiScNDdl7",
+            "name": "I Will Be There",
+            "durationMs": 183862
+          },
+          {
+            "id": "61gIABDrGNkBg7GPayn42S",
+            "name": "Listen to the Lion",
+            "durationMs": 671141
+          },
+          {
+            "id": "4tGeBnie5S6sg41XRqh1FK",
+            "name": "Saint Dominic's Preview",
+            "durationMs": 391319
+          },
+          {
+            "id": "6tYeb3dJvVwaeIl3ynkvGt",
+            "name": "Redwood Tree",
+            "durationMs": 185188
+          },
+          {
+            "id": "3ihcag8CYIrR3PvlRfl2Ii",
+            "name": "Almost Independence Day",
+            "durationMs": 607475
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Saint Dominic's Preview",
+        "spotifyArtists": "Van Morrison",
+        "spotifyYear": 1972
+      }
+    },
+    {
+      "rymId": "2339",
+      "artist": "Neil Young",
+      "title": "After the Gold Rush",
+      "year": 1970,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5EVlXlHbRQI8ybuNt4ArXI",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a2507ac7f34640ac11b3f31b",
+        "tracks": [
+          {
+            "id": "6wfGrC6Vr7xBWxiEoIjvUh",
+            "name": "Tell Me Why",
+            "durationMs": 177120
+          },
+          {
+            "id": "2anPa0qaFG1Nf0swkpfOQd",
+            "name": "After the Gold Rush",
+            "durationMs": 225973
+          },
+          {
+            "id": "4nRhbx8L4ifnMKaE5jSQGR",
+            "name": "Only Love Can Break Your Heart",
+            "durationMs": 188600
+          },
+          {
+            "id": "4Lz33Oi0UQ6SECXsT80Tx2",
+            "name": "Southern Man",
+            "durationMs": 331173
+          },
+          {
+            "id": "1dw3kGhWYMNP4tYMWHvLxg",
+            "name": "Till the Morning Comes",
+            "durationMs": 76066
+          },
+          {
+            "id": "6H3E8pddj7pOMnkXHASoO6",
+            "name": "Oh, Lonesome Me",
+            "durationMs": 228880
+          },
+          {
+            "id": "4rylUVBblCUdmtDuYql6oI",
+            "name": "Don't Let It Bring You Down",
+            "durationMs": 176866
+          },
+          {
+            "id": "1LZQZxE7MTmNLvpPkAAXJT",
+            "name": "Birds",
+            "durationMs": 153373
+          },
+          {
+            "id": "7kB64jHL9hdOvlxsaf03R7",
+            "name": "When You Dance I Can Really Love",
+            "durationMs": 225480
+          },
+          {
+            "id": "0XPT1KDaWBYVa7i6A2E2u3",
+            "name": "I Believe in You",
+            "durationMs": 207386
+          },
+          {
+            "id": "4CCLOGJX19mWFBDHSnifm9",
+            "name": "Cripple Creek Ferry",
+            "durationMs": 93960
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "After the Gold Rush (2009 Remaster)",
+        "spotifyArtists": "Neil Young",
+        "spotifyYear": 1970
+      }
+    },
+    {
+      "rymId": "622",
+      "artist": "David Bowie",
+      "title": "Hunky Dory",
+      "year": 1971,
+      "rating": 9,
+      "spotify": {
+        "albumId": "6fQElzBNTiEMGdIeY0hy5l",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e464904cc3fed2b40fc55120",
+        "tracks": [
+          {
+            "id": "0LrwgdLsFaWh9VXIjBRe8t",
+            "name": "Changes - 2015 Remaster",
+            "durationMs": 217746
+          },
+          {
+            "id": "7Js4OF5MUb2bqJe09g4uQE",
+            "name": "Oh! You Pretty Things - 2015 Remaster",
+            "durationMs": 193986
+          },
+          {
+            "id": "76CfWxdNh9k5ssABTxlmMJ",
+            "name": "Eight Line Poem - 2015 Remaster",
+            "durationMs": 175333
+          },
+          {
+            "id": "3ZE3wv8V3w2T2f7nOCjV0N",
+            "name": "Life on Mars? - 2015 Remaster",
+            "durationMs": 235986
+          },
+          {
+            "id": "1w3W1hz6xVUSWkbh0paMgs",
+            "name": "Kooks - 2015 Remaster",
+            "durationMs": 173760
+          },
+          {
+            "id": "63PgfGFgAZUEzwGouciEC5",
+            "name": "Quicksand - 2015 Remaster",
+            "durationMs": 306480
+          },
+          {
+            "id": "1p4krvaKEJWr3ou3D5IZQy",
+            "name": "Fill Your Heart - 2015 Remaster",
+            "durationMs": 190080
+          },
+          {
+            "id": "0SfYZJSWk4h00yzheOgeIQ",
+            "name": "Andy Warhol - 2015 Remaster",
+            "durationMs": 234746
+          },
+          {
+            "id": "3rpuor3iDjfx0yOcSfE63v",
+            "name": "Song for Bob Dylan - 2015 Remaster",
+            "durationMs": 253093
+          },
+          {
+            "id": "2RDXq7AwoEpvrjsXe4zlUc",
+            "name": "Queen Bitch - 2015 Remaster",
+            "durationMs": 200506
+          },
+          {
+            "id": "0sJXU4olfMR2SvULxarpoW",
+            "name": "The Bewlay Brothers - 2015 Remaster",
+            "durationMs": 329586
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Hunky Dory (2015 Remaster)",
+        "spotifyArtists": "David Bowie",
+        "spotifyYear": 1971
+      }
+    },
+    {
+      "rymId": "12852",
+      "artist": "Lee Hazlewood",
+      "title": "Cowboy in Sweden",
+      "year": 1970,
+      "rating": 9,
+      "spotify": {
+        "albumId": "4KWlUSwaKmvQEXYmhVkIQd",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735e973f6f2221f529b9e4d8ae",
+        "tracks": [
+          {
+            "id": "6exiRgvRY1seHyB9YVTsvD",
+            "name": "Pray Them Bars Away",
+            "durationMs": 169853
+          },
+          {
+            "id": "4FIhHGU2GMnwlJ0DhZqN3n",
+            "name": "Leather and Lace",
+            "durationMs": 189080
+          },
+          {
+            "id": "1IX9k2esMJ2GOS1gf7E7ZB",
+            "name": "Forget Marie",
+            "durationMs": 124626
+          },
+          {
+            "id": "5HLvNBLLJtgfNUueDa6my2",
+            "name": "Cold Hard Times",
+            "durationMs": 148226
+          },
+          {
+            "id": "5am0V1FSyvyeLwieCgZQAU",
+            "name": "The Night Before",
+            "durationMs": 199733
+          },
+          {
+            "id": "53zKqYLks8FMK5f6U4ym0L",
+            "name": "Hey Cowboy",
+            "durationMs": 204413
+          },
+          {
+            "id": "0x5k2V4M2cy0CyIz0DFCt0",
+            "name": "No Train to Stockholm",
+            "durationMs": 144426
+          },
+          {
+            "id": "7xVoSkyJs2Zoy6dlp9AXoq",
+            "name": "For a Day Like Today",
+            "durationMs": 248800
+          },
+          {
+            "id": "4IQR6BTH3EIG4zuz3iomL9",
+            "name": "Easy and Me",
+            "durationMs": 174773
+          },
+          {
+            "id": "5C7Ochdd7sudSsC9MsRWg4",
+            "name": "What's More I Don't Need Her",
+            "durationMs": 214400
+          },
+          {
+            "id": "6N94dcOTMH35lpewQVWw3E",
+            "name": "Vem Kan Segla",
+            "durationMs": 140440
+          },
+          {
+            "id": "1QSV6NMbD06gZYJChAp0lR",
+            "name": "Me and the Wine and the City Lights (session outtake)",
+            "durationMs": 140986
+          },
+          {
+            "id": "0qNtcox7BCM1EN89I6Th9J",
+            "name": "First Street Blues (session outtake)",
+            "durationMs": 249506
+          },
+          {
+            "id": "18Yo1ta1rSophMmLgkoabG",
+            "name": "Pray Them Bars Away (alternate version)",
+            "durationMs": 129240
+          },
+          {
+            "id": "13GR7TOKiiaE6PECJxrIlv",
+            "name": "Easy and Me (alternate version)",
+            "durationMs": 166386
+          },
+          {
+            "id": "6ewaEH4ogurYEGxKQCDJYf",
+            "name": "For A Day Like Today (take 1)",
+            "durationMs": 191520
+          },
+          {
+            "id": "2WA2zKS38p0i3Rk7M6ccu2",
+            "name": "First Street Blues (take 1)",
+            "durationMs": 192400
+          },
+          {
+            "id": "2XKCrqsEPV3SZdAb7bdfH4",
+            "name": "Leather and Lace (alternate vocal mix)",
+            "durationMs": 201466
+          },
+          {
+            "id": "1G7IXyvyf5SKD07Ds357Kw",
+            "name": "The Night Before (mono single mix)",
+            "durationMs": 200893
+          },
+          {
+            "id": "7gz69fFQ2o2wdSPQUYVLTu",
+            "name": "What's More I Don't Need Her (instrumental)",
+            "durationMs": 235146
+          },
+          {
+            "id": "3GIilI7KcbHrS61K6LlEKI",
+            "name": "Pray Them Bars Away (take 7 instrumental)",
+            "durationMs": 169026
+          },
+          {
+            "id": "2d7lOpR7uHnsBIRJMzSFyP",
+            "name": "Easy and Me (take 5 instrumental)",
+            "durationMs": 154453
+          },
+          {
+            "id": "23LIytRUtbI1H0WVzrzxpF",
+            "name": "Cold Hard Times (take 4 instrumental)",
+            "durationMs": 163920
+          },
+          {
+            "id": "08CLfiHJxSFWmKxQcV1PwS",
+            "name": "No Train To Stockholm (instrumental)",
+            "durationMs": 169866
+          },
+          {
+            "id": "0lJTXThcbEuesz95Wa1kVv",
+            "name": "Me and the Wine and the City Lights (instrumental)",
+            "durationMs": 140973
+          },
+          {
+            "id": "1NXoPSCRT6mMgwBIVHHNVv",
+            "name": "Hey Cowboy (instrumental)",
+            "durationMs": 233293
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Cowboy In Sweden (Deluxe Edition)",
+        "spotifyArtists": "Lee Hazlewood",
+        "spotifyYear": 2024,
+        "override": true
+      }
+    },
+    {
+      "rymId": "31572",
+      "artist": "Townes Van Zandt",
+      "title": "Townes Van Zandt",
+      "year": 1969,
+      "rating": 8,
+      "spotify": {
+        "albumId": "6KFVwdp9yZczVIVv4glWue",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2733c883be3287c02f857e91c06",
+        "tracks": [
+          {
+            "id": "4ELGuNlKE0uiD6waM1qWhu",
+            "name": "For the Sake of the Song",
+            "durationMs": 322053
+          },
+          {
+            "id": "2ThO3YZAifDOnpKPUJrlWp",
+            "name": "Columbine",
+            "durationMs": 154706
+          },
+          {
+            "id": "7gtrXOGETM9OkerNjNXeie",
+            "name": "Waiting Around to Die",
+            "durationMs": 165186
+          },
+          {
+            "id": "2OYrhel5MHLGeTvXU9txqA",
+            "name": "Don't Take It Too Bad",
+            "durationMs": 174146
+          },
+          {
+            "id": "4e3DoE0H8nogusqa2OsrPw",
+            "name": "Colorado Girl",
+            "durationMs": 198106
+          },
+          {
+            "id": "0tBAT5NugCTPG3W5mKpbn4",
+            "name": "Lungs",
+            "durationMs": 149386
+          },
+          {
+            "id": "0HLBLRkkTOlAmjonShicD0",
+            "name": "I'll Be Here in the Morning",
+            "durationMs": 180106
+          },
+          {
+            "id": "71sJjrNiDMM4oGNmgyPgOT",
+            "name": "Fare Thee Well, Miss Carousel",
+            "durationMs": 322586
+          },
+          {
+            "id": "2Vd7OCeKGHOEdOCQsxjnCf",
+            "name": "(Quicksilver Daydreams Of) Maria",
+            "durationMs": 285173
+          },
+          {
+            "id": "5X0ax3W4acNnoMnHqXtcAb",
+            "name": "None but the Rain",
+            "durationMs": 143226
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Townes Van Zandt",
+        "spotifyArtists": "Townes Van Zandt",
+        "spotifyYear": 1969
+      }
+    },
+    {
+      "rymId": "87",
+      "artist": "Nick Cave and The Bad Seeds",
+      "title": "Let Love In",
+      "year": 1994,
+      "rating": 9,
+      "spotify": {
+        "albumId": "3OlT3zr0bvzYYg2Dwn6Fkx",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27399249d4ab96f4760017c40ae",
+        "tracks": [
+          {
+            "id": "4ZHENvl0Jvmda9mVqYM9JI",
+            "name": "Do You Love Me? - 2011 Remaster",
+            "durationMs": 357173
+          },
+          {
+            "id": "7emGZJPEz9gCJ3Nx1RBM8U",
+            "name": "Nobody's Baby Now - 2011 Remaster",
+            "durationMs": 232346
+          },
+          {
+            "id": "3soCx6Iaz4UbJQ01sP1n5y",
+            "name": "Loverman - 2011 Remaster",
+            "durationMs": 381480
+          },
+          {
+            "id": "5sas5ANEVftglkxvkGgN9Q",
+            "name": "Jangling Jack - 2011 Remaster",
+            "durationMs": 167480
+          },
+          {
+            "id": "0jVo3e34A15l6MNu1O3cfa",
+            "name": "Red Right Hand - 2011 Remaster",
+            "durationMs": 370573
+          },
+          {
+            "id": "6FFG0nAiGnfDUmfnA9HRgA",
+            "name": "I Let Love In - 2011 Remaster",
+            "durationMs": 254733
+          },
+          {
+            "id": "23lkpXKXxAqbqiUoLBse6F",
+            "name": "Thirsty Dog - 2011 Remaster",
+            "durationMs": 228813
+          },
+          {
+            "id": "08365NAuzoPUzC47Ei2DLB",
+            "name": "Ain't Gonna Rain Anymore - 2011 Remaster",
+            "durationMs": 226000
+          },
+          {
+            "id": "1plL7Pm0FDNAqihX0Gr127",
+            "name": "Lay Me Low - 2011 Remaster",
+            "durationMs": 308733
+          },
+          {
+            "id": "644b3AtgZUDNspiqxfp5XU",
+            "name": "Do You Love Me? (Pt. 2) - 2011 Remaster",
+            "durationMs": 372360
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Let Love In (2011 Remaster)",
+        "spotifyArtists": "Nick Cave & The Bad Seeds",
+        "spotifyYear": 1994
+      }
+    },
+    {
+      "rymId": "9661",
+      "artist": "Robyn Hitchcock",
+      "title": "I Often Dream of Trains",
+      "year": 1984,
+      "rating": 9,
+      "spotify": {
+        "albumId": "1EcWF9lfk1XuIp4l8iWf4O",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273160dd4c66cb6cdfa444ab030",
+        "tracks": [
+          {
+            "id": "0GQ9xVOuLQws8pVFMUeUim",
+            "name": "Nocturne (Prelude)",
+            "durationMs": 99013
+          },
+          {
+            "id": "5X9KuVI4Vc2iknTx2006WC",
+            "name": "Sometimes I Wish I Was a Pretty Girl",
+            "durationMs": 118600
+          },
+          {
+            "id": "1ThvHNuIrVM8c6Q1ETNeA3",
+            "name": "Cathedral",
+            "durationMs": 223066
+          },
+          {
+            "id": "3lu1PGi9oiKFbwJvGPpnyX",
+            "name": "Uncorrected Personality Traits",
+            "durationMs": 105093
+          },
+          {
+            "id": "0kMF1l8iZozkqDa9s4G951",
+            "name": "Sounds Great When You're Dead",
+            "durationMs": 203760
+          },
+          {
+            "id": "6XJPhk9o91251x8dTV6j6V",
+            "name": "Flavour of Night",
+            "durationMs": 179426
+          },
+          {
+            "id": "2yb56WjPWZRg4dMJE5da7b",
+            "name": "Ye Sleeping Nights of Jesus",
+            "durationMs": 241893
+          },
+          {
+            "id": "3ebwcsT4OhIR8cOTjsFur0",
+            "name": "This Could Be The Day",
+            "durationMs": 166186
+          },
+          {
+            "id": "3wnCF8TsPJKG1RdQxcuWRG",
+            "name": "Trams of Old London",
+            "durationMs": 209040
+          },
+          {
+            "id": "36dB4Nng9fJT1YzORNh0i1",
+            "name": "Furry Green Atom Bowl",
+            "durationMs": 196026
+          },
+          {
+            "id": "1mnU18wklA340k0N3BDfiU",
+            "name": "Heart Full of Leaves",
+            "durationMs": 150613
+          },
+          {
+            "id": "3igH4jedvwxbqQw7pXbOzQ",
+            "name": "Autumn Is Your Last Chance",
+            "durationMs": 211160
+          },
+          {
+            "id": "5u1EjLGTX5KM54DRW37Ggh",
+            "name": "I Often Dream of Trains",
+            "durationMs": 143546
+          },
+          {
+            "id": "5PINUjrGQe4S2PbtMFIsyY",
+            "name": "Nocturne (Demise)",
+            "durationMs": 126893
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "I Often Dream of Trains",
+        "spotifyArtists": "Robyn Hitchcock",
+        "spotifyYear": 1984
+      }
+    }
+  ]
+}

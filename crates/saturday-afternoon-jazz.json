@@ -1,0 +1,1092 @@
+{
+  "id": "saturday-afternoon-jazz",
+  "name": "Saturday Afternoon Jazz",
+  "mood": "hard bop and soul jazz with a strut — Blue Note in the kitchen",
+  "createdAt": "2026-10-04",
+  "records": [
+    {
+      "rymId": "11692",
+      "artist": "Art Blakey and The Jazz Messengers",
+      "title": "Art Blakey and The Jazz Messengers [Moanin']",
+      "year": 1959,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5PzlTnVafjgt5RtjTdIKoC",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2731b477a89a10fa567b1e0fd6e",
+        "tracks": [
+          {
+            "id": "3A94GcANmg8APx68mGfoix",
+            "name": "Warm-Up / Dialogue Between Lee Morgan And Rudy Van Gelder - Remastered 1998/Rudy Van Gelder Edition",
+            "durationMs": 35853
+          },
+          {
+            "id": "4Vkk3iD1VrENHJEACNddvt",
+            "name": "Moanin'",
+            "durationMs": 570720
+          },
+          {
+            "id": "1OGwtlps3T1Fo70q6zZUAs",
+            "name": "Are You Real",
+            "durationMs": 287440
+          },
+          {
+            "id": "3Ysj0cl3Jlb6Ysp6um8QI7",
+            "name": "Along Came Betty",
+            "durationMs": 368746
+          },
+          {
+            "id": "3oVxiRYsdchd7Avi3Xx0Bu",
+            "name": "The Drum Thunder Suite",
+            "durationMs": 450933
+          },
+          {
+            "id": "3OyJe2L52BHpACsMjOKLFg",
+            "name": "Blues March",
+            "durationMs": 373386
+          },
+          {
+            "id": "4nrQ0ohqu5sXqMg2p4YzkE",
+            "name": "Come Rain Or Come Shine",
+            "durationMs": 345173
+          },
+          {
+            "id": "7KL9M1iIzHnKBK24pkyTNE",
+            "name": "Moanin' (Alternate Take)",
+            "durationMs": 559146
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Moanin' (Expanded Edition)",
+        "spotifyArtists": "Art Blakey & The Jazz Messengers",
+        "spotifyYear": 1959
+      }
+    },
+    {
+      "rymId": "84315",
+      "artist": "Art Blakey & The Jazz Messengers",
+      "title": "Free for All",
+      "year": 1965,
+      "rating": 9,
+      "spotify": {
+        "albumId": "1iYuqmkhvfNCTpo94ZjVuY",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a88281be332bee611196517a",
+        "tracks": [
+          {
+            "id": "60HyLH6b6ClXi7jnT4XTZq",
+            "name": "Free For All - 2004 Remaster/Rudy Van Gelder Edition",
+            "durationMs": 669266
+          },
+          {
+            "id": "2JRCkXMA0uCYZgpjmWeZfs",
+            "name": "Hammer Head - Rudy Van Gelder Edition / 2004 Remaster",
+            "durationMs": 471186
+          },
+          {
+            "id": "40PrensVfIqnapS00VUwTD",
+            "name": "The Core",
+            "durationMs": 565266
+          },
+          {
+            "id": "5DGTmpn0z4qlqEq2ZBd8XH",
+            "name": "Pensativa - Rudy Van Gelder Edition / 2004 Remaster",
+            "durationMs": 502533
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Free For All (Remastered / Rudy Van Gelder Edition)",
+        "spotifyArtists": "Art Blakey & The Jazz Messengers",
+        "spotifyYear": 2004,
+        "override": true
+      }
+    },
+    {
+      "rymId": "17825",
+      "artist": "Hank Mobley",
+      "title": "Soul Station",
+      "year": 1960,
+      "rating": 9,
+      "spotify": {
+        "albumId": "731OW49heGHCMrMOREHYlY",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2738d277396016ea9ea46d55ce0",
+        "tracks": [
+          {
+            "id": "2BhU0Hl5OatWiCW93pE2b8",
+            "name": "Remember - 1999/ Remastered",
+            "durationMs": 342333
+          },
+          {
+            "id": "5f0n6K8hW2RIVXuZjxO0bu",
+            "name": "This I Dig Of You - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 385866
+          },
+          {
+            "id": "10kVwPSRjUYja0EtdqmXHe",
+            "name": "Dig Dis - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 369386
+          },
+          {
+            "id": "3V3r5GlxyDjubv9TiZuw1s",
+            "name": "Split Feelin's - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 295680
+          },
+          {
+            "id": "3HIO2Ysxx47gnwMGWy7dwB",
+            "name": "Soul Station - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 547426
+          },
+          {
+            "id": "5Li88NjZlTMl8v68GIJJ5v",
+            "name": "If I Should Lose You - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 310520
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Soul Station",
+        "spotifyArtists": "Hank Mobley",
+        "spotifyYear": 1960
+      }
+    },
+    {
+      "rymId": "14663",
+      "artist": "Hank Mobley",
+      "title": "Roll Call",
+      "year": 1961,
+      "rating": 9,
+      "spotify": {
+        "albumId": "2wXfYEZKGQlfy2hKZbwtU7",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27395793252be579777b793a123",
+        "tracks": [
+          {
+            "id": "1niBlhuYWv5D52E1z8PrmI",
+            "name": "Roll Call - Rudy Van Gelder Edition",
+            "durationMs": 633826
+          },
+          {
+            "id": "5wcAcShxT5qvLJvuM6jkZt",
+            "name": "My Groove Your Move - Rudy Van Gelder Edition",
+            "durationMs": 367400
+          },
+          {
+            "id": "0vRTPA7oAl3VegGGJMlZB4",
+            "name": "Take Your Pick - Rudy Van Gelder Edition",
+            "durationMs": 327666
+          },
+          {
+            "id": "3MAR3T0AWWIfN7tlgjjPzt",
+            "name": "A Baptist Beat - Rudy Van Gelder Edition",
+            "durationMs": 534546
+          },
+          {
+            "id": "42iATJYN5S908wQMReeDkV",
+            "name": "The More I See You - Rudy Van Gelder Edition",
+            "durationMs": 407533
+          },
+          {
+            "id": "5RlvkAkSt95HhPUNiSh2Cw",
+            "name": "The Breakdown - Rudy Van Gelder Edition",
+            "durationMs": 297680
+          },
+          {
+            "id": "1z6fm3Lni5nTxN2LGnhsuF",
+            "name": "A Baptist Beat - Alternate Take / Rudy Van Gelder Edition",
+            "durationMs": 582240
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Roll Call",
+        "spotifyArtists": "Hank Mobley",
+        "spotifyYear": 1960,
+        "override": true
+      }
+    },
+    {
+      "rymId": "24832",
+      "artist": "Lee Morgan",
+      "title": "The Sidewinder",
+      "year": 1964,
+      "rating": 8,
+      "spotify": {
+        "albumId": "1n1trPeeY9Q5H4eLbbHHRg",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2734f0d33b45323215e8a04f564",
+        "tracks": [
+          {
+            "id": "1dZHIbmuBDAwXfQOM4dyM3",
+            "name": "The Sidewinder - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 625293
+          },
+          {
+            "id": "782py08Vd3JdBAP79X0FSz",
+            "name": "Totem Pole - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 614946
+          },
+          {
+            "id": "00dDsLgxoPzhbPD3owDfwT",
+            "name": "Gary's Notebook - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 370160
+          },
+          {
+            "id": "57abY9xX9SVdfjn0vydx0t",
+            "name": "Boy, What A Night - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 454520
+          },
+          {
+            "id": "4oLmztYOcw02rDTUe7dfNO",
+            "name": "Hocus-Pocus - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 385693
+          },
+          {
+            "id": "510LpM3avsyNcWcMS1MkLg",
+            "name": "Totem Pole - Alternate Take / Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 597893
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Sidewinder (The Rudy Van Gelder Edition)",
+        "spotifyArtists": "Lee Morgan",
+        "spotifyYear": 1964
+      }
+    },
+    {
+      "rymId": "24833",
+      "artist": "Sonny Clark",
+      "title": "Cool Struttin'",
+      "year": 1958,
+      "rating": 8,
+      "spotify": {
+        "albumId": "2yWj7slAmHfBohXn40HKVU",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27315aa0064a4b1487f5c665c37",
+        "tracks": [
+          {
+            "id": "0X7rCA8YKz31S3uzJ2qsF9",
+            "name": "Cool Struttin' - Remastered",
+            "durationMs": 560655
+          },
+          {
+            "id": "6xdHoeioMerdgJ5fNDDcYy",
+            "name": "Blue Minor - Remastered",
+            "durationMs": 617487
+          },
+          {
+            "id": "6lMuLsSY67KBXLPhQVCbUW",
+            "name": "Sippin' At Bells - Remastered",
+            "durationMs": 496047
+          },
+          {
+            "id": "7kXrDflOQgmLHM2KqmdG75",
+            "name": "Deep Night",
+            "durationMs": 570607
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Cool Struttin’",
+        "spotifyArtists": "Sonny Clark",
+        "spotifyYear": 1958
+      }
+    },
+    {
+      "rymId": "17135",
+      "artist": "The Horace Silver Quintet",
+      "title": "Song for My Father (Cantiga para meu pai)",
+      "year": 1965,
+      "rating": 8,
+      "spotify": {
+        "albumId": "4LEnATSqKeANOJ0mLUAuCE",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732bf57f865f7e88140d69a047",
+        "tracks": [
+          {
+            "id": "1CDBaGlisZlOJzvx88lL8A",
+            "name": "Song For My Father",
+            "durationMs": 438280
+          },
+          {
+            "id": "76gFB8HutMskfRvOR2jcd9",
+            "name": "The Natives Are Restless Tonight - Rudy Van Gelder Edition/1999 Digital Remaster",
+            "durationMs": 370626
+          },
+          {
+            "id": "1R32Fy8FO0sn3o7AOLxliA",
+            "name": "Calcutta Cutie - Rudy Van Gelder Edition/1999 Digital Remaster",
+            "durationMs": 511026
+          },
+          {
+            "id": "5L9FnDSIEc8WaqLZjgYZda",
+            "name": "Que Pasa - Rudy Van Gelder Edition/1999 Digital Remaster",
+            "durationMs": 467706
+          },
+          {
+            "id": "03GekuTeEoSNyD3Ggg1xZD",
+            "name": "The Kicker - Rudy Van Gelder Edition/1999 Digital Remaster",
+            "durationMs": 326786
+          },
+          {
+            "id": "23VGdNEZzKVCpIazC3ZHK6",
+            "name": "Lonely Woman - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 422933
+          },
+          {
+            "id": "7u4x1YQHcNrtyxPGLD1uOE",
+            "name": "Sanctimonious Sam - Rudy Van Gelder Edition/1999 Digital Remaster",
+            "durationMs": 235106
+          },
+          {
+            "id": "0XYtgwFlc7Xtby9uXDL3I8",
+            "name": "Que Pasa - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 338280
+          },
+          {
+            "id": "5CvfVzXQoz56KtJO1hBMlX",
+            "name": "Sighin' And Cryin' - Rudy Van Gelder Edition/1999 Digital Remaster",
+            "durationMs": 325600
+          },
+          {
+            "id": "6FE26T85zZBM28g1klBYxf",
+            "name": "Silver Treads Among The Soul - Rudy Van Gelder Edition/1999 Digital Remaster",
+            "durationMs": 233160
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Song For My Father",
+        "spotifyArtists": "Horace Silver",
+        "spotifyYear": 1964,
+        "override": true
+      }
+    },
+    {
+      "rymId": "24827",
+      "artist": "Sonny Rollins",
+      "title": "Saxophone Colossus",
+      "year": 1957,
+      "rating": 8,
+      "spotify": {
+        "albumId": "2dtjLAwt7Cq763h6AupyPZ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27319d9b2d8f296f97d144b0523",
+        "tracks": [
+          {
+            "id": "05LNBtMuc26HSAHh7C6iG8",
+            "name": "St. Thomas",
+            "durationMs": 407600
+          },
+          {
+            "id": "1to5IySvboywOgXW9jCjDn",
+            "name": "You Don't Know What Love Is - Rudy Van Gelder Rudy Van Gelder Remastered 2006 / Shared ISRC",
+            "durationMs": 389293
+          },
+          {
+            "id": "5xoQDcAjk0AaOU8QBZ4w4w",
+            "name": "Strode Rode - Remastered 2006 / Shared ISRC",
+            "durationMs": 314573
+          },
+          {
+            "id": "5llHYWNCguXN0H7acPys9f",
+            "name": "Moritat",
+            "durationMs": 604493
+          },
+          {
+            "id": "3oWcCZ9K9R1fHUbAKxo99m",
+            "name": "Blue 7 - Rudy Van Gelder Remaster 1956",
+            "durationMs": 677706
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Saxophone Colossus",
+        "spotifyArtists": "Sonny Rollins",
+        "spotifyYear": 1957
+      }
+    },
+    {
+      "rymId": "11222",
+      "artist": "Charles Mingus",
+      "title": "Mingus Ah Um",
+      "year": 1959,
+      "rating": 10,
+      "spotify": {
+        "albumId": "7pojWP7x9uEFSJgw765khA",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27346ae4364de12380a77ebfd20",
+        "tracks": [
+          {
+            "id": "16nJl8NnriCJxraco5Zssm",
+            "name": "Better Git It in Your Soul",
+            "durationMs": 444666
+          },
+          {
+            "id": "3PJMsxg6rz9FOo6xNiASXz",
+            "name": "Goodbye Pork Pie Hat",
+            "durationMs": 344306
+          },
+          {
+            "id": "11cHTwgw5L3qrNcv5Ugv0O",
+            "name": "Boogie Stop Shuffle",
+            "durationMs": 302600
+          },
+          {
+            "id": "38C8v33eis3fa4hLf0dl8Z",
+            "name": "Self-Portrait in Three Colors",
+            "durationMs": 190200
+          },
+          {
+            "id": "2wHIDNvfYyZWPpMqX3fDE4",
+            "name": "Open Letter To Duke",
+            "durationMs": 349026
+          },
+          {
+            "id": "1D4XiMlAFbuC66Qizj2xGo",
+            "name": "Bird Calls",
+            "durationMs": 377533
+          },
+          {
+            "id": "5RWzKLxXVzkJQ702yWfp1w",
+            "name": "Fables of Faubus",
+            "durationMs": 493866
+          },
+          {
+            "id": "7F1gWw4gM7IdQJKBNCGJwH",
+            "name": "Pussy Cat Dues",
+            "durationMs": 554600
+          },
+          {
+            "id": "6l2rEIbe62N5aGTwASmzTT",
+            "name": "Jelly Roll",
+            "durationMs": 377093
+          },
+          {
+            "id": "3m75dha3vtUe2ImeWfaNR8",
+            "name": "Pedal Point Blues",
+            "durationMs": 390733
+          },
+          {
+            "id": "2wKkW3MMSzgVjSUZ7mqSbN",
+            "name": "GG Train",
+            "durationMs": 279640
+          },
+          {
+            "id": "7sUCE1MYoMAYsdYRW052dY",
+            "name": "Girl Of My Dreams",
+            "durationMs": 247733
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Mingus Ah Um",
+        "spotifyArtists": "Charles Mingus",
+        "spotifyYear": 1959
+      }
+    },
+    {
+      "rymId": "756",
+      "artist": "Charlie Mingus",
+      "title": "Blues & Roots",
+      "year": 1960,
+      "rating": 9,
+      "spotify": {
+        "albumId": "7EOQggjtK8JCqeRz9IG33e",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273842e3b1b9439467c636f6ac5",
+        "tracks": [
+          {
+            "id": "74EiaLmtaOlfKZYFkhHs6J",
+            "name": "Wednesday Night Prayer Meeting",
+            "durationMs": 342480
+          },
+          {
+            "id": "0Zy0GyB8VU3C5Sm3yGAJQH",
+            "name": "Cryin' Blues",
+            "durationMs": 303306
+          },
+          {
+            "id": "3rFzc8CLVDZ7OOtFa2jPYP",
+            "name": "Moanin'",
+            "durationMs": 482959
+          },
+          {
+            "id": "1a44N64DKPb37IyZBpunWm",
+            "name": "Tensions",
+            "durationMs": 392066
+          },
+          {
+            "id": "1dasQHdrq9yieCQB0EK8SG",
+            "name": "My Jelly Roll Soul",
+            "durationMs": 407519
+          },
+          {
+            "id": "2uG5erIimWW9wLnz57BFFZ",
+            "name": "E's Flat Ah's Flat Too",
+            "durationMs": 402240
+          },
+          {
+            "id": "39gnnt9J3mKwaKboHCEJI8",
+            "name": "Wednesday Night Prayer Meeting - Alternative Take",
+            "durationMs": 338640
+          },
+          {
+            "id": "2cp9P6pU2HrXwQI3yHtqpV",
+            "name": "Tensions - Alternative; Version",
+            "durationMs": 319933
+          },
+          {
+            "id": "3NhjNx7DKwLXILjl3VBkGJ",
+            "name": "My Jelly Roll Soul - Alternative; Version",
+            "durationMs": 687133
+          },
+          {
+            "id": "5tQxUJeVBDsRbpy4rYXLEf",
+            "name": "E's Flat Ah's Flat Too - Alternative; Take",
+            "durationMs": 414466
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Blues & Roots",
+        "spotifyArtists": "Charles Mingus",
+        "spotifyYear": 1960,
+        "override": true
+      }
+    },
+    {
+      "rymId": "6116",
+      "artist": "John Coltrane",
+      "title": "Blue Train",
+      "year": 1958,
+      "rating": 8,
+      "spotify": {
+        "albumId": "4vIJFprkZ7vyN6nhcBgQmG",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27301ffa1c7915624b95b9065e0",
+        "tracks": [
+          {
+            "id": "6ZgaUtMlUzUf7SqbUUnfbu",
+            "name": "Blue Train - Remastered 2003/Rudy Van Gelder Edition",
+            "durationMs": 644013
+          },
+          {
+            "id": "3TnqliDSJY2iWjL6F38ocE",
+            "name": "Moment's Notice - Remastered 2003/Rudy Van Gelder Edition",
+            "durationMs": 550760
+          },
+          {
+            "id": "43qTHtzIXt8ehFgcncwglq",
+            "name": "Locomotion - Remastered 2003/Rudy Van Gelder Edition",
+            "durationMs": 434240
+          },
+          {
+            "id": "5p95DUZplmVxY0XCQ3hxUV",
+            "name": "I'm Old Fashioned - Remastered 2003/Rudy Van Gelder Edition",
+            "durationMs": 477760
+          },
+          {
+            "id": "0V3K5h6d8Epqg4k60O1IBB",
+            "name": "Lazy Bird - Remastered 2003/Rudy Van Gelder Edition",
+            "durationMs": 427266
+          },
+          {
+            "id": "5YGEikp6jZqPhOZnh4x1FS",
+            "name": "Blue Train - Alternate Take / Remastered 2003/Rudy Van Gelder Edition",
+            "durationMs": 598386
+          },
+          {
+            "id": "78obTxtWPdqC1fdSHC7yt0",
+            "name": "Lazy Bird - Alternate Take / Remastered 2003/Rudy Van Gelder Edition",
+            "durationMs": 432586
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Blue Train (Expanded Edition)",
+        "spotifyArtists": "John Coltrane",
+        "spotifyYear": 1958
+      }
+    },
+    {
+      "rymId": "26374",
+      "artist": "Rahsaan Roland Kirk",
+      "title": "Bright Moments",
+      "year": 1974,
+      "rating": 10,
+      "spotify": {
+        "albumId": "2t97V5uDRA1dRxsJeOSXa9",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27389b89a463f73bb075255b5e3",
+        "tracks": [
+          {
+            "id": "1JQSkIgXyMq8rKVYRGTkfR",
+            "name": "Introduction",
+            "durationMs": 126200
+          },
+          {
+            "id": "3qZpDPZ0q9xrpn9Wp85cnj",
+            "name": "Pedal Up",
+            "durationMs": 711506
+          },
+          {
+            "id": "2JYZnvni7jYM4HHb8XtvUV",
+            "name": "You'll Never Get to Heaven",
+            "durationMs": 581426
+          },
+          {
+            "id": "0UsHLeqUNewalOqElmxrdw",
+            "name": "Clickety Clack",
+            "durationMs": 153666
+          },
+          {
+            "id": "4Z5S7f8qzBFy4kilF2J6tF",
+            "name": "Prelude to a Kiss",
+            "durationMs": 303640
+          },
+          {
+            "id": "4EPaHhfXl3CazHK2LcqqXZ",
+            "name": "Talk (Electric Nose)",
+            "durationMs": 155826
+          },
+          {
+            "id": "30qxRn2CfzxYqZlCVkyQXJ",
+            "name": "Fly Town Nose Blues",
+            "durationMs": 530973
+          },
+          {
+            "id": "0qQyUC21Bfb9EbdbQqmm4Z",
+            "name": "Talk (Bright Moments)",
+            "durationMs": 210733
+          },
+          {
+            "id": "6NWwnsLtNnoMCWEJeT10My",
+            "name": "Bright Moments Song",
+            "durationMs": 607066
+          },
+          {
+            "id": "4C9CwcY9ljnoiabtALEZJT",
+            "name": "Dem Red Beans and Rice",
+            "durationMs": 426666
+          },
+          {
+            "id": "3EMKw2wmSMkiRZBujyjvV9",
+            "name": "If I Loved You",
+            "durationMs": 523533
+          },
+          {
+            "id": "3GGlQetipJDGbpvRq5EFoZ",
+            "name": "Talk (Fats Waller)",
+            "durationMs": 89640
+          },
+          {
+            "id": "6aI9cYaSq6te19LxU1bM2a",
+            "name": "Jitterbug Waltz",
+            "durationMs": 422293
+          },
+          {
+            "id": "7GWyRC92IRGunnCpeYGbLE",
+            "name": "Second Line Jump",
+            "durationMs": 89973
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Bright Moments",
+        "spotifyArtists": "Rahsaan Roland Kirk",
+        "spotifyYear": 2005,
+        "override": true
+      }
+    },
+    {
+      "rymId": "31923",
+      "artist": "Roland Kirk",
+      "title": "The Inflated Tear",
+      "year": 1968,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5xduKf7XKIvw4JV3fHcItg",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27350afdaba51fa926e26ccfe46",
+        "tracks": [
+          {
+            "id": "4YhIyfbqx9xSvMDDRFbJfe",
+            "name": "The Black and Crazy Blues",
+            "durationMs": 367773
+          },
+          {
+            "id": "5SbchqNFRN95nzX2BhzkDA",
+            "name": "A Laugh for Rory",
+            "durationMs": 174266
+          },
+          {
+            "id": "2OWp0pgwSBGYxksIRjAljM",
+            "name": "Many Blessings",
+            "durationMs": 285866
+          },
+          {
+            "id": "3yYSloOdPt9f2yJ7jnGiPo",
+            "name": "Fingers in the Wind",
+            "durationMs": 258026
+          },
+          {
+            "id": "1gtBt4RuqguF7CfIBrDJ5s",
+            "name": "The Inflated Tear - Live Version",
+            "durationMs": 298600
+          },
+          {
+            "id": "0bEfkL84O8z3YMg2up7EHO",
+            "name": "The Creole Love Call",
+            "durationMs": 233666
+          },
+          {
+            "id": "3Pe3aWdhD0MwxI4OUcCiiI",
+            "name": "A Handful of Fives",
+            "durationMs": 162706
+          },
+          {
+            "id": "1fc5e9ci3hrCJ1K5TPpTbp",
+            "name": "Fly by Night",
+            "durationMs": 258920
+          },
+          {
+            "id": "25m9tupqeJlP5cMklBeHvq",
+            "name": "Lovellevelliloqui",
+            "durationMs": 257000
+          },
+          {
+            "id": "5MdrKBxQt1fEj7lH6rma3i",
+            "name": "I'm Glad There Is You",
+            "durationMs": 132773
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Inflated Tear",
+        "spotifyArtists": "Rahsaan Roland Kirk",
+        "spotifyYear": 2005,
+        "override": true
+      }
+    },
+    {
+      "rymId": "30312",
+      "artist": "Les McCann & Eddie Harris",
+      "title": "Swiss Movement",
+      "year": 1969,
+      "rating": 7,
+      "spotify": {
+        "albumId": "1CH2KvMLkMG6Py1S6sY41g",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2731cd3172580076cb17a81f966",
+        "tracks": [
+          {
+            "id": "32hdwm17L8lc2OfBxfarsJ",
+            "name": "Compared to What - Live at Montreux Jazz Festival",
+            "durationMs": 516173
+          },
+          {
+            "id": "681k8Ws07pN7wvJjZ7RTtt",
+            "name": "Cold Duck Time - Live at Montreux Jazz Festival",
+            "durationMs": 428600
+          },
+          {
+            "id": "5jDH8v2xMcskhSjDRGzPol",
+            "name": "Kathleen's Theme - Live at Montreux Jazz Festival",
+            "durationMs": 372533
+          },
+          {
+            "id": "2AqKVT1gem1sNDwYEBo4Xd",
+            "name": "You Got It in Your Soulness - Live at Montreux Jazz Festival",
+            "durationMs": 454213
+          },
+          {
+            "id": "7s4EBR27nCPpjWw2mVjavQ",
+            "name": "The Generation Gap - Live at Montreux Jazz Festival",
+            "durationMs": 550173
+          },
+          {
+            "id": "6mzdeVv0Sb63ph6ma7km3w",
+            "name": "Kaftan",
+            "durationMs": 522933
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Swiss Movement (Montreux 30th Anniversary)",
+        "spotifyArtists": "Les McCann, Eddie Harris",
+        "spotifyYear": 1969
+      }
+    },
+    {
+      "rymId": "18119",
+      "artist": "Wes Montgomery",
+      "title": "The Incredible Jazz Guitar of Wes Montgomery",
+      "year": 1960,
+      "rating": 8,
+      "spotify": {
+        "albumId": "0WZHSs8O3aVte1d0MOUZla",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2738a9afd61a5524dc8266d4244",
+        "tracks": [
+          {
+            "id": "0eAzP5qUFqE8k6KmwLaz1R",
+            "name": "Airegin - Remastered 2025",
+            "durationMs": 270134
+          },
+          {
+            "id": "3Ymr15J2HodTzHvM6l3jGY",
+            "name": "D-Natural Blues - Remastered 2025",
+            "durationMs": 325753
+          },
+          {
+            "id": "0oAvfk3LsHqCzugYJevsBT",
+            "name": "Polka Dots And Moonbeams - Remastered 2025",
+            "durationMs": 285516
+          },
+          {
+            "id": "6M70ue8jryA41aeeIsEYWp",
+            "name": "Four On Six - Remastered 2025",
+            "durationMs": 378640
+          },
+          {
+            "id": "1tPrYzkpceDZXSMkbQx9Uu",
+            "name": "West Coast Blues - Remastered 2025",
+            "durationMs": 448043
+          },
+          {
+            "id": "01zdWVXJkI4O0srGHVX8hH",
+            "name": "In Your Own Sweet Way - Remastered 2025",
+            "durationMs": 295968
+          },
+          {
+            "id": "3lukzZvcJLohTrICazpzhg",
+            "name": "Mister Walker - Remastered 2025",
+            "durationMs": 275181
+          },
+          {
+            "id": "2svDeKmERw8RPXf2nr1XmB",
+            "name": "Gone With The Wind - Remastered 2025",
+            "durationMs": 384773
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Incredible Jazz Guitar Of Wes Montgomery (Remastered 2025)",
+        "spotifyArtists": "Wes Montgomery",
+        "spotifyYear": 1960
+      }
+    },
+    {
+      "rymId": "17350",
+      "artist": "The Thelonious Monk Quartet",
+      "title": "Monk's Dream",
+      "year": 1963,
+      "rating": 7,
+      "spotify": {
+        "albumId": "5VTlqV8lZH3YspQ1cDcjrL",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273710444d313a55d9f53dbea6e",
+        "tracks": [
+          {
+            "id": "0488kXJ1YnLMrrM1ssJnev",
+            "name": "Monk's Dream - Take 8",
+            "durationMs": 385466
+          },
+          {
+            "id": "7IAFc5iQti2tzob7Uo7N1Y",
+            "name": "Body and Soul",
+            "durationMs": 268400
+          },
+          {
+            "id": "3sjPOoHkVxlBE5USE2higm",
+            "name": "Bright Mississippi - Take 1",
+            "durationMs": 516373
+          },
+          {
+            "id": "61ieytawm4bscc4GDE8nqq",
+            "name": "Five Spot Blues",
+            "durationMs": 194066
+          },
+          {
+            "id": "4XDDS2vmydUOxBi5SFW73M",
+            "name": "Blue Bolivar Blues - Take 2",
+            "durationMs": 450533
+          },
+          {
+            "id": "3laCo1tj2egTZLFDEZjbMy",
+            "name": "Just a Gigolo",
+            "durationMs": 147693
+          },
+          {
+            "id": "4BFCWGQsaNWmaDKLBxM8iX",
+            "name": "Bye-Ya",
+            "durationMs": 322733
+          },
+          {
+            "id": "3KhGjda69Hs36AifVFbtiW",
+            "name": "Sweet and Lovely",
+            "durationMs": 472400
+          },
+          {
+            "id": "7dZo6rsZZlbHVHk0ztVkcB",
+            "name": "Monk's Dream - Take 3",
+            "durationMs": 314360
+          },
+          {
+            "id": "0Zwxlx0XI18TaN6NQTQCTk",
+            "name": "Body and Soul - Take 1",
+            "durationMs": 305333
+          },
+          {
+            "id": "4prABEvXNm9WLUPG5ywPSD",
+            "name": "Bright Mississippi - Take 3",
+            "durationMs": 619760
+          },
+          {
+            "id": "0yKuaVL19baKVpuGQodkmL",
+            "name": "Blue Bolivar Blues - Take 1",
+            "durationMs": 372106
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Monk's Dream",
+        "spotifyArtists": "Thelonious Monk",
+        "spotifyYear": 1963,
+        "override": true
+      }
+    },
+    {
+      "rymId": "757915",
+      "artist": "The Sonny Criss Orchestra",
+      "title": "Sonny's Dream (Birth of the New Cool)",
+      "year": 1968,
+      "rating": 8,
+      "spotify": {
+        "albumId": "1U1JwG3XXadealGYcEwyX2",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2737092ad216750c325b3cc57c9",
+        "tracks": [
+          {
+            "id": "0YWTwrEYGGP8TDaMAlLcFC",
+            "name": "Sonny's Dream - Expanded Edition",
+            "durationMs": 451066
+          },
+          {
+            "id": "4A8U0I9zpbZxQcoGTgnSgY",
+            "name": "Ballad For Samuel - Expanded Edition",
+            "durationMs": 260959
+          },
+          {
+            "id": "4cbRzHBqdBQRl8ItP1hxpp",
+            "name": "The Black Apostles - Expanded Edition",
+            "durationMs": 350266
+          },
+          {
+            "id": "1rz0UQ07gtf6zmgRhamFZN",
+            "name": "The Golden Pearl - Expanded Edition",
+            "durationMs": 308906
+          },
+          {
+            "id": "4T66LAE9zzYBmdl4EYUAGV",
+            "name": "Daughter Of Cochise - Expanded Edition",
+            "durationMs": 452666
+          },
+          {
+            "id": "4z1DWXvUliUooO9yfBdF9x",
+            "name": "Sandy And Niles - Expanded Edition",
+            "durationMs": 324466
+          },
+          {
+            "id": "3X1A0xoEsgBjeQDLsAaDvS",
+            "name": "The Golden Pearl - (Alternate Take) Expanded Edition",
+            "durationMs": 304826
+          },
+          {
+            "id": "55MbHW8N0BsdCqKG6pTwhb",
+            "name": "Sonny's Dream - (Alternate Take) Expanded Edition",
+            "durationMs": 261733
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Sonny's Dream (Birth Of The New Cool) [Expanded Edition]",
+        "spotifyArtists": "The Sonny Criss Orchestra",
+        "spotifyYear": 1968
+      }
+    },
+    {
+      "rymId": "146999",
+      "artist": "Dorothy Ashby",
+      "title": "Afro-Harping",
+      "year": 1968,
+      "rating": 7,
+      "spotify": {
+        "albumId": "1XEPKavl3nlI2qVt8HuA5n",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273375f3b7b1e2a3e4fe4704596",
+        "tracks": [
+          {
+            "id": "2EYLIdBeJZrQqFA0xkzQnu",
+            "name": "Soul Vibrations",
+            "durationMs": 200053
+          },
+          {
+            "id": "5QduYE98H3GM1KWCVyxxqz",
+            "name": "Games",
+            "durationMs": 235106
+          },
+          {
+            "id": "1TZQO0HgZq6jj6P9GgD2xS",
+            "name": "Action Line",
+            "durationMs": 221053
+          },
+          {
+            "id": "27BtrpvBcG9onY7uXIJHkF",
+            "name": "Lonely Girl",
+            "durationMs": 193026
+          },
+          {
+            "id": "6n79nbHuBnnA3PrUCkhUWG",
+            "name": "Life Has Its Trials",
+            "durationMs": 268760
+          },
+          {
+            "id": "2GhirY1WxwRTIW6R6FowyO",
+            "name": "Afro-Harping",
+            "durationMs": 179653
+          },
+          {
+            "id": "3A6e928yOFJ0MhlG7xrFDW",
+            "name": "Little Sunflower",
+            "durationMs": 225293
+          },
+          {
+            "id": "7yJnLTNfgHiZ0UeVggGFfM",
+            "name": "Theme From \"Valley Of The Dolls\"",
+            "durationMs": 213133
+          },
+          {
+            "id": "3YT2vdLbvfcjfCiNR4DsKT",
+            "name": "Come Live With Me",
+            "durationMs": 157186
+          },
+          {
+            "id": "4pE4hOljOyhO2k2Orj8QJf",
+            "name": "The Look Of Love",
+            "durationMs": 246706
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Afro-Harping",
+        "spotifyArtists": "Dorothy Ashby",
+        "spotifyYear": 1968
+      }
+    }
+  ]
+}

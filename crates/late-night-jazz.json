@@ -1,0 +1,1001 @@
+{
+  "id": "late-night-jazz",
+  "name": "Late Night Jazz",
+  "mood": "cool, modal and slow — lamps low, last drink",
+  "createdAt": "2026-10-04",
+  "records": [
+    {
+      "rymId": "2571",
+      "artist": "Miles Davis",
+      "title": "Kind of Blue",
+      "year": 1959,
+      "rating": 9,
+      "spotify": {
+        "albumId": "1weenld61qoidwYuZ1GESA",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273387a29c90de3b2398c29c34f",
+        "tracks": [
+          {
+            "id": "7q3kkfAVpmcZ8g6JUThi3o",
+            "name": "So What (feat. John Coltrane, Cannonball Adderley & Bill Evans)",
+            "durationMs": 547983
+          },
+          {
+            "id": "3NvYPUNu6nwQgN31UnoDbn",
+            "name": "Freddie Freeloader (feat. John Coltrane, Cannonball Adderley, Wynton Kelly & Paul Chambers)",
+            "durationMs": 588410
+          },
+          {
+            "id": "6bP4GyrKNbcKPMDqWJqpxI",
+            "name": "Blue in Green (feat. John Coltrane & Bill Evans)",
+            "durationMs": 335938
+          },
+          {
+            "id": "0TUa7gBg7LJH6B8dkNVioU",
+            "name": "All Blues (feat. John Coltrane, Cannonball Adderley & Bill Evans)",
+            "durationMs": 692896
+          },
+          {
+            "id": "3R3fcrKaeBr3U6s9R2belr",
+            "name": "Flamenco Sketches (feat. John Coltrane, Cannonball Adderley & Bill Evans)",
+            "durationMs": 561104
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Kind Of Blue",
+        "spotifyArtists": "Miles Davis",
+        "spotifyYear": 1959
+      }
+    },
+    {
+      "rymId": "11215",
+      "artist": "Bill Evans Trio",
+      "title": "Waltz for Debby",
+      "year": 1962,
+      "rating": 7,
+      "spotify": {
+        "albumId": "3SNo2NOIHpUN6AxIXiaixC",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2731eeff2d8424b8f804f0b539d",
+        "tracks": [
+          {
+            "id": "3Bsk7rmsJeIgJG4GIJDORr",
+            "name": "My Foolish Heart - Live",
+            "durationMs": 294173
+          },
+          {
+            "id": "4ZMIYuiM4UlVRePiGIlgXT",
+            "name": "Waltz For Debby - Live At The Village Vanguard, New York / 1961 / Take 2",
+            "durationMs": 416000
+          },
+          {
+            "id": "75BIMWSUSmDuL45C40QmQr",
+            "name": "Waltz For Debby - Live / Take 1",
+            "durationMs": 410093
+          },
+          {
+            "id": "6q6Gm6N6wFaVd8eG4jrMUC",
+            "name": "Detour Ahead - Live / Take 2",
+            "durationMs": 455866
+          },
+          {
+            "id": "6OJvW5OvXSnKBmNOL89Idk",
+            "name": "Detour Ahead - Live / Take 1",
+            "durationMs": 438800
+          },
+          {
+            "id": "679jsqm7t7m8KrZm0WtJzu",
+            "name": "My Romance - Live / Take 1",
+            "durationMs": 432106
+          },
+          {
+            "id": "78jsTnPtPPTwIfcED3lXu7",
+            "name": "My Romance - Live / Take 2",
+            "durationMs": 431533
+          },
+          {
+            "id": "2OLzQlyNeFlHLJ60oW5NVH",
+            "name": "Some Other Time - Live",
+            "durationMs": 298960
+          },
+          {
+            "id": "1PC3AZu6Uu37iKLBJfc8oN",
+            "name": "Milestones - Live",
+            "durationMs": 391440
+          },
+          {
+            "id": "0CiPzdbyPfqMwGcuWeGWuA",
+            "name": "Porgy (I Loves You, Porgy) - Live",
+            "durationMs": 358826
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Waltz For Debby",
+        "spotifyArtists": "Bill Evans Trio",
+        "spotifyYear": 1961,
+        "override": true
+      }
+    },
+    {
+      "rymId": "50896",
+      "artist": "Bill Evans",
+      "title": "You Must Believe in Spring",
+      "year": 1981,
+      "rating": 7,
+      "spotify": {
+        "albumId": "2B583jxnkHmIyBU6Z8VlmI",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27361fce905c16306cab399212b",
+        "tracks": [
+          {
+            "id": "1G8ZiodFtDX5tNHwvxcllW",
+            "name": "B Minor Waltz - Remastered 2003",
+            "durationMs": 196026
+          },
+          {
+            "id": "17C96Rsq4f38eMuZRGtku6",
+            "name": "You Must Believe In Spring",
+            "durationMs": 343986
+          },
+          {
+            "id": "3f9KhpRN6mMYoVnpuozgHD",
+            "name": "Gary's Theme - Remastered 2003",
+            "durationMs": 257693
+          },
+          {
+            "id": "3UZSpAlc0WZjxkfbUBdUgT",
+            "name": "We Will Meet Again - Remastered",
+            "durationMs": 244786
+          },
+          {
+            "id": "5shKp4VqCY5SoV3rIt0jpr",
+            "name": "The Peacocks - Remastered 2003",
+            "durationMs": 361946
+          },
+          {
+            "id": "7fmhH8sQPLwiGPMOkFr7eU",
+            "name": "Sometime Ago - Remastered",
+            "durationMs": 273706
+          },
+          {
+            "id": "24DqzDA1z7Dx2BpHFvcnDv",
+            "name": "Theme From M*A*S*H (Suicide Is Painless) - Remastered",
+            "durationMs": 362946
+          },
+          {
+            "id": "70Ujwdj5jSJ0Km6eZ5lXh1",
+            "name": "Without A Song - Remastered",
+            "durationMs": 485826
+          },
+          {
+            "id": "1HYGAQ2W4JFCVBRyx9yuB2",
+            "name": "Freddie Freeloader - Remastered",
+            "durationMs": 454266
+          },
+          {
+            "id": "23AfcHugjVPAbqUUXMlyqi",
+            "name": "All Of You - Remastered",
+            "durationMs": 489733
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "You Must Believe In Spring (Remastered Version)",
+        "spotifyArtists": "Bill Evans",
+        "spotifyYear": 1981
+      }
+    },
+    {
+      "rymId": "30417",
+      "artist": "Frank Sinatra",
+      "title": "In the Wee Small Hours",
+      "year": 1955,
+      "rating": 7,
+      "spotify": {
+        "albumId": "3GmwKB1tgPZgXeRJZSm9WX",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d4f8a582c0c3a3d67f395c6d",
+        "tracks": [
+          {
+            "id": "0Hsc0sIaxOxXBZbT3ms2oj",
+            "name": "In The Wee Small Hours Of The Morning - Remastered 1998",
+            "durationMs": 180933
+          },
+          {
+            "id": "2LuKtTtotMk41MxesmjCdR",
+            "name": "Mood Indigo - Remastered 1998",
+            "durationMs": 210066
+          },
+          {
+            "id": "0nyElOCpUSqLyzg1cD6dQe",
+            "name": "Glad To Be Unhappy - Remastered 1998",
+            "durationMs": 155493
+          },
+          {
+            "id": "1HauTmjjJwBoSGQZc1mBs3",
+            "name": "I Get Along Without You Very Well - Remastered 1998",
+            "durationMs": 222600
+          },
+          {
+            "id": "0uPvnhU6hNx8O4M79x8hyN",
+            "name": "Deep In A Dream - Remastered 1998",
+            "durationMs": 169373
+          },
+          {
+            "id": "0j1UxPCe71DJKqPf0I4gnp",
+            "name": "I See Your Face Before Me - Remastered 1998",
+            "durationMs": 204026
+          },
+          {
+            "id": "4AQB49A23jczbliZt3hecP",
+            "name": "Can't We Be Friends? - Remastered 1998",
+            "durationMs": 168040
+          },
+          {
+            "id": "7MArMyd4wBWp26BbVKIVTt",
+            "name": "When Your Lover Has Gone - Remastered 1998",
+            "durationMs": 190200
+          },
+          {
+            "id": "2t8g0EVWMHXQCVlVGOoD9I",
+            "name": "What Is This Thing Called Love - Remastered 1998",
+            "durationMs": 155560
+          },
+          {
+            "id": "1B2TpaqiSZq4tUb6Yw2Nbs",
+            "name": "Last Night When We Were Young - Remastered 1998",
+            "durationMs": 197133
+          },
+          {
+            "id": "4G45Px24nxqufkD3C9oka1",
+            "name": "I'll Be Around - Remastered 1998",
+            "durationMs": 179200
+          },
+          {
+            "id": "32hDx1cqvT0xH4sZmFpOy6",
+            "name": "Ill Wind - Remastered 1998",
+            "durationMs": 226306
+          },
+          {
+            "id": "0qOfjIfB4VQk7DwNcxngcd",
+            "name": "It Never Entered My Mind - Remastered 1998",
+            "durationMs": 162226
+          },
+          {
+            "id": "5ULYx08qqXmqtJZxihEh6p",
+            "name": "Dancing On The Ceiling - Remastered 1998",
+            "durationMs": 177333
+          },
+          {
+            "id": "5YPX6eqYX5RGOkINOENFlT",
+            "name": "I'll Never Be The Same - Remastered 1998",
+            "durationMs": 185866
+          },
+          {
+            "id": "50nTFflqRL8dchBcvHC5rh",
+            "name": "This Love Of Mine - Remastered 1998",
+            "durationMs": 213933
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "In The Wee Small Hours",
+        "spotifyArtists": "Frank Sinatra",
+        "spotifyYear": 1955
+      }
+    },
+    {
+      "rymId": "97390",
+      "artist": "Paul Desmond",
+      "title": "Glad to Be Unhappy",
+      "year": 1965,
+      "rating": 7,
+      "spotify": {
+        "albumId": "2UAhO873vD6JXgrthqTcEG",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27386d4221771b5e5e9b3032fe0",
+        "tracks": [
+          {
+            "id": "32lOOtajLkCfJLMIXqrkyA",
+            "name": "Glad to Be Unhappy",
+            "durationMs": 344080
+          },
+          {
+            "id": "3iyWz5jzhUjIo7znYrkLu0",
+            "name": "Poor Butterfly",
+            "durationMs": 437026
+          },
+          {
+            "id": "5WORP69uuwI9bSLIVQ94Or",
+            "name": "Stranger In Town",
+            "durationMs": 383693
+          },
+          {
+            "id": "5mgod2DVJEZI145AS8vQJ2",
+            "name": "A Taste of Honey",
+            "durationMs": 265760
+          },
+          {
+            "id": "0vfcrrSgwQwUPX2XLjKI6y",
+            "name": "Any Other Time",
+            "durationMs": 323186
+          },
+          {
+            "id": "2HbBl8E37y9UIRNznvwTKu",
+            "name": "Hi-Lili, Hi-Lo",
+            "durationMs": 281253
+          },
+          {
+            "id": "5pntGfSb4rxUIgdEL4ojIE",
+            "name": "Angel Eyes",
+            "durationMs": 378026
+          },
+          {
+            "id": "1xqdMh5uvpfuvdTdrOWSIt",
+            "name": "By the River Sainte Marie",
+            "durationMs": 375693
+          },
+          {
+            "id": "6GF6kX5QQ1adfH0s7cq6oS",
+            "name": "All Across The City",
+            "durationMs": 270386
+          },
+          {
+            "id": "5wxW9B4VCmVVrGjTHNin4b",
+            "name": "All Through The Night",
+            "durationMs": 326066
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Glad To Be Unhappy",
+        "spotifyArtists": "Paul Desmond",
+        "spotifyYear": 1965
+      }
+    },
+    {
+      "rymId": "298727",
+      "artist": "Jan Johansson",
+      "title": "Jazz på svenska",
+      "year": 1964,
+      "rating": 8,
+      "spotify": {
+        "albumId": "6JAj80R40giQEAg3Le4CPE",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27334190c904a52720a3ffcad76",
+        "tracks": [
+          {
+            "id": "1CRxANVlNyN2IYjarx96gU",
+            "name": "Visa från Utanmyra",
+            "durationMs": 273800
+          },
+          {
+            "id": "5xFJjgYxqi2utu8m4yftYY",
+            "name": "Gånglek från Älvdalen",
+            "durationMs": 118466
+          },
+          {
+            "id": "35tgywQgB4oOOtB8gp29CM",
+            "name": "Polska från Medelpad",
+            "durationMs": 150786
+          },
+          {
+            "id": "5OfX2H74dOwUjr4Aw6HEiE",
+            "name": "Visa från Rättvik",
+            "durationMs": 202986
+          },
+          {
+            "id": "4Ejyw9gZeAWW7QzjtVWRdw",
+            "name": "Brudmarsch efter Larshöga Jonke",
+            "durationMs": 124120
+          },
+          {
+            "id": "3sJI7yMJz2RwLtS31z3Dgc",
+            "name": "Vallåt från Jämtland",
+            "durationMs": 114693
+          },
+          {
+            "id": "5kjFu1dBCCqm0RPpjdgRQt",
+            "name": "Emigrantvisa",
+            "durationMs": 207733
+          },
+          {
+            "id": "6mNQG5XYpwSnnnfJDe3CFj",
+            "name": "Berg-Kirstis polska",
+            "durationMs": 213986
+          },
+          {
+            "id": "6xz1YWi4Fvld47xYDRoh3F",
+            "name": "Leksands skänklåt",
+            "durationMs": 180813
+          },
+          {
+            "id": "16kCArgUGGLrbGDxy1T3uF",
+            "name": "Gammal bröllopsmarsch",
+            "durationMs": 225013
+          },
+          {
+            "id": "2dST32Miy1Y7flUXrSgM7N",
+            "name": "Visa från Järna",
+            "durationMs": 82013
+          },
+          {
+            "id": "6QasXgYSJVxXt5tkn0nKvb",
+            "name": "Polska efter Höök Olle",
+            "durationMs": 150826
+          },
+          {
+            "id": "42vVBscoEVlx6YuiLX9K7q",
+            "name": "Visa från Utanmyra - Bonus Track",
+            "durationMs": 271906
+          },
+          {
+            "id": "1EKEJcfXIclOm5qfUi7TpA",
+            "name": "Gånglek från Älvdalen - Bonus Track",
+            "durationMs": 118346
+          },
+          {
+            "id": "5sev0WU4jsyYVsbMjh9FIn",
+            "name": "Leksands skänklåt - Bonus Track",
+            "durationMs": 184120
+          },
+          {
+            "id": "3ESASKYi2hfWtP9WGf7Zlt",
+            "name": "Emigrantvisa - Bonus Track",
+            "durationMs": 193226
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Jazz på svenska",
+        "spotifyArtists": "Jan Johansson",
+        "spotifyYear": 1964
+      }
+    },
+    {
+      "rymId": "22349",
+      "artist": "Grant Green",
+      "title": "Idle Moments",
+      "year": 1965,
+      "rating": 8,
+      "spotify": {
+        "albumId": "1lDtUlOPGKp56gQ24MvmNG",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e549db0db15233ebf0f050ca",
+        "tracks": [
+          {
+            "id": "2WGeiogtffGHwAxnzYJOWk",
+            "name": "Idle Moments - Rudy Van Gelder Edition / Remastered 1999",
+            "durationMs": 896080
+          },
+          {
+            "id": "6ZniDtZIvYjdYHG8sHh2jD",
+            "name": "Jean De Fleur - Rudy Van Gelder Edition / Remastered 1999",
+            "durationMs": 409880
+          },
+          {
+            "id": "4w7EnqiLksvE6rcuR8F8bn",
+            "name": "Django - Rudy Van Gelder Edition / Remastered 1999",
+            "durationMs": 524093
+          },
+          {
+            "id": "7cdEjNIt8XZ0TrV71GFnsX",
+            "name": "Nomad - Rudy Van Gelder Edition / Remastered 1999",
+            "durationMs": 736746
+          },
+          {
+            "id": "3pX1ne3zoSyR31Mi4n7Mp8",
+            "name": "Jean De Fleur - Alternate Version / Rudy Van Gelder Edition / Remastered 1999",
+            "durationMs": 489760
+          },
+          {
+            "id": "5WQ17DWPYzqR9iAQ8pBGNP",
+            "name": "Django - Alternate Version / Rudy Van Gelder Edition / Remastered 1999",
+            "durationMs": 794560
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Idle Moments",
+        "spotifyArtists": "Grant Green",
+        "spotifyYear": 1999,
+        "override": true
+      }
+    },
+    {
+      "rymId": "20846",
+      "artist": "John Coltrane Quartet",
+      "title": "Crescent",
+      "year": 1964,
+      "rating": 8,
+      "spotify": {
+        "albumId": "1G3jdGqZNUrC8ZDesZB8xp",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273c3bb973038cead9ddec3a439",
+        "tracks": [
+          {
+            "id": "4m2KaJ4OXKkPcCKe1wb2Pc",
+            "name": "Crescent",
+            "durationMs": 524266
+          },
+          {
+            "id": "1Umans0xKp3GqAdcaWNmlP",
+            "name": "Wise One",
+            "durationMs": 543573
+          },
+          {
+            "id": "3VvIjPjxHLRTXNJ8vSKkKN",
+            "name": "Bessie's Blues",
+            "durationMs": 215093
+          },
+          {
+            "id": "4m16y4HrVSk9N60oHNZBqI",
+            "name": "Lonnie's Lament",
+            "durationMs": 707933
+          },
+          {
+            "id": "57QRhtr9t1ZJug8HFygb3g",
+            "name": "The Drum Thing",
+            "durationMs": 443200
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Crescent",
+        "spotifyArtists": "John Coltrane Quartet",
+        "spotifyYear": 1964
+      }
+    },
+    {
+      "rymId": "53487",
+      "artist": "Nina Simone",
+      "title": "Wild Is the Wind",
+      "year": 1966,
+      "rating": 8,
+      "spotify": {
+        "albumId": "2EYVXfypcucR62WMKJl6Mr",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f94461acebee60775ea22e77",
+        "tracks": [
+          {
+            "id": "5xIO4m9K8uJBCUSsAK2NS7",
+            "name": "I Love Your Lovin' Ways",
+            "durationMs": 155666
+          },
+          {
+            "id": "7urjzeGBtfHdwWmfYJjdAp",
+            "name": "Four Women",
+            "durationMs": 264666
+          },
+          {
+            "id": "1VC6qADj2omoNuJowX5awa",
+            "name": "What More Can I Say?",
+            "durationMs": 168760
+          },
+          {
+            "id": "3Hi4KlRtdgJbyIUpeFBckY",
+            "name": "Lilac Wine",
+            "durationMs": 253800
+          },
+          {
+            "id": "5uI8omnLtzW4xTqJ5AoQtT",
+            "name": "That's All I Ask",
+            "durationMs": 147906
+          },
+          {
+            "id": "1BjnD1k97Dd8RGr8ajYzSr",
+            "name": "Break Down And Let It All Out",
+            "durationMs": 157000
+          },
+          {
+            "id": "3ySQeG4inuKCZ3mjWiayLJ",
+            "name": "Why Keep On Breaking My Heart",
+            "durationMs": 154533
+          },
+          {
+            "id": "3muwYfpLZGYsvrrssEzrxF",
+            "name": "Wild Is The Wind",
+            "durationMs": 416693
+          },
+          {
+            "id": "33WjZmABjWk4zrerZiFLJ7",
+            "name": "Black Is The Color Of My True Love's Hair",
+            "durationMs": 204440
+          },
+          {
+            "id": "6YRVj7ZJyFrr6tso0QV15e",
+            "name": "If I Should Lose You",
+            "durationMs": 235760
+          },
+          {
+            "id": "3emrTFqAQCpIWCcTbzzMjJ",
+            "name": "Either Way I Lose",
+            "durationMs": 166040
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Wild Is The Wind",
+        "spotifyArtists": "Nina Simone",
+        "spotifyYear": 1966
+      }
+    },
+    {
+      "rymId": "6647",
+      "artist": "Miles Davis",
+      "title": "Sketches of Spain",
+      "year": 1960,
+      "rating": 8,
+      "spotify": {
+        "albumId": "1a1EU6Twb7lu0ZlKEhgfwu",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27375cbf8efd70159530b68646e",
+        "tracks": [
+          {
+            "id": "4ljGT3hLwkrWWhXGOgZur0",
+            "name": "Concierto de Aranjuez (Adagio) - Mono Version",
+            "durationMs": 986953
+          },
+          {
+            "id": "1XAawSAtfaJhe7fBShgZ9P",
+            "name": "Will o' the Wisp - Mono Version",
+            "durationMs": 232113
+          },
+          {
+            "id": "5zKdMQULEqvoQb84cRXPPS",
+            "name": "The Pan Piper - Mono Version",
+            "durationMs": 238093
+          },
+          {
+            "id": "4bPsGTSbT5i4SHEEpMJt5E",
+            "name": "Saeta - Mono Version",
+            "durationMs": 312535
+          },
+          {
+            "id": "0VjTMz4LBsVYIEv9cPgXrD",
+            "name": "Solea - Mono Version",
+            "durationMs": 736971
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Sketches of Spain (Mono Version)",
+        "spotifyArtists": "Miles Davis",
+        "spotifyYear": 1960
+      }
+    },
+    {
+      "rymId": "4596",
+      "artist": "Herbie Hancock",
+      "title": "Maiden Voyage",
+      "year": 1965,
+      "rating": 7,
+      "spotify": {
+        "albumId": "7huPJTTsWVt854oZkr88mf",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b6f936d535913e3f425e5bbe",
+        "tracks": [
+          {
+            "id": "0T1EaGm6b9eM7xBf4F1hlc",
+            "name": "Maiden Voyage - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 477093
+          },
+          {
+            "id": "3FBHUgNaKpWvTn9ArrGFmH",
+            "name": "The Eye Of The Hurricane - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 361453
+          },
+          {
+            "id": "1D8x6XmpSuobQopGIXRo8u",
+            "name": "Little One - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 527266
+          },
+          {
+            "id": "2LaMFV3M42B69mYVy9qf0u",
+            "name": "Survival Of The Fittest - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 603213
+          },
+          {
+            "id": "1Ku5vu9Crncz8ixeT4Ijxc",
+            "name": "Dolphin Dance - Remastered 1999/Rudy Van Gelder Edition",
+            "durationMs": 556133
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Maiden Voyage (Remastered 1999/Rudy Van Gelder Edition)",
+        "spotifyArtists": "Herbie Hancock",
+        "spotifyYear": 1965
+      }
+    },
+    {
+      "rymId": "18246",
+      "artist": "Wayne Shorter",
+      "title": "Speak No Evil",
+      "year": 1966,
+      "rating": 7,
+      "spotify": {
+        "albumId": "27Rl7A8jXEQOkIfUKOa6ZU",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273bdd696feff94e70314535022",
+        "tracks": [
+          {
+            "id": "6fw1b1bCVNY5EVurncxIss",
+            "name": "Witch Hunt - Remastered1998/Rudy Van Gelder Edition",
+            "durationMs": 491493
+          },
+          {
+            "id": "6lgkhf5XLGA2wvgFeTy2cq",
+            "name": "Fee-Fi-Fo-Fum - Remastered1998/Rudy Van Gelder Edition",
+            "durationMs": 354066
+          },
+          {
+            "id": "4hKk4FVmLvgwNapTBxc9ao",
+            "name": "Dance Cadaverous - Remastered1998/Rudy Van Gelder Edition",
+            "durationMs": 405920
+          },
+          {
+            "id": "0qxiaagtTvTeNvzxHHc441",
+            "name": "Speak No Evil - Remastered1998/Rudy Van Gelder Edition",
+            "durationMs": 503786
+          },
+          {
+            "id": "0IffIW3eyCx9aZ36IqOu5o",
+            "name": "Infant Eyes - Remastered1998/Rudy Van Gelder Edition",
+            "durationMs": 414240
+          },
+          {
+            "id": "6tadSGrUKQXnYRusoqtNx0",
+            "name": "Wild Flower - Remastered1998/Rudy Van Gelder Edition",
+            "durationMs": 366973
+          },
+          {
+            "id": "3Bz44jNc9pWaJA2BuHVf5a",
+            "name": "Dance Cadaverous - Alternate Take / Remastered1998/Rudy Van Gelder Edition",
+            "durationMs": 395400
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Speak No Evil (The Rudy Van Gelder Edition)",
+        "spotifyArtists": "Wayne Shorter",
+        "spotifyYear": 1966
+      }
+    },
+    {
+      "rymId": "12687179",
+      "artist": "Floating Points, Pharoah Sanders & The London Symphony Orchestra",
+      "title": "Promises",
+      "year": 2021,
+      "rating": 8,
+      "spotify": {
+        "albumId": "3ShtO5VCYa3ctlR5uzLWBa",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2738718f18aca81c2f4961946f4",
+        "tracks": [
+          {
+            "id": "0QkT7SfXL9eR6tuQ7xb9ya",
+            "name": "Movement 1",
+            "durationMs": 384151
+          },
+          {
+            "id": "5KqceyQkpADmpVrGW6armI",
+            "name": "Movement 2",
+            "durationMs": 151327
+          },
+          {
+            "id": "2ZB1ms89d3xpy92gvTDQC5",
+            "name": "Movement 3",
+            "durationMs": 152088
+          },
+          {
+            "id": "4JNMmiYUmLQiv83k96qNdT",
+            "name": "Movement 4",
+            "durationMs": 151770
+          },
+          {
+            "id": "6lAsz2ai52QsfWX4f4PlqH",
+            "name": "Movement 5",
+            "durationMs": 265224
+          },
+          {
+            "id": "5i0EqAX50KcKNgMDMHZndM",
+            "name": "Movement 6",
+            "durationMs": 530894
+          },
+          {
+            "id": "5Zg3BH3Xipq3GQZCRyhAX8",
+            "name": "Movement 7",
+            "durationMs": 568933
+          },
+          {
+            "id": "0KRliRKOaqc3vT8t9noppI",
+            "name": "Movement 8",
+            "durationMs": 442961
+          },
+          {
+            "id": "1Q3TP11UOqOdj2w34Jdgno",
+            "name": "Movement 9",
+            "durationMs": 150092
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Promises",
+        "spotifyArtists": "Floating Points, Pharoah Sanders",
+        "spotifyYear": 2021,
+        "override": true
+      }
+    },
+    {
+      "rymId": "26606",
+      "artist": "Yusef Lateef",
+      "title": "Eastern Sounds",
+      "year": 1964,
+      "rating": 9,
+      "spotify": {
+        "albumId": "7Dd9kbH46vk4fIA9esp3rf",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ff4a38917d1eb6c85752e9ff",
+        "tracks": [
+          {
+            "id": "28KPkyrSqMDrriF7JjZ6Wi",
+            "name": "The Plum Blossom - Remastered 2023",
+            "durationMs": 303872
+          },
+          {
+            "id": "52kjuCxWZaPS9cCurlr6gd",
+            "name": "Blues For The Orient - Remastered 2023",
+            "durationMs": 340835
+          },
+          {
+            "id": "2aNRTWBFciTIoyzZxk92X1",
+            "name": "Ching Miau - Remastered 2023",
+            "durationMs": 199986
+          },
+          {
+            "id": "47qMNoveAg2Ek9LtURD3mt",
+            "name": "Don't Blame Me - Remastered 2023",
+            "durationMs": 297356
+          },
+          {
+            "id": "2QHFSR7VUZZfRRwZycKqSa",
+            "name": "Love Theme From Spartacus - Remastered 2023",
+            "durationMs": 255097
+          },
+          {
+            "id": "7Gpqc4D0R78pD9XOMZlsDq",
+            "name": "Snafu - Remastered 2023",
+            "durationMs": 342364
+          },
+          {
+            "id": "0u7rxA89SIsV7xoX7NVeuU",
+            "name": "Purple Flower - Remastered 2023",
+            "durationMs": 272031
+          },
+          {
+            "id": "2JMOEBXhwGxrJGowaXMp7L",
+            "name": "Love Theme From The Robe - Remastered 2023",
+            "durationMs": 242088
+          },
+          {
+            "id": "75J9nEKVRrIVpChnD7EaFa",
+            "name": "The Three Faces Of Balal - Remastered 2023",
+            "durationMs": 143542
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Eastern Sounds (Remastered 2023)",
+        "spotifyArtists": "Yusef Lateef",
+        "spotifyYear": 2024,
+        "override": true
+      }
+    },
+    {
+      "rymId": "2135",
+      "artist": "The Dave Brubeck Quartet",
+      "title": "Time Out",
+      "year": 1959,
+      "rating": 8,
+      "spotify": {
+        "albumId": "0nTTEAhCZsbbeplyDMIFuA",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b6bd44cf06bf8f4d5ce1e080",
+        "tracks": [
+          {
+            "id": "7CrNF9zL7tIQ2269DVxzST",
+            "name": "Blue Rondo à la Turk",
+            "durationMs": 409359
+          },
+          {
+            "id": "6HvyFdP5JrCQdmxq2qi7MC",
+            "name": "Strange Meadow Lark",
+            "durationMs": 446314
+          },
+          {
+            "id": "1YQWosTIljIvxAgHWTp7KP",
+            "name": "Take Five",
+            "durationMs": 328831
+          },
+          {
+            "id": "3k5O0RKO6zEqu9JJ7JqxDX",
+            "name": "Three to Get Ready",
+            "durationMs": 326546
+          },
+          {
+            "id": "3XfaSRXfGuWT1rrn9lWx30",
+            "name": "Kathy's Waltz",
+            "durationMs": 291223
+          },
+          {
+            "id": "0r3ZObqOhirTkBCr8f4L9q",
+            "name": "Everybody's Jumpin'",
+            "durationMs": 264633
+          },
+          {
+            "id": "0XugQpP1aeQwpdGKHpjcci",
+            "name": "Pick up Sticks",
+            "durationMs": 259553
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Time Out",
+        "spotifyArtists": "The Dave Brubeck Quartet",
+        "spotifyYear": 1959
+      }
+    },
+    {
+      "rymId": "404125",
+      "artist": "福居良",
+      "title": "シーナリィ",
+      "year": 1976,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5Uny0mkKiVGDat7H6SNDyS",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b752bbaa0dd7578b736f7cc1",
+        "tracks": [
+          {
+            "id": "2fktrJuECcaRCgJuqwChL8",
+            "name": "It Could Happen To You",
+            "durationMs": 256933
+          },
+          {
+            "id": "51SEkcIzdhHMwJkPkMmRzd",
+            "name": "I Want To Talk About You",
+            "durationMs": 392626
+          },
+          {
+            "id": "3ven4ZKSspshBwiLMMibEa",
+            "name": "Early Summer",
+            "durationMs": 644466
+          },
+          {
+            "id": "4csK4wXq8jho3ZKZdlYpcX",
+            "name": "Willow Weep For Me",
+            "durationMs": 463466
+          },
+          {
+            "id": "5URbZBwi9r400J633zdd3h",
+            "name": "Autumn Leaves",
+            "durationMs": 391346
+          },
+          {
+            "id": "2Uk4xYpKI1WIOtWqS6fs62",
+            "name": "Scenery",
+            "durationMs": 331533
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "シーナリィ",
+        "spotifyArtists": "Ryo Fukui",
+        "spotifyYear": 1976
+      }
+    }
+  ]
+}
