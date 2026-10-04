@@ -177,9 +177,18 @@ function trackIndexOf(state: ConductorState, rec: CrateRecord, snap: PlayerSnaps
   return matches.find((i) => i >= state.trackIndex) ?? matches[0] ?? -1;
 }
 
-/** The snapshot is playing this album as its context (falling back to the track's album when there is no context). */
-function isOurs(snap: PlayerSnapshot, albumId: string): boolean {
-  return snap.contextUri !== null ? snap.contextUri === `spotify:album:${albumId}` : snap.albumId === albumId;
+/**
+ * The snapshot is playing this record: the album is the context (or the track's album when there is no
+ * context) AND the track itself belongs to the record. Spotify's autoplay keeps reporting the finished
+ * album as the context while playing other albums' tracks, so the context alone isn't enough.
+ */
+function isOurs(state: ConductorState, snap: PlayerSnapshot, rec: CrateRecord): boolean {
+  const albumId = rec.spotify?.albumId;
+  if (!albumId) return false;
+  const inContext = snap.contextUri !== null ? snap.contextUri === `spotify:album:${albumId}` : snap.albumId === albumId;
+  if (!inContext) return false;
+  // Relinked albums can report a different album id, so fall back to matching the track itself.
+  return snap.albumId === albumId || trackIndexOf(state, rec, snap) >= 0;
 }
 
 function attach(state: ConductorState, rec: CrateRecord, snap: PlayerSnapshot, now: number): StepResult {
@@ -261,7 +270,7 @@ function finishRecord(state: ConductorState, rec: CrateRecord, ctx: StepContext)
 function onSnapshot(state: ConductorState, snap: PlayerSnapshot | null, ctx: StepContext): StepResult {
   const rec = currentRecord(state, ctx.crates);
   if (!rec?.spotify) return none(state);
-  const ours = snap !== null && isOurs(snap, rec.spotify.albumId);
+  const ours = snap !== null && isOurs(state, snap, rec);
 
   switch (state.mode) {
     case 'restored':

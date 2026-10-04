@@ -134,6 +134,26 @@ describe('a record finishing', () => {
     expect(r.actions).toEqual([autoPlay(s.order[1])]);
   });
 
+  it('advances when autoplay keeps the album as its context but plays another album’s track', () => {
+    // Seen on Eric's TV: after Spirit of Eden ended, Spotify autoplayed Broadcast while still
+    // reporting context = spotify:album:<Spirit of Eden>.
+    const s = playing(2, TRACK_MS - 5_000);
+    const id = s.order[0];
+    const autoplay = otherSnap({ deviceId: 'tv1', contextUri: `spotify:album:${albumOf(id)}` });
+    const r = go(s, { type: 'snapshot', snapshot: autoplay }, { now: T0 + 5_000 });
+    expect(r.state).toMatchObject({ pos: 1, mode: 'starting', trackIndex: 0 });
+    expect(r.actions).toEqual([autoPlay(s.order[1])]);
+  });
+
+  it('does not treat an autoplay track under our album context as ours mid-record', () => {
+    const s = playing(0, 10_000);
+    const id = s.order[0];
+    const autoplay = otherSnap({ deviceId: 'tv1', contextUri: `spotify:album:${albumOf(id)}` });
+    const r = go(s, { type: 'snapshot', snapshot: autoplay }, { now: T0 + 1_000 });
+    expect(r.state.offRecord).toBe(1);
+    expect(r.state.trackIndex).toBe(0);
+  });
+
   it('advances when playback stops after the last track', () => {
     const s = playing(2, TRACK_MS - 3_000);
     expect(go(s, { type: 'snapshot', snapshot: null }, { now: T0 + 3_000 }).state.pos).toBe(1);
