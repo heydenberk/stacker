@@ -346,3 +346,22 @@ The web app can only see Spotify, so the shell provides both "is other audio pla
 - Phone remote; choosing the next record; in-app curation via the Claude API.
 - Genre data (e.g. MusicBrainz) for richer curation.
 - Standalone hardware device.
+
+## Future directions (noted 2026-10-04, not scheduled)
+
+Eric's long-term goals. Together they could make Stacker distributable.
+
+1. **More music backends:** YouTube, Bandcamp, and self-hosted (Plex/Jellyfin).
+   - There are two playback models.
+     - **Remote control:** Stacker drives another app, as with Spotify Connect today or a Plex client.
+     - **Stacker is the player:** it plays the audio itself, in the page or in the shell — a YouTube IFrame, a Bandcamp embed, or a Plex/Jellyfin stream in `<audio>`. The player reports exactly when a track ends, so no polling is needed.
+   - **Plex/Jellyfin fit best:** they have proper APIs, treat albums as first-class, and have no user caps.
+   - **YouTube and Bandcamp are harder:** neither has an official album-playback API. YouTube's terms restrict background or audio-only playback, and Bandcamp offers only embeds.
+   - **Where the code is already backend-neutral:**
+     - the conductor is pure, and talks to the player through `PlayerApi`;
+     - crate records would grow per-backend refs, alongside `spotify`;
+     - the resolver needs a matcher per backend.
+2. **Per-user crates.** Today crates are bundled at build time.
+   - **Storage options:** per device (localStorage/IndexedDB), a user-owned sync target (a GitHub repo or gist), or a small hosted backend.
+   - **Editor:** the editor (`npm run editor`) would need an in-browser equivalent.
+
