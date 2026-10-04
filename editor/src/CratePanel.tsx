@@ -175,9 +175,11 @@ export function CratePanel(props: Props) {
                 const tip = r.match?.spotifyName ? `${r.match.spotifyName} — ${r.match.spotifyArtists}${r.match.spotifyYear ? ` (${r.match.spotifyYear})` : ''}` : undefined;
                 return (
                   <li key={r.rymId} class="row">
-                    <span class="rec">
-                      <span class="artist">{r.artist}</span> — {r.title}
-                      {r.year !== null && <span class="muted"> ({r.year})</span>}
+                    <span class="rec" title={`${r.artist} — ${r.title}${r.year !== null ? ` (${r.year})` : ''}`}>
+                      <span class="rec-text">
+                        <span class="artist">{r.artist}</span> — {r.title}
+                      </span>
+                      {r.year !== null && <span class="rec-year muted">({r.year})</span>}
                     </span>
                     {r.spotify ? (
                       <a class={`badge ${badge}`} href={spotifyAlbumUrl(r.spotify.albumId)} target="_blank" rel="noreferrer" title={tip}>

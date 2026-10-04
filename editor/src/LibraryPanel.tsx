@@ -142,10 +142,12 @@ export function LibraryPanel({ entries, vocab, filters, onFilters, crateRymIds, 
               >
                 {inCrate ? '✓' : '+'}
               </button>
-              <span class="rec" title={e.artistLocalized ?? undefined}>
-                <span class="artist">{e.artist}</span>
-                {e.artistLocalized && <span class="muted"> ({e.artistLocalized})</span>} — {e.title}
-                {e.year !== null && <span class="muted"> ({e.year})</span>}
+              <span class="rec" title={`${e.artist}${e.artistLocalized ? ` (${e.artistLocalized})` : ''} — ${e.title}${e.year !== null ? ` (${e.year})` : ''}`}>
+                <span class="rec-text">
+                  <span class="artist">{e.artist}</span>
+                  {e.artistLocalized && <span class="muted"> ({e.artistLocalized})</span>} — {e.title}
+                </span>
+                {e.year !== null && <span class="rec-year muted">({e.year})</span>}
               </span>
               <span class="stars">{e.rating > 0 ? stars(e.rating) : ''}</span>
               <span

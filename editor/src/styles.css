@@ -73,7 +73,10 @@ button.chip { border-radius: 10px; }
 .results .row { cursor: grab; }
 .row:hover { background: #f7f9fc; }
 .row.in-crate { background: #f3f8f1; }
-.row .rec { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Long titles truncate; the year always stays visible. Hover shows the full text. */
+.row .rec { flex: 1; min-width: 0; display: flex; gap: 0.35em; white-space: nowrap; }
+.row .rec-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.row .rec-year { flex: none; }
 .artist { font-weight: 600; }
 .stars { color: #b8860b; width: 60px; flex: none; letter-spacing: -1px; }
 .genres { display: flex; gap: 3px; flex: none; max-width: 40%; overflow: hidden; }
