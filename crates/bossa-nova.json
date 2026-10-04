@@ -1,0 +1,873 @@
+{
+  "id": "bossa-nova",
+  "name": "Bossa Nova",
+  "mood": "soft, sunlit bossa nova — João, Jobim, Nara and friends",
+  "createdAt": "2026-10-04",
+  "records": [
+    {
+      "rymId": "145924",
+      "artist": "João Gilberto",
+      "title": "Chega de saudade",
+      "year": 1959,
+      "rating": 7,
+      "spotify": {
+        "albumId": "4MY4MCd8ZQusPhbdxU3MRH",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e19179a6f82eaa403440e9a6",
+        "tracks": [
+          {
+            "id": "6LCwCVq2PeDxNDf4yWaCv8",
+            "name": "Chega de Saudade",
+            "durationMs": 123386
+          },
+          {
+            "id": "7Ih1Io9MPQfATiRw0ZDTSs",
+            "name": "Doralice",
+            "durationMs": 88890
+          },
+          {
+            "id": "1irmFVTsq7koxQBdaj2shW",
+            "name": "Aos Pés da Cruz",
+            "durationMs": 94973
+          },
+          {
+            "id": "2YdI6iN91I4KmnUnjrR3VW",
+            "name": "María Ninguém",
+            "durationMs": 143453
+          },
+          {
+            "id": "7r2HdCkn6sF10POTjvlhne",
+            "name": "Saudade Fêz Um Samba",
+            "durationMs": 107560
+          },
+          {
+            "id": "28zWWP5H9YhU9NT44sevQg",
+            "name": "Lobo Bobo",
+            "durationMs": 81200
+          },
+          {
+            "id": "24ymmz60nJiLVg3f86o4Ie",
+            "name": "E Luxo Só",
+            "durationMs": 119253
+          },
+          {
+            "id": "3vKDDRsXiwXIwFPrPklOtK",
+            "name": "O Nosso Amor (Our Love) [Cantando As Musicas do Fil Orfeo do Carnaval]",
+            "durationMs": 146600
+          },
+          {
+            "id": "5tz84YvDa00QbsNb1COTuk",
+            "name": "Hó-Bá-Lá-Lá",
+            "durationMs": 137186
+          },
+          {
+            "id": "2PmnQxvtMFt4TfkA2m2bCU",
+            "name": "A Felicidade (Cantando As Musicas do Fil Orfeo do Carnaval)",
+            "durationMs": 176533
+          },
+          {
+            "id": "4mjVV9fXYbfENLSCMIdLq1",
+            "name": "Morena Boca De Ouro (Brunette with a Mouth of Gold)",
+            "durationMs": 120746
+          },
+          {
+            "id": "4jsjoqC7bYaRuymlYd6faA",
+            "name": "Rosa Morena",
+            "durationMs": 126226
+          },
+          {
+            "id": "7t0Wbk6mXzMEC2GDU4ND1k",
+            "name": "Desafinado",
+            "durationMs": 118120
+          },
+          {
+            "id": "5H6vJoSdA1cru4kEhj1LWU",
+            "name": "Bim Bom",
+            "durationMs": 77346
+          },
+          {
+            "id": "5u8froCk0rMaYmFppGbivq",
+            "name": "Brigas Nunca Mais",
+            "durationMs": 126573
+          },
+          {
+            "id": "1V3luycJOGatWsvHsoQo7c",
+            "name": "Minha Saudade",
+            "durationMs": 188853
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Chega de Saudade (Deluxe Edition)",
+        "spotifyArtists": "João Gilberto",
+        "spotifyYear": 1958,
+        "override": true
+      }
+    },
+    {
+      "rymId": "17487",
+      "artist": "Stan Getz & Charlie Byrd",
+      "title": "Jazz Samba",
+      "year": 1962,
+      "rating": 8,
+      "spotify": {
+        "albumId": "5Lyz7ZD1UaPq6WoEqTOqom",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273edcbd173b4b497f405e1c49b",
+        "tracks": [
+          {
+            "id": "0aOH62uqDzuvCvN2jdVtZs",
+            "name": "Desafinado",
+            "durationMs": 349080
+          },
+          {
+            "id": "68ELKUCl9CkRx3gXpMfjzL",
+            "name": "Samba Dees Days",
+            "durationMs": 212320
+          },
+          {
+            "id": "5PXIzyJURVKyO1cwVDuGEK",
+            "name": "O Pato",
+            "durationMs": 149080
+          },
+          {
+            "id": "6y2YxIUeM9uMgAINRnb11K",
+            "name": "Samba Triste",
+            "durationMs": 283626
+          },
+          {
+            "id": "5bKrCtDuBoFGqeMrKRVH3V",
+            "name": "Samba De Uma Nota So",
+            "durationMs": 369280
+          },
+          {
+            "id": "0J27dNCeCg9yEG9qJpEMFq",
+            "name": "E Luxo So",
+            "durationMs": 220493
+          },
+          {
+            "id": "7GXdmvaiFc66NzXmZZi2MJ",
+            "name": "Bahia",
+            "durationMs": 398266
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Jazz Samba",
+        "spotifyArtists": "Stan Getz, Charlie Byrd",
+        "spotifyYear": 1962
+      }
+    },
+    {
+      "rymId": "8758",
+      "artist": "Stan Getz & João Gilberto featuring Antônio Carlos Jobim",
+      "title": "Getz / Gilberto",
+      "year": 1964,
+      "rating": 9,
+      "spotify": {
+        "albumId": "73ZRKdD3Ds43IjHrhKgucY",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273bbf35173afc8f6ae9041b6c3",
+        "tracks": [
+          {
+            "id": "0Eir5hEgKUjm8liGGXfghF",
+            "name": "The Girl From Ipanema",
+            "durationMs": 324600
+          },
+          {
+            "id": "23vCs9GQvquT6DDbUXqqWo",
+            "name": "Doralice",
+            "durationMs": 166266
+          },
+          {
+            "id": "17wYzKGJtaBWclYbkw1pEU",
+            "name": "Para Machuchar Meu Coracao",
+            "durationMs": 305800
+          },
+          {
+            "id": "1510fBb9thwIKg6pwPhzTc",
+            "name": "Desafinado",
+            "durationMs": 255760
+          },
+          {
+            "id": "5EaU1o7PQE5vhW5HdDWgdO",
+            "name": "Corcovado (Quiet Nights Of Quiet Stars)",
+            "durationMs": 256580
+          },
+          {
+            "id": "0LS3cTpTm5zPTmBcyIDfOJ",
+            "name": "Só Danço Samba",
+            "durationMs": 225733
+          },
+          {
+            "id": "7CARdlOoUmS3iKB3ydcsj6",
+            "name": "O Grande Amor",
+            "durationMs": 327040
+          },
+          {
+            "id": "49vULP5jLOYcfcrl4vtq3T",
+            "name": "Vivo Sonhando",
+            "durationMs": 184400
+          },
+          {
+            "id": "1mzKd4lul92VCIdehoP8rg",
+            "name": "The Girl From Ipanema",
+            "durationMs": 174826
+          },
+          {
+            "id": "2NKPemiggukfBMEHRNzOsJ",
+            "name": "Corcovado (Quiet Nights Of Quiet Stars)",
+            "durationMs": 140840
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Getz/Gilberto",
+        "spotifyArtists": "Stan Getz, João Gilberto",
+        "spotifyYear": 1964,
+        "override": true
+      }
+    },
+    {
+      "rymId": "105614",
+      "artist": "Nara Leão",
+      "title": "Nara",
+      "year": 1964,
+      "rating": 8,
+      "spotify": {
+        "albumId": "0DrdA7FNioWPk1wRaRuHn7",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2733e915a8a2cf3b100af0bf849",
+        "tracks": [
+          {
+            "id": "4MPj74CLUWbibR87EPb3dr",
+            "name": "Marcha Da Quarta-Feira De Cinzas",
+            "durationMs": 178226
+          },
+          {
+            "id": "28BSCtSAR6HQmdrt823rg4",
+            "name": "Diz Que Fui Por Ai",
+            "durationMs": 129666
+          },
+          {
+            "id": "0enTVaXFNcQTHpsT1IWQK1",
+            "name": "O Morro (Feio Nao E Bonito)",
+            "durationMs": 185173
+          },
+          {
+            "id": "7A1e9ZWNpnAUFJ6Qmn9HLW",
+            "name": "Cancao Da Terra",
+            "durationMs": 189760
+          },
+          {
+            "id": "3JlEhYjuiWhxwZAFad2dYO",
+            "name": "O Sol Nascera",
+            "durationMs": 178800
+          },
+          {
+            "id": "0hiWMuzJdc4K90KyfLNYrk",
+            "name": "Luz Negra",
+            "durationMs": 152573
+          },
+          {
+            "id": "58N7prCcsFWkoJ8cHLbRsl",
+            "name": "Berimbau",
+            "durationMs": 153733
+          },
+          {
+            "id": "3u5leNtj00dJV0J5p7RAth",
+            "name": "Vou Por Ai",
+            "durationMs": 125093
+          },
+          {
+            "id": "7CiizXASZFFvHSXsgWWHav",
+            "name": "Maria Moita",
+            "durationMs": 161573
+          },
+          {
+            "id": "0VVuWyFejSkxJGMqbTtJbm",
+            "name": "Requiem Para Um Amor",
+            "durationMs": 211733
+          },
+          {
+            "id": "6ISyjUsV8qGtcTn7nXcC6H",
+            "name": "Consolacao",
+            "durationMs": 162893
+          },
+          {
+            "id": "6tzvIyPRVrtXLX8PZLd3rO",
+            "name": "Nana",
+            "durationMs": 127533
+          },
+          {
+            "id": "6QptNdBAdH1AkplnGb4zN6",
+            "name": "Promessas De Você",
+            "durationMs": 136573
+          },
+          {
+            "id": "7fRsEHGkoPkqNennkW9NsO",
+            "name": "É Tão Triste Dizer Adeus",
+            "durationMs": 186600
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Nara (1964)",
+        "spotifyArtists": "Nara Leão",
+        "spotifyYear": 1964,
+        "override": true
+      }
+    },
+    {
+      "rymId": "33237",
+      "artist": "Antônio Carlos Jobim",
+      "title": "Wave",
+      "year": 1967,
+      "rating": 7,
+      "spotify": {
+        "albumId": "5SSyex1jdJe9h3lbqESv1T",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273c634d4769c1fb60221cdc021",
+        "tracks": [
+          {
+            "id": "2hXBS8q9rGMovfG1S8FB4F",
+            "name": "Wave",
+            "durationMs": 176906
+          },
+          {
+            "id": "4wBdGRxCaWFtqei59k5InB",
+            "name": "The Red Blouse",
+            "durationMs": 309066
+          },
+          {
+            "id": "0t7RB5ABfPzDB5vCh1oVX7",
+            "name": "Look To The Sky",
+            "durationMs": 140266
+          },
+          {
+            "id": "3KqGO5n8QUERnz0HXcma5S",
+            "name": "Batidinha",
+            "durationMs": 197760
+          },
+          {
+            "id": "1N9e1myOWV26evyObwnkoM",
+            "name": "Triste",
+            "durationMs": 129533
+          },
+          {
+            "id": "4j40j6Wh7GdmAj1rL2LU7W",
+            "name": "Mojave",
+            "durationMs": 147333
+          },
+          {
+            "id": "18t9PCPkphmt5MHNcIScfL",
+            "name": "Dialogo",
+            "durationMs": 175866
+          },
+          {
+            "id": "4VzL2zgYITGrRwSTFiL9pI",
+            "name": "Lamento",
+            "durationMs": 166506
+          },
+          {
+            "id": "30pBD2nWDkyNOsasGjDOVV",
+            "name": "Antigua",
+            "durationMs": 190826
+          },
+          {
+            "id": "0WP3ohqwUavEJHGxVpsQqY",
+            "name": "Captain Bacardi",
+            "durationMs": 269066
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Wave",
+        "spotifyArtists": "Antônio Carlos Jobim",
+        "spotifyYear": 1967
+      }
+    },
+    {
+      "rymId": "37354",
+      "artist": "Gal e Caetano Velloso",
+      "title": "Domingo",
+      "year": 1967,
+      "rating": 7,
+      "spotify": {
+        "albumId": "4d8IqRNN8UX3vxtS6jnBA8",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27301850f9c37314642683217ca",
+        "tracks": [
+          {
+            "id": "2gIisIsTYci8mo4X9KlCPn",
+            "name": "Coração Vagabundo",
+            "durationMs": 143893
+          },
+          {
+            "id": "1qlYpdgUzysdI2Xftt5ZOD",
+            "name": "Onde Eu Nasci Passa Um Rio",
+            "durationMs": 116173
+          },
+          {
+            "id": "65obcQdlM8bcHNHfPPrwZk",
+            "name": "Avarandado",
+            "durationMs": 159066
+          },
+          {
+            "id": "3QS9jbi6AqCz86AxYm3ecd",
+            "name": "Um Dia",
+            "durationMs": 189826
+          },
+          {
+            "id": "3xm7tqnIbdIgT1fwJ1t6ZB",
+            "name": "Domingo",
+            "durationMs": 83613
+          },
+          {
+            "id": "67Kr7uLZtxbDDlaXkps0PW",
+            "name": "Nenhuma Dor",
+            "durationMs": 91906
+          },
+          {
+            "id": "4pzDEIcFSax3TpjZgcDE57",
+            "name": "Candeias",
+            "durationMs": 190733
+          },
+          {
+            "id": "0jkR7EFXNnY1PHJ8pMYnd9",
+            "name": "Remelexo",
+            "durationMs": 112466
+          },
+          {
+            "id": "7DCZMojCiT5zv0jdlxCXEs",
+            "name": "Minha Senhora",
+            "durationMs": 251960
+          },
+          {
+            "id": "5EuwNbsbrsUdMukyzBlf7r",
+            "name": "Quem Me Dera",
+            "durationMs": 202306
+          },
+          {
+            "id": "0CZpjxV0BnL0ta9KBB0SKW",
+            "name": "Maria Joana",
+            "durationMs": 101493
+          },
+          {
+            "id": "0Mu3u4omTh4B3criJx8n5Y",
+            "name": "Zabele",
+            "durationMs": 170733
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Domingo",
+        "spotifyArtists": "Caetano Veloso, Gal Costa",
+        "spotifyYear": 1967,
+        "override": true
+      }
+    },
+    {
+      "rymId": "111066",
+      "artist": "Nara Leão",
+      "title": "Dez anos depois",
+      "year": 1971,
+      "rating": 10,
+      "spotify": {
+        "albumId": "14vNVSBK4R5XpKUEUOTjvd",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e79284276098473b3cbbb157",
+        "tracks": [
+          {
+            "id": "59D1sgdVPFsCMXjJ3lU0Z5",
+            "name": "Insensatez",
+            "durationMs": 156266
+          },
+          {
+            "id": "4dHrp64I2iOxjLUVWijFTn",
+            "name": "Samba De Uma Nota Só",
+            "durationMs": 129026
+          },
+          {
+            "id": "0mQVSs7rhFHaZjbde5160s",
+            "name": "Retrato Em Branco E Preto",
+            "durationMs": 156533
+          },
+          {
+            "id": "6JOUzBzOut78ryNFuCc39k",
+            "name": "Corcovado",
+            "durationMs": 155866
+          },
+          {
+            "id": "7egfyIWfZdWyrr8LeVonw1",
+            "name": "Garota De Ipanema",
+            "durationMs": 143106
+          },
+          {
+            "id": "1p11QBEiMklDaVAE3Ipm6o",
+            "name": "Pois É",
+            "durationMs": 144760
+          },
+          {
+            "id": "6UOy5Ne0SGvbozHrLlLJ1J",
+            "name": "Chega De Saudade",
+            "durationMs": 122773
+          },
+          {
+            "id": "5SRRPwegE8Xle109eDMTCg",
+            "name": "Bonita",
+            "durationMs": 251133
+          },
+          {
+            "id": "05Ha9FThgkYeZYk4pNXrOe",
+            "name": "Você E Eu",
+            "durationMs": 137600
+          },
+          {
+            "id": "4PDlHkyoyRZlsU9UtWFomf",
+            "name": "Fotografia",
+            "durationMs": 146226
+          },
+          {
+            "id": "1fUO5Rok4xUT3NnmWsihE7",
+            "name": "O Grande Amor",
+            "durationMs": 110506
+          },
+          {
+            "id": "5ZTIXiA08PcM2WCzULcCF6",
+            "name": "Estrada Do Sol",
+            "durationMs": 132960
+          },
+          {
+            "id": "5kQGyCnFM8pD22Rw9SnlwQ",
+            "name": "Por Toda A Minha Vida",
+            "durationMs": 247733
+          },
+          {
+            "id": "1m7Pex70UfX3aT43hTeTuZ",
+            "name": "Desafinado",
+            "durationMs": 168826
+          },
+          {
+            "id": "1JBYZzg1CqOM652XcD3aUd",
+            "name": "Minha Namorada",
+            "durationMs": 187133
+          },
+          {
+            "id": "7o63yGOoP729CwZrQgRmdJ",
+            "name": "Rapaz De Bem",
+            "durationMs": 113440
+          },
+          {
+            "id": "6Dg660M6PZCkDJz6cNQEwV",
+            "name": "Vou Por Aí",
+            "durationMs": 123426
+          },
+          {
+            "id": "2DjueQNZkb2h21csaTB4ei",
+            "name": "O Amor Em Paz",
+            "durationMs": 206440
+          },
+          {
+            "id": "1gdq4BAXuPn0MkUerNcg5i",
+            "name": "Sabiá",
+            "durationMs": 170426
+          },
+          {
+            "id": "1KcrfXWVdStS6UtSxmzGps",
+            "name": "Meditação",
+            "durationMs": 137800
+          },
+          {
+            "id": "3P2rAFLOvwujkUNGPIEArB",
+            "name": "Primavera",
+            "durationMs": 188173
+          },
+          {
+            "id": "7ws9U1clOAmsZmc0LAQxFt",
+            "name": "Este Seu Olhar",
+            "durationMs": 152933
+          },
+          {
+            "id": "1H3vHQSD9528EfWpoXaQik",
+            "name": "Outra Vez",
+            "durationMs": 204093
+          },
+          {
+            "id": "6MCvgjd309ghOUHSEbD7yo",
+            "name": "Demais",
+            "durationMs": 160200
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Nara Dez Anos Depois",
+        "spotifyArtists": "Nara Leão",
+        "spotifyYear": 1971,
+        "override": true
+      }
+    },
+    {
+      "rymId": "41002",
+      "artist": "Marcos Valle",
+      "title": "Garra",
+      "year": 1971,
+      "rating": 8,
+      "spotify": {
+        "albumId": "26SSJpzaZjvKJ7pdGzPWuU",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273fe015109d2061ca6e200e362",
+        "tracks": [
+          {
+            "id": "17UFEZOxHAXWm6Gtpq3xjV",
+            "name": "Jesus Meu Rei",
+            "durationMs": 192026
+          },
+          {
+            "id": "0BT6onVxcx2Eph4G0wGH8a",
+            "name": "Com Mais de 30",
+            "durationMs": 164226
+          },
+          {
+            "id": "70kZokwUrT6KhvEN3XBKbp",
+            "name": "Garra",
+            "durationMs": 179760
+          },
+          {
+            "id": "1MBUZsIL1UdhuG9i4KiRNR",
+            "name": "Black Is Beautiful",
+            "durationMs": 258120
+          },
+          {
+            "id": "2NfccfBADpM8ZLJv8NZXFj",
+            "name": "Ao Amigo Tom",
+            "durationMs": 122946
+          },
+          {
+            "id": "4DimHq8U8lUT4qZK44S48V",
+            "name": "Paz e Futebol",
+            "durationMs": 154720
+          },
+          {
+            "id": "4JLUkPT1P6asHY6RJA2PZZ",
+            "name": "Que Bandeira",
+            "durationMs": 184093
+          },
+          {
+            "id": "0I58TD34kVkp622V0aN7D4",
+            "name": "Wanda Vidal",
+            "durationMs": 129906
+          },
+          {
+            "id": "4a0UAai10JuCYmoPw9VyMa",
+            "name": "Minha Voz Virá do Sol da América",
+            "durationMs": 263733
+          },
+          {
+            "id": "4IkLd1LvVmewDRIQAiC7PN",
+            "name": "Vinte e Seis Anos de Vida Normal",
+            "durationMs": 145080
+          },
+          {
+            "id": "59J8D12pAbbdma8D7Rrfrh",
+            "name": "O Cafona",
+            "durationMs": 207693
+          },
+          {
+            "id": "2nMbYlcBBeQlEEi1VPjTLE",
+            "name": "Com Mais de 30 - Instrumental / Bonus Track",
+            "durationMs": 169386
+          },
+          {
+            "id": "540lIEnBKia71DzCSEKhQ1",
+            "name": "Garra - Versão Alternativa Instrumental Em Sol / Bonus Track",
+            "durationMs": 175800
+          },
+          {
+            "id": "4NkZDVgSjUckdmiLgpv6lN",
+            "name": "Black Is Beautiful - Versão Instrumental Alternativa / Bonus Track",
+            "durationMs": 268173
+          },
+          {
+            "id": "6YjIMlJBJpjFudE8jUdG1P",
+            "name": "Que Bandeira - Versão Instrumental Alternativa / Bonus Track",
+            "durationMs": 171360
+          },
+          {
+            "id": "1U8yFtv2WlNFGdgRb5k6Ni",
+            "name": "Que Bandeira - Versão Instrumental / Bonus Track",
+            "durationMs": 196653
+          },
+          {
+            "id": "3wbXsuJg7RDgEZ5Y3hK0Tm",
+            "name": "Wanda Vidal - Versão Instrumental / Bonus Track",
+            "durationMs": 133213
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Garra",
+        "spotifyArtists": "Marcos Valle",
+        "spotifyYear": 1971
+      }
+    },
+    {
+      "rymId": "13507",
+      "artist": "João Gilberto",
+      "title": "João Gilberto",
+      "year": 1973,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5rFhRJLR6CDPSxwSPTONA4",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732c91900f002c52ed72960fee",
+        "tracks": [
+          {
+            "id": "7Jj66NaXj1Nn6xrkB7vlSf",
+            "name": "Águas de Março",
+            "durationMs": 323657
+          },
+          {
+            "id": "5DPhD44bQHEOBPGRzc3Ebl",
+            "name": "Undiú",
+            "durationMs": 397453
+          },
+          {
+            "id": "3UYvX9Hs1kVJIhbuGSRgLl",
+            "name": "Na Baixa do Sapateiro",
+            "durationMs": 283585
+          },
+          {
+            "id": "2jlHfEYaKWrHzL7YKHHJq3",
+            "name": "Avarandado",
+            "durationMs": 269766
+          },
+          {
+            "id": "7nis0pALSkz4Tai1hJilet",
+            "name": "Falsa Baiana",
+            "durationMs": 225071
+          },
+          {
+            "id": "6RODRlHqwSxfI6WmKjqPCL",
+            "name": "Eu Quero um Samba",
+            "durationMs": 286302
+          },
+          {
+            "id": "4sUUUvNseGlHTjy0Fuus4W",
+            "name": "Eu Vim da Bahia",
+            "durationMs": 352078
+          },
+          {
+            "id": "23Z0eWEi3SbJ1Fx0Ta3A26",
+            "name": "Valsa (Como São Lindos os Youguis)",
+            "durationMs": 199392
+          },
+          {
+            "id": "2O6G533UXYJmbkrhzmt7OC",
+            "name": "É preciso Perdoar",
+            "durationMs": 308166
+          },
+          {
+            "id": "4im3cvYs2A3dIjBDlXJU3C",
+            "name": "Izaura",
+            "durationMs": 328097
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "João Gilberto",
+        "spotifyArtists": "João Gilberto",
+        "spotifyYear": 1973
+      }
+    },
+    {
+      "rymId": "13923",
+      "artist": "Elis Regina & Antônio Carlos Jobim",
+      "title": "Elis & Tom",
+      "year": 1974,
+      "rating": 8,
+      "spotify": {
+        "albumId": "3SE9n6EaVOJ81KA1KPLUWS",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273292018d60c3e04f17656657a",
+        "tracks": [
+          {
+            "id": "15ouqiBsgL12olEwP3COsH",
+            "name": "Águas De Março",
+            "durationMs": 214003
+          },
+          {
+            "id": "7Frd1uhTyz0d6yIWy45GA5",
+            "name": "Pois É",
+            "durationMs": 104106
+          },
+          {
+            "id": "209ucYTS6vWEV5iydrHiOt",
+            "name": "Só Tinha De Ser Com Você",
+            "durationMs": 233015
+          },
+          {
+            "id": "7w445n1qc0sYZUSyW58UGZ",
+            "name": "Modinha",
+            "durationMs": 138005
+          },
+          {
+            "id": "0PHGV9pWYv91WCeCXhdWye",
+            "name": "Triste",
+            "durationMs": 162368
+          },
+          {
+            "id": "29OG9zJjZgQvFMfGVB09Lt",
+            "name": "Corcovado",
+            "durationMs": 237024
+          },
+          {
+            "id": "20QNNI2hzEo2Fl4TSmzMcQ",
+            "name": "O Que Tinha De Ser",
+            "durationMs": 103020
+          },
+          {
+            "id": "2qT5u5tjgcMoo3kIGehYTg",
+            "name": "Retrato Em Branco E Preto",
+            "durationMs": 186014
+          },
+          {
+            "id": "3SkLW48Xt2knevezFTs0pY",
+            "name": "Brigas Nunca Mais",
+            "durationMs": 102008
+          },
+          {
+            "id": "2yA4Kc2BRxy53ySLFbeTrV",
+            "name": "Por Toda A Minha Vida (Exaltação Ao Amor)",
+            "durationMs": 124150
+          },
+          {
+            "id": "4O2tMlIxlgRwmNQDElwIq4",
+            "name": "Fotografia",
+            "durationMs": 169049
+          },
+          {
+            "id": "6G0tpO4dmJSN2ycxsr09ck",
+            "name": "Soneto De Separação",
+            "durationMs": 142008
+          },
+          {
+            "id": "4FwoSbAlyYBm2hsmAb6S7Q",
+            "name": "Chovendo Na Roseira",
+            "durationMs": 194030
+          },
+          {
+            "id": "24oyt2VtQXsUo52ZbcfAtB",
+            "name": "Inútil Paisagem",
+            "durationMs": 186040
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Elis & Tom",
+        "spotifyArtists": "Elis Regina, Antônio Carlos Jobim",
+        "spotifyYear": 1974
+      }
+    }
+  ]
+}

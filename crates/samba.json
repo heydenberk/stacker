@@ -1,0 +1,736 @@
+{
+  "id": "samba",
+  "name": "Samba",
+  "mood": "samba, samba-jazz and samba-soul — Jorge Ben, Novos Baianos, Chico",
+  "createdAt": "2026-10-04",
+  "records": [
+    {
+      "rymId": "10797",
+      "artist": "Jorge Ben",
+      "title": "Samba esquema novo",
+      "year": 1963,
+      "rating": 7,
+      "spotify": {
+        "albumId": "3xWp6y0HGsHZlXljNs7VRy",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732daa87c238a78a680511da3c",
+        "tracks": [
+          {
+            "id": "6U03Orwr5Dxt8jahLnQpYV",
+            "name": "Mas, Que Nada!",
+            "durationMs": 179293
+          },
+          {
+            "id": "1jCFnbL30NwORyVsiHX6mH",
+            "name": "Tim Dom Dom",
+            "durationMs": 139626
+          },
+          {
+            "id": "1XjFyPzU5z3zbYJQETYGiZ",
+            "name": "Balança Pema",
+            "durationMs": 86760
+          },
+          {
+            "id": "75wVq4apQLxpOM6R58lMhy",
+            "name": "Vem Morena Vem",
+            "durationMs": 117133
+          },
+          {
+            "id": "6mTfOxORhYlpnTvm7VrL6b",
+            "name": "Chove Chuva",
+            "durationMs": 184093
+          },
+          {
+            "id": "4LtJsC47UoPlp0qp9srYoy",
+            "name": "É Só Sambar",
+            "durationMs": 124066
+          },
+          {
+            "id": "2qlihQb5QUstwplDDlkZVL",
+            "name": "Rosa, Menina Rosa",
+            "durationMs": 133826
+          },
+          {
+            "id": "7CEGXqzXZv7gxsyF30J8cz",
+            "name": "Quero Esquecer Você",
+            "durationMs": 140226
+          },
+          {
+            "id": "5DPHDqGo6BbyvFn0QUJdIR",
+            "name": "Uala Ualalá",
+            "durationMs": 127040
+          },
+          {
+            "id": "3RbaFpFrnhkZCIbqyPELna",
+            "name": "A Tamba",
+            "durationMs": 182160
+          },
+          {
+            "id": "5MmxyCSL7xzxyRZBIVWtju",
+            "name": "Menina Bonita Não Chora",
+            "durationMs": 125560
+          },
+          {
+            "id": "0YojqXjn4xb5hblpFAhqJr",
+            "name": "Por Causa De Você, Menina",
+            "durationMs": 167066
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Samba Esquema Novo",
+        "spotifyArtists": "Jorge Ben Jor",
+        "spotifyYear": 1963,
+        "override": true
+      }
+    },
+    {
+      "rymId": "399342",
+      "artist": "Zimbo Trio",
+      "title": "Zimbo Trio",
+      "year": 1964,
+      "rating": 7,
+      "spotify": {
+        "albumId": "6wmYLADSIyNTBW351cytPX",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d4b3601963516c21207d44fd",
+        "tracks": [
+          {
+            "id": "3bqzeiktzDnOu7RtbB8kb6",
+            "name": "Zimbo Samba",
+            "durationMs": 125373
+          },
+          {
+            "id": "2saWAEUZYz410qlEgVBF1L",
+            "name": "Menina-Flor",
+            "durationMs": 152960
+          },
+          {
+            "id": "2XvPgJrUZcs1eTeZzv0pYm",
+            "name": "Garota de Ipanema",
+            "durationMs": 276933
+          },
+          {
+            "id": "4SvrcCGSJrWlryWbPNUNML",
+            "name": "Inútil Paisagem",
+            "durationMs": 152133
+          },
+          {
+            "id": "07zPMaZq3Z2bBTkbADNhM6",
+            "name": "Barquinho Diferente",
+            "durationMs": 140066
+          },
+          {
+            "id": "2wVFs7GK33kH4eR5d6eSiX",
+            "name": "Berimbau",
+            "durationMs": 189906
+          },
+          {
+            "id": "7c7fTICO20NdhIJ1To43LV",
+            "name": "Consolação",
+            "durationMs": 176400
+          },
+          {
+            "id": "2efQXuWekZdbA2Eb3r0cH2",
+            "name": "Diz Que Fui Por Aí",
+            "durationMs": 129000
+          },
+          {
+            "id": "0alCB51vFVZcDQGsSnx7hN",
+            "name": "Sou Sem Paz",
+            "durationMs": 245866
+          },
+          {
+            "id": "0uZcajT2X1RqhS2ocrnUyy",
+            "name": "Vivo Sonhando",
+            "durationMs": 123800
+          },
+          {
+            "id": "0bGgFa65frpZxs4EjRK8sd",
+            "name": "Só Por Amor",
+            "durationMs": 164626
+          },
+          {
+            "id": "4CJZ5hjsbdigD1rNvtprwT",
+            "name": "O Norte",
+            "durationMs": 229240
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Zimbo Trio",
+        "spotifyArtists": "Zimbo Trio",
+        "spotifyYear": 1965,
+        "override": true
+      }
+    },
+    {
+      "rymId": "214145",
+      "artist": "Moacir Santos",
+      "title": "Maestro",
+      "year": 1973,
+      "rating": 7,
+      "spotify": {
+        "albumId": "79mk6M2T4akxGdPwK8X4tq",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2738e14486d883bffb40a8b0953",
+        "tracks": [
+          {
+            "id": "4eGugQrhQpsob4CKGqe3A1",
+            "name": "Monologue",
+            "durationMs": 63533
+          },
+          {
+            "id": "2O86cNvAra9d9t05RVLW2B",
+            "name": "Nana",
+            "durationMs": 267453
+          },
+          {
+            "id": "4J1iE8HOni3osiKCR8HMoe",
+            "name": "Bluishmen",
+            "durationMs": 292720
+          },
+          {
+            "id": "0hCib6GpVAtXgWbx65EiEW",
+            "name": "Luanne",
+            "durationMs": 180333
+          },
+          {
+            "id": "2p1mhTqKdYmN3xYmw9r2fe",
+            "name": "Astral Whine (An Elegy To Any War)",
+            "durationMs": 254733
+          },
+          {
+            "id": "2bZCx1FLaP25CNPu3jF27Z",
+            "name": "Mother Iracema",
+            "durationMs": 274360
+          },
+          {
+            "id": "1bDL74uwKQZFIBgkjehwE7",
+            "name": "Kermis",
+            "durationMs": 249760
+          },
+          {
+            "id": "5NCiqRmoHFNSTeEt1SIxKX",
+            "name": "April Child",
+            "durationMs": 248093
+          },
+          {
+            "id": "2p8n7J1plcrbMSGOvOYmRc",
+            "name": "The Mirror's Mirror",
+            "durationMs": 344653
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Maestro",
+        "spotifyArtists": "Moacir Santos",
+        "spotifyYear": 1972,
+        "override": true
+      }
+    },
+    {
+      "rymId": "659614",
+      "artist": "Luiz Carlos Vinhas",
+      "title": "O som psicodélico de L. C. V.",
+      "year": 1968,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5muaCOcatSBTytuSOm36m0",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2739034fc09ebb7eac3ccf50dd7",
+        "tracks": [
+          {
+            "id": "64huhWQ8kBjIoen2YniNv4",
+            "name": "Amazonas",
+            "durationMs": 141302
+          },
+          {
+            "id": "70lH7REDMc2TA5oQNAJLLb",
+            "name": "Tanganica",
+            "durationMs": 211784
+          },
+          {
+            "id": "4uqlV5kEfBt8uKf7KlrSJk",
+            "name": "Yê-Melê",
+            "durationMs": 143520
+          },
+          {
+            "id": "4tx7dsG3jfkl2t2GTXsOm8",
+            "name": "Zizê-Baiô",
+            "durationMs": 114774
+          },
+          {
+            "id": "7MEhKZrR5UBU108Bwr3Fhd",
+            "name": "Un Jour Christine",
+            "durationMs": 179345
+          },
+          {
+            "id": "7m5QeDrVBwdoAJCg03Hfxl",
+            "name": "Song to My Father",
+            "durationMs": 184750
+          },
+          {
+            "id": "3zCXJtYd2I45PjPyY1jZ6v",
+            "name": "Chatanooga Choo-Choo; Don't Be That Way; Tributo a Martin Luther King",
+            "durationMs": 186572
+          },
+          {
+            "id": "0ff7RHzlZUE2YfayPc6bOG",
+            "name": "Pourquoi; Arrasta a Sandalia; Morena, Boca de Ouro; Rosa Morena",
+            "durationMs": 459444
+          },
+          {
+            "id": "7xacgePp1p5zwchKxVWdjF",
+            "name": "Birthday Morning; Can't Take My Eyes Off You",
+            "durationMs": 177559
+          },
+          {
+            "id": "6z15Y92DLb5ZP2nd0fx7AS",
+            "name": "O Dialogo",
+            "durationMs": 140853
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "O Som Psicodélico De L. C. V.",
+        "spotifyArtists": "Luiz Carlos Vinhas",
+        "spotifyYear": 2025,
+        "override": true
+      }
+    },
+    {
+      "rymId": "9386",
+      "artist": "Chico Buarque",
+      "title": "Construção",
+      "year": 1971,
+      "rating": 10,
+      "spotify": {
+        "albumId": "7yrRo2o4XzDfv3mNnkPRE5",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f061d4beecf1d3ebb2c2bb97",
+        "tracks": [
+          {
+            "id": "0iNom96XYENQmqpOwf04F2",
+            "name": "Deus Lhe Pague",
+            "durationMs": 198546
+          },
+          {
+            "id": "127twwy3iCo1xBRQHyWetU",
+            "name": "Cotidiano",
+            "durationMs": 168373
+          },
+          {
+            "id": "0MoaSi9IqvlP2RPRn8Afm7",
+            "name": "Desalento",
+            "durationMs": 167413
+          },
+          {
+            "id": "3FIuBxOxuQ6kYy8JO0gq2a",
+            "name": "Construção",
+            "durationMs": 383626
+          },
+          {
+            "id": "1Zz26uUewyiMfQEKYgZ7oh",
+            "name": "Cordao",
+            "durationMs": 149480
+          },
+          {
+            "id": "11lmp2S9QWfDIwr5Vl2KjR",
+            "name": "Olha Maria",
+            "durationMs": 236386
+          },
+          {
+            "id": "39HKNEpQz75dCJqDxH0xuD",
+            "name": "Samba De Orly",
+            "durationMs": 159600
+          },
+          {
+            "id": "6BmiOymAiOcmThWDKLysFK",
+            "name": "Valsinha",
+            "durationMs": 119800
+          },
+          {
+            "id": "4zkhHy9rojEZn3jarsPoFe",
+            "name": "Minha Historia (Gesubambino)",
+            "durationMs": 181306
+          },
+          {
+            "id": "7tAwx3iMgPQlciK4hjHNPL",
+            "name": "Acalanto",
+            "durationMs": 98866
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Construção",
+        "spotifyArtists": "Chico Buarque",
+        "spotifyYear": 1971
+      }
+    },
+    {
+      "rymId": "503443",
+      "artist": "Novos Baianos",
+      "title": "Acabou chorare",
+      "year": 1972,
+      "rating": 10,
+      "spotify": {
+        "albumId": "76iTNsPU1yhKWcQrTc2qdA",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ae71503590fe75efd1bba474",
+        "tracks": [
+          {
+            "id": "5FjGfpnzt52gpNLaFMHtNW",
+            "name": "Brasil Pandeiro",
+            "durationMs": 235106
+          },
+          {
+            "id": "6o3xSFzkryoYpouiko8jNH",
+            "name": "Preta Pretinha",
+            "durationMs": 397493
+          },
+          {
+            "id": "6l46SZseHwATzOIrZJ62du",
+            "name": "Tinindo Trincando",
+            "durationMs": 204506
+          },
+          {
+            "id": "6Ara9ggGiF420DTxwnBFiK",
+            "name": "Swing de Campo Grande",
+            "durationMs": 189040
+          },
+          {
+            "id": "6Qvm3zPy3lgZmCvFz0kTcm",
+            "name": "Acabou Chorare",
+            "durationMs": 253173
+          },
+          {
+            "id": "0a3dxCb5m9uJ7J66d2h63u",
+            "name": "Mistério do Planeta",
+            "durationMs": 217960
+          },
+          {
+            "id": "5nccnfjaIAcVFUsvBbZ5E5",
+            "name": "A Menina Dança",
+            "durationMs": 232200
+          },
+          {
+            "id": "5GxSV8wrf5yBDMBhhbKRCn",
+            "name": "Besta é Tu",
+            "durationMs": 264933
+          },
+          {
+            "id": "0hLY0bIlFcuFuC7vX0uTxe",
+            "name": "Um Bilhete Pra Didi",
+            "durationMs": 172173
+          },
+          {
+            "id": "0r4ta9XDW62oilajBL7HDF",
+            "name": "Preta Pretinha - versão alternativa",
+            "durationMs": 202813
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Acabou Chorare",
+        "spotifyArtists": "Novos Baianos",
+        "spotifyYear": 1972
+      }
+    },
+    {
+      "rymId": "540263",
+      "artist": "Baden Powell",
+      "title": "Apaixonado",
+      "year": 1973,
+      "rating": 7,
+      "spotify": {
+        "albumId": "2GDAvuz2Qqbc4DRi9X4tPR",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f7f3f5674f6e998a69209818",
+        "tracks": [
+          {
+            "id": "15yqQlZqkUF1xIBlzmLvWQ",
+            "name": "Casa Velha (Frevinho)",
+            "durationMs": 305040
+          },
+          {
+            "id": "34XNPkp6KFyi459AyQw3Ep",
+            "name": "Alcântara",
+            "durationMs": 252133
+          },
+          {
+            "id": "3yQoJDkW53tBMA8y2TSysj",
+            "name": "Igarape",
+            "durationMs": 399066
+          },
+          {
+            "id": "5hiyz54fbiuAIPOfoGj2ls",
+            "name": "Estorias de Alcântara",
+            "durationMs": 479946
+          },
+          {
+            "id": "423528ardF6FrmuSsGbUFu",
+            "name": "Waltzing",
+            "durationMs": 169853
+          },
+          {
+            "id": "4hIVPCHEo0m2xnK7TRbjuA",
+            "name": "Lembranças",
+            "durationMs": 363066
+          },
+          {
+            "id": "2N1dCWLeD0v4dclDGPWrU3",
+            "name": "Abstrato",
+            "durationMs": 207666
+          },
+          {
+            "id": "5ScjiKJWdhvyMY1Kg7JPV0",
+            "name": "As Flores",
+            "durationMs": 345293
+          },
+          {
+            "id": "4c58nwqiQnFjeCAIuAc36Y",
+            "name": "Balantofe",
+            "durationMs": 274840
+          },
+          {
+            "id": "7LC76UQbMPXS30EnfUIhnw",
+            "name": "Brisa do Mar",
+            "durationMs": 375360
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Apaixonado",
+        "spotifyArtists": "Baden Powell",
+        "spotifyYear": 1975,
+        "override": true
+      }
+    },
+    {
+      "rymId": "41463",
+      "artist": "Jorge Ben",
+      "title": "A Tábua de Esmeralda",
+      "year": 1974,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5rcMJNWebtl2r2S18Je1A0",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2733bce213e564b833e4e4be01f",
+        "tracks": [
+          {
+            "id": "6WohVJvZ6RYmYN8Nxl9VHa",
+            "name": "Os Alquimistas Estão Chegando Os Alquimistas",
+            "durationMs": 195266
+          },
+          {
+            "id": "09fMrVtgABLxRRuZ2Obx51",
+            "name": "O Homem Da Gravata Florida",
+            "durationMs": 185733
+          },
+          {
+            "id": "27KA6KHjX6dLuEcZAcvEF1",
+            "name": "Errare Humanum Est",
+            "durationMs": 290893
+          },
+          {
+            "id": "5HpURubJUz2gysQiAkle9I",
+            "name": "Menina Mulher Da Pele Preta",
+            "durationMs": 177200
+          },
+          {
+            "id": "0aoXo0QpV9k4edV7wjwNkl",
+            "name": "Eu Vou Torcer",
+            "durationMs": 195506
+          },
+          {
+            "id": "68DcdIbgA4vEektkulFWPZ",
+            "name": "Magnólia",
+            "durationMs": 194226
+          },
+          {
+            "id": "1PXrYVQpOUDWo8NZDTSifY",
+            "name": "Minha Teimosia, Uma Arma Pra Te Conquistar",
+            "durationMs": 161373
+          },
+          {
+            "id": "4SASmOXEaX8c4mK8RSHFJS",
+            "name": "Zumbi",
+            "durationMs": 211093
+          },
+          {
+            "id": "1LLRVZB4fz7bduFEZ22DE4",
+            "name": "Brother",
+            "durationMs": 174666
+          },
+          {
+            "id": "0iM2mFz8ijP7Ngm5BXcRo2",
+            "name": "O Namorado Da Viúva",
+            "durationMs": 123173
+          },
+          {
+            "id": "4pk3iB6p0dO6TGsfFj3Owm",
+            "name": "Hermes Trismegisto E Sua Celeste Tábua De Esmeralda",
+            "durationMs": 330266
+          },
+          {
+            "id": "0cIZ6AWTeJx7RsBdMr6z9R",
+            "name": "Cinco Minutos (5 Minutos)",
+            "durationMs": 177600
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "A Tabua De Esmeralda",
+        "spotifyArtists": "Jorge Ben Jor",
+        "spotifyYear": 1974,
+        "override": true
+      }
+    },
+    {
+      "rymId": "232545",
+      "artist": "Jorge Ben",
+      "title": "Solta o pavão",
+      "year": 1975,
+      "rating": 9,
+      "spotify": {
+        "albumId": "26YyS4YkKRniunBIYTaNnp",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27303c0351a84e99103e2287b3f",
+        "tracks": [
+          {
+            "id": "3P2ZZRK3OZ4tA78HZWDNVL",
+            "name": "Zagueiro",
+            "durationMs": 182560
+          },
+          {
+            "id": "51OYpW0YPNhZiLYR9pTwv5",
+            "name": "Assim Falou Santo Tomaz De Aquino",
+            "durationMs": 175106
+          },
+          {
+            "id": "4uf28I7IwK0pVRzgOEACJ2",
+            "name": "Velhos, Flores, Criancinhas E Cachorros",
+            "durationMs": 196360
+          },
+          {
+            "id": "6ct6PfaBiH3ADSJcakrt4J",
+            "name": "Dorothy",
+            "durationMs": 235706
+          },
+          {
+            "id": "3o7sNDpBCuWabiu30aGJX7",
+            "name": "Cuidado Com O Bulldog",
+            "durationMs": 174760
+          },
+          {
+            "id": "4iO1fjAi6hBZ4gb0Fb2oXk",
+            "name": "Para Ouvir No Rádio",
+            "durationMs": 258666
+          },
+          {
+            "id": "7BnvJRPPJhKMNKsy8C6Dei",
+            "name": "O Rei Chegou, Viva O Rei",
+            "durationMs": 183106
+          },
+          {
+            "id": "06YxPcR6dTaSC5ee3uxWdI",
+            "name": "Jorge Da Capadócia",
+            "durationMs": 231080
+          },
+          {
+            "id": "3LyeB5mKdybZ7zjgjH9fcz",
+            "name": "Se Segura Malandro",
+            "durationMs": 174320
+          },
+          {
+            "id": "3C1mICLk5HWpbP5awuQOzQ",
+            "name": "Dumingaz",
+            "durationMs": 210066
+          },
+          {
+            "id": "1VeOnNA29QwjfbnqOmiIMM",
+            "name": "Luz Polarizada",
+            "durationMs": 141866
+          },
+          {
+            "id": "3TvhW15IPaJsA4L4gXudRU",
+            "name": "Jesualda",
+            "durationMs": 163560
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Solta O Pavão (1975)",
+        "spotifyArtists": "Jorge Ben Jor",
+        "spotifyYear": 1975,
+        "override": true
+      }
+    },
+    {
+      "rymId": "612092",
+      "artist": "Gil e Jorge",
+      "title": "Ogum Xangô",
+      "year": 1975,
+      "rating": 9,
+      "spotify": {
+        "albumId": "7kblB1tNnJmTUkveankzxS",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27397b177a0db8dfb17361181c0",
+        "tracks": [
+          {
+            "id": "6dmbrQubLeaUcudXEsPdDW",
+            "name": "Meu Glorioso São Cristovão",
+            "durationMs": 484706
+          },
+          {
+            "id": "2wVAli5Mb3FFE25WMg41FH",
+            "name": "Nêga (Photograph Blues)",
+            "durationMs": 626706
+          },
+          {
+            "id": "0A0GgWBvBlaQ6uBLmoobv7",
+            "name": "Jurubeba",
+            "durationMs": 693000
+          },
+          {
+            "id": "6PQwpdVsx0zAJkiUxP62So",
+            "name": "Quem Mandou (Pé Na Estrada)",
+            "durationMs": 405680
+          },
+          {
+            "id": "0dtpc0QqJ3FIgvmIHHmn9I",
+            "name": "Taj Mahal",
+            "durationMs": 874333
+          },
+          {
+            "id": "4SygMOOy04okiuzz7ueOaq",
+            "name": "Morre O Burro, Fica O Homem",
+            "durationMs": 361000
+          },
+          {
+            "id": "2GYVxuXTVXfD5PKJn0rwAG",
+            "name": "Essa É Pra Tocar No Rádio",
+            "durationMs": 368360
+          },
+          {
+            "id": "0ILb6D3mHmpzw5uJGARuat",
+            "name": "Filhos De Gandhi",
+            "durationMs": 778080
+          },
+          {
+            "id": "2InVet83TiKKaP39UFeAfC",
+            "name": "Sarro",
+            "durationMs": 82720
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Gil E Jorge",
+        "spotifyArtists": "Gilberto Gil, Jorge Ben Jor",
+        "spotifyYear": 1975,
+        "override": true
+      }
+    }
+  ]
+}
