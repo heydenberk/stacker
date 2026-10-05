@@ -1,0 +1,1170 @@
+{
+  "id": "afro-pop",
+  "name": "Afro Pop",
+  "mood": "Afrobeat, highlife and Congolese rumba — Fela front and centre",
+  "createdAt": "2026-10-05",
+  "records": [
+    {
+      "rymId": "33363",
+      "artist": "Fela Ransome Kuti & Africa 70",
+      "title": "Expensive Shit",
+      "year": 1975,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5QtXhQE2WvVLz60sYwafQH",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273bed0d0ae893ced38e9c008fe",
+        "tracks": [
+          {
+            "id": "0sGVPD9nqrwUipu6pQmx4c",
+            "name": "Expensive Shit",
+            "durationMs": 793200
+          },
+          {
+            "id": "5rkaipGsbnd4eZTPx33NHt",
+            "name": "Water No Get Enemy",
+            "durationMs": 660480
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Expensive Shit",
+        "spotifyArtists": "Fela Kuti",
+        "spotifyYear": 1975,
+        "override": true
+      }
+    },
+    {
+      "rymId": "30878",
+      "artist": "Fela Anikulapo Kuti and Afrika 70",
+      "title": "Zombie",
+      "year": 1977,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5daEPaHfFiOSpKJLMraH9D",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2733f75d8b129917a7c6b937e14",
+        "tracks": [
+          {
+            "id": "2r0KlAVemiB1TyTqgCh5ve",
+            "name": "Zombie",
+            "durationMs": 745653
+          },
+          {
+            "id": "285ZZkwsIPgNCJtYHkxZMK",
+            "name": "Mr. Follow Follow",
+            "durationMs": 777653
+          },
+          {
+            "id": "7iH5vX8JuxRJiw4VUQ4Pzk",
+            "name": "Observation Is No Crime",
+            "durationMs": 805506
+          },
+          {
+            "id": "3GNVlUzXNSQ3Wx9pldn3jD",
+            "name": "Mistake (Live At the Berlin Jazz Festival - 1978)",
+            "durationMs": 886920
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Zombie",
+        "spotifyArtists": "Fela Kuti",
+        "spotifyYear": 1976,
+        "override": true
+      }
+    },
+    {
+      "rymId": "38755",
+      "artist": "Fela Ransome-Kuti and The Africa '70 With Ginger Baker",
+      "title": "Live!",
+      "year": 1971,
+      "rating": 9,
+      "spotify": {
+        "albumId": "3EX4xvWkN4vqnm3Iy1m8nc",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d92f359b35ebfdf70eb5e2ca",
+        "tracks": [
+          {
+            "id": "28TlVEAk5TfgPYa1DFOhXM",
+            "name": "Let's Start - Live",
+            "durationMs": 465280
+          },
+          {
+            "id": "2oWGQeZAQFF3tK17lr0QJl",
+            "name": "Black Man’s Cry - Live",
+            "durationMs": 698360
+          },
+          {
+            "id": "4tfZC4BsnS12KzvQOn844F",
+            "name": "Ye Ye De Smell - Live",
+            "durationMs": 795893
+          },
+          {
+            "id": "01cgqnp7mQfHayt3bDQYqi",
+            "name": "Egbe Mi O (Carry Me) - Live",
+            "durationMs": 761506
+          },
+          {
+            "id": "6gP0pDBOwDtQY30K6mviHA",
+            "name": "Ginger Baker and Tony Allen Drum Solo - Live at the Berlin Jazz Festival 1978",
+            "durationMs": 981426
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Fela With Ginger Baker Live!",
+        "spotifyArtists": "Fela Kuti",
+        "spotifyYear": 1971,
+        "override": true
+      }
+    },
+    {
+      "rymId": "77811",
+      "artist": "Fela & Africa 70",
+      "title": "Kalakuta Show",
+      "year": 1976,
+      "rating": 8,
+      "spotify": {
+        "albumId": "7tNiSgnydOF218EFM0q16m",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732ace389eba5ec7927d7452c6",
+        "tracks": [
+          {
+            "id": "1d4tXV7LVrAXcrJVY9DXDu",
+            "name": "Kalakuta Show",
+            "durationMs": 871600
+          },
+          {
+            "id": "5f1VskwuTya8YmO1MUsfeh",
+            "name": "Don't Make Garan Garan",
+            "durationMs": 964320
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Kalakuta Show",
+        "spotifyArtists": "Fela Kuti, Afrika 70",
+        "spotifyYear": 1976,
+        "override": true
+      }
+    },
+    {
+      "rymId": "77812",
+      "artist": "Fela Anikulapo Kuti and the Afrika 70",
+      "title": "Shuffering and Shmiling",
+      "year": 1978,
+      "rating": 8,
+      "spotify": {
+        "albumId": "0bJQVI1StZKblxr0H3pXqh",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b58f0ac2de3bc9151ae5f15c",
+        "tracks": [
+          {
+            "id": "0pXWxARfQC96TAPXW6otFw",
+            "name": "Shuffering & Shmiling, Pt. 1 & 2",
+            "durationMs": 1293306
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Shuffering & Shmiling",
+        "spotifyArtists": "Fela Kuti",
+        "spotifyYear": 1977,
+        "override": true
+      }
+    },
+    {
+      "rymId": "78346",
+      "artist": "Fela Aníkúlápó Kuti and Afrika 70",
+      "title": "No Agreement",
+      "year": 1977,
+      "rating": 8,
+      "spotify": {
+        "albumId": "3OeUeL4g5OaJ25dAfA39s2",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273988999e1f6ad0048773a15b0",
+        "tracks": [
+          {
+            "id": "5AuKf8HKGy8hR4LSD5thow",
+            "name": "No Agreement",
+            "durationMs": 931600
+          },
+          {
+            "id": "0XQsJnIKSikR3WathEnHvO",
+            "name": "Dog Eat Dog (Instrumental)",
+            "durationMs": 932453
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "No Agreement",
+        "spotifyArtists": "Fela Kuti",
+        "spotifyYear": 1977,
+        "override": true
+      }
+    },
+    {
+      "rymId": "223179",
+      "artist": "Fela Anikulapo Kuti & His Africa '70",
+      "title": "Unknown Soldier",
+      "year": 1979,
+      "rating": 8,
+      "spotify": {
+        "albumId": "6npLFI9LpxNoogp5WgCJ3v",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2736d18aede81be46cafa810100",
+        "tracks": [
+          {
+            "id": "5EZOS5JOeAHv5swKeI6PrU",
+            "name": "Unknown Soldier",
+            "durationMs": 1868213
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Unknown Soldier",
+        "spotifyArtists": "Fela Kuti",
+        "spotifyYear": 1979,
+        "override": true
+      }
+    },
+    {
+      "rymId": "34297",
+      "artist": "Fela and The Africa 70",
+      "title": "Shakara",
+      "year": 1972,
+      "rating": 8,
+      "spotify": {
+        "albumId": "5e3d0MYUMLhio9GYPRZPQQ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a59b1e883ba7d1fff096e44f",
+        "tracks": [
+          {
+            "id": "0dgvBQcfJHrZP43YlIAsvV",
+            "name": "Lady",
+            "durationMs": 828360
+          },
+          {
+            "id": "2OuowXSEugbwKHt78IfBNy",
+            "name": "Shakara (Oloje)",
+            "durationMs": 805733
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Shakara",
+        "spotifyArtists": "Fela Kuti",
+        "spotifyYear": 1972,
+        "override": true
+      }
+    },
+    {
+      "rymId": "3060629",
+      "artist": "Various Artists",
+      "title": "Bankolo Miziki: Les pionniers de la musique congolaise - De Léopoldville à Kinshasa; Anthologie volume 1",
+      "year": 1998,
+      "rating": 10,
+      "spotify": {
+        "albumId": "2xgV3yBMIX0m59XflhtCrO",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730d2caf81ab3db27ecbec7cf5",
+        "tracks": [
+          {
+            "id": "5fjs2re1trJyZhTXR0efcU",
+            "name": "Bokilo Mabe",
+            "durationMs": 216213
+          },
+          {
+            "id": "4uZ4x2Eyg7CSestV6hMTv0",
+            "name": "Nabanzaki",
+            "durationMs": 202733
+          },
+          {
+            "id": "3IAMizckuACs9t4NN7rRxR",
+            "name": "Lingale",
+            "durationMs": 213240
+          },
+          {
+            "id": "4sS4ALjSPkQo9Lbr5tGeU5",
+            "name": "Basi Banso Tapale",
+            "durationMs": 234853
+          },
+          {
+            "id": "7kcGQbFEn0U7htdmaaG9PV",
+            "name": "Bolingo Y'a La Joie",
+            "durationMs": 200186
+          },
+          {
+            "id": "0dlnjubXtbdvGknZgQsuu9",
+            "name": "Tebo",
+            "durationMs": 221386
+          },
+          {
+            "id": "3muGgxMFPcmDDeLxeTv4XE",
+            "name": "Botiaki Tembe",
+            "durationMs": 253213
+          },
+          {
+            "id": "6YeGgLqrZIJqOly2GSMW7N",
+            "name": "Mantare Mwasi Kitoko",
+            "durationMs": 209386
+          },
+          {
+            "id": "3nBGjWJa2qTwVnQbspiKJc",
+            "name": "Dit Moninga",
+            "durationMs": 194093
+          },
+          {
+            "id": "3xGI8Mi6bwhIQTEoqeo2XL",
+            "name": "Pyramide",
+            "durationMs": 206040
+          },
+          {
+            "id": "6qZWezVsXQNWARYis19dnI",
+            "name": "Bolingo Na Biso Na Yo Esila Te",
+            "durationMs": 212200
+          },
+          {
+            "id": "3RNra10FkpUh5lY5GDZtt2",
+            "name": "Ah! Baninga",
+            "durationMs": 233173
+          },
+          {
+            "id": "1TH0dyBSCoFtU9qTRLl4IV",
+            "name": "Liwa Ya Wendo",
+            "durationMs": 264346
+          },
+          {
+            "id": "5uBb6tgRIy4Q5a4iMEbRaA",
+            "name": "Umbanzanga",
+            "durationMs": 153933
+          },
+          {
+            "id": "5qavjfkXvfK2k3ygXqHEwD",
+            "name": "Na Bala Muluba",
+            "durationMs": 142733
+          },
+          {
+            "id": "1byZbqGlkdCG8R7japLoKt",
+            "name": "Baloji Mwana Y'Africa-Jazz",
+            "durationMs": 214413
+          },
+          {
+            "id": "5xPPZqSQQiFMtRvaJW4QkR",
+            "name": "Efeka Madungo",
+            "durationMs": 249173
+          },
+          {
+            "id": "3QU5u8SOLD21JhqAt5CUQj",
+            "name": "Kalala Badi Mwene",
+            "durationMs": 307506
+          },
+          {
+            "id": "3AudO6rpfwq9urA1kgaGRv",
+            "name": "Awala Esika Minene",
+            "durationMs": 222986
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Bankolo Miziki: Anthologie Volume 1",
+        "spotifyArtists": "Les Pionniers De La Musique Congolaise De Leopoldville À Kinshasa",
+        "spotifyYear": 1973,
+        "override": true
+      }
+    },
+    {
+      "rymId": "3060654",
+      "artist": "Various Artists",
+      "title": "Bankolo Miziki: Les pionniers de la musique congolaise - De Léopoldville à Kinshasa; Anthologie volume 2",
+      "year": 1998,
+      "rating": 10,
+      "spotify": {
+        "albumId": "38O9qi6rljXsNPnX8wjJml",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ff6b6fae2038db4aee728b61",
+        "tracks": [
+          {
+            "id": "3L92GKTymBzKOq19Wz5Pxl",
+            "name": "Ata Ndele",
+            "durationMs": 221493
+          },
+          {
+            "id": "7hvYb91K9XEc8ghEJoXdcc",
+            "name": "Yaka Mama",
+            "durationMs": 195960
+          },
+          {
+            "id": "2KsooaNx1gVbPZeIVgIKx1",
+            "name": "Kahagwe",
+            "durationMs": 211360
+          },
+          {
+            "id": "3smDkjXbZXBnetdLWcIRFi",
+            "name": "Mama Aboti Biso",
+            "durationMs": 236386
+          },
+          {
+            "id": "24iR6Z5nZW071OBEkErOvg",
+            "name": "Mwana Ya Mama",
+            "durationMs": 201133
+          },
+          {
+            "id": "45nB678YNbYvbcuiMg7xPi",
+            "name": "Cherie Bondowe",
+            "durationMs": 209066
+          },
+          {
+            "id": "73EQBEAFnGP96oj0vIpqGP",
+            "name": "Wendo Alongwi Kinshasa",
+            "durationMs": 270066
+          },
+          {
+            "id": "15HM2vttTB9n24lNxNPTyM",
+            "name": "Bibi Sultani",
+            "durationMs": 256600
+          },
+          {
+            "id": "7nsoWg07qD00lIGeLPGuVF",
+            "name": "Youyou",
+            "durationMs": 183386
+          },
+          {
+            "id": "5x9k9hSup9JhLuuKppvtk1",
+            "name": "Oleki Olekaka",
+            "durationMs": 223453
+          },
+          {
+            "id": "28zf7cYHwXWPwjxxLVniD8",
+            "name": "Kitambala Moko",
+            "durationMs": 262946
+          },
+          {
+            "id": "4TlV8NBPnB6hZacvbU68xZ",
+            "name": "Kamsoda",
+            "durationMs": 225160
+          },
+          {
+            "id": "1wNMTs9CCzJubxfoiCOITy",
+            "name": "Tokowela Wela",
+            "durationMs": 238533
+          },
+          {
+            "id": "3JNeDwiYRjFIitg4xFox1u",
+            "name": "Tout Le Monde Samedi Soir",
+            "durationMs": 219160
+          },
+          {
+            "id": "1QnqHsnGX4ch0R68tSJb7x",
+            "name": "Lolendo",
+            "durationMs": 188653
+          },
+          {
+            "id": "4wFz2F2iHCbpMIFtEl8rmo",
+            "name": "Mabe Na Yo Moko",
+            "durationMs": 198293
+          },
+          {
+            "id": "65GX1IVfZFpFcaECekPu0E",
+            "name": "Youyou Aleli Veka",
+            "durationMs": 215426
+          },
+          {
+            "id": "2oyt9Ztv2U9mJLVLhfAx2d",
+            "name": "Kenga Mwangandu",
+            "durationMs": 192720
+          },
+          {
+            "id": "5NsavGut8ygSFZpltT7dcZ",
+            "name": "Mama Mulena Wale",
+            "durationMs": 268866
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Bankolo Miziki: Anthologie Volume 2",
+        "spotifyArtists": "Les Pionniers De La Musique Congolaise De Leopoldville À Kinshasa",
+        "spotifyYear": 1973,
+        "override": true
+      }
+    },
+    {
+      "rymId": "404123",
+      "artist": "Geraldo Pino & The Heartbeats",
+      "title": "Heavy Heavy Heavy",
+      "year": 2005,
+      "rating": 9,
+      "spotify": {
+        "albumId": "4G6YPF5Csh4vTigVwfcgQY",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2739cbc12928afb1a7e77ad22d3",
+        "tracks": [
+          {
+            "id": "1kUHYY59MuSw5brKiqSybe",
+            "name": "Heavy Heavy Heavy",
+            "durationMs": 394920
+          },
+          {
+            "id": "2craYXfaMoW7OGXzOYw4Bg",
+            "name": "Let Them Talk",
+            "durationMs": 316066
+          },
+          {
+            "id": "0fDCmSDt9CES3gg8xtaU5z",
+            "name": "Africans Must Unite",
+            "durationMs": 378280
+          },
+          {
+            "id": "2hyyRdPCPQNzb70q7BDgkz",
+            "name": "Shake Hands",
+            "durationMs": 293506
+          },
+          {
+            "id": "4Aywi2UyeOsi2CsZwMXOHG",
+            "name": "Power to the People",
+            "durationMs": 349933
+          },
+          {
+            "id": "3sPHdLfcBW9N9ggeN4qGrL",
+            "name": "Let's Have a Party",
+            "durationMs": 293293
+          },
+          {
+            "id": "0GmYrHQVqI08S7NekdtBBK",
+            "name": "Born to be Free",
+            "durationMs": 397733
+          },
+          {
+            "id": "4Hi5tQMWbMZ5sc3AotRLpo",
+            "name": "Man Pass Man, Iron de Cut Iron",
+            "durationMs": 381960
+          },
+          {
+            "id": "2azUCEHlH6lDaR8JfddUdV",
+            "name": "Right in the Centre",
+            "durationMs": 389573
+          },
+          {
+            "id": "5Y27vnvpqgCasI6vvESiUy",
+            "name": "On The Spot",
+            "durationMs": 320480
+          },
+          {
+            "id": "4vjxOiQGmTIcn5cUwgJAPM",
+            "name": "Black Woman Experience",
+            "durationMs": 334186
+          },
+          {
+            "id": "05tRBw9Bm67oU1Cobek2BY",
+            "name": "Afro Soco Soul Live",
+            "durationMs": 392480
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Heavy Heavy Heavy",
+        "spotifyArtists": "Geraldo Pino",
+        "spotifyYear": 2005,
+        "override": true
+      }
+    },
+    {
+      "rymId": "520591",
+      "artist": "Hugh Masekela",
+      "title": "The Chisa Years 1965-1975 (Rare and Unreleased)",
+      "year": 2006,
+      "rating": 9,
+      "spotify": {
+        "albumId": "3GWyP7C2a9aydvTavoMtgZ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273c6fb63660518206c56de38f0",
+        "tracks": [
+          {
+            "id": "4xclRUqjOM5HMzDZQyRaPo",
+            "name": "Afro Beat Blues",
+            "durationMs": 408106
+          },
+          {
+            "id": "30qQIKaWcWn5U5h724YDDv",
+            "name": "Mahlalela",
+            "durationMs": 268506
+          },
+          {
+            "id": "77LTF7CabC28Mv7ZpJko87",
+            "name": "Amo Sakesa",
+            "durationMs": 250560
+          },
+          {
+            "id": "2ZFywHbfQDiTLJLzk5wj9U",
+            "name": "Joala",
+            "durationMs": 122946
+          },
+          {
+            "id": "2M7nJEwKdKHqtDQLuoxkdV",
+            "name": "U Se Mcani",
+            "durationMs": 213733
+          },
+          {
+            "id": "2ElTWp5ZLzAR2z1xRFCQZ9",
+            "name": "Tepo",
+            "durationMs": 299320
+          },
+          {
+            "id": "4iw3PchnWTNJFaqeEFVsf1",
+            "name": "Za Labalaba",
+            "durationMs": 187160
+          },
+          {
+            "id": "7cXYSW9rUj1o4QmRz4YdG7",
+            "name": "Witch Doctor",
+            "durationMs": 389160
+          },
+          {
+            "id": "13OqXYJ4qWmLyamxWuRwN3",
+            "name": "Melodi (Sounds of Home)",
+            "durationMs": 265866
+          },
+          {
+            "id": "1Zu0knF8zmI24lR8PJuM3U",
+            "name": "Ahvuomo",
+            "durationMs": 386706
+          },
+          {
+            "id": "6gJB4HN6uqUt8yNTjs0qRH",
+            "name": "Aredze",
+            "durationMs": 185360
+          },
+          {
+            "id": "54rXkUYU7OBelBCJHCMLIM",
+            "name": "A Cheeka Laka Laka",
+            "durationMs": 275373
+          },
+          {
+            "id": "2hEc1rplAykZgCWHPbtS5p",
+            "name": "Awe Mfana",
+            "durationMs": 193533
+          },
+          {
+            "id": "2orgz8Wqr9QGJIsPAO6kVm",
+            "name": "Macongo",
+            "durationMs": 199080
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Chisa Years 1965-1975 (Rare and Unreleased)",
+        "spotifyArtists": "Hugh Masekela",
+        "spotifyYear": 2006
+      }
+    },
+    {
+      "rymId": "2608372",
+      "artist": "Marijata",
+      "title": "This Is Marijata",
+      "year": 1976,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5NgqwPu0hiNGTzltEHUTC0",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2738cd2716f223875b1d35604f4",
+        "tracks": [
+          {
+            "id": "6sVm6ik1mXyXlDFexORZpQ",
+            "name": "I Walk Alone",
+            "durationMs": 644440
+          },
+          {
+            "id": "4l8N1IPZW1NpL4RnWbCiAj",
+            "name": "We Live In Peace",
+            "durationMs": 249306
+          },
+          {
+            "id": "4RY7JyzWaluUWKg3zPKOdk",
+            "name": "No Condition Is Permanent",
+            "durationMs": 421173
+          },
+          {
+            "id": "4LKzA80j2rKdecwunV0imM",
+            "name": "Break Through",
+            "durationMs": 299440
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "This Is Marijata",
+        "spotifyArtists": "Marijata",
+        "spotifyYear": 1976
+      }
+    },
+    {
+      "rymId": "174711",
+      "artist": "Youssou N'Dour et le Super Étoile de Dakar",
+      "title": "Vol. 8 : Immigrés / Bitim rew",
+      "year": 1984,
+      "rating": 9,
+      "spotify": {
+        "albumId": "312GhGIX51HcosVKc5aDRM",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2734c2258b2c57cc05971634cc3",
+        "tracks": [
+          {
+            "id": "1EOeoFm4qfCD82mTfq5XyB",
+            "name": "Immigrés / Bitim Rew",
+            "durationMs": 418560
+          },
+          {
+            "id": "3nTB14L6mCB49kT1Y6Ciks",
+            "name": "Pitche Mi",
+            "durationMs": 568659
+          },
+          {
+            "id": "5EyzbkZLkuK4aPVefV2fIw",
+            "name": "Taaw",
+            "durationMs": 711627
+          },
+          {
+            "id": "44NueWw2P0CLVxYuTQFPDw",
+            "name": "Badou",
+            "durationMs": 334576
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Immigrés",
+        "spotifyArtists": "Youssou N'Dour, Etoile De Dakar",
+        "spotifyYear": 1988,
+        "override": true
+      }
+    },
+    {
+      "rymId": "5107888",
+      "artist": "Basa Basa",
+      "title": "Homowo: High Life Music",
+      "year": 1983,
+      "rating": 8,
+      "spotify": {
+        "albumId": "4eK9uta9LmaxMUcBFbTbS2",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2734248e64503f017dd6d40f25f",
+        "tracks": [
+          {
+            "id": "6JlQBrHGU2FTtyqR7xqQMu",
+            "name": "Homowo",
+            "durationMs": 371731
+          },
+          {
+            "id": "4qC466Uih23X0iLaQdYs2e",
+            "name": "Konya",
+            "durationMs": 353792
+          },
+          {
+            "id": "4q1FLr3c8JAtc0lkNsSb5q",
+            "name": "Black Light",
+            "durationMs": 216407
+          },
+          {
+            "id": "6YR0HSclw7HGb0xfVd7k8c",
+            "name": "African Soul Power",
+            "durationMs": 247889
+          },
+          {
+            "id": "7bOQaUqX632wKPeBqU16Yy",
+            "name": "Together We Win",
+            "durationMs": 273103
+          },
+          {
+            "id": "1qHiPcXSx07s8WLOkwiJcs",
+            "name": "Love, Love, Love",
+            "durationMs": 282423
+          },
+          {
+            "id": "3oIHevZErdmZK1VEjNAO3w",
+            "name": "African Soul Power - Instrumental",
+            "durationMs": 299020
+          },
+          {
+            "id": "72m6jDCAzYimOWOHYXndjo",
+            "name": "Shey an Kuri",
+            "durationMs": 269442
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Homowo",
+        "spotifyArtists": "Basa Basa",
+        "spotifyYear": 2018,
+        "override": true
+      }
+    },
+    {
+      "rymId": "2356224",
+      "artist": "T.P. Orchestre Poly-Rythmo de Cotonou - Bénin",
+      "title": "Zoundegnon Bernard 'Papillon' guitariste principal",
+      "year": 1977,
+      "rating": 8,
+      "spotify": {
+        "albumId": "7he4OjtFDrNCNsSQGfrsQJ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b707d5dab8a7bd1d50f227b4",
+        "tracks": [
+          {
+            "id": "7wo8IAh2x3miKwAQ61KlUt",
+            "name": "Cherie Coco",
+            "durationMs": 1017399
+          },
+          {
+            "id": "01RzItzLABu1RTRQ1p5Lcv",
+            "name": "Mille Fois Merci",
+            "durationMs": 977696
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "T.P. Orchestre Poly-Rythmo De Cotonou - Benin Avec Zoundegnon Bernard 'Papillon'",
+        "spotifyArtists": "T. P. Orchestre Poly-Rythmo",
+        "spotifyYear": 1977,
+        "override": true
+      }
+    },
+    {
+      "rymId": "180505",
+      "artist": "Various Artists",
+      "title": "The Indestructible Beat of Soweto",
+      "year": 1986,
+      "rating": 8,
+      "spotify": {
+        "albumId": "1DIr8JMRBnm1cZMYIGKb8t",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ff6e678ce3e1cd423fe4d4fe",
+        "tracks": [
+          {
+            "id": "5quaCcD9hI1RVGWu4kdJOH",
+            "name": "Awungilobolele",
+            "durationMs": 229866
+          },
+          {
+            "id": "1ZMCbg1gA3nXTft3YTowez",
+            "name": "Holotelani",
+            "durationMs": 239306
+          },
+          {
+            "id": "0DHGLbppF7EEKIg7QCDjgW",
+            "name": "Qhude Manikiniki",
+            "durationMs": 233533
+          },
+          {
+            "id": "16waRe4ijQZ0DZkRsOSMOj",
+            "name": "Indoda Yejazi Elimnyama",
+            "durationMs": 235093
+          },
+          {
+            "id": "6n2ENy8WAYgND8rkPCSsmI",
+            "name": "Emthonjeni Womculo",
+            "durationMs": 224533
+          },
+          {
+            "id": "1mInGDZXrpHMlGujJddzCO",
+            "name": "Sobabamba",
+            "durationMs": 219906
+          },
+          {
+            "id": "7j00ryki0oH7UtRc7xkBgV",
+            "name": "Qhwayilahle",
+            "durationMs": 258399
+          },
+          {
+            "id": "2hKeK4u9n8TyLVb07x8mFQ",
+            "name": "Thul'ulalele",
+            "durationMs": 220760
+          },
+          {
+            "id": "61OnrcMF6mKDbhAO6Zq1Ez",
+            "name": "Sini Lindile",
+            "durationMs": 201400
+          },
+          {
+            "id": "59dCBP34RgJb9l4nJO2dkg",
+            "name": "Ngicabange Ngaqeda",
+            "durationMs": 183933
+          },
+          {
+            "id": "2Xz2mUNInIqRRYWWBY3zzj",
+            "name": "Joyce No. 2",
+            "durationMs": 189440
+          },
+          {
+            "id": "3oKXHUuIjXlAzrhmdIibUn",
+            "name": "Nansi Imali",
+            "durationMs": 314826
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Indestructible Beat of Soweto - Volume One",
+        "spotifyArtists": "Various Artists",
+        "spotifyYear": 1985,
+        "override": true
+      }
+    },
+    {
+      "rymId": "305721",
+      "artist": "Various Artists",
+      "title": "Love's a Real Thing: The Funky Fuzzy Sounds of West Africa",
+      "year": 2005,
+      "rating": 8,
+      "spotify": null,
+      "match": {
+        "confidence": "none",
+        "spotifyName": "",
+        "spotifyArtists": "",
+        "spotifyYear": null,
+        "override": true
+      }
+    },
+    {
+      "rymId": "8920167",
+      "artist": "Various Artists",
+      "title": "Gumba Fire: Bubblegum Soul & Synth-Boogie in 1980s South Africa",
+      "year": 2018,
+      "rating": 8,
+      "spotify": {
+        "albumId": "4xEiGB1Uvp96Q6boHCkCt7",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730c3558a424b0a1597732d9fa",
+        "tracks": [
+          {
+            "id": "4afvacnlbGoSQVTadH5wIB",
+            "name": "My Brother",
+            "durationMs": 286000
+          },
+          {
+            "id": "6UUyoUHZlT8aa94HtXdw0B",
+            "name": "Mind Games",
+            "durationMs": 335000
+          },
+          {
+            "id": "4lmrYQm7tH4tmImFOpkpqi",
+            "name": "Hlala Nami",
+            "durationMs": 254000
+          },
+          {
+            "id": "06zHOgevWq4kBbKNeenx3Z",
+            "name": "Wayawaya",
+            "durationMs": 331000
+          },
+          {
+            "id": "2Fr85y4ivu4davuLMwriZA",
+            "name": "Gumba Fire (Madlakadlaka)",
+            "durationMs": 342000
+          },
+          {
+            "id": "5IwVXnkJxijVlsaqEMFOfZ",
+            "name": "Heartbeat",
+            "durationMs": 292000
+          },
+          {
+            "id": "15ZJQvoTD9nbT8NaApHQYe",
+            "name": "Do You Trust Amajita?",
+            "durationMs": 230000
+          },
+          {
+            "id": "6gHdSb7U8PA0mTNYle2KMX",
+            "name": "Selallane",
+            "durationMs": 213000
+          },
+          {
+            "id": "78mE0C5yu1O1EOA9W4qLJ7",
+            "name": "Picnicing",
+            "durationMs": 243000
+          },
+          {
+            "id": "4FacITgFZe8BMV3dWmnaTj",
+            "name": "Hayi Ngodlame",
+            "durationMs": 281000
+          },
+          {
+            "id": "1YsG1mrYAdTvIyLjEXJggo",
+            "name": "Gloria",
+            "durationMs": 302000
+          },
+          {
+            "id": "7tXlbv1vi2VtW6RWOXaWE9",
+            "name": "Africa",
+            "durationMs": 302000
+          },
+          {
+            "id": "2n7ok12NoLHraVN6hIDwPP",
+            "name": "She's Impossible",
+            "durationMs": 358000
+          },
+          {
+            "id": "0nbotH6m67s4KPKJYdCHyk",
+            "name": "Listen to Me",
+            "durationMs": 473000
+          },
+          {
+            "id": "4jPgjJr6RUEx9oe47RghZm",
+            "name": "Arrow Dub",
+            "durationMs": 290000
+          },
+          {
+            "id": "0aP3EzY6XEtIcnrp2e8tsD",
+            "name": "Wola Wola",
+            "durationMs": 550000
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Gumba Fire: Bubblegum Soul & Synth Boogie in 1980s South Africa",
+        "spotifyArtists": "Various Artists",
+        "spotifyYear": 2018
+      }
+    },
+    {
+      "rymId": "11136",
+      "artist": "King Sunny Adé and His African Beats",
+      "title": "Juju Music",
+      "year": 1982,
+      "rating": 7,
+      "spotify": {
+        "albumId": "4BsMW0J2DUx9R9fP5TAEYs",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2739bd1b7a7f605aabeb1aeaf8a",
+        "tracks": [
+          {
+            "id": "7LLyEy0GVYBpziR5O06ZZv",
+            "name": "Ja Funmi",
+            "durationMs": 428800
+          },
+          {
+            "id": "01yqvbTcS8yVeeIgZZDecW",
+            "name": "Eje Nlo Gba Ara Mi",
+            "durationMs": 434200
+          },
+          {
+            "id": "7eQE0zygEXuwMhS2q0IZax",
+            "name": "Mo Beru Agba",
+            "durationMs": 207266
+          },
+          {
+            "id": "6IqKmZd43Xw7jHCekXY1bO",
+            "name": "Sunny Ti De Ariya",
+            "durationMs": 226200
+          },
+          {
+            "id": "47ZKAaOco4DebMlGRzcvUn",
+            "name": "Ma Jaiye Oni",
+            "durationMs": 307866
+          },
+          {
+            "id": "0chuxuOcL6oKVcroFT4mtR",
+            "name": "365 Is My Number/ The Message",
+            "durationMs": 496733
+          },
+          {
+            "id": "0bZi7uJsYdIXOtzZAeO6pr",
+            "name": "Samba/ E Falaba Lewe",
+            "durationMs": 487333
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Juju Music",
+        "spotifyArtists": "King Sunny Ade",
+        "spotifyYear": 1982,
+        "override": true
+      }
+    },
+    {
+      "rymId": "3807885",
+      "artist": "Francis Bebey",
+      "title": "African Electronic Music 1975-1982",
+      "year": 2011,
+      "rating": 9,
+      "spotify": {
+        "albumId": "72ouHPkp2tWBSxvH2UguY4",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27386bcd5fb6ff3389902137f7a",
+        "tracks": [
+          {
+            "id": "1mctkqM9kRWJBGTlq8wuwc",
+            "name": "New Track",
+            "durationMs": 497760
+          },
+          {
+            "id": "2az2OYVdAsC8AcRSashjJR",
+            "name": "La Condition Masculine",
+            "durationMs": 204413
+          },
+          {
+            "id": "3FaB31Lzt35E3yS6PuHLGb",
+            "name": "Wuma Te",
+            "durationMs": 328160
+          },
+          {
+            "id": "3TbwR7Dp8lOtFmgyUaU0dv",
+            "name": "Divorce Pygmee",
+            "durationMs": 327493
+          },
+          {
+            "id": "6dDn1ZzZapocUmRRTqoseh",
+            "name": "Fleur Tropical",
+            "durationMs": 233080
+          },
+          {
+            "id": "0L88daIoFoXR0mkzJ2QPog",
+            "name": "Tiers Monde",
+            "durationMs": 206053
+          },
+          {
+            "id": "1zi7qIXh3OrDn8S4ElKfcu",
+            "name": "Agatha",
+            "durationMs": 426306
+          },
+          {
+            "id": "7rFCyb12ADnFIfTtO8sfqi",
+            "name": "Pygmy Love Song",
+            "durationMs": 229880
+          },
+          {
+            "id": "622tPRVjCzPJcALSw4eaeK",
+            "name": "Catching Up",
+            "durationMs": 157040
+          },
+          {
+            "id": "3iF3Mbp7Uxm2CBc34D9r86",
+            "name": "Sahel",
+            "durationMs": 307640
+          },
+          {
+            "id": "2feiLqJdb0dqjTJouX7N04",
+            "name": "The Coffee Cola Song",
+            "durationMs": 305466
+          },
+          {
+            "id": "3UL63I3SerF8NmCbllT5sZ",
+            "name": "Super Jingle",
+            "durationMs": 558106
+          },
+          {
+            "id": "0AYxYQt9fMyMrzYcXc2gjm",
+            "name": "Savanah Georgia",
+            "durationMs": 211506
+          },
+          {
+            "id": "33cw4aBRoyM3SKQoZMxjSj",
+            "name": "Il N'y a Pas De Crocodiles a Cocody",
+            "durationMs": 158720
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "African Electronic Music 1975-1982",
+        "spotifyArtists": "Francis Bebey",
+        "spotifyYear": 2012,
+        "override": true
+      }
+    }
+  ]
+}
