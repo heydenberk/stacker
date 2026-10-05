@@ -245,6 +245,90 @@
         "spotifyArtists": "My Morning Jacket",
         "spotifyYear": 2003
       }
+    },
+    {
+      "rymId": "2691",
+      "artist": "Whiskeytown",
+      "title": "Strangers Almanac",
+      "year": 1997,
+      "rating": 7,
+      "spotify": {
+        "albumId": "29gnqAHOpVJJL3h8wPrlMl",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273414ff484eaa3bd81333a4230",
+        "tracks": [
+          {
+            "id": "6dTR22OJEi59lmvFqcu1lr",
+            "name": "Inn Town",
+            "durationMs": 351800
+          },
+          {
+            "id": "5KCzU5ujrY4hZZlImNu8Oq",
+            "name": "Excuse Me While I Break My Own Heart Tonight - Strangers Almanac Album Version",
+            "durationMs": 194866
+          },
+          {
+            "id": "4qytSNt1oMumC3AvS361kj",
+            "name": "Yesterday's News",
+            "durationMs": 169626
+          },
+          {
+            "id": "3aFMz2anc9vurZw6bPunI6",
+            "name": "16 Days",
+            "durationMs": 234666
+          },
+          {
+            "id": "3OR4qUpI1RqnAImGemtMFl",
+            "name": "Everything I Do",
+            "durationMs": 271840
+          },
+          {
+            "id": "4YaVGxx3WiwrBywo6K4aAI",
+            "name": "Houses On The Hill",
+            "durationMs": 158293
+          },
+          {
+            "id": "0RijH4XJUgiJ6dC2NMkSfb",
+            "name": "Turn Around",
+            "durationMs": 316866
+          },
+          {
+            "id": "6otMdQUdrKjxV5PtVTd4vq",
+            "name": "Dancing With The Women At The Bar",
+            "durationMs": 278506
+          },
+          {
+            "id": "2OoBiBqsBcfcyE95GFINpw",
+            "name": "Waiting To Derail",
+            "durationMs": 234533
+          },
+          {
+            "id": "1ZxWa2SisWzEnypi2oChAQ",
+            "name": "Avenues",
+            "durationMs": 151266
+          },
+          {
+            "id": "3wdFRfipMRzal7D1t4sg6F",
+            "name": "Losering",
+            "durationMs": 240933
+          },
+          {
+            "id": "32hVBFdWQUJrWr5OKSYq35",
+            "name": "Somebody Remembers The Rose",
+            "durationMs": 150233
+          },
+          {
+            "id": "09sKwdOltLREKq6e72b9rv",
+            "name": "Not Home Anymore",
+            "durationMs": 354200
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Strangers Almanac",
+        "spotifyArtists": "Whiskeytown",
+        "spotifyYear": 1997
+      }
     }
   ]
 }
