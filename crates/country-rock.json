@@ -1,0 +1,250 @@
+{
+  "id": "country-rock",
+  "name": "Country Rock",
+  "mood": "cosmic American music — pedal steel and reverb",
+  "createdAt": "2026-10-05",
+  "records": [
+    {
+      "rymId": "16241",
+      "artist": "Gram Parsons",
+      "title": "GP",
+      "year": 1973,
+      "rating": 10,
+      "spotify": {
+        "albumId": "1PtpuplCBaViRQsJFAdWRf",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735bd94a7c1d651fe144dc2872",
+        "tracks": [
+          {
+            "id": "6p7g9kd8ZgDyk05xJgxB8C",
+            "name": "Still Feeling Blue - 2002 Remaster",
+            "durationMs": 163440
+          },
+          {
+            "id": "3JsEYcCdBXiDUsuDqcZpaa",
+            "name": "We'll Sweep out the Ashes in the Morning - 2007 Remaster",
+            "durationMs": 194933
+          },
+          {
+            "id": "044sG5pgwwUSXBekDecuZH",
+            "name": "A Song for You - 2002 Remaster",
+            "durationMs": 300026
+          },
+          {
+            "id": "2PFNJwPprlAGmYyuJeoX0x",
+            "name": "Streets of Baltimore - 2007 Remaster",
+            "durationMs": 175640
+          },
+          {
+            "id": "7DK9shWJm361lm1ks32axt",
+            "name": "She - 2002 Remaster",
+            "durationMs": 301266
+          },
+          {
+            "id": "5Cowo0HkGFfoeCRrc09jc0",
+            "name": "That's All It Took - 2002 Remaster",
+            "durationMs": 181373
+          },
+          {
+            "id": "6MINGkNkD2J4si1J09DJ6j",
+            "name": "The New Soft Shoe - 2006 Remaster",
+            "durationMs": 235866
+          },
+          {
+            "id": "3TIMSziHVPWUoRhSutgRnV",
+            "name": "Kiss the Children - 2002 Remaster",
+            "durationMs": 180453
+          },
+          {
+            "id": "1aACqF2tnGA9PTQysMSqRT",
+            "name": "Cry One More Time - 2002 Remaster",
+            "durationMs": 221266
+          },
+          {
+            "id": "5dKAAtvcfle4gHqDvvJWkW",
+            "name": "How Much I've Lied - 2002 Remaster",
+            "durationMs": 149760
+          },
+          {
+            "id": "1pO336x9dmdiVMhsFDhWIh",
+            "name": "Big Mouth Blues - Remastered Version",
+            "durationMs": 238120
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "GP",
+        "spotifyArtists": "Gram Parsons",
+        "spotifyYear": 1973
+      }
+    },
+    {
+      "rymId": "12145",
+      "artist": "My Morning Jacket",
+      "title": "At Dawn",
+      "year": 2001,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6rBoR8YN4VvCfCSadNqdiX",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2734c8396d385dfe8db789d855c",
+        "tracks": [
+          {
+            "id": "2x2rX58gk1MrJrjStZooju",
+            "name": "At Dawn",
+            "durationMs": 229000
+          },
+          {
+            "id": "3WtrzP2ExYOdNpcEPxt6Nn",
+            "name": "Lowdown",
+            "durationMs": 233080
+          },
+          {
+            "id": "4hInqJexDaX8mnQPvWAClG",
+            "name": "The Way That He Sings",
+            "durationMs": 335520
+          },
+          {
+            "id": "0GqiJh3TwkIadBmMkj9Yyf",
+            "name": "Death Is My Sleezy Pay",
+            "durationMs": 328000
+          },
+          {
+            "id": "7a9RujPOPueBZejeoQhUxQ",
+            "name": "Hopefully",
+            "durationMs": 355626
+          },
+          {
+            "id": "0S9VaY7rUwpk5VVF4vxy3q",
+            "name": "Bermuda Highway",
+            "durationMs": 199320
+          },
+          {
+            "id": "0UGNPOdMHitOATjq6k84c9",
+            "name": "Honest Man",
+            "durationMs": 466826
+          },
+          {
+            "id": "32le5VSoeqPmuVYZGE6b6a",
+            "name": "Xmas Curtain",
+            "durationMs": 288986
+          },
+          {
+            "id": "2m8afKige22rOyywNKAbGs",
+            "name": "Just Because I Do",
+            "durationMs": 175413
+          },
+          {
+            "id": "6QAXjz02jHL2xQ63QxHaR9",
+            "name": "If It Smashes Down",
+            "durationMs": 328173
+          },
+          {
+            "id": "4pGOEyu60fm8YHeak5Tq9m",
+            "name": "I Needed It Most",
+            "durationMs": 396440
+          },
+          {
+            "id": "2Hyd1zEIJZ1LUXw4M1V8Wh",
+            "name": "Phone Went West",
+            "durationMs": 425320
+          },
+          {
+            "id": "1g2BE9Ngblpr0gmADZKNAi",
+            "name": "Strangulation",
+            "durationMs": 488173
+          },
+          {
+            "id": "2j6rYk1SvLdmJP5g0fLi9B",
+            "name": "Untitled bonus track",
+            "durationMs": 188293
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "At Dawn",
+        "spotifyArtists": "My Morning Jacket",
+        "spotifyYear": 2001
+      }
+    },
+    {
+      "rymId": "80752",
+      "artist": "My Morning Jacket",
+      "title": "It Still Moves",
+      "year": 2003,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5vCqxfNSqatehjPustNq4s",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273dd412c4246b0c9c14203459f",
+        "tracks": [
+          {
+            "id": "3THr3AhKxES4VcRNwbPV9M",
+            "name": "Mahgeetah",
+            "durationMs": 356666
+          },
+          {
+            "id": "4CB7YgUS3x8GwEgiaF0Q4i",
+            "name": "Dancefloors",
+            "durationMs": 338560
+          },
+          {
+            "id": "3kQDykkw9HVowlm3HxTcuR",
+            "name": "Golden",
+            "durationMs": 279240
+          },
+          {
+            "id": "5H9rs7pZJV89iemGiUspmP",
+            "name": "Masterplan",
+            "durationMs": 305093
+          },
+          {
+            "id": "5boh3WTOJ1aOF6uUEF4HPh",
+            "name": "One Big Holiday",
+            "durationMs": 321373
+          },
+          {
+            "id": "7xnw1SnZPWrft9I1oTHd91",
+            "name": "I Will Sing You Songs",
+            "durationMs": 558626
+          },
+          {
+            "id": "6SrmqsqFhHcmBxZgJyk2A9",
+            "name": "Easy Morning Rebel",
+            "durationMs": 309706
+          },
+          {
+            "id": "4W3xjrSfa9tgIg68yF6obP",
+            "name": "Run Thru",
+            "durationMs": 345626
+          },
+          {
+            "id": "4wAzCAmoDwh6iYvPNNHIdO",
+            "name": "Rollin' Back",
+            "durationMs": 470840
+          },
+          {
+            "id": "6Kbgb7GcNdaGLKeSGjUTnI",
+            "name": "Just One Thing",
+            "durationMs": 193800
+          },
+          {
+            "id": "5GDWlY3ENoGJesbVxsEyjy",
+            "name": "Steam Engine",
+            "durationMs": 446226
+          },
+          {
+            "id": "0MHyZUyapNeO2qU2xTmdoO",
+            "name": "One In the Same",
+            "durationMs": 383200
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "It Still Moves",
+        "spotifyArtists": "My Morning Jacket",
+        "spotifyYear": 2003
+      }
+    }
+  ]
+}
