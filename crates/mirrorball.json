@@ -1,0 +1,1679 @@
+{
+  "id": "mirrorball",
+  "name": "Mirrorball",
+  "mood": "glossy synth-pop and disco-pop with big hooks: Magdalena Bay to Jessie Ware",
+  "createdAt": "2026-10-07",
+  "records": [
+    {
+      "rymId": "15948236",
+      "artist": "Magdalena Bay",
+      "title": "Imaginal Disk",
+      "year": 2024,
+      "rating": 9,
+      "spotify": {
+        "albumId": "2Htq1sHgmdGffojIBM6Q1s",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a3390485ba30a0a99feaa0dd",
+        "tracks": [
+          {
+            "id": "2jewOf9C4YI8GNuAPMZ6hy",
+            "name": "She Looked Like Me!",
+            "durationMs": 193186
+          },
+          {
+            "id": "1z8jzS7huL1Cy1YLFxUb3X",
+            "name": "Killing Time",
+            "durationMs": 233546
+          },
+          {
+            "id": "5Kmj3f9qSVmQMcAqmooE6r",
+            "name": "True Blue Interlude",
+            "durationMs": 109226
+          },
+          {
+            "id": "4O45RxFmWr88UfFlNtsXUy",
+            "name": "Image",
+            "durationMs": 212866
+          },
+          {
+            "id": "7DscWF0Zc73WJM6oByq17m",
+            "name": "Death & Romance",
+            "durationMs": 314733
+          },
+          {
+            "id": "05eIVOg5c8H9Nq5rbVaeoQ",
+            "name": "Fear, Sex",
+            "durationMs": 152053
+          },
+          {
+            "id": "51sGfEWVD2FPICqPrjMuTG",
+            "name": "Vampire in the Corner",
+            "durationMs": 202440
+          },
+          {
+            "id": "24UCrwqWBR3bw3EIgjzXTt",
+            "name": "Watching T.V.",
+            "durationMs": 245413
+          },
+          {
+            "id": "1eELhtgGDNxIjKUFFeyIfO",
+            "name": "Tunnel Vision",
+            "durationMs": 305520
+          },
+          {
+            "id": "5tojKRFiMxJowJlCIODDNq",
+            "name": "Love Is Everywhere",
+            "durationMs": 194413
+          },
+          {
+            "id": "4gX335ixsKIqE7Gpigzf1d",
+            "name": "Feeling DiskInserted?",
+            "durationMs": 58600
+          },
+          {
+            "id": "0NWgLrKVXvg461x0PXq5AC",
+            "name": "That's My Floor",
+            "durationMs": 209800
+          },
+          {
+            "id": "2RhHct6gGXSrZ1zHjovhRq",
+            "name": "Cry for Me",
+            "durationMs": 307266
+          },
+          {
+            "id": "4znSsVaknTY7CUQCuTUC32",
+            "name": "Angel on a Satellite",
+            "durationMs": 243426
+          },
+          {
+            "id": "3k0nTeiMUDMXMhB2kvbK8a",
+            "name": "The Ballad of Matt & Mica",
+            "durationMs": 240000
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Imaginal Disk",
+        "spotifyArtists": "Magdalena Bay",
+        "spotifyYear": 2024
+      }
+    },
+    {
+      "rymId": "13311674",
+      "artist": "Magdalena Bay",
+      "title": "Mercurial World",
+      "year": 2021,
+      "rating": 9,
+      "spotify": {
+        "albumId": "1ERrUvG31thFCxdwWUoJrY",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730ecbdac77e72dc16719a3e89",
+        "tracks": [
+          {
+            "id": "6WMxH9twwIFfH3OVfs40lA",
+            "name": "The End",
+            "durationMs": 31434
+          },
+          {
+            "id": "30YK7cZlruEW0Clyxwk2nH",
+            "name": "Mercurial World",
+            "durationMs": 181173
+          },
+          {
+            "id": "3WkEKyrkEtbqN6mxZQi1dn",
+            "name": "Dawning of the Season",
+            "durationMs": 204363
+          },
+          {
+            "id": "3tgHGoK5ItQv2q2yqggxlb",
+            "name": "Secrets (Your Fire)",
+            "durationMs": 245897
+          },
+          {
+            "id": "0tP8FKhJsar5y4JcOH4Rjp",
+            "name": "You Lose!",
+            "durationMs": 204391
+          },
+          {
+            "id": "69cmXfRLgyN1t6USZDl7Gy",
+            "name": "Something for 2",
+            "durationMs": 216347
+          },
+          {
+            "id": "1ZkfNNoRrgt69wTjcmJZE9",
+            "name": "Chaeri",
+            "durationMs": 257130
+          },
+          {
+            "id": "79u2tjJXZwlIhOUEnjC5YZ",
+            "name": "Halfway",
+            "durationMs": 118304
+          },
+          {
+            "id": "0vMlVGJuREJk3c7vvObE5Z",
+            "name": "Hysterical Us",
+            "durationMs": 235565
+          },
+          {
+            "id": "5XMJHuIuP9L8j2NEiEWRla",
+            "name": "Prophecy",
+            "durationMs": 214956
+          },
+          {
+            "id": "51OeGmOdQjsNJkzMtpNbFo",
+            "name": "Follow The Leader",
+            "durationMs": 184434
+          },
+          {
+            "id": "3XdjmYHdNZkuN6FML8sTjH",
+            "name": "Domino",
+            "durationMs": 222521
+          },
+          {
+            "id": "07ZJYwSX32GOYOk3tybj2T",
+            "name": "Dreamcatching",
+            "durationMs": 207391
+          },
+          {
+            "id": "5xoMRan7YOKvYL6vueYugk",
+            "name": "The Beginning",
+            "durationMs": 241304
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Mercurial World",
+        "spotifyArtists": "Magdalena Bay",
+        "spotifyYear": 2021
+      }
+    },
+    {
+      "rymId": "11181034",
+      "artist": "Jessie Ware",
+      "title": "What's Your Pleasure?",
+      "year": 2020,
+      "rating": 9,
+      "spotify": {
+        "albumId": "1CTm3ARqDETSm7GfvNYNJp",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27315a8ce875e83f1134d225aab",
+        "tracks": [
+          {
+            "id": "0EtcGmf2mVZbHWq2ZGP3t7",
+            "name": "Spotlight",
+            "durationMs": 331933
+          },
+          {
+            "id": "2ZcwbSYqc8RfPGMMXTIdb0",
+            "name": "What’s Your Pleasure?",
+            "durationMs": 278026
+          },
+          {
+            "id": "55pv69Q4Iwbf2zvrRhE0A2",
+            "name": "Ooh La La",
+            "durationMs": 228213
+          },
+          {
+            "id": "7KXYD0NGzDgZ3J0fQ72SGZ",
+            "name": "Soul Control",
+            "durationMs": 239280
+          },
+          {
+            "id": "6rlQYRWG6ZN5X89LA0zBE7",
+            "name": "Save A Kiss",
+            "durationMs": 242266
+          },
+          {
+            "id": "1TZpVXWfeFsnoTz6idYnkW",
+            "name": "Adore You",
+            "durationMs": 226373
+          },
+          {
+            "id": "2gxHL3jWAPMcXO7glNsMw7",
+            "name": "In Your Eyes",
+            "durationMs": 298453
+          },
+          {
+            "id": "25dvZoiLBhDrjbTxrTXPRn",
+            "name": "Step Into My Life",
+            "durationMs": 217133
+          },
+          {
+            "id": "6TOtXc4baTpVCQE7rwbgLR",
+            "name": "Read My Lips",
+            "durationMs": 243533
+          },
+          {
+            "id": "5CZ53WFltsPPyLmx34QJwh",
+            "name": "Mirage (Don’t Stop)",
+            "durationMs": 287253
+          },
+          {
+            "id": "4PXinTcjZIaky3sDwBUXIc",
+            "name": "The Kill",
+            "durationMs": 277693
+          },
+          {
+            "id": "1yELCmfuqESOtVx27fwVfB",
+            "name": "Remember Where You Are",
+            "durationMs": 334546
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "What's Your Pleasure?",
+        "spotifyArtists": "Jessie Ware",
+        "spotifyYear": 2020
+      }
+    },
+    {
+      "rymId": "15119226",
+      "artist": "Jessie Ware",
+      "title": "That! Feels Good!",
+      "year": 2023,
+      "rating": 9,
+      "spotify": {
+        "albumId": "17g3sAeWfpHSJlqMHuRAr6",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f3a0088f5fc645693815c8ef",
+        "tracks": [
+          {
+            "id": "1XaHF28nrXBbyitGIGSdna",
+            "name": "That! Feels Good!",
+            "durationMs": 262266
+          },
+          {
+            "id": "7axM6HbfUTu3dXEIWOYcH1",
+            "name": "Free Yourself",
+            "durationMs": 234080
+          },
+          {
+            "id": "5EAbUR2kkfDOCWEcWcb7YG",
+            "name": "Pearls",
+            "durationMs": 243106
+          },
+          {
+            "id": "40bgBzGrYBURVjiQ4itEkh",
+            "name": "Hello Love",
+            "durationMs": 282666
+          },
+          {
+            "id": "7pMJ455NDmDtnAxSRniJt2",
+            "name": "Begin Again",
+            "durationMs": 324333
+          },
+          {
+            "id": "1pqL3INds2lA06buKnP2pL",
+            "name": "Beautiful People",
+            "durationMs": 215666
+          },
+          {
+            "id": "2WMlWvN0y7xoOEtftxdHvz",
+            "name": "Freak Me Now",
+            "durationMs": 208280
+          },
+          {
+            "id": "7dtZtWOLsZiKoJ8Tt9vZXq",
+            "name": "Shake The Bottle",
+            "durationMs": 203880
+          },
+          {
+            "id": "3cWjHfVXXKX7cNeClR1T6a",
+            "name": "Lightning",
+            "durationMs": 190226
+          },
+          {
+            "id": "3W5qhLgcyeudivORDL3mFe",
+            "name": "These Lips",
+            "durationMs": 261986
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "That! Feels Good!",
+        "spotifyArtists": "Jessie Ware",
+        "spotifyYear": 2023
+      }
+    },
+    {
+      "rymId": "15389255",
+      "artist": "Chappell Roan",
+      "title": "The Rise and Fall of a Midwest Princess",
+      "year": 2023,
+      "rating": 10,
+      "spotify": {
+        "albumId": "0XKconI47eiBP6qPYHsx9f",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a21d22ecf823e1c90aa22d1f",
+        "tracks": [
+          {
+            "id": "2xSEQ2Rvt2DRMDWAkYVPIN",
+            "name": "Femininomenon",
+            "durationMs": 219710
+          },
+          {
+            "id": "1PwsO9T862TqEyq4ZiuTME",
+            "name": "Red Wine Supernova",
+            "durationMs": 192720
+          },
+          {
+            "id": "3iPES3R1oHZjSu8CnG8kG2",
+            "name": "After Midnight",
+            "durationMs": 204857
+          },
+          {
+            "id": "5BN121xq4XIwWnZSUCQpxg",
+            "name": "Coffee",
+            "durationMs": 205520
+          },
+          {
+            "id": "7ATcmbsW8f8VcCcMwSPLuo",
+            "name": "Casual",
+            "durationMs": 232796
+          },
+          {
+            "id": "4OLiPTQPgksvrf7eJTtYA3",
+            "name": "Super Graphic Ultra Modern Girl",
+            "durationMs": 183888
+          },
+          {
+            "id": "3j6CeoBBlm40Msn1JE1SPD",
+            "name": "HOT TO GO!",
+            "durationMs": 184841
+          },
+          {
+            "id": "3bFC4mJkgF9HvTU1mncW7x",
+            "name": "My Kink Is Karma",
+            "durationMs": 222578
+          },
+          {
+            "id": "2Pspo5BWPcTnMHMstLFRHV",
+            "name": "Picture You",
+            "durationMs": 187130
+          },
+          {
+            "id": "5nMuwcyQ0rlDjFQ4X8tltL",
+            "name": "Kaleidoscope",
+            "durationMs": 222650
+          },
+          {
+            "id": "6393yGahSJ9slVdOwSxOVR",
+            "name": "Pink Pony Club",
+            "durationMs": 258034
+          },
+          {
+            "id": "3y4W93JOKprkNgdnTaDvTF",
+            "name": "Naked In Manhattan",
+            "durationMs": 211057
+          },
+          {
+            "id": "2dJ0meBZeGXqCovFOA1y4S",
+            "name": "California",
+            "durationMs": 198089
+          },
+          {
+            "id": "3zAHZVFXfbxPTZ792VFc7K",
+            "name": "Guilty Pleasure",
+            "durationMs": 224583
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Rise and Fall of a Midwest Princess",
+        "spotifyArtists": "Chappell Roan",
+        "spotifyYear": 2023
+      }
+    },
+    {
+      "rymId": "6380121",
+      "artist": "Carly Rae Jepsen",
+      "title": "E·MO·TION",
+      "year": 2015,
+      "rating": 8,
+      "spotify": {
+        "albumId": "0tc6zo8FGuGegfZIicLEwV",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273554f127136aa7945ce442617",
+        "tracks": [
+          {
+            "id": "0Jirkb7LGNWyVhKOsKFdZ2",
+            "name": "Run Away With Me",
+            "durationMs": 251320
+          },
+          {
+            "id": "5ucGbZG1Eg3358FICjMVur",
+            "name": "Emotion",
+            "durationMs": 197346
+          },
+          {
+            "id": "6ss2vUwrV64xAVE4fXZMIh",
+            "name": "I Really Like You",
+            "durationMs": 204773
+          },
+          {
+            "id": "4V2qQZUW2Hcs4zFKjKafs2",
+            "name": "Gimmie Love",
+            "durationMs": 202226
+          },
+          {
+            "id": "4PijdRV622NbKXowFC5tdS",
+            "name": "All That",
+            "durationMs": 276653
+          },
+          {
+            "id": "6EZLcNpHEMWjVm7tfU90em",
+            "name": "Boy Problems",
+            "durationMs": 222280
+          },
+          {
+            "id": "2J8jaVl5KkWW9wVa7CC3Gi",
+            "name": "Making The Most Of The Night",
+            "durationMs": 238506
+          },
+          {
+            "id": "5DerNWKZt27S4dD6jjgg92",
+            "name": "Your Type",
+            "durationMs": 199720
+          },
+          {
+            "id": "7mc4liEp2BJl9yj5qYUMdc",
+            "name": "Let’s Get Lost",
+            "durationMs": 193493
+          },
+          {
+            "id": "7DY2hdo5qsl2400Wu8ZGnO",
+            "name": "LA Hallucinations",
+            "durationMs": 184613
+          },
+          {
+            "id": "2udKAiJYivJI12mrUGGDpA",
+            "name": "Warm Blood",
+            "durationMs": 253066
+          },
+          {
+            "id": "5gwDxtCoBbc6nE8IePV9yq",
+            "name": "When I Needed You",
+            "durationMs": 220146
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Emotion",
+        "spotifyArtists": "Carly Rae Jepsen",
+        "spotifyYear": 2015,
+        "override": true
+      }
+    },
+    {
+      "rymId": "3129778",
+      "artist": "Robyn",
+      "title": "Body Talk",
+      "year": 2010,
+      "rating": 8,
+      "spotify": {
+        "albumId": "0Rzg7fqyWE39G6wKipxrns",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b4375effb23372cc8cff5045",
+        "tracks": [
+          {
+            "id": "7g13jf3zqlP5S68Voo5v9m",
+            "name": "Dancing On My Own - Radio Edit",
+            "durationMs": 278080
+          },
+          {
+            "id": "4E2dSYVxXN0Bk6aihDrim3",
+            "name": "Fembot",
+            "durationMs": 214306
+          },
+          {
+            "id": "3qRaoIDr9c3DKofZoAiW9L",
+            "name": "Don't Fucking Tell Me What To Do",
+            "durationMs": 249933
+          },
+          {
+            "id": "4CZ8nFoCsNNXuaX0qBm8LX",
+            "name": "Indestructible",
+            "durationMs": 220800
+          },
+          {
+            "id": "0wfa517BvgllE2ZDgReFDJ",
+            "name": "Time Machine",
+            "durationMs": 214533
+          },
+          {
+            "id": "7gKuzzHBlG6iPcuuWN1K69",
+            "name": "Love Kills",
+            "durationMs": 268386
+          },
+          {
+            "id": "6rW8q1p2GCjGMRAlnxBeo7",
+            "name": "Hang With Me",
+            "durationMs": 259506
+          },
+          {
+            "id": "2sCoROOlNQyFpRQEe6A5lv",
+            "name": "Call Your Girlfriend",
+            "durationMs": 227346
+          },
+          {
+            "id": "2AHLCg4s5nPJgqHEenlIFK",
+            "name": "None Of Dem",
+            "durationMs": 311920
+          },
+          {
+            "id": "2kbJztp99DKdO97BcV0D9m",
+            "name": "We Dance To The Beat",
+            "durationMs": 266333
+          },
+          {
+            "id": "1abbuD7fU8Ltd51PKLcdD3",
+            "name": "U Should Know Better",
+            "durationMs": 241080
+          },
+          {
+            "id": "5FzXx6EynKF1rVZYeKLHRp",
+            "name": "Dancehall Queen",
+            "durationMs": 217586
+          },
+          {
+            "id": "1yOMQyIfe8ZG7Tm4ToZFTS",
+            "name": "Get Myself Together",
+            "durationMs": 220800
+          },
+          {
+            "id": "7jqhtLLNHYsDcaG72RACwe",
+            "name": "In My Eyes",
+            "durationMs": 235586
+          },
+          {
+            "id": "5y4CbCIUB7Hnqq6EgQAj2v",
+            "name": "Stars 4-Ever",
+            "durationMs": 239626
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Body Talk",
+        "spotifyArtists": "Robyn",
+        "spotifyYear": 2010
+      }
+    },
+    {
+      "rymId": "5901813",
+      "artist": "Javiera Mena",
+      "title": "Otra era",
+      "year": 2014,
+      "rating": 10,
+      "spotify": {
+        "albumId": "1Ag7xE38iyJ4NzzbRSpvah",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27308380790b68fce084badc3a8",
+        "tracks": [
+          {
+            "id": "2Z8570y5BtVrPRYETtM3zn",
+            "name": "Los Olores de Tu Alma",
+            "durationMs": 300581
+          },
+          {
+            "id": "0D8qIsQZvrXmClkyp19Lsl",
+            "name": "Otra Era",
+            "durationMs": 244979
+          },
+          {
+            "id": "5qoC11djZnEOPtnby8LtVk",
+            "name": "Esa Fuerza",
+            "durationMs": 273521
+          },
+          {
+            "id": "5bAdItTUR4hCGoFt9GoqLB",
+            "name": "Sincronía, Pegaso",
+            "durationMs": 285512
+          },
+          {
+            "id": "1ZzX1nlYTYEclwZ1T6EG1B",
+            "name": "Pide",
+            "durationMs": 207964
+          },
+          {
+            "id": "34L3f8mJiuG6395hc3qap9",
+            "name": "La Joya",
+            "durationMs": 207519
+          },
+          {
+            "id": "5GexqeKuKnDtCP0PQzR2J6",
+            "name": "Que Me Tome la Noche",
+            "durationMs": 208283
+          },
+          {
+            "id": "3qIAAIovN6GqzNkrHTPulN",
+            "name": "La Carretera",
+            "durationMs": 289150
+          },
+          {
+            "id": "2YtWsFH3dX3Q3bPhKcEt2n",
+            "name": "Quédate un Ratito Más",
+            "durationMs": 220499
+          },
+          {
+            "id": "74JGKtGEQjx2gXZgSR4v93",
+            "name": "Espada",
+            "durationMs": 254125
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Otra Era",
+        "spotifyArtists": "Javiera Mena",
+        "spotifyYear": 2014
+      }
+    },
+    {
+      "rymId": "10891549",
+      "artist": "Dua Lipa",
+      "title": "Future Nostalgia",
+      "year": 2020,
+      "rating": 7,
+      "spotify": {
+        "albumId": "5lKlFlReHOLShQKyRv6AL9",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2734aa538a481e67131c214135a",
+        "tracks": [
+          {
+            "id": "3mC8VlVBwdVxCTq4cYZr64",
+            "name": "Future Nostalgia",
+            "durationMs": 184881
+          },
+          {
+            "id": "1AVtceapuF36oZqI9gzp0o",
+            "name": "Don't Start Now",
+            "durationMs": 183290
+          },
+          {
+            "id": "4GE0As8SVSjCMVYkRaaWwJ",
+            "name": "Cool",
+            "durationMs": 209583
+          },
+          {
+            "id": "7toYVidBIpAmM8Ife3LGrP",
+            "name": "Physical",
+            "durationMs": 193829
+          },
+          {
+            "id": "1dI77VhaLcQSgQLSnIs03D",
+            "name": "Levitating",
+            "durationMs": 203807
+          },
+          {
+            "id": "5Pc594FhDA2Fa2prE75GT0",
+            "name": "Pretty Please",
+            "durationMs": 194607
+          },
+          {
+            "id": "2MUKw7zEirXqdZZ3xC4hOf",
+            "name": "Hallucinate",
+            "durationMs": 208505
+          },
+          {
+            "id": "1imMjt1YGNebtrtTAprKV7",
+            "name": "Love Again",
+            "durationMs": 258004
+          },
+          {
+            "id": "59CrwNtNqzOmODXRxwaknc",
+            "name": "Break My Heart",
+            "durationMs": 221820
+          },
+          {
+            "id": "5idsEzxjeekla54j0jHYUE",
+            "name": "Good In Bed",
+            "durationMs": 218754
+          },
+          {
+            "id": "2F5nK70URbVjwao6lRwX0P",
+            "name": "Boys Will Be Boys",
+            "durationMs": 166266
+          },
+          {
+            "id": "5nujrmhLynf4yMoMtj8AQF",
+            "name": "Levitating (feat. DaBaby)",
+            "durationMs": 203064
+          },
+          {
+            "id": "3F1P0QzdXtBz0MXy7KIO5w",
+            "name": "Fever",
+            "durationMs": 156910
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Future Nostalgia",
+        "spotifyArtists": "Dua Lipa",
+        "spotifyYear": 2020
+      }
+    },
+    {
+      "rymId": "7357078",
+      "artist": "Roosevelt",
+      "title": "Roosevelt",
+      "year": 2016,
+      "rating": 8,
+      "spotify": {
+        "albumId": "3A6a0htt3N4gHsxJ72jdUC",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273bb6ef7f3dd215d49aa39186d",
+        "tracks": [
+          {
+            "id": "5zPoLhSNS5DGmvPGVaktAJ",
+            "name": "Intro",
+            "durationMs": 91477
+          },
+          {
+            "id": "76dun1dPw15NCE0d98AsVz",
+            "name": "Wait Up",
+            "durationMs": 262295
+          },
+          {
+            "id": "3u5j8EPtEXUsQwWhpMwZQX",
+            "name": "Night Moves",
+            "durationMs": 296565
+          },
+          {
+            "id": "6u7UagU1ylwGDVVR3pdmta",
+            "name": "Belong",
+            "durationMs": 237460
+          },
+          {
+            "id": "1VyxVzr6VF7HDcO5oG5agN",
+            "name": "Moving On",
+            "durationMs": 283007
+          },
+          {
+            "id": "2ewuis2Z8Y07pnbfDYfwI6",
+            "name": "Heart",
+            "durationMs": 245280
+          },
+          {
+            "id": "0sYy0GuRCq5nA0BdzokR8g",
+            "name": "Colours",
+            "durationMs": 259795
+          },
+          {
+            "id": "52Wc7qOp7oV2ZLtURKl2yK",
+            "name": "Sea",
+            "durationMs": 265999
+          },
+          {
+            "id": "32R7Q8UG89dFX4SjndrcY5",
+            "name": "Daytona",
+            "durationMs": 173279
+          },
+          {
+            "id": "6RVsvjGHF1wVayU62Qmm0O",
+            "name": "Fever",
+            "durationMs": 264031
+          },
+          {
+            "id": "6PiOFeGs45aHZcvj0tK2dy",
+            "name": "Hold On",
+            "durationMs": 207199
+          },
+          {
+            "id": "2Zt9vCVPwN9S8yQzuJ0tLm",
+            "name": "Close",
+            "durationMs": 220098
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Roosevelt",
+        "spotifyArtists": "Roosevelt",
+        "spotifyYear": 2016
+      }
+    },
+    {
+      "rymId": "14786957",
+      "artist": "Beyoncé",
+      "title": "Renaissance",
+      "year": 2022,
+      "rating": 8,
+      "spotify": {
+        "albumId": "6FJxoadUE4JNVwWHghBwnb",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27369a3c061676c2020adfe8315",
+        "tracks": [
+          {
+            "id": "1MpCaOeUWhox2Fgigbe1cL",
+            "name": "I'M THAT GIRL",
+            "durationMs": 208014
+          },
+          {
+            "id": "0mKGwFMHzTprtS2vpR3b6s",
+            "name": "COZY",
+            "durationMs": 210372
+          },
+          {
+            "id": "1Hohk6AufHZOrrhMXZppax",
+            "name": "ALIEN SUPERSTAR",
+            "durationMs": 215459
+          },
+          {
+            "id": "1xzi1Jcr7mEi9K2RfzLOqS",
+            "name": "CUFF IT",
+            "durationMs": 225388
+          },
+          {
+            "id": "0314PeD1sQNonfVWix3B2K",
+            "name": "ENERGY (feat. Beam)",
+            "durationMs": 116727
+          },
+          {
+            "id": "5pyoxDZ1PX0KxBxiRVxA4U",
+            "name": "BREAK MY SOUL",
+            "durationMs": 278281
+          },
+          {
+            "id": "2mqTtvbKxH7SoEQ2oGAnsA",
+            "name": "CHURCH GIRL",
+            "durationMs": 224472
+          },
+          {
+            "id": "6ufcuVInt0ocHrUimDjGlb",
+            "name": "PLASTIC OFF THE SOFA",
+            "durationMs": 254319
+          },
+          {
+            "id": "0Fl4eWzVaMUOdXcOrj6F1q",
+            "name": "VIRGO'S GROOVE",
+            "durationMs": 368758
+          },
+          {
+            "id": "5YLGlPYkZBDXieMwzVve7g",
+            "name": "MOVE (feat. Grace Jones & Tems)",
+            "durationMs": 203383
+          },
+          {
+            "id": "1w7cgGZR86yWz1pA2puVJD",
+            "name": "HEATED",
+            "durationMs": 260770
+          },
+          {
+            "id": "1LCm0lFnEsxR2oPqyHLGX9",
+            "name": "THIQUE",
+            "durationMs": 244792
+          },
+          {
+            "id": "3k4CoiIQXiNBrwrmbBMDxj",
+            "name": "ALL UP IN YOUR MIND",
+            "durationMs": 169819
+          },
+          {
+            "id": "2XMAWynSTIst5KmLSv0Npf",
+            "name": "AMERICA HAS A PROBLEM",
+            "durationMs": 198897
+          },
+          {
+            "id": "4DByEumlGTZKSzuVEZ35eo",
+            "name": "PURE/HONEY",
+            "durationMs": 288254
+          },
+          {
+            "id": "3HyR1j49TY5ACP2lseF1jx",
+            "name": "SUMMER RENAISSANCE",
+            "durationMs": 273997
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "RENAISSANCE",
+        "spotifyArtists": "Beyoncé",
+        "spotifyYear": 2022
+      }
+    },
+    {
+      "rymId": "15723703",
+      "artist": "Charli xcx",
+      "title": "Brat",
+      "year": 2024,
+      "rating": 8,
+      "spotify": {
+        "albumId": "2lIZef4lzdvZkiiCzvPKj7",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f88b43d15fd14e9525338b59",
+        "tracks": [
+          {
+            "id": "4w2GLmK2wnioVnb5CPQeex",
+            "name": "360",
+            "durationMs": 133805
+          },
+          {
+            "id": "0CySZwyRJ0vyUqtSjM9i2k",
+            "name": "Club classics",
+            "durationMs": 153526
+          },
+          {
+            "id": "5c9tBmJKbTdn1vhzXHeAwW",
+            "name": "Sympathy is a knife",
+            "durationMs": 151125
+          },
+          {
+            "id": "0PFZCt7UNmpas24HejQGu8",
+            "name": "I might say something stupid",
+            "durationMs": 109202
+          },
+          {
+            "id": "62fqMvguJbsSs9HKhhRfuS",
+            "name": "Talk talk",
+            "durationMs": 161757
+          },
+          {
+            "id": "3Y1EvIgEVw51XtgNEgpz5c",
+            "name": "Von dutch",
+            "durationMs": 164284
+          },
+          {
+            "id": "5sMEEjviCkH6Rp5X2ZvIIc",
+            "name": "Everything is romantic",
+            "durationMs": 203482
+          },
+          {
+            "id": "50GxvQA2KEWNt31EdwIlzY",
+            "name": "Rewind",
+            "durationMs": 168443
+          },
+          {
+            "id": "0AkiAfilrTUXV49dleC5SB",
+            "name": "So I",
+            "durationMs": 211352
+          },
+          {
+            "id": "41krZZovstMJKeJZJtbL78",
+            "name": "Girl, so confusing",
+            "durationMs": 174507
+          },
+          {
+            "id": "19RybK6XDbAVpcdxSbZL1o",
+            "name": "Apple",
+            "durationMs": 151739
+          },
+          {
+            "id": "4wTvw1dBiPXNiHTh0zzpcI",
+            "name": "B2b",
+            "durationMs": 178579
+          },
+          {
+            "id": "1qKCO2Tocwg8CbepJ9uDtd",
+            "name": "Mean girls",
+            "durationMs": 189410
+          },
+          {
+            "id": "3OaFGqHUyxGVkOcSILw8Kx",
+            "name": "I think about it all the time",
+            "durationMs": 135878
+          },
+          {
+            "id": "5h68SoVFGleijCtjEja3xG",
+            "name": "365",
+            "durationMs": 203618
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "BRAT",
+        "spotifyArtists": "Charli xcx",
+        "spotifyYear": 2024
+      }
+    },
+    {
+      "rymId": "15032054",
+      "artist": "Caroline Polachek",
+      "title": "Desire, I Want to Turn Into You",
+      "year": 2023,
+      "rating": 7,
+      "spotify": {
+        "albumId": "22PkV1Le9P3X4RY4xtmK0q",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273de17893c581b6f4fbeba51e1",
+        "tracks": [
+          {
+            "id": "4bp2wYweUPvsBrQfntdYcr",
+            "name": "Welcome To My Island",
+            "durationMs": 232625
+          },
+          {
+            "id": "4Q5LWPIKCuV6LRdDeqOYM7",
+            "name": "Pretty In Possible",
+            "durationMs": 216374
+          },
+          {
+            "id": "40tRJ8bMkIkXh8vhHKQsoX",
+            "name": "Bunny Is A Rider",
+            "durationMs": 193957
+          },
+          {
+            "id": "203bhpOhWluOytYjvwQfl7",
+            "name": "Sunset",
+            "durationMs": 162909
+          },
+          {
+            "id": "77ySu72hStpWbl3EZZiXzJ",
+            "name": "Crude Drawing Of An Angel",
+            "durationMs": 209067
+          },
+          {
+            "id": "6GqesoY3jZD9BqT1v4UEmk",
+            "name": "I Believe",
+            "durationMs": 247375
+          },
+          {
+            "id": "0RVn3A5FHQ8OgiIxuRkepW",
+            "name": "Fly To You (feat. Grimes and Dido)",
+            "durationMs": 245124
+          },
+          {
+            "id": "5KE5Inz4uZKGb2EzETaOEe",
+            "name": "Blood And Butter",
+            "durationMs": 267500
+          },
+          {
+            "id": "7y4aQuePr8SgBH14rXzheh",
+            "name": "Hopedrunk Everasking",
+            "durationMs": 199000
+          },
+          {
+            "id": "3JYayrgDyMYVrpMdcn5HxF",
+            "name": "Butterfly Net",
+            "durationMs": 276000
+          },
+          {
+            "id": "2x8zUjRP6z5N2GmZ13zU76",
+            "name": "Smoke",
+            "durationMs": 177500
+          },
+          {
+            "id": "4JPF8Te7Jo3AuI2vKqrRUV",
+            "name": "Billions",
+            "durationMs": 297514
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Desire, I Want To Turn Into You",
+        "spotifyArtists": "Caroline Polachek",
+        "spotifyYear": 2023
+      }
+    },
+    {
+      "rymId": "262460",
+      "artist": "Róisín Murphy",
+      "title": "Ruby Blue",
+      "year": 2005,
+      "rating": 7,
+      "spotify": {
+        "albumId": "2yseKsHTGnuXWn79vCC8FU",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273083f593a29f7160f40cac96e",
+        "tracks": [
+          {
+            "id": "2ucJPTmJWsBmTcv7nvIJKd",
+            "name": "Leaving the City",
+            "durationMs": 287720
+          },
+          {
+            "id": "6LU4aQLE8OlKtqdYffHzpX",
+            "name": "Sinking Feeling",
+            "durationMs": 213320
+          },
+          {
+            "id": "5cJBdOy9RX9jMni6FCUgp2",
+            "name": "Night of the Dancing Flame",
+            "durationMs": 206120
+          },
+          {
+            "id": "6HBjH9cgOBHuHSmXpzn1EV",
+            "name": "Through Time",
+            "durationMs": 358346
+          },
+          {
+            "id": "2fedOIGqcdIpvqYtMYhJql",
+            "name": "Sow Into You",
+            "durationMs": 236853
+          },
+          {
+            "id": "66HrsVgSK7X73qnQCzl7uc",
+            "name": "Dear Diary",
+            "durationMs": 350933
+          },
+          {
+            "id": "3lit8AewgciKFBcWQS3u7w",
+            "name": "If We're in Love",
+            "durationMs": 271240
+          },
+          {
+            "id": "1i4JlWqVDl8nG8lL6ybjuN",
+            "name": "Ramalama (Bang Bang)",
+            "durationMs": 215386
+          },
+          {
+            "id": "3vUg7Dy3rlAlvNG2I2tw04",
+            "name": "Ruby Blue",
+            "durationMs": 168066
+          },
+          {
+            "id": "2BAVcTIPDZw4xdhvcUhdyp",
+            "name": "Off On It",
+            "durationMs": 322920
+          },
+          {
+            "id": "4Ae7C0niniwYHq7eL0dzEp",
+            "name": "Prelude to Love in the Making",
+            "durationMs": 52293
+          },
+          {
+            "id": "76qdUZZPuY7WRu9KfHPXNG",
+            "name": "The Closing of the Doors",
+            "durationMs": 209173
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Ruby Blue",
+        "spotifyArtists": "Róisín Murphy",
+        "spotifyYear": 2005
+      }
+    },
+    {
+      "rymId": "3699490",
+      "artist": "Grimes",
+      "title": "Visions",
+      "year": 2012,
+      "rating": 9,
+      "spotify": {
+        "albumId": "3HED2IUaNSnbOe88a7ZdwM",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273550133f6d334ed152d75aa56",
+        "tracks": [
+          {
+            "id": "5z7XGCJlzhFP0UR1agce9b",
+            "name": "Infinite Love without Fulfilment",
+            "durationMs": 95346
+          },
+          {
+            "id": "3cjvqsvvU80g7WJPMVh8iq",
+            "name": "Genesis",
+            "durationMs": 255320
+          },
+          {
+            "id": "3LGsgpx4TfxhXbr07OFKqs",
+            "name": "Oblivion",
+            "durationMs": 251266
+          },
+          {
+            "id": "0z469se40CjMQBHosv73sz",
+            "name": "Eight",
+            "durationMs": 107853
+          },
+          {
+            "id": "2yP2fo52aCyQGr8K9QMXiw",
+            "name": "Circumambient",
+            "durationMs": 223026
+          },
+          {
+            "id": "5QZhC2eaVU45XL6tC7PJjS",
+            "name": "Vowels = space and time",
+            "durationMs": 261120
+          },
+          {
+            "id": "2p8RITtRYMtk3RkpgLYe5M",
+            "name": "Visiting Statue",
+            "durationMs": 118853
+          },
+          {
+            "id": "6U47ju8uwyUcQHRI9pid3G",
+            "name": "Be a Body",
+            "durationMs": 260413
+          },
+          {
+            "id": "3Kl512JPDDX8XsjagpNxlo",
+            "name": "Colour of Moonlight (Antiochus)",
+            "durationMs": 239706
+          },
+          {
+            "id": "76iqrqfj4k7Igq2WoKuTlS",
+            "name": "Symphonia IX (My Wait Is U)",
+            "durationMs": 292506
+          },
+          {
+            "id": "1KIb20Sgqg4XiRIPaEBwDv",
+            "name": "Nightmusic",
+            "durationMs": 238293
+          },
+          {
+            "id": "1o9WcfspYzjQmUG3BWH5ux",
+            "name": "Skin",
+            "durationMs": 369493
+          },
+          {
+            "id": "13WOkzGKinrEuKiK7tZtOp",
+            "name": "Know the Way",
+            "durationMs": 104880
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Visions",
+        "spotifyArtists": "Grimes",
+        "spotifyYear": 2012
+      }
+    },
+    {
+      "rymId": "9103587",
+      "artist": "Let's Eat Grandma",
+      "title": "I'm All Ears",
+      "year": 2018,
+      "rating": 7,
+      "spotify": {
+        "albumId": "4TgXvHJWXGk0BlBvfs13Qg",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2737f5a4c6484a92573bfa9743d",
+        "tracks": [
+          {
+            "id": "4MZZerLu7nptoV8ym0YSYa",
+            "name": "Whitewater",
+            "durationMs": 115444
+          },
+          {
+            "id": "59rdoga3q8OVCR5WnSGVM8",
+            "name": "Hot Pink",
+            "durationMs": 248976
+          },
+          {
+            "id": "14W3TbQQ1lHNCmeiTHCh1G",
+            "name": "It's Not Just Me",
+            "durationMs": 235629
+          },
+          {
+            "id": "6fIOgIkJNCII14BMTqSoct",
+            "name": "Falling Into Me",
+            "durationMs": 346489
+          },
+          {
+            "id": "1BYtgOZhetQ3qqxd0FEg66",
+            "name": "Snakes & Ladders",
+            "durationMs": 357454
+          },
+          {
+            "id": "0uTg8lJzFMlUmRveihcV0I",
+            "name": "Missed Call (1)",
+            "durationMs": 37227
+          },
+          {
+            "id": "6w0vp4n3yy58c8Er5bQdC0",
+            "name": "I Will Be Waiting",
+            "durationMs": 263248
+          },
+          {
+            "id": "27JCJwqvEZeUJLG7Tc0SCN",
+            "name": "The Cat's Pyjamas",
+            "durationMs": 65510
+          },
+          {
+            "id": "6zzeOMcKjurmer7YWUkkMb",
+            "name": "Cool & Collected",
+            "durationMs": 557847
+          },
+          {
+            "id": "5h2vufboNIhOLSmUqGRduU",
+            "name": "Ava",
+            "durationMs": 184024
+          },
+          {
+            "id": "5Pn4AYzF6awkiD9zdnsRHt",
+            "name": "Donnie Darko",
+            "durationMs": 679148
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "I'm All Ears",
+        "spotifyArtists": "Let's Eat Grandma",
+        "spotifyYear": 2018
+      }
+    },
+    {
+      "rymId": "8840218",
+      "artist": "Starchild & The New Romantic",
+      "title": "Language",
+      "year": 2018,
+      "rating": 7,
+      "spotify": {
+        "albumId": "2Ua7ZOFpQX91orahKCj4JX",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e5e86712e6f18283600155af",
+        "tracks": [
+          {
+            "id": "6zlbkCVjonm6tgf2ztKFWp",
+            "name": "Language",
+            "durationMs": 227853
+          },
+          {
+            "id": "1Tqtkfu5cZnNHApVGdr9MV",
+            "name": "Mood",
+            "durationMs": 182000
+          },
+          {
+            "id": "4g8HeVtKIL6LyDvLKYFegc",
+            "name": "Only If U Knew",
+            "durationMs": 199279
+          },
+          {
+            "id": "17Oz4vE7DCvuw1cXDws4lr",
+            "name": "Hands Off",
+            "durationMs": 97814
+          },
+          {
+            "id": "1aAvIlfY0A7upcw8aHmim1",
+            "name": "Hangin On",
+            "durationMs": 161266
+          },
+          {
+            "id": "1Iiw6QHqS4RTW4PEs8tOyV",
+            "name": "Black Diamond",
+            "durationMs": 300693
+          },
+          {
+            "id": "5IrhkM7oiEVO9qc81sRScj",
+            "name": "Ophelia's Room",
+            "durationMs": 139693
+          },
+          {
+            "id": "7BDdYecc4zkxNFMItP4mFe",
+            "name": "Some People I Know",
+            "durationMs": 170266
+          },
+          {
+            "id": "4T63nMZd3ahRfGeoHj7c1A",
+            "name": "Can I Come Over?",
+            "durationMs": 311893
+          },
+          {
+            "id": "3n2enKfw1OO4Yueaz70Dnz",
+            "name": "Doubts",
+            "durationMs": 226213
+          },
+          {
+            "id": "6zXCDU1yhDFnOUph5tcYJ4",
+            "name": "Good Stuff",
+            "durationMs": 254680
+          },
+          {
+            "id": "5JCwJGWzZYWCh6sZ8nfXTj",
+            "name": "Boys Choir",
+            "durationMs": 196000
+          },
+          {
+            "id": "4VwomAu2zAKKXOMn6jYeRj",
+            "name": "Lost Boys",
+            "durationMs": 228040
+          },
+          {
+            "id": "140NOLP4OIfGxSrvc4nKY2",
+            "name": "Hand to God",
+            "durationMs": 226146
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Language",
+        "spotifyArtists": "Starchild & The New Romantic",
+        "spotifyYear": 2018
+      }
+    },
+    {
+      "rymId": "8898433",
+      "artist": "Hayley Kiyoko",
+      "title": "Expectations",
+      "year": 2018,
+      "rating": 8,
+      "spotify": {
+        "albumId": "2oRkkW6ZudviRBd6mx4CfL",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735b41313f5e512786926f3da9",
+        "tracks": [
+          {
+            "id": "7ipLv29x7jjxTJjn64DQ7F",
+            "name": "Expectations (Overture)",
+            "durationMs": 112266
+          },
+          {
+            "id": "27DxZkqTR2SHZTTfMRpUvW",
+            "name": "Feelings",
+            "durationMs": 216546
+          },
+          {
+            "id": "5nFyaoBWwwMJ9fv33tZ2MB",
+            "name": "What I Need (feat. Kehlani)",
+            "durationMs": 219520
+          },
+          {
+            "id": "0WqqFajBwA3tpRZ66kRomu",
+            "name": "Sleepover",
+            "durationMs": 233893
+          },
+          {
+            "id": "2LNdH3B2gCOw3Uh1jIXG3Z",
+            "name": "Mercy / Gatekeeper",
+            "durationMs": 344333
+          },
+          {
+            "id": "2ZPJy5zHsMOWSpbcrqQFuF",
+            "name": "Under the Blue / Take Me In",
+            "durationMs": 337520
+          },
+          {
+            "id": "5btaVjrLBxTvXNmCv5DrW2",
+            "name": "Curious",
+            "durationMs": 183280
+          },
+          {
+            "id": "1v0uMj6rNBAA4wsq6rLkqL",
+            "name": "xx",
+            "durationMs": 51600
+          },
+          {
+            "id": "3wqPinf9whHeT7y9EApaPM",
+            "name": "Wanna Be Missed",
+            "durationMs": 195773
+          },
+          {
+            "id": "03PM8jkLPwI6cDcZBvwCSL",
+            "name": "He'll Never Love You (HNLY)",
+            "durationMs": 231293
+          },
+          {
+            "id": "3qDaH8tgcdzdpxaL7CyW2s",
+            "name": "Palm Dreams",
+            "durationMs": 314493
+          },
+          {
+            "id": "61B0ZJUGohiLnnzCG9lKvR",
+            "name": "Molecules",
+            "durationMs": 250573
+          },
+          {
+            "id": "181uk7o0ajEG8F1HYrqbxu",
+            "name": "Let It Be",
+            "durationMs": 221293
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Expectations",
+        "spotifyArtists": "Hayley Kiyoko",
+        "spotifyYear": 2018
+      }
+    },
+    {
+      "rymId": "11244171",
+      "artist": "Buscabulla",
+      "title": "Regresa",
+      "year": 2020,
+      "rating": 9,
+      "spotify": {
+        "albumId": "18xOW1VhQWVgnQH9CGi9Rp",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273da33cccbf6176c3574fe1bcc",
+        "tracks": [
+          {
+            "id": "5JXbS2NkwNH873sHJpN3sH",
+            "name": "Vámono",
+            "durationMs": 208329
+          },
+          {
+            "id": "6x0VmtS4I7gLFbsfQBjOq6",
+            "name": "La Fiebre",
+            "durationMs": 70792
+          },
+          {
+            "id": "4AAqFAhj5HssYwJlkLRLyB",
+            "name": "El Aprieto",
+            "durationMs": 170219
+          },
+          {
+            "id": "48vglUnyZJbDVwyYc4fhlf",
+            "name": "Club Tú y Yo",
+            "durationMs": 165705
+          },
+          {
+            "id": "2AuH4UpdVY53V29Vlv6r7r",
+            "name": "Mío",
+            "durationMs": 209409
+          },
+          {
+            "id": "7p4C1w3JSmKVJXixBrtaKI",
+            "name": "NTE",
+            "durationMs": 171807
+          },
+          {
+            "id": "5ugH8wuhsToevKVutUvu9z",
+            "name": "Manda Fuego",
+            "durationMs": 202107
+          },
+          {
+            "id": "5GGmMtlliU3DlzF3sVBkDd",
+            "name": "No Sabemos",
+            "durationMs": 147656
+          },
+          {
+            "id": "7ukQ49ilGpTfivGRtYda4E",
+            "name": "Nydia",
+            "durationMs": 253984
+          },
+          {
+            "id": "1Yy1wNEGxF1UdOyImrO3d2",
+            "name": "Volta",
+            "durationMs": 90928
+          },
+          {
+            "id": "608EJ9ZzAa7eAeLwt3O3tw",
+            "name": "Ta Que Tiembla",
+            "durationMs": 168755
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Regresa",
+        "spotifyArtists": "Buscabulla",
+        "spotifyYear": 2020
+      }
+    },
+    {
+      "rymId": "15495877",
+      "artist": "Kali Uchis",
+      "title": "Orquídeas",
+      "year": 2024,
+      "rating": 8,
+      "spotify": {
+        "albumId": "5U20AVSsUvycGtWip4XQfo",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b968625b03ec59b30b48e9c3",
+        "tracks": [
+          {
+            "id": "54KEm0VI9i3ic7VHHKHKRx",
+            "name": "¿Cómo Así?",
+            "durationMs": 169654
+          },
+          {
+            "id": "5mVkTPlTPxlQOn7kEvuM3j",
+            "name": "Me Pongo Loca",
+            "durationMs": 177815
+          },
+          {
+            "id": "6XaJfhwof7qIgbbXO5tIQI",
+            "name": "Igual Que Un Ángel (with Peso Pluma)",
+            "durationMs": 260370
+          },
+          {
+            "id": "52x8HIGuk1gGTlvO8CuLNS",
+            "name": "Pensamientos Intrusivos",
+            "durationMs": 192027
+          },
+          {
+            "id": "3RleMgz4iO0BNezGdSxDnY",
+            "name": "Diosa",
+            "durationMs": 156037
+          },
+          {
+            "id": "1NEBuFp0BJMikgXJI9VVab",
+            "name": "Te Mata",
+            "durationMs": 232066
+          },
+          {
+            "id": "43oIvC7HVMKkAvuPr4Kt4A",
+            "name": "Perdiste",
+            "durationMs": 144165
+          },
+          {
+            "id": "2R6tflIwv19qoYxg5hYLVh",
+            "name": "Young Rich & In Love",
+            "durationMs": 198300
+          },
+          {
+            "id": "59ak5RmKdyspU26ifSg0rW",
+            "name": "Tu Corazón Es Mío...",
+            "durationMs": 165845
+          },
+          {
+            "id": "20LZsv2s3dXvoBuPUEOlAv",
+            "name": "Muñekita (with El Alfa & JT)",
+            "durationMs": 219642
+          },
+          {
+            "id": "5ycn8M0WNGedabDuaH9mQT",
+            "name": "Labios Mordidos (with KAROL G)",
+            "durationMs": 195373
+          },
+          {
+            "id": "16pNGHrUDtUq5Qg4LnueIi",
+            "name": "No Hay Ley Parte 2 (with Rauw Alejandro)",
+            "durationMs": 188268
+          },
+          {
+            "id": "0xuR1uorCHBfBi0HDZPSYi",
+            "name": "Heladito",
+            "durationMs": 144135
+          },
+          {
+            "id": "21RAJfkAbaq85RWJQWoxkx",
+            "name": "Dame Beso // Muévete",
+            "durationMs": 215666
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "ORQUÍDEAS",
+        "spotifyArtists": "Kali Uchis",
+        "spotifyYear": 2024
+      }
+    }
+  ]
+}
