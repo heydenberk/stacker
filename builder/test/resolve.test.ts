@@ -125,6 +125,16 @@ describe('resolveCrate', () => {
     expect(a.searches).toEqual([]);
   });
 
+  it('resolves off-library records from the artist and title in the draft', async () => {
+    const offLibrary: CrateDraft = {
+      ...draft([]),
+      records: [{ rymId: 'new-pink-moon', artist: 'Nick Drake', title: 'Pink Moon', year: 1972 }],
+    };
+    const { crate } = await resolveCrate(offLibrary, library, {}, api());
+    expect(crate.records[0]).toMatchObject({ rymId: 'new-pink-moon', artist: 'Nick Drake', title: 'Pink Moon', year: 1972, rating: 0 });
+    expect(crate.records[0].spotify?.albumId).toBe('pm');
+  });
+
   it('rejects duplicate rymIds', async () => {
     await expect(resolveCrate(draft(['100', '100']), library, {}, api())).rejects.toThrow(/Duplicate rymId 100/);
   });

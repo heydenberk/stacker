@@ -92,6 +92,14 @@ export async function resolveRecord(entry: LibraryEntry, api: SpotifyApi, rawOve
   return { ...base, spotify: toRef(d), match: matchInfo(d, best.confidence) };
 }
 
+/** Library entry for a draft record; off-library records carry their own artist and title (rating 0). */
+function entryFor(r: CrateDraft['records'][number], library: Map<string, LibraryEntry>): LibraryEntry | undefined {
+  const known = library.get(r.rymId);
+  if (known) return known;
+  if (!r.artist || !r.title) return undefined;
+  return { rymId: r.rymId, artist: r.artist, artistLocalized: null, title: r.title, year: r.year ?? null, rating: 0, ownership: 'n' };
+}
+
 /** `override` is the already-parsed override album id (see parseAlbumId), or undefined. */
 function isSettled(record: CrateDraft['records'][number], override: string | undefined): boolean {
   if (!record.match) return false;
@@ -119,7 +127,7 @@ export async function resolveCrate(
   if (!CRATE_ID.test(draft.id)) throw new Error(`Invalid crate id "${draft.id}" (use lowercase-with-dashes)`);
   const seen = new Set<string>();
   for (const r of draft.records) {
-    if (!library.has(r.rymId)) throw new Error(`Unknown rymId ${r.rymId} (not in library.json)`);
+    if (!entryFor(r, library)) throw new Error(`Unknown rymId ${r.rymId} (not in library.json, and no artist and title given)`);
     if (seen.has(r.rymId)) throw new Error(`Duplicate rymId ${r.rymId}`);
     seen.add(r.rymId);
   }
@@ -127,7 +135,7 @@ export async function resolveCrate(
   const records: CrateRecord[] = [];
   const meta = { id: draft.id, name: draft.name, mood: draft.mood, createdAt: draft.createdAt };
   for (const [i, r] of draft.records.entries()) {
-    const entry = library.get(r.rymId)!;
+    const entry = entryFor(r, library)!;
     const rawOverride = overrides[r.rymId];
     const override = rawOverride === undefined ? undefined : parseAlbumId(rawOverride);
     try {
@@ -142,7 +150,7 @@ export async function resolveCrate(
       opts.log?.(logLine(entry, resolved));
       records.push(resolved);
     } catch (e) {
-      const rest = draft.records.slice(i).map((d) => ({ ...hydrate(library.get(d.rymId)!), spotify: d.spotify ?? null, match: d.match }));
+      const rest = draft.records.slice(i).map((d) => ({ ...hydrate(entryFor(d, library)!), spotify: d.spotify ?? null, match: d.match }));
       throw new ResolveAborted({ ...meta, records: [...records, ...rest] }, r.rymId, `${entry.artist} — ${entry.title}`, e);
     }
   }

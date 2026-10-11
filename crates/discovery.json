@@ -1,0 +1,1709 @@
+{
+  "id": "discovery",
+  "name": "Discovery",
+  "mood": "albums Eric has never rated or played, picked from his ratings and scrobbles: 4AD dream pop to tropicália, Japanese folk-rock and South African jazz",
+  "createdAt": "2026-10-11",
+  "records": [
+    {
+      "rymId": "new-dif-juz-extractions",
+      "artist": "Dif Juz",
+      "title": "Extractions",
+      "year": 1985,
+      "rating": 0,
+      "spotify": {
+        "albumId": "3U6vc4ZpSppLLoajhOyMtw",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f3b7395e8b9132ce1132348b",
+        "tracks": [
+          {
+            "id": "7AxLhgfuN88XLul9NgDHwl",
+            "name": "Crosswinds",
+            "durationMs": 463173
+          },
+          {
+            "id": "1QJ4ug3h8DkMyd4e4vBklC",
+            "name": "A Starting Point",
+            "durationMs": 219160
+          },
+          {
+            "id": "7mTGscOeDnP2javjZzt7Qg",
+            "name": "Silver Passage",
+            "durationMs": 235000
+          },
+          {
+            "id": "5Oh9N0MLE5eIp9VRcVcET2",
+            "name": "The Last Day",
+            "durationMs": 240666
+          },
+          {
+            "id": "3pMCt3Kgt3Tg2o1pFb89Ct",
+            "name": "Love Insane",
+            "durationMs": 191333
+          },
+          {
+            "id": "4mEIPQgef9BzuwwNrG0zPo",
+            "name": "Marooned",
+            "durationMs": 242440
+          },
+          {
+            "id": "3eAcDbG5udKzygHhoCA0rC",
+            "name": "Two Fine Days (And a Thunderstorm)",
+            "durationMs": 148560
+          },
+          {
+            "id": "69FLN2PC1RXxhvj8y86Z77",
+            "name": "Echo Wreck",
+            "durationMs": 276973
+          },
+          {
+            "id": "2WX5wCHmP2RunFichlJ5SS",
+            "name": "Twin And Earth",
+            "durationMs": 269200
+          },
+          {
+            "id": "52fLRBMrTTaluhVqSHiUXk",
+            "name": "Gunet",
+            "durationMs": 318626
+          },
+          {
+            "id": "0v6EHpGIJmW0oPkdCNlBPv",
+            "name": "Soarn",
+            "durationMs": 347333
+          },
+          {
+            "id": "4FSKeFTAVYNqjChCvFdwwN",
+            "name": "Hu",
+            "durationMs": 174973
+          },
+          {
+            "id": "1iDuDWTx6pkygkKWivcV60",
+            "name": "Re",
+            "durationMs": 267426
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Extractions",
+        "spotifyArtists": "Dif Juz",
+        "spotifyYear": 1985
+      }
+    },
+    {
+      "rymId": "new-bowery-electric-beat",
+      "artist": "Bowery Electric",
+      "title": "Beat",
+      "year": 1996,
+      "rating": 0,
+      "spotify": {
+        "albumId": "6jbGBeBtwD05O0EV9RFjlC",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a6e322d0a99bb257cce67eb2",
+        "tracks": [
+          {
+            "id": "12iOM7n1XHIdxK1fRBJMs7",
+            "name": "Beat",
+            "durationMs": 436160
+          },
+          {
+            "id": "330w7iBKrHxlJwx3WMdHVr",
+            "name": "Empty Words",
+            "durationMs": 225773
+          },
+          {
+            "id": "4G316jgYbgxSagagLzEW7G",
+            "name": "Without Stopping",
+            "durationMs": 313960
+          },
+          {
+            "id": "4rjKvGbEHDPT9352LU5Sxw",
+            "name": "Under the Sun",
+            "durationMs": 212373
+          },
+          {
+            "id": "4i1RRMLpGEDqT5vInUvwX7",
+            "name": "Fear of Flying",
+            "durationMs": 339493
+          },
+          {
+            "id": "6I7YdlRxU1oqAp9qadwyUR",
+            "name": "Looped",
+            "durationMs": 159466
+          },
+          {
+            "id": "5yV8zS4Ro68DdBbiraLMhe",
+            "name": "Black Light",
+            "durationMs": 413506
+          },
+          {
+            "id": "377FNKP1VeCS1dGigHCtEs",
+            "name": "Inside Out",
+            "durationMs": 439493
+          },
+          {
+            "id": "6VtxqBC8t86vH7CfcmjTRQ",
+            "name": "Coming Down",
+            "durationMs": 278040
+          },
+          {
+            "id": "3g1hBwztBeoT9dK9w16ENA",
+            "name": "Postscript",
+            "durationMs": 1001200
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Beat",
+        "spotifyArtists": "Bowery Electric",
+        "spotifyYear": 1996
+      }
+    },
+    {
+      "rymId": "new-the-lucy-show-mania",
+      "artist": "The Lucy Show",
+      "title": "Mania",
+      "year": 1986,
+      "rating": 0,
+      "spotify": {
+        "albumId": "6qTFhsZk7OKvG0zqoRkrai",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e472af93d6bbce26e4465980",
+        "tracks": [
+          {
+            "id": "52MMPA6mhRJ7tauuoiZigO",
+            "name": "Land And The Life",
+            "durationMs": 141560
+          },
+          {
+            "id": "0DnoFau9oGDEqsNOYmGOMy",
+            "name": "View From The Outside",
+            "durationMs": 217106
+          },
+          {
+            "id": "12os2T1PNHUtpBbnMk0Y02",
+            "name": "Sojourn's End",
+            "durationMs": 230960
+          },
+          {
+            "id": "4QZsHS2mSLbwpKJ6ilz716",
+            "name": "Sad September",
+            "durationMs": 225546
+          },
+          {
+            "id": "1b20ofyholsoYNQcrkVDYo",
+            "name": "A Million Things",
+            "durationMs": 189866
+          },
+          {
+            "id": "1Ys2CKTdoE6457VSR5fowq",
+            "name": "Sun And Moon",
+            "durationMs": 229880
+          },
+          {
+            "id": "2A4AITerfIoULHy63Ox7AM",
+            "name": "Shame",
+            "durationMs": 167933
+          },
+          {
+            "id": "1KYNifneNfIVkI4l9AmJnD",
+            "name": "Melody",
+            "durationMs": 204960
+          },
+          {
+            "id": "64kvuzCuTtJYbYm2YdneNo",
+            "name": "Part Of Me Now",
+            "durationMs": 244760
+          },
+          {
+            "id": "53mYzFOlacVN65jhH7roIO",
+            "name": "New Message",
+            "durationMs": 293920
+          },
+          {
+            "id": "3Xdm6DKRT8xYtT6lTXaiSK",
+            "name": "Jam In E",
+            "durationMs": 158186
+          },
+          {
+            "id": "36p8JhLneMzCBXixTS2Ok4",
+            "name": "Invitation",
+            "durationMs": 161373
+          },
+          {
+            "id": "3MsLBh2ERjbpWfZxg3BQ8Q",
+            "name": "Civil Servant",
+            "durationMs": 184786
+          },
+          {
+            "id": "4JSbWL7cGVFeKq5S6AwD82",
+            "name": "Sun And Moon - Live",
+            "durationMs": 207093
+          },
+          {
+            "id": "7HPEgMOUugLowf1hHDUTsO",
+            "name": "View From The Outside - Live",
+            "durationMs": 213733
+          },
+          {
+            "id": "0SnFkVgsjikn2gWq4U0Y0B",
+            "name": "New Message - Basement demo",
+            "durationMs": 185586
+          },
+          {
+            "id": "3PZtpK8t0deLoJwwBOKLbz",
+            "name": "A Million Things - Original mix",
+            "durationMs": 210813
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Mania",
+        "spotifyArtists": "The Lucy Show",
+        "spotifyYear": 1986
+      }
+    },
+    {
+      "rymId": "new-hood-cold-house",
+      "artist": "Hood",
+      "title": "Cold House",
+      "year": 2001,
+      "rating": 0,
+      "spotify": {
+        "albumId": "4f9GmceFKdzbAZHbb7XnQV",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27340fbedebf70ae3f92f18b23c",
+        "tracks": [
+          {
+            "id": "3lkiRF3dr2k7raDRfLYBMU",
+            "name": "They Removed All Trace That Anything Had Ever Happened Here",
+            "durationMs": 320586
+          },
+          {
+            "id": "1jeK3NK3kUy7XAkJ3wfvyL",
+            "name": "You Show No Emotion At All",
+            "durationMs": 315986
+          },
+          {
+            "id": "6MYA4C2VCiU1gqz1Dp725z",
+            "name": "Branches Bare",
+            "durationMs": 355613
+          },
+          {
+            "id": "206UdkI4sOoprzzvuH1LwP",
+            "name": "Enemy Of Time",
+            "durationMs": 202826
+          },
+          {
+            "id": "5xpEltLli7cQfREp65R5PZ",
+            "name": "The Winter Hit Hard",
+            "durationMs": 342626
+          },
+          {
+            "id": "2G1mxUs00O8SAVnK30pwvg",
+            "name": "I Can't Find My Brittle Youth",
+            "durationMs": 191573
+          },
+          {
+            "id": "4Lo2WBVJoVqRSdJOD0EGlN",
+            "name": "This Is What We Do To Sell Out(S)",
+            "durationMs": 185866
+          },
+          {
+            "id": "4ZeY7FFAjDchBoIjWuLEvN",
+            "name": "The River Curls Around The Town",
+            "durationMs": 205733
+          },
+          {
+            "id": "10XoqwvxI09Z1MfTPxWcoh",
+            "name": "Lines Low To Frozen Ground",
+            "durationMs": 312386
+          },
+          {
+            "id": "1jL1DAclALKoHBR6XHdFLl",
+            "name": "You're Worth The Whole World",
+            "durationMs": 343240
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Cold House",
+        "spotifyArtists": "Hood",
+        "spotifyYear": 2001
+      }
+    },
+    {
+      "rymId": "new-acetone-cindy",
+      "artist": "Acetone",
+      "title": "Cindy",
+      "year": 1993,
+      "rating": 0,
+      "spotify": {
+        "albumId": "2AijscEztvxZ1LKgha3hgb",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27382fe80fe918b69275ec0214c",
+        "tracks": [
+          {
+            "id": "0t7tkh7EW6F8PYMMiTure3",
+            "name": "Come On",
+            "durationMs": 360666
+          },
+          {
+            "id": "1iOAerH3Q6SOfw0vr1ZdgJ",
+            "name": "Pinch",
+            "durationMs": 213466
+          },
+          {
+            "id": "3jWaF7J8fWk6TaG4JvJfhz",
+            "name": "Sundown",
+            "durationMs": 355800
+          },
+          {
+            "id": "5NKorW8B1e1oIzeLhw9Yro",
+            "name": "Chills",
+            "durationMs": 255360
+          },
+          {
+            "id": "7H9dEiCA8EX7J2zlfH7s6w",
+            "name": "Endless Summer",
+            "durationMs": 385240
+          },
+          {
+            "id": "5ND8ltO52pqczJDEFwFQ8D",
+            "name": "Intermission",
+            "durationMs": 218466
+          },
+          {
+            "id": "6RbFv8UwfPfdk1WZi9gR8k",
+            "name": "Louise",
+            "durationMs": 451266
+          },
+          {
+            "id": "4eAjSuNxFk6AijAjdTpGZe",
+            "name": "Don't Cry",
+            "durationMs": 345800
+          },
+          {
+            "id": "1KYufMoupNCuyRzNY9ng6n",
+            "name": "No Need Swim",
+            "durationMs": 388026
+          },
+          {
+            "id": "3CVuJh1EimVXr3PKzzsGLC",
+            "name": "Barefoot On Sunday",
+            "durationMs": 489133
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Cindy",
+        "spotifyArtists": "Acetone",
+        "spotifyYear": 1993
+      }
+    },
+    {
+      "rymId": "new-movietone-day-and-night",
+      "artist": "Movietone",
+      "title": "Day and Night",
+      "year": 1997,
+      "rating": 0,
+      "spotify": {
+        "albumId": "64SmrtVEj2HwkQyz2Z9GXf",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730d112c4d5c62f5cf27e465d3",
+        "tracks": [
+          {
+            "id": "6AtRvRFkhSiP9518S48WBj",
+            "name": "Sun Drawing",
+            "durationMs": 237973
+          },
+          {
+            "id": "1tPVN11SrQPoVZJms3QMBq",
+            "name": "Blank Like Snow",
+            "durationMs": 160493
+          },
+          {
+            "id": "5n9S5JnORg1M5OepgKBz5j",
+            "name": "Useless Landscape",
+            "durationMs": 301840
+          },
+          {
+            "id": "2aKLc154rAOsh2yuTpfZjh",
+            "name": "Summer",
+            "durationMs": 434266
+          },
+          {
+            "id": "6GwRGNhRS0mKfGDL53VhyT",
+            "name": "Night Of The Acacias",
+            "durationMs": 345693
+          },
+          {
+            "id": "5GqlHGSJ2tVYsA2KdgdR9s",
+            "name": "Noche Marina",
+            "durationMs": 287200
+          },
+          {
+            "id": "3UWHVc87yNgjDdexOnHCvn",
+            "name": "The Crystallisation of Salt At Night",
+            "durationMs": 587066
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Day And Night",
+        "spotifyArtists": "Movietone",
+        "spotifyYear": 1997
+      }
+    },
+    {
+      "rymId": "new-kaleidoscope-tangerine-dream",
+      "artist": "Kaleidoscope",
+      "title": "Tangerine Dream",
+      "year": 1967,
+      "rating": 0,
+      "spotify": {
+        "albumId": "5fJeHZxuTPxAGyJGQpGt5Z",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27338722a932949f0d57ce35648",
+        "tracks": [
+          {
+            "id": "1MXhhyRvEpr5oQ5misxO6j",
+            "name": "Kaleidoscope",
+            "durationMs": 135426
+          },
+          {
+            "id": "15X54mz8sHwpGfr2UO4Nyx",
+            "name": "Please Excuse My Face",
+            "durationMs": 131306
+          },
+          {
+            "id": "7e8zrS5Aj1CMrfDaeo4t8P",
+            "name": "Dive Into Yesterday",
+            "durationMs": 286400
+          },
+          {
+            "id": "49hlDdAOk0IWuJ7DBvZob0",
+            "name": "Mr. Small The Watch-Repairer Man",
+            "durationMs": 163560
+          },
+          {
+            "id": "5ZdYsvj94zfFCtg1xbbyRr",
+            "name": "Flight From Ashiya",
+            "durationMs": 160373
+          },
+          {
+            "id": "0tphkhYRYfLCnawXbTn0u2",
+            "name": "The Murder Of Lewis Tollani",
+            "durationMs": 167426
+          },
+          {
+            "id": "4QaDx4Lt1Yrdya9Y04c3nT",
+            "name": "(Further Reflections) In The Room Of Percussion",
+            "durationMs": 199666
+          },
+          {
+            "id": "0uOIcHl7AVR3n2XfOdU3bd",
+            "name": "Dear Nellie Goodrich",
+            "durationMs": 166840
+          },
+          {
+            "id": "48iuGcvqX6OUJeYSOEt6T8",
+            "name": "Holiday Maker",
+            "durationMs": 149600
+          },
+          {
+            "id": "04u1if6XAlxSzXOndUJsHf",
+            "name": "A Lesson Perhaps",
+            "durationMs": 162226
+          },
+          {
+            "id": "2vRdgBjvjF6LHaWVssDeGN",
+            "name": "The Sky Children",
+            "durationMs": 480800
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Tangerine Dream",
+        "spotifyArtists": "Kaleidoscope",
+        "spotifyYear": 1967
+      }
+    },
+    {
+      "rymId": "new-ronnie-lane-anymore-for-anymore",
+      "artist": "Ronnie Lane & Slim Chance",
+      "title": "Anymore for Anymore",
+      "year": 1974,
+      "rating": 0,
+      "spotify": {
+        "albumId": "7nnV7e2JxW2EskpNjrkAdi",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27308dc54b1344cd36cf9630d52",
+        "tracks": [
+          {
+            "id": "5pcGwzydd5HpA4upjBYcPk",
+            "name": "Careless Love",
+            "durationMs": 248986
+          },
+          {
+            "id": "5lWnpxgqQaWbppBppQxgQs",
+            "name": "Don't You Cry for Me",
+            "durationMs": 266120
+          },
+          {
+            "id": "00QbwaI0q3Hp2WDFs1PIn6",
+            "name": "By and Bye (Gonna See the King)",
+            "durationMs": 351813
+          },
+          {
+            "id": "4yV8iScJ4IEtJGBCyMB3L6",
+            "name": "Silk Stockings",
+            "durationMs": 106026
+          },
+          {
+            "id": "0AHIWgqe3KcqboMhYhiiJi",
+            "name": "The Poacher",
+            "durationMs": 225986
+          },
+          {
+            "id": "3f7mK84bzs5hxt7jpbhdNP",
+            "name": "Roll on Babe",
+            "durationMs": 200986
+          },
+          {
+            "id": "5gzTKW8bI7TZKRZafsOwLJ",
+            "name": "Tell Everyone",
+            "durationMs": 180813
+          },
+          {
+            "id": "2pHWhAIQpTBNTAzryNvP1a",
+            "name": "Amelia Earhart’s Last Flight",
+            "durationMs": 217986
+          },
+          {
+            "id": "6Zl5N5KLUMsxmoq36RRite",
+            "name": "Anymore for Anymore",
+            "durationMs": 223160
+          },
+          {
+            "id": "3vVd6IoABJl4GeKwAKNqvL",
+            "name": "Only a Bird in a Gilded Cage",
+            "durationMs": 65213
+          },
+          {
+            "id": "4SCak3vsU3h8ArIYi8o0KV",
+            "name": "Chicken Wired",
+            "durationMs": 264760
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Anymore for Anymore",
+        "spotifyArtists": "Ronnie Lane & Slim Chance",
+        "spotifyYear": 1974,
+        "override": true
+      }
+    },
+    {
+      "rymId": "new-terry-allen-lubbock-on-everything",
+      "artist": "Terry Allen",
+      "title": "Lubbock (On Everything)",
+      "year": 1979,
+      "rating": 0,
+      "spotify": {
+        "albumId": "31gOu9Ke5o3wgx1GyIDNYU",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27367a97e60fa4e6179ddcef7db",
+        "tracks": [
+          {
+            "id": "3LO6evXvbopPHiVG9AKax7",
+            "name": "Amarillo Highway (for Dave Hickey)",
+            "durationMs": 240049
+          },
+          {
+            "id": "0cVVGDxyYVrXOmiCojEfPt",
+            "name": "High Plains Jamboree",
+            "durationMs": 213055
+          },
+          {
+            "id": "4pUU8bVBf7s4MiYnvSPAbr",
+            "name": "The Great Joe Bob (a Regional Tragedy)",
+            "durationMs": 282989
+          },
+          {
+            "id": "2gU7NlzNZCkeGf40RcwyXn",
+            "name": "The Wolfman of Del Rio",
+            "durationMs": 338821
+          },
+          {
+            "id": "0RBdSvyL8XYej8ISgP5r2c",
+            "name": "Lubbock Woman",
+            "durationMs": 216043
+          },
+          {
+            "id": "2a8ujAXM9A8FGalM8OmDkA",
+            "name": "The Girl Who Danced Oklahoma",
+            "durationMs": 258657
+          },
+          {
+            "id": "6e9zdAw3HYoCTkKIc2gtg8",
+            "name": "Truckload of Art",
+            "durationMs": 324377
+          },
+          {
+            "id": "4WwDWCqCSSLriR6jiaT0H5",
+            "name": "The Collector (and the Art Mob)",
+            "durationMs": 122901
+          },
+          {
+            "id": "0ADWF3z5dYKYXMM8yRvqNi",
+            "name": "Oui (a French Song)",
+            "durationMs": 141427
+          },
+          {
+            "id": "0WDNetEwAsjiavw67F33Mi",
+            "name": "Rendezvous USA",
+            "durationMs": 165225
+          },
+          {
+            "id": "1Rx3Q2lzkX0KlMoz3rilf2",
+            "name": "Cocktails for Three",
+            "durationMs": 177835
+          },
+          {
+            "id": "4pqZXZVI8KEUMXwZzORCeC",
+            "name": "The Beautiful Waitress",
+            "durationMs": 337305
+          },
+          {
+            "id": "1aRqPFIe67lSfDBYhrKtVT",
+            "name": "High Horse Momma",
+            "durationMs": 183410
+          },
+          {
+            "id": "6bXIgYGQN9XhLhje2QI1WF",
+            "name": "Blue Asian Reds (for Roadrunner)",
+            "durationMs": 227768
+          },
+          {
+            "id": "5ev32s8mpizbEHMQ4skQJH",
+            "name": "New Delhi Freight Train",
+            "durationMs": 448303
+          },
+          {
+            "id": "5WI7H4sEdTeosAgnehlaw7",
+            "name": "FFA",
+            "durationMs": 71856
+          },
+          {
+            "id": "0PChxHGP6zmPtNJ1wzhkbZ",
+            "name": "Flatland Farmer",
+            "durationMs": 258327
+          },
+          {
+            "id": "2hwzXuFesTby4J6tPZ80tv",
+            "name": "My Amigo",
+            "durationMs": 200770
+          },
+          {
+            "id": "4NCRcD4Z9J2X17K7LD4afw",
+            "name": "The Pink and Black Song",
+            "durationMs": 240177
+          },
+          {
+            "id": "0jjpG8pHtflo0u6GBP7mO6",
+            "name": "The Thirty Years War Waltz (for Jo Harvey)",
+            "durationMs": 392713
+          },
+          {
+            "id": "6h8vStvZBI9D260ACYzmae",
+            "name": "I Just Left Myself",
+            "durationMs": 129653
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Lubbock (on everything)",
+        "spotifyArtists": "Terry Allen",
+        "spotifyYear": 1979
+      }
+    },
+    {
+      "rymId": "new-bill-fay-time-of-the-last-persecution",
+      "artist": "Bill Fay",
+      "title": "Time of the Last Persecution",
+      "year": 1971,
+      "rating": 0,
+      "spotify": {
+        "albumId": "6Y5Fy4lhvFDkC0bbINONW5",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2733d8b2996f6968b0e5c5f874f",
+        "tracks": [
+          {
+            "id": "3r65NyzFL38cNzfF3foaCY",
+            "name": "Omega Day",
+            "durationMs": 193053
+          },
+          {
+            "id": "5PJLDiPc6Ae1BUZvlZE76R",
+            "name": "Don't Let My Marigolds Die",
+            "durationMs": 144600
+          },
+          {
+            "id": "3eQJpfJ9NixsuMKg5XHJ2T",
+            "name": "I Hear You Calling",
+            "durationMs": 174720
+          },
+          {
+            "id": "1pl730o1mIy78Tz5bG9YVV",
+            "name": "Dust Filled Room",
+            "durationMs": 121026
+          },
+          {
+            "id": "7pCnHy3It8PwSbETbB91ji",
+            "name": "'Til The Christ Come Back",
+            "durationMs": 186240
+          },
+          {
+            "id": "3cKljOpa7TVjYniTNJibKy",
+            "name": "Release Is In The Eye",
+            "durationMs": 159306
+          },
+          {
+            "id": "3okofRtRBT6h8NUwNL9O5a",
+            "name": "Laughing Man",
+            "durationMs": 193080
+          },
+          {
+            "id": "35AgadLvvrwRwJZNmcBjcN",
+            "name": "Inside The Keeper's Pantry",
+            "durationMs": 147253
+          },
+          {
+            "id": "08BsdqxsCF6yd1XW9DNo8j",
+            "name": "Tell It Like It Is",
+            "durationMs": 151013
+          },
+          {
+            "id": "3iIcmkhc9QrHp4MMUG33qB",
+            "name": "Plan D",
+            "durationMs": 190933
+          },
+          {
+            "id": "3NTTOoRCBzcvyil7AUq22J",
+            "name": "Pictures Of Adolf Again",
+            "durationMs": 145693
+          },
+          {
+            "id": "0VsGxIjuOvRsYlG3iVFrMb",
+            "name": "Time Of The Last Persecution",
+            "durationMs": 232466
+          },
+          {
+            "id": "2AHJF5Xv5i53U0aoM8AvB4",
+            "name": "Come A Day",
+            "durationMs": 147093
+          },
+          {
+            "id": "1IBby3NL98tHHzw7V5u69t",
+            "name": "Let All The Other Teddies Know",
+            "durationMs": 151493
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Time Of The Last Persecution",
+        "spotifyArtists": "Bill Fay",
+        "spotifyYear": 1971
+      }
+    },
+    {
+      "rymId": "new-jards-macale-jards-macale",
+      "artist": "Jards Macalé",
+      "title": "Jards Macalé",
+      "year": 1972,
+      "rating": 0,
+      "spotify": {
+        "albumId": "3m6kk3Bs91YjhueIUMUxxw",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273073d034bcf01809dd5baa098",
+        "tracks": [
+          {
+            "id": "2f3HZVl6k9TxCb7SDA1ifo",
+            "name": "Farinha Do Desprezo",
+            "durationMs": 273341
+          },
+          {
+            "id": "4btEQdaTGoQk6CLDYtuO3f",
+            "name": "Vapor Barato / Revendo Amigos",
+            "durationMs": 391510
+          },
+          {
+            "id": "7mkU8AjhthOkzI8R1A3inI",
+            "name": "Mal Secreto",
+            "durationMs": 178798
+          },
+          {
+            "id": "2J64b8f5506uGdPAHxv07U",
+            "name": "78 Rotações",
+            "durationMs": 292877
+          },
+          {
+            "id": "543vaj9R9ZM0zPwgY3QiaY",
+            "name": "Movimento Dos Barcos",
+            "durationMs": 165385
+          },
+          {
+            "id": "6yPscjOHBTXf4nh2opVYDz",
+            "name": "Meu Amor Me Agarra E Geme E Treme E Chora E Mata",
+            "durationMs": 246730
+          },
+          {
+            "id": "0waA4DwzlcU8oKZiTXlHMR",
+            "name": "Let's Play That",
+            "durationMs": 345511
+          },
+          {
+            "id": "1n7Kw96GQvTvUZD4sQpnMu",
+            "name": "Farrapo Humano / A Morte",
+            "durationMs": 258998
+          },
+          {
+            "id": "0gZMPEM9uvbVDHvIeEJBG1",
+            "name": "Hotel Das Estrelas",
+            "durationMs": 163756
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Jards Macalé",
+        "spotifyArtists": "Jards Macalé",
+        "spotifyYear": 1972
+      }
+    },
+    {
+      "rymId": "new-walter-franco-revolver",
+      "artist": "Walter Franco",
+      "title": "Revolver",
+      "year": 1975,
+      "rating": 0,
+      "spotify": {
+        "albumId": "7mNh3p6DdeRRoNlDHhk5BJ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2736ee42579411228fabbcd676e",
+        "tracks": [
+          {
+            "id": "4L8drilb2AOS8tV4X7qDHR",
+            "name": "Feito gente",
+            "durationMs": 285133
+          },
+          {
+            "id": "6jqImgzJ2uoWG2hsaJRAV6",
+            "name": "Eternamente",
+            "durationMs": 135666
+          },
+          {
+            "id": "5uCfffrqVNLFMGMEwqNPSu",
+            "name": "Mamãe d'água",
+            "durationMs": 254066
+          },
+          {
+            "id": "1j0GALO2JOw6TCcTnROVi9",
+            "name": "Partir do alto / Animal sentimental",
+            "durationMs": 237306
+          },
+          {
+            "id": "7gAWR6Z7VqBfoPW15AQ8oP",
+            "name": "Pensamento",
+            "durationMs": 36400
+          },
+          {
+            "id": "40ORi7qvNNqC6nzjglG1F3",
+            "name": "Toque frágil",
+            "durationMs": 144400
+          },
+          {
+            "id": "6pTakhAYgUuzy8cdXXMcYe",
+            "name": "Nothing",
+            "durationMs": 147626
+          },
+          {
+            "id": "1NMvK5zDtVLh3n3fGeohIi",
+            "name": "Arte e manha",
+            "durationMs": 117240
+          },
+          {
+            "id": "0oUaQYz9P9flS1XTwWNdIy",
+            "name": "Apesar de tudo é leve",
+            "durationMs": 7960
+          },
+          {
+            "id": "6kNuFwTH8IlqYL69cjcV53",
+            "name": "Cachorro babucho",
+            "durationMs": 172440
+          },
+          {
+            "id": "7Emmo6kGHoZwPoUULSBuBj",
+            "name": "Bumbo do mundo",
+            "durationMs": 183866
+          },
+          {
+            "id": "3wX6CqsVbI5lNs6SIuRfow",
+            "name": "Pirâmides",
+            "durationMs": 66693
+          },
+          {
+            "id": "2KHTiFQeM5BV9mJE9ttCiU",
+            "name": "Cena maravilhosa",
+            "durationMs": 239573
+          },
+          {
+            "id": "3BQTKmYzBn8z47gl5nz9RY",
+            "name": "Revolver",
+            "durationMs": 222066
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Revólver",
+        "spotifyArtists": "Walter Franco",
+        "spotifyYear": 1994,
+        "override": true
+      }
+    },
+    {
+      "rymId": "new-hyldon-na-rua-na-chuva-na-fazenda",
+      "artist": "Hyldon",
+      "title": "Na rua, na chuva, na fazenda",
+      "year": 1975,
+      "rating": 0,
+      "spotify": {
+        "albumId": "5RyGjTmlcwDBaVbFeZrTld",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e694569622e49293802ddcb1",
+        "tracks": [
+          {
+            "id": "1A4Hcus0L5Wt3us3atsVTk",
+            "name": "Na Rua, Na Chuva, Na Fazenda (Casinha De Sapê)",
+            "durationMs": 212146
+          },
+          {
+            "id": "7FimZWnT9LaY2bdXzaX5Xd",
+            "name": "Na Sombra De Uma Árvore",
+            "durationMs": 292506
+          },
+          {
+            "id": "4UIoeDxZaV0t31fjpirIvW",
+            "name": "Vamos Passear De Bicicleta?",
+            "durationMs": 218866
+          },
+          {
+            "id": "6LWdGNPAFcYnpyyS730GEg",
+            "name": "Acontecimento",
+            "durationMs": 260133
+          },
+          {
+            "id": "5g9zTcpL72LNldIX2coV6e",
+            "name": "Vida Engraçada",
+            "durationMs": 186600
+          },
+          {
+            "id": "6xXU23b32Z0L5HSZhBuYl0",
+            "name": "As Dores Do Mundo",
+            "durationMs": 223693
+          },
+          {
+            "id": "5zHh6y75lTQafyZrGuJ7b2",
+            "name": "Guitarras, Violinos E Instrumentos De Samba",
+            "durationMs": 211866
+          },
+          {
+            "id": "46Y1xftTMagRh5XEUfYeLb",
+            "name": "Sábado E Domingo",
+            "durationMs": 214746
+          },
+          {
+            "id": "77eMTNaP6kwLO8jMhZVael",
+            "name": "Eleonora",
+            "durationMs": 210866
+          },
+          {
+            "id": "16zJBrQoUyG8A4rqN5JmUc",
+            "name": "Balanço Do Violão",
+            "durationMs": 182200
+          },
+          {
+            "id": "35n7CIkJWOjUsJizBANAYU",
+            "name": "Quando A Noite Vem",
+            "durationMs": 211240
+          },
+          {
+            "id": "6w59GBItUGkMkmUM2hk53U",
+            "name": "Meu Patuá",
+            "durationMs": 209373
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Na Rua, Na Chuva, Na Fazenda",
+        "spotifyArtists": "Hyldon",
+        "spotifyYear": 1975,
+        "override": true
+      }
+    },
+    {
+      "rymId": "new-luis-alberto-spinetta-artaud",
+      "artist": "Luis Alberto Spinetta",
+      "title": "Artaud",
+      "year": 1973,
+      "rating": 0,
+      "spotify": {
+        "albumId": "5MJR9j21vjEi4ODxzhvoTA",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27350db5a166ea23d5d6c4cd387",
+        "tracks": [
+          {
+            "id": "689lBKIELtWGHfsPWpR6rv",
+            "name": "Todas las Hojas Son del Viento",
+            "durationMs": 130080
+          },
+          {
+            "id": "0O9BqfU1Cdm7YqmD0TrT9i",
+            "name": "Cementerio Club",
+            "durationMs": 295826
+          },
+          {
+            "id": "79vy4Ma2UIfzXxJx0SXLGL",
+            "name": "Por",
+            "durationMs": 99333
+          },
+          {
+            "id": "5kjXJAtTIaDc2C3PET8oju",
+            "name": "Superchería",
+            "durationMs": 255986
+          },
+          {
+            "id": "4axy0XazW2TXlgSA9AbYJJ",
+            "name": "La Sed Verdadera",
+            "durationMs": 209973
+          },
+          {
+            "id": "7BCQ7bfdNpCdLmlvEGUfSG",
+            "name": "Cantata de Puentes Amarillos",
+            "durationMs": 547960
+          },
+          {
+            "id": "6hmYi0E6EBEmDeztQHaH0C",
+            "name": "Bajan",
+            "durationMs": 204466
+          },
+          {
+            "id": "2DKqDAq0v3eKtzO8TpEPUB",
+            "name": "A Starosta, el Idiota",
+            "durationMs": 193706
+          },
+          {
+            "id": "5K6fJf9l8WTsscngGert0b",
+            "name": "Las Habladurias del Mundo",
+            "durationMs": 243266
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Artaud",
+        "spotifyArtists": "Pescado Rabioso",
+        "spotifyYear": 1973,
+        "override": true
+      }
+    },
+    {
+      "rymId": "new-happy-end-kazemachi-roman",
+      "artist": "Happy End",
+      "title": "Kazemachi Roman",
+      "year": 1971,
+      "rating": 0,
+      "spotify": {
+        "albumId": "3N3NdhXkyIKauv6xkoUpwE",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d9ab06698a2ad275c17be689",
+        "tracks": [
+          {
+            "id": "2md5dzazly2EqjY6JVduFV",
+            "name": "抱きしめたい",
+            "durationMs": 215106
+          },
+          {
+            "id": "7K6uFINog1P307s3YwlJd2",
+            "name": "空いろのくれよん",
+            "durationMs": 249533
+          },
+          {
+            "id": "4mDoYdwFGi5nPwwGIKqQnF",
+            "name": "風をあつめて",
+            "durationMs": 246200
+          },
+          {
+            "id": "60JZapt4cncqQ0xG1iM6nM",
+            "name": "暗闇坂むささび変化",
+            "durationMs": 118986
+          },
+          {
+            "id": "60P7Gq0YGiviblHE5EYi4A",
+            "name": "はいからはくち",
+            "durationMs": 216973
+          },
+          {
+            "id": "0xccj3Eln77GT51OPOdYbx",
+            "name": "はいから・びゅーちふる",
+            "durationMs": 35466
+          },
+          {
+            "id": "5hh9ZqW6V5JlWACNPAnYWA",
+            "name": "夏なんです",
+            "durationMs": 196266
+          },
+          {
+            "id": "2GOdVViujGiQfq9WGiQD3f",
+            "name": "花いちもんめ",
+            "durationMs": 235893
+          },
+          {
+            "id": "6x8cMVMXu710YXoaF4vKLh",
+            "name": "あしたてんきになあれ",
+            "durationMs": 132973
+          },
+          {
+            "id": "3MasTKrC0YIBn6gt8R012C",
+            "name": "颱風",
+            "durationMs": 390280
+          },
+          {
+            "id": "7Fg1cRJq2PBOU5UK5Px7jN",
+            "name": "春らんまん",
+            "durationMs": 175520
+          },
+          {
+            "id": "7HezItwoIyQVaSuZsv0Rfw",
+            "name": "愛餓を",
+            "durationMs": 31626
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "風街ろまん",
+        "spotifyArtists": "はっぴいえんど",
+        "spotifyYear": 1971,
+        "override": true
+      }
+    },
+    {
+      "rymId": "new-taeko-ohnuki-sunshower",
+      "artist": "Taeko Ohnuki",
+      "title": "Sunshower",
+      "year": 1977,
+      "rating": 0,
+      "spotify": {
+        "albumId": "53YDN7b4vQ5MLMSPcnh9Os",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273867f9c4d0391216d4e3d132b",
+        "tracks": [
+          {
+            "id": "7jRBeWs7TvE8N8W4tEk3nb",
+            "name": "Summer Connection",
+            "durationMs": 270733
+          },
+          {
+            "id": "06acnazExu3JIGfkeaAmrP",
+            "name": "Kusuri o Takusan",
+            "durationMs": 249293
+          },
+          {
+            "id": "3xcZ5tTH1PBHzb1miiApl0",
+            "name": "Nani mo Iranai",
+            "durationMs": 242666
+          },
+          {
+            "id": "1SmwJJ8YVgiXtyE6elhUx1",
+            "name": "Tokai",
+            "durationMs": 310173
+          },
+          {
+            "id": "6FtGDFcQDKiU7UVoa0DK22",
+            "name": "Karappo no Isu",
+            "durationMs": 334200
+          },
+          {
+            "id": "2SN9Yvtggrppo1aO9x6EpF",
+            "name": "Law of Nature",
+            "durationMs": 229493
+          },
+          {
+            "id": "4bitrbPsxwKDy7aEjtiDl5",
+            "name": "Dare no Tame ni",
+            "durationMs": 330600
+          },
+          {
+            "id": "6q5ZCh07G7JIOFii2R71Mw",
+            "name": "Silent Screamer",
+            "durationMs": 215706
+          },
+          {
+            "id": "2ypiYa7sqz1uNn1Ixmainm",
+            "name": "Sargasso Sea",
+            "durationMs": 169933
+          },
+          {
+            "id": "3CvFuXbbe0E78au6CwWX5K",
+            "name": "Furiko no Yagi",
+            "durationMs": 343066
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "SUNSHOWER",
+        "spotifyArtists": "Taeko Onuki",
+        "spotifyYear": 1977,
+        "override": true
+      }
+    },
+    {
+      "rymId": "new-franco-tpok-jazz-francophonic-vol-2",
+      "artist": "Franco & TPOK Jazz",
+      "title": "Francophonic, Vol. 2",
+      "year": 2009,
+      "rating": 0,
+      "spotify": {
+        "albumId": "3sEDAZwu0o0adcQi6J9BtN",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27380395d9422f454bada55f7d9",
+        "tracks": [
+          {
+            "id": "5QNYuRXnqj7oJoeN8Wm0rr",
+            "name": "Tokoma ba camarade pamba",
+            "durationMs": 685986
+          },
+          {
+            "id": "18dOIbyVEF3Lal9YMqneNa",
+            "name": "Bina na ngai na respect",
+            "durationMs": 1047496
+          },
+          {
+            "id": "6AcEq63xF0unD2SmwAjByV",
+            "name": "Sandoka",
+            "durationMs": 773360
+          },
+          {
+            "id": "5kePPJprLPITRF0co8aGtR",
+            "name": "Princesse kikou",
+            "durationMs": 847733
+          },
+          {
+            "id": "5wRQi4ZymOHICENAlCBJUQ",
+            "name": "Nostalgie",
+            "durationMs": 636505
+          },
+          {
+            "id": "2yvFoW5wZnW46F7m9ESUty",
+            "name": "Coopération",
+            "durationMs": 728000
+          },
+          {
+            "id": "0ZQ0JydXiWwi9w5QwZKl5L",
+            "name": "Suite lettre No. 1",
+            "durationMs": 617053
+          },
+          {
+            "id": "08Gdtg2Wg9qADKLnh5hwy8",
+            "name": "Missile",
+            "durationMs": 452840
+          },
+          {
+            "id": "3PQYq8R1cBXnXExgct5xJ5",
+            "name": "Pesa position na yo",
+            "durationMs": 561746
+          },
+          {
+            "id": "6HlzaOFE2gM4RM0XyDp5O1",
+            "name": "Kimpa kisangameni",
+            "durationMs": 635007
+          },
+          {
+            "id": "0JwnnWP9dfooAINaXIszw7",
+            "name": "Mario",
+            "durationMs": 863016
+          },
+          {
+            "id": "3xadeim0aOdvIR2gnB8iQp",
+            "name": "Testament ya bowule",
+            "durationMs": 668946
+          },
+          {
+            "id": "5cJhPKOZVeDOgYUMhhJQCn",
+            "name": "Sadou",
+            "durationMs": 497093
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Francophonic, Vol. 2",
+        "spotifyArtists": "Franco, TPOK Jazz",
+        "spotifyYear": 2009,
+        "override": true
+      }
+    },
+    {
+      "rymId": "new-bheki-mseleku-celebration",
+      "artist": "Bheki Mseleku",
+      "title": "Celebration",
+      "year": 1992,
+      "rating": 0,
+      "spotify": {
+        "albumId": "5uIcFalqC6QjvKesBf4erF",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2739f9d49bbdad26af100e28b75",
+        "tracks": [
+          {
+            "id": "1QjjnUwRl6Z1ViSrjLWGUv",
+            "name": "Celebration",
+            "durationMs": 471533
+          },
+          {
+            "id": "2ABz79G5QEowyqevYviYDJ",
+            "name": "One for All - All for One",
+            "durationMs": 465400
+          },
+          {
+            "id": "4ie2Gi47TfHrlan7gcL5Fd",
+            "name": "Angola",
+            "durationMs": 446266
+          },
+          {
+            "id": "3pi3YXqvZQgGmEW51LIywe",
+            "name": "Blues for Afrika",
+            "durationMs": 379333
+          },
+          {
+            "id": "1EbGWmz3M8ZFbZTPR4psvs",
+            "name": "The Age of Inner Knowing",
+            "durationMs": 622466
+          },
+          {
+            "id": "6SP35L5kZHQQEEoMzlHEAA",
+            "name": "The Messenger",
+            "durationMs": 266933
+          },
+          {
+            "id": "7EmprYn86yuMTb207H3OUX",
+            "name": "Joy",
+            "durationMs": 437400
+          },
+          {
+            "id": "5tfdNU5GIAoey4lj3cw979",
+            "name": "Supreme Love",
+            "durationMs": 412493
+          },
+          {
+            "id": "1CY6o0TqkZ4ZBhUWl1IWNQ",
+            "name": "Cycle",
+            "durationMs": 397333
+          },
+          {
+            "id": "3sgCcBLRtQYe5zFN8wSQPa",
+            "name": "Closer to the Source",
+            "durationMs": 359173
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Celebration",
+        "spotifyArtists": "Bheki Mseleku",
+        "spotifyYear": 1992,
+        "override": true
+      }
+    },
+    {
+      "rymId": "new-minnie-riperton-come-to-my-garden",
+      "artist": "Minnie Riperton",
+      "title": "Come to My Garden",
+      "year": 1970,
+      "rating": 0,
+      "spotify": {
+        "albumId": "3FuJjgDLCnwRgnRLfjjGPV",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d85c957794c2a5b8b11de5f9",
+        "tracks": [
+          {
+            "id": "4XCGfHpGVq8xw800o5cwWs",
+            "name": "Les Fleurs",
+            "durationMs": 199293
+          },
+          {
+            "id": "1vbyyqt8cPI9L7B9ruCbPp",
+            "name": "Completeness",
+            "durationMs": 216280
+          },
+          {
+            "id": "55q7rylDWUZt7WjImvmPPs",
+            "name": "Come To My Garden",
+            "durationMs": 202813
+          },
+          {
+            "id": "25rFfWEpkArgtYJiSSn7cU",
+            "name": "Memory Band",
+            "durationMs": 251093
+          },
+          {
+            "id": "4H5svmDLxyewNfImW5CJfF",
+            "name": "Rainy Day In Centerville",
+            "durationMs": 325373
+          },
+          {
+            "id": "6GJXxrNFinfr9rRaMnttXF",
+            "name": "Close Your Eyes And Remember",
+            "durationMs": 225720
+          },
+          {
+            "id": "55heKTxUZNI04bSlONCD7n",
+            "name": "Oh, By The Way",
+            "durationMs": 187680
+          },
+          {
+            "id": "2bn4mcAX0Gk8GExJXK3S1O",
+            "name": "Expecting",
+            "durationMs": 238560
+          },
+          {
+            "id": "0tIbU4NqQsc3DYLEgYaQSF",
+            "name": "Only When I'm Dreaming",
+            "durationMs": 211800
+          },
+          {
+            "id": "2fBNQDl8SxPAdW0Dg4smAG",
+            "name": "Whenever, Wherever",
+            "durationMs": 213066
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Come To My Garden",
+        "spotifyArtists": "Minnie Riperton",
+        "spotifyYear": 1970
+      }
+    },
+    {
+      "rymId": "new-horsegirl-phonetics-on-and-on",
+      "artist": "Horsegirl",
+      "title": "Phonetics On and On",
+      "year": 2025,
+      "rating": 0,
+      "spotify": {
+        "albumId": "7C51cbjlLSILLTMVnxbrOc",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735879fd55abc5b89852ce08c8",
+        "tracks": [
+          {
+            "id": "51nV3C1hpbfKBi4bXiyDkv",
+            "name": "Where'd You Go?",
+            "durationMs": 101439
+          },
+          {
+            "id": "2fyxdNYZGJVESN4ToVw0lM",
+            "name": "Rock City",
+            "durationMs": 229196
+          },
+          {
+            "id": "5XiQhjQXoCUHrj9u8ri1vf",
+            "name": "In Twos",
+            "durationMs": 277264
+          },
+          {
+            "id": "4eTTNTTWTR2KpbwDHumCbn",
+            "name": "2468",
+            "durationMs": 197688
+          },
+          {
+            "id": "2t1PBeyHtPyGaHvxh3lLoY",
+            "name": "Well I Know You're Shy",
+            "durationMs": 209257
+          },
+          {
+            "id": "6Lbl8SzHxHO2P3BjMgW5HZ",
+            "name": "Julie",
+            "durationMs": 277199
+          },
+          {
+            "id": "1SFVei3ZUf3EuJdvKqmGKv",
+            "name": "Switch Over",
+            "durationMs": 185915
+          },
+          {
+            "id": "3sunB1mnTUu0ewjrZV4SZx",
+            "name": "Information Content",
+            "durationMs": 243193
+          },
+          {
+            "id": "0zWfDeOJvTkHWfLWSsbFqe",
+            "name": "Frontrunner",
+            "durationMs": 172542
+          },
+          {
+            "id": "2Ac4ZyuaRRWz8E1mchEPhG",
+            "name": "Sport Meets Sound",
+            "durationMs": 222358
+          },
+          {
+            "id": "66SSjvjC0MreMmN5r9VaF4",
+            "name": "I Can't Stand To See You",
+            "durationMs": 151246
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Phonetics On and On",
+        "spotifyArtists": "Horsegirl",
+        "spotifyYear": 2025
+      }
+    },
+    {
+      "rymId": "new-jalen-ngonda-come-around-and-love-me",
+      "artist": "Jalen Ngonda",
+      "title": "Come Around and Love Me",
+      "year": 2023,
+      "rating": 0,
+      "spotify": {
+        "albumId": "0E2PgtXRUHCslZ7gRselUq",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273753a720a9845b697d8a120f6",
+        "tracks": [
+          {
+            "id": "5FFSlcb55C7pIFcOYapN1b",
+            "name": "Come Around and Love Me",
+            "durationMs": 184866
+          },
+          {
+            "id": "4A48ckONJNoXU5smWT9CeG",
+            "name": "If You Don't Want My Love",
+            "durationMs": 146813
+          },
+          {
+            "id": "3jS0d7uwqKGbfwQ2ia2JN0",
+            "name": "Lost",
+            "durationMs": 208933
+          },
+          {
+            "id": "1YtJyabBgN06ZgNOjGYLBI",
+            "name": "That's All I Wanted From You",
+            "durationMs": 156440
+          },
+          {
+            "id": "0tL4uH8EuYD9iq7w3q4vyI",
+            "name": "Please Show Me",
+            "durationMs": 182013
+          },
+          {
+            "id": "0KNKtfE0jOcGBeu7Y5pL7h",
+            "name": "Just Like You Used To",
+            "durationMs": 189706
+          },
+          {
+            "id": "4kOdKWtst1d1PwERMtOWlX",
+            "name": "What A Difference She Made",
+            "durationMs": 175426
+          },
+          {
+            "id": "2icsXKdc0cAtcx7TLLH5wi",
+            "name": "Give Me Another Day",
+            "durationMs": 204893
+          },
+          {
+            "id": "4Egu9NllrAbdpNjW5ys8CM",
+            "name": "So Glad I Found You",
+            "durationMs": 196973
+          },
+          {
+            "id": "3vdfmxNcwJHonDzazX5Y5b",
+            "name": "It Takes A Fool",
+            "durationMs": 185920
+          },
+          {
+            "id": "3osAKU8N7haVZCfmvVC9gr",
+            "name": "Rapture",
+            "durationMs": 148986
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Come Around and Love Me",
+        "spotifyArtists": "Jalen Ngonda",
+        "spotifyYear": 2023
+      }
+    },
+    {
+      "rymId": "new-global-communication-76-14",
+      "artist": "Global Communication",
+      "title": "76:14",
+      "year": 1994,
+      "rating": 0,
+      "spotify": {
+        "albumId": "0CCYU4pfINH3Lt5krDd9JO",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ba5db8884d409cfb44c7822d",
+        "tracks": [
+          {
+            "id": "4sXMKDmyxJHL49n3Sl7tX3",
+            "name": "4:02",
+            "durationMs": 242080
+          },
+          {
+            "id": "31NqxiLbyEYuH2voZoHk61",
+            "name": "14:31",
+            "durationMs": 871240
+          },
+          {
+            "id": "1bOOE6hznd9IhYTJYpcOHs",
+            "name": "9:25",
+            "durationMs": 565106
+          },
+          {
+            "id": "0vx7kZpwhiiFsqjcT8K2Go",
+            "name": "9:39",
+            "durationMs": 579200
+          },
+          {
+            "id": "7sh5vtisZIFk8IPfnWIYgE",
+            "name": "7:39",
+            "durationMs": 459533
+          },
+          {
+            "id": "2ZHrdKWJs4Qq8laFsuKkKX",
+            "name": "0:54",
+            "durationMs": 54946
+          },
+          {
+            "id": "6q9DUgZXbx3ZQnylpZprRX",
+            "name": "8:07",
+            "durationMs": 487066
+          },
+          {
+            "id": "6Et8ZWmPFWMH6d4yE1riQZ",
+            "name": "5:23",
+            "durationMs": 323040
+          },
+          {
+            "id": "1NBVSiaJ750DBKnd4lhKWk",
+            "name": "4:14",
+            "durationMs": 254066
+          },
+          {
+            "id": "2Z93oXOAFAqkH0bQeVHdQ0",
+            "name": "12:18",
+            "durationMs": 738226
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "76:14",
+        "spotifyArtists": "Global Communication",
+        "spotifyYear": 1994
+      }
+    }
+  ]
+}

@@ -10,7 +10,7 @@ Crates are curated by Claude in conversation with Eric, from his Rate Your Music
 2. **Get the mood** from Eric: vibe, size (default ~20 records), any rating floor or decade limits.
 3. **Pick records** from `npm run library -- --min <N>`. The output is `rymId|artist|title|year|rating`, with ratings out of 10.
    - Use your own knowledge of the albums for mood and genre; the export has no genre data.
-   - Only use `rymId`s from that output.
+   - Only use `rymId`s from that output, except for discovery crates (records Eric hasn't heard). Those records aren't in the library: give each one a made-up `"rymId": "new-<artist>-<title>"` plus `artist`, `title` and `year`, and check `recenttracks-*.csv` (Last.fm scrobbles) and the RYM export to confirm he hasn't played or rated it.
    - Avoid more than 2 records by one artist unless asked.
 4. **Write the draft** to `crates/<id>.json` (`id` is lowercase-with-dashes):
    ```json
