@@ -53,7 +53,7 @@ class KeepAliveService : Service() {
         )
         return Notification.Builder(this, CHANNEL_ID)
             .setContentTitle(getString(R.string.keepalive_notification_title))
-            .setSmallIcon(R.drawable.ic_launcher)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentIntent(contentIntent)
             .setOngoing(true)
             .build()
