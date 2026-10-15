@@ -1,0 +1,904 @@
+{
+  "id": "neo-soul",
+  "name": "Neo-Soul",
+  "mood": "slow-burning R&B: Sade and D'Angelo to Frank Ocean",
+  "createdAt": "2026-10-15",
+  "records": [
+    {
+      "rymId": "7630705",
+      "artist": "Frank Ocean",
+      "title": "Blonde",
+      "year": 2016,
+      "rating": 10,
+      "spotify": {
+        "albumId": "3mH6qwIy9crq0I9YQbOuDf",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273c5649add07ed3720be9d5526",
+        "tracks": [
+          {
+            "id": "19YKaevk2bce4odJkP5L22",
+            "name": "Nikes",
+            "durationMs": 314075
+          },
+          {
+            "id": "2ZWlPOoWh0626oTaHrnl2a",
+            "name": "Ivy",
+            "durationMs": 249191
+          },
+          {
+            "id": "3xKsf9qdS1CyvXSMEid6g8",
+            "name": "Pink + White",
+            "durationMs": 184516
+          },
+          {
+            "id": "1IdZvb2XK8NmsovQlV6CPn",
+            "name": "Be Yourself",
+            "durationMs": 86943
+          },
+          {
+            "id": "35xSkNIXi504fcEwz9USRB",
+            "name": "Solo",
+            "durationMs": 257380
+          },
+          {
+            "id": "4xR3MAscflQ262kMeiKshQ",
+            "name": "Skyline To",
+            "durationMs": 184600
+          },
+          {
+            "id": "5GUYJTQap5F3RDQiCOJhrS",
+            "name": "Self Control",
+            "durationMs": 249667
+          },
+          {
+            "id": "2JUqYobT8NvARdPmc4ES2x",
+            "name": "Good Guy",
+            "durationMs": 66786
+          },
+          {
+            "id": "7eqoqGkKwgOaWNNHx90uEZ",
+            "name": "Nights",
+            "durationMs": 307151
+          },
+          {
+            "id": "2qtoRFCOEL1gRn5q9DJC7F",
+            "name": "Solo (Reprise)",
+            "durationMs": 78742
+          },
+          {
+            "id": "17yrCsl1Ai6CZLBmGj6d6p",
+            "name": "Pretty Sweet",
+            "durationMs": 158478
+          },
+          {
+            "id": "73D5hBkiVZkopZrmBZTBWf",
+            "name": "Facebook Story",
+            "durationMs": 68588
+          },
+          {
+            "id": "1VZLEW5ZfcAbKZ94XQiSZF",
+            "name": "Close To You",
+            "durationMs": 85754
+          },
+          {
+            "id": "2LMkwUfqC6S6s6qDVlEuzV",
+            "name": "White Ferrari",
+            "durationMs": 248807
+          },
+          {
+            "id": "1BViPjTT585XAhkUUrkts0",
+            "name": "Seigfried",
+            "durationMs": 334570
+          },
+          {
+            "id": "34xTFwjPQ1dC6uJmleno7x",
+            "name": "Godspeed",
+            "durationMs": 177922
+          },
+          {
+            "id": "5k8LB57xOq8UUNVaKWSqrf",
+            "name": "Futura Free",
+            "durationMs": 564165
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Blonde",
+        "spotifyArtists": "Frank Ocean",
+        "spotifyYear": 2016
+      }
+    },
+    {
+      "rymId": "10255382",
+      "artist": "Tyler, The Creator",
+      "title": "Igor",
+      "year": 2019,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5zi7WsKlIiUXv09tbGLKsE",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27330a635de2bb0caa4e26f6abb",
+        "tracks": [
+          {
+            "id": "51RN0kzWd7xeR4th5HsEtW",
+            "name": "IGOR'S THEME",
+            "durationMs": 200684
+          },
+          {
+            "id": "5hVghJ4KaYES3BFUATCYn0",
+            "name": "EARFQUAKE",
+            "durationMs": 190072
+          },
+          {
+            "id": "4f8Mh5wuWHOsfXtzjrJB3t",
+            "name": "I THINK",
+            "durationMs": 212016
+          },
+          {
+            "id": "5e4LIAQI0bClLazNf2gZV0",
+            "name": "EXACTLY WHAT YOU RUN FROM YOU END UP CHASING",
+            "durationMs": 14626
+          },
+          {
+            "id": "5QvBXUm5MglLJ3iBfTX2Wo",
+            "name": "RUNNING OUT OF TIME",
+            "durationMs": 177219
+          },
+          {
+            "id": "0fv2KH6hac06J86hBUTcSf",
+            "name": "NEW MAGIC WAND",
+            "durationMs": 195327
+          },
+          {
+            "id": "1nXZnTALNXiPlvXotqHm66",
+            "name": "A BOY IS A GUN*",
+            "durationMs": 210253
+          },
+          {
+            "id": "0wEC0GNF74lAqrEFZJMl1m",
+            "name": "PUPPET",
+            "durationMs": 179003
+          },
+          {
+            "id": "6bOkaEXc5CopinGazSLokx",
+            "name": "WHAT'S GOOD",
+            "durationMs": 205636
+          },
+          {
+            "id": "1hz7SRTGUNAtIQ46qiNv2p",
+            "name": "GONE, GONE / THANK YOU",
+            "durationMs": 375386
+          },
+          {
+            "id": "5A0M6B0RBSXSNWv0wcppZ9",
+            "name": "I DON'T LOVE YOU ANYMORE",
+            "durationMs": 161200
+          },
+          {
+            "id": "5TxRUOsGeWeRl3xOML59Ai",
+            "name": "ARE WE STILL FRIENDS?",
+            "durationMs": 265480
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "IGOR",
+        "spotifyArtists": "Tyler, The Creator",
+        "spotifyYear": 2019
+      }
+    },
+    {
+      "rymId": "9085516",
+      "artist": "Kali Uchis",
+      "title": "Isolation",
+      "year": 2018,
+      "rating": 9,
+      "spotify": {
+        "albumId": "4EPQtdq6vvwxuYeQTrwDVY",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27390b4e1905b1fc48c537ec053",
+        "tracks": [
+          {
+            "id": "2Tl0t18jgqJo0S7Fs2iy50",
+            "name": "Body Language - Intro",
+            "durationMs": 136342
+          },
+          {
+            "id": "5oJAaPRS2EzNIc8EWIbucE",
+            "name": "Miami (feat. BIA)",
+            "durationMs": 243864
+          },
+          {
+            "id": "1HA2V2EfAgJUBVOju4YfiB",
+            "name": "Just A Stranger (feat. Steve Lacy)",
+            "durationMs": 177697
+          },
+          {
+            "id": "3iv26BUAWSn83q8rhGKPE8",
+            "name": "Flight 22",
+            "durationMs": 216982
+          },
+          {
+            "id": "54IbnYEdA3ymfxv07WgN3b",
+            "name": "Your Teeth In My Neck",
+            "durationMs": 186181
+          },
+          {
+            "id": "4FZOSDwALdWxcGcRbwXWJ8",
+            "name": "Tyrant (feat. Jorja Smith)",
+            "durationMs": 204289
+          },
+          {
+            "id": "6LOZws7T3jqZz78unPgFF9",
+            "name": "Dead To Me",
+            "durationMs": 199505
+          },
+          {
+            "id": "12TOa8pzhbLTWh1vxIsPMp",
+            "name": "Nuestro Planeta (feat. Reykon)",
+            "durationMs": 202754
+          },
+          {
+            "id": "2dDzrUEDCKXaLViMPa1jo5",
+            "name": "In My Dreams",
+            "durationMs": 201000
+          },
+          {
+            "id": "7N3c9CKUmRqrt3dDvGWBWG",
+            "name": "Gotta Get Up - Interlude",
+            "durationMs": 113270
+          },
+          {
+            "id": "3P4gLPPOHIRQ5j6PC1hNa5",
+            "name": "Tomorrow",
+            "durationMs": 190375
+          },
+          {
+            "id": "66p59VAALXRlp777aP1Wom",
+            "name": "Coming Home - Interlude",
+            "durationMs": 159852
+          },
+          {
+            "id": "1otG6j1WHNvl9WgXLWkHTo",
+            "name": "After The Storm (feat. Tyler, The Creator & Bootsy Collins)",
+            "durationMs": 207454
+          },
+          {
+            "id": "5RcuACCOhgoc4ZH57AVCLA",
+            "name": "Feel Like A Fool",
+            "durationMs": 185239
+          },
+          {
+            "id": "5n1WeUNWJIjs9ueYD4v0Pt",
+            "name": "Killer",
+            "durationMs": 172357
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Isolation",
+        "spotifyArtists": "Kali Uchis",
+        "spotifyYear": 2018
+      }
+    },
+    {
+      "rymId": "16375166",
+      "artist": "Kali Uchis",
+      "title": "Sincerely,",
+      "year": 2025,
+      "rating": 9,
+      "spotify": {
+        "albumId": "2XhNukk6jDysbSRL7VsqYb",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a7493f1985f820a9add223d2",
+        "tracks": [
+          {
+            "id": "7A6f6HJqsl5UdG7kBXzXSf",
+            "name": "Heaven is a Home…",
+            "durationMs": 244810
+          },
+          {
+            "id": "0iIut6VJ8lIT5di5ejg78O",
+            "name": "Sugar! Honey! Love!",
+            "durationMs": 184871
+          },
+          {
+            "id": "54Z2Nr6JA67vqyNAWVYlBD",
+            "name": "Lose My Cool,",
+            "durationMs": 356146
+          },
+          {
+            "id": "78oIDxTChs1EJrQwUc931r",
+            "name": "It's Just Us",
+            "durationMs": 180015
+          },
+          {
+            "id": "6L1xZIyw9U8kICunpmDvq4",
+            "name": "For: You",
+            "durationMs": 193288
+          },
+          {
+            "id": "4X1fVpNykfEhB3m54x3hHA",
+            "name": "Silk Lingerie,",
+            "durationMs": 247081
+          },
+          {
+            "id": "6PKoUpo9sis5LWkMXSck6f",
+            "name": "Territorial",
+            "durationMs": 194637
+          },
+          {
+            "id": "21byfhwYAw4fxV2iq7iAdN",
+            "name": "Fall Apart,",
+            "durationMs": 186566
+          },
+          {
+            "id": "6ewcR0FnLdKjIt9gcMghrQ",
+            "name": "All I Can Say",
+            "durationMs": 187455
+          },
+          {
+            "id": "5OHwNOD7QVfwbxulaNw0go",
+            "name": "Daggers!",
+            "durationMs": 186781
+          },
+          {
+            "id": "0tbzabQUhf3QpxRuS9jKxi",
+            "name": "Angels All Around Me…",
+            "durationMs": 334448
+          },
+          {
+            "id": "4lyTGDRXBIItgLDcAxMTbn",
+            "name": "Breeze!",
+            "durationMs": 144718
+          },
+          {
+            "id": "7lj0vXLgWbyB0BvCsk22hn",
+            "name": "Sunshine & Rain...",
+            "durationMs": 197796
+          },
+          {
+            "id": "4MJpGGIDRwHuWoZCddIOgM",
+            "name": "ILYSMIH",
+            "durationMs": 213030
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Sincerely,",
+        "spotifyArtists": "Kali Uchis",
+        "spotifyYear": 2025
+      }
+    },
+    {
+      "rymId": "4040583",
+      "artist": "Frank Ocean",
+      "title": "Channel Orange",
+      "year": 2012,
+      "rating": 10,
+      "spotify": {
+        "albumId": "392p3shh2jkxUxY2VHvlH8",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2737aede4855f6d0d738012e2e5",
+        "tracks": [
+          {
+            "id": "0GAE689kVy7sFT2QWZH1Xa",
+            "name": "Start",
+            "durationMs": 45640
+          },
+          {
+            "id": "7DfFc7a6Rwfi3YQMRbDMau",
+            "name": "Thinkin Bout You",
+            "durationMs": 200746
+          },
+          {
+            "id": "6jypaMkKsoc5npsVzxhksl",
+            "name": "Fertilizer",
+            "durationMs": 39640
+          },
+          {
+            "id": "1HwbgJAU9PZ7YbzKgVgoIF",
+            "name": "Sierra Leone",
+            "durationMs": 148760
+          },
+          {
+            "id": "6MEDfjHxnVNcYmHe3mM6L2",
+            "name": "Sweet Life",
+            "durationMs": 262680
+          },
+          {
+            "id": "3iW3y326xuRpNVXzOMBZy5",
+            "name": "Not Just Money",
+            "durationMs": 59760
+          },
+          {
+            "id": "0725YWm6Z0TpZ6wrNk64Eb",
+            "name": "Super Rich Kids",
+            "durationMs": 304760
+          },
+          {
+            "id": "2ohegz9maxzroKBu9YhcCM",
+            "name": "Pilot Jones",
+            "durationMs": 184080
+          },
+          {
+            "id": "5lcyIeEfwZTs8Ajw3kdF7P",
+            "name": "Crack Rock",
+            "durationMs": 224146
+          },
+          {
+            "id": "4QhWbupniDd44EDtnh2bFJ",
+            "name": "Pyramids",
+            "durationMs": 592920
+          },
+          {
+            "id": "3GZD6HmiNUhxXYf8Gch723",
+            "name": "Lost",
+            "durationMs": 234093
+          },
+          {
+            "id": "1VMdwVq0yaTc4DeqSCi7DO",
+            "name": "White",
+            "durationMs": 76280
+          },
+          {
+            "id": "0msrDPXxZpts4FRnoX0bFr",
+            "name": "Monks",
+            "durationMs": 200240
+          },
+          {
+            "id": "2pMPWE7PJH1PizfgGRMnR9",
+            "name": "Bad Religion",
+            "durationMs": 175453
+          },
+          {
+            "id": "1fOkmYW3ZFkkjIdOZSf596",
+            "name": "Pink Matter",
+            "durationMs": 268813
+          },
+          {
+            "id": "4YZbVct8l9MnAVIROnLQdx",
+            "name": "Forrest Gump",
+            "durationMs": 194840
+          },
+          {
+            "id": "05tFLPSXJ1BbqIXy4Jeqfh",
+            "name": "End",
+            "durationMs": 134600
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "channel ORANGE",
+        "spotifyArtists": "Frank Ocean",
+        "spotifyYear": 2012
+      }
+    },
+    {
+      "rymId": "6053920",
+      "artist": "D'Angelo and The Vanguard",
+      "title": "Black Messiah",
+      "year": 2014,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5Hfbag0SsHxafx1SySFSX6",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f3dcd9c800f6a4c110339ee2",
+        "tracks": [
+          {
+            "id": "2yx7XX9v7M6yhm2fBG7K3E",
+            "name": "Ain't That Easy",
+            "durationMs": 289026
+          },
+          {
+            "id": "5Zvp0QO5e9cGhYHywdrfyQ",
+            "name": "1000 Deaths",
+            "durationMs": 349693
+          },
+          {
+            "id": "7gQzzsppcAezKh0HFjrG3q",
+            "name": "The Charade",
+            "durationMs": 200840
+          },
+          {
+            "id": "53l4LGUeZKCDZI1u25kQDN",
+            "name": "Sugah Daddy",
+            "durationMs": 302840
+          },
+          {
+            "id": "2RcanAJpudPNDkyIe9DzKS",
+            "name": "Really Love",
+            "durationMs": 344346
+          },
+          {
+            "id": "6hAFh200VpVUPg1P14oaJr",
+            "name": "Back to the Future (Part I)",
+            "durationMs": 322120
+          },
+          {
+            "id": "1tgmyTEKDOkwyvyE37AJDj",
+            "name": "Till It's Done (Tutu)",
+            "durationMs": 231906
+          },
+          {
+            "id": "6YOM2xqlJEdy35htURX7DS",
+            "name": "Prayer",
+            "durationMs": 272946
+          },
+          {
+            "id": "3RXr49TkL3wYHB7JJTnyn5",
+            "name": "Betray My Heart",
+            "durationMs": 355320
+          },
+          {
+            "id": "10772yYCkLuadtiVAcHkk2",
+            "name": "The Door",
+            "durationMs": 188120
+          },
+          {
+            "id": "0BcLpX66X5fTdBSnsCMFyP",
+            "name": "Back to the Future (Part II)",
+            "durationMs": 144813
+          },
+          {
+            "id": "2f9mmR37OEceYERbXml0Nj",
+            "name": "Another Life",
+            "durationMs": 358558
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Black Messiah",
+        "spotifyArtists": "D'Angelo",
+        "spotifyYear": 2014,
+        "override": true
+      }
+    },
+    {
+      "rymId": "8410429",
+      "artist": "Tyler, The Creator",
+      "title": "Flower Boy",
+      "year": 2017,
+      "rating": 9,
+      "spotify": {
+        "albumId": "2nkto6YNI4rUYTLqEwWJ3o",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2738940ac99f49e44f59e6f7fb3",
+        "tracks": [
+          {
+            "id": "33i3xxHB4YSYGYbtJrwwO8",
+            "name": "Foreword (feat. Rex Orange County)",
+            "durationMs": 194080
+          },
+          {
+            "id": "6KuXb26rHuRy3ZDse1VRmx",
+            "name": "Where This Flower Blooms (feat. Frank Ocean)",
+            "durationMs": 194933
+          },
+          {
+            "id": "4KgTrzmfiWNcVneh2Dd1Ou",
+            "name": "Sometimes...",
+            "durationMs": 36160
+          },
+          {
+            "id": "7KA4W4McWYRpgf0fWsJZWB",
+            "name": "See You Again (feat. Kali Uchis)",
+            "durationMs": 180386
+          },
+          {
+            "id": "21yRtB6B8EMounImAfHRCP",
+            "name": "Who Dat Boy (feat. A$AP Rocky)",
+            "durationMs": 205093
+          },
+          {
+            "id": "5SxlUF7J8tyFIEF22EomeP",
+            "name": "Pothole (feat. Jaden Smith)",
+            "durationMs": 237000
+          },
+          {
+            "id": "6ACiYjq5Q7e6BlhZEHz7cd",
+            "name": "Garden Shed (feat. Estelle)",
+            "durationMs": 223946
+          },
+          {
+            "id": "5WNYg3usc6H8N3MBEp4zVk",
+            "name": "Boredom (feat. Rex Orange County & Anna of the North)",
+            "durationMs": 320720
+          },
+          {
+            "id": "430qNtapCS3Ue1yoSql1oV",
+            "name": "I Ain't Got Time!",
+            "durationMs": 206266
+          },
+          {
+            "id": "4bEcoz1OcfMgUbp2ft8ieQ",
+            "name": "911 / Mr. Lonely (feat. Frank Ocean & Steve Lacy)",
+            "durationMs": 255653
+          },
+          {
+            "id": "39u2PsqrAZpZ0KPx6CjasV",
+            "name": "Droppin' Seeds (feat. Lil' Wayne)",
+            "durationMs": 60000
+          },
+          {
+            "id": "4XDpeWqPADoWRKcUY3dC84",
+            "name": "November",
+            "durationMs": 225346
+          },
+          {
+            "id": "0qtK3XwbuG153dmwB8iepL",
+            "name": "Glitter",
+            "durationMs": 224893
+          },
+          {
+            "id": "3R1Vu4Ws7UitwDxDHTol0P",
+            "name": "Enjoy Right Now, Today",
+            "durationMs": 235400
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Flower Boy",
+        "spotifyArtists": "Tyler, The Creator",
+        "spotifyYear": 2017
+      }
+    },
+    {
+      "rymId": "5200",
+      "artist": "Sade",
+      "title": "Love Deluxe",
+      "year": 1992,
+      "rating": 9,
+      "spotify": {
+        "albumId": "2PfGKHtqEX58bHtkQxJnWG",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ee65bbd54f993b5f01d5c511",
+        "tracks": [
+          {
+            "id": "1oaaSrDJimABpOdCEbw2DJ",
+            "name": "No Ordinary Love",
+            "durationMs": 440466
+          },
+          {
+            "id": "3r0Q8oUYyHjViM43bAUP3D",
+            "name": "Feel No Pain",
+            "durationMs": 309200
+          },
+          {
+            "id": "104gvc1JDyW1PXCW9GCP17",
+            "name": "I Couldn't Love You More",
+            "durationMs": 228293
+          },
+          {
+            "id": "4PEGwWH4tL6H7dGl4uVSPg",
+            "name": "Like a Tattoo",
+            "durationMs": 218000
+          },
+          {
+            "id": "4S0NYVAQdIb81uLoZoQmgq",
+            "name": "Kiss of Life",
+            "durationMs": 350000
+          },
+          {
+            "id": "22QiTJqDn1BIRSh4mkNJ5w",
+            "name": "Cherish the Day",
+            "durationMs": 332133
+          },
+          {
+            "id": "4J7s7j5ulwElPG7HaGQDXR",
+            "name": "Pearls",
+            "durationMs": 273226
+          },
+          {
+            "id": "6unbYrzh7coxp0WFnleFyD",
+            "name": "Bullet Proof Soul",
+            "durationMs": 324666
+          },
+          {
+            "id": "189nzulSxXOQI9Ru83NZb0",
+            "name": "Mermaid",
+            "durationMs": 264360
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Love Deluxe",
+        "spotifyArtists": "Sade",
+        "spotifyYear": 1992
+      }
+    },
+    {
+      "rymId": "8431905",
+      "artist": "Kelela",
+      "title": "Take Me Apart",
+      "year": 2017,
+      "rating": 9,
+      "spotify": {
+        "albumId": "4mQ6UTM71F02O1jMVi625N",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27366db2ec2e87f6c50be310656",
+        "tracks": [
+          {
+            "id": "51QgyO73gGeEIpG5SqoA6n",
+            "name": "Frontline",
+            "durationMs": 339189
+          },
+          {
+            "id": "051vlGJEzNFMLOvLHXmsis",
+            "name": "Waitin",
+            "durationMs": 195352
+          },
+          {
+            "id": "1Oq9PmXtk8PVjbHzrwM79v",
+            "name": "Take Me Apart",
+            "durationMs": 242829
+          },
+          {
+            "id": "5mZKv22ul72uhdfPAx9lEC",
+            "name": "Enough",
+            "durationMs": 309001
+          },
+          {
+            "id": "33NxCYpSe84olR0fWRUpr4",
+            "name": "Jupiter",
+            "durationMs": 125302
+          },
+          {
+            "id": "0Vb6Gj5UHK6jVU4XnfmetE",
+            "name": "Better",
+            "durationMs": 266040
+          },
+          {
+            "id": "6bt8z0LJ9okFhDqOT3Xx1i",
+            "name": "LMK",
+            "durationMs": 218319
+          },
+          {
+            "id": "5mOKrMqqTh3tZYbNymZM6r",
+            "name": "Truth Or Dare",
+            "durationMs": 252329
+          },
+          {
+            "id": "5KneIWPenv3Jp6NMpTADnb",
+            "name": "S.O.S.",
+            "durationMs": 142279
+          },
+          {
+            "id": "66vv7zJWgrSgteTJw53zVY",
+            "name": "Blue Light",
+            "durationMs": 216892
+          },
+          {
+            "id": "3oqzScrIFItTIOod829Rka",
+            "name": "Onanon",
+            "durationMs": 271564
+          },
+          {
+            "id": "0HLs85IwxnJrWYF3mzRfQG",
+            "name": "Turn To Dust",
+            "durationMs": 269311
+          },
+          {
+            "id": "3hHOTDFrciIXTZ9SttBHNy",
+            "name": "Bluff",
+            "durationMs": 72043
+          },
+          {
+            "id": "6EJkMyuVaqSDCyB7b24L8p",
+            "name": "Altadena",
+            "durationMs": 310800
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Take Me Apart",
+        "spotifyArtists": "Kelela",
+        "spotifyYear": 2017
+      }
+    },
+    {
+      "rymId": "7332669",
+      "artist": "Blood Orange",
+      "title": "Freetown Sound",
+      "year": 2016,
+      "rating": 9,
+      "spotify": {
+        "albumId": "3Z2XUjgVj5ZkCGpU7b2qtY",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d4b2badf153397242d495cc9",
+        "tracks": [
+          {
+            "id": "5UBJPtR2I4dAkZKOtY3ES6",
+            "name": "By Ourselves",
+            "durationMs": 132046
+          },
+          {
+            "id": "4sln3hvqGxLEUCcAmTO4pR",
+            "name": "Augustine",
+            "durationMs": 231189
+          },
+          {
+            "id": "5VchXoIQe8DkzgIu2pTIEa",
+            "name": "Chance",
+            "durationMs": 168691
+          },
+          {
+            "id": "1p2TWJxUlHE5JR0sE6E1d7",
+            "name": "Best to You",
+            "durationMs": 225747
+          },
+          {
+            "id": "07vkqVkprUh8XL7Kz1CJ5Z",
+            "name": "With Him",
+            "durationMs": 85488
+          },
+          {
+            "id": "0e43YnIeghIkDOW146x3G5",
+            "name": "E.V.P.",
+            "durationMs": 343570
+          },
+          {
+            "id": "1pELK1Wjc3BJu1o1qfHWIj",
+            "name": "Love Ya",
+            "durationMs": 167951
+          },
+          {
+            "id": "4Q7Iacj0dnfOu3bdXTcCUA",
+            "name": "But You",
+            "durationMs": 181395
+          },
+          {
+            "id": "0A6Ex80dxSp8JP545CR34i",
+            "name": "Desirée",
+            "durationMs": 180638
+          },
+          {
+            "id": "1UdR2sWnDBRd3m0YxZRkMG",
+            "name": "Hands Up",
+            "durationMs": 249268
+          },
+          {
+            "id": "0sZBuwbeKsauQvnOuSRypq",
+            "name": "Hadron Collider",
+            "durationMs": 223950
+          },
+          {
+            "id": "4YpWlvxGkGMq55rJUlsWNx",
+            "name": "Squash Squash",
+            "durationMs": 217369
+          },
+          {
+            "id": "0ToIU1A4H4QsuNEwPj1ljr",
+            "name": "Juicy 1-4",
+            "durationMs": 275956
+          },
+          {
+            "id": "0S001mAQoYNpTyVRu8BmMp",
+            "name": "Better Than Me",
+            "durationMs": 196851
+          },
+          {
+            "id": "1kAcUQO9bBz5c4zwIXIGMO",
+            "name": "Thank You",
+            "durationMs": 183561
+          },
+          {
+            "id": "32gJ6tgfi1TQGpaOXGq5se",
+            "name": "I Know",
+            "durationMs": 274887
+          },
+          {
+            "id": "6o56rtbc0ciUPQcDKFGKEd",
+            "name": "Better Numb",
+            "durationMs": 181160
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Freetown Sound",
+        "spotifyArtists": "Blood Orange",
+        "spotifyYear": 2016
+      }
+    }
+  ]
+}

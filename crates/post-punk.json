@@ -1,0 +1,999 @@
+{
+  "id": "post-punk",
+  "name": "Punk & Post-Punk",
+  "mood": "wiry guitars and big feelings: Wire and the Buzzcocks to the Chameleons",
+  "createdAt": "2026-10-15",
+  "records": [
+    {
+      "rymId": "1430",
+      "artist": "Wire",
+      "title": "Pink Flag",
+      "year": 1977,
+      "rating": 10,
+      "spotify": {
+        "albumId": "4WXqZZ28geJSPtqLcCF56L",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27321faee05f3c4d648d971f1b0",
+        "tracks": [
+          {
+            "id": "0T3uPDgL6iErias0LLfJIE",
+            "name": "Reuters - 2006 Remastered Version",
+            "durationMs": 183960
+          },
+          {
+            "id": "1MQQfz3N6AysgAvbHDHhCa",
+            "name": "Field Day for the Sundays - 2006 Remastered Version",
+            "durationMs": 28320
+          },
+          {
+            "id": "0bN5W8EhIJhh6zvgeNG57J",
+            "name": "Three Girl Rhumba - 2006 Remastered Version",
+            "durationMs": 83733
+          },
+          {
+            "id": "5bb71zUIXMD6fsnHBLaoQ6",
+            "name": "Ex Lion Tamer - 2006 Remastered Version",
+            "durationMs": 139693
+          },
+          {
+            "id": "2fb7dWrEsTKuPWohoaQHa5",
+            "name": "Lowdown - 2006 Remastered Version",
+            "durationMs": 146840
+          },
+          {
+            "id": "6ZzgkNscFRe9PiryaeUVwo",
+            "name": "Start to Move - 2006 Remastered Version",
+            "durationMs": 73280
+          },
+          {
+            "id": "5qdsapFwiOWNGh5pFF6ieB",
+            "name": "Brazil - 2006 Remastered Version",
+            "durationMs": 41200
+          },
+          {
+            "id": "4ospwieFO34SwD90nXqR6r",
+            "name": "It's So Obvious - 2006 Remastered Version",
+            "durationMs": 53893
+          },
+          {
+            "id": "5Afr2zFhd1HPMtAHwdakUx",
+            "name": "Surgeon's Girl - 2006 Remastered Version",
+            "durationMs": 77626
+          },
+          {
+            "id": "6VvpBt95FoPF01YBqv0vV1",
+            "name": "Pink Flag - 2006 Remastered Version",
+            "durationMs": 225813
+          },
+          {
+            "id": "0mi8mZwiirZfF87H99gXel",
+            "name": "The Commercial - 2006 Remastered Version",
+            "durationMs": 49320
+          },
+          {
+            "id": "6X7CDzfm1Nq7qZwmRaSUWS",
+            "name": "Straight Line - 2006 Remastered Version",
+            "durationMs": 44613
+          },
+          {
+            "id": "6tPUscoU7EpieQLHBBWd0q",
+            "name": "106 Beats That - 2006 Remastered Version",
+            "durationMs": 72840
+          },
+          {
+            "id": "0Irgm60IPuidNzELI4fMho",
+            "name": "Mr Suit - 2006 Remastered Version",
+            "durationMs": 85333
+          },
+          {
+            "id": "0GWyL6sgPd7g6yppYNMLaG",
+            "name": "Strange - 2006 Remastered Version",
+            "durationMs": 239346
+          },
+          {
+            "id": "55tzW3Ar6PPmh1rNYBqE3l",
+            "name": "Fragile - 2006 Remastered Version",
+            "durationMs": 78346
+          },
+          {
+            "id": "5LEwYNnwG1RSVseSmMZQpo",
+            "name": "Mannequin - 2006 Remastered Version",
+            "durationMs": 157360
+          },
+          {
+            "id": "5OEtdILhohC7GCVio8Uboq",
+            "name": "Different to Me - 2006 Remastered Version",
+            "durationMs": 43826
+          },
+          {
+            "id": "6Slsb9yR7U2gvgw4GEGkbV",
+            "name": "Champs - 2006 Remastered Version",
+            "durationMs": 106133
+          },
+          {
+            "id": "3dCgliUWlFmR5pAoBilndg",
+            "name": "Feeling Called Love - 2006 Remastered Version",
+            "durationMs": 88040
+          },
+          {
+            "id": "2X7Yq4DYQmEx1bZ1bYjlYx",
+            "name": "1 2 X U - 2006 Remastered Version",
+            "durationMs": 117480
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Pink Flag (2006 Remastered Version)",
+        "spotifyArtists": "Wire",
+        "spotifyYear": 1977
+      }
+    },
+    {
+      "rymId": "912",
+      "artist": "Buzzcocks",
+      "title": "Singles Going Steady",
+      "year": 1979,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6TxgQwGrbG3XZLNPOEhg7E",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ee89a285a9b6ec19328aa668",
+        "tracks": [
+          {
+            "id": "3K6mPAaaOWaDDR0l0OjhOE",
+            "name": "Orgasm Addict - 2001 Remastered Version",
+            "durationMs": 122960
+          },
+          {
+            "id": "0caQ80s7fyh8xJzD8Sq6Ir",
+            "name": "What Do I Get? - 2001 Remastered Version",
+            "durationMs": 175973
+          },
+          {
+            "id": "0H8ScUk9YkiaUj66l1PfUo",
+            "name": "I Don't Mind - 2001 Remastered Version",
+            "durationMs": 139466
+          },
+          {
+            "id": "5heCeQmDXvw9jTwq5t1rFv",
+            "name": "Love You More - 2001 Remastered Version",
+            "durationMs": 110666
+          },
+          {
+            "id": "5b2ZnVZi3kDOMX8iflXKuO",
+            "name": "Ever Fallen In Love (With Someone You Shouldn't've)",
+            "durationMs": 160133
+          },
+          {
+            "id": "4SKnkn7ANtSioxpxe6nrfw",
+            "name": "Promises - 2001 Remastered Version",
+            "durationMs": 157066
+          },
+          {
+            "id": "7xUEsVEwSSXhjgBgZG57Tl",
+            "name": "Everybody's Happy Nowadays - 2001 Remastered Version",
+            "durationMs": 191066
+          },
+          {
+            "id": "45XawIwfJvidP49VoO7hDY",
+            "name": "Harmony In My Head - 2001 Remastered Version",
+            "durationMs": 187840
+          },
+          {
+            "id": "4j1uZo4Fl9RfCfQMZiZN2D",
+            "name": "You Say You Don't Love Me - 2001 Remastered Version",
+            "durationMs": 174960
+          },
+          {
+            "id": "1VSWfIyn6xz6OqTcthmznc",
+            "name": "Are Everything - 2001 Remastered Version",
+            "durationMs": 239200
+          },
+          {
+            "id": "5eWyfJipdqtHPpZ6s2TMTv",
+            "name": "Strange Thing - 2001 Remastered Version",
+            "durationMs": 250400
+          },
+          {
+            "id": "61hcza2htcLmjjZTZLbdlB",
+            "name": "Running Free - 2001 Remastered Version",
+            "durationMs": 194666
+          },
+          {
+            "id": "0qhMdrRRVoyzF13OGge7Er",
+            "name": "Whatever Happened To...? - 2001 Remastered Version",
+            "durationMs": 135040
+          },
+          {
+            "id": "6ZggVT2x5uDIUZqGIJC7zQ",
+            "name": "Oh Shit - 2001 Remastered Version",
+            "durationMs": 98066
+          },
+          {
+            "id": "2nUy5biS1XHiU9RV89FZor",
+            "name": "Autonomy - 2001 Remastered Version",
+            "durationMs": 225560
+          },
+          {
+            "id": "06sc8OdFDjFlLYFqnQIZFy",
+            "name": "Noise Annoys - 2001 Remastered Version",
+            "durationMs": 173066
+          },
+          {
+            "id": "2Waxwn2EpASDLE0QXWnkhr",
+            "name": "Just Lust - 2001 Remastered Version",
+            "durationMs": 182333
+          },
+          {
+            "id": "3L0VdQUHpPCXSGzfKVwmfN",
+            "name": "Lipstick - 2001 Remastered Version",
+            "durationMs": 159733
+          },
+          {
+            "id": "037DAJ2ClglNQbEvXpGav4",
+            "name": "Why Can't I Touch It? - 2001 Remastered Version",
+            "durationMs": 396333
+          },
+          {
+            "id": "3Wqq9SNrWfdQWqQg4xeYLo",
+            "name": "Something's Gone Wrong Again - 2001 Remastered Version",
+            "durationMs": 273253
+          },
+          {
+            "id": "4m1uPIncUjFUyzCbQArNIG",
+            "name": "Raison D'Etre - 2001 Remastered Version",
+            "durationMs": 214933
+          },
+          {
+            "id": "0pcNxQNgLYzJUfiehqWGlY",
+            "name": "Why She's A Girl From The Chainstore - 2001 Remastered Version",
+            "durationMs": 146866
+          },
+          {
+            "id": "0Q1HzXQvsYdShfhPz95MPo",
+            "name": "Airwaves Dream - 2001 Remastered Version",
+            "durationMs": 234666
+          },
+          {
+            "id": "6LSRLf0GjGeIVavXPGnJFl",
+            "name": "What Do You Know - 2001 Remastered Version",
+            "durationMs": 195093
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Singles Going Steady",
+        "spotifyArtists": "Buzzcocks",
+        "spotifyYear": 1979
+      }
+    },
+    {
+      "rymId": "14698",
+      "artist": "The Sound",
+      "title": "Shock of Daylight",
+      "year": 1984,
+      "rating": 10,
+      "spotify": {
+        "albumId": "60I4lq1UDgFn1OhRmzIc4n",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27380391d7041a5570451ba0217",
+        "tracks": [
+          {
+            "id": "0V6aeJXqX91A0dPPpvprrP",
+            "name": "Golden Soldiers",
+            "durationMs": 199696
+          },
+          {
+            "id": "6KNNN7HqpEnsAIMi7fo6np",
+            "name": "Longest Days",
+            "durationMs": 310927
+          },
+          {
+            "id": "3M1k3ShApSH4l2LTNPDMw4",
+            "name": "Counting the Days",
+            "durationMs": 217833
+          },
+          {
+            "id": "0D9jaOHyhXsw8CpoNtHCNF",
+            "name": "Winter",
+            "durationMs": 260709
+          },
+          {
+            "id": "3wRg4yWqH7BH5YljnYeKp0",
+            "name": "New Way of Life",
+            "durationMs": 280377
+          },
+          {
+            "id": "2Me8NU2z3c3Nn7SLJg4QLY",
+            "name": "Dreams Then Plans",
+            "durationMs": 244242
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Shock of Daylight",
+        "spotifyArtists": "The Sound",
+        "spotifyYear": 1984,
+        "override": true
+      }
+    },
+    {
+      "rymId": "324",
+      "artist": "The Cure",
+      "title": "Disintegration",
+      "year": 1989,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6vQB3ZBxnQPP3jQcGV2qzg",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735eaaa770d39591fd91b2b03b",
+        "tracks": [
+          {
+            "id": "76rfUs6iZBa3OCf8tCBn27",
+            "name": "Plainsong - 2010 Remaster",
+            "durationMs": 317346
+          },
+          {
+            "id": "1tuwC1Ob5vnYZhvg3zyzJg",
+            "name": "Pictures of You - 2010 Remaster",
+            "durationMs": 448466
+          },
+          {
+            "id": "7BffxdidCNDN2cOP1XlCyv",
+            "name": "Closedown - 2010 Remaster",
+            "durationMs": 258853
+          },
+          {
+            "id": "0X5C4WjQNubRysTkHOubz3",
+            "name": "Lovesong - 2010 Remaster",
+            "durationMs": 209573
+          },
+          {
+            "id": "4muRKfZjpRvjoi4eAOAYot",
+            "name": "Last Dance - 2010 Remaster",
+            "durationMs": 285066
+          },
+          {
+            "id": "4d4oXk7O2lEhZ83ivV93li",
+            "name": "Lullaby - 2010 Remaster",
+            "durationMs": 249880
+          },
+          {
+            "id": "23j7dlNIalftynH6fNllR9",
+            "name": "Fascination Street - 2010 Remaster",
+            "durationMs": 316173
+          },
+          {
+            "id": "4Qq0UKztCAIfu0Tfgmb1d2",
+            "name": "Prayers for Rain - 2010 Remaster",
+            "durationMs": 368306
+          },
+          {
+            "id": "3gXwy8PyIFiNOUnq5Lvkh6",
+            "name": "The Same Deep Water as You - 2010 Remaster",
+            "durationMs": 562906
+          },
+          {
+            "id": "0zY8t5dC1KQXcPUKByWMJM",
+            "name": "Disintegration - 2010 Remaster",
+            "durationMs": 499973
+          },
+          {
+            "id": "2o0mBeqnGQkfhdYBl9ld3c",
+            "name": "Homesick - 2010 Remaster",
+            "durationMs": 427280
+          },
+          {
+            "id": "41rrri7GpGTmJwYqYDZEMf",
+            "name": "Untitled - 2010 Remaster",
+            "durationMs": 393093
+          },
+          {
+            "id": "0tQtjJp0Hmjd4q6IQdSiY5",
+            "name": "Prayers for Rain - RS Home Demo Instrumental - 04/88",
+            "durationMs": 181320
+          },
+          {
+            "id": "2Ca5BoW6FGOUwVHTjzPuBL",
+            "name": "Pictures of You - RS Home Demo Instrumental - 04/88",
+            "durationMs": 209626
+          },
+          {
+            "id": "5603kdZnIBnECCHhm6c5oS",
+            "name": "Fascination Street - RS Home Demo Instrumental - 04/88",
+            "durationMs": 161186
+          },
+          {
+            "id": "4jGfTZjIocJD2UX9z2hZpr",
+            "name": "Homesick-06/88) - Band Rehearsal (Instrumental",
+            "durationMs": 194386
+          },
+          {
+            "id": "5ifAUIQL8VfKL0k3QKlLIG",
+            "name": "Fear of Ghosts - Band Rehearsal Instrumental - 06/88",
+            "durationMs": 179133
+          },
+          {
+            "id": "1rcOtF4P8Xu1V34hYOzuNR",
+            "name": "No Heart - Band Rehearsal Instrumental - 06/88",
+            "durationMs": 161720
+          },
+          {
+            "id": "0XLV0HCYnFjStvzbyX6Hmh",
+            "name": "Esten - Band Demo Instrumental - 09/88",
+            "durationMs": 194933
+          },
+          {
+            "id": "7aLa75Cxyv08IQKusPNKvF",
+            "name": "Closedown - Band Demo Instrumental - 09/88",
+            "durationMs": 170186
+          },
+          {
+            "id": "1iwZxYFnMu3JoY0abBcqpu",
+            "name": "Lovesong-09/88) - Band Demo Instrumental - 09/88",
+            "durationMs": 222400
+          },
+          {
+            "id": "3Fcc4YmusoVzerIoyZDMcf",
+            "name": "2 Late - Alt. Version; Band Demo Instrumental - 09/88",
+            "durationMs": 172453
+          },
+          {
+            "id": "4bbg4bsncim5R21WQE0aUC",
+            "name": "The Same Deep Water as You - Band Demo Instrumental - 09/88",
+            "durationMs": 365786
+          },
+          {
+            "id": "4ExtdfqJYipX3NC9y2MKjz",
+            "name": "Disintegration - Band Demo Instrumental - 09/88",
+            "durationMs": 396453
+          },
+          {
+            "id": "0SrrnRAjtpYF8vnOp0OXzM",
+            "name": "Untitled - Alt. Version; Studio Rough Instrumental - 11/88",
+            "durationMs": 219880
+          },
+          {
+            "id": "6IVAgE0gq2Khv7hZDKkNSw",
+            "name": "Babble - Alternate Version; Instrumental Studio Rough, 11/88",
+            "durationMs": 180613
+          },
+          {
+            "id": "1zjghjS3op8Dfc63mb1aZ5",
+            "name": "Plainsong - Studio Rough Guide Vocal - 11/88",
+            "durationMs": 286533
+          },
+          {
+            "id": "4r8IVcMtGInMYQUI2IkT74",
+            "name": "Last Dance - Studio Rough Guide Vocal - 11/88",
+            "durationMs": 282493
+          },
+          {
+            "id": "2rFt6hwXe7x9Q2rPfdUbMC",
+            "name": "Lullaby - Studio Rough Guide Vocal - 11/88",
+            "durationMs": 228253
+          },
+          {
+            "id": "2CLEyUVhmc490svYKfRl9a",
+            "name": "Out of Mind - Studio Rough Guide Vocal - 11/88",
+            "durationMs": 180306
+          },
+          {
+            "id": "5TgHCQQNyeSyNLAzQJ66vh",
+            "name": "Delirious Night - Delirious Night (Rough Mix Vocal - 12/88)",
+            "durationMs": 272946
+          },
+          {
+            "id": "2EgkJFsnAa4IFIufAGQLQH",
+            "name": "Pirate Ships - RS Solo; Rough Mix Vocal,12/89",
+            "durationMs": 218733
+          },
+          {
+            "id": "0DtRCEVER3HKZF04PPtL7j",
+            "name": "Plainsong - Live at Wembley 07/89 - Remix 07/09",
+            "durationMs": 319466
+          },
+          {
+            "id": "7i2wCdelxY5tPXg791Gju0",
+            "name": "Pictures of You - Live at Wembley 07/89 - Remix 07/09",
+            "durationMs": 424466
+          },
+          {
+            "id": "5QwIUYscFfRuuDJZCVvm0J",
+            "name": "Closedown - Live at Wembley 07/89 - Remix 07/09",
+            "durationMs": 261533
+          },
+          {
+            "id": "4ypMeoUbFvIvBeOKzgAaBC",
+            "name": "Lovesong - Live at Wembley 07/89 - Remix 07/09",
+            "durationMs": 204000
+          },
+          {
+            "id": "0rgpjDWdgmusmFcSOoiOou",
+            "name": "Last Dance - Live at Wembley 07/89 - Remix 07/09",
+            "durationMs": 276960
+          },
+          {
+            "id": "6GNcywSsiOziS56OnKmCsB",
+            "name": "Lullaby - Live at Wembley 07/89 - Remix 07/09",
+            "durationMs": 254000
+          },
+          {
+            "id": "1DuPppMt7d7qAaYlCTy81D",
+            "name": "Fascination Street - Live at Wembley 07/89 - Remix 07/09",
+            "durationMs": 309986
+          },
+          {
+            "id": "76ig62naYLjATiQU8YLEko",
+            "name": "Prayers for Rain - Live at Wembley 07/89 - Remix 07/09",
+            "durationMs": 289546
+          },
+          {
+            "id": "0LiwY2UpIyOJVSoPMa51f6",
+            "name": "The Same Deep Water as You - Live at Wembley 07/89 - Remix 07/09",
+            "durationMs": 603493
+          },
+          {
+            "id": "1aMnmlCeIUmPJUUiDpreUI",
+            "name": "Disintegration - Live at Wembley 07/89 - Remix 07/09",
+            "durationMs": 474493
+          },
+          {
+            "id": "1UtZImrHfdMzBkAy3fL6aW",
+            "name": "Homesick - Live at Wembley 07/89 - Remix 07/09",
+            "durationMs": 406986
+          },
+          {
+            "id": "528rTminnmESa88zSS3Bgz",
+            "name": "Untitled - Live at Wembley 07/89 - Remix 07/09",
+            "durationMs": 404786
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Disintegration (Deluxe Edition)",
+        "spotifyArtists": "The Cure",
+        "spotifyYear": 1989
+      }
+    },
+    {
+      "rymId": "1174",
+      "artist": "Cocteau Twins",
+      "title": "Head Over Heels",
+      "year": 1983,
+      "rating": 8,
+      "spotify": {
+        "albumId": "52MMrcUtar0coGVHULkuQ9",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273dd69a64d46d35725c47df19c",
+        "tracks": [
+          {
+            "id": "51zLiDo0u9xsbVXvUxBf7n",
+            "name": "When Mama Was Moth",
+            "durationMs": 186333
+          },
+          {
+            "id": "18Rbm3tXY2aCqLwRQL9gHu",
+            "name": "Five Ten Fiftyfold",
+            "durationMs": 299626
+          },
+          {
+            "id": "28gz2W2KMsn1QnvojoWPqv",
+            "name": "Sugar Hiccup",
+            "durationMs": 221466
+          },
+          {
+            "id": "4MaTOuX0QlD6Tla2ig7X80",
+            "name": "In Our Angelhood",
+            "durationMs": 179733
+          },
+          {
+            "id": "3p9OGmeESADZmeJEHUVnXV",
+            "name": "Glass Candle Grenades",
+            "durationMs": 164866
+          },
+          {
+            "id": "3cncUbvmRdvKS4PDUlXlOH",
+            "name": "In The Gold Dust Rush",
+            "durationMs": 221360
+          },
+          {
+            "id": "6VpO7nynqyaNGlIHJOQakW",
+            "name": "The Tinderbox (of A Heart)",
+            "durationMs": 297266
+          },
+          {
+            "id": "3h6setmoTDWLBevLWuYJBn",
+            "name": "Multifoiled",
+            "durationMs": 156200
+          },
+          {
+            "id": "5kVOIixeGiFGY8cvWsiGgZ",
+            "name": "My Love Paramour",
+            "durationMs": 219506
+          },
+          {
+            "id": "6ZQs32DQEou9ABQy02awdX",
+            "name": "Musette And Drums",
+            "durationMs": 279733
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Head Over Heels",
+        "spotifyArtists": "Cocteau Twins",
+        "spotifyYear": 1983
+      }
+    },
+    {
+      "rymId": "9644",
+      "artist": "Felt",
+      "title": "Forever Breathes the Lonely Word",
+      "year": 1986,
+      "rating": 9,
+      "spotify": {
+        "albumId": "1k1x2Xkr6CtuHto1rLUWRm",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d96b800bdbd4efe2b74be994",
+        "tracks": [
+          {
+            "id": "78QX77zBkrqi0DBCi2VXmj",
+            "name": "Rain of Crystal Spires",
+            "durationMs": 236946
+          },
+          {
+            "id": "6Y4DD5pHDodEGCxa4AeSaw",
+            "name": "Down But Not Yet Out",
+            "durationMs": 219026
+          },
+          {
+            "id": "3shh0JX4M6pr72iPXsCIM3",
+            "name": "September Lady",
+            "durationMs": 226360
+          },
+          {
+            "id": "2z5HwZKVAYCR7NthS4XFjr",
+            "name": "Grey Streets",
+            "durationMs": 228213
+          },
+          {
+            "id": "2CRFPAotDIOggr9FkzXabe",
+            "name": "All the People I Like and Those That are Dead",
+            "durationMs": 312280
+          },
+          {
+            "id": "0cgqVOGYPbKq1K4Ep8Iv8H",
+            "name": "Gather Up Your Wings and Fly",
+            "durationMs": 236386
+          },
+          {
+            "id": "5KyjJ6OLOJZ2dDmVDzxab2",
+            "name": "A Wave Crashed on the Rocks",
+            "durationMs": 173320
+          },
+          {
+            "id": "31gzvjPFgQ5YjPQVO10U0w",
+            "name": "Hours of Darkness Have Changed My Mind",
+            "durationMs": 286360
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Forever Breathes the Lonely Word",
+        "spotifyArtists": "Felt",
+        "spotifyYear": 1986
+      }
+    },
+    {
+      "rymId": "12136",
+      "artist": "The Modern Lovers",
+      "title": "The Modern Lovers",
+      "year": 1976,
+      "rating": 10,
+      "spotify": {
+        "albumId": "7ro1W6lc4tuTaRyA8rnVm1",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b44ebe6e50148bca8bce584d",
+        "tracks": [
+          {
+            "id": "15bnD6GnRtBfsJFkgToG72",
+            "name": "Roadrunner",
+            "durationMs": 246440
+          },
+          {
+            "id": "6fruQFMsyw7z8kyy0IdC9B",
+            "name": "Astral Plane",
+            "durationMs": 180586
+          },
+          {
+            "id": "4ouJlCqn9S2uARAaOJUUw6",
+            "name": "Old World",
+            "durationMs": 240960
+          },
+          {
+            "id": "4VqDn9jG4RnCN00jNk7BKK",
+            "name": "Pablo Picasso",
+            "durationMs": 261600
+          },
+          {
+            "id": "2HLT2fdvfb0Ewawp8gENlo",
+            "name": "She Cracked",
+            "durationMs": 175893
+          },
+          {
+            "id": "6vNjiFxHoviyyMBBT9SFRg",
+            "name": "Hospital",
+            "durationMs": 331920
+          },
+          {
+            "id": "6hNCfefdlMVY1BtiOP5SNJ",
+            "name": "Someone I Care About",
+            "durationMs": 219320
+          },
+          {
+            "id": "7hqAQcTDbpMStMtmSREHod",
+            "name": "Girlfriend",
+            "durationMs": 235386
+          },
+          {
+            "id": "4wit1dTHggbove4Qmy9jdl",
+            "name": "Modern World",
+            "durationMs": 224866
+          },
+          {
+            "id": "7dqDFcbEJApgZzjEyPzfOd",
+            "name": "Dignified and Old",
+            "durationMs": 148866
+          },
+          {
+            "id": "13ukxpBh4Tra731pchaP4i",
+            "name": "I'm Straight",
+            "durationMs": 258519
+          },
+          {
+            "id": "0msndzhndgck9wXwECg8ms",
+            "name": "Government Center",
+            "durationMs": 123853
+          },
+          {
+            "id": "5o81YT6wRnn4MMX5umK0xn",
+            "name": "I Wanna Sleep In Your Arms",
+            "durationMs": 152293
+          },
+          {
+            "id": "2jJIvwL1xBQyv3Tp04VTvM",
+            "name": "Dance With Me",
+            "durationMs": 266933
+          },
+          {
+            "id": "53ZbDTpnhBIhXaXXsYO6al",
+            "name": "Someone I Care About (Alternative Version)",
+            "durationMs": 178733
+          },
+          {
+            "id": "7pCodDjnl8S4kGuQStHDVs",
+            "name": "Modern World (Alternative version)",
+            "durationMs": 196920
+          },
+          {
+            "id": "0qRSrdDK4xj1doRViNPYwM",
+            "name": "Roadrunner (Alternative Version)",
+            "durationMs": 295013
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Modern Lovers (Expanded Version)",
+        "spotifyArtists": "The Modern Lovers",
+        "spotifyYear": 1976
+      }
+    },
+    {
+      "rymId": "1167",
+      "artist": "Television",
+      "title": "Marquee Moon",
+      "year": 1977,
+      "rating": 10,
+      "spotify": {
+        "albumId": "630o1rKTDsLeIPreOY1jqP",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27318b36d985b0ae01163ca9cf6",
+        "tracks": [
+          {
+            "id": "2OaXmeYBJ0hcTmS3kxjJOx",
+            "name": "See No Evil",
+            "durationMs": 232960
+          },
+          {
+            "id": "3x0iCzjgf0v9lnwvAhU9P2",
+            "name": "Venus",
+            "durationMs": 229026
+          },
+          {
+            "id": "7wfvl1kiZJNvhx6HNTyefX",
+            "name": "Friction",
+            "durationMs": 283626
+          },
+          {
+            "id": "7Me0vOSlJfaPY7Pc4GeItd",
+            "name": "Marquee Moon",
+            "durationMs": 638426
+          },
+          {
+            "id": "1pimWzwUERYZbAFr5tL0Xl",
+            "name": "Elevation",
+            "durationMs": 305266
+          },
+          {
+            "id": "6ZHa4WN0lqua4sQHRQFpkc",
+            "name": "Guiding Light",
+            "durationMs": 332733
+          },
+          {
+            "id": "3aPjLBWsrqTetCn3QcLSuK",
+            "name": "Prove It",
+            "durationMs": 300240
+          },
+          {
+            "id": "7p0Pk7IJw1c494Qz5lXopE",
+            "name": "Torn Curtain",
+            "durationMs": 416506
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Marquee Moon",
+        "spotifyArtists": "Television",
+        "spotifyYear": 1977
+      }
+    },
+    {
+      "rymId": "10453",
+      "artist": "The Chameleons",
+      "title": "Script of the Bridge",
+      "year": 1983,
+      "rating": 10,
+      "spotify": {
+        "albumId": "0b8KChWO3kRpVRZNdNxms3",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735afd1a9e9be964296fc9e9d6",
+        "tracks": [
+          {
+            "id": "262mPGjCFLQoHE38LYHiCJ",
+            "name": "Don't Fall",
+            "durationMs": 246573
+          },
+          {
+            "id": "6SceHVgQoC9bXNyJ4O8rTI",
+            "name": "Here Today",
+            "durationMs": 237626
+          },
+          {
+            "id": "74v1pkfsUkCpawESagwpdb",
+            "name": "Monkeyland",
+            "durationMs": 317240
+          },
+          {
+            "id": "5F43dz91uj1bQRKDvXbt1f",
+            "name": "Second Skin",
+            "durationMs": 410586
+          },
+          {
+            "id": "4Uv6BVQUcdxUkIRDAQ7a7l",
+            "name": "Up the Down Escalator",
+            "durationMs": 237786
+          },
+          {
+            "id": "6eQUkNf5fJ7T4pdUCABYHB",
+            "name": "Less Than Human",
+            "durationMs": 256013
+          },
+          {
+            "id": "530XTTh9aB4NxNARrc3WNn",
+            "name": "Pleasure and Pain",
+            "durationMs": 311880
+          },
+          {
+            "id": "6yCl9FYqnEcUEGvDEKV849",
+            "name": "Thursdays Child",
+            "durationMs": 212920
+          },
+          {
+            "id": "6khDcxU6X2sz2Ha1EU10dt",
+            "name": "As High As You Can Go",
+            "durationMs": 215280
+          },
+          {
+            "id": "4RX4F2RXPie5YwrR71E1zF",
+            "name": "A Person Isn't Safe Anywhere These Days",
+            "durationMs": 343186
+          },
+          {
+            "id": "4O4XsRFMDT49tA7OGYhz2a",
+            "name": "Paper Tigers",
+            "durationMs": 257106
+          },
+          {
+            "id": "7t0q45MIlp4mQ0WwMSFSRN",
+            "name": "View from a Hill",
+            "durationMs": 400666
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Script of the Bridge (Remastered)",
+        "spotifyArtists": "The Chameleons",
+        "spotifyYear": 1983
+      }
+    },
+    {
+      "rymId": "544",
+      "artist": "Joy Division",
+      "title": "Unknown Pleasures",
+      "year": 1979,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5Dgqy4bBg09Rdw7CQM545s",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27327cc8b0ed297111f53009772",
+        "tracks": [
+          {
+            "id": "2OPmhk5vO4qiYE4LEAC9hs",
+            "name": "Disorder - 2019 Digital Master",
+            "durationMs": 212360
+          },
+          {
+            "id": "4sv6PcG4kX19kTP5HUV4VN",
+            "name": "Day of the Lords - 2019 Digital Master",
+            "durationMs": 289786
+          },
+          {
+            "id": "4dYME2vEklDwBIYYxZ1tRx",
+            "name": "Candidate - 2019 Digital Master",
+            "durationMs": 185413
+          },
+          {
+            "id": "0ETHMWVurMZA72k2uUESfq",
+            "name": "Insight - 2019 Digital Master",
+            "durationMs": 268626
+          },
+          {
+            "id": "6Ox9HWLHipsG6RH2a3eB8h",
+            "name": "New Dawn Fades - 2019 Digital Master",
+            "durationMs": 288666
+          },
+          {
+            "id": "5YiSSBURCIz0qlOoL3la8w",
+            "name": "She's Lost Control - 2019 Digital Master",
+            "durationMs": 237053
+          },
+          {
+            "id": "1HIV7KpOnHL32AKth0l1eU",
+            "name": "Shadowplay - 2019 Digital Master",
+            "durationMs": 235653
+          },
+          {
+            "id": "5YCjJwmUKpUQRzgPDm3iFm",
+            "name": "Wilderness - 2019 Digital Master",
+            "durationMs": 158920
+          },
+          {
+            "id": "4yvgL1k1WkuSEHkMPhDF5X",
+            "name": "Interzone - 2019 Digital Master",
+            "durationMs": 136106
+          },
+          {
+            "id": "2kRkLYYspTSmsVjME4Vuke",
+            "name": "I Remember Nothing - 2019 Digital Master",
+            "durationMs": 355146
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Unknown Pleasures",
+        "spotifyArtists": "Joy Division",
+        "spotifyYear": 1979
+      }
+    }
+  ]
+}

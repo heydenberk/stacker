@@ -1,0 +1,718 @@
+{
+  "id": "space-age-dub",
+  "name": "Space Age & Dub",
+  "mood": "analog synths, drifting rhythms and dub echo: Fishmans, Broadcast, AIR",
+  "createdAt": "2026-10-15",
+  "records": [
+    {
+      "rymId": "453563",
+      "artist": "Fishmans",
+      "title": "Long Season",
+      "year": 1996,
+      "rating": 10,
+      "spotify": {
+        "albumId": "4EX1fAypgQC9wDjGI5QzbZ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f9f1de08fccfce6067fbd225",
+        "tracks": [
+          {
+            "id": "08b1bCjsKjMzhjBm0qhkof",
+            "name": "LONG SEASON",
+            "durationMs": 2116040
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "LONG SEASON",
+        "spotifyArtists": "Fishmans",
+        "spotifyYear": 1996
+      }
+    },
+    {
+      "rymId": "453567",
+      "artist": "Fishmans",
+      "title": "宇宙 日本 世田谷",
+      "year": 1997,
+      "rating": 9,
+      "spotify": {
+        "albumId": "0hUfv1cSXNaBZ6dHKGluEy",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f0848eae2594bbab3c3d4363",
+        "tracks": [
+          {
+            "id": "2diC2THH55uAw4GGpZQjwn",
+            "name": "POKKA POKKA",
+            "durationMs": 244640
+          },
+          {
+            "id": "682TDtMAq9UcKN0QqVN019",
+            "name": "WEATHER REPORT",
+            "durationMs": 522253
+          },
+          {
+            "id": "7upsNTR2R4F5OgEWgNwzIP",
+            "name": "うしろ姿",
+            "durationMs": 313693
+          },
+          {
+            "id": "0msOgZw6XpjSXTyNr6Jkd8",
+            "name": "IN THE FLIGHT",
+            "durationMs": 336720
+          },
+          {
+            "id": "7BpqssfH7oRRyZyki2QPWJ",
+            "name": "MAGIC LOVE",
+            "durationMs": 298453
+          },
+          {
+            "id": "2yIywMeXB1A4bME5JLfJYd",
+            "name": "バックビートにのっかって",
+            "durationMs": 506813
+          },
+          {
+            "id": "5FI7poC3O5ELlYLmUFQ5sC",
+            "name": "WALKING IN THE RHYTHM",
+            "durationMs": 776146
+          },
+          {
+            "id": "2BVeeIDSD2dCnkNMhGDYK4",
+            "name": "DAYDREAM",
+            "durationMs": 519760
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "宇宙 日本 世田谷",
+        "spotifyArtists": "Fishmans",
+        "spotifyYear": 1997
+      }
+    },
+    {
+      "rymId": "72327",
+      "artist": "Broadcast",
+      "title": "Haha Sound",
+      "year": 2003,
+      "rating": 10,
+      "spotify": {
+        "albumId": "7LhYW5INITQKexibfDCmtP",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27368824c32a03189f40a97f499",
+        "tracks": [
+          {
+            "id": "3wfYyWSxwWkTcXQEVWGmIx",
+            "name": "Colour Me In",
+            "durationMs": 171226
+          },
+          {
+            "id": "6hbP2Xs5W0SVvepjLWnTeL",
+            "name": "Pendulum",
+            "durationMs": 261426
+          },
+          {
+            "id": "4yx0aYJgnWIy18akJtxmON",
+            "name": "Before We Begin",
+            "durationMs": 202200
+          },
+          {
+            "id": "6flBmsBIiMfVllos9BAJOL",
+            "name": "Valerie",
+            "durationMs": 244466
+          },
+          {
+            "id": "0b3KDoIfmVUSpAsnSw9m2W",
+            "name": "Man Is Not A Bird",
+            "durationMs": 292000
+          },
+          {
+            "id": "3WIjT0B8z3inNF6Cmr6IKk",
+            "name": "Minim",
+            "durationMs": 180973
+          },
+          {
+            "id": "2eUFCViBXhxqlsVr0xZYT7",
+            "name": "Lunch Hour Pops",
+            "durationMs": 216626
+          },
+          {
+            "id": "5N9ORLZwE4VgN6igmKVoQv",
+            "name": "Black Umbrellas",
+            "durationMs": 68866
+          },
+          {
+            "id": "5cGZeGtOOplfPmDasavWyr",
+            "name": "Ominous Cloud",
+            "durationMs": 226306
+          },
+          {
+            "id": "67IDIuxgq5HZuOo4jMmAwe",
+            "name": "Distorsion",
+            "durationMs": 122693
+          },
+          {
+            "id": "3IGByygKHzqdaP2m8277IC",
+            "name": "O How I Miss You",
+            "durationMs": 77333
+          },
+          {
+            "id": "0m9HdigRsrYenzB5nKMCC0",
+            "name": "The Little Bell",
+            "durationMs": 168133
+          },
+          {
+            "id": "7e6S1d1mmVJu8yBJbFpLui",
+            "name": "Winter Now",
+            "durationMs": 228200
+          },
+          {
+            "id": "6OnMNdBYlSslV4rrYJarIF",
+            "name": "Hawk",
+            "durationMs": 222800
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Haha Sound",
+        "spotifyArtists": "Broadcast",
+        "spotifyYear": 2003
+      }
+    },
+    {
+      "rymId": "53",
+      "artist": "Broadcast",
+      "title": "The Noise Made by People",
+      "year": 2000,
+      "rating": 10,
+      "spotify": {
+        "albumId": "10nM1bEq6nBmY5CvK9gDVI",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732a4dd381d59a0b1eb25a5de0",
+        "tracks": [
+          {
+            "id": "4aUHXyMSMVfuLyz8FAEiNm",
+            "name": "Long Was The Year",
+            "durationMs": 218160
+          },
+          {
+            "id": "3UC1107elI0DOja1l72yIE",
+            "name": "Unchanging Window",
+            "durationMs": 228973
+          },
+          {
+            "id": "6OYzJgCKsDRA9ISzq01EDP",
+            "name": "Minus One",
+            "durationMs": 122226
+          },
+          {
+            "id": "2omiaJwimfJMlcM6yw2YmA",
+            "name": "Come On Let's Go",
+            "durationMs": 197213
+          },
+          {
+            "id": "0mpKGswMW2MypC6kryHQmL",
+            "name": "Echo's Answer",
+            "durationMs": 191893
+          },
+          {
+            "id": "2y921iUaBksxVgGRhnq8eU",
+            "name": "Tower Of Our Tuning",
+            "durationMs": 270026
+          },
+          {
+            "id": "4LHF7lmjy9bmap895FaH7U",
+            "name": "Papercuts",
+            "durationMs": 271066
+          },
+          {
+            "id": "3YZQslKWYbra9nP3VtqQMZ",
+            "name": "You Can Fall",
+            "durationMs": 264760
+          },
+          {
+            "id": "5QG6wl5TKBveTl8V72AHQf",
+            "name": "Look Outside",
+            "durationMs": 233573
+          },
+          {
+            "id": "351jDtuOEHkX7NIVNNPqTx",
+            "name": "Until Then",
+            "durationMs": 231800
+          },
+          {
+            "id": "2DYfh7ChAoZfsb5s6wqTHc",
+            "name": "City In Progress",
+            "durationMs": 217360
+          },
+          {
+            "id": "6LVEP5G6wGbJTTe4pONUGl",
+            "name": "Dead The Long Year",
+            "durationMs": 286506
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Noise Made By People",
+        "spotifyArtists": "Broadcast",
+        "spotifyYear": 2000
+      }
+    },
+    {
+      "rymId": "157",
+      "artist": "Stereolab",
+      "title": "Dots and Loops",
+      "year": 1997,
+      "rating": 9,
+      "spotify": {
+        "albumId": "4TQhvd3hojFZAIZCRULdhn",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273397a2d2b64bca87572a8f876",
+        "tracks": [
+          {
+            "id": "4gHL9zecwVCYeDettmnK2s",
+            "name": "Brakhage",
+            "durationMs": 330466
+          },
+          {
+            "id": "3VDsr2U5zGlr97uQtN6mDq",
+            "name": "Miss Modular",
+            "durationMs": 269360
+          },
+          {
+            "id": "6KrLcX1f4In3ioLcR6xtcL",
+            "name": "The Flower Called Nowhere",
+            "durationMs": 315065
+          },
+          {
+            "id": "1ic97KndvU8nRdowH47BHf",
+            "name": "Diagonals",
+            "durationMs": 315120
+          },
+          {
+            "id": "29EJJhc118is1F4ODviKts",
+            "name": "Prisoner of Mars",
+            "durationMs": 243200
+          },
+          {
+            "id": "1gVYanDcUdPgC6ZekrjM9l",
+            "name": "Rainbo Conversation",
+            "durationMs": 286346
+          },
+          {
+            "id": "2q1Ihz0mbK9tlv7SUyqRmi",
+            "name": "Refractions in the Plastic Pulse",
+            "durationMs": 1052133
+          },
+          {
+            "id": "13GmrU2hfFxBRbs19sXJjr",
+            "name": "Parsec",
+            "durationMs": 334186
+          },
+          {
+            "id": "7Lc1Z6PJ78pAAO4vg6Ex5f",
+            "name": "Ticker-tape of the Unconscious",
+            "durationMs": 285653
+          },
+          {
+            "id": "1oLoLCsHyob5KAybgdW9An",
+            "name": "Contronatura",
+            "durationMs": 543773
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Dots And Loops",
+        "spotifyArtists": "Stereolab",
+        "spotifyYear": 1997
+      }
+    },
+    {
+      "rymId": "8920906",
+      "artist": "Hollie Cook",
+      "title": "Vessel of Love",
+      "year": 2018,
+      "rating": 9,
+      "spotify": {
+        "albumId": "2MfgUdCopfXgvzpUZdAAUf",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273517fd3e4c84374ecc58a347e",
+        "tracks": [
+          {
+            "id": "01ILLpJuhRlCLjE9eLIVft",
+            "name": "Angel Fire",
+            "durationMs": 250082
+          },
+          {
+            "id": "4POKRCwN2tvXRQ7mTlkd6h",
+            "name": "Stay Alive",
+            "durationMs": 259851
+          },
+          {
+            "id": "6n8UkyD4RQ7IW5VENkRTgP",
+            "name": "Survive",
+            "durationMs": 198301
+          },
+          {
+            "id": "4GjZFsriGejrFPxiwSz1UV",
+            "name": "Ghostly Fading",
+            "durationMs": 238100
+          },
+          {
+            "id": "1eOu6BLn4LUpkk7wkP1EYi",
+            "name": "Freefalling",
+            "durationMs": 218084
+          },
+          {
+            "id": "1rElZKdV5GvXiv3YmMqk38",
+            "name": "Lunar Addiction",
+            "durationMs": 259671
+          },
+          {
+            "id": "13DRetHBTyIALQMTP99l1Y",
+            "name": "Turn It Around",
+            "durationMs": 253402
+          },
+          {
+            "id": "7ADtqO0FqL2Az7accofSqv",
+            "name": "Vessel of Love",
+            "durationMs": 210700
+          },
+          {
+            "id": "74s0iAUGtNzPHReA8Uhybj",
+            "name": "Together",
+            "durationMs": 241172
+          },
+          {
+            "id": "40AC35xsIFAPIW1Gua74xQ",
+            "name": "Far From Me",
+            "durationMs": 269676
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Vessel of Love",
+        "spotifyArtists": "Hollie Cook",
+        "spotifyYear": 2018
+      }
+    },
+    {
+      "rymId": "6331807",
+      "artist": "Jamie xx",
+      "title": "In Colour",
+      "year": 2015,
+      "rating": 10,
+      "spotify": {
+        "albumId": "04Duapg2mNlVykd895xcfZ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e512588704373fdc8c8d7001",
+        "tracks": [
+          {
+            "id": "4mlZurguzNJior9siewA8C",
+            "name": "Gosh",
+            "durationMs": 291018
+          },
+          {
+            "id": "4N6BM15Cjn497nxvy7JcBT",
+            "name": "Sleep Sound",
+            "durationMs": 232622
+          },
+          {
+            "id": "6N9NpkIKu7SLAjZd0IewoV",
+            "name": "SeeSaw",
+            "durationMs": 268788
+          },
+          {
+            "id": "7HTnBZgjsp1T9uF286kQ7o",
+            "name": "Obvs",
+            "durationMs": 231039
+          },
+          {
+            "id": "5X6tXbeeE2Gk5XDNb8I5Ku",
+            "name": "Just Saying",
+            "durationMs": 83898
+          },
+          {
+            "id": "47A5n8BBYsghFUbVmVUsYC",
+            "name": "Stranger in a Room",
+            "durationMs": 177511
+          },
+          {
+            "id": "7awZVNtfOXP9Sxb4IYwBUj",
+            "name": "Hold Tight",
+            "durationMs": 243399
+          },
+          {
+            "id": "7lPgKA5mLFNmGPMdb07OlM",
+            "name": "Loud Places",
+            "durationMs": 283066
+          },
+          {
+            "id": "06UOL50QYtDR5l06ohu88m",
+            "name": "I Know There's Gonna Be (Good Times)",
+            "durationMs": 213622
+          },
+          {
+            "id": "1MhQrrQjPRL8o6m18viaZ1",
+            "name": "The Rest Is Noise",
+            "durationMs": 298305
+          },
+          {
+            "id": "0s2ziTuwyOfnpNbpctNwqO",
+            "name": "Girl",
+            "durationMs": 245585
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "In Colour",
+        "spotifyArtists": "Jamie xx",
+        "spotifyYear": 2015
+      }
+    },
+    {
+      "rymId": "410",
+      "artist": "AIR",
+      "title": "Moon Safari",
+      "year": 1998,
+      "rating": 10,
+      "spotify": {
+        "albumId": "206GTDefY2qRMQxYXmfb0a",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2737f4dc15877a3c43f611a2709",
+        "tracks": [
+          {
+            "id": "6tEaLXZlN8b71vWV1SSsRf",
+            "name": "La femme d'argent",
+            "durationMs": 426614
+          },
+          {
+            "id": "7Fx3o9QtK1vtpkEWkM6OJu",
+            "name": "Sexy Boy",
+            "durationMs": 298466
+          },
+          {
+            "id": "7jOM0KIKgIppqIEvEjixaj",
+            "name": "All I Need (feat. Beth Hirsch)",
+            "durationMs": 268306
+          },
+          {
+            "id": "1KNCpsUEi6VdDIBzZ1cMVd",
+            "name": "Kelly Watch the Stars",
+            "durationMs": 226293
+          },
+          {
+            "id": "5fddI3jipxueajScJYReMT",
+            "name": "Talisman",
+            "durationMs": 256706
+          },
+          {
+            "id": "1LVCz3kmrYdOx9QS20uLsz",
+            "name": "Remember",
+            "durationMs": 154293
+          },
+          {
+            "id": "1SxkYuCQOVyzJaQYqIvVjZ",
+            "name": "You Make It Easy",
+            "durationMs": 241533
+          },
+          {
+            "id": "0pEmzblUxXvzIYnJpu8gWW",
+            "name": "Ce matin-là",
+            "durationMs": 219040
+          },
+          {
+            "id": "5bq9n41pwbgvD6Mr56Rmsb",
+            "name": "New Star in the Sky",
+            "durationMs": 340600
+          },
+          {
+            "id": "6NBa6VmFsqWQjJ9cM5H6q2",
+            "name": "Le voyage de Pénélope",
+            "durationMs": 190866
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Moon Safari",
+        "spotifyArtists": "Air",
+        "spotifyYear": 1998
+      }
+    },
+    {
+      "rymId": "153",
+      "artist": "Stereolab",
+      "title": "Transient Random-Noise Bursts With Announcements",
+      "year": 1993,
+      "rating": 9,
+      "spotify": {
+        "albumId": "0XwFmkEzDFl5KrVG5z0lE6",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27336d122a5fdce2509d72ce49a",
+        "tracks": [
+          {
+            "id": "3PgWoMsEjIaXhLrgwVetB2",
+            "name": "Tone Burst",
+            "durationMs": 334880
+          },
+          {
+            "id": "0RdJYbHhsvortucKRV1NRx",
+            "name": "Our Trinitone Blast",
+            "durationMs": 227426
+          },
+          {
+            "id": "4CxKeyGN8tyBf04mYx4GgC",
+            "name": "Pack Yr Romantic Mind",
+            "durationMs": 306133
+          },
+          {
+            "id": "1Nv81bSN5YW6hWsuQmXUGD",
+            "name": "I'm Going Out Of My Way",
+            "durationMs": 205906
+          },
+          {
+            "id": "70zM17Ykr3mMCtgygR21D1",
+            "name": "Golden Ball",
+            "durationMs": 412360
+          },
+          {
+            "id": "2it9AN242ERkAHqouEHt6Y",
+            "name": "Pause",
+            "durationMs": 322746
+          },
+          {
+            "id": "2DMZvrvsxEPEN6OmwYis6h",
+            "name": "Jenny Ondioline",
+            "durationMs": 1087840
+          },
+          {
+            "id": "5cHAKzhVbTL8ovkY2noA5C",
+            "name": "Analogue Rock",
+            "durationMs": 253066
+          },
+          {
+            "id": "4ihkIgHKo5JZqbZGIPp1vs",
+            "name": "Crest",
+            "durationMs": 364346
+          },
+          {
+            "id": "3Arpyh0g2hQjbqfMycqfJ6",
+            "name": "Lock-Groove Lullaby",
+            "durationMs": 218053
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Transient Random-Noise Bursts With Announcements",
+        "spotifyArtists": "Stereolab",
+        "spotifyYear": 1993
+      }
+    },
+    {
+      "rymId": "2591",
+      "artist": "Boards of Canada",
+      "title": "Music Has the Right to Children",
+      "year": 1998,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6LZiNXaDvhzvnXUubVOmNU",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2739effb26eea559ce6f3fed751",
+        "tracks": [
+          {
+            "id": "1XZdwzd8DTDvkjVc0eJ9BI",
+            "name": "Wildlife Analysis",
+            "durationMs": 75626
+          },
+          {
+            "id": "7sAzXuEwz0sOhnB57xoccs",
+            "name": "An Eagle In Your Mind",
+            "durationMs": 385520
+          },
+          {
+            "id": "0sgzC3F93Dh76Yfj5gNUkT",
+            "name": "The Color Of The Fire",
+            "durationMs": 105626
+          },
+          {
+            "id": "7AfbtT8GN1iv3Crb11NaVI",
+            "name": "Telephasic Workshop",
+            "durationMs": 395480
+          },
+          {
+            "id": "5sW2mFMpTFNR5pTNfzG0Ox",
+            "name": "Triangles & Rhombuses",
+            "durationMs": 110413
+          },
+          {
+            "id": "2A6YNzhnvSgaqkJzDjtVyf",
+            "name": "Sixtyten",
+            "durationMs": 348346
+          },
+          {
+            "id": "7F3MjS1b1xHeaeXyBTvCE0",
+            "name": "Turquoise Hexagon Sun",
+            "durationMs": 307880
+          },
+          {
+            "id": "3FJ4suZo6FuW0xmARmE0R4",
+            "name": "Kaini Industries",
+            "durationMs": 59293
+          },
+          {
+            "id": "7keJ7uDxNNp2RFx91ZgWpc",
+            "name": "Bocuma",
+            "durationMs": 95973
+          },
+          {
+            "id": "5Hf2h59YLInKlic7ooWZVd",
+            "name": "Roygbiv",
+            "durationMs": 149080
+          },
+          {
+            "id": "4Wc2IIL5jGE1V9NkxS9OL3",
+            "name": "Rue The Whirl",
+            "durationMs": 399493
+          },
+          {
+            "id": "08EgS4Nqe1jPkI9tx9Dq3S",
+            "name": "Aquarius",
+            "durationMs": 358080
+          },
+          {
+            "id": "5DZ4M3yMat79ok25rZHuA9",
+            "name": "Olson",
+            "durationMs": 91706
+          },
+          {
+            "id": "1U9svUekJ1Hp4sLy9HOqj9",
+            "name": "Pete Standing Alone",
+            "durationMs": 367720
+          },
+          {
+            "id": "2GFE4jzz9fqolm1J3unXIB",
+            "name": "Smokes Quantity",
+            "durationMs": 187320
+          },
+          {
+            "id": "6YKnA7JgJsvnd1gKD3vdED",
+            "name": "Open The Light",
+            "durationMs": 265026
+          },
+          {
+            "id": "1zo4sobFM7e95KevSJzXfZ",
+            "name": "One Very Important Thought",
+            "durationMs": 85053
+          },
+          {
+            "id": "55IsBrXUfZUmY7KSm2BjUp",
+            "name": "Happy Cycling",
+            "durationMs": 476026
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Music Has The Right To Children",
+        "spotifyArtists": "Boards of Canada",
+        "spotifyYear": 1998
+      }
+    }
+  ]
+}

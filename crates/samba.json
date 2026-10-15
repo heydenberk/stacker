@@ -588,86 +588,6 @@
       }
     },
     {
-      "rymId": "232545",
-      "artist": "Jorge Ben",
-      "title": "Solta o pavão",
-      "year": 1975,
-      "rating": 9,
-      "spotify": {
-        "albumId": "26YyS4YkKRniunBIYTaNnp",
-        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27303c0351a84e99103e2287b3f",
-        "tracks": [
-          {
-            "id": "3P2ZZRK3OZ4tA78HZWDNVL",
-            "name": "Zagueiro",
-            "durationMs": 182560
-          },
-          {
-            "id": "51OYpW0YPNhZiLYR9pTwv5",
-            "name": "Assim Falou Santo Tomaz De Aquino",
-            "durationMs": 175106
-          },
-          {
-            "id": "4uf28I7IwK0pVRzgOEACJ2",
-            "name": "Velhos, Flores, Criancinhas E Cachorros",
-            "durationMs": 196360
-          },
-          {
-            "id": "6ct6PfaBiH3ADSJcakrt4J",
-            "name": "Dorothy",
-            "durationMs": 235706
-          },
-          {
-            "id": "3o7sNDpBCuWabiu30aGJX7",
-            "name": "Cuidado Com O Bulldog",
-            "durationMs": 174760
-          },
-          {
-            "id": "4iO1fjAi6hBZ4gb0Fb2oXk",
-            "name": "Para Ouvir No Rádio",
-            "durationMs": 258666
-          },
-          {
-            "id": "7BnvJRPPJhKMNKsy8C6Dei",
-            "name": "O Rei Chegou, Viva O Rei",
-            "durationMs": 183106
-          },
-          {
-            "id": "06YxPcR6dTaSC5ee3uxWdI",
-            "name": "Jorge Da Capadócia",
-            "durationMs": 231080
-          },
-          {
-            "id": "3LyeB5mKdybZ7zjgjH9fcz",
-            "name": "Se Segura Malandro",
-            "durationMs": 174320
-          },
-          {
-            "id": "3C1mICLk5HWpbP5awuQOzQ",
-            "name": "Dumingaz",
-            "durationMs": 210066
-          },
-          {
-            "id": "1VeOnNA29QwjfbnqOmiIMM",
-            "name": "Luz Polarizada",
-            "durationMs": 141866
-          },
-          {
-            "id": "3TvhW15IPaJsA4L4gXudRU",
-            "name": "Jesualda",
-            "durationMs": 163560
-          }
-        ]
-      },
-      "match": {
-        "confidence": "high",
-        "spotifyName": "Solta O Pavão (1975)",
-        "spotifyArtists": "Jorge Ben Jor",
-        "spotifyYear": 1975,
-        "override": true
-      }
-    },
-    {
       "rymId": "612092",
       "artist": "Gil e Jorge",
       "title": "Ogum Xangô",
@@ -729,6 +649,81 @@
         "spotifyName": "Gil E Jorge",
         "spotifyArtists": "Gilberto Gil, Jorge Ben Jor",
         "spotifyYear": 1975,
+        "override": true
+      }
+    },
+    {
+      "rymId": "41462",
+      "artist": "Jorge Ben",
+      "title": "África Brasil",
+      "year": 1976,
+      "rating": 10,
+      "spotify": {
+        "albumId": "0esHQqYklDPje00NUNq6py",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732a3e351bbab659d55a2fadec",
+        "tracks": [
+          {
+            "id": "3LcGqv91NIBQaUmnNbsKu8",
+            "name": "Ponta De Lança Africano",
+            "durationMs": 232026
+          },
+          {
+            "id": "0uNRJM0SPTYODsXsIjXJw6",
+            "name": "Hermes Trismegisto Escreveu",
+            "durationMs": 182640
+          },
+          {
+            "id": "41eIpNKK7qiZP2SYSFSHtD",
+            "name": "O Filósofo",
+            "durationMs": 207266
+          },
+          {
+            "id": "21qLDWpxc2uHHTR89a47kO",
+            "name": "Meus Filhos, Meu Tesouro",
+            "durationMs": 231266
+          },
+          {
+            "id": "6xxuKJ7CULMGQjjS9DVEV0",
+            "name": "O Plebeu",
+            "durationMs": 187800
+          },
+          {
+            "id": "7pdCDKs0i05N8ag4tAC5u5",
+            "name": "Taj Mahal",
+            "durationMs": 186933
+          },
+          {
+            "id": "6Hn9ZU7hZKAh1HsYMA26o8",
+            "name": "Xica Da Silva",
+            "durationMs": 242733
+          },
+          {
+            "id": "39ufnuszBH5LV2C8AmcH4i",
+            "name": "A História De Jorge",
+            "durationMs": 226640
+          },
+          {
+            "id": "4ZbVhytDz8NY5RfzF2TfHm",
+            "name": "Camisa 10 Da Gávea",
+            "durationMs": 244706
+          },
+          {
+            "id": "5fu1oKX7MiyJtpL6k7l8PQ",
+            "name": "Cavaleiro Do Cavalo Imaculado",
+            "durationMs": 286426
+          },
+          {
+            "id": "3xNG6Djf9LlFpJcXveT8Wf",
+            "name": "África Brasil (Zumbi)",
+            "durationMs": 227200
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Africa Brasil",
+        "spotifyArtists": "Jorge Ben Jor",
+        "spotifyYear": 1976,
         "override": true
       }
     }

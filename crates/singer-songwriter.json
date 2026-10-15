@@ -1536,6 +1536,105 @@
         "spotifyArtists": "Robyn Hitchcock",
         "spotifyYear": 1984
       }
+    },
+    {
+      "rymId": "4996952",
+      "artist": "Angel Olsen",
+      "title": "Burn Your Fire for No Witness",
+      "year": 2014,
+      "rating": 9,
+      "spotify": {
+        "albumId": "62RDt42wD8VdrhfHG6IzpC",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27388cc55a8295f8e8c34259408",
+        "tracks": [
+          {
+            "id": "2NE61HPxiQyPbNhggQqrzG",
+            "name": "Unfucktheworld",
+            "durationMs": 125440
+          },
+          {
+            "id": "6S774P0VTGrr3XqY5YR59o",
+            "name": "Forgiven/Forgotten",
+            "durationMs": 123546
+          },
+          {
+            "id": "6VuhTQAJyn2trxQqQYzuI4",
+            "name": "Hi-Five",
+            "durationMs": 177520
+          },
+          {
+            "id": "79M6WrNtYFuezX2SNARqev",
+            "name": "White Fire",
+            "durationMs": 415840
+          },
+          {
+            "id": "2vCZk7sOPyhSVBjALHFPc2",
+            "name": "High & Wild",
+            "durationMs": 233013
+          },
+          {
+            "id": "2zKH8YUn6wyzSnHWFYMhJ8",
+            "name": "Lights Out",
+            "durationMs": 267466
+          },
+          {
+            "id": "2fwpsr9fGTLTSHnNCoPRed",
+            "name": "Stars",
+            "durationMs": 278293
+          },
+          {
+            "id": "3A9GSJ9CCOO4JEI3JAiBU3",
+            "name": "Iota",
+            "durationMs": 207920
+          },
+          {
+            "id": "00L9IGHexZLnscZiQpUWTG",
+            "name": "Dance Slow Decades",
+            "durationMs": 245773
+          },
+          {
+            "id": "0IjUSoHxhI3IloKzPpznzZ",
+            "name": "Enemy",
+            "durationMs": 343720
+          },
+          {
+            "id": "7eqdjUF8PLXcbFVGaoqGB2",
+            "name": "Windows",
+            "durationMs": 247813
+          },
+          {
+            "id": "4guchBCT7PLA7q0ozSrZK9",
+            "name": "White Water - Bonus Track",
+            "durationMs": 340160
+          },
+          {
+            "id": "5FDtOmB6KUXopJKXZ0XaBX",
+            "name": "All Right Now - Bonus Track",
+            "durationMs": 179320
+          },
+          {
+            "id": "5zu1O6BdlztxOETLfuiz2O",
+            "name": "Only With You - Bonus Track",
+            "durationMs": 155200
+          },
+          {
+            "id": "766jRriW0pPjC8ga7vFmd4",
+            "name": "May as Well - Bonus Track",
+            "durationMs": 159013
+          },
+          {
+            "id": "4JZvOIjn5plSbdZM7BMrJ5",
+            "name": "Endless Road - Bonus Track",
+            "durationMs": 124386
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Burn Your Fire For No Witness (Deluxe Edition)",
+        "spotifyArtists": "Angel Olsen",
+        "spotifyYear": 2014
+      }
     }
   ]
 }

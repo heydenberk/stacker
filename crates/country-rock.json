@@ -329,6 +329,536 @@
         "spotifyArtists": "Whiskeytown",
         "spotifyYear": 1997
       }
+    },
+    {
+      "rymId": "8266",
+      "artist": "The Flying Burrito Bros",
+      "title": "The Gilded Palace of Sin",
+      "year": 1969,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6VWKy5o2OcdeWa7yolazjU",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27353ba02e4c3b1b6a297002afa",
+        "tracks": [
+          {
+            "id": "0teWfbvQtUY4dnnZu1yT4E",
+            "name": "Christine’s Tune",
+            "durationMs": 182733
+          },
+          {
+            "id": "5bfvQG4NGiTFfUxPdMKrUd",
+            "name": "Sin City",
+            "durationMs": 249333
+          },
+          {
+            "id": "1daFdPmSkEUNOX3uATK2fc",
+            "name": "Do Right Woman",
+            "durationMs": 237400
+          },
+          {
+            "id": "1cmSVr6fl5Hvb2worddWrH",
+            "name": "Dark End Of The Street",
+            "durationMs": 230266
+          },
+          {
+            "id": "6XdX1Y3Vs7c2mRkHDZyBwH",
+            "name": "My Uncle",
+            "durationMs": 157200
+          },
+          {
+            "id": "0yAqtkTUGrkzHHTmoe5N6s",
+            "name": "Wheels",
+            "durationMs": 182800
+          },
+          {
+            "id": "71d9N0jFna02VXUERcR0jp",
+            "name": "Juanita",
+            "durationMs": 150160
+          },
+          {
+            "id": "0fRAGPWGKsntkIB2uZ9zkd",
+            "name": "Hot Burrito #1",
+            "durationMs": 217333
+          },
+          {
+            "id": "5mWMeUjGQHrVAqwsBlKQIH",
+            "name": "Hot Burrito #2",
+            "durationMs": 197200
+          },
+          {
+            "id": "7olD0K7CDQkbxH3G57k52l",
+            "name": "Do You Know How It Feels",
+            "durationMs": 128173
+          },
+          {
+            "id": "27RFvPkNAMfT8tx3qb1p6h",
+            "name": "Hippie Boy",
+            "durationMs": 295960
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Gilded Palace Of Sin",
+        "spotifyArtists": "The Flying Burrito Brothers",
+        "spotifyYear": 1969,
+        "override": true
+      }
+    },
+    {
+      "rymId": "16242",
+      "artist": "Gram Parsons",
+      "title": "Grievous Angel",
+      "year": 1974,
+      "rating": 9,
+      "spotify": {
+        "albumId": "6UQujMGmR5MbFsML9amCuN",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2733290cfb92676fc191323fba4",
+        "tracks": [
+          {
+            "id": "7vOYp7KJ8gVmVbcatSVf9J",
+            "name": "Return of the Grievous Angel - 2006 Remaster",
+            "durationMs": 266226
+          },
+          {
+            "id": "3THXntC8T110BDg3X8OaOf",
+            "name": "Hearts on Fire - 2002 Remaster",
+            "durationMs": 232693
+          },
+          {
+            "id": "2NY6C7Eo5YNUsOK6y9Nxk1",
+            "name": "I Can't Dance - 2006 Remaster",
+            "durationMs": 144426
+          },
+          {
+            "id": "6Bijmp2RULR8SgmpqRe7tx",
+            "name": "Brass Buttons - 2006 Remaster",
+            "durationMs": 210786
+          },
+          {
+            "id": "67nZEOZ5re0q0IueyF1dKc",
+            "name": "$1000 Wedding - 2002 Remaster",
+            "durationMs": 305306
+          },
+          {
+            "id": "1J4VSGnisSb9ECF8z7pCPQ",
+            "name": "Medley Live from Northern Quebec (A) Cash on the Barrelhead (B) Hickory Wind - 2006 Remaster",
+            "durationMs": 388906
+          },
+          {
+            "id": "72DefuF22C6aPKrWhRFCBS",
+            "name": "Love Hurts - 2007 Remaster",
+            "durationMs": 222293
+          },
+          {
+            "id": "7kJpAkJSFMCkM6T4plsRLd",
+            "name": "Ooh Las Vegas (feat. Emmylou Harris) - 2007 Remaster",
+            "durationMs": 212893
+          },
+          {
+            "id": "28xYsYblby21yWGCRcF5Cm",
+            "name": "In My Hour of Darkness - 2002 Remaster",
+            "durationMs": 229066
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Grievous Angel",
+        "spotifyArtists": "Gram Parsons",
+        "spotifyYear": 1974
+      }
+    },
+    {
+      "rymId": "16534590",
+      "artist": "Wednesday",
+      "title": "Bleeds",
+      "year": 2025,
+      "rating": 9,
+      "spotify": {
+        "albumId": "29HKbQ2pgXgElTnH66mFXK",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27379cc56467c944a260be5c2a9",
+        "tracks": [
+          {
+            "id": "50RLmAQv8YOGDi5iexOjH3",
+            "name": "Reality TV Argument Bleeds",
+            "durationMs": 182480
+          },
+          {
+            "id": "2deA4WXDrTa7jAZuaIAeqo",
+            "name": "Townies",
+            "durationMs": 195306
+          },
+          {
+            "id": "5b7XNPJbJV5ncuFGoh9ZJy",
+            "name": "Wound Up Here (By Holdin On)",
+            "durationMs": 208653
+          },
+          {
+            "id": "00lSB9CSyOcsxKVtbPbniL",
+            "name": "Elderberry Wine",
+            "durationMs": 215506
+          },
+          {
+            "id": "5ksAxcBX7eirDDHSYM5FoM",
+            "name": "Phish Pepsi",
+            "durationMs": 149506
+          },
+          {
+            "id": "5Bwn3U2xpgjAEwQ6BtPB5G",
+            "name": "Candy Breath",
+            "durationMs": 172440
+          },
+          {
+            "id": "1o9KFXJkF6jBpIvd4rthsi",
+            "name": "The Way Love Goes",
+            "durationMs": 116933
+          },
+          {
+            "id": "5NRbeq1mnwgyWeVJzOivmT",
+            "name": "Pick Up That Knife",
+            "durationMs": 261164
+          },
+          {
+            "id": "2NDyIlaaY0GnCdGWOK7O45",
+            "name": "Wasp",
+            "durationMs": 86378
+          },
+          {
+            "id": "11uUGMzqRWf3fdOAMMyaFZ",
+            "name": "Bitter Everyday",
+            "durationMs": 201960
+          },
+          {
+            "id": "4sMDb5nYg6dlpUGoDIbnro",
+            "name": "Carolina Murder Suicide",
+            "durationMs": 264520
+          },
+          {
+            "id": "7H01CFgozZ5XCcT68UmJsl",
+            "name": "Gary’s II",
+            "durationMs": 155063
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Bleeds",
+        "spotifyArtists": "Wednesday",
+        "spotifyYear": 2025
+      }
+    },
+    {
+      "rymId": "13799017",
+      "artist": "Big Thief",
+      "title": "Dragon New Warm Mountain I Believe in You",
+      "year": 2022,
+      "rating": 9,
+      "spotify": {
+        "albumId": "7Ln81p86r5cCsesd3KBWIY",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273608c444310857c06bdc65361",
+        "tracks": [
+          {
+            "id": "3HFBqhotJeEKHJzMEW31jZ",
+            "name": "Change",
+            "durationMs": 295454
+          },
+          {
+            "id": "32k3OLmeIWe93KY0QzMmZX",
+            "name": "Time Escaping",
+            "durationMs": 228522
+          },
+          {
+            "id": "3Q6VfeIZ1bTjWiNe2Or4LQ",
+            "name": "Spud Infinity",
+            "durationMs": 334802
+          },
+          {
+            "id": "3i7XRi2UyvGTdJawJRkVhd",
+            "name": "Certainty",
+            "durationMs": 187388
+          },
+          {
+            "id": "3UN7R1teOKhmB8SnxtwiPK",
+            "name": "Dragon New Warm Mountain I Believe in You",
+            "durationMs": 283763
+          },
+          {
+            "id": "6w1d6Zwf7aXALS4TRA26hy",
+            "name": "Sparrow",
+            "durationMs": 311933
+          },
+          {
+            "id": "5ZlfX4evbtQtONINsLADDR",
+            "name": "Little Things",
+            "durationMs": 344822
+          },
+          {
+            "id": "6qopJBPesEVIrIT0qMtbNs",
+            "name": "Heavy Bend",
+            "durationMs": 96553
+          },
+          {
+            "id": "3pMTFpbool5GOxvoc2QJth",
+            "name": "Flower of Blood",
+            "durationMs": 264546
+          },
+          {
+            "id": "5MFBgS4j9HMn04mRPrdAr2",
+            "name": "Blurred View",
+            "durationMs": 246769
+          },
+          {
+            "id": "3AqSeHqtg45ddsAYJeuCqm",
+            "name": "Red Moon",
+            "durationMs": 259591
+          },
+          {
+            "id": "3qNf31pEZJRN9FJN1Ax0BJ",
+            "name": "Dried Roses",
+            "durationMs": 155650
+          },
+          {
+            "id": "2mdaMDbjFxmxQPO90PxT5w",
+            "name": "No Reason",
+            "durationMs": 227156
+          },
+          {
+            "id": "07C3oEuCStuueA9cBYLRuL",
+            "name": "Wake Me up to Drive",
+            "durationMs": 223601
+          },
+          {
+            "id": "45u0KnOkZtlkQdtTXyC1B8",
+            "name": "Promise Is a Pendulum",
+            "durationMs": 252600
+          },
+          {
+            "id": "054hQgiHkYgHZzHjIDj7ch",
+            "name": "12,000 Lines",
+            "durationMs": 179640
+          },
+          {
+            "id": "2FwDApgXk91kXvqy2oB7dz",
+            "name": "Simulation Swarm",
+            "durationMs": 252733
+          },
+          {
+            "id": "0ojbjct5B5T4z4EkOYUGAt",
+            "name": "Love Love Love",
+            "durationMs": 253670
+          },
+          {
+            "id": "1BzxTvgMM5Ve4acPQHYfL3",
+            "name": "The Only Place",
+            "durationMs": 194251
+          },
+          {
+            "id": "2PNvb2hdbbAvWCjybGbqXO",
+            "name": "Blue Lightning",
+            "durationMs": 231911
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Dragon New Warm Mountain I Believe In You",
+        "spotifyArtists": "Big Thief",
+        "spotifyYear": 2022
+      }
+    },
+    {
+      "rymId": "10498",
+      "artist": "The Byrds",
+      "title": "Sweetheart of the Rodeo",
+      "year": 1968,
+      "rating": 9,
+      "spotify": {
+        "albumId": "02XyFDfvHfIwtqOC3o0PcK",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730412a1a5731436dcad75a770",
+        "tracks": [
+          {
+            "id": "6kPxXhjSvy8RsmZBAJUiFs",
+            "name": "You Ain't Goin' Nowhere",
+            "durationMs": 153466
+          },
+          {
+            "id": "5HU3KDpJqqqmV9AWoBHToc",
+            "name": "I Am a Pilgrim",
+            "durationMs": 219466
+          },
+          {
+            "id": "09Log6FEFHidQheeA6Ymjo",
+            "name": "The Christian Life",
+            "durationMs": 150066
+          },
+          {
+            "id": "7wgKheHpetDtqMXTx08sCG",
+            "name": "You Don't Miss Your Water",
+            "durationMs": 228240
+          },
+          {
+            "id": "1xthhWTb2LhrpSK0rX9rQn",
+            "name": "You're Still On My Mind",
+            "durationMs": 144640
+          },
+          {
+            "id": "6NtoPgo4C22hfBNaBBeoHW",
+            "name": "Pretty Boy Floyd",
+            "durationMs": 154133
+          },
+          {
+            "id": "3YBTxokhuaszeWCOXC7FQn",
+            "name": "Hickory Wind",
+            "durationMs": 211173
+          },
+          {
+            "id": "7FeLo6k5fhgXyGTPaK6VLi",
+            "name": "One Hundred Years from Now",
+            "durationMs": 160466
+          },
+          {
+            "id": "2jVwaX6w2BHv4OmBGLck3g",
+            "name": "Blue Canadian Rockies",
+            "durationMs": 121800
+          },
+          {
+            "id": "48pWoeheF5AbpFMJioLdZ3",
+            "name": "Life in Prison",
+            "durationMs": 166066
+          },
+          {
+            "id": "2wZGvJqe4QWwJv1F7HWpDM",
+            "name": "Nothing Was Delivered",
+            "durationMs": 204173
+          },
+          {
+            "id": "3xr8H1BjqzFxowp68Mm2u0",
+            "name": "You Got A Reputation",
+            "durationMs": 187933
+          },
+          {
+            "id": "3D0EJNcPgXrV6RbyHpVe89",
+            "name": "Lazy Days",
+            "durationMs": 206373
+          },
+          {
+            "id": "7hu9kGjpg2LLu5Nv3En446",
+            "name": "Pretty Polly",
+            "durationMs": 173040
+          },
+          {
+            "id": "38HgSsJxp64206oGeyLf0r",
+            "name": "The Christian Life - rehearsal - take #11",
+            "durationMs": 175466
+          },
+          {
+            "id": "1LM5pSxMpPdchg2dQsPb4I",
+            "name": "Life In Prison - rehearsal - take #11",
+            "durationMs": 178600
+          },
+          {
+            "id": "2nfV43EMA8f0ULADYfiaOO",
+            "name": "You're Still On My Mind - rehearsal - take #43",
+            "durationMs": 148666
+          },
+          {
+            "id": "4lVYXVhPkWSkLw7cJYpCA3",
+            "name": "One Hundred Years From Now - rehearseal - take #2",
+            "durationMs": 200226
+          },
+          {
+            "id": "4zPfrOwLC5bXdtmcyunFrS",
+            "name": "All I Have Are Memories - instrumental",
+            "durationMs": 286960
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Sweetheart Of The Rodeo",
+        "spotifyArtists": "The Byrds",
+        "spotifyYear": 1968
+      }
+    },
+    {
+      "rymId": "9350",
+      "artist": "The Kinks",
+      "title": "Muswell Hillbillies",
+      "year": 1971,
+      "rating": 9,
+      "spotify": {
+        "albumId": "3jpk3pHnxsw5zwzMO5vojD",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27333daee66f07ed3a256fa6cc8",
+        "tracks": [
+          {
+            "id": "6w32arKRBQMInshLGKsp4F",
+            "name": "20th Century Man - 2022 Remaster",
+            "durationMs": 356480
+          },
+          {
+            "id": "5ZEscQFeOiy8ssNvvI6Kap",
+            "name": "Acute Schizophrenia Paranoia Blues - 2022 Remaster",
+            "durationMs": 212080
+          },
+          {
+            "id": "7sphkBb71wuMaur7vEUbex",
+            "name": "Holiday - 2022 Remaster",
+            "durationMs": 161253
+          },
+          {
+            "id": "51Nr3mfdPVHmchZdszlQwk",
+            "name": "Skin and Bone - 2022 Remaster",
+            "durationMs": 219653
+          },
+          {
+            "id": "3X7xtmkqehuBVaZ59tfK3G",
+            "name": "Alcohol - 2022 Remaster",
+            "durationMs": 217640
+          },
+          {
+            "id": "6nciGScjvDIklXtmcVK6Xt",
+            "name": "Complicated Life - 2022 Remaster",
+            "durationMs": 249280
+          },
+          {
+            "id": "61zDdegiKyKMFnMLzhAP9D",
+            "name": "Here Come the People in Grey - 2022 Remaster",
+            "durationMs": 225773
+          },
+          {
+            "id": "4xi3oJxSSQf7FT5gQBnrVD",
+            "name": "Have a Cuppa Tea - 2022 Remaster",
+            "durationMs": 224600
+          },
+          {
+            "id": "6caurOMbYeDBDhqU2BfBWl",
+            "name": "Holloway Jail - 2022 Remaster",
+            "durationMs": 206226
+          },
+          {
+            "id": "0cD6Boki8MwkPy7ziAlGNn",
+            "name": "Oklahoma USA - 2022 Remaster",
+            "durationMs": 159786
+          },
+          {
+            "id": "1MeVhyuyOhVZc7JSkirJjQ",
+            "name": "Uncle Son - 2022 Remaster",
+            "durationMs": 152293
+          },
+          {
+            "id": "3S69bKkBJ03WJMKJI7wEgV",
+            "name": "Muswell Hillbilly - 2022 Remaster",
+            "durationMs": 304400
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Muswell Hillbillies (2022 Remaster)",
+        "spotifyArtists": "The Kinks",
+        "spotifyYear": 1971
+      }
     }
   ]
 }

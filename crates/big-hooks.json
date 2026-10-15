@@ -1,0 +1,724 @@
+{
+  "id": "big-hooks",
+  "name": "Big Hooks",
+  "mood": "loud, bright choruses to sing along to: the Beths to the Exploding Hearts",
+  "createdAt": "2026-10-15",
+  "records": [
+    {
+      "rymId": "14789080",
+      "artist": "The Beths",
+      "title": "Expert in a Dying Field",
+      "year": 2022,
+      "rating": 10,
+      "spotify": {
+        "albumId": "1nAQg0AjzpuT7lINu1J87y",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27342185bc39407adc74a39212a",
+        "tracks": [
+          {
+            "id": "1bPcxJHusTrlr2Kj4kjK7e",
+            "name": "Expert In A Dying Field",
+            "durationMs": 251213
+          },
+          {
+            "id": "26nKaeICWQGG1EC3cTGliE",
+            "name": "Knees Deep",
+            "durationMs": 219133
+          },
+          {
+            "id": "5JsEyO6GdNhUa1ZimkF6f9",
+            "name": "Silence Is Golden",
+            "durationMs": 176040
+          },
+          {
+            "id": "0cfp5Au5smgHT7kSN6F4kd",
+            "name": "Your Side",
+            "durationMs": 281586
+          },
+          {
+            "id": "4K8lSoy4WWjBibvfNECDgf",
+            "name": "I Want To Listen",
+            "durationMs": 132986
+          },
+          {
+            "id": "79BfRISdeTukD9efHO51lz",
+            "name": "Head In The Clouds",
+            "durationMs": 241480
+          },
+          {
+            "id": "131Bs5zdIXTLopbbIEtits",
+            "name": "Best Left",
+            "durationMs": 238493
+          },
+          {
+            "id": "7flN6MxB2SlRgnu9AhiLxz",
+            "name": "Change In The Weather",
+            "durationMs": 222573
+          },
+          {
+            "id": "5LgpO5RdeHPEDSww4XP0WO",
+            "name": "When You Know You Know",
+            "durationMs": 248666
+          },
+          {
+            "id": "3vit526cUNjFwgwKChcDx1",
+            "name": "A Passing Rain",
+            "durationMs": 195960
+          },
+          {
+            "id": "4nXhzWvBfYvq1UVvQ1rzgT",
+            "name": "I Told You That I Was Afraid",
+            "durationMs": 201733
+          },
+          {
+            "id": "15KnGglqXvqvmy1zV7ulDE",
+            "name": "2am",
+            "durationMs": 289333
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Expert In A Dying Field",
+        "spotifyArtists": "The Beths",
+        "spotifyYear": 2022
+      }
+    },
+    {
+      "rymId": "9238865",
+      "artist": "The Beths",
+      "title": "Future Me Hates Me",
+      "year": 2018,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6usdG3GBRayk8nb4eU1nrk",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2733a8da9eff5bfd1067d3fe893",
+        "tracks": [
+          {
+            "id": "21DP6tu7GS3UWwixIdM2UK",
+            "name": "Great No One",
+            "durationMs": 202880
+          },
+          {
+            "id": "6CWDUTWFZW9P9wNkGqg0U5",
+            "name": "Future Me Hates Me",
+            "durationMs": 245813
+          },
+          {
+            "id": "1fHy7Y1ZSQgY8cd4Po2gZY",
+            "name": "Uptown Girl",
+            "durationMs": 151000
+          },
+          {
+            "id": "1RFnubPsaLV3P4uplh10oh",
+            "name": "You Wouldn't Like Me",
+            "durationMs": 212360
+          },
+          {
+            "id": "6AHCHNvumPWta5gVOHfV1c",
+            "name": "Not Running",
+            "durationMs": 231653
+          },
+          {
+            "id": "2c6m3dyH0dn9bDf3RJxedu",
+            "name": "Little Death",
+            "durationMs": 294893
+          },
+          {
+            "id": "6Uvl0u7RLTKBFovsZnlfKE",
+            "name": "Happy Unhappy",
+            "durationMs": 209080
+          },
+          {
+            "id": "6C7fgDVVOcPBH9DQ1gZC5o",
+            "name": "River Run: Lvl 1",
+            "durationMs": 246706
+          },
+          {
+            "id": "2Q35YeCk101G6EtBuYRQXc",
+            "name": "Whatever",
+            "durationMs": 264333
+          },
+          {
+            "id": "2rMfAM7xgTc5pOldVZq9W4",
+            "name": "Less Than Thou",
+            "durationMs": 257560
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Future Me Hates Me",
+        "spotifyArtists": "The Beths",
+        "spotifyYear": 2018
+      }
+    },
+    {
+      "rymId": "10454456",
+      "artist": "Queen of Jeans",
+      "title": "If You're Not Afraid, I'm Not Afraid",
+      "year": 2019,
+      "rating": 9,
+      "spotify": {
+        "albumId": "4LMYBk4Uirg4LSOqfSBPSE",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27323ba324c8a168f6f7ab86d97",
+        "tracks": [
+          {
+            "id": "52qwxJ9wlAxmKgcfmWunGP",
+            "name": "Get Lost",
+            "durationMs": 255120
+          },
+          {
+            "id": "7wDtMXMEJOTkJKlRgxd6Sb",
+            "name": "All the Same",
+            "durationMs": 215584
+          },
+          {
+            "id": "5BcNtan8yF8xF2abCNEZoX",
+            "name": "Tell Me",
+            "durationMs": 265740
+          },
+          {
+            "id": "7ihvwJwx3oAFNBwZOKsbME",
+            "name": "Centuries",
+            "durationMs": 207178
+          },
+          {
+            "id": "2235a3Bw68YQhj5FI1ESIY",
+            "name": "Only Obvious to You",
+            "durationMs": 280985
+          },
+          {
+            "id": "3vJMK9S0b90pIkQcEnQOiZ",
+            "name": "Rum Cheeks",
+            "durationMs": 167431
+          },
+          {
+            "id": "7erb2V9luAP1Pq25BHg17J",
+            "name": "Bloomed",
+            "durationMs": 204298
+          },
+          {
+            "id": "5AifTcfW6dTwSbEFPM85pz",
+            "name": "Not a Minute Too Soon",
+            "durationMs": 307573
+          },
+          {
+            "id": "4HuFRLtCsdZmZv9sbruPSQ",
+            "name": "I Am in Love With Your Mind",
+            "durationMs": 212378
+          },
+          {
+            "id": "4eaFrgZX7UzkuqiO8X7SwG",
+            "name": "On Your Shoulder",
+            "durationMs": 265978
+          },
+          {
+            "id": "04avsnMiNtC6xsh0A2llUU",
+            "name": "Take It All Away",
+            "durationMs": 329265
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "If you're not afraid, I'm not afraid",
+        "spotifyArtists": "Queen of Jeans",
+        "spotifyYear": 2019
+      }
+    },
+    {
+      "rymId": "15743589",
+      "artist": "Queen of Jeans",
+      "title": "All Again",
+      "year": 2024,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5vX3Hr69CISfwHoyKOyKsI",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273dab859402c6eeac18c96ad1d",
+        "tracks": [
+          {
+            "id": "2sjCw44WSzQNaAm6xAhqw1",
+            "name": "All My Friends",
+            "durationMs": 272190
+          },
+          {
+            "id": "6u6k7hRoZxlrLlvfDnDbsI",
+            "name": "Horny Hangover",
+            "durationMs": 198421
+          },
+          {
+            "id": "7aDZNzoAJNrET0pt2OKOOn",
+            "name": "Karaoke",
+            "durationMs": 223759
+          },
+          {
+            "id": "7lBNawGqSwTo71agrBLtHO",
+            "name": "Enough To Go Around",
+            "durationMs": 177201
+          },
+          {
+            "id": "7KKq23KEXPtbQNm6WR71T4",
+            "name": "Neighbors",
+            "durationMs": 230794
+          },
+          {
+            "id": "2DLzUWFoIQYxaU38KvGc79",
+            "name": "Let Me Forget",
+            "durationMs": 185534
+          },
+          {
+            "id": "0ZpAF6Rj6v3ascuNpHt4WL",
+            "name": "Books In Bed",
+            "durationMs": 243433
+          },
+          {
+            "id": "7elqee2G9JbUz3wrYELEMS",
+            "name": "Bitter Pill",
+            "durationMs": 249662
+          },
+          {
+            "id": "2W2JbM39qbqY8A9u9NexbH",
+            "name": "Go Down Easy",
+            "durationMs": 263012
+          },
+          {
+            "id": "0iwkSPJFyoQt32DW65StQR",
+            "name": "Last To Try",
+            "durationMs": 213962
+          },
+          {
+            "id": "308RmzJMZK2i7zm1VOzLRe",
+            "name": "Do It All Again",
+            "durationMs": 56309
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "All Again",
+        "spotifyArtists": "Queen of Jeans",
+        "spotifyYear": 2024
+      }
+    },
+    {
+      "rymId": "8803155",
+      "artist": "Caroline Rose",
+      "title": "Loner",
+      "year": 2018,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6QzLXU46LVrpSoLFDGDKxx",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273992f111f03dc85a0a8ea719c",
+        "tracks": [
+          {
+            "id": "72VMb9iQtdiZJW0oRCwzg7",
+            "name": "More Of The Same",
+            "durationMs": 248791
+          },
+          {
+            "id": "2RScufjQnmfMtjD1xavf6v",
+            "name": "Cry!",
+            "durationMs": 223654
+          },
+          {
+            "id": "1R3QdgAsi5yhHbWla3DWs6",
+            "name": "Money",
+            "durationMs": 135507
+          },
+          {
+            "id": "3YUacjGhqQptDlWUzftaIB",
+            "name": "Jeannie Becomes A Mom",
+            "durationMs": 261153
+          },
+          {
+            "id": "5DPOoZVVabV0KNDpSQTjt4",
+            "name": "Getting To Me",
+            "durationMs": 213561
+          },
+          {
+            "id": "4OQBI5tOwmAZaX8Uoehxa5",
+            "name": "To Die Today",
+            "durationMs": 221105
+          },
+          {
+            "id": "7jMyy1CA3KEqqjZcD4SixL",
+            "name": "Soul No. 5",
+            "durationMs": 189949
+          },
+          {
+            "id": "0iOlsx61Aw1H5nuk56Pleo",
+            "name": "Smile! AKA Schizodrift Jam 1 AKA Bikini Intro",
+            "durationMs": 49211
+          },
+          {
+            "id": "2RNidTk4OcFGTXW5OAJkxj",
+            "name": "Bikini",
+            "durationMs": 149860
+          },
+          {
+            "id": "6rRbRRfMsnnUbxNLW71nUf",
+            "name": "Talk",
+            "durationMs": 210104
+          },
+          {
+            "id": "7jnI09rNYn16JafRRehAnI",
+            "name": "Animal",
+            "durationMs": 198505
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "LONER",
+        "spotifyArtists": "Caroline Rose",
+        "spotifyYear": 2018
+      }
+    },
+    {
+      "rymId": "2833372",
+      "artist": "Allo Darlin'",
+      "title": "Allo Darlin'",
+      "year": 2010,
+      "rating": 10,
+      "spotify": {
+        "albumId": "3ma3nVyl9fJzGbkXJXQaXI",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a0152bcafdb9684ef7b0ca69",
+        "tracks": [
+          {
+            "id": "2XlC5OprRd5Lef8NNQztbE",
+            "name": "Dreaming",
+            "durationMs": 202693
+          },
+          {
+            "id": "1hCnqyFj3o2G99ymTf2AC7",
+            "name": "The Polaroid Song",
+            "durationMs": 254440
+          },
+          {
+            "id": "12EMHzNHAw3q6PCFVbRzY7",
+            "name": "Silver Dollars",
+            "durationMs": 252560
+          },
+          {
+            "id": "3rg9041GOi8FQditQzoEP2",
+            "name": "Kiss Your Lips",
+            "durationMs": 226066
+          },
+          {
+            "id": "625f9G05a6xN4cfHV3wH4j",
+            "name": "Heartbeat Chilli",
+            "durationMs": 258560
+          },
+          {
+            "id": "2iD7mSMvfRMjmaCMUZJuEr",
+            "name": "If Loneliness Was Art",
+            "durationMs": 210480
+          },
+          {
+            "id": "3N9dx83vuMDSkJzWwDHyBk",
+            "name": "Woody Allen",
+            "durationMs": 159906
+          },
+          {
+            "id": "4gaZmZscSwkwU9we8SplCe",
+            "name": "Let's Go Swimming",
+            "durationMs": 271973
+          },
+          {
+            "id": "07uKwNAj5RIcO7826dD93d",
+            "name": "My Heart is a Drummer",
+            "durationMs": 197186
+          },
+          {
+            "id": "2bURva7sTR2gIsm8oDwTVo",
+            "name": "What Will Be Will Be",
+            "durationMs": 217706
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Allo Darlin'",
+        "spotifyArtists": "Allo Darlin'",
+        "spotifyYear": 2026,
+        "override": true
+      }
+    },
+    {
+      "rymId": "8331982",
+      "artist": "Alvvays",
+      "title": "Antisocialites",
+      "year": 2017,
+      "rating": 9,
+      "spotify": {
+        "albumId": "2Yy84EeclNVwFDem6yIB2s",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27391390d24abb65f6fae0323f0",
+        "tracks": [
+          {
+            "id": "6Px7VvXLTjMP6J2nTQ6bIh",
+            "name": "In Undertow",
+            "durationMs": 197186
+          },
+          {
+            "id": "6TcxxINfeaBEQ35sHMldTD",
+            "name": "Dreams Tonite",
+            "durationMs": 196026
+          },
+          {
+            "id": "1MlU2xFOo4k1gFzIRYeQ0U",
+            "name": "Plimsoll Punks",
+            "durationMs": 289586
+          },
+          {
+            "id": "0J4syEDciNBH9RKDZiONYT",
+            "name": "Your Type",
+            "durationMs": 123546
+          },
+          {
+            "id": "0LkjdguLEqOnRspW3N1aio",
+            "name": "Not My Baby",
+            "durationMs": 256413
+          },
+          {
+            "id": "3FcHT6pFWnHpFTHtEXFCoN",
+            "name": "Hey",
+            "durationMs": 168746
+          },
+          {
+            "id": "306kznjV0g85okQAdIHON7",
+            "name": "Lollipop (Ode To Jim)",
+            "durationMs": 197201
+          },
+          {
+            "id": "0zihUXqKwjam17iWU8ahP3",
+            "name": "Already Gone",
+            "durationMs": 183653
+          },
+          {
+            "id": "11KmXKbQEjF8fZWNZ9Pxkr",
+            "name": "Saved By A Waif",
+            "durationMs": 179487
+          },
+          {
+            "id": "2bjxKyGCrBv8JFXvo6Qdrk",
+            "name": "Forget About Life",
+            "durationMs": 162895
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Antisocialites",
+        "spotifyArtists": "Alvvays",
+        "spotifyYear": 2017
+      }
+    },
+    {
+      "rymId": "10219498",
+      "artist": "Mannequin Pussy",
+      "title": "Patience",
+      "year": 2019,
+      "rating": 9,
+      "spotify": {
+        "albumId": "1X0Na8DRV5U6G9grTPDWKF",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2733b00b2c21fab2f9633ea5c84",
+        "tracks": [
+          {
+            "id": "0xFEpNfqtoBgXeaUDwN6el",
+            "name": "Patience",
+            "durationMs": 132917
+          },
+          {
+            "id": "4j1OTpSF5ejqYPKwqHvlzM",
+            "name": "Drunk II",
+            "durationMs": 268695
+          },
+          {
+            "id": "5VJ3TBLhxLYGVGAYJYq45B",
+            "name": "Cream",
+            "durationMs": 115805
+          },
+          {
+            "id": "6ICtYhjPU0GFkR1jZk5UrN",
+            "name": "Fear/+/Desire",
+            "durationMs": 215998
+          },
+          {
+            "id": "0pIsDm8kCkZPiq3z2hGmd4",
+            "name": "Drunk I",
+            "durationMs": 53723
+          },
+          {
+            "id": "6s5v3XCDifgf8im0N3JokX",
+            "name": "High Horse",
+            "durationMs": 178392
+          },
+          {
+            "id": "3DHHaUZrjhEV4jTWJYCbB7",
+            "name": "Who You Are",
+            "durationMs": 152401
+          },
+          {
+            "id": "218U1R2XrDJCpwNeGNsye1",
+            "name": "Clams",
+            "durationMs": 38474
+          },
+          {
+            "id": "48kxuz4mbDd6akKMgrZXS1",
+            "name": "F.U.C.A.W.",
+            "durationMs": 125051
+          },
+          {
+            "id": "3r7p1yUo7SZIU8xPZS1UC9",
+            "name": "In Love Again",
+            "durationMs": 258522
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Patience",
+        "spotifyArtists": "Mannequin Pussy",
+        "spotifyYear": 2019
+      }
+    },
+    {
+      "rymId": "10047862",
+      "artist": "Hatchie",
+      "title": "Keepsake",
+      "year": 2019,
+      "rating": 9,
+      "spotify": {
+        "albumId": "0RDarzUfv3uQuL6qWvY7PL",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273eb4f21faaf7e122680a7a873",
+        "tracks": [
+          {
+            "id": "5OygNNTbjAPBA92UongNSk",
+            "name": "Not That Kind",
+            "durationMs": 230453
+          },
+          {
+            "id": "3gYzG0OEly0FJnZw9pTaRG",
+            "name": "Without A Blush",
+            "durationMs": 298799
+          },
+          {
+            "id": "2oBxCdIdhKevmtpDlsSOsC",
+            "name": "Her Own Heart",
+            "durationMs": 235143
+          },
+          {
+            "id": "0GoSwjecUZk22Ci2s3JL1W",
+            "name": "Obsessed",
+            "durationMs": 313846
+          },
+          {
+            "id": "3KfbbYuVBzsb3i97XVdVAq",
+            "name": "Unwanted Guest",
+            "durationMs": 296289
+          },
+          {
+            "id": "2gAsAp3g17Te8shtcEuAGU",
+            "name": "Secret",
+            "durationMs": 244067
+          },
+          {
+            "id": "3f1fWA7oaDUSa34Io4hHKC",
+            "name": "Kiss The Stars",
+            "durationMs": 251361
+          },
+          {
+            "id": "1HG9MgdsVA9LCJXVgBsNHt",
+            "name": "Stay With Me",
+            "durationMs": 295328
+          },
+          {
+            "id": "4kNGl557dBUTkxXWzMYVHC",
+            "name": "When I Get Out",
+            "durationMs": 273028
+          },
+          {
+            "id": "1xW2kXzYrG1KKd5zvaPx0A",
+            "name": "Keep",
+            "durationMs": 277108
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Keepsake",
+        "spotifyArtists": "Hatchie",
+        "spotifyYear": 2019
+      }
+    },
+    {
+      "rymId": "50595",
+      "artist": "The Exploding Hearts",
+      "title": "Guitar Romantic",
+      "year": 2003,
+      "rating": 8,
+      "spotify": {
+        "albumId": "1SSAnjxmkyvfcQI8I5SM9y",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2731a51506ab47151d89e31eeaa",
+        "tracks": [
+          {
+            "id": "5qUxk8vruEDJoX4E77lXTu",
+            "name": "Modern Kicks",
+            "durationMs": 198719
+          },
+          {
+            "id": "3MSLneKGzmz1ZsOcBq7RxB",
+            "name": "I'm a Pretender",
+            "durationMs": 151927
+          },
+          {
+            "id": "1ZWtZRi1FQPz25yfvNZhVk",
+            "name": "Thorns In Roses",
+            "durationMs": 162290
+          },
+          {
+            "id": "5vDKtiTqITJsotXr52zKtp",
+            "name": "You're Black and Blue",
+            "durationMs": 125305
+          },
+          {
+            "id": "4DZuZ1SDRzRiqMypHdxXOm",
+            "name": "Sleeping Aides and Razor Blades",
+            "durationMs": 156494
+          },
+          {
+            "id": "694gqjIXsmDJChvjcng9QA",
+            "name": "Rumours In Town",
+            "durationMs": 152614
+          },
+          {
+            "id": "0V9aKEX41DVQpt0rjXoTkG",
+            "name": "Throwaway Style",
+            "durationMs": 178254
+          },
+          {
+            "id": "3t3pcwk2EZzlsT3pbTU5pu",
+            "name": "Boulevard Trash",
+            "durationMs": 130399
+          },
+          {
+            "id": "6Eru7zhsB0QAg5gVANijeE",
+            "name": "Jailbird",
+            "durationMs": 216748
+          },
+          {
+            "id": "33oVNbvXJzM1O3cCXFifI5",
+            "name": "Still Crazy",
+            "durationMs": 244332
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Guitar Romantic",
+        "spotifyArtists": "The Exploding Hearts",
+        "spotifyYear": 2003
+      }
+    }
+  ]
+}

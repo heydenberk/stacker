@@ -1,0 +1,769 @@
+{
+  "id": "psych-art-rock",
+  "name": "Psych & Art Rock",
+  "mood": "head music: Eno and Bowie to the Flaming Lips and Tame Impala",
+  "createdAt": "2026-10-15",
+  "records": [
+    {
+      "rymId": "4065445",
+      "artist": "Tame Impala",
+      "title": "Lonerism",
+      "year": 2012,
+      "rating": 10,
+      "spotify": {
+        "albumId": "3C2MFZ2iHotUQOSBzdSvM7",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273370c12f82872c9cfaee80193",
+        "tracks": [
+          {
+            "id": "2Gl1Qdx5Px5kVYe0PQoGI0",
+            "name": "Be Above It",
+            "durationMs": 201960
+          },
+          {
+            "id": "0YuePEX4KyfLIPMdNLPwgQ",
+            "name": "Endors Toi",
+            "durationMs": 186640
+          },
+          {
+            "id": "7qU7vhCPKhkDiJYGoboISc",
+            "name": "Apocalypse Dreams",
+            "durationMs": 356946
+          },
+          {
+            "id": "6ewQE1dNPv9qqlnB1CxrvM",
+            "name": "Mind Mischief",
+            "durationMs": 271880
+          },
+          {
+            "id": "0pJTrMWCiR0TuJ5FApIqrz",
+            "name": "Music To Walk Home By",
+            "durationMs": 312213
+          },
+          {
+            "id": "6IM45SqAURH6PrvziDs1RQ",
+            "name": "Why Won't They Talk To Me?",
+            "durationMs": 286093
+          },
+          {
+            "id": "0LtOwyZoSNZKJWHqjzADpW",
+            "name": "Feels Like We Only Go Backwards",
+            "durationMs": 192960
+          },
+          {
+            "id": "2UYHP0RQqPFvue0Ygs5Amm",
+            "name": "Keep On Lying",
+            "durationMs": 353933
+          },
+          {
+            "id": "6qZjm61s6u8Ead9sWxCDro",
+            "name": "Elephant",
+            "durationMs": 211226
+          },
+          {
+            "id": "4Klyx5dYqZV9YefSecDwDv",
+            "name": "She Just Won't Believe Me",
+            "durationMs": 57173
+          },
+          {
+            "id": "33JMMgxQKL3zJsZeMNC3gR",
+            "name": "Nothing That Has Happened So Far Has Been Anything We Could Control",
+            "durationMs": 359946
+          },
+          {
+            "id": "7Jk2pg4g0c5rz5AfkEGMRp",
+            "name": "Sun's Coming Up",
+            "durationMs": 320293
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Lonerism",
+        "spotifyArtists": "Tame Impala",
+        "spotifyYear": 2012
+      }
+    },
+    {
+      "rymId": "641",
+      "artist": "The Flaming Lips",
+      "title": "The Soft Bulletin",
+      "year": 1999,
+      "rating": 10,
+      "spotify": {
+        "albumId": "1mJFgPeuLhU1PzLNBURdJC",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a777ab30c4bfc17ea58ce019",
+        "tracks": [
+          {
+            "id": "1RZlGlz8eXT1KmJYpqFRzH",
+            "name": "Race for the Prize - 2017 Remaster",
+            "durationMs": 258912
+          },
+          {
+            "id": "12V09y1B0z31OH9rvH3pMH",
+            "name": "A Spoonful Weighs a Ton - 2017 Remaster",
+            "durationMs": 212200
+          },
+          {
+            "id": "6aEkehn1UrYfdjpIRCuzVO",
+            "name": "The Spark That Bled - 2017 Remaster",
+            "durationMs": 354632
+          },
+          {
+            "id": "4KPr9Oan2RiTzaT2V5luNH",
+            "name": "The Spiderbite Song - 2017 Remaster",
+            "durationMs": 242047
+          },
+          {
+            "id": "2PBtyFh5rgThYrfzr2CNMJ",
+            "name": "Buggin' - Mokran Mix; Alternate 2017 Remaster",
+            "durationMs": 196293
+          },
+          {
+            "id": "5KoyXFZuJICHNDNiqfSvDn",
+            "name": "What Is the Light? - 2017 Remaster",
+            "durationMs": 245127
+          },
+          {
+            "id": "56aC9hAEk7bWWM6WLf5HvA",
+            "name": "The Observer - 2017 Remaster",
+            "durationMs": 251029
+          },
+          {
+            "id": "02mLZ4roBiXLsFGdt6KhNu",
+            "name": "Waitin' for a Superman - 2017 Remaster",
+            "durationMs": 257412
+          },
+          {
+            "id": "1sC5J4UY4iVyi7bRO2fI2c",
+            "name": "Suddenly Everything Has Changed - 2017 Remaster",
+            "durationMs": 234237
+          },
+          {
+            "id": "4D8amAivdlQ4LyiBD6xc1d",
+            "name": "The Gash - 2017 Remaster",
+            "durationMs": 242451
+          },
+          {
+            "id": "12j0Hvgy2QtAzvWbqxoTbx",
+            "name": "Feeling Yourself Disintegrate - 2017 Remaster",
+            "durationMs": 317106
+          },
+          {
+            "id": "4zxQmYMxXzNc8YrToM83F1",
+            "name": "Sleeping on the Roof - 2017 Remaster",
+            "durationMs": 189453
+          },
+          {
+            "id": "6mtIRdklAtM6lRuipHLwok",
+            "name": "Race for the Prize - Mokran Mix; 2017 Remaster",
+            "durationMs": 248733
+          },
+          {
+            "id": "2EJDRDvRRMZy3pBIDKuvbj",
+            "name": "Waitin' for a Superman - Mokran Mix; 2017 Remaster",
+            "durationMs": 259200
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Soft Bulletin",
+        "spotifyArtists": "The Flaming Lips",
+        "spotifyYear": 1999
+      }
+    },
+    {
+      "rymId": "12256",
+      "artist": "The Flaming Lips",
+      "title": "Yoshimi Battles the Pink Robots",
+      "year": 2002,
+      "rating": 7,
+      "spotify": {
+        "albumId": "49LA20VMk65fQyEaIzYdvf",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735f7ad2cd5d29f7d52a5f0779",
+        "tracks": [
+          {
+            "id": "0ScgmigVOJr2mFsAtwFQmz",
+            "name": "Fight Test",
+            "durationMs": 256720
+          },
+          {
+            "id": "1esrPCrpjJhubSqRtNz5Yw",
+            "name": "One More Robot / Sympathy 3000-21",
+            "durationMs": 299493
+          },
+          {
+            "id": "0ccCwNzXvr1Yoz91vKz31Z",
+            "name": "Yoshimi Battles the Pink Robots, Pt. 1",
+            "durationMs": 287506
+          },
+          {
+            "id": "1tCf9F4e0V7oIP7oPbm5rr",
+            "name": "Yoshimi Battles the Pink Robots, Pt. 2",
+            "durationMs": 177653
+          },
+          {
+            "id": "4ou3f7jaB41isbJkt6CF2b",
+            "name": "In the Morning of the Magicians",
+            "durationMs": 379240
+          },
+          {
+            "id": "4xTaOn06UiRHkq2ZUjWIqI",
+            "name": "Ego Tripping at the Gates of Hell",
+            "durationMs": 271466
+          },
+          {
+            "id": "0UQnWjRKEphlQtzeZ83lC2",
+            "name": "Are You a Hypnotist??",
+            "durationMs": 283533
+          },
+          {
+            "id": "4bTXFLSWqZiUrrXD202tVG",
+            "name": "It's Summertime",
+            "durationMs": 260240
+          },
+          {
+            "id": "2DFRFqWNahKtFD112H2iEZ",
+            "name": "Do You Realize??",
+            "durationMs": 213173
+          },
+          {
+            "id": "2cVj88Q5SL5bZa8O2iFrDL",
+            "name": "All We Have Is Now",
+            "durationMs": 233226
+          },
+          {
+            "id": "7zq5lyei1uoskShdtxQO1o",
+            "name": "Approaching Pavonis Mons by Balloon (Utopia Planitia)",
+            "durationMs": 189280
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Yoshimi Battles the Pink Robots",
+        "spotifyArtists": "The Flaming Lips",
+        "spotifyYear": 2002
+      }
+    },
+    {
+      "rymId": "1052924",
+      "artist": "Radiohead",
+      "title": "In Rainbows",
+      "year": 2007,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5vkqYmiPBYLaalcmjujWxK",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273de3c04b5fc750b68899b20a9",
+        "tracks": [
+          {
+            "id": "4oXg7xT4ksBxHTx8PcmSXw",
+            "name": "15 Step",
+            "durationMs": 237293
+          },
+          {
+            "id": "4pWIwnnqx8k01fuF95UMIg",
+            "name": "Bodysnatchers",
+            "durationMs": 242293
+          },
+          {
+            "id": "35YyxFpE0ZTOoqFx5bADW8",
+            "name": "Nude",
+            "durationMs": 255386
+          },
+          {
+            "id": "4wajJ1o7jWIg62YqpkHC7S",
+            "name": "Weird Fishes / Arpeggi",
+            "durationMs": 318186
+          },
+          {
+            "id": "5Qv2Nby1xTr9pQyjkrc94J",
+            "name": "All I Need",
+            "durationMs": 228746
+          },
+          {
+            "id": "15irEKZ9D6FQqLoZ1qJ1Cx",
+            "name": "Faust Arp",
+            "durationMs": 129679
+          },
+          {
+            "id": "02ppMPbg1OtEdHgoPqoqju",
+            "name": "Reckoner",
+            "durationMs": 290213
+          },
+          {
+            "id": "48X4D1FYOShPz2VF3YdfCF",
+            "name": "House Of Cards",
+            "durationMs": 328293
+          },
+          {
+            "id": "0YJ9FWWHn9EfnN0lHwbzvV",
+            "name": "Jigsaw Falling Into Place",
+            "durationMs": 248893
+          },
+          {
+            "id": "4T1iiabe7G0UjWQJCY6NE2",
+            "name": "Videotape",
+            "durationMs": 279634
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "In Rainbows",
+        "spotifyArtists": "Radiohead",
+        "spotifyYear": 2007
+      }
+    },
+    {
+      "rymId": "46",
+      "artist": "Radiohead",
+      "title": "Kid A",
+      "year": 2000,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6GjwtEZcfenmOf6l18N7T7",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2736c7112082b63beefffe40151",
+        "tracks": [
+          {
+            "id": "2kRFrWaLWiKq48YYVdGcm8",
+            "name": "Everything In Its Right Place",
+            "durationMs": 251426
+          },
+          {
+            "id": "3QDahKSqLwYJYQRbILdzS6",
+            "name": "Kid A",
+            "durationMs": 284506
+          },
+          {
+            "id": "4Wgj6jzoI2gYlumXdYAB8U",
+            "name": "The National Anthem",
+            "durationMs": 351693
+          },
+          {
+            "id": "2rtGaCAeYtmcIvuZsvgTf6",
+            "name": "How to Disappear Completely",
+            "durationMs": 356333
+          },
+          {
+            "id": "4LrfsgQ5AGouvH3PlxW2PC",
+            "name": "Treefingers",
+            "durationMs": 222600
+          },
+          {
+            "id": "1FoUsSi9BCTlNt2Vd7V8XA",
+            "name": "Optimistic",
+            "durationMs": 315973
+          },
+          {
+            "id": "0xivCtzVVrdeq32s8EnOO6",
+            "name": "In Limbo",
+            "durationMs": 211000
+          },
+          {
+            "id": "1W5XugQJGhnSATMI5n002M",
+            "name": "Idioteque",
+            "durationMs": 309093
+          },
+          {
+            "id": "4h37RgtBg9iynN3BIL5lFU",
+            "name": "Morning Bell",
+            "durationMs": 275800
+          },
+          {
+            "id": "4SrRrB27n7fiRkQcPoKfpk",
+            "name": "Motion Picture Soundtrack",
+            "durationMs": 200482
+          },
+          {
+            "id": "4aeCuOowYXJXrMZsVHZbfF",
+            "name": "Untitled",
+            "durationMs": 52694
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Kid A",
+        "spotifyArtists": "Radiohead",
+        "spotifyYear": 2000
+      }
+    },
+    {
+      "rymId": "480487",
+      "artist": "of Montreal",
+      "title": "Hissing Fauna, Are You the Destroyer?",
+      "year": 2007,
+      "rating": 9,
+      "spotify": {
+        "albumId": "15Fb7HPHdy42No0l9KnXAZ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27310db585b33a33ed4a7b81840",
+        "tracks": [
+          {
+            "id": "3f823Hy3XDbylXOpmbiz7i",
+            "name": "Suffer For Fashion",
+            "durationMs": 178466
+          },
+          {
+            "id": "5U6LhYYgv5d0uJfUjueTRf",
+            "name": "Sink The Seine",
+            "durationMs": 64173
+          },
+          {
+            "id": "37E94Gsgs5N46jLIfNceuG",
+            "name": "Cato As A Pun",
+            "durationMs": 182600
+          },
+          {
+            "id": "0qawQ0ZqaJH8xIZzWnBVsI",
+            "name": "Heimdalsgate Like A Promethean Curse",
+            "durationMs": 198600
+          },
+          {
+            "id": "5boY1VZLXBJojafFINgnJF",
+            "name": "Gronlandic Edit",
+            "durationMs": 204760
+          },
+          {
+            "id": "1rTrq0xcwRfR4chmhjOaZ2",
+            "name": "A Sentence Of Sorts In Kongsvinger",
+            "durationMs": 296426
+          },
+          {
+            "id": "49zjoxttEw4g0ohNoA2GK5",
+            "name": "The Past Is A Grotesque Animal",
+            "durationMs": 713066
+          },
+          {
+            "id": "1ji6q7yR4oMmtuwV6AM3fU",
+            "name": "Bunny Ain't No Kind Of Rider",
+            "durationMs": 231200
+          },
+          {
+            "id": "0AOfcGPtrucPF2uaiwsznq",
+            "name": "Faberge Falls For Shuggie",
+            "durationMs": 271373
+          },
+          {
+            "id": "2UR9TLpqaQ2bomkVu0gmYK",
+            "name": "Labyrinthian Pomp",
+            "durationMs": 201266
+          },
+          {
+            "id": "5p3bEueySwUhQTEI7cMA9E",
+            "name": "She's A Rejecter",
+            "durationMs": 242946
+          },
+          {
+            "id": "6kSWvKoJup4lNduReCEWuc",
+            "name": "We Were Born The Mutants Again With Leafling",
+            "durationMs": 298013
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Hissing Fauna, Are You The Destroyer?",
+        "spotifyArtists": "of Montreal",
+        "spotifyYear": 2007
+      }
+    },
+    {
+      "rymId": "782",
+      "artist": "Os Mutantes",
+      "title": "Os Mutantes",
+      "year": 1968,
+      "rating": 10,
+      "spotify": {
+        "albumId": "0RBkIFbQy91qv8Tqja20og",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273cf5f9eaa0d3a164305c35b49",
+        "tracks": [
+          {
+            "id": "0Dmnb3C3GaGdyjlyWaWLDr",
+            "name": "Panis Et Circenses",
+            "durationMs": 220453
+          },
+          {
+            "id": "0lGEWOZvMexZFXckBJxlVO",
+            "name": "A Minha Menina",
+            "durationMs": 284986
+          },
+          {
+            "id": "56viffnWGBgb1LG2bTUmk3",
+            "name": "O Relógio",
+            "durationMs": 211786
+          },
+          {
+            "id": "4bT69xsCgW2JG8Lr6yZYvR",
+            "name": "Adeus Maria Fulô",
+            "durationMs": 186080
+          },
+          {
+            "id": "29UHuao7AZ79dWgHNYGh5s",
+            "name": "Baby",
+            "durationMs": 182186
+          },
+          {
+            "id": "0ZyEHJ9xFIcaq08ePUkms6",
+            "name": "Senhor F",
+            "durationMs": 155893
+          },
+          {
+            "id": "1R0e4UjiRmtWIAoWJx334e",
+            "name": "Bat Macumba",
+            "durationMs": 190453
+          },
+          {
+            "id": "3Ika1afPnLLHTvuSHKGY02",
+            "name": "Le Premier Bonheur Du Jour",
+            "durationMs": 219613
+          },
+          {
+            "id": "4ZudvHK2Ze0rrsGC3dbOCp",
+            "name": "Trem Fantasma",
+            "durationMs": 198586
+          },
+          {
+            "id": "2jgSHtEZ2UxQSz1lHrKoVl",
+            "name": "Tempo No Tempo",
+            "durationMs": 108786
+          },
+          {
+            "id": "2NfhvrxysUerIjzNMIAQMX",
+            "name": "Ave Gengis Khan",
+            "durationMs": 231200
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "\"Os Mutantes\"",
+        "spotifyArtists": "Os Mutantes",
+        "spotifyYear": 1968
+      }
+    },
+    {
+      "rymId": "629",
+      "artist": "David Bowie",
+      "title": "Low",
+      "year": 1977,
+      "rating": 10,
+      "spotify": {
+        "albumId": "2de6LD7eOW8zrlorbS28na",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273481e219b2d0a0218681ad612",
+        "tracks": [
+          {
+            "id": "7B265QWYkUeqG2ihVEUZ5D",
+            "name": "Speed of Life - 2017 Remaster",
+            "durationMs": 167413
+          },
+          {
+            "id": "2xFq7wVYKmTHFUySyfv789",
+            "name": "Breaking Glass - 2017 Remaster",
+            "durationMs": 112400
+          },
+          {
+            "id": "04UsGrg02dEMLnTZdBNyRI",
+            "name": "What in the World - 2017 Remaster",
+            "durationMs": 144733
+          },
+          {
+            "id": "1vP2JEXRsGrFbwOZ0foOQ5",
+            "name": "Sound and Vision - 2017 Remaster",
+            "durationMs": 184381
+          },
+          {
+            "id": "73HwMEPCCCEqKFYONpOxe9",
+            "name": "Always Crashing in the Same Car - 2017 Remaster",
+            "durationMs": 215466
+          },
+          {
+            "id": "5hh5gq0u54rTP0iBYgZ2xW",
+            "name": "Be My Wife - 2017 Remaster",
+            "durationMs": 176840
+          },
+          {
+            "id": "6O3YVHQaeImvCBbJbalB00",
+            "name": "A New Career in a New Town - 2017 Remaster",
+            "durationMs": 175386
+          },
+          {
+            "id": "5DfvrqibQOQLUsN5QKqBJI",
+            "name": "Warszawa - 2017 Remaster",
+            "durationMs": 387400
+          },
+          {
+            "id": "1TfzSwueVDW3b1xTJ46O26",
+            "name": "Art Decade - 2017 Remaster",
+            "durationMs": 228173
+          },
+          {
+            "id": "56jhj8hHTw3PEoFV74wn5j",
+            "name": "Weeping Wall - 2017 Remaster",
+            "durationMs": 209013
+          },
+          {
+            "id": "2yfKkvgywRAY9xy849piLp",
+            "name": "Subterraneans - 2017 Remaster",
+            "durationMs": 343173
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Low (2017 Remaster)",
+        "spotifyArtists": "David Bowie",
+        "spotifyYear": 1977
+      }
+    },
+    {
+      "rymId": "706",
+      "artist": "Eno",
+      "title": "Another Green World",
+      "year": 1975,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6uoeezh45SYEb8lcT8gDTY",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27384d9788915697efd5cbf56f4",
+        "tracks": [
+          {
+            "id": "1sr1NnVTSUZL2xGzlkiq1G",
+            "name": "Sky Saw - 2004 Remaster",
+            "durationMs": 207666
+          },
+          {
+            "id": "5Sodk3mkwv4Gvp2sF3obaE",
+            "name": "Over Fire Island - 2004 Remaster",
+            "durationMs": 111213
+          },
+          {
+            "id": "0UROPTHqU5C7TI1N8wOkIF",
+            "name": "St Elmo's Fire - Remastered 2004",
+            "durationMs": 182413
+          },
+          {
+            "id": "41RiTUEXw8uoCtLd8pcHVy",
+            "name": "In Dark Trees - 2004 Remaster",
+            "durationMs": 151573
+          },
+          {
+            "id": "2d9KBVxb6bUfVCjjv1JAVe",
+            "name": "The Big Ship - 2004 Remaster",
+            "durationMs": 181933
+          },
+          {
+            "id": "6ZWVeMysm8Q8zZu3lKnY2v",
+            "name": "I'll Come Running - 2004 Remaster",
+            "durationMs": 229784
+          },
+          {
+            "id": "660j84jp8ljIwLFiAFprlb",
+            "name": "Another Green World - 2004 Remaster",
+            "durationMs": 101706
+          },
+          {
+            "id": "09owruFWkS2w3SXKdbmBbw",
+            "name": "Sombre Reptiles - 2004 Remaster",
+            "durationMs": 141040
+          },
+          {
+            "id": "3OfarDQxOfjSTctf9G26MA",
+            "name": "Little Fishes - Remastered 2004",
+            "durationMs": 94600
+          },
+          {
+            "id": "0ikLV7zMypPFyLH57cKpRO",
+            "name": "Golden Hours - 2004 Remaster",
+            "durationMs": 240160
+          },
+          {
+            "id": "3qq8XPwF2DoBhENRgLQ7ET",
+            "name": "Becalmed - 2004 Remaster",
+            "durationMs": 236760
+          },
+          {
+            "id": "1Q3ku4n6R1Ax3IYTEevKIH",
+            "name": "Zawinul/Lava - 2004 Remaster",
+            "durationMs": 180293
+          },
+          {
+            "id": "5pAR56gg3tYThEeH0VM3iB",
+            "name": "Everything Merges With The Night - 2004 Remaster",
+            "durationMs": 239306
+          },
+          {
+            "id": "0CUTdiwHWlO3VGWHQxpbeo",
+            "name": "Spirits Drifting - Remastered 2004",
+            "durationMs": 156773
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Another Green World (2004 Remaster)",
+        "spotifyArtists": "Brian Eno",
+        "spotifyYear": 1975,
+        "override": true
+      }
+    },
+    {
+      "rymId": "1036",
+      "artist": "Talking Heads",
+      "title": "Remain in Light",
+      "year": 1980,
+      "rating": 8,
+      "spotify": {
+        "albumId": "1JvXxLsm0PxlGH4LXzqMGq",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e49a405217bda217816f7bf5",
+        "tracks": [
+          {
+            "id": "0LMmCYr1grtBC0nRO2MxDf",
+            "name": "Born Under Punches (The Heat Goes On)",
+            "durationMs": 348973
+          },
+          {
+            "id": "0Qmu2DYKupUetYUbxqvtw2",
+            "name": "Crosseyed and Painless",
+            "durationMs": 285733
+          },
+          {
+            "id": "5N73ncX9gjmRv9lIpZ85nS",
+            "name": "The Great Curve",
+            "durationMs": 387533
+          },
+          {
+            "id": "1Tr4K5MU5XYE44umXGDndd",
+            "name": "Once in a Lifetime",
+            "durationMs": 259600
+          },
+          {
+            "id": "5B6S9xKyasHFf1ldBkxsdC",
+            "name": "Houses in Motion",
+            "durationMs": 273200
+          },
+          {
+            "id": "7dq6icAlynpBD6MSrXKh3A",
+            "name": "Seen and Not Seen",
+            "durationMs": 204533
+          },
+          {
+            "id": "60z53BhYhXBmElp7Ztw5Q9",
+            "name": "Listening Wind",
+            "durationMs": 283040
+          },
+          {
+            "id": "3HBpOyKIvfSKysKZyXlaVY",
+            "name": "The Overload",
+            "durationMs": 360693
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Remain in Light",
+        "spotifyArtists": "Talking Heads",
+        "spotifyYear": 1980
+      }
+    }
+  ]
+}

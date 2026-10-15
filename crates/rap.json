@@ -1,0 +1,1121 @@
+{
+  "id": "rap",
+  "name": "Rap",
+  "mood": "boom-bap to art rap: Illmatic to Yeezus",
+  "createdAt": "2026-10-15",
+  "records": [
+    {
+      "rymId": "11082",
+      "artist": "Nas",
+      "title": "Illmatic",
+      "year": 1994,
+      "rating": 10,
+      "spotify": {
+        "albumId": "3kEtdS2pH6hKcMU9Wioob1",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27371d840defb002ed3b180f7cd",
+        "tracks": [
+          {
+            "id": "4N0olzsMpr5cAPFrzNErGv",
+            "name": "The Genesis",
+            "durationMs": 105320
+          },
+          {
+            "id": "0trHOzAhNpGCsGBEu7dOJo",
+            "name": "N.Y. State of Mind",
+            "durationMs": 294081
+          },
+          {
+            "id": "2LhhnqrHPWvXYveZVHLKrd",
+            "name": "Life's a Bitch (feat. AZ & Olu Dara)",
+            "durationMs": 210737
+          },
+          {
+            "id": "7G3lxTsMfSx4yarMkfgnTC",
+            "name": "The World Is Yours",
+            "durationMs": 290578
+          },
+          {
+            "id": "2PRsh2LNPxoxC9OnErnelg",
+            "name": "Halftime",
+            "durationMs": 260797
+          },
+          {
+            "id": "2W58HMaCbjcUfZnZaeHtcC",
+            "name": "Memory Lane (Sittin' in da Park)",
+            "durationMs": 248211
+          },
+          {
+            "id": "27u3Rh4IWYPdwVST20ALrt",
+            "name": "One Love (feat. Q-Tip)",
+            "durationMs": 325656
+          },
+          {
+            "id": "3p50PUgtBHM6rwUuD3RfFV",
+            "name": "One Time 4 Your Mind",
+            "durationMs": 198793
+          },
+          {
+            "id": "6DPrhGVJ1WTZvM9fKptnGe",
+            "name": "Represent",
+            "durationMs": 252596
+          },
+          {
+            "id": "2CPturRUlpvirYr7VpkXCV",
+            "name": "It Ain't Hard to Tell",
+            "durationMs": 202106
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Illmatic",
+        "spotifyArtists": "Nas",
+        "spotifyYear": 1994
+      }
+    },
+    {
+      "rymId": "8796",
+      "artist": "A Tribe Called Quest",
+      "title": "People's Instinctive Travels and the Paths of Rhythm",
+      "year": 1990,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5DMRGZTzA3vVcLDNQS1ynv",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2731093b1a9528d6ac67479228b",
+        "tracks": [
+          {
+            "id": "5TwwD9V7BBUPgOin5tJF5B",
+            "name": "Push It Along",
+            "durationMs": 452919
+          },
+          {
+            "id": "2cE8TW1RiEJoezQv7pbyoa",
+            "name": "Luck of Lucien",
+            "durationMs": 282008
+          },
+          {
+            "id": "33nv5XwNd8soNX1GhUEerR",
+            "name": "After Hours",
+            "durationMs": 278664
+          },
+          {
+            "id": "6MPWIV7Qnk09fLjbSS4JMF",
+            "name": "Footprints",
+            "durationMs": 240691
+          },
+          {
+            "id": "6aeht0QSwiZN1esYfniHxr",
+            "name": "I Left My Wallet in El Segundo",
+            "durationMs": 246583
+          },
+          {
+            "id": "7GCcfVtwkK3d0lgcfARBpu",
+            "name": "Pubic Enemy",
+            "durationMs": 225650
+          },
+          {
+            "id": "3rHaA18ShjTriZK2jIZtuu",
+            "name": "Bonita Applebum",
+            "durationMs": 229847
+          },
+          {
+            "id": "1gSDTZHemEViEBiXysrlo0",
+            "name": "Can I Kick It?",
+            "durationMs": 251790
+          },
+          {
+            "id": "1Ctqt1YBkiiShZZVZsModY",
+            "name": "Youthful Expression",
+            "durationMs": 292682
+          },
+          {
+            "id": "5eCjQIRsy7nepxqAo2OLz4",
+            "name": "Rhythm (Devoted to the Art of Moving Butts)",
+            "durationMs": 242073
+          },
+          {
+            "id": "2TvveUCPU8J0yajJ1puLCO",
+            "name": "Mr. Muhammad",
+            "durationMs": 213242
+          },
+          {
+            "id": "7xZgZUey6bSPInZR6AoUj8",
+            "name": "Ham 'N' Eggs",
+            "durationMs": 327840
+          },
+          {
+            "id": "1Vgd3img7iEE2LQFAU0N2b",
+            "name": "Go Ahead In the Rain",
+            "durationMs": 234078
+          },
+          {
+            "id": "4WC5J69TQjOqS6o5HkhFSA",
+            "name": "Description of a Fool",
+            "durationMs": 341674
+          },
+          {
+            "id": "53D9NYF2qZMyPkN8jwkJPK",
+            "name": "Footprints (feat. CeeLo Green) - Remix",
+            "durationMs": 308343
+          },
+          {
+            "id": "3Yp2M9SuOVLu1yVho5bJD6",
+            "name": "Bonita Applebum - Pharrell Williams Remix",
+            "durationMs": 233685
+          },
+          {
+            "id": "3cSjkg9dppXJpZsQcJiQn5",
+            "name": "Can I Kick It? - J. Cole Remix",
+            "durationMs": 169366
+          },
+          {
+            "id": "2WUnNKWUelVAa9QKp50JUY",
+            "name": "Footprints (feat. CeeLo Green) - Remix Instrumental",
+            "durationMs": 308268
+          },
+          {
+            "id": "4AMqqx2lUZvwuhGiOAkjXx",
+            "name": "Bonita Applebum - Pharrell Williams Remix Instrumental",
+            "durationMs": 232153
+          },
+          {
+            "id": "6BUP3am3Oz4hlLJpTedwce",
+            "name": "Can I Kick It? - J. Cole Remix Instrumental",
+            "durationMs": 165256
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "People's Instinctive Travels and the Paths of Rhythm (25th Anniversary Edition)",
+        "spotifyArtists": "A Tribe Called Quest",
+        "spotifyYear": 1990
+      }
+    },
+    {
+      "rymId": "8862",
+      "artist": "A Tribe Called Quest",
+      "title": "Midnight Marauders",
+      "year": 1993,
+      "rating": 9,
+      "spotify": {
+        "albumId": "4v5x3Oo3UjQ9YmF3hRAip5",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f306af1dae08f81f9d6f1f9f",
+        "tracks": [
+          {
+            "id": "4lIyYuC3f68DZjeIfo6BrM",
+            "name": "Midnight Marauders Tour Guide",
+            "durationMs": 45333
+          },
+          {
+            "id": "671sDyeE398eD0sdGuVbZU",
+            "name": "Steve Biko (Stir It Up)",
+            "durationMs": 191533
+          },
+          {
+            "id": "5YTM7OgQDt9EJAYcfHLniJ",
+            "name": "Award Tour (feat. Trugoy The Dove)",
+            "durationMs": 226440
+          },
+          {
+            "id": "0tBlp6zZ4j238CbdXCYy7A",
+            "name": "8 Million Stories",
+            "durationMs": 260893
+          },
+          {
+            "id": "4DcrZLp19qTdBYqc2bgj3V",
+            "name": "Sucka Nigga",
+            "durationMs": 245080
+          },
+          {
+            "id": "7g2BVLCYyGeVHGGFajED65",
+            "name": "Midnight (feat. Raphael Saadiq)",
+            "durationMs": 265026
+          },
+          {
+            "id": "4tnbcPfOSZq5VAU67XxIdN",
+            "name": "We Can Get Down",
+            "durationMs": 259120
+          },
+          {
+            "id": "32WDVNZXIAuu7EqncTTKjH",
+            "name": "Electric Relaxation",
+            "durationMs": 243800
+          },
+          {
+            "id": "3GRBtVv3gbDwu3e0nkTP74",
+            "name": "Clap Your Hands",
+            "durationMs": 196493
+          },
+          {
+            "id": "6FI3RJ58Ztl0X1VtA6pVs9",
+            "name": "Oh My God (feat. Busta Rhymes)",
+            "durationMs": 208840
+          },
+          {
+            "id": "6qwFuoKqoDI1lOifvEVrPP",
+            "name": "Keep It Rollin' (feat. Large Professor)",
+            "durationMs": 186066
+          },
+          {
+            "id": "5VEKqp658KuE7uIgTQDyVT",
+            "name": "The Chase, Part II",
+            "durationMs": 242373
+          },
+          {
+            "id": "6YRZngBVAy2FgUQWk3lwL1",
+            "name": "Lyrics to Go",
+            "durationMs": 249026
+          },
+          {
+            "id": "3l30bDO9Kn2XJ9H2azq5PY",
+            "name": "God Lives Through",
+            "durationMs": 255546
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Midnight Marauders",
+        "spotifyArtists": "A Tribe Called Quest",
+        "spotifyYear": 1993
+      }
+    },
+    {
+      "rymId": "7406",
+      "artist": "A Tribe Called Quest",
+      "title": "The Low End Theory",
+      "year": 1991,
+      "rating": 8,
+      "spotify": {
+        "albumId": "1p12OAWwudgMqfMzjMvl2a",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f38c6b37a21334e22005b1f7",
+        "tracks": [
+          {
+            "id": "4tEaytMs86hIaOSsiGoLcP",
+            "name": "Excursions",
+            "durationMs": 234626
+          },
+          {
+            "id": "6GAemDMWAXa8wZOBkO1gar",
+            "name": "Buggin' Out",
+            "durationMs": 217466
+          },
+          {
+            "id": "6CCIqr8xROr3jTnXf4GI3B",
+            "name": "Rap Promoter",
+            "durationMs": 133000
+          },
+          {
+            "id": "758mQT4zzlvBhy9PvNePwC",
+            "name": "Butter",
+            "durationMs": 218773
+          },
+          {
+            "id": "6zrsmzrMoxNkXEQLubCWtA",
+            "name": "Verses from the Abstract (feat. Vinia Mojica & Ron Carter)",
+            "durationMs": 238893
+          },
+          {
+            "id": "2wS1PObRyCywHdmog5eOWW",
+            "name": "Show Business (feat. Diamond D, Lord Jamar & Sadat X)",
+            "durationMs": 233440
+          },
+          {
+            "id": "4MdEYuoGhG2RTG3erOiu2H",
+            "name": "Vibes and Stuff",
+            "durationMs": 257825
+          },
+          {
+            "id": "4hozY0uWh4hxvH2mP6EmSL",
+            "name": "Infamous Date Rape",
+            "durationMs": 173573
+          },
+          {
+            "id": "4HfxDJ0uLHTLe0fZrx0MbQ",
+            "name": "Check the Rhime",
+            "durationMs": 216693
+          },
+          {
+            "id": "33d7n0d2Ou4wQ5AcLrLTav",
+            "name": "Everything Is Fair",
+            "durationMs": 178333
+          },
+          {
+            "id": "7AgMX97ljLm9BzszyyXEYZ",
+            "name": "Jazz (We've Got)",
+            "durationMs": 250240
+          },
+          {
+            "id": "1ora7jNRx7tv7yjANfGu1u",
+            "name": "Skypager",
+            "durationMs": 132226
+          },
+          {
+            "id": "2ZCwz8omYluRWa9QyznFAy",
+            "name": "What?",
+            "durationMs": 148706
+          },
+          {
+            "id": "0301nLjG0ti26rx5ZmfqtP",
+            "name": "Scenario (feat. Busta Rhymes, Dinco D & Charlie Brown) - LP Mix",
+            "durationMs": 250133
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Low End Theory",
+        "spotifyArtists": "A Tribe Called Quest",
+        "spotifyYear": 1991
+      }
+    },
+    {
+      "rymId": "381036",
+      "artist": "Clipse",
+      "title": "Hell Hath No Fury",
+      "year": 2006,
+      "rating": 10,
+      "spotify": {
+        "albumId": "1HftQWyKWoGsrmG5lRkJDE",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2731533f5dd895bb03556473485",
+        "tracks": [
+          {
+            "id": "3YKR7Wglf9JvWg5O7xdA5g",
+            "name": "We Got It For Cheap (Intro)",
+            "durationMs": 220939
+          },
+          {
+            "id": "6klcfLeLG0gv64vGjs05FL",
+            "name": "Momma I'm So Sorry",
+            "durationMs": 237413
+          },
+          {
+            "id": "6cAldqwmbUwpM8D17FWtPL",
+            "name": "Mr. Me Too",
+            "durationMs": 221209
+          },
+          {
+            "id": "50Z0VBnnFU4h2xZkod0m7e",
+            "name": "Wamp Wamp (What It Do) (feat. Slim Thug)",
+            "durationMs": 240689
+          },
+          {
+            "id": "40RYtDQwVLnfH4WzhxEqOQ",
+            "name": "Ride Around Shining (feat. Ab-Liva)",
+            "durationMs": 235633
+          },
+          {
+            "id": "05eHuxWbt05SkgTq2QvJWN",
+            "name": "Dirty Money",
+            "durationMs": 226176
+          },
+          {
+            "id": "5yQrDTZQWPbhbpGW7acvmm",
+            "name": "Hello New World",
+            "durationMs": 251601
+          },
+          {
+            "id": "0MIyU9W5yGG11uMeBdm80J",
+            "name": "Keys Open Doors",
+            "durationMs": 199141
+          },
+          {
+            "id": "7fS6emd0HfVz5DZCPBH2VW",
+            "name": "Ain't Cha (feat. Re-Up Gang)",
+            "durationMs": 281712
+          },
+          {
+            "id": "3yAm2Q4FA2Tb8iGORHPvFA",
+            "name": "Trill",
+            "durationMs": 273111
+          },
+          {
+            "id": "2F38A3ce3ORI7tyi8IPdku",
+            "name": "Chinese New Year",
+            "durationMs": 245746
+          },
+          {
+            "id": "37HUD7Mr1zOIDW1QuOgaZH",
+            "name": "Nightmares (feat. Bilal & Pharrell Williams)",
+            "durationMs": 291000
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Hell Hath No Fury",
+        "spotifyArtists": "Clipse",
+        "spotifyYear": 2006
+      }
+    },
+    {
+      "rymId": "6286502",
+      "artist": "Kendrick Lamar",
+      "title": "To Pimp a Butterfly",
+      "year": 2015,
+      "rating": 9,
+      "spotify": {
+        "albumId": "6w7lqIsvDPgTChMrPw5oIL",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273c54f244336fd6e0e1518fe77",
+        "tracks": [
+          {
+            "id": "3rpspE93T6g8IDWPsbskxs",
+            "name": "Wesley's Theory",
+            "durationMs": 287360
+          },
+          {
+            "id": "6Ef1QYM8TDdEZqvWagSYw5",
+            "name": "For Free? - Interlude",
+            "durationMs": 130893
+          },
+          {
+            "id": "043Rs5H7XAV2soPAy88x02",
+            "name": "King Kunta",
+            "durationMs": 234693
+          },
+          {
+            "id": "1OkRb4h1HdRu45zvGagglu",
+            "name": "Institutionalized",
+            "durationMs": 271773
+          },
+          {
+            "id": "2sdrM3lo0YG3ko1RYFMHI2",
+            "name": "These Walls",
+            "durationMs": 300973
+          },
+          {
+            "id": "0qtbgnO2sXIAdpFAufSMqd",
+            "name": "u",
+            "durationMs": 268493
+          },
+          {
+            "id": "72yHa0Zcman8jBILFZHnpG",
+            "name": "Alright",
+            "durationMs": 219333
+          },
+          {
+            "id": "0KKxGL7YZIhoqbZ4Pkinu3",
+            "name": "For Sale? - Interlude",
+            "durationMs": 291720
+          },
+          {
+            "id": "11c7sPRGJrvk3cQetyYSbM",
+            "name": "Momma",
+            "durationMs": 283120
+          },
+          {
+            "id": "4wqeeFv3mIFWpyvKYX29nJ",
+            "name": "Hood Politics",
+            "durationMs": 292520
+          },
+          {
+            "id": "33iTcCSz0NPcRQThMbsl3r",
+            "name": "How Much A Dollar Cost",
+            "durationMs": 261746
+          },
+          {
+            "id": "5KfFMMnRHM5wzXxtElJp5P",
+            "name": "Complexion (A Zulu Love)",
+            "durationMs": 263360
+          },
+          {
+            "id": "4NJUxNHJUobVFMAzMe7cIt",
+            "name": "The Blacker The Berry",
+            "durationMs": 328826
+          },
+          {
+            "id": "3OsAemvL6cgBBwMBbgByLJ",
+            "name": "You Ain't Gotta Lie (Momma Said)",
+            "durationMs": 241680
+          },
+          {
+            "id": "0utIuWrtLtH7mtDubmYZsF",
+            "name": "i",
+            "durationMs": 336013
+          },
+          {
+            "id": "425n8Gs1ySmwawv03ZwQ97",
+            "name": "Mortal Man",
+            "durationMs": 727106
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "To Pimp A Butterfly",
+        "spotifyArtists": "Kendrick Lamar",
+        "spotifyYear": 2015
+      }
+    },
+    {
+      "rymId": "22312",
+      "artist": "Genius/GZA",
+      "title": "Liquid Swords",
+      "year": 1995,
+      "rating": 10,
+      "spotify": {
+        "albumId": "3k8xoyOXkGgZxUKgpmxz4P",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27384b6abc19fb31fb382378bbc",
+        "tracks": [
+          {
+            "id": "4dmh3OPtAhbEybhGoOG9TE",
+            "name": "Liquid Swords",
+            "durationMs": 270800
+          },
+          {
+            "id": "1OYjATyA5kqLK3CfYfvg3y",
+            "name": "Duel Of The Iron Mic",
+            "durationMs": 246226
+          },
+          {
+            "id": "4EcwMZC5srOdOVUTIkQWkW",
+            "name": "Living In The World Today",
+            "durationMs": 263173
+          },
+          {
+            "id": "1UTX5wGyy7IC6HeT5MmAJ1",
+            "name": "Gold",
+            "durationMs": 237200
+          },
+          {
+            "id": "4kxcVF4kEZTQZDlnNfDeur",
+            "name": "Cold World",
+            "durationMs": 331000
+          },
+          {
+            "id": "50yW206ahsPJsFNmKUTFIo",
+            "name": "Labels",
+            "durationMs": 174226
+          },
+          {
+            "id": "4qfUlchVD7WM4JhA5xio6m",
+            "name": "4th Chamber",
+            "durationMs": 276967
+          },
+          {
+            "id": "7bp5DfkdK1OAvNJ1U4HfDA",
+            "name": "Shadowboxin'",
+            "durationMs": 209973
+          },
+          {
+            "id": "4veKiWte7ppq5jEqcI1xEP",
+            "name": "Hell's Wind Staff / Killah Hills 10304",
+            "durationMs": 308626
+          },
+          {
+            "id": "6NTceGKsDLTYehlyRbYp6O",
+            "name": "Investigative Reports",
+            "durationMs": 229800
+          },
+          {
+            "id": "3zwJm9BHB4tGjxDerxTTRU",
+            "name": "Swordsman",
+            "durationMs": 201066
+          },
+          {
+            "id": "3ToCwT51GYA1HTDJxy7ZZX",
+            "name": "I Gotcha Back",
+            "durationMs": 301000
+          },
+          {
+            "id": "5mOzvm41Pdh1WOtBKlCtZd",
+            "name": "B.I.B.L.E. (Basic Instructions Before Leaving Earth)",
+            "durationMs": 272866
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Liquid Swords",
+        "spotifyArtists": "GZA",
+        "spotifyYear": 1995,
+        "override": true
+      }
+    },
+    {
+      "rymId": "11014",
+      "artist": "Wu-Tang Clan",
+      "title": "Enter the Wu-Tang (36 Chambers)",
+      "year": 1993,
+      "rating": 10,
+      "spotify": {
+        "albumId": "7otEvlhYLzpqiaxq3dT4Lg",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730f0b0557b1583e219357783c",
+        "tracks": [
+          {
+            "id": "46HzYc8lDViTRWUbOKU9FJ",
+            "name": "Shame On a Nuh (feat. Raekwon, Ol' Dirty Bastard & Method Man)",
+            "durationMs": 176693
+          },
+          {
+            "id": "0xaVUjxJZRBxea05Pm8gI2",
+            "name": "Clan In Da Front (feat. RZA & GZA)",
+            "durationMs": 175800
+          },
+          {
+            "id": "7GprMqvCBxx9m67vgZB06Z",
+            "name": "Can It Be All So Simple - Radio Edit",
+            "durationMs": 260600
+          },
+          {
+            "id": "0g3HsMxZW63XgyhKZ6YoVB",
+            "name": "Method Man (feat. Method Man, Raekwon, GZA, RZA & Ghostface Killah)",
+            "durationMs": 251440
+          },
+          {
+            "id": "45tZJAgtuB5tmifTC7JbW9",
+            "name": "Da Mystery of Chessboxin' (feat. Method Man, U-God, Inspectah Deck, Raekwon, Ol' Dirty Bastard, Ghostface Killah & Masta Killa) - Radio Edit",
+            "durationMs": 279226
+          },
+          {
+            "id": "6yDu0CcGgasaTyWjodkWGd",
+            "name": "Wu-Tang Clan Ain't Nuthing Ta F' Wit (feat. RZA, Inspectah Deck & Method Man)",
+            "durationMs": 214373
+          },
+          {
+            "id": "1NHBpeP2K87Ehrc9fukIDb",
+            "name": "C.R.E.A.M. (feat. Method Man, Raekwon, Inspectah Deck & Buddha Monk)",
+            "durationMs": 246626
+          },
+          {
+            "id": "1PZNTDIangocBG5m4Ax9kz",
+            "name": "Protect Ya Neck (feat. RZA, Method Man, Inspectah Deck, Raekwon, U-God, Ol' Dirty Bastard, Ghostface Killah & GZA)",
+            "durationMs": 277066
+          },
+          {
+            "id": "1GYwAkvZRk3p3r7xcct0cd",
+            "name": "Tearz (feat. RZA & Ghostface Killah)",
+            "durationMs": 290973
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Enter the Wu-Tang (36 Chambers)",
+        "spotifyArtists": "Wu-Tang Clan",
+        "spotifyYear": 1993
+      }
+    },
+    {
+      "rymId": "7381",
+      "artist": "Outkast",
+      "title": "Aquemini",
+      "year": 1998,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5ceB3rxgXqIRpsOvVzTG28",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e2352cc20602d45e9a0e7617",
+        "tracks": [
+          {
+            "id": "7g8S0N45Tkp7yE1WEWRwyu",
+            "name": "Hold On, Be Strong",
+            "durationMs": 72593
+          },
+          {
+            "id": "1wYp8ISMvX8qrflPrBU9Yo",
+            "name": "Return of the \"G\"",
+            "durationMs": 289163
+          },
+          {
+            "id": "0shK5iZQppbHPQYiy60xs9",
+            "name": "Rosa Parks",
+            "durationMs": 324369
+          },
+          {
+            "id": "6EQ4orawx8eo0aXH0pOKLE",
+            "name": "Skew It on the Bar-B (feat. Raekwon)",
+            "durationMs": 195108
+          },
+          {
+            "id": "4V3N5LvUOh3yDPP16cwAhE",
+            "name": "Aquemini",
+            "durationMs": 319241
+          },
+          {
+            "id": "3sQDstyMhCcDJ3mY6onZez",
+            "name": "Synthesizer (feat. George Clinton)",
+            "durationMs": 311649
+          },
+          {
+            "id": "4ufZSKCI84Pd2ZlWTJcu4i",
+            "name": "Slump",
+            "durationMs": 308729
+          },
+          {
+            "id": "5yTQ7Vy6EwKwB64Vho90LI",
+            "name": "West Savannah",
+            "durationMs": 246286
+          },
+          {
+            "id": "1KQymTxNJfWk6vCD5ywKW2",
+            "name": "Da Art of Storytellin' (Pt. 1)",
+            "durationMs": 222655
+          },
+          {
+            "id": "2vjgepbkQg5jH8ujrKEOin",
+            "name": "Da Art of Storytellin' (Pt. 2)",
+            "durationMs": 172020
+          },
+          {
+            "id": "32PWtlzKyvr3HcvJp1JFF5",
+            "name": "Mamacita",
+            "durationMs": 352502
+          },
+          {
+            "id": "4GdB5M7GbwLZLouktYocFC",
+            "name": "SpottieOttieDopaliscious",
+            "durationMs": 426859
+          },
+          {
+            "id": "5LAgMMJQ42fF8yKLKF3Wiw",
+            "name": "Y'All Scared (feat. T-Mo, Big Gipp & Khujo)",
+            "durationMs": 290172
+          },
+          {
+            "id": "6NqUceA124QO9v5jYv0QCg",
+            "name": "Nathaniel",
+            "durationMs": 70276
+          },
+          {
+            "id": "1H6S9OkozTNvcASUX4Bfgb",
+            "name": "Liberation (with Cee-Lo)",
+            "durationMs": 526372
+          },
+          {
+            "id": "4mrR64jwacrmiZluhBelDB",
+            "name": "Chonkyfire",
+            "durationMs": 371019
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Aquemini",
+        "spotifyArtists": "Outkast",
+        "spotifyYear": 1998
+      }
+    },
+    {
+      "rymId": "3597082",
+      "artist": "Kendrick Lamar",
+      "title": "Good Kid, M.A.A.D City",
+      "year": 2012,
+      "rating": 9,
+      "spotify": {
+        "albumId": "6PBZN8cbwkqm1ERj2BGXJ1",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d28d2ebdedb220e479743797",
+        "tracks": [
+          {
+            "id": "7zdORPbuIBkZHCJXl9J2e5",
+            "name": "Sherane a.k.a Master Splinter’s Daughter",
+            "durationMs": 273640
+          },
+          {
+            "id": "4Pwjz3DfvfQWV0rO2V8jyh",
+            "name": "Bitch, Don’t Kill My Vibe",
+            "durationMs": 310720
+          },
+          {
+            "id": "6fAyRZ0GHuuvSOEIOwi58N",
+            "name": "Backseat Freestyle",
+            "durationMs": 212653
+          },
+          {
+            "id": "2PieESXphabz5AkALFS08X",
+            "name": "The Art of Peer Pressure",
+            "durationMs": 324533
+          },
+          {
+            "id": "2HbKqm4o0w5wEeEFXm2sD4",
+            "name": "Money Trees",
+            "durationMs": 386906
+          },
+          {
+            "id": "1zCi4cVFqe6ja16MeGZKRN",
+            "name": "Poetic Justice",
+            "durationMs": 300160
+          },
+          {
+            "id": "3903Tbix9PdoculpJLikHf",
+            "name": "good kid",
+            "durationMs": 214120
+          },
+          {
+            "id": "439TlnnznSiBbQbgXiBqAd",
+            "name": "m.A.A.d city",
+            "durationMs": 350120
+          },
+          {
+            "id": "3DFjTEueCBYqg7YE05eUJP",
+            "name": "Swimming Pools (Drank) - Extended Version",
+            "durationMs": 313786
+          },
+          {
+            "id": "0sd6BRTa0O96tfEbFGhJF9",
+            "name": "Sing About Me, I'm Dying Of Thirst",
+            "durationMs": 723573
+          },
+          {
+            "id": "7pdCmGogZHZH3Xv7LnqVrH",
+            "name": "Real",
+            "durationMs": 443413
+          },
+          {
+            "id": "6q0zsagVIiAn9zb7vqTmZi",
+            "name": "Compton",
+            "durationMs": 248093
+          },
+          {
+            "id": "7635mlfbjmTS7t17pKtl6r",
+            "name": "Bitch, Don’t Kill My Vibe - Remix",
+            "durationMs": 278546
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "good kid, m.A.A.d city",
+        "spotifyArtists": "Kendrick Lamar",
+        "spotifyYear": 2012
+      }
+    },
+    {
+      "rymId": "15923812",
+      "artist": "Clipse",
+      "title": "Let God Sort Em Out",
+      "year": 2025,
+      "rating": 9,
+      "spotify": {
+        "albumId": "17ScNnJ0lSWajodZaRpHdQ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ef854fe1d04279372a96f3d6",
+        "tracks": [
+          {
+            "id": "6L3i4jdNnk0a9kMT3qIqTG",
+            "name": "The Birds Don't Sing",
+            "durationMs": 240520
+          },
+          {
+            "id": "3znSvEwBq09We4cxxmwlZM",
+            "name": "Chains & Whips",
+            "durationMs": 243906
+          },
+          {
+            "id": "0mwlZQjUxspUTpAzLwexw7",
+            "name": "P.O.V.",
+            "durationMs": 258030
+          },
+          {
+            "id": "0xaQ86cGRgcF8wwP1SkXsb",
+            "name": "So Be It",
+            "durationMs": 194866
+          },
+          {
+            "id": "1JvQhXD5FxkK2GjHCyFmZa",
+            "name": "Ace Trumpets",
+            "durationMs": 154066
+          },
+          {
+            "id": "3iXd1ZXMPJYAp37hCr441H",
+            "name": "All Things Considered",
+            "durationMs": 189266
+          },
+          {
+            "id": "3fZd2UtWZMntClCSnJ7PDY",
+            "name": "M.T.B.T.T.F.",
+            "durationMs": 156013
+          },
+          {
+            "id": "3J4lO2oyDMLEYGdHgRcJHW",
+            "name": "E.B.I.T.D.A.",
+            "durationMs": 119973
+          },
+          {
+            "id": "6X5sXeRwqbqPsZ8FFFae0F",
+            "name": "F.I.C.O.",
+            "durationMs": 201746
+          },
+          {
+            "id": "6vh3knkD2m9behBKvuKePP",
+            "name": "Inglorious Bastards",
+            "durationMs": 153466
+          },
+          {
+            "id": "6kIwGkZQksciLIjIbM0NFo",
+            "name": "So Far Ahead",
+            "durationMs": 202066
+          },
+          {
+            "id": "2x2IOYqWknW8JWr32cg6JX",
+            "name": "Let God Sort Em Out/Chandeliers",
+            "durationMs": 152986
+          },
+          {
+            "id": "5XhsQnSiO6JPuiG4RPTugh",
+            "name": "By The Grace Of God",
+            "durationMs": 186026
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Let God Sort Em Out",
+        "spotifyArtists": "Clipse, Pusha T, Malice",
+        "spotifyYear": 2025
+      }
+    },
+    {
+      "rymId": "4568422",
+      "artist": "Kanye West",
+      "title": "Yeezus",
+      "year": 2013,
+      "rating": 9,
+      "spotify": {
+        "albumId": "7D2NdGvBHIavgLhmcwhluK",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2731dacfbc31cc873d132958af9",
+        "tracks": [
+          {
+            "id": "1gqkRc9WtOpnGIqxf2Hvzr",
+            "name": "On Sight",
+            "durationMs": 156480
+          },
+          {
+            "id": "722tgOgdIbNe3BEyLnejw4",
+            "name": "Black Skinhead",
+            "durationMs": 188013
+          },
+          {
+            "id": "0HMCdlOPJkAGlB0MlSWIcO",
+            "name": "I Am A God",
+            "durationMs": 231506
+          },
+          {
+            "id": "4cAgkb0ifwn0FSHGXnr4F6",
+            "name": "New Slaves",
+            "durationMs": 256093
+          },
+          {
+            "id": "5nIu0VwPOsjkF61zfevLKh",
+            "name": "Hold My Liquor",
+            "durationMs": 326946
+          },
+          {
+            "id": "52NmkyHsGsHGb1UX8fTkMg",
+            "name": "I'm In It",
+            "durationMs": 234853
+          },
+          {
+            "id": "42GcjriRK6srwHkfbkBqVl",
+            "name": "Blood On The Leaves",
+            "durationMs": 359800
+          },
+          {
+            "id": "5nPOM0nFRAJ3XI8xCxNAzO",
+            "name": "Guilt Trip",
+            "durationMs": 243746
+          },
+          {
+            "id": "3RKblQNJs8HPvWBgXmq6nn",
+            "name": "Send It Up",
+            "durationMs": 178040
+          },
+          {
+            "id": "3sNVsP50132BTNlImLx70i",
+            "name": "Bound 2",
+            "durationMs": 229146
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Yeezus",
+        "spotifyArtists": "Kanye West",
+        "spotifyYear": 2013
+      }
+    },
+    {
+      "rymId": "3050748",
+      "artist": "Kanye West",
+      "title": "My Beautiful Dark Twisted Fantasy",
+      "year": 2010,
+      "rating": 8,
+      "spotify": {
+        "albumId": "20r762YmB5HeofjMCiPMLv",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d9194aa18fa4c9362b47464f",
+        "tracks": [
+          {
+            "id": "7yNK27ZTpHew0c55VvIJgm",
+            "name": "Dark Fantasy",
+            "durationMs": 280786
+          },
+          {
+            "id": "23SZWX2IaDnxmhFsSLvkG2",
+            "name": "Gorgeous",
+            "durationMs": 357653
+          },
+          {
+            "id": "2gZUPNdnz5Y45eiGxpHGSc",
+            "name": "POWER",
+            "durationMs": 292093
+          },
+          {
+            "id": "4D6TpthzUVNTjWQqfBW5Kb",
+            "name": "All Of The Lights (Interlude)",
+            "durationMs": 62253
+          },
+          {
+            "id": "22L7bfCiAkJo5xGSQgmiIO",
+            "name": "All Of The Lights",
+            "durationMs": 299613
+          },
+          {
+            "id": "1ZHYJ2Wwgxes4m8Ba88PeK",
+            "name": "Monster",
+            "durationMs": 378893
+          },
+          {
+            "id": "6K07Ahf6V7CAQn0ikrOztl",
+            "name": "So Appalled",
+            "durationMs": 397666
+          },
+          {
+            "id": "1UGD3lW3tDmgZfAVDh6w7r",
+            "name": "Devil In A New Dress",
+            "durationMs": 351946
+          },
+          {
+            "id": "3DK6m7It6Pw857FcQftMds",
+            "name": "Runaway",
+            "durationMs": 547733
+          },
+          {
+            "id": "3rCNmRonlHN1TXQLcG3dSk",
+            "name": "Hell Of A Life",
+            "durationMs": 327786
+          },
+          {
+            "id": "4EndPA8b6FDWYp1RgsnLEB",
+            "name": "Blame Game",
+            "durationMs": 469866
+          },
+          {
+            "id": "2Im64pIz6m0EJKdUe6eZ8r",
+            "name": "Lost In The World",
+            "durationMs": 256586
+          },
+          {
+            "id": "4e5IPJxSGVWPsaxQzdRseN",
+            "name": "Who Will Survive In America",
+            "durationMs": 98200
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "My Beautiful Dark Twisted Fantasy",
+        "spotifyArtists": "Kanye West",
+        "spotifyYear": 2010
+      }
+    }
+  ]
+}

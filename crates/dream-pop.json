@@ -1,0 +1,684 @@
+{
+  "id": "dream-pop",
+  "name": "Dream Pop",
+  "mood": "reverb-soaked guitars and hushed voices: Cocteau Twins to Beach House",
+  "createdAt": "2026-10-15",
+  "records": [
+    {
+      "rymId": "355",
+      "artist": "my bloody valentine",
+      "title": "Loveless",
+      "year": 1991,
+      "rating": 10,
+      "spotify": null,
+      "match": {
+        "confidence": "none",
+        "spotifyName": "",
+        "spotifyArtists": "",
+        "spotifyYear": null,
+        "override": true
+      }
+    },
+    {
+      "rymId": "4730",
+      "artist": "Lush",
+      "title": "Split",
+      "year": 1994,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6cgDNdc8SN9PJ12tqse69N",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273444e986cd2fe7fd5a4d29c6c",
+        "tracks": [
+          {
+            "id": "6Q0GTFuMlUj98CC1VWnFAs",
+            "name": "Light From A Dead Star",
+            "durationMs": 197293
+          },
+          {
+            "id": "536JDwoNe27OcW7V7ZI2Mm",
+            "name": "Kiss Chase",
+            "durationMs": 197573
+          },
+          {
+            "id": "4gugI3amAyhLus1D2MUiUR",
+            "name": "Blackout",
+            "durationMs": 186533
+          },
+          {
+            "id": "05jYZHm9i9PTxnYzbqw3OO",
+            "name": "Hypocrite",
+            "durationMs": 173466
+          },
+          {
+            "id": "5YdXj6Pz4GJ24oOz2xbGPp",
+            "name": "Lovelife",
+            "durationMs": 236360
+          },
+          {
+            "id": "7Bv26qd7JX525wGCmhrPtj",
+            "name": "Desire Lines",
+            "durationMs": 459173
+          },
+          {
+            "id": "0Kqz4A9dV3wLmEa5axOU40",
+            "name": "The Invisible Man",
+            "durationMs": 136200
+          },
+          {
+            "id": "6HafwDSUa8WMlnTdNlMGA0",
+            "name": "Undertow",
+            "durationMs": 298093
+          },
+          {
+            "id": "222DQFbfSpRlsN7qIegljo",
+            "name": "Never-Never",
+            "durationMs": 485373
+          },
+          {
+            "id": "5dwwWwXPr1UplZCORRhCak",
+            "name": "Lit Up",
+            "durationMs": 241000
+          },
+          {
+            "id": "3ZOMVzyjvE8kJouhVScrqg",
+            "name": "Starlust",
+            "durationMs": 272026
+          },
+          {
+            "id": "0OAmYzWmZnc6sUfEZiexR3",
+            "name": "When I Die",
+            "durationMs": 261133
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Split",
+        "spotifyArtists": "Lush",
+        "spotifyYear": 1994
+      }
+    },
+    {
+      "rymId": "2711",
+      "artist": "Slowdive",
+      "title": "Souvlaki",
+      "year": 1993,
+      "rating": 10,
+      "spotify": {
+        "albumId": "53eHm1f3sFiSzWMaKOl98Z",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f6e31941d10e4819d290af41",
+        "tracks": [
+          {
+            "id": "33HRECrmuelZxOpid6XTNX",
+            "name": "Alison",
+            "durationMs": 230986
+          },
+          {
+            "id": "1wXJjKJy5Pt38Bu3tUzTUL",
+            "name": "Machine Gun",
+            "durationMs": 266706
+          },
+          {
+            "id": "4qyJE4D584f7qJCRSy7HOE",
+            "name": "40 Days",
+            "durationMs": 194120
+          },
+          {
+            "id": "1dmph9kxaIm9btfmCT9r2c",
+            "name": "Sing",
+            "durationMs": 288493
+          },
+          {
+            "id": "5FuYgi1xinZAQyD5CYLpUJ",
+            "name": "Here She Comes",
+            "durationMs": 137853
+          },
+          {
+            "id": "76JhicgPtW4zbN72tpnMyA",
+            "name": "Souvlaki Space Station",
+            "durationMs": 357373
+          },
+          {
+            "id": "0oxYB9GoOIDrdzniNdKC44",
+            "name": "When the Sun Hits",
+            "durationMs": 285906
+          },
+          {
+            "id": "1I3f8tsoYbIPEgQ1TPvJPb",
+            "name": "Altogether",
+            "durationMs": 221133
+          },
+          {
+            "id": "1G6E8yhilqdeZuduRrob1S",
+            "name": "Melon Yellow",
+            "durationMs": 232946
+          },
+          {
+            "id": "3MmRfG64qt04Efx9gK9Ec8",
+            "name": "Dagger",
+            "durationMs": 218253
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Souvlaki",
+        "spotifyArtists": "Slowdive",
+        "spotifyYear": 1993
+      }
+    },
+    {
+      "rymId": "1179",
+      "artist": "Cocteau Twins",
+      "title": "Heaven or Las Vegas",
+      "year": 1990,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5lEphbceIgaK1XxWeSrC9E",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273fe6211303e796f3d5b7a0e02",
+        "tracks": [
+          {
+            "id": "37pKTyMwalomKCZjxTc2QZ",
+            "name": "Cherry-coloured Funk",
+            "durationMs": 192466
+          },
+          {
+            "id": "1DXD0wVXXHwUYo9AXbcMMI",
+            "name": "Pitch the Baby",
+            "durationMs": 194080
+          },
+          {
+            "id": "0Coai3QxvjCXWMhVN1hpgE",
+            "name": "Iceblink Luck",
+            "durationMs": 198666
+          },
+          {
+            "id": "2vDC9iyQpY3EsioJD8pRiW",
+            "name": "Fifty-fifty Clown",
+            "durationMs": 190213
+          },
+          {
+            "id": "0AxZUYeQ9bZwSdt1LmZuok",
+            "name": "Heaven or Las Vegas",
+            "durationMs": 298400
+          },
+          {
+            "id": "20nCwr4GiOZ02PVePsuLEd",
+            "name": "I Wear Your Ring",
+            "durationMs": 209346
+          },
+          {
+            "id": "5SuIuaAjFbaxJq9W1qKGw2",
+            "name": "Fotzepolitic",
+            "durationMs": 210933
+          },
+          {
+            "id": "5Cg9aQIEM2exLNBPupf6V4",
+            "name": "Wolf in the Breast",
+            "durationMs": 211200
+          },
+          {
+            "id": "6MJ8YgmhMphGcCX5OVS28W",
+            "name": "Road, River and Rail",
+            "durationMs": 201146
+          },
+          {
+            "id": "6i18oi8cbvlv9Y2QVBSzkB",
+            "name": "Frou-frou Foxes in Midsummer Fires",
+            "durationMs": 338053
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Heaven or Las Vegas",
+        "spotifyArtists": "Cocteau Twins",
+        "spotifyYear": 1990
+      }
+    },
+    {
+      "rymId": "1178",
+      "artist": "Cocteau Twins",
+      "title": "Blue Bell Knoll",
+      "year": 1988,
+      "rating": 9,
+      "spotify": {
+        "albumId": "3SXCY4kFMM4T4egq5DSUTa",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2734d2fbff666bf6a9997787214",
+        "tracks": [
+          {
+            "id": "1vS66EUCGo1GNlsBvGYWIA",
+            "name": "Blue Bell Knoll",
+            "durationMs": 201506
+          },
+          {
+            "id": "7rRs07dcAzpu4YwKmBQu4z",
+            "name": "Athol-brose",
+            "durationMs": 179280
+          },
+          {
+            "id": "7I5TgzRBPcnUafTJaZFbfy",
+            "name": "Carolyn's Fingers",
+            "durationMs": 186306
+          },
+          {
+            "id": "5AW2K0F6g9AzDq4zzhevpa",
+            "name": "For Phoebe Still A Baby",
+            "durationMs": 194826
+          },
+          {
+            "id": "6PQKQubHO08iVNkU1JTeWT",
+            "name": "The Itchy Glowbo Blow",
+            "durationMs": 198773
+          },
+          {
+            "id": "4csSjpkgRI06CpVeYfIjwM",
+            "name": "Cico Buff",
+            "durationMs": 226293
+          },
+          {
+            "id": "2d0obeX1wxSxbGcZCAYQZg",
+            "name": "Suckling The Mender",
+            "durationMs": 211173
+          },
+          {
+            "id": "4Db2kuieKsObTI1y3vHkmW",
+            "name": "Spooning Good Singing Gum",
+            "durationMs": 230280
+          },
+          {
+            "id": "4QsKqWO5pmbiuavCT1HNPn",
+            "name": "A Kissed Out Red Floatboat",
+            "durationMs": 250200
+          },
+          {
+            "id": "1Kam4zdb5LzaLqP04xXGMw",
+            "name": "Ella Megalast Burls Forever",
+            "durationMs": 219746
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Blue Bell Knoll",
+        "spotifyArtists": "Cocteau Twins",
+        "spotifyYear": 1988
+      }
+    },
+    {
+      "rymId": "1175",
+      "artist": "Cocteau Twins",
+      "title": "Treasure",
+      "year": 1984,
+      "rating": 9,
+      "spotify": {
+        "albumId": "7pBPB9vwqCMLKNmUCK4k62",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27308036980eb9381f0ec3d28e9",
+        "tracks": [
+          {
+            "id": "7anJBerQqBKIbbKvLf9eAq",
+            "name": "Ivo",
+            "durationMs": 233160
+          },
+          {
+            "id": "1ZnXuijpwEBjhNxpEnb8WH",
+            "name": "Lorelei",
+            "durationMs": 223266
+          },
+          {
+            "id": "00kG2B5W9MQYdPxrICYhNg",
+            "name": "Beatrix",
+            "durationMs": 192000
+          },
+          {
+            "id": "05qq2YTWLzDSiIUiiKozWh",
+            "name": "Persephone",
+            "durationMs": 260426
+          },
+          {
+            "id": "2Vqi1Si1dQjMtAZ79UreqL",
+            "name": "Pandora (for Cindy)",
+            "durationMs": 335306
+          },
+          {
+            "id": "4ntp2q3gyTuegfrlwVFngJ",
+            "name": "Amelia",
+            "durationMs": 211666
+          },
+          {
+            "id": "4LHaWbM9P8WR2Ypcw2aeEq",
+            "name": "Aloysius",
+            "durationMs": 206666
+          },
+          {
+            "id": "4ozN7zR5VaSXkm6wbQtWwA",
+            "name": "Cicely",
+            "durationMs": 209533
+          },
+          {
+            "id": "5GO0qzKdvndy7g9r0iKEDz",
+            "name": "Otterley",
+            "durationMs": 244066
+          },
+          {
+            "id": "3Lf7TZurgJF7PexdrE5TOf",
+            "name": "Donimo",
+            "durationMs": 379066
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Treasure",
+        "spotifyArtists": "Cocteau Twins",
+        "spotifyYear": 1984
+      }
+    },
+    {
+      "rymId": "1072581",
+      "artist": "Beach House",
+      "title": "Devotion",
+      "year": 2008,
+      "rating": 9,
+      "spotify": {
+        "albumId": "6Unw8A3kdy8ZPj6MmlbA7E",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273cad79d4a8ac2e2acc58dbfef",
+        "tracks": [
+          {
+            "id": "36zLN7ZLhQWJUkzPss2KAo",
+            "name": "Wedding Bell",
+            "durationMs": 234733
+          },
+          {
+            "id": "6PB7R41AktgVRoJHE3XlWr",
+            "name": "You Came To Me",
+            "durationMs": 245333
+          },
+          {
+            "id": "2r3XoShDJnYhatcpfobVmC",
+            "name": "Gila",
+            "durationMs": 286240
+          },
+          {
+            "id": "1Qy1eRka08FJ0Bhz7ZenYS",
+            "name": "Turtle Island",
+            "durationMs": 239733
+          },
+          {
+            "id": "4amD9JhozTIpdnq73TRN1G",
+            "name": "Holy Dances",
+            "durationMs": 258959
+          },
+          {
+            "id": "5gsMl6zvPWbtBNGjuR0FWJ",
+            "name": "All The Years",
+            "durationMs": 216253
+          },
+          {
+            "id": "2ldmzcLJvYv4WHPrzGbBgq",
+            "name": "Heart of Chambers",
+            "durationMs": 265173
+          },
+          {
+            "id": "1G6FgJHNiPQoup4wFUTHGg",
+            "name": "Some Things Last a Long Time",
+            "durationMs": 151626
+          },
+          {
+            "id": "7imyu7tXXhz2XtGKLZIUhw",
+            "name": "Astronaut",
+            "durationMs": 304560
+          },
+          {
+            "id": "58MB60rzfDkXJtalRUaLys",
+            "name": "D.A.R.L.I.N.G.",
+            "durationMs": 198133
+          },
+          {
+            "id": "4UEJ9jO9Q1Iainvq1Rp9t7",
+            "name": "Home Again",
+            "durationMs": 248866
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Devotion",
+        "spotifyArtists": "Beach House",
+        "spotifyYear": 2008
+      }
+    },
+    {
+      "rymId": "341973",
+      "artist": "Broadcast",
+      "title": "Tender Buttons",
+      "year": 2005,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6xBYjKF7uvteMN51uxVNJv",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273efeb5afb5e7bcb9c6660fe39",
+        "tracks": [
+          {
+            "id": "3qr2hBL12NbRmFWKlzI3Zs",
+            "name": "I Found The F",
+            "durationMs": 141840
+          },
+          {
+            "id": "2Lbm0ObmRqhWhPmvixtI3H",
+            "name": "Black Cat",
+            "durationMs": 238440
+          },
+          {
+            "id": "5nCScIjCua6SYp4VKNjugD",
+            "name": "Tender Buttons",
+            "durationMs": 172000
+          },
+          {
+            "id": "31cQKr1hxHfIWVfcnuNzrQ",
+            "name": "America's Boy",
+            "durationMs": 214586
+          },
+          {
+            "id": "2ckhAiLT5eV5blWvyDs8Lh",
+            "name": "Tears In The Typing Pool",
+            "durationMs": 132160
+          },
+          {
+            "id": "5GDgMlMvHDVvsywryu3Fs2",
+            "name": "Corporeal",
+            "durationMs": 235013
+          },
+          {
+            "id": "0Wf3pvQ78u3Ivhr9ZBzVTA",
+            "name": "Bit 35",
+            "durationMs": 109853
+          },
+          {
+            "id": "3bEL0LHSMUsdMxbB7Hv2pM",
+            "name": "Arc Of A Journey",
+            "durationMs": 317386
+          },
+          {
+            "id": "0jelXL9WiSdB4abBRHbw2z",
+            "name": "Michael A Grammar",
+            "durationMs": 237013
+          },
+          {
+            "id": "6OS05hpsNSW2yTowPuX4vw",
+            "name": "Subject To the Ladder",
+            "durationMs": 194026
+          },
+          {
+            "id": "7pEhzQFogXSz6vq738N79d",
+            "name": "Minus 3",
+            "durationMs": 47640
+          },
+          {
+            "id": "4FDu6n1fAwcrteMEs69MeB",
+            "name": "Goodbye Girls",
+            "durationMs": 188973
+          },
+          {
+            "id": "31RfSbxhdSn0INnoxAmMQ2",
+            "name": "You And Me In Time",
+            "durationMs": 84280
+          },
+          {
+            "id": "1jQFq4gbWxsU8JOZuxqwlP",
+            "name": "I Found The End",
+            "durationMs": 125466
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Tender Buttons",
+        "spotifyArtists": "Broadcast",
+        "spotifyYear": 2005
+      }
+    },
+    {
+      "rymId": "8872",
+      "artist": "Starflyer 59",
+      "title": "Starflyer 59 [Gold]",
+      "year": 1995,
+      "rating": 8,
+      "spotify": {
+        "albumId": "4DQo909GqHu7tqylRUmNub",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2738686e115a8b8bfb4944063c8",
+        "tracks": [
+          {
+            "id": "4sAX0h4IH2K5BlKaxEEb9F",
+            "name": "A House Wife Love Song",
+            "durationMs": 252826
+          },
+          {
+            "id": "1K0Yqkg1Oauy4HMeUuznt4",
+            "name": "Duel Overhead Cam - Gold Album Version",
+            "durationMs": 278666
+          },
+          {
+            "id": "60bdOmdpBJhOpaoKus77Vn",
+            "name": "When You Feel Miserable - Gold Album Version",
+            "durationMs": 307533
+          },
+          {
+            "id": "5lG5muLtN0ifiwBwHB9gOo",
+            "name": "You're Mean - Gold Album Version",
+            "durationMs": 124733
+          },
+          {
+            "id": "5vdABqJX1JKcWhwWg2UOFC",
+            "name": "Stop Wasting Your Whole Life/Messed Up And Down - Medley",
+            "durationMs": 303240
+          },
+          {
+            "id": "1N1o4GkjQ9ly2qYLnftCQc",
+            "name": "Messed Up Over You - Gold Album Version",
+            "durationMs": 404666
+          },
+          {
+            "id": "3Df8kc7rTTpy7bTpiBnIWI",
+            "name": "When You Feel The Mess - Gold Album Version",
+            "durationMs": 376826
+          },
+          {
+            "id": "451XQjxgyFqrBD6udhb2Ug",
+            "name": "Somewhere When Your Heart Glowed The Hope - Gold Album Version",
+            "durationMs": 283800
+          },
+          {
+            "id": "5TxFeU8A1NaO1LpUYP31D1",
+            "name": "Indiana - Gold Album Version",
+            "durationMs": 266466
+          },
+          {
+            "id": "6f29Iy57AZlfqTAwd7Pkbt",
+            "name": "Do You Ever Feel This Way - Gold Album Version",
+            "durationMs": 135279
+          },
+          {
+            "id": "5zt9Xjckv0DXrFjLs5Pzpi",
+            "name": "One Shot Juanita - Gold Album Version",
+            "durationMs": 279293
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Gold",
+        "spotifyArtists": "Starflyer 59",
+        "spotifyYear": 1995
+      }
+    },
+    {
+      "rymId": "3544705",
+      "artist": "Dum Dum Girls",
+      "title": "Only in Dreams",
+      "year": 2011,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5AeNEoouOMNiWvDwpKzVml",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27311f1b3bd5db3a40c29dc9f90",
+        "tracks": [
+          {
+            "id": "0Bhzsf22K62YLmx70bzqBI",
+            "name": "Always Looking",
+            "durationMs": 138808
+          },
+          {
+            "id": "6Vkp5jG3LmrtktENkqmNOj",
+            "name": "Bedroom Eyes",
+            "durationMs": 234592
+          },
+          {
+            "id": "6ImjRg9uk2U5EDTY4SAPjy",
+            "name": "Just a Creep",
+            "durationMs": 176113
+          },
+          {
+            "id": "07VcR8CAjNriwHjGZAOzS9",
+            "name": "In My Head",
+            "durationMs": 228701
+          },
+          {
+            "id": "72fZRGam9cfmIGYsbhF2GY",
+            "name": "Heartbeat (Take It Away)",
+            "durationMs": 170447
+          },
+          {
+            "id": "7tgsV5LImutXNj7nTAQTCt",
+            "name": "Caught in One",
+            "durationMs": 224388
+          },
+          {
+            "id": "62o5ETvaR1U8CqxVYancy4",
+            "name": "Coming Down",
+            "durationMs": 389035
+          },
+          {
+            "id": "1i5NvnWVAyLrV8zPhyauoX",
+            "name": "Wasted Away",
+            "durationMs": 219231
+          },
+          {
+            "id": "51oETxauJwvUkd7QvkeA0W",
+            "name": "Teardrops on My Pillow",
+            "durationMs": 168967
+          },
+          {
+            "id": "0s75Ebb4j37qx29vyLP0Aq",
+            "name": "Hold Your Hand",
+            "durationMs": 237129
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Only in Dreams",
+        "spotifyArtists": "Dum Dum Girls",
+        "spotifyYear": 2011
+      }
+    }
+  ]
+}

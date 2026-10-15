@@ -996,6 +996,56 @@
         "spotifyArtists": "Ryo Fukui",
         "spotifyYear": 1976
       }
+    },
+    {
+      "rymId": "8204600",
+      "artist": "Kamasi Washington",
+      "title": "Harmony of Difference",
+      "year": 2017,
+      "rating": 10,
+      "spotify": {
+        "albumId": "0mf2hphtGvSxnOit7Uy2aB",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b0b99bdfc00f96fb8849c565",
+        "tracks": [
+          {
+            "id": "4rIFTfdZCRMoTFCp1P6Zoa",
+            "name": "Desire",
+            "durationMs": 276909
+          },
+          {
+            "id": "60OJeJXn7YhFzo66gKjKRs",
+            "name": "Humility",
+            "durationMs": 166164
+          },
+          {
+            "id": "7KWZr64nv6N3n4UGMAixzN",
+            "name": "Knowledge",
+            "durationMs": 231941
+          },
+          {
+            "id": "6JoR4xgucq9JzJa3aUqDnj",
+            "name": "Perspective",
+            "durationMs": 204370
+          },
+          {
+            "id": "48mGfj3b8LcraQ8IAd3Xhk",
+            "name": "Integrity",
+            "durationMs": 227493
+          },
+          {
+            "id": "4CYIKKAhWxXlaUe2YOZYLZ",
+            "name": "Truth",
+            "durationMs": 810322
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Harmony of Difference",
+        "spotifyArtists": "Kamasi Washington",
+        "spotifyYear": 2017,
+        "override": true
+      }
     }
   ]
 }

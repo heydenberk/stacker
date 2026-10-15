@@ -1,0 +1,828 @@
+{
+  "id": "indie-rock-90s",
+  "name": "Indie Rock '90s",
+  "mood": "four-track hooks and guitar sprawl: Pavement, Built to Spill, Modest Mouse",
+  "createdAt": "2026-10-15",
+  "records": [
+    {
+      "rymId": "2614",
+      "artist": "Built to Spill",
+      "title": "Keep It Like a Secret",
+      "year": 1999,
+      "rating": 10,
+      "spotify": {
+        "albumId": "2PKZhfPrgMmK5zug2pqdHA",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730c8cece24badfb7bfce2f38d",
+        "tracks": [
+          {
+            "id": "5nrIEQ6ZmVwt9Pfr3ydvbn",
+            "name": "The Plan",
+            "durationMs": 209400
+          },
+          {
+            "id": "4lR6ss06VdT8xDlAu2T8VW",
+            "name": "Center of the Universe",
+            "durationMs": 163533
+          },
+          {
+            "id": "3HMOMdRPywfouYx5B4PvaH",
+            "name": "Carry the Zero",
+            "durationMs": 343893
+          },
+          {
+            "id": "2WGe9JOnt59reYluiLMLbW",
+            "name": "Sidewalk",
+            "durationMs": 231573
+          },
+          {
+            "id": "06ZyuKNXTq0MdW91RNY1Ig",
+            "name": "Bad Light",
+            "durationMs": 202106
+          },
+          {
+            "id": "30X2iKHGAgQm2GCBxuoG00",
+            "name": "Time Trap",
+            "durationMs": 322400
+          },
+          {
+            "id": "1SqIUmKbeRyHwgp8BOBIRr",
+            "name": "Else",
+            "durationMs": 249253
+          },
+          {
+            "id": "1256ozOGDowNo7TNH94xeg",
+            "name": "You Were Right",
+            "durationMs": 285413
+          },
+          {
+            "id": "5Q4hsDbyZq7t8Yktlmdjap",
+            "name": "Temporarily Blind",
+            "durationMs": 288280
+          },
+          {
+            "id": "4N0g6GRAFaNJyHGrNy1BFg",
+            "name": "Broken Chairs",
+            "durationMs": 520640
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Keep It like a Secret",
+        "spotifyArtists": "Built To Spill",
+        "spotifyYear": 1999
+      }
+    },
+    {
+      "rymId": "2615",
+      "artist": "Built to Spill",
+      "title": "Perfect From Now On",
+      "year": 1997,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6DlZzUnITGI5cWGTjIWSBm",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273778b1aec8641ee2abeedec79",
+        "tracks": [
+          {
+            "id": "78UlSQu9iRXInPuwb0NHn5",
+            "name": "Randy Described Eternity",
+            "durationMs": 364840
+          },
+          {
+            "id": "2FmUpxb4nnyb1kX4rvvHZT",
+            "name": "I Would Hurt a Fly",
+            "durationMs": 375066
+          },
+          {
+            "id": "1fcjNgC3VEFDGyclYrC7fw",
+            "name": "Stop the Show",
+            "durationMs": 386200
+          },
+          {
+            "id": "5foiGJwoJvnMlII0aYApV3",
+            "name": "Made-Up Dreams",
+            "durationMs": 292266
+          },
+          {
+            "id": "4LBJyUs3B4ovaIImY5w5gW",
+            "name": "Velvet Waltz",
+            "durationMs": 513426
+          },
+          {
+            "id": "4L8GRXFdOTokQk7RBiB1KS",
+            "name": "Out of Site",
+            "durationMs": 336173
+          },
+          {
+            "id": "6JT3dTww2LuGrtze7j5jw9",
+            "name": "Kicked It in the Sun",
+            "durationMs": 452533
+          },
+          {
+            "id": "1Oi6Wz9lhfVp6dcveClqXl",
+            "name": "Untrustable (Pt. 2) [About Someone Else]",
+            "durationMs": 533600
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Perfect from Now On",
+        "spotifyArtists": "Built To Spill",
+        "spotifyYear": 1997
+      }
+    },
+    {
+      "rymId": "2616",
+      "artist": "Built to Spill",
+      "title": "There's Nothing Wrong With Love",
+      "year": 1994,
+      "rating": 9,
+      "spotify": {
+        "albumId": "6ShLKGsrQk9OHXmEBrXJhd",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27312cadf4a9c48ad082c7b3390",
+        "tracks": [
+          {
+            "id": "0zlqp4qK2WxjC1J6ExWPlt",
+            "name": "In the Morning",
+            "durationMs": 157506
+          },
+          {
+            "id": "4rNbnLZLID19WLJ7u0Jk4E",
+            "name": "Reasons",
+            "durationMs": 226333
+          },
+          {
+            "id": "0fHzYUR1Y34lCOsuN3gcXG",
+            "name": "Big Dipper",
+            "durationMs": 249826
+          },
+          {
+            "id": "4qqM11dV7X9CFjSbbgRdZJ",
+            "name": "Car",
+            "durationMs": 179106
+          },
+          {
+            "id": "49kFKOKMVQRrkDk3dTcxRJ",
+            "name": "Fling",
+            "durationMs": 153893
+          },
+          {
+            "id": "4wVWLS5dwX5nrGttYVAeUD",
+            "name": "Cleo",
+            "durationMs": 275466
+          },
+          {
+            "id": "6mPahv0j2dwo7BZzHDf4Bi",
+            "name": "The Source",
+            "durationMs": 200240
+          },
+          {
+            "id": "5bUWOlCrgImcjtJT6PVHZ0",
+            "name": "Twin Falls",
+            "durationMs": 109693
+          },
+          {
+            "id": "3FTWUk6P4BnVflvW7r5iwl",
+            "name": "Some",
+            "durationMs": 357640
+          },
+          {
+            "id": "511VZuvJIubk8ADZrYfOyw",
+            "name": "Distopian Dream Girl",
+            "durationMs": 264200
+          },
+          {
+            "id": "3HDnDt9F2W7ieyGLGA1sIa",
+            "name": "Israel's Song",
+            "durationMs": 227293
+          },
+          {
+            "id": "7rm25ayO1rdE9pPQyuDc8W",
+            "name": "Stab",
+            "durationMs": 329506
+          },
+          {
+            "id": "2FMRHIm45lL7ZraASn0a3T",
+            "name": "Hidden Track",
+            "durationMs": 83493
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "There's Nothing Wrong With Love",
+        "spotifyArtists": "Built To Spill",
+        "spotifyYear": 1994
+      }
+    },
+    {
+      "rymId": "16779",
+      "artist": "Unwound",
+      "title": "Leaves Turn Inside You",
+      "year": 2001,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6lw4HFj2dgaG98jjSP5zOz",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273bac832268c04e2050324f7af",
+        "tracks": [
+          {
+            "id": "7EMPUKxTyyGEPud35Pi4dv",
+            "name": "We Invent You",
+            "durationMs": 352266
+          },
+          {
+            "id": "32s2Ym7GFW4u4s3tT2bfZv",
+            "name": "Look a Ghost",
+            "durationMs": 184133
+          },
+          {
+            "id": "2iZWjWLShskPrYdhGenV4P",
+            "name": "December",
+            "durationMs": 243600
+          },
+          {
+            "id": "41O7pUNVyNWvO9h2EoM59c",
+            "name": "Treachery",
+            "durationMs": 257760
+          },
+          {
+            "id": "3WX4o1Ktyjs1TPeP6Kt18a",
+            "name": "Terminus",
+            "durationMs": 580000
+          },
+          {
+            "id": "7Fx68xe5jmn8sCRm7aGOR4",
+            "name": "Demons Sing Love Songs",
+            "durationMs": 243133
+          },
+          {
+            "id": "3LjdS0O3mu6ncFNuEibgbG",
+            "name": "Off This Century",
+            "durationMs": 330546
+          },
+          {
+            "id": "2VgZ112Vor0DiCgnm2N8qu",
+            "name": "One Lick Less",
+            "durationMs": 341893
+          },
+          {
+            "id": "2hoi29qd98nqFGS4rtT9fX",
+            "name": "Scarlette",
+            "durationMs": 284106
+          },
+          {
+            "id": "1gha0mk4Db2F6Er1PC9tsV",
+            "name": "October All Over",
+            "durationMs": 299400
+          },
+          {
+            "id": "5OKQ3AM9ymh1ge41jgEW1w",
+            "name": "Summer Freeze",
+            "durationMs": 336866
+          },
+          {
+            "id": "4imhCMZVnQmUziB1m2ASBK",
+            "name": "Radio Gra",
+            "durationMs": 356226
+          },
+          {
+            "id": "1K4O41TyB7h2BM1JDTOoLi",
+            "name": "Below the Salt",
+            "durationMs": 639200
+          },
+          {
+            "id": "4xh6jIDgIkrtOXybSgOnSk",
+            "name": "Who Cares",
+            "durationMs": 161840
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Leaves Turn Inside You",
+        "spotifyArtists": "Unwound",
+        "spotifyYear": 2001
+      }
+    },
+    {
+      "rymId": "1245",
+      "artist": "Neutral Milk Hotel",
+      "title": "In the Aeroplane Over the Sea",
+      "year": 1998,
+      "rating": 10,
+      "spotify": {
+        "albumId": "17q5eeNk3HAjX1gzQnkTX7",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273bc1e41eed3ddbdfff6f2d74b",
+        "tracks": [
+          {
+            "id": "4QgMnTz4ceedQI3Ex6YkBT",
+            "name": "King of Carrot Flowers Pt. 1",
+            "durationMs": 120426
+          },
+          {
+            "id": "6MiMpZdaNTsMbmjrIBK2Eo",
+            "name": "King of Carrot Flowers Pts. 2 & 3",
+            "durationMs": 186280
+          },
+          {
+            "id": "1NiAMp0CzUdG6e97VYRB1a",
+            "name": "In the Aeroplane Over the Sea",
+            "durationMs": 202346
+          },
+          {
+            "id": "3g158Ik8k4KUphKC1asZ3T",
+            "name": "Two-Headed Boy",
+            "durationMs": 266106
+          },
+          {
+            "id": "7c6Z6ArJ07SdsHxFjuOJ6I",
+            "name": "The Fool",
+            "durationMs": 113146
+          },
+          {
+            "id": "48WuGsko0WxKO9KUqZlqys",
+            "name": "Holland, 1945",
+            "durationMs": 192533
+          },
+          {
+            "id": "0G339jbSZ2xPBAZAieEZ4I",
+            "name": "Communist Daughter",
+            "durationMs": 117306
+          },
+          {
+            "id": "1ZcX9khYwLeaBAblOEUZNs",
+            "name": "Oh Comely",
+            "durationMs": 498146
+          },
+          {
+            "id": "3IWUCuJ19dmUhddJAEZddx",
+            "name": "Ghost",
+            "durationMs": 248573
+          },
+          {
+            "id": "5YflUS87Dptt9VMhMazKJH",
+            "name": "[untitled]",
+            "durationMs": 136026
+          },
+          {
+            "id": "1CZ9A2t1ZLOYZSchV1k3LR",
+            "name": "Two-Headed Boy Pt. 2",
+            "durationMs": 313973
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "In the Aeroplane Over the Sea",
+        "spotifyArtists": "Neutral Milk Hotel",
+        "spotifyYear": 1998
+      }
+    },
+    {
+      "rymId": "1052",
+      "artist": "Sleater-Kinney",
+      "title": "Dig Me Out",
+      "year": 1997,
+      "rating": 10,
+      "spotify": {
+        "albumId": "3tshnNFNhHrO6NUQ0BHw42",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f10a3124e2043c4238e92065",
+        "tracks": [
+          {
+            "id": "1YdCuoPvDDVyHa3YomPb1B",
+            "name": "Dig Me Out",
+            "durationMs": 160919
+          },
+          {
+            "id": "1WtpkJyC5UNqE4dC3iHplB",
+            "name": "One More Hour",
+            "durationMs": 199693
+          },
+          {
+            "id": "53274hl7rQOfVdNbgHfr2T",
+            "name": "Turn It On",
+            "durationMs": 167960
+          },
+          {
+            "id": "06Nbj4rQP2vhvThjTMdhmf",
+            "name": "The Drama You've Been Craving",
+            "durationMs": 128120
+          },
+          {
+            "id": "2AhyAGrosXvOApXgBg3Mfr",
+            "name": "Heart Factory",
+            "durationMs": 234786
+          },
+          {
+            "id": "7b6wCOUbe9nugBfiTrekTH",
+            "name": "Words and Guitar",
+            "durationMs": 141386
+          },
+          {
+            "id": "2YrahvVhpLUjpbJCv4Xie8",
+            "name": "It's Enough",
+            "durationMs": 106600
+          },
+          {
+            "id": "4U9Va0fTTbMdN80z2NZFDL",
+            "name": "Little Babies",
+            "durationMs": 143026
+          },
+          {
+            "id": "0mRF9dwZFp1XuNXjPnYFB7",
+            "name": "Not What You Want",
+            "durationMs": 197346
+          },
+          {
+            "id": "0d1OG9uYeTyxDRxyliVy1u",
+            "name": "Buy Her Candy",
+            "durationMs": 122893
+          },
+          {
+            "id": "3QpMxCsA201fnZs48psDyP",
+            "name": "Things You Say",
+            "durationMs": 176906
+          },
+          {
+            "id": "5Z6N7vLFzlV5lZalyOrOy8",
+            "name": "Dance Song '97",
+            "durationMs": 169893
+          },
+          {
+            "id": "0ZK76zYORhdGKEOkJzB8sO",
+            "name": "Jenny",
+            "durationMs": 245120
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Dig Me Out (Remastered)",
+        "spotifyArtists": "Sleater-Kinney",
+        "spotifyYear": 1997
+      }
+    },
+    {
+      "rymId": "2697",
+      "artist": "The Wedding Present",
+      "title": "Seamonsters",
+      "year": 1991,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6vQ5YjeBaEpzFcRsAvO2Kb",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2734521b9843e020851b80b5401",
+        "tracks": [
+          {
+            "id": "2YMaDNhxlVV7ymlPC3dUvA",
+            "name": "Dalliance",
+            "durationMs": 265493
+          },
+          {
+            "id": "7hQN3fbAMhFUm9GU0ya7rd",
+            "name": "Dare",
+            "durationMs": 224066
+          },
+          {
+            "id": "2DUckr5bAXBFVc8M3vZvht",
+            "name": "Suck",
+            "durationMs": 238533
+          },
+          {
+            "id": "4XbQnI2zNln86QqFXNnHGn",
+            "name": "Blonde",
+            "durationMs": 305800
+          },
+          {
+            "id": "4Sdp4xhytT8AZUK7yJucWN",
+            "name": "Rotterdam",
+            "durationMs": 193840
+          },
+          {
+            "id": "3OBmnRzF4FbsKyMhUkWEb7",
+            "name": "Lovenest",
+            "durationMs": 311293
+          },
+          {
+            "id": "1sO5aKYNUyVFdmDtmGWW0E",
+            "name": "Corduroy",
+            "durationMs": 209106
+          },
+          {
+            "id": "6oP4MG01YgbjmWngnvKztC",
+            "name": "Carolyn",
+            "durationMs": 218160
+          },
+          {
+            "id": "2s7i7H1j15Mjpi6uUKIXrE",
+            "name": "Heather",
+            "durationMs": 212333
+          },
+          {
+            "id": "3HPmfGteNZ2JxME4Ejo91X",
+            "name": "Octopussy",
+            "durationMs": 379173
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Seamonsters",
+        "spotifyArtists": "The Wedding Present",
+        "spotifyYear": 1991
+      }
+    },
+    {
+      "rymId": "133",
+      "artist": "Pavement",
+      "title": "Crooked Rain, Crooked Rain",
+      "year": 1994,
+      "rating": 9,
+      "spotify": {
+        "albumId": "1XFNz6KIvLyIsLFOiLRKqP",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273b893831d1a12d3d4024a5867",
+        "tracks": [
+          {
+            "id": "1CwQqhPYxz73UYKD7ybYGd",
+            "name": "Silence Kid",
+            "durationMs": 180933
+          },
+          {
+            "id": "6PVsZG7ZLbCjodCNtbQNfb",
+            "name": "Elevate Me Later",
+            "durationMs": 171306
+          },
+          {
+            "id": "6djM07km0Jomks2S7p7obn",
+            "name": "Stop Breathin",
+            "durationMs": 267893
+          },
+          {
+            "id": "4tBl1xhBg5PETpBvFnQmGl",
+            "name": "Cut Your Hair",
+            "durationMs": 186733
+          },
+          {
+            "id": "2jbmKdUnKuAoNhWDZwmz9u",
+            "name": "Newark Wilder",
+            "durationMs": 233706
+          },
+          {
+            "id": "10ZQm8oJGYLJg0x8B0TPEZ",
+            "name": "Unfair",
+            "durationMs": 153026
+          },
+          {
+            "id": "3QVtDnXU5zqGWxWDFBMiDj",
+            "name": "Gold Soundz",
+            "durationMs": 159706
+          },
+          {
+            "id": "4WGC99E2a0bezjp7hHtiZP",
+            "name": "5-4=Unity",
+            "durationMs": 129600
+          },
+          {
+            "id": "6jR6FMCEoWGdEpFVRlMZM7",
+            "name": "Range Life",
+            "durationMs": 294760
+          },
+          {
+            "id": "6l78bOrK8CbLHbXp7sAdAh",
+            "name": "Heaven Is a Truck",
+            "durationMs": 150973
+          },
+          {
+            "id": "2lDskvrmmJStGpjkZHhzrP",
+            "name": "Hit the Plane Down",
+            "durationMs": 216733
+          },
+          {
+            "id": "2VcswmuA5mj5EATSRhoJzU",
+            "name": "Fillmore Jive",
+            "durationMs": 398466
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Crooked Rain, Crooked Rain",
+        "spotifyArtists": "Pavement",
+        "spotifyYear": 1994
+      }
+    },
+    {
+      "rymId": "2082",
+      "artist": "Guided by Voices",
+      "title": "Bee Thousand",
+      "year": 1994,
+      "rating": 9,
+      "spotify": {
+        "albumId": "2VQKZAvtL5epxdEOuLVP6t",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273bdbe874ff5ea3b896b3880d6",
+        "tracks": [
+          {
+            "id": "1WHCuLyhiISWVENR0qXZ51",
+            "name": "Hardcore UFO's",
+            "durationMs": 114066
+          },
+          {
+            "id": "207kBEL2brJ2rRnlixCJ8n",
+            "name": "Buzzards And Dreadful Crows",
+            "durationMs": 103066
+          },
+          {
+            "id": "4dftKNQqg8kWquNuDd6CDe",
+            "name": "Tractor Rape Chain",
+            "durationMs": 184840
+          },
+          {
+            "id": "4SrE9bJwNC2ldX8rAXsrKE",
+            "name": "The Goldheart Mountaintop Queen Directory",
+            "durationMs": 105333
+          },
+          {
+            "id": "7Fwnn8npShUzE9HtVp9Y1H",
+            "name": "Hot Freaks",
+            "durationMs": 102693
+          },
+          {
+            "id": "0491EjDNDRRwo9mBCsLaAX",
+            "name": "Smothered In Hugs",
+            "durationMs": 180000
+          },
+          {
+            "id": "0g5vxRuh4tqz8pCHBpGLAq",
+            "name": "Yours To Keep",
+            "durationMs": 75306
+          },
+          {
+            "id": "0kSxRxxiI1Vaiispzszvf0",
+            "name": "Echos Myron",
+            "durationMs": 162293
+          },
+          {
+            "id": "5ENm62EyGa0DeLosn87jIy",
+            "name": "Gold Star For Robot Boy",
+            "durationMs": 99306
+          },
+          {
+            "id": "57TUYBa41jfW56U2U9652l",
+            "name": "Awful Bliss",
+            "durationMs": 72466
+          },
+          {
+            "id": "0PAmuYEy2ZaeZaiW40sntO",
+            "name": "Mincer Ray",
+            "durationMs": 141026
+          },
+          {
+            "id": "6HyzpoMkamKkJkl0IwizVv",
+            "name": "A Big Fan Of The Pigpen",
+            "durationMs": 129306
+          },
+          {
+            "id": "0zz3UqQsWxPLUKVR8iSg6G",
+            "name": "Queen Of Cans And Jars",
+            "durationMs": 115160
+          },
+          {
+            "id": "26QO2NzymVItdqedQLHIiu",
+            "name": "Her Psychology Today",
+            "durationMs": 124040
+          },
+          {
+            "id": "3idaWZXzbVZ6QclVRz9SuE",
+            "name": "Kicker Of Elves",
+            "durationMs": 64160
+          },
+          {
+            "id": "0694ymW8fH9wt0yewC74Ia",
+            "name": "Ester's Day",
+            "durationMs": 111133
+          },
+          {
+            "id": "3feeZeT89PWE9eonRCrFIO",
+            "name": "Demons Are Real",
+            "durationMs": 48506
+          },
+          {
+            "id": "0oN2fJx5t5BzkKQQiojHrr",
+            "name": "I Am A Scientist",
+            "durationMs": 144400
+          },
+          {
+            "id": "4cQJKk52gTO2WN0PvUe1f7",
+            "name": "Peep-Hole",
+            "durationMs": 85266
+          },
+          {
+            "id": "6h5HGHK85AWThsOhbHgJmv",
+            "name": "You're Not An Airplane",
+            "durationMs": 33293
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Bee Thousand",
+        "spotifyArtists": "Guided By Voices",
+        "spotifyYear": 1994
+      }
+    },
+    {
+      "rymId": "2632",
+      "artist": "Modest Mouse",
+      "title": "The Lonesome Crowded West",
+      "year": 1997,
+      "rating": 8,
+      "spotify": {
+        "albumId": "5mvHTVy1iUIkAflIufoOpj",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2736d36f5f881bb591a529e259b",
+        "tracks": [
+          {
+            "id": "5aUn8l6MaYrh9yNBzrLEBF",
+            "name": "Teeth Like God's Shoeshine",
+            "durationMs": 413306
+          },
+          {
+            "id": "6VPmuKRODPVBazkpPRUgK5",
+            "name": "Heart Cooks Brain",
+            "durationMs": 242933
+          },
+          {
+            "id": "7ow8R2QCGeAr3JiRbSDzWs",
+            "name": "Convenient Parking",
+            "durationMs": 248360
+          },
+          {
+            "id": "7MfNEVeRcksjZ5fcqV5UeB",
+            "name": "Lounge (Closing Time)",
+            "durationMs": 423773
+          },
+          {
+            "id": "09iayCA5rYfUCsUfyE2fL2",
+            "name": "Jesus Christ Was An Only Child",
+            "durationMs": 156293
+          },
+          {
+            "id": "19KYXwOkJXAC6ymLvZYlt6",
+            "name": "Doin' The Cockroach",
+            "durationMs": 258733
+          },
+          {
+            "id": "5A0iajc7nhlZv9tGDHqZya",
+            "name": "Cowboy Dan",
+            "durationMs": 374800
+          },
+          {
+            "id": "3GcRZ1Q9Q6NIeDNw3MVAWS",
+            "name": "Trailer Trash",
+            "durationMs": 349600
+          },
+          {
+            "id": "3vT8gzLffHjauZNwt4BtPN",
+            "name": "Out Of Gas",
+            "durationMs": 151133
+          },
+          {
+            "id": "7wKnLB4yxsfLS3JEOlAZdG",
+            "name": "Long Distance Drunk",
+            "durationMs": 222600
+          },
+          {
+            "id": "0mOb05UKHRhE2RDIe6uEBm",
+            "name": "Shit Luck",
+            "durationMs": 142640
+          },
+          {
+            "id": "6FjKAch1aGFI9LxJziA2Xe",
+            "name": "Truckers Atlas",
+            "durationMs": 657533
+          },
+          {
+            "id": "5EsM3rVaMDRsOXJq7oe3tY",
+            "name": "Polar Opposites",
+            "durationMs": 209960
+          },
+          {
+            "id": "6DTFmTnazxFGo6SdwSICwv",
+            "name": "Bankrupt On Selling",
+            "durationMs": 173773
+          },
+          {
+            "id": "40F3i6gKdUibqjyZdW1o4D",
+            "name": "Styrofoam Boots/It's All Nice On Ice, Alright",
+            "durationMs": 413133
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Lonesome Crowded West",
+        "spotifyArtists": "Modest Mouse",
+        "spotifyYear": 1997
+      }
+    }
+  ]
+}

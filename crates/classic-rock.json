@@ -1,0 +1,1159 @@
+{
+  "id": "classic-rock",
+  "name": "Classic Rock",
+  "mood": "late-'60s and '70s rock and roll: the Kinks, the Stones, Neil Young",
+  "createdAt": "2026-10-15",
+  "records": [
+    {
+      "rymId": "4648",
+      "artist": "The Kinks",
+      "title": "The Kinks Are the Village Green Preservation Society",
+      "year": 1968,
+      "rating": 10,
+      "spotify": {
+        "albumId": "6o0u4pbxrUai7aPkizuzCp",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273c53ffde2006f3c42a19fe247",
+        "tracks": [
+          {
+            "id": "4b4QvL2BztFIZm9SGTKoGU",
+            "name": "The Village Green Preservation Society",
+            "durationMs": 172640
+          },
+          {
+            "id": "3ZI9x5vNvjOxpdSD173pBK",
+            "name": "Do You Remember Walter?",
+            "durationMs": 147306
+          },
+          {
+            "id": "2l2nhKmG2rV5CL5fUpAvej",
+            "name": "Picture Book",
+            "durationMs": 155066
+          },
+          {
+            "id": "1PgQHcgZ7zR1X62JUJ9tQW",
+            "name": "Johnny Thunder",
+            "durationMs": 150586
+          },
+          {
+            "id": "27oiyogvlGT81XdzTPs1Cq",
+            "name": "Last of the Steam-Powered Trains",
+            "durationMs": 250013
+          },
+          {
+            "id": "6OAAMwn6yY2R7TIQRLLm4C",
+            "name": "Big Sky",
+            "durationMs": 170693
+          },
+          {
+            "id": "67bEYQkHgjjTbOMMvpkOVI",
+            "name": "Sitting by the Riverside",
+            "durationMs": 142600
+          },
+          {
+            "id": "3w0VwaqSx9y8fjNDHT62Ol",
+            "name": "Animal Farm",
+            "durationMs": 180506
+          },
+          {
+            "id": "5SrALKte8mzLhtsfB1y1Rp",
+            "name": "Village Green",
+            "durationMs": 130853
+          },
+          {
+            "id": "0B2CSxoBrniJgYeeWw7suy",
+            "name": "Starstruck",
+            "durationMs": 146186
+          },
+          {
+            "id": "6BnTZDrPf4z6sAqWSekE3Z",
+            "name": "Phenomenal Cat",
+            "durationMs": 158933
+          },
+          {
+            "id": "6KFiP2dzJEWPgjkCX5RTXM",
+            "name": "All of My Friends Were There",
+            "durationMs": 144600
+          },
+          {
+            "id": "46QWgsl3wA8RCdzzqWbVAw",
+            "name": "Wicked Annabella",
+            "durationMs": 162813
+          },
+          {
+            "id": "6jhGOqkEZ7mwpEByqMeIkn",
+            "name": "Monica",
+            "durationMs": 139840
+          },
+          {
+            "id": "5yr8mYtbeJwxnKrPyNtybk",
+            "name": "People Take Pictures of Each Other",
+            "durationMs": 139373
+          },
+          {
+            "id": "3mBIOqWowaL8Syp1anqu1n",
+            "name": "The Village Green Preservation Society (Stereo Mix)",
+            "durationMs": 169280
+          },
+          {
+            "id": "2rcRJZ1Ler9i1qOiQNDQh4",
+            "name": "Do You Remember Walter? (Stereo Mix)",
+            "durationMs": 145400
+          },
+          {
+            "id": "7CGe4Thg4BMb3UijGXyej7",
+            "name": "Picture Book (Stereo Mix)",
+            "durationMs": 156880
+          },
+          {
+            "id": "2RJ6T5kfxSUfB90dEhoRM2",
+            "name": "Johnny Thunder (Stereo Remix)",
+            "durationMs": 150546
+          },
+          {
+            "id": "6ZjKv2wSS7BJ1vpTcgGjRW",
+            "name": "Monica (Stereo Mix)",
+            "durationMs": 135413
+          },
+          {
+            "id": "66lb4r3im5s0lfSa0sKjKZ",
+            "name": "Days (Stereo Mix)",
+            "durationMs": 172942
+          },
+          {
+            "id": "1yVectDa3IFHGHlDGBu8hA",
+            "name": "Village Green (Stereo Mix)",
+            "durationMs": 128586
+          },
+          {
+            "id": "1fYk2woHFgDMePEApAhqUc",
+            "name": "Mr. Songbird (Stereo Mix)",
+            "durationMs": 145120
+          },
+          {
+            "id": "3dQVPUO76Z3aBw3OllA69f",
+            "name": "Wicked Annabella (Stereo Mix)",
+            "durationMs": 161346
+          },
+          {
+            "id": "29zjxjyTZTf6TzvhwcIw9n",
+            "name": "Starstruck (Stereo Mix)",
+            "durationMs": 140826
+          },
+          {
+            "id": "2RjakDDEHzj1uyfyh4YO9P",
+            "name": "Phenomenal Cat (Stereo Mix)",
+            "durationMs": 156893
+          },
+          {
+            "id": "7ijhvHnyWT2wImV1tzryFo",
+            "name": "People Take Pictures of Each Other (Stereo Mix) (12-track VGPS version)",
+            "durationMs": 143853
+          },
+          {
+            "id": "3OvyDayj0pwYe60MPXVbub",
+            "name": "Days",
+            "durationMs": 185400
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Kinks Are the Village Green Preservation Society",
+        "spotifyArtists": "The Kinks",
+        "spotifyYear": 1968
+      }
+    },
+    {
+      "rymId": "4649",
+      "artist": "The Kinks",
+      "title": "Arthur or the Decline and Fall of the British Empire",
+      "year": 1969,
+      "rating": 10,
+      "spotify": {
+        "albumId": "5McXJRYbHlahdYE09eonkE",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d05d5e13095ee2c342ed00bb",
+        "tracks": [
+          {
+            "id": "15mqVeWrB9bPHgI0s1Vq7w",
+            "name": "Victoria (2019 Remaster)",
+            "durationMs": 219344
+          },
+          {
+            "id": "2rTu7RmEHZuywGbRKg1Bak",
+            "name": "Yes Sir, No Sir (2019 Remaster)",
+            "durationMs": 226283
+          },
+          {
+            "id": "4MhVNEeBS8vyQ6kilOFPyk",
+            "name": "Some Mother's Son (2019 Remaster)",
+            "durationMs": 204348
+          },
+          {
+            "id": "3nkf9QtLLfv8XLIhSy2NkD",
+            "name": "Drivin' (2019 Remaster)",
+            "durationMs": 199507
+          },
+          {
+            "id": "2cyBV14w3Sq1mzrveZR1dM",
+            "name": "Brainwashed (2019 Remaster)",
+            "durationMs": 154209
+          },
+          {
+            "id": "70vcq2B7Yapey8u4BBzM2S",
+            "name": "Australia (2019 Remaster)",
+            "durationMs": 405583
+          },
+          {
+            "id": "2mEq5IjwOEvohBfU5kLBj5",
+            "name": "Shangri-La (2019 Remaster)",
+            "durationMs": 320527
+          },
+          {
+            "id": "5ZVLIhDLazevPOw03VLGKn",
+            "name": "Mr. Churchill Says (2019 Remaster)",
+            "durationMs": 282889
+          },
+          {
+            "id": "59BGPU2jHOZgfaa0pnY9aD",
+            "name": "She's Bought a Hat Like Princess Marina (2019 Remaster)",
+            "durationMs": 187280
+          },
+          {
+            "id": "5iGohJX57k905fsV8QwEIp",
+            "name": "Young and Innocent Days (2019 Remaster)",
+            "durationMs": 201533
+          },
+          {
+            "id": "7mMwATqg1Wp3WqEaMgpEjf",
+            "name": "Nothing to Say (2019 Remaster)",
+            "durationMs": 188594
+          },
+          {
+            "id": "0N7zPCGIOnQRPzNwoUqCvO",
+            "name": "Arthur (2019 Remaster)",
+            "durationMs": 327594
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Arthur or the Decline and Fall of the British Empire (2019 Remaster)",
+        "spotifyArtists": "The Kinks",
+        "spotifyYear": 1969
+      }
+    },
+    {
+      "rymId": "4650",
+      "artist": "The Kinks",
+      "title": "Something Else by The Kinks",
+      "year": 1967,
+      "rating": 10,
+      "spotify": {
+        "albumId": "65D4K5KKZqL4r0jxuaUR0M",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f37cd1c1883949b00eba5a3f",
+        "tracks": [
+          {
+            "id": "1ZQ84kCvBIlCLevifwPMbh",
+            "name": "David Watts",
+            "durationMs": 150160
+          },
+          {
+            "id": "3uATY6aP61w510oHGlo7PR",
+            "name": "Death of a Clown",
+            "durationMs": 181840
+          },
+          {
+            "id": "2Vn6fPLUWbeYycSQU1dpoz",
+            "name": "Two Sisters",
+            "durationMs": 119133
+          },
+          {
+            "id": "17oKjdBWXHUgqT0Ia5oEEX",
+            "name": "No Return (Stereo Mix)",
+            "durationMs": 119733
+          },
+          {
+            "id": "7u9eeJ6oIydGYEpclpYdt3",
+            "name": "Harry Rag (Stereo Mix)",
+            "durationMs": 134573
+          },
+          {
+            "id": "027JsS6zGcejcyd7oJjpKl",
+            "name": "Tin Soldier Man (Stereo Mix)",
+            "durationMs": 167400
+          },
+          {
+            "id": "26UpsHUWYHquOqVoUwFmuQ",
+            "name": "Situation Vacant (Stereo Mix)",
+            "durationMs": 194733
+          },
+          {
+            "id": "7cXF2kcNoa1gwktx9gkvsx",
+            "name": "Love Me Till the Sun Shines (Stereo Mix)",
+            "durationMs": 194600
+          },
+          {
+            "id": "6WoV84kGGDps5Cd3U3wyJN",
+            "name": "Lazy Old Sun (Stereo Mix)",
+            "durationMs": 166293
+          },
+          {
+            "id": "7iAFRXUBopSqmkqpL91zY1",
+            "name": "Afternoon Tea (Stereo Mix)",
+            "durationMs": 204826
+          },
+          {
+            "id": "4CNutOerhb6RkwnT7ZmPNg",
+            "name": "Funny Face (Stereo Mix)",
+            "durationMs": 135960
+          },
+          {
+            "id": "1RJL3aonhL09OTIiVbI2sH",
+            "name": "End of the Season",
+            "durationMs": 176666
+          },
+          {
+            "id": "2i7ejec3fZQkY1bHLKG7tk",
+            "name": "Waterloo Sunset (Stereo Mix)",
+            "durationMs": 193293
+          },
+          {
+            "id": "4VkQr4Ygu13W6nmDzptrk3",
+            "name": "Act Nice and Gentle (Mono Mix)",
+            "durationMs": 157600
+          },
+          {
+            "id": "2JXeS1Wv71FTVqWXHrPH0P",
+            "name": "Autumn Almanac (Mono Mix)",
+            "durationMs": 183733
+          },
+          {
+            "id": "73DeKWFBvsMPfyi4EZlNuI",
+            "name": "Susannah's Still Alive (Mono Mix)",
+            "durationMs": 140426
+          },
+          {
+            "id": "3pIv4O0olAIDdllA945L3C",
+            "name": "Wonderboy",
+            "durationMs": 167626
+          },
+          {
+            "id": "7sMZPkKgcR2rUi4AluqBJe",
+            "name": "Polly",
+            "durationMs": 169400
+          },
+          {
+            "id": "5chkmSGQjVS8YI5beWj7FE",
+            "name": "Lincoln County (Mono)",
+            "durationMs": 189893
+          },
+          {
+            "id": "0WZ0L4jvPpIvNfdFEWPi0J",
+            "name": "There's No Life Without Love",
+            "durationMs": 121440
+          },
+          {
+            "id": "1Ii0LKFDoUPGkYAT3E4v7Z",
+            "name": "Lazy Old Sun",
+            "durationMs": 175000
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Something Else By The Kinks (Bonus Track Edition)",
+        "spotifyArtists": "The Kinks",
+        "spotifyYear": 1967
+      }
+    },
+    {
+      "rymId": "173",
+      "artist": "The Velvet Underground & Nico",
+      "title": "The Velvet Underground & Nico",
+      "year": 1967,
+      "rating": 10,
+      "spotify": {
+        "albumId": "1b27KQt4bBP2hlgrHbQMIw",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273156e68c998f79f35de74452e",
+        "tracks": [
+          {
+            "id": "5BdKDydfSmYVmiZTRTT8Ku",
+            "name": "Sunday Morning",
+            "durationMs": 175813
+          },
+          {
+            "id": "0sJTrjOEyxt0k3pn1FiQUb",
+            "name": "I'm Waiting For The Man",
+            "durationMs": 279520
+          },
+          {
+            "id": "5FexwXG6IS5O7GjvjSosA4",
+            "name": "Femme Fatale",
+            "durationMs": 159000
+          },
+          {
+            "id": "4h3de3LmlSpSYxYJuUJESa",
+            "name": "Venus In Furs",
+            "durationMs": 312253
+          },
+          {
+            "id": "5HSTzkRI1sWGIMnWp2rAeT",
+            "name": "Run Run Run",
+            "durationMs": 262360
+          },
+          {
+            "id": "1N1vNR8C8SfY0UoyhVXeWm",
+            "name": "All Tomorrow's Parties",
+            "durationMs": 359680
+          },
+          {
+            "id": "4v9QRdmFgKGSJCnShJwvxi",
+            "name": "Heroin",
+            "durationMs": 433573
+          },
+          {
+            "id": "7tEkizNpyFllUo2vZTxmRy",
+            "name": "There She Goes Again",
+            "durationMs": 161026
+          },
+          {
+            "id": "1sSxaMBp2fNwMER4EE2Eci",
+            "name": "I'll Be Your Mirror",
+            "durationMs": 134040
+          },
+          {
+            "id": "0F33dTp1uO3Q9QfXxOkBws",
+            "name": "The Black Angel's Death Song",
+            "durationMs": 192053
+          },
+          {
+            "id": "2twUx9hFF1r4c4FoTRTPyE",
+            "name": "European Son",
+            "durationMs": 467240
+          },
+          {
+            "id": "6ehqs3TK18RSdt1FyaIezP",
+            "name": "All Tomorrow's Parties - Alternate Single Voice Version",
+            "durationMs": 357640
+          },
+          {
+            "id": "6HPKP8uXFylzREZdlO6w8A",
+            "name": "European Son - Alternate Version",
+            "durationMs": 546693
+          },
+          {
+            "id": "445DJ8NjsdBlcxS8aTHEQI",
+            "name": "Heroin - Alternate Version",
+            "durationMs": 377853
+          },
+          {
+            "id": "3ZkA2AD7R098kz82yRftgq",
+            "name": "All Tomorrow's Parties - Alternate Instrumental Mix",
+            "durationMs": 351960
+          },
+          {
+            "id": "0fZeG2XQZhn8gUYftEm7sP",
+            "name": "I'll Be Your Mirror - Alternate Mix",
+            "durationMs": 140346
+          },
+          {
+            "id": "1ErakbvzNqDwgjd3cIZfUM",
+            "name": "Sunday Morning - Mono",
+            "durationMs": 175160
+          },
+          {
+            "id": "7nxy0WF1ehwCnN2A3k4J77",
+            "name": "I'm Waiting For The Man - Mono",
+            "durationMs": 286120
+          },
+          {
+            "id": "0pygbYoagPtMts7nJjZPkg",
+            "name": "Femme Fatale - Mono",
+            "durationMs": 158386
+          },
+          {
+            "id": "6kikUzW07LAfJqbx5IupMc",
+            "name": "Venus In Furs - Mono",
+            "durationMs": 313386
+          },
+          {
+            "id": "1TXqCSFApRRmpHUZ9fx2vB",
+            "name": "Run Run Run - Mono",
+            "durationMs": 264240
+          },
+          {
+            "id": "16d0cVzYPo4AwGHR4U0Av0",
+            "name": "All Tomorrow's Parties - Mono",
+            "durationMs": 360226
+          },
+          {
+            "id": "4fHMRyNytbxp4Lr7mtrGZC",
+            "name": "Heroin - Mono",
+            "durationMs": 434226
+          },
+          {
+            "id": "1cbC1a0SOzS2B3ldon12Yq",
+            "name": "There She Goes Again - Mono",
+            "durationMs": 161253
+          },
+          {
+            "id": "69oZSwsdpQxKxSQjTjcyhZ",
+            "name": "I'll Be Your Mirror - Mono",
+            "durationMs": 134573
+          },
+          {
+            "id": "04U1ylCtykJhlZWAag3TB3",
+            "name": "Black Angel's Death Song - Mono",
+            "durationMs": 193640
+          },
+          {
+            "id": "6niJqtlBNznc2L8QEkeNpZ",
+            "name": "European Son - Mono",
+            "durationMs": 477746
+          },
+          {
+            "id": "1Ir0X1evMj3KjxgNCl1eMK",
+            "name": "All Tomorrow's Parties - Mono Single",
+            "durationMs": 171586
+          },
+          {
+            "id": "5cyqKChwCZpu7VLaxQA9Qu",
+            "name": "I'll Be Your Mirror - Mono Single - Alternate Ending",
+            "durationMs": 138066
+          },
+          {
+            "id": "2VxI5iilRpMK3ItxSS32bC",
+            "name": "Sunday Morning - Mono Single - Alternate Mix",
+            "durationMs": 193293
+          },
+          {
+            "id": "2sORqeZ2s845VdtUoi0U5r",
+            "name": "Femme Fatale - Mono Single",
+            "durationMs": 157226
+          },
+          {
+            "id": "0wAGj5knxG67AYy3cEtk7u",
+            "name": "The Fairest Of The Seasons",
+            "durationMs": 250680
+          },
+          {
+            "id": "1KPJa1cPXZT1odI2nkkkaZ",
+            "name": "These Days",
+            "durationMs": 214466
+          },
+          {
+            "id": "0UEbWXCmAOVR45mmaGykFh",
+            "name": "Little Sister",
+            "durationMs": 267066
+          },
+          {
+            "id": "2Ez8ZPwbc6JRRWQ96FMXxS",
+            "name": "Winter Song",
+            "durationMs": 200520
+          },
+          {
+            "id": "04idQ1ZtImEzQkQARmCxG1",
+            "name": "It Was A Pleasure Then",
+            "durationMs": 486373
+          },
+          {
+            "id": "0R78Gcspaf108Pmg7L99gs",
+            "name": "Chelsea Girls",
+            "durationMs": 447173
+          },
+          {
+            "id": "25ALtWAFTsyTa1phFSKYWw",
+            "name": "I'll Keep It With Mine",
+            "durationMs": 201653
+          },
+          {
+            "id": "4tdiLm7YJqFqsyp8YmzAfA",
+            "name": "Somewhere There's A Feather",
+            "durationMs": 140200
+          },
+          {
+            "id": "4WdWgvHLz6PCk5zogz00sb",
+            "name": "Wrap Your Troubles In Dreams",
+            "durationMs": 310493
+          },
+          {
+            "id": "57qN9F4ipSdJmAzT1orlRP",
+            "name": "Eulogy To Lenny Bruce",
+            "durationMs": 226400
+          },
+          {
+            "id": "4HWTsTy90S4q0BraXMDW19",
+            "name": "European Son - Alternative Version",
+            "durationMs": 542546
+          },
+          {
+            "id": "2zaFdjAhIN8zPbfjK9A0n0",
+            "name": "Black Angel's Death Song - Alternative Mix",
+            "durationMs": 195973
+          },
+          {
+            "id": "2XypqP7RTalpsUmogI0J9H",
+            "name": "All Tomorrow's Parties - Alternative Version",
+            "durationMs": 353826
+          },
+          {
+            "id": "6jeCyGmWLAChHuv6H9bUoi",
+            "name": "I'll Be Your Mirror - Alternative Version",
+            "durationMs": 131133
+          },
+          {
+            "id": "4zgb3F78EHNj0uG1plqOjX",
+            "name": "Heroin - Alternative Version",
+            "durationMs": 376600
+          },
+          {
+            "id": "1LmFUgQSSdwvUldgoxUVrI",
+            "name": "Femme Fatale - Alternative Mix",
+            "durationMs": 155906
+          },
+          {
+            "id": "707829ylf9OUun5W32nWSx",
+            "name": "Venus In Furs - Alternative Version",
+            "durationMs": 269466
+          },
+          {
+            "id": "3csQzhpkYHDiBzALbUeqPQ",
+            "name": "Waiting For The Man - Alternative Version",
+            "durationMs": 250093
+          },
+          {
+            "id": "3pj9JdjeIl8YNln5cRIBT6",
+            "name": "Run Run Run - Alternative Mix",
+            "durationMs": 263706
+          },
+          {
+            "id": "3SeDIxD725Ww1YfwQAcLks",
+            "name": "Walk Alone - The Factory Rehearsal",
+            "durationMs": 207840
+          },
+          {
+            "id": "1P4Bo518iSHE7yLCxN82Io",
+            "name": "Crackin' Up / Venus In Furs - The Factory Rehearsal",
+            "durationMs": 232960
+          },
+          {
+            "id": "2SHJzbR6sizI2balLTJ9Mk",
+            "name": "Miss Joanie Lee - The Factory Rehearsal",
+            "durationMs": 709853
+          },
+          {
+            "id": "5v0BhFwLopIhyfBFnqxYdm",
+            "name": "Heroin - The Factory Rehearsal",
+            "durationMs": 375120
+          },
+          {
+            "id": "2C6ctNmXfHEXzUMX6OmHkD",
+            "name": "There She Goes Again - The Factory Rehearsal",
+            "durationMs": 129413
+          },
+          {
+            "id": "4qnDMUcHtBdftbWXpR6oEj",
+            "name": "There She Goes Again - The Factory Rehearsal",
+            "durationMs": 175546
+          },
+          {
+            "id": "2qBi3zGa2fVVbLjjLos04b",
+            "name": "Melody Laughter - Live At Valleydale Ballroom, Columbus, Ohio / 1966",
+            "durationMs": 1706720
+          },
+          {
+            "id": "56skAmWrXwDmNmjE4IhcnL",
+            "name": "Femme Fatale - Live At Valleydale Ballroom, Columbus, Ohio / 1966",
+            "durationMs": 157333
+          },
+          {
+            "id": "3IivW1LZW9RVDZnyAIatnN",
+            "name": "Venus In Furs - Live At Valleydale Ballroom, Columbus, Ohio / 1966",
+            "durationMs": 285613
+          },
+          {
+            "id": "3LZscZV1e5UXnu2CQrt9Vp",
+            "name": "Black Angel's Death Song - Live At Valleydale Ballroom, Columbus, Ohio / 1966",
+            "durationMs": 289173
+          },
+          {
+            "id": "2FAOTtBruskLqedtISmu01",
+            "name": "All Tomorrow's Parties - Live At Valleydale Ballroom, Columbus, Ohio / 1966",
+            "durationMs": 303346
+          },
+          {
+            "id": "5WRpVme5zcktPx7hRQ8nU1",
+            "name": "Waiting For The Man - Live",
+            "durationMs": 290800
+          },
+          {
+            "id": "1BAJFBaiYoO8uHjT1rbiiv",
+            "name": "Heroin - Live",
+            "durationMs": 402920
+          },
+          {
+            "id": "6J82rlQJhvPhGKhYaQtHYT",
+            "name": "Run Run Run - Live",
+            "durationMs": 523546
+          },
+          {
+            "id": "7kJPOybPGExkBvmtEXFWBe",
+            "name": "The Nothing Song - Live",
+            "durationMs": 1676866
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Velvet Underground & Nico (45th Anniversary / Super Deluxe Edition)",
+        "spotifyArtists": "The Velvet Underground, Nico",
+        "spotifyYear": 1967
+      }
+    },
+    {
+      "rymId": "175",
+      "artist": "The Velvet Underground",
+      "title": "The Velvet Underground",
+      "year": 1969,
+      "rating": 9,
+      "spotify": {
+        "albumId": "2HOf3Nb44Us8U9oEtKLSrX",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2739a2c40b6a1af4a92aac991c5",
+        "tracks": [
+          {
+            "id": "2Vp0ue7NNLHFF6RKSdOEuN",
+            "name": "Candy Says",
+            "durationMs": 243666
+          },
+          {
+            "id": "2GKxyUw8MQNvc0EP4016Yg",
+            "name": "What Goes On",
+            "durationMs": 293813
+          },
+          {
+            "id": "4MpXtUeOPwa65Szx9WZID6",
+            "name": "Some Kinda Love",
+            "durationMs": 242840
+          },
+          {
+            "id": "11VwZwNF29HrqwalYUMitb",
+            "name": "Pale Blue Eyes",
+            "durationMs": 339533
+          },
+          {
+            "id": "63p86I7aYxgAM2xBgqlPEc",
+            "name": "Jesus",
+            "durationMs": 203546
+          },
+          {
+            "id": "7nDdOteeLpysxhVjpZsptm",
+            "name": "Beginning To See The Light",
+            "durationMs": 280080
+          },
+          {
+            "id": "721ekzqDYU4h7Y17ywUCFf",
+            "name": "I'm Set Free",
+            "durationMs": 244253
+          },
+          {
+            "id": "01OVvCmMDJ5E390NcDOx3v",
+            "name": "That's The Story Of My Life",
+            "durationMs": 123506
+          },
+          {
+            "id": "3vBROSNZ8V3XjfZHdCCsgT",
+            "name": "The Murder Mystery",
+            "durationMs": 534733
+          },
+          {
+            "id": "6cA1usDL8nTHeSgFewQat3",
+            "name": "After Hours",
+            "durationMs": 127453
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "The Velvet Underground (45th Anniversary)",
+        "spotifyArtists": "The Velvet Underground",
+        "spotifyYear": 1969
+      }
+    },
+    {
+      "rymId": "8328",
+      "artist": "Creedence Clearwater Revival",
+      "title": "Cosmo's Factory",
+      "year": 1970,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5w2X5ZmdE4u0XGkOU7BiLG",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2736e186edfb8fe3710fdc1f7c2",
+        "tracks": [
+          {
+            "id": "7h1N6ijC3H1i47Du5mzip0",
+            "name": "Ramble Tamble",
+            "durationMs": 431188
+          },
+          {
+            "id": "0XdmB84JfiqDXofFXJAnxU",
+            "name": "Before You Accuse Me (Take A Look At Yourself)",
+            "durationMs": 207197
+          },
+          {
+            "id": "61gWgIkR2YtkIet9XjUc7X",
+            "name": "Travelin' Band",
+            "durationMs": 128798
+          },
+          {
+            "id": "4mZR2nU40CkZK5EqsRXaC1",
+            "name": "Ooby Dooby",
+            "durationMs": 127429
+          },
+          {
+            "id": "1YqJSpIxdavjQ8BxAttU0r",
+            "name": "Lookin' Out My Back Door",
+            "durationMs": 152466
+          },
+          {
+            "id": "5VfgDw3oOzcNoszDwkLQhH",
+            "name": "Run Through The Jungle",
+            "durationMs": 185106
+          },
+          {
+            "id": "56dtB7EzO7EneUgYwX8krC",
+            "name": "Up Around The Bend",
+            "durationMs": 159172
+          },
+          {
+            "id": "3oncYZcPjP5G11gXhOzR5U",
+            "name": "My Baby Left Me",
+            "durationMs": 139395
+          },
+          {
+            "id": "2ciMJGCDW70hqq18Vgui68",
+            "name": "Who'll Stop The Rain",
+            "durationMs": 147279
+          },
+          {
+            "id": "0eOt6ksp9ng4a00UdIw2OE",
+            "name": "I Heard It Through The Grapevine",
+            "durationMs": 667409
+          },
+          {
+            "id": "1Vu8p3k4rfbETQCjTGjmzg",
+            "name": "Long As I Can See The Light",
+            "durationMs": 213030
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Cosmo's Factory",
+        "spotifyArtists": "Creedence Clearwater Revival",
+        "spotifyYear": 1970
+      }
+    },
+    {
+      "rymId": "993",
+      "artist": "Rolling Stones",
+      "title": "Let It Bleed",
+      "year": 1969,
+      "rating": 9,
+      "spotify": {
+        "albumId": "4l4u9e9jSbotSXNjYfOugy",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732af30c881bb23cfb82a8cf99",
+        "tracks": [
+          {
+            "id": "6H3kDe7CGoWYBabAeVWGiD",
+            "name": "Gimme Shelter",
+            "durationMs": 270773
+          },
+          {
+            "id": "4GNEqWXhKEoMyL3k5wF0r7",
+            "name": "Love In Vain",
+            "durationMs": 259106
+          },
+          {
+            "id": "6zD3VBPn2VNDdmLEg0coPt",
+            "name": "Country Honk",
+            "durationMs": 187466
+          },
+          {
+            "id": "31YMV7aMItO8jzyc10iRrS",
+            "name": "Live With Me",
+            "durationMs": 213133
+          },
+          {
+            "id": "06FcMPcosZg13x2QODDDK6",
+            "name": "Let It Bleed",
+            "durationMs": 327880
+          },
+          {
+            "id": "3tIvHt7VaIenprWXrYzgwb",
+            "name": "Midnight Rambler",
+            "durationMs": 412760
+          },
+          {
+            "id": "2pbHaKsIRuIqjZHCLpyQMv",
+            "name": "You Got The Silver",
+            "durationMs": 170373
+          },
+          {
+            "id": "5m6livL7ccIS92wq16n52r",
+            "name": "Monkey Man",
+            "durationMs": 251453
+          },
+          {
+            "id": "6lFZbCc7pn6Lme1NP7qQqQ",
+            "name": "You Can't Always Get What You Want",
+            "durationMs": 448720
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Let It Bleed",
+        "spotifyArtists": "The Rolling Stones",
+        "spotifyYear": 1969
+      }
+    },
+    {
+      "rymId": "996",
+      "artist": "The Rolling Stones",
+      "title": "Exile on Main St.",
+      "year": 1972,
+      "rating": 9,
+      "spotify": {
+        "albumId": "5U4dnRZsfW8NmwBBkELFPh",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ba42bfcfeed19018b1f8cab8",
+        "tracks": [
+          {
+            "id": "42o3gy9e8dzBHvQE991ad8",
+            "name": "Rocks Off",
+            "durationMs": 271933
+          },
+          {
+            "id": "0SojSZcka4j8l8Sl0W9jUZ",
+            "name": "Rip This Joint",
+            "durationMs": 143293
+          },
+          {
+            "id": "3u28KPrRmJiNC39Fm3tZVe",
+            "name": "Shake Your Hips",
+            "durationMs": 179000
+          },
+          {
+            "id": "3NDEunNz7GMb6SkkPYTvd2",
+            "name": "Casino Boogie",
+            "durationMs": 214466
+          },
+          {
+            "id": "4hq0S6wznq7SHDyMOFXL9i",
+            "name": "Tumbling Dice",
+            "durationMs": 226333
+          },
+          {
+            "id": "1hJrWWK74fKL7eeV3CFOvF",
+            "name": "Sweet Virginia",
+            "durationMs": 266560
+          },
+          {
+            "id": "5SiCTf5r1cVjQXAXB2StpS",
+            "name": "Torn And Frayed",
+            "durationMs": 257239
+          },
+          {
+            "id": "60OdLDvZpHe4kVDYwNtYh9",
+            "name": "Sweet Black Angel",
+            "durationMs": 177666
+          },
+          {
+            "id": "05BcisbhFsmVpTZ0kGD7gK",
+            "name": "Loving Cup",
+            "durationMs": 264266
+          },
+          {
+            "id": "0rucXTNGt4BHpAjNR5d0UF",
+            "name": "Happy",
+            "durationMs": 184626
+          },
+          {
+            "id": "7wSVa5dSpjM62zrF0WsMVQ",
+            "name": "Turd On The Run",
+            "durationMs": 157173
+          },
+          {
+            "id": "74mpiRPDd2rFeBR1Yl60I3",
+            "name": "Ventilator Blues",
+            "durationMs": 204573
+          },
+          {
+            "id": "22OTrlQy1sXdtdo1VgDUZb",
+            "name": "I Just Want To See His Face",
+            "durationMs": 172626
+          },
+          {
+            "id": "2u63axjx9VKmFfQNqmpi8a",
+            "name": "Let It Loose",
+            "durationMs": 317173
+          },
+          {
+            "id": "5GHKbjIY0gTCqoY5aruDDc",
+            "name": "All Down The Line",
+            "durationMs": 229493
+          },
+          {
+            "id": "09eg3FGzsZQbZk8qEXhJIA",
+            "name": "Stop Breaking Down",
+            "durationMs": 274773
+          },
+          {
+            "id": "1iii3DosaivkmvUDmhZhCP",
+            "name": "Shine A Light",
+            "durationMs": 256825
+          },
+          {
+            "id": "7faybsF8gIVvWtAp9hUcI2",
+            "name": "Soul Survivor",
+            "durationMs": 228840
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Exile On Main Street (2010 Re-Mastered)",
+        "spotifyArtists": "The Rolling Stones",
+        "spotifyYear": 1972,
+        "override": true
+      }
+    },
+    {
+      "rymId": "3225",
+      "artist": "Iggy Pop",
+      "title": "Lust for Life",
+      "year": 1977,
+      "rating": 9,
+      "spotify": {
+        "albumId": "2jnV6ytZOmt71iEC5xHEYz",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2734aa5f679427e35409a06f225",
+        "tracks": [
+          {
+            "id": "21YxK0klhpfLW8budkJaMF",
+            "name": "Lust For Life",
+            "durationMs": 313925
+          },
+          {
+            "id": "70ZlAJGfC4DesFw4oQ7YZM",
+            "name": "Sixteen",
+            "durationMs": 146598
+          },
+          {
+            "id": "6bQQEDyyAEmwYqXmMpvCFh",
+            "name": "Some Weird Sin",
+            "durationMs": 221374
+          },
+          {
+            "id": "15BQ7vEDv2LJuh8TxWIhtd",
+            "name": "The Passenger",
+            "durationMs": 283360
+          },
+          {
+            "id": "5VOJ3OFUebaLuNqzJSNeEn",
+            "name": "Tonight",
+            "durationMs": 219831
+          },
+          {
+            "id": "7LnZRiI3GuF44G6mqLWQA1",
+            "name": "Success",
+            "durationMs": 265581
+          },
+          {
+            "id": "71PBcyiD7v41DW2cwxD8uk",
+            "name": "Turn Blue",
+            "durationMs": 415841
+          },
+          {
+            "id": "0pBBiZIVHbcmHbwacGGLhR",
+            "name": "Neighborhood Threat",
+            "durationMs": 205280
+          },
+          {
+            "id": "6YQjQdymVA9tvE0Ygnpsdd",
+            "name": "Fall In Love With Me",
+            "durationMs": 392160
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Lust For Life",
+        "spotifyArtists": "Iggy Pop",
+        "spotifyYear": 1977
+      }
+    },
+    {
+      "rymId": "2406",
+      "artist": "Neil Young & Crazy Horse",
+      "title": "Rust Never Sleeps",
+      "year": 1979,
+      "rating": 8,
+      "spotify": {
+        "albumId": "2QqocFdpBkxOBLcIRo6UuJ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273db0caaa2b01471d6068053a8",
+        "tracks": [
+          {
+            "id": "6VltRkmJbCTqgKrTHk4Ulw",
+            "name": "My My, Hey Hey (Out of the Blue) - 2016 Remaster",
+            "durationMs": 227705
+          },
+          {
+            "id": "5vqPaQXtqPtLolcDPcWuWH",
+            "name": "Thrasher - 2016 Remaster",
+            "durationMs": 339960
+          },
+          {
+            "id": "3yHcaItF9KhgB1eDjCPFwA",
+            "name": "Ride My Llama - 2016 Remaster",
+            "durationMs": 150350
+          },
+          {
+            "id": "2fxp8KuyxjwEfsFo8bTSuE",
+            "name": "Pocahontas - 2016 Remaster",
+            "durationMs": 204051
+          },
+          {
+            "id": "2Cid2YVl8VKip1q81uQ5KG",
+            "name": "Sail Away - 2016 Remaster",
+            "durationMs": 227117
+          },
+          {
+            "id": "5F1CxsOXX6altKaKlEPuox",
+            "name": "Powderfinger - 2016 Remaster",
+            "durationMs": 330480
+          },
+          {
+            "id": "1eZUrU6VDISJcFDSVdeGDJ",
+            "name": "Welfare Mothers - 2016 Remaster",
+            "durationMs": 229186
+          },
+          {
+            "id": "5WYAtVA53iEaOydvmRHncu",
+            "name": "Sedan Delivery - 2016 Remaster",
+            "durationMs": 279480
+          },
+          {
+            "id": "5sy3FriCrKYGJp6JBOnlOo",
+            "name": "Hey Hey, My My (Into the Black) - 2016 Remaster",
+            "durationMs": 312660
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Rust Never Sleeps",
+        "spotifyArtists": "Neil Young, Crazy Horse",
+        "spotifyYear": 1979
+      }
+    }
+  ]
+}

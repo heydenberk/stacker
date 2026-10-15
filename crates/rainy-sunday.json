@@ -266,75 +266,6 @@
       }
     },
     {
-      "rymId": "2711",
-      "artist": "Slowdive",
-      "title": "Souvlaki",
-      "year": 1993,
-      "rating": 10,
-      "spotify": {
-        "albumId": "53eHm1f3sFiSzWMaKOl98Z",
-        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f6e31941d10e4819d290af41",
-        "tracks": [
-          {
-            "id": "33HRECrmuelZxOpid6XTNX",
-            "name": "Alison",
-            "durationMs": 230986
-          },
-          {
-            "id": "1wXJjKJy5Pt38Bu3tUzTUL",
-            "name": "Machine Gun",
-            "durationMs": 266706
-          },
-          {
-            "id": "4qyJE4D584f7qJCRSy7HOE",
-            "name": "40 Days",
-            "durationMs": 194120
-          },
-          {
-            "id": "1dmph9kxaIm9btfmCT9r2c",
-            "name": "Sing",
-            "durationMs": 288493
-          },
-          {
-            "id": "5FuYgi1xinZAQyD5CYLpUJ",
-            "name": "Here She Comes",
-            "durationMs": 137853
-          },
-          {
-            "id": "76JhicgPtW4zbN72tpnMyA",
-            "name": "Souvlaki Space Station",
-            "durationMs": 357373
-          },
-          {
-            "id": "0oxYB9GoOIDrdzniNdKC44",
-            "name": "When the Sun Hits",
-            "durationMs": 285906
-          },
-          {
-            "id": "1I3f8tsoYbIPEgQ1TPvJPb",
-            "name": "Altogether",
-            "durationMs": 221133
-          },
-          {
-            "id": "1G6E8yhilqdeZuduRrob1S",
-            "name": "Melon Yellow",
-            "durationMs": 232946
-          },
-          {
-            "id": "3MmRfG64qt04Efx9gK9Ec8",
-            "name": "Dagger",
-            "durationMs": 218253
-          }
-        ]
-      },
-      "match": {
-        "confidence": "high",
-        "spotifyName": "Souvlaki",
-        "spotifyArtists": "Slowdive",
-        "spotifyYear": 1993
-      }
-    },
-    {
       "rymId": "18447",
       "artist": "Low",
       "title": "I Could Live in Hope",
@@ -406,75 +337,6 @@
         "spotifyName": "I Could Live In Hope",
         "spotifyArtists": "Low",
         "spotifyYear": 1994
-      }
-    },
-    {
-      "rymId": "1179",
-      "artist": "Cocteau Twins",
-      "title": "Heaven or Las Vegas",
-      "year": 1990,
-      "rating": 10,
-      "spotify": {
-        "albumId": "5lEphbceIgaK1XxWeSrC9E",
-        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273fe6211303e796f3d5b7a0e02",
-        "tracks": [
-          {
-            "id": "37pKTyMwalomKCZjxTc2QZ",
-            "name": "Cherry-coloured Funk",
-            "durationMs": 192466
-          },
-          {
-            "id": "1DXD0wVXXHwUYo9AXbcMMI",
-            "name": "Pitch the Baby",
-            "durationMs": 194080
-          },
-          {
-            "id": "0Coai3QxvjCXWMhVN1hpgE",
-            "name": "Iceblink Luck",
-            "durationMs": 198666
-          },
-          {
-            "id": "2vDC9iyQpY3EsioJD8pRiW",
-            "name": "Fifty-fifty Clown",
-            "durationMs": 190213
-          },
-          {
-            "id": "0AxZUYeQ9bZwSdt1LmZuok",
-            "name": "Heaven or Las Vegas",
-            "durationMs": 298400
-          },
-          {
-            "id": "20nCwr4GiOZ02PVePsuLEd",
-            "name": "I Wear Your Ring",
-            "durationMs": 209346
-          },
-          {
-            "id": "5SuIuaAjFbaxJq9W1qKGw2",
-            "name": "Fotzepolitic",
-            "durationMs": 210933
-          },
-          {
-            "id": "5Cg9aQIEM2exLNBPupf6V4",
-            "name": "Wolf in the Breast",
-            "durationMs": 211200
-          },
-          {
-            "id": "6MJ8YgmhMphGcCX5OVS28W",
-            "name": "Road, River and Rail",
-            "durationMs": 201146
-          },
-          {
-            "id": "6i18oi8cbvlv9Y2QVBSzkB",
-            "name": "Frou-frou Foxes in Midsummer Fires",
-            "durationMs": 338053
-          }
-        ]
-      },
-      "match": {
-        "confidence": "high",
-        "spotifyName": "Heaven or Las Vegas",
-        "spotifyArtists": "Cocteau Twins",
-        "spotifyYear": 1990
       }
     },
     {
@@ -653,164 +515,6 @@
         "spotifyName": "I Can Hear The Heart Beating As One",
         "spotifyArtists": "Yo La Tengo",
         "spotifyYear": 1997
-      }
-    },
-    {
-      "rymId": "341973",
-      "artist": "Broadcast",
-      "title": "Tender Buttons",
-      "year": 2005,
-      "rating": 10,
-      "spotify": {
-        "albumId": "6xBYjKF7uvteMN51uxVNJv",
-        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273efeb5afb5e7bcb9c6660fe39",
-        "tracks": [
-          {
-            "id": "3qr2hBL12NbRmFWKlzI3Zs",
-            "name": "I Found The F",
-            "durationMs": 141840
-          },
-          {
-            "id": "2Lbm0ObmRqhWhPmvixtI3H",
-            "name": "Black Cat",
-            "durationMs": 238440
-          },
-          {
-            "id": "5nCScIjCua6SYp4VKNjugD",
-            "name": "Tender Buttons",
-            "durationMs": 172000
-          },
-          {
-            "id": "31cQKr1hxHfIWVfcnuNzrQ",
-            "name": "America's Boy",
-            "durationMs": 214586
-          },
-          {
-            "id": "2ckhAiLT5eV5blWvyDs8Lh",
-            "name": "Tears In The Typing Pool",
-            "durationMs": 132160
-          },
-          {
-            "id": "5GDgMlMvHDVvsywryu3Fs2",
-            "name": "Corporeal",
-            "durationMs": 235013
-          },
-          {
-            "id": "0Wf3pvQ78u3Ivhr9ZBzVTA",
-            "name": "Bit 35",
-            "durationMs": 109853
-          },
-          {
-            "id": "3bEL0LHSMUsdMxbB7Hv2pM",
-            "name": "Arc Of A Journey",
-            "durationMs": 317386
-          },
-          {
-            "id": "0jelXL9WiSdB4abBRHbw2z",
-            "name": "Michael A Grammar",
-            "durationMs": 237013
-          },
-          {
-            "id": "6OS05hpsNSW2yTowPuX4vw",
-            "name": "Subject To the Ladder",
-            "durationMs": 194026
-          },
-          {
-            "id": "7pEhzQFogXSz6vq738N79d",
-            "name": "Minus 3",
-            "durationMs": 47640
-          },
-          {
-            "id": "4FDu6n1fAwcrteMEs69MeB",
-            "name": "Goodbye Girls",
-            "durationMs": 188973
-          },
-          {
-            "id": "31RfSbxhdSn0INnoxAmMQ2",
-            "name": "You And Me In Time",
-            "durationMs": 84280
-          },
-          {
-            "id": "1jQFq4gbWxsU8JOZuxqwlP",
-            "name": "I Found The End",
-            "durationMs": 125466
-          }
-        ]
-      },
-      "match": {
-        "confidence": "high",
-        "spotifyName": "Tender Buttons",
-        "spotifyArtists": "Broadcast",
-        "spotifyYear": 2005
-      }
-    },
-    {
-      "rymId": "13507",
-      "artist": "João Gilberto",
-      "title": "João Gilberto",
-      "year": 1973,
-      "rating": 10,
-      "spotify": {
-        "albumId": "5rFhRJLR6CDPSxwSPTONA4",
-        "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732c91900f002c52ed72960fee",
-        "tracks": [
-          {
-            "id": "7Jj66NaXj1Nn6xrkB7vlSf",
-            "name": "Águas de Março",
-            "durationMs": 323657
-          },
-          {
-            "id": "5DPhD44bQHEOBPGRzc3Ebl",
-            "name": "Undiú",
-            "durationMs": 397453
-          },
-          {
-            "id": "3UYvX9Hs1kVJIhbuGSRgLl",
-            "name": "Na Baixa do Sapateiro",
-            "durationMs": 283585
-          },
-          {
-            "id": "2jlHfEYaKWrHzL7YKHHJq3",
-            "name": "Avarandado",
-            "durationMs": 269766
-          },
-          {
-            "id": "7nis0pALSkz4Tai1hJilet",
-            "name": "Falsa Baiana",
-            "durationMs": 225071
-          },
-          {
-            "id": "6RODRlHqwSxfI6WmKjqPCL",
-            "name": "Eu Quero um Samba",
-            "durationMs": 286302
-          },
-          {
-            "id": "4sUUUvNseGlHTjy0Fuus4W",
-            "name": "Eu Vim da Bahia",
-            "durationMs": 352078
-          },
-          {
-            "id": "23Z0eWEi3SbJ1Fx0Ta3A26",
-            "name": "Valsa (Como São Lindos os Youguis)",
-            "durationMs": 199392
-          },
-          {
-            "id": "2O6G533UXYJmbkrhzmt7OC",
-            "name": "É preciso Perdoar",
-            "durationMs": 308166
-          },
-          {
-            "id": "4im3cvYs2A3dIjBDlXJU3C",
-            "name": "Izaura",
-            "durationMs": 328097
-          }
-        ]
-      },
-      "match": {
-        "confidence": "high",
-        "spotifyName": "João Gilberto",
-        "spotifyArtists": "João Gilberto",
-        "spotifyYear": 1973
       }
     },
     {
@@ -1145,80 +849,6 @@
       }
     },
     {
-      "rymId": "1072581",
-      "artist": "Beach House",
-      "title": "Devotion",
-      "year": 2008,
-      "rating": 9,
-      "spotify": {
-        "albumId": "6Unw8A3kdy8ZPj6MmlbA7E",
-        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273cad79d4a8ac2e2acc58dbfef",
-        "tracks": [
-          {
-            "id": "36zLN7ZLhQWJUkzPss2KAo",
-            "name": "Wedding Bell",
-            "durationMs": 234733
-          },
-          {
-            "id": "6PB7R41AktgVRoJHE3XlWr",
-            "name": "You Came To Me",
-            "durationMs": 245333
-          },
-          {
-            "id": "2r3XoShDJnYhatcpfobVmC",
-            "name": "Gila",
-            "durationMs": 286240
-          },
-          {
-            "id": "1Qy1eRka08FJ0Bhz7ZenYS",
-            "name": "Turtle Island",
-            "durationMs": 239733
-          },
-          {
-            "id": "4amD9JhozTIpdnq73TRN1G",
-            "name": "Holy Dances",
-            "durationMs": 258959
-          },
-          {
-            "id": "5gsMl6zvPWbtBNGjuR0FWJ",
-            "name": "All The Years",
-            "durationMs": 216253
-          },
-          {
-            "id": "2ldmzcLJvYv4WHPrzGbBgq",
-            "name": "Heart of Chambers",
-            "durationMs": 265173
-          },
-          {
-            "id": "1G6FgJHNiPQoup4wFUTHGg",
-            "name": "Some Things Last a Long Time",
-            "durationMs": 151626
-          },
-          {
-            "id": "7imyu7tXXhz2XtGKLZIUhw",
-            "name": "Astronaut",
-            "durationMs": 304560
-          },
-          {
-            "id": "58MB60rzfDkXJtalRUaLys",
-            "name": "D.A.R.L.I.N.G.",
-            "durationMs": 198133
-          },
-          {
-            "id": "4UEJ9jO9Q1Iainvq1Rp9t7",
-            "name": "Home Again",
-            "durationMs": 248866
-          }
-        ]
-      },
-      "match": {
-        "confidence": "high",
-        "spotifyName": "Devotion",
-        "spotifyArtists": "Beach House",
-        "spotifyYear": 2008
-      }
-    },
-    {
       "rymId": "9999224",
       "artist": "Weyes Blood",
       "title": "Titanic Rising",
@@ -1497,6 +1127,55 @@
         "spotifyName": "Long Division",
         "spotifyArtists": "Low",
         "spotifyYear": 1995
+      }
+    },
+    {
+      "rymId": "2779",
+      "artist": "Talk Talk",
+      "title": "Laughing Stock",
+      "year": 1991,
+      "rating": 10,
+      "spotify": {
+        "albumId": "3NEa40lY9rNpSIALSIKn79",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a21ec108877d27b0550014d3",
+        "tracks": [
+          {
+            "id": "6MuYpktGeHQXZHHko0Tmvl",
+            "name": "Myrrhman",
+            "durationMs": 332906
+          },
+          {
+            "id": "3xViFAeMraq0E875zyOXfd",
+            "name": "Ascension Day",
+            "durationMs": 359733
+          },
+          {
+            "id": "49yXUztT0qYz0xA4vnm0zP",
+            "name": "After The Flood",
+            "durationMs": 578466
+          },
+          {
+            "id": "5bp1DplzEigAIDHj7vY32G",
+            "name": "Taphead",
+            "durationMs": 459226
+          },
+          {
+            "id": "3MSXyJUuFs9SZ7K5hd54nA",
+            "name": "New Grass",
+            "durationMs": 580240
+          },
+          {
+            "id": "4ADboMaZ1PMfK4Np69Zb4K",
+            "name": "Runeii",
+            "durationMs": 297626
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Laughing Stock",
+        "spotifyArtists": "Talk Talk",
+        "spotifyYear": 1991
       }
     }
   ]
