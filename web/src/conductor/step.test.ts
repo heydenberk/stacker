@@ -432,6 +432,47 @@ describe('failures', () => {
   });
 });
 
+describe('ordered crates', () => {
+  const ordered = (extra: Parameters<typeof makeCrate>[0] = []) => ({ ...makeCrate(extra), ordered: true });
+  const inOrder = new Map<string, Crate>([['c', ordered()]]);
+
+  it('plays records in crate order instead of shuffling', () => {
+    // random = 0 shuffles ['r1','r2','r3'] out of crate order.
+    const r = go(initialState(), { type: 'chooseCrate', crateId: 'c' }, { crates: inOrder, random: () => 0 });
+    expect(r.state.order).toEqual(['r1', 'r2', 'r3']);
+    expect(r.actions).toEqual([userPlay('r1')]);
+  });
+
+  it('starts again from the first record after the last', () => {
+    let s = go(initialState(), { type: 'chooseCrate', crateId: 'c' }, { crates: inOrder }).state;
+    s = go(s, { type: 'skipRecord' }, { crates: inOrder }).state;
+    s = go(s, { type: 'skipRecord' }, { crates: inOrder }).state;
+    const r = go(s, { type: 'skipRecord' }, { crates: inOrder, random: () => 0 });
+    expect(r.state).toMatchObject({ order: ['r1', 'r2', 'r3'], pos: 0 });
+    expect(r.actions).toEqual([userPlay('r1')]);
+  });
+
+  it('takes the edited crate order and keeps its place on the current record', () => {
+    let s = go(initialState(), { type: 'chooseCrate', crateId: 'c' }, { crates: inOrder }).state;
+    s = go(s, { type: 'skipRecord' }, { crates: inOrder }).state; // now on r2
+    const base = ordered([record(5)]);
+    const edited = { ...base, records: [base.records[4], ...base.records.slice(0, 4)] }; // r5 first
+    const r = go(s, { type: 'crateUpdated' }, { crates: new Map([['c', edited]]) });
+    expect(r.state).toMatchObject({ order: ['r5', 'r1', 'r2', 'r3'], pos: 2 });
+    expect(r.actions).toEqual([]);
+  });
+
+  it('moves on to the record that followed when the current one is removed', () => {
+    let s = go(initialState(), { type: 'chooseCrate', crateId: 'c' }, { crates: inOrder }).state;
+    s = go(s, { type: 'skipRecord' }, { crates: inOrder }).state; // now on r2
+    const base = ordered();
+    const edited = { ...base, records: base.records.filter((r) => r.rymId !== 'r2') };
+    const r = go(s, { type: 'crateUpdated' }, { crates: new Map([['c', edited]]) });
+    expect(r.state).toMatchObject({ order: ['r1', 'r3'], pos: 1 });
+    expect(r.actions).toEqual([autoPlay('r3')]);
+  });
+});
+
 describe('crate edits', () => {
   it('adds new records to the unplayed part', () => {
     const s = playing(0);

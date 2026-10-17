@@ -133,7 +133,7 @@ export async function resolveCrate(
   }
 
   const records: CrateRecord[] = [];
-  const meta = { id: draft.id, name: draft.name, mood: draft.mood, createdAt: draft.createdAt };
+  const meta = { id: draft.id, name: draft.name, mood: draft.mood, createdAt: draft.createdAt, ...(draft.ordered ? { ordered: true } : {}) };
   for (const [i, r] of draft.records.entries()) {
     const entry = entryFor(r, library)!;
     const rawOverride = overrides[r.rymId];

@@ -40,6 +40,8 @@ export interface Crate {
   name: string;
   mood: string;
   createdAt: string;
+  /** Play the records in the listed order instead of shuffling them, e.g. for a guided tour. */
+  ordered?: boolean;
   records: CrateRecord[];
 }
 

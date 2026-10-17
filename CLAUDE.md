@@ -17,6 +17,7 @@ Crates are curated by Claude in conversation with Eric, from his Rate Your Music
    { "id": "rainy-sunday", "name": "Rainy Sunday", "mood": "hushed, mostly acoustic, for a grey afternoon",
      "createdAt": "YYYY-MM-DD", "records": [{ "rymId": "…" }] }
    ```
+   Add `"ordered": true` for a crate that should play in its listed order (e.g. Classical Tour) instead of shuffling.
 5. **Resolve:** `npm run resolve -- crates/<id>.json`. This needs `.env` with Spotify credentials. If a run stops partway, for example because Spotify asked it to slow down, it saves the records it finished. Re-run the same command to continue.
 6. **Review** every `[medium]`, `[low]` and `[none]` line with Eric. Fix them in `library/overrides.json`:
    - `"<rymId>": "<spotifyAlbumId>"` for a wrong match. The value may be a bare album id, a `spotify:album:<id>` URI, or an `https://open.spotify.com/album/<id>` link (the Spotify share link works as is).

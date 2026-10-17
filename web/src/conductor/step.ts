@@ -1,5 +1,5 @@
 import type { Crate, CrateRecord } from '../../../shared/crate';
-import { newLap, reconcileOrder } from './shuffle';
+import { newLap, reconcileOrder, reconcileOrdered } from './shuffle';
 import type { Action, ConductorEvent, ConductorState, PlayOrigin, PlayerSnapshot, Problem, StepContext } from './types';
 
 /** How long to wait for Spotify to start a requested record before assuming something else won. */
@@ -96,6 +96,12 @@ export function playableIds(crate: Crate): string[] {
   return crate.records.filter((r) => r.spotify !== null).map((r) => r.rymId);
 }
 
+/** A fresh lap through the crate: its own order for an ordered crate, otherwise a shuffle. */
+function lapFor(crate: Crate, random: () => number, avoidFirst: string | null): string[] {
+  const ids = playableIds(crate);
+  return crate.ordered ? ids : newLap(ids, random, avoidFirst);
+}
+
 export function currentRecord(state: ConductorState, crates: ReadonlyMap<string, Crate>): CrateRecord | null {
   if (!state.crateId) return null;
   const rymId = state.order[state.pos];
@@ -160,7 +166,7 @@ function advance(state: ConductorState, ctx: StepContext, origin: PlayOrigin): S
   let order = state.order;
   let pos = state.pos + 1;
   if (pos >= order.length) {
-    order = newLap(playableIds(crate), ctx.random, state.order[state.pos] ?? null);
+    order = lapFor(crate, ctx.random, state.order[state.pos] ?? null);
     pos = 0;
   }
   return startRecord({ ...state, order, pos }, ctx, 0, 0, origin);
@@ -312,11 +318,13 @@ function onCrateUpdated(state: ConductorState, ctx: StepContext): StepResult {
   const crate = ctx.crates.get(state.crateId);
   if (!crate) return none({ ...initialState(), problems: state.problems });
   const ids = playableIds(crate);
-  const reconciled = reconcileOrder(state.order, state.pos, ids, ctx.random);
+  const reconciled = crate.ordered
+    ? reconcileOrdered(state.order, state.pos, ids)
+    : reconcileOrder(state.order, state.pos, ids, ctx.random);
   let next: ConductorState = { ...state, order: reconciled.order, pos: reconciled.pos };
   if (!reconciled.currentRemoved) return none(next);
   if (ids.length === 0) return none({ ...initialState(), problems: state.problems });
-  if (next.pos >= next.order.length) next = { ...next, order: newLap(ids, ctx.random, null), pos: 0 };
+  if (next.pos >= next.order.length) next = { ...next, order: lapFor(crate, ctx.random, null), pos: 0 };
   const active = state.mode === 'playing' || state.mode === 'paused' || state.mode === 'starting';
   return active ? startRecord(next, ctx, 0, 0, 'auto') : none({ ...next, trackIndex: 0, progressMs: 0 });
 }
@@ -325,9 +333,8 @@ export function step(state: ConductorState, event: ConductorEvent, ctx: StepCont
   switch (event.type) {
     case 'chooseCrate': {
       const crate = ctx.crates.get(event.crateId);
-      const ids = crate ? playableIds(crate) : [];
-      if (ids.length === 0) return none(state);
-      const order = newLap(ids, ctx.random, null);
+      if (!crate || playableIds(crate).length === 0) return none(state);
+      const order = lapFor(crate, ctx.random, null);
       // A fresh shuffle retries every record, so the crate's old problems no longer apply.
       const problems = state.problems.filter((p) => p.crateId !== event.crateId);
       return startRecord({ ...state, crateId: event.crateId, order, pos: 0, problems }, ctx, 0, 0, 'user');

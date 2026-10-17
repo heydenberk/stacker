@@ -149,6 +149,13 @@ describe('resolveCrate', () => {
     expect(review.map((r) => r.rymId)).toEqual(['200']);
   });
 
+  it('carries the ordered flag through', async () => {
+    const { crate } = await resolveCrate({ ...draft(['100']), ordered: true }, library, {}, api());
+    expect(crate.ordered).toBe(true);
+    const { crate: shuffled } = await resolveCrate(draft(['100']), library, {}, api());
+    expect(shuffled).not.toHaveProperty('ordered');
+  });
+
   it('keeps already-resolved high-confidence records unless forced', async () => {
     const first = await resolveCrate(draft(['100']), library, {}, api());
     const again = api();

@@ -19,6 +19,22 @@ export function newLap(ids: readonly string[], random: () => number, avoidFirst:
 }
 
 /**
+ * Fit a saved position to an edited ordered crate: the order becomes the crate's, and the
+ * position follows the current record, or the next surviving one if it was removed.
+ */
+export function reconcileOrdered(
+  order: readonly string[],
+  pos: number,
+  crateIds: readonly string[],
+): { order: string[]; pos: number; currentRemoved: boolean } {
+  const current = order[pos];
+  const at = current === undefined ? -1 : crateIds.indexOf(current);
+  if (at >= 0) return { order: [...crateIds], pos: at, currentRemoved: false };
+  const next = order.slice(pos + 1).find((id) => crateIds.includes(id));
+  return { order: [...crateIds], pos: next === undefined ? crateIds.length : crateIds.indexOf(next), currentRemoved: current !== undefined };
+}
+
+/**
  * Fit a saved play order to an edited crate: played records and the current one keep their
  * places, removed ids drop out, and new ids are inserted at random into the unplayed part.
  */
