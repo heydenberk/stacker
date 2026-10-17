@@ -16,7 +16,8 @@ export function buildCatalog(files: Record<string, unknown>): CrateCatalog {
       byId.set(crate.id, crate);
     }
   }
-  return { order: index.crates.filter((id) => byId.has(id)), byId };
+  // A repeated id would render the same card twice under one key, so keep the first.
+  return { order: [...new Set(index.crates)].filter((id) => byId.has(id)), byId };
 }
 
 // Crates are bundled at build time; a new crate ships with the next deploy.

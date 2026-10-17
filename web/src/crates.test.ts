@@ -14,11 +14,26 @@ describe('buildCatalog', () => {
     expect(cat.order).toEqual(['b', 'a']);
     expect(cat.byId.get('a')?.name).toBe('A');
   });
+
+  it('lists a repeated id once', () => {
+    const cat = buildCatalog({
+      '../../crates/index.json': { crates: ['a', 'b', 'a'] },
+      '../../crates/a.json': crate('a'),
+      '../../crates/b.json': crate('b'),
+    });
+    expect(cat.order).toEqual(['a', 'b']);
+  });
 });
 
 describe('catalog', () => {
   it('bundles the committed crates', () => {
     expect(catalog.order).toContain('rainy-sunday');
     expect(catalog.byId.get('rainy-sunday')?.records.length).toBeGreaterThan(0);
+  });
+
+  it('indexes every crate file exactly once', async () => {
+    const { default: index } = await import('../../crates/index.json');
+    expect(new Set(index.crates).size).toBe(index.crates.length);
+    expect([...index.crates].sort()).toEqual([...catalog.byId.keys()].sort());
   });
 });
