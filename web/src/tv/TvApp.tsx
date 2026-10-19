@@ -5,6 +5,7 @@ import type { Runner } from '../runner';
 import { getShell } from '../shell';
 import type { SpotifyAuth } from '../spotify/auth';
 import type { PlayerApi } from '../spotify/player';
+import { AlbumIndex } from './AlbumIndex';
 import { ChooseDevice } from './ChooseDevice';
 import { CratePicker } from './CratePicker';
 import { focusPrimary, useRunnerView } from './hooks';
@@ -135,8 +136,12 @@ export function TvApp({ auth, runner, player, catalog, signInError }: Props) {
           view={view}
           onPlaying={() => setScreen('nowPlaying')}
           onSettings={() => setScreen('settings')}
+          onAlbums={() => setScreen('albums')}
         />
       );
+      break;
+    case 'albums':
+      body = <AlbumIndex catalog={catalog} runner={runner} onPlaying={() => setScreen('nowPlaying')} />;
       break;
     case 'settings':
       body = <Settings auth={auth} runner={runner} view={view} onChangeDevice={() => setScreen('chooseDevice')} />;

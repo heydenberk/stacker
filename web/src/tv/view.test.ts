@@ -14,6 +14,7 @@ import {
   mediaKeyEvent,
   nextTickDelay,
   smallCover,
+  mediumCover,
   mosaicTiles,
   overlayFor,
   pickNext,
@@ -238,6 +239,17 @@ describe('smallCover', () => {
   it('leaves other URLs alone', () => {
     expect(smallCover('https://example.com/x.jpg')).toBe('https://example.com/x.jpg');
     expect(smallCover('')).toBe('');
+  });
+});
+
+describe('mediumCover', () => {
+  it("swaps Spotify's 640 px cover for the 300 px one", () => {
+    expect(mediumCover('https://i.scdn.co/image/ab67616d0000b2735c8b326548e5a345e0f5fec1')).toBe(
+      'https://i.scdn.co/image/ab67616d00001e025c8b326548e5a345e0f5fec1',
+    );
+  });
+  it('leaves other URLs alone', () => {
+    expect(mediumCover('https://example.com/x.jpg')).toBe('https://example.com/x.jpg');
   });
 });
 

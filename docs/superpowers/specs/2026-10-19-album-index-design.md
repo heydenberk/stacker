@@ -90,3 +90,13 @@ There's a new conductor event, `{ type: 'chooseRecord'; crateId; rymId }`. If th
 - Filtering by crate.
 - Phone or laptop control. That's the separate Wi-Fi remote idea.
 - Showing which albums have been played.
+
+## As built
+
+- **needsDevice:** picking the current record while Stacker waits for the TV's Spotify app counts as "same as `resume`", like OK on the picker card (`pickerAction`). The table didn't list that mode.
+- **Picker:** ▼ from the in-progress crate's card still goes to Start over first; one more ▼ reaches the All albums row. ▲ from the row goes back to the card (or Start over) focus came from, not the nearest card. The picker's top padding went from 80 to 48 px to fit the row under Start over.
+- **Covers:** rows use Spotify's 300 px cover (`mediumCover`, next to `smallCover`) rather than the 640 px one, plus a new `lazy` prop on `Cover`.
+- **Rows on screen:** 7 lines of two albums each, 112 px rows, so about 14 albums show.
+- **Rail:** letters with no albums are dimmed spans, not buttons, so nothing can focus them. ◀ on the rail stays put. ▲▼ stop at the first and last letters.
+- **Last letters:** there's blank space after the last album, so the rail can bring the last letters' headings (Y, Z, #) to the top.
+- **Header:** "All albums" plus a count and a "◀ letters" hint.

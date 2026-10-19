@@ -181,6 +181,11 @@ export function smallCover(url: string): string {
   return url.replace('ab67616d0000b273', 'ab67616d00004851');
 }
 
+/** Spotify's 300 px cover in place of the 640 px one, for the long album list. */
+export function mediumCover(url: string): string {
+  return url.replace('ab67616d0000b273', 'ab67616d00001e02');
+}
+
 /** Milliseconds until a progress reading of `progressMs` shows the next whole second. */
 export function nextTickDelay(progressMs: number): number {
   return 1000 - (Math.max(0, Math.floor(progressMs)) % 1000);

@@ -13,9 +13,10 @@ interface Props {
   view: RunnerView;
   onPlaying: () => void;
   onSettings: () => void;
+  onAlbums: () => void;
 }
 
-export function CratePicker({ catalog, runner, view, onPlaying, onSettings }: Props) {
+export function CratePicker({ catalog, runner, view, onPlaying, onSettings, onAlbums }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   useRovingFocus(ref);
   useAutoFocus(ref);
@@ -24,6 +25,14 @@ export function CratePicker({ catalog, runner, view, onPlaying, onSettings }: Pr
   const { state } = view;
   const inProgress = state.crateId !== null && state.mode !== 'idle' && catalog.byId.has(state.crateId) ? state.crateId : null;
   const primary = inProgress ?? catalog.order[0] ?? null;
+  // ▲ from the All albums row goes back to where focus was in the card row, not to the nearest card.
+  const lastInRow = useRef<HTMLElement | null>(null);
+  const upFromAlbums = (e: KeyboardEvent) => {
+    if (e.key !== 'ArrowUp' || !lastInRow.current?.isConnected) return;
+    e.preventDefault();
+    e.stopPropagation();
+    lastInRow.current.focus();
+  };
 
   const open = (id: string) => {
     const action = pickerAction(state, id);
@@ -45,7 +54,7 @@ export function CratePicker({ catalog, runner, view, onPlaying, onSettings }: Pr
         </div>
         {view.deviceName && <div class="picker-device">Playing on {view.deviceName}</div>}
       </header>
-      <div class="card-row">
+      <div class="card-row" onFocusCapture={(e) => (lastInRow.current = e.target as HTMLElement)}>
         {catalog.order.map((id) => {
           const crate = catalog.byId.get(id)!;
           return (
@@ -73,6 +82,9 @@ export function CratePicker({ catalog, runner, view, onPlaying, onSettings }: Pr
           </button>
         </div>
       </div>
+      <button class="btn albums-hint" onClick={onAlbums} onKeyDown={upFromAlbums}>
+        ▼ All albums A–Z
+      </button>
     </div>
   );
 }

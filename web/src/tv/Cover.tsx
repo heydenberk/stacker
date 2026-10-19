@@ -7,11 +7,13 @@ interface CoverProps {
   alt: string;
   class?: string;
   style?: Record<string, string | number>;
+  /** Load the image only as it nears the screen, for long lists. */
+  lazy?: boolean;
 }
 
 /** An album cover, or a placeholder tile with the album's initials when Spotify has no image. */
-export function Cover({ url, initials, alt, class: cls = '', style }: CoverProps) {
-  if (url) return <img class={`cover ${cls}`} src={url} alt={alt} style={style} />;
+export function Cover({ url, initials, alt, class: cls = '', style, lazy = false }: CoverProps) {
+  if (url) return <img class={`cover ${cls}`} src={url} alt={alt} style={style} loading={lazy ? 'lazy' : undefined} />;
   return (
     <div class={`cover cover-placeholder ${cls}`} style={style} role="img" aria-label={alt}>
       <span>{initials}</span>
