@@ -68,6 +68,8 @@ export interface ConductorState {
 
 export type ConductorEvent =
   | { type: 'chooseCrate'; crateId: string }
+  /** Play one record of a crate now (from the All albums index); its crate carries on after it. */
+  | { type: 'chooseRecord'; crateId: string; rymId: string }
   | { type: 'crateUpdated' }
   | { type: 'snapshot'; snapshot: PlayerSnapshot | null }
   | { type: 'togglePause' }

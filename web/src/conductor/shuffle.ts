@@ -18,6 +18,23 @@ export function newLap(ids: readonly string[], random: () => number, avoidFirst:
   return order;
 }
 
+/** A lap that starts with `rymId`, the rest keeping their order. */
+export function withFirst(lap: readonly string[], rymId: string): string[] {
+  return [rymId, ...lap.filter((id) => id !== rymId)];
+}
+
+/**
+ * Play `rymId` next: it moves from wherever it was to right after the current record, which counts
+ * as heard, and the position moves onto it. Picking the current record itself changes nothing.
+ */
+export function playNext(order: readonly string[], pos: number, rymId: string): { order: string[]; pos: number } {
+  const current = order[pos];
+  if (current === rymId) return { order: [...order], pos };
+  const rest = order.filter((id) => id !== rymId);
+  const at = current === undefined ? rest.length : rest.indexOf(current) + 1;
+  return { order: [...rest.slice(0, at), rymId, ...rest.slice(at)], pos: at };
+}
+
 /**
  * Fit a saved position to an edited ordered crate: the order becomes the crate's, and the
  * position follows the current record, or the next surviving one if it was removed.

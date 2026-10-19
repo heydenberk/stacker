@@ -25,6 +25,9 @@ describe('back', () => {
   it('settings -> picker, handled', () => {
     expect(back('settings', { hasDevice: true })).toEqual({ screen: 'picker', handled: true });
   });
+  it('albums -> picker, handled', () => {
+    expect(back('albums', { hasDevice: true })).toEqual({ screen: 'picker', handled: true });
+  });
   it('chooseDevice -> picker when a device exists', () => {
     expect(back('chooseDevice', { hasDevice: true })).toEqual({ screen: 'picker', handled: true });
   });

@@ -1,4 +1,4 @@
-export type Screen = 'signIn' | 'chooseDevice' | 'picker' | 'nowPlaying' | 'settings';
+export type Screen = 'signIn' | 'chooseDevice' | 'picker' | 'albums' | 'nowPlaying' | 'settings';
 
 export function initialScreen(s: { signedIn: boolean; hasDevice: boolean; mode: string }): Screen {
   if (!s.signedIn) return 'signIn';
@@ -10,6 +10,7 @@ export function back(screen: Screen, ctx: { hasDevice: boolean }): { screen: Scr
   switch (screen) {
     case 'nowPlaying':
     case 'settings':
+    case 'albums':
       return { screen: 'picker', handled: true };
     case 'chooseDevice':
       return ctx.hasDevice ? { screen: 'picker', handled: true } : { screen, handled: false };

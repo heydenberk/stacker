@@ -1,5 +1,5 @@
 import type { Crate, CrateRecord } from '../../../shared/crate';
-import { newLap, reconcileOrder, reconcileOrdered } from './shuffle';
+import { newLap, playNext, reconcileOrder, reconcileOrdered, withFirst } from './shuffle';
 import type { Action, ConductorEvent, ConductorState, PlayOrigin, PlayerSnapshot, Problem, StepContext } from './types';
 
 /** How long to wait for Spotify to start a requested record before assuming something else won. */
@@ -329,8 +329,33 @@ function onCrateUpdated(state: ConductorState, ctx: StepContext): StepResult {
   return active ? startRecord(next, ctx, 0, 0, 'auto') : none({ ...next, trackIndex: 0, progressMs: 0 });
 }
 
+/**
+ * Play one record of a crate now, then carry on with the crate. The current record resumes rather
+ * than restarts; an ordered crate jumps to the record; a shuffled crate in progress plays it next.
+ */
+function chooseRecord(state: ConductorState, crateId: string, rymId: string, ctx: StepContext): StepResult {
+  const crate = ctx.crates.get(crateId);
+  const ids = crate ? playableIds(crate) : [];
+  if (!crate || !ids.includes(rymId)) return none(state);
+  // The same test the picker uses for "in progress".
+  const inProgress = state.crateId === crateId && state.mode !== 'idle';
+  if (inProgress && state.order[state.pos] === rymId) {
+    if (state.mode === 'playing' || state.mode === 'starting') return none(state);
+    return step(state, { type: 'resume' }, ctx);
+  }
+  // A fresh start retries every record, so the crate's old problems no longer apply.
+  const problems = inProgress ? state.problems : state.problems.filter((p) => p.crateId !== crateId);
+  let placed: { order: string[]; pos: number };
+  if (crate.ordered) placed = { order: ids, pos: ids.indexOf(rymId) };
+  else if (inProgress) placed = playNext(state.order, state.pos, rymId);
+  else placed = { order: withFirst(newLap(ids, ctx.random, null), rymId), pos: 0 };
+  return startRecord({ ...state, crateId, ...placed, problems }, ctx, 0, 0, 'user');
+}
+
 export function step(state: ConductorState, event: ConductorEvent, ctx: StepContext): StepResult {
   switch (event.type) {
+    case 'chooseRecord':
+      return chooseRecord(state, event.crateId, event.rymId, ctx);
     case 'chooseCrate': {
       const crate = ctx.crates.get(event.crateId);
       if (!crate || playableIds(crate).length === 0) return none(state);

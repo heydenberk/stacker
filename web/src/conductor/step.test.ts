@@ -791,3 +791,129 @@ describe('problems per crate', () => {
     expect(restore(saved).problems).toEqual([]);
   });
 });
+
+describe('choosing a record', () => {
+  const pick = (crateId: string, rymId: string): ConductorEvent => ({ type: 'chooseRecord', crateId, rymId });
+  const twoCrates = new Map<string, Crate>([
+    ['c', makeCrate()],
+    ['d', { ...makeCrate([record(5)]), id: 'd', name: 'Other' }],
+  ]);
+  const ordered = new Map<string, Crate>([['c', { ...makeCrate([record(5)]), ordered: true }]]);
+  /** Crate c chosen, its first record failed (a problem), and the second confirmed playing part-way through. */
+  function midCrate(over: Partial<StepContext> = {}): ConductorState {
+    let s = go(initialState(), { type: 'chooseCrate', crateId: 'c' }, over).state;
+    s = go(s, { type: 'playFailed', reason: 'Not found' }, over).state;
+    return go(s, { type: 'snapshot', snapshot: snapFor(s.order[s.pos], 1, { progressMs: 50_000 }) }, over).state;
+  }
+
+  it('ignores an unknown crate, an unknown record and a record not on Spotify', () => {
+    const s = playing(0);
+    expect(go(s, pick('nope', 'r1'))).toEqual({ state: s, actions: [] });
+    expect(go(s, pick('c', 'r99'))).toEqual({ state: s, actions: [] });
+    expect(go(s, pick('c', 'r4'))).toEqual({ state: s, actions: [] });
+  });
+
+  it('leaves the record that is playing alone', () => {
+    const s = playing(1, 30_000);
+    expect(go(s, pick('c', s.order[0]))).toEqual({ state: s, actions: [] });
+  });
+
+  it('leaves the record that is starting alone', () => {
+    const s = chosen();
+    expect(go(s, pick('c', s.order[0]))).toEqual({ state: s, actions: [] });
+  });
+
+  it('resumes the current record when it is paused, yielded, held, awaiting resume or restored', () => {
+    const s = playing(1, 30_000);
+    const paused = go(s, { type: 'togglePause' }).state;
+    const yielded = yieldFrom(s).state;
+    const held = go(playing(2, TRACK_MS - 3_000), { type: 'snapshot', snapshot: null }, { now: T0 + 3_000, holdAutoStarts: true }).state;
+    const awaiting = go(restore(s), { type: 'snapshot', snapshot: otherSnap() }).state;
+    const restored = restore(s);
+    expect([paused, yielded, held, awaiting, restored].map((x) => x.mode)).toEqual(['paused', 'yielded', 'held', 'awaitingResume', 'restored']);
+    for (const state of [paused, yielded, held, awaiting, restored]) {
+      expect(go(state, pick('c', state.order[state.pos]))).toEqual(go(state, { type: 'resume' }));
+    }
+    expect(go(paused, pick('c', s.order[0])).actions).toEqual([userPlay(s.order[0], 1, 30_000)]);
+  });
+
+  it('resumes the current record while waiting for the device, as the picker does', () => {
+    const missing = go(playing(1, 30_000), { type: 'deviceMissing' }).state;
+    expect(go(missing, pick('c', missing.order[0]))).toEqual(go(missing, { type: 'resume' }));
+  });
+
+  describe('in a shuffled crate', () => {
+    it('from idle, starts a fresh lap with the record first', () => {
+      const r = go(initialState(), pick('c', 'r3'));
+      expect(r.state).toMatchObject({ crateId: 'c', pos: 0, mode: 'starting', trackIndex: 0, progressMs: 0 });
+      expect(r.state.order[0]).toBe('r3');
+      expect([...r.state.order].sort()).toEqual(['r1', 'r2', 'r3']);
+      expect(r.actions).toEqual([userPlay('r3')]);
+    });
+
+    it("from another crate, starts a fresh lap and clears the crate's old problems", () => {
+      let s = go(initialState(), { type: 'chooseCrate', crateId: 'd' }, { crates: twoCrates }).state;
+      s = go(s, { type: 'playFailed', reason: 'd fail' }, { crates: twoCrates }).state;
+      s = go(s, { type: 'chooseCrate', crateId: 'c' }, { crates: twoCrates }).state;
+      s = go(s, { type: 'playFailed', reason: 'c fail' }, { crates: twoCrates }).state;
+      const r = go(s, pick('d', 'r5'), { crates: twoCrates });
+      expect(r.state).toMatchObject({ crateId: 'd', pos: 0, mode: 'starting' });
+      expect(r.state.order[0]).toBe('r5');
+      expect([...r.state.order].sort()).toEqual(['r1', 'r2', 'r3', 'r5']);
+      expect(problemsFor(r.state, 'd')).toEqual([]);
+      expect(problemsFor(r.state, 'c')).toHaveLength(1);
+      expect(r.actions).toEqual([userPlay('r5')]);
+    });
+
+    it('in progress, plays the record next, counting the current one as heard, and keeps problems', () => {
+      const s = midCrate();
+      expect(s).toMatchObject({ pos: 1, mode: 'playing' });
+      const later = s.order[2];
+      const r = go(s, pick('c', later));
+      expect(r.state).toMatchObject({ crateId: 'c', order: [s.order[0], s.order[1], later], pos: 2, mode: 'starting', trackIndex: 0, progressMs: 0 });
+      expect(r.state.problems).toEqual(s.problems);
+      expect(problemsFor(r.state, 'c')).toHaveLength(1);
+      expect(r.actions).toEqual([userPlay(later)]);
+    });
+
+    it('in progress, plays an already-played record again after the current one', () => {
+      const s = midCrate();
+      const earlier = s.order[0];
+      const r = go(s, pick('c', earlier));
+      expect(r.state).toMatchObject({ order: [s.order[1], earlier, s.order[2]], pos: 1, mode: 'starting' });
+      expect(r.actions).toEqual([userPlay(earlier)]);
+    });
+  });
+
+  describe('in an ordered crate', () => {
+    it("from idle, starts at the record in crate order and clears the crate's problems", () => {
+      const s = { ...initialState(), problems: [{ crateId: 'c', rymId: 'r1', reason: 'old', at: 1 }] };
+      const r = go(s, pick('c', 'r3'), { crates: ordered });
+      expect(r.state).toMatchObject({ crateId: 'c', order: ['r1', 'r2', 'r3', 'r5'], pos: 2, mode: 'starting', problems: [] });
+      expect(r.actions).toEqual([userPlay('r3')]);
+    });
+
+    it('in progress, jumps to the record in crate order and keeps problems', () => {
+      const s = midCrate({ crates: ordered });
+      expect(s.order[s.pos]).toBe('r2');
+      const r = go(s, pick('c', 'r5'), { crates: ordered });
+      expect(r.state).toMatchObject({ order: ['r1', 'r2', 'r3', 'r5'], pos: 3, mode: 'starting', trackIndex: 0, progressMs: 0 });
+      expect(r.state.problems).toEqual(s.problems);
+      expect(problemsFor(r.state, 'c')).toHaveLength(1);
+      expect(r.actions).toEqual([userPlay('r5')]);
+    });
+
+    it('in progress, can go back to an earlier record', () => {
+      const r = go(midCrate({ crates: ordered }), pick('c', 'r1'), { crates: ordered });
+      expect(r.state).toMatchObject({ pos: 0, mode: 'starting' });
+      expect(r.actions).toEqual([userPlay('r1')]);
+    });
+  });
+
+  it('starts as a user play even while automatic starts are held', () => {
+    const s = playing(0);
+    const r = go(s, pick('c', s.order[2]), { holdAutoStarts: true });
+    expect(r.state.mode).toBe('starting');
+    expect(r.actions).toEqual([userPlay(s.order[2])]);
+  });
+});

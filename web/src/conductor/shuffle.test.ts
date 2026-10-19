@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { newLap, reconcileOrder, shuffle } from './shuffle';
+import { newLap, playNext, reconcileOrder, shuffle, withFirst } from './shuffle';
 
 const zero = () => 0;
 
@@ -40,5 +40,37 @@ describe('reconcileOrder', () => {
   });
   it('leaves an unchanged crate alone', () => {
     expect(reconcileOrder(['a', 'b', 'c'], 1, ['c', 'b', 'a'], zero)).toEqual({ order: ['a', 'b', 'c'], pos: 1, currentRemoved: false });
+  });
+});
+
+describe('playNext', () => {
+  it('moves a record from further ahead to right after the current one', () => {
+    expect(playNext(['a', 'b', 'c', 'd', 'e'], 1, 'e')).toEqual({ order: ['a', 'b', 'e', 'c', 'd'], pos: 2 });
+  });
+  it('leaves a record that is already next where it is', () => {
+    expect(playNext(['a', 'b', 'c'], 0, 'b')).toEqual({ order: ['a', 'b', 'c'], pos: 1 });
+  });
+  it('plays an already-played record again after the current one', () => {
+    expect(playNext(['a', 'b', 'c', 'd'], 2, 'a')).toEqual({ order: ['b', 'c', 'a', 'd'], pos: 2 });
+  });
+  it('keeps the order and position for the current record itself', () => {
+    expect(playNext(['a', 'b', 'c'], 1, 'b')).toEqual({ order: ['a', 'b', 'c'], pos: 1 });
+  });
+  it('inserts a record missing from the order after the current one', () => {
+    expect(playNext(['a', 'b'], 0, 'z')).toEqual({ order: ['a', 'z', 'b'], pos: 1 });
+  });
+  it('does not change its input', () => {
+    const order = ['a', 'b', 'c'];
+    playNext(order, 0, 'c');
+    expect(order).toEqual(['a', 'b', 'c']);
+  });
+});
+
+describe('withFirst', () => {
+  it('moves the record to the front and keeps the rest in order', () => {
+    expect(withFirst(['c', 'a', 'd', 'b'], 'd')).toEqual(['d', 'c', 'a', 'b']);
+  });
+  it('leaves a lap that already starts with it alone', () => {
+    expect(withFirst(['a', 'b'], 'a')).toEqual(['a', 'b']);
   });
 });
