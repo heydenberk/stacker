@@ -823,6 +823,85 @@
         "spotifyArtists": "Modest Mouse",
         "spotifyYear": 1997
       }
+    },
+    {
+      "rymId": "1977",
+      "artist": "Teenage Fanclub",
+      "title": "Bandwagonesque",
+      "year": 1991,
+      "rating": 8,
+      "spotify": {
+        "albumId": "4M6vPZ4hQdOeH07D0JO2JQ",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b273267bc422b348bc278af4fa81",
+        "tracks": [
+          {
+            "id": "702Gf3Gh3NsC1KbCFrlrpe",
+            "name": "The Concept",
+            "durationMs": 367026
+          },
+          {
+            "id": "64HwmlHlk0H5SGuhpuUJu7",
+            "name": "Satan",
+            "durationMs": 82000
+          },
+          {
+            "id": "72xcjmj3heF2YU1HGAi8x0",
+            "name": "December",
+            "durationMs": 183600
+          },
+          {
+            "id": "6DOJgDuUVDaJ98GQxwyLTh",
+            "name": "What You Do To Me",
+            "durationMs": 120706
+          },
+          {
+            "id": "6mbGky48xfrJuhfsWMJn5B",
+            "name": "I Don't Know",
+            "durationMs": 276066
+          },
+          {
+            "id": "72TuqZybG4W29mQtL1cCq1",
+            "name": "Star Sign",
+            "durationMs": 295160
+          },
+          {
+            "id": "1X9ykmmV01u14Pbyn9UWnT",
+            "name": "Metal Baby",
+            "durationMs": 219866
+          },
+          {
+            "id": "7vImSJMrJG6IXV2DN7Ym7y",
+            "name": "Pet Rock",
+            "durationMs": 155106
+          },
+          {
+            "id": "3NXvFK4mCNthYqECtN8Riw",
+            "name": "Sidewinder",
+            "durationMs": 183293
+          },
+          {
+            "id": "6qL0KtO2n1iAcjBmYj8tB9",
+            "name": "Alcoholiday",
+            "durationMs": 326240
+          },
+          {
+            "id": "6A1E1UcmJWD3wMLljNUKUc",
+            "name": "Guiding Star",
+            "durationMs": 168160
+          },
+          {
+            "id": "6x61GBpLhEyGDegNnsydNH",
+            "name": "Is This Music?",
+            "durationMs": 196000
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Bandwagonesque",
+        "spotifyArtists": "Teenage Fanclub",
+        "spotifyYear": 1991
+      }
     }
   ]
 }

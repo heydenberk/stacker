@@ -859,6 +859,120 @@
         "spotifyArtists": "The Kinks",
         "spotifyYear": 1971
       }
+    },
+    {
+      "rymId": "40634",
+      "artist": "Songs: Ohia",
+      "title": "The Magnolia Electric Co",
+      "year": 2003,
+      "rating": 7,
+      "spotify": {
+        "albumId": "5MqGZZtQ36zsETrTK2uy04",
+        "coverUrl": "https://i.scdn.co/image/ab67616d0000b27389b54a2385458cbe68bc35c6",
+        "tracks": [
+          {
+            "id": "5Plx6OhvSukqCRdZ52wUXz",
+            "name": "Farewell Transmission",
+            "durationMs": 442106
+          },
+          {
+            "id": "0y2DyTS7hhrR9j5LAgTldO",
+            "name": "I've Been Riding With the Ghost",
+            "durationMs": 200560
+          },
+          {
+            "id": "2Bv0qamiKGfDBtXCutmXJf",
+            "name": "Just Be Simple",
+            "durationMs": 260986
+          },
+          {
+            "id": "719aK5iQfj2tQInOlCdYtm",
+            "name": "Almost Was Good Enough",
+            "durationMs": 268253
+          },
+          {
+            "id": "4qehkTKtOUZUIx1fcA1ZOW",
+            "name": "The Old Black Hen",
+            "durationMs": 348240
+          },
+          {
+            "id": "5jPHmoS0ZEnT2LIBK0ZB2k",
+            "name": "Peoria Lunch Box Blues",
+            "durationMs": 348453
+          },
+          {
+            "id": "6ibj963SmyltB0rP8TSbpS",
+            "name": "John Henry Split My Heart",
+            "durationMs": 369666
+          },
+          {
+            "id": "1XfGLgLHhRGAA16mpoZBUi",
+            "name": "Hold On Magnolia",
+            "durationMs": 471200
+          },
+          {
+            "id": "1myLlBpQuAhUgcbTv9AoxN",
+            "name": "The Big Game Is Every Night - Bonus Track",
+            "durationMs": 594920
+          },
+          {
+            "id": "1W6T2dApXyVy5p07aEsRw0",
+            "name": "Whip Poor Will - Bonus Track",
+            "durationMs": 233560
+          },
+          {
+            "id": "7sEx8ZvPLkThIOYCxwrxKM",
+            "name": "Farewell Transmission - Demo",
+            "durationMs": 416146
+          },
+          {
+            "id": "79E9hvLJ5RqxUzxO677hWy",
+            "name": "I've Been Riding With the Ghost - Demo",
+            "durationMs": 190413
+          },
+          {
+            "id": "0DVfT4kpmyaDqtGN1kU02h",
+            "name": "Just Be Simple - Demo",
+            "durationMs": 174400
+          },
+          {
+            "id": "4PtkWrJk8hVxMklCeJADjl",
+            "name": "The Old Black Hen - Demo",
+            "durationMs": 296146
+          },
+          {
+            "id": "1Z3e8sVJKPPpfxWQPEMtbw",
+            "name": "Peoria Lunch Box Blues - Demo",
+            "durationMs": 265453
+          },
+          {
+            "id": "6WWMXkFv6bddGY9FLqwXkQ",
+            "name": "John Henry Split My Heart - Demo",
+            "durationMs": 349106
+          },
+          {
+            "id": "0gi6gq1qlUMNRoe6LS2njR",
+            "name": "Hold On Magnolia - Demo",
+            "durationMs": 383426
+          },
+          {
+            "id": "2zSuHyj7Kn78vjt93vdJKQ",
+            "name": "The Big Game Is Every Night - Demo",
+            "durationMs": 386746
+          },
+          {
+            "id": "1rcuBqvbRzqkDYRuaE0wtR",
+            "name": "Whip Poor Will - Demo",
+            "durationMs": 215453
+          }
+        ]
+      },
+      "match": {
+        "confidence": "high",
+        "spotifyName": "Magnolia Electric Co. (Deluxe Edition)",
+        "spotifyArtists": "Songs: Ohia, Jason Molina",
+        "spotifyYear": 2003
+      }
     }
   ]
 }
